@@ -1,3 +1,8 @@
+rails -v 2.3.5
+pg
+haml
+hpricot
+rmagick
 will_paginate
 linguistics
 gruff
@@ -5,5 +10,5 @@ RedCloth
 mechanize
 geokit
 prawn
-haml
+rubyzip
 
