@@ -1,0 +1,2 @@
+#!/bin/bash
+script/server -p6005 --debugger

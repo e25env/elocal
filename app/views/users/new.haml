@@ -1,0 +1,26 @@
+%h3 Signup new user
+= error_messages_for :user
+- form_for :user, :url=>{:action=>:create}, :html=>{:multipart=>true} do |f|
+  %table(width="100%")
+    %tr
+      %td(class="field-name") Username
+      %td= f.text_field :login, :style=>"width:200px;"
+      %td#check(width="250")
+    %tr
+      %td(class="field-name") Password
+      %td(colspan="2")= f.text_field :password, :style=>"width:300px;"
+    %tr
+      %td(class="field-name") Email
+      %td(colspan="2")= f.text_field :email, :style=>"width:300px;"
+    = f.hidden_field :role
+    %tr
+      %td(colspan="3")= submit_tag "Signup"
+%p
+
+:javascript
+  var animate = "<img src='/images/ajax-loader.gif' alt='loading...' />";
+  $('#user_password').val('');
+  $("#user_login").change( function(e) {
+    $("#check").html(animate).load("/users/check_login",
+      {login:$("#user_login").val()});
+  })

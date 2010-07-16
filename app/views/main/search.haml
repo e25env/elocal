@@ -1,0 +1,28 @@
+= will_paginate @searches, :class=>'flickr_pagination', :params=>{:q=>@q}
+%hr(style='color:#E9EFF8;background-color:#E9EFF8;height:2px;border:0;')
+#new_waypoint(style='float:right')
+  = image_tag "add.png"
+  %span= link_to align_text("add new waypoint"), '/run/waypoint/add', :target=>"_blank"
+  = align_text image_tag("external-link.png")
+%table
+  - @searches.each do |s|
+    %tr.destination
+    - if s.sclass == 'Waypoint'
+      - w = s.waypoint
+      /- next if w.already_in_destination?(params[:d],@timeframe)
+      - if w.pic
+        %td(style='width:180px;')= link_to image_tag(w.pic), '/'+w.code
+      - else
+        %td(style='width:180px;')= image_tag 'no_pic.png'
+      %td(valign='top' style='width:100%; padding-left:10px;')
+        = image_tag 'anchor.png'
+        %b= link_to align_text(w.name), '/'+w.code
+        %br= w.full_address
+        %br= w.description
+    - else
+      - t = s.trip
+      %td(style='width:180px;')= image_tag 'no_pic.png'
+      %td(valign='top' style='width:100%; padding-left:10px;')
+        = image_tag 'car.png'
+        %b= link_to align_text(t.name), "/x/trip/show/#{t.id}?share=#{t.show_code}"
+        %br= t.description

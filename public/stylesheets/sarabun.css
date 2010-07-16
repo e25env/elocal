@@ -1,0 +1,25 @@
+@font-face {
+  font-family: 'Sarabun';
+  font-style: normal;
+  font-weight: normal;
+  src: local('Sarabun'), url('/fonts/sarabun.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Sarabun';
+  font-style: normal;
+  font-weight: bold;
+  src: local('Sarabun'), url('/fonts/sarabun_bold.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Sarabun';
+  font-style: italic;
+  font-weight: bold;
+  src: local('Sarabun'), url('/fonts/sarabun_bolditalic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Sarabun';
+  font-style: italic;
+  font-weight: normal;
+  src: local('Sarabun'), url('/fonts/sarabun_italic.ttf') format('truetype');
+}
+

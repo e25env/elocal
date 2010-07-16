@@ -1,0 +1,43 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  code: MyString
+  name: MyString
+  lat: 1.5
+  lng: 1.5
+  description: MyText
+  pic: MyString
+  cat_id: 1
+  morning: false
+  afternoon: false
+  evening: false
+  address: MyString
+  city: MyString
+  state_id: 1
+  zip: MyString
+  country_id: 1
+  phone: MyString
+  email: MyString
+  www: MyString
+  tgel_user_id: 1
+
+two:
+  code: MyString
+  name: MyString
+  lat: 1.5
+  lng: 1.5
+  description: MyText
+  pic: MyString
+  cat_id: 1
+  morning: false
+  afternoon: false
+  evening: false
+  address: MyString
+  city: MyString
+  state_id: 1
+  zip: MyString
+  country_id: 1
+  phone: MyString
+  email: MyString
+  www: MyString
+  tgel_user_id: 1

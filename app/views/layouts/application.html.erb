@@ -1,0 +1,57 @@
+<% @gma_modules= GmaModule.all :order=>"seq"
+# determine existing module
+if params[:module]
+  gma_module= GmaModule.find_by_code params[:module]
+  session[:module] = params[:module]
+elsif session[:module]
+  gma_module= GmaModule.find_by_code session[:module]
+else
+  # find first authorized module
+  @gma_modules.each do |m|
+    gma_module= m
+    break if m.role.blank?
+    break if current_user.role.upcase.split(',').include?(m.role.upcase)
+  end
+end
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <%= render :partial => "layouts/head" %>
+  <body>
+    <div id="topnavigation"><ul><%= render :partial => "layouts/top" %></ul></div>
+    <div id="header">
+      <div style="float:right; color:#1C2795;">
+        <%= render :partial => "layouts/login" %>
+      </div>
+      <div style="padding:5px 0 0 50px;">
+        <a href="/"><div style="font: bold 40pt Sarabun; color:#006699;">
+          ระบบสารสนเทศบูรณาการเพื่อการบริหารงานองค์กรปกครองส่วนท้องถิ่น
+          </div>
+        </a>
+      </div>
+        <div id="search">
+        <% @search = GmaSearch.new %>
+          <% form_for(@search, :url => { :controller=>"main", :action => "search" }) do |f| %>
+          <%= f.text_field "q", :style=>"width:320px;" %>
+          <%= f.submit "Search" %>
+          <% end %>
+        </div>
+      <%= render :partial => "layouts/modules", :object => @gma_modules, :locals=>{:gma_module=>gma_module}  %>
+    </div>
+    <div id="content">
+      <div id="contentmiddle">
+        <div id="notice"><%= display_notices %></div>
+        <div id="notice"><%= flash[:notice] %></div>
+        <div id="middlespace"><%= yield %></div>
+      </div>
+      <%= render :partial => "layouts/sidebar", :locals=>{:gma_module=>gma_module} %>
+    </div>
+    <div style="clear:both;"></div>
+    <div id="footer">
+      <div id="copyright">
+        Powered by <a href="http://gmindapp.com">GMindApp</a><br/>
+      </div>
+    </div>
+  </body>
+</html>
+

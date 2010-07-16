@@ -1,0 +1,16 @@
+<li><%= link_to "<span>home</span>","/" %></li>
+<% if login? %>
+  <li><%= link_to "<span>my trips</span>", "/x/trip/my" %></li>
+<% end %>
+<li><%= link_to "<span>public trips</span>", "/x/trip/public" %></li>
+<li><%= link_to "<span>new waypoint</span>", "/run/waypoint/add" %></li>
+<li><%= link_to "<span>new trip</span>", "/run/trip/create" %></li>
+<li><%= mail_to "info@worldwaypoint.com", "<span>contact</span>" %></li>
+<li><%= link_to "<span>#{image_tag 'twittersmall.png'}</span>","http://twitter.com/worldwaypoint", :title => "Twitter", :class=>"top-icon" %></li>
+<li><%= link_to "<span>#{image_tag 'facebooksmall.png'}</span>","http://www.facebook.com/pages/worldwaypoint/110706795641513", :title => "Facebook", :class=>"top-icon" %></li>
+<li><%= link_to "<span>#{image_tag 'help.png'}</span>","/x/main/help", :title => "Help", :class=>"top-icon" %></li>
+<script type="text/javascript">
+  $(window).load(function() {
+    $(".top-icon").tooltip({ position: "bottom center"});
+  })
+</script>
