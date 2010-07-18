@@ -1,4 +1,13 @@
-<% @gma_modules= GmaModule.all :order=>"seq"
+<% @amodules= [] # authorized modules
+@gma_modules= GmaModule.all(:order=>"seq").each do |m|
+  if m.role
+    if current_user.role
+      @amodules << m if current_user.role.upcase.split(',').include?(m.role.upcase)
+    end
+  else
+    @amodules << m
+  end
+end
 # determine existing module
 if params[:module]
   gma_module= GmaModule.find_by_code params[:module]
@@ -10,8 +19,13 @@ else
   @gma_modules.each do |m|
     gma_module= m
     break if m.role.blank?
-    break if current_user.role.upcase.split(',').include?(m.role.upcase)
+    if current_user.role
+      break if current_user.role.upcase.split(',').include?(m.role.upcase)
+    end
   end
+end
+if gma_module && gma_module.role
+  gma_module= nil unless current_user.role.upcase.split(',').include?(gma_module.role.upcase)
 end
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -36,7 +50,9 @@ end
           <%= f.submit "Search" %>
           <% end %>
         </div>
-      <%= render :partial => "layouts/modules", :object => @gma_modules, :locals=>{:gma_module=>gma_module}  %>
+      <% if @amodules.size>0 %>
+        <%= render :partial => "layouts/modules", :object => @amodules, :locals=>{:gma_module=>gma_module}  %>
+      <% end %>
     </div>
     <div id="content">
       <div id="contentmiddle">

@@ -1,8 +1,6 @@
-<% if modules.size>0 %>
   <div id="middlenavigation">
     <ul>
       <% modules.each do |m| %>
-        <% next unless current_user.role.upcase.split(',').include?(m.role.upcase) unless m.role.blank? %>
         <% if m.code=="account" %>
           <% next unless login? %>
         <% end %>
@@ -28,4 +26,3 @@
       } )
     </script>
   </div>
-<% end %>

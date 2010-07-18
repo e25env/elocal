@@ -6,7 +6,7 @@ body {
   margin:0 auto;
   padding:0;
 }
-#featured_trips {
+.featured {
   background:#D8F7FA;
   -moz-border-radius: 10px;
   -webkit-border-radius: 10px;
