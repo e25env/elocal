@@ -7,6 +7,10 @@ class SongritController < ApplicationController
 #  require 'nokogiri'
 #  require 'mechanize'
 
+  def test_mongo
+    u = Upload.create :content=>'hello'
+    render :text => debug(u)
+  end
   def a2waypoint(s='hello *songrit, how are you?')
     render :text => s.gsub!(/\*([\w]+)(\W)?/, '<a href="/\1">*\1</a>\2')
   end
