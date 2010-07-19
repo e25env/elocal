@@ -47,7 +47,7 @@ end
         <% @search = GmaSearch.new %>
           <% form_for(@search, :url => { :controller=>"main", :action => "search" }) do |f| %>
           <%= f.text_field "q", :style=>"width:320px;" %>
-          <%= f.submit "Search" %>
+          <%= f.submit "ค้นหา" %>
           <% end %>
         </div>
       <% if @amodules.size>0 %>

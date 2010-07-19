@@ -6,7 +6,7 @@ function disableEnterKey(e)
   else
     key = e.which; //firefox
   if(key == 13) {
-    alert("Please click the button");
+    alert("กรุณาใช้เม้าส์คลิ้กที่ปุ่มเพื่อดำเนินการต่อ");
     return false; }
   else
     return true;

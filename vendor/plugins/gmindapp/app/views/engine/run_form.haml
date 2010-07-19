@@ -1,13 +1,15 @@
 .head
-  /#title= "รหัสดำเนินการ #{@xmain.id}: #{@xmain.name}"
-  /= step(@runseq.form_step, @xvars[:total_form_steps])
-  #subtitle= @runseq.name
+  = step(@runseq.form_step, @xvars[:total_form_steps])
+  #title
+    %span(style='float:left;')= "รหัสดำเนินการ #{@xmain.id} : #{@xmain.name}"
+    %span(style='float:right;')= @runseq.name
+    &nbsp;
   = javascript_include_tag "disable_enter_key"
   = javascript_include_tag 'jquery.autocomplete'
   %script(src='http://maps.google.com/maps/api/js?sensor=false')
   = stylesheet_link_tag 'jquery.autocomplete'
-//%script
-//  function validate() { return true; }
+%script
+  function validate() { return true; }
 %p
 - user = current_user || TgelUser.new
 - if @sign

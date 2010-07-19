@@ -44,7 +44,7 @@ class EngineController < ApplicationController
         if service
           f= "app/views/#{service.module}/#{service.code}/#{@runseq.code}.rhtml"
           @ui= File.read(f)
-          @message = "Next &gt;"
+          @message = "ดำเนินการต่อ &gt;"
           #      @message = "Done" if @runseq.form_step==@xvars[:total_form_steps]
         else
           flash[:notice]= "ไม่สามารถค้นหาบริการที่ต้องการได้"
