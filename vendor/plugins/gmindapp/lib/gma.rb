@@ -285,14 +285,18 @@ module Gma
   # new get_option return h, false or nil if not found
   def get_option_xml(opt, xml)
     #xml= REXML::Document.new(runseq.xml).root
-    url=''
-    xml.each_element('node') do |n|
-      text= n.attributes['TEXT']
-      url= text if text =~/^#{opt}/
+    if xml
+      url=''
+      xml.each_element('node') do |n|
+        text= n.attributes['TEXT']
+        url= text if text =~/^#{opt}/
+      end
+      return nil if url.blank?
+      c, h= url.split(':', 2)
+      opt= h ? h.strip : true
+    else
+      return nil
     end
-    return nil if url.blank?
-    c, h= url.split(':', 2)
-    opt= h ? h.strip : true
   end
   def get_mm_links(runseq=@runseq)
     xml= REXML::Document.new(runseq.xml).root
