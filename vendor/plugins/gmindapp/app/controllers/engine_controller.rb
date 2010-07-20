@@ -147,35 +147,38 @@ class EngineController < ApplicationController
   end
   # process images from first level
   def get_image(key, params)
+    # use mongo to store image
+    upload = Upload.create :content=> params.read
     doc = GmaDoc.create(
       :name=> key.to_s,
       :gma_xmain_id=> @xmain.id,
       :gma_runseq_id=> @runseq.id,
       :filename=> params.original_filename,
-      :content_type => params.content_type || 'application/zip'
-      #        :data=> params.read)
-    )
-    path = defined?(IMAGE_LOCATION) ? IMAGE_LOCATION : "tmp"
-    File.open("#{path}/f#{doc.id}","wb") { |f|
-      f.puts(params.read)
-    }
+      :content_type => params.content_type || 'application/zip',
+      :data_text=> upload.id.to_s)
+#    path = defined?(IMAGE_LOCATION) ? IMAGE_LOCATION : "tmp"
+#    File.open("#{path}/f#{doc.id}","wb") { |f|
+#      f.puts(params.read)
+#    }
     eval "@xvars[:#{@runseq.code}][:#{key}] = '#{url_for(:action=>'document', :id=>doc.id)}' "
     eval "@xvars[:#{@runseq.code}][:#{key}_doc_id] = #{doc.id} "
   end
   # process images from second level, e.g,, fields_for
   def get_image1(key, key1, params)
+    # use mongo to store image
+    upload = Upload.create :content=> params.read
     doc = GmaDoc.create(
       :name=> "#{key}_#{key1}",
       :gma_xmain_id=> @xmain.id,
       :gma_runseq_id=> @runseq.id,
       :filename=> params.original_filename,
-      :content_type => params.content_type || 'application/zip'
-      #        :data=> params.read)
-    )
-    path = defined?(IMAGE_LOCATION) ? IMAGE_LOCATION : "tmp"
-    File.open("#{path}/f#{doc.id}","wb") { |f|
-      f.puts(params.read)
-    }
+      :content_type => params.content_type || 'application/zip',
+      :data_text=> upload.id.to_s)
+#    path = defined?(IMAGE_LOCATION) ? IMAGE_LOCATION : "tmp"
+#    File.open("#{path}/f#{doc.id}","wb") { |f|
+#      f.puts(params.read)
+#    }
+
     eval "@xvars[:#{@runseq.code}][:#{key}][:#{key1}] = '#{url_for(:action=>'document', :id=>doc.id)}' "
     eval "@xvars[:#{@runseq.code}][:#{doc.name}_doc_id] = #{doc.id} "
   end
@@ -367,14 +370,15 @@ class EngineController < ApplicationController
     end_action(next_runseq)
   end
   def document
-    path = defined?(IMAGE_LOCATION) ? IMAGE_LOCATION : "tmp"
+#    path = defined?(IMAGE_LOCATION) ? IMAGE_LOCATION : "tmp"
     if GmaDoc.exists?(params[:id])
       doc = GmaDoc.find params[:id]
       if %w(output temp).include?(doc.content_type)
         render :text=>doc.data_text
       else
-        data= read_binary("#{path}/f#{params[:id]}")
-        send_data(data, :filename=>doc.filename, :type=>doc.content_type, :disposition=>"inline")
+#        data= read_binary("#{path}/f#{params[:id]}")
+#        send_data(data, :filename=>doc.filename, :type=>doc.content_type, :disposition=>"inline")
+        send_data(Upload.find(doc.data_text).content.to_s, :filename=>doc.filename, :type=>doc.content_type, :disposition=>"inline")
       end
     else
       data= read_binary("public/images/file_not_found.jpg")

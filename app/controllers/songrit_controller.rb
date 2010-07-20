@@ -7,6 +7,23 @@ class SongritController < ApplicationController
 #  require 'nokogiri'
 #  require 'mechanize'
 
+  def test_document
+#    path = defined?(IMAGE_LOCATION) ? IMAGE_LOCATION : "tmp"
+    if GmaDoc.exists?(params[:id])
+      doc = GmaDoc.find params[:id]
+      if %w(output temp).include?(doc.content_type)
+        render :text=>doc.data_text
+      else
+#        data= read_binary("#{path}/f#{params[:id]}")
+#        send_data(data, :filename=>doc.filename, :type=>doc.content_type, :disposition=>"inline")
+        send_data(Upload.find(doc.data_text).content.to_s, :filename=>doc.filename, :type=>doc.content_type, :disposition=>"inline")
+      end
+    else
+      data= read_binary("public/images/file_not_found.jpg")
+      send_data(data, :filename=>"img_not_found.png", :type=>"image/png", :disposition=>"inline")
+    end
+  end
+
   def test_mongo
     u = Upload.create :content=>'hello'
     render :text => debug(u)
