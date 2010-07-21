@@ -201,14 +201,16 @@ module Gma
   def authorize? # use in pending tasks
     @runseq= @xmain.gma_runseqs.find @xmain.current_runseq
     return false unless @runseq
-    $xmain= @xmain ; $runseq = @runseq ; $user = current_user
+    @user = current_user
+    $xmain= @xmain ; $runseq = @runseq ; $user = @user
     return false unless eval(@runseq.rule) if @runseq.rule
     return true if true_action?(@runseq.action)
     return false if check_wait
     return true if @runseq.role.blank?
-    user= get_user
-    return false unless user
-    user.role.upcase.split(',').include?(@runseq.role.upcase)
+    if @runseq.role
+      return false unless @user.role
+      return @user.role.upcase.split(',').include?(@runseq.role.upcase)
+    end
   end
 
   def authorize_init? # use when initialize new transaction
@@ -600,6 +602,9 @@ module ActionView
 #      end
       def date_select_thai(method, default= Time.now, disabled=false)
         date_select method, :default => default, :use_month_names=>THAI_MONTHS, :order=>[:day, :month, :year], :disabled=>disabled
+      end
+      def datetime_select_thai(method, default= Time.now, disabled=false)
+        datetime_select method, :default => default, :use_month_names=>THAI_MONTHS, :order=>[:day, :month, :year], :disabled=>disabled
       end
 
       def point(o={})

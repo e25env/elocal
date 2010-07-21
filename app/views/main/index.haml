@@ -1,24 +1,25 @@
-%style= "#content h3 {padding-bottom:0; margin-top:5px;}"
-
-%h3 หลักการและเหตุผล
-องค์กรปกครองส่วนท้องถิ่นได้มีการนำเอาเทคโนโลยีสารสนเทศมาใช้เพิ่มประสิทธิภาพในการปฏิบัติราชการ
-และให้บริการประชาชนในโครงการต่างๆ ส่งผลดีในด้านการบริหารจัดการข้อมูล การจัดเก็บรายได้
-และความพึงพอใจของผู้ใช้บริการ ระบบสารสนเทศบูรณาการเพื่อการบริหารงานองค์กรปกครองส่วนท้องถิ่น
-เป็นการพัฒนาต่อยอดให้มีการบูรณาการข้อมูลเพื่อให้ผู้บริหาร และเจ้าหน้าที่ที่เกี่ยวข้อง
-สามารถนำข้อมูลไปใช้ในการดำเนินงานกำหนดนโยบาย ติดตามและเร่งรัดการปฏิบัติตามแผนงานโครงการต่างๆ
-ตลอดจนถึงการให้บริการประชาชนในลักษณะของศูนย์บริการร่วม และบริการต่างๆของเทศบาลผ่านทางออนไลน์
-เพื่อเพิ่มศักยภาพในการดำเนินการของ อปท. ให้มีประสิทธิภาพดียิ่งขึ้น
-
-%h3 ขอบเขตการดำเนินโครงการ
-%ul
-  %li.section ส่วนบริหาร
-  %li ระบบสารสนเทศผู้บริหาร (Executive Information System)
-  %li.section ส่วนสำนักงาน
-  %li งานนโยบายและแผน
-  %li งานสารบรรณ
-  %li งานจัดเก็บรายได้
-  %li งานแผนที่ภาษี
-  %li งานบริหารบัญชีและการเงิน
-  %li งานบริหารพัสดุ และครุภัณฑ์
-  %li งานควบคุมโครงการ
-  %li งานประปา
+%table{:width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th รหัสดำเนินการ
+    %th บริการ
+    %th ขั้นตอน
+    %th ผู้ปฏิบัติ
+    %th เริ่มต้น
+    %th ยกเลิก
+  - @xmains.each do |xmain|
+    /- debugger
+    - @xmain= xmain
+    - @runseq= GmaRunseq.find(xmain.current_runseq)
+    - next unless @runseq
+    - next unless %w(form output pdf).include?(@runseq.action)
+    - next unless authorize?
+    %tr
+      %td= link_to xmain.id, :controller=>"engine", :action=>"run", :id=>xmain.id
+      %td= link_to xmain.name, :controller=>"engine", :action=>"run", :id=>xmain.id
+      %td= @runseq.name
+      %td{:align=>'center'}= xmain.gma_user.full_name
+      %td= date_thai xmain.start
+      %td{:align=>'center'}= link_to image_tag("delete.png",                          |
+        :style=>'border:none; float:none;'),                                          |
+        {:controller=>'engine', :action=>'cancel', :id=>xmain.id, :return=>url_for},  |
+        :confirm=>"confirm?"                                                          |

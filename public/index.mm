@@ -1,8 +1,8 @@
 <map version="0.9.0">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1273819432637" ID="ID_1098419600" MODIFIED="1277954115869" TEXT="wwp">
+<node CREATED="1273819432637" ID="ID_1098419600" MODIFIED="1279699253278" TEXT="elocal">
 <node CREATED="1273819462973" ID="ID_282419531" MODIFIED="1276485214623" POSITION="right" TEXT="services">
-<node CREATED="1275756501221" FOLDED="true" ID="ID_1720745721" MODIFIED="1279398624097" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
+<node CREATED="1275756501221" FOLDED="true" ID="ID_1720745721" MODIFIED="1279710712378" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
 <node CREATED="1275905802131" ID="ID_154000410" MODIFIED="1279312269232" TEXT="link:&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;: /account"/>
 <node CREATED="1275756504750" ID="ID_1382277695" MODIFIED="1279312281159" TEXT="pwd:&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe1c;&#xe48;&#xe32;&#xe19;">
 <node CREATED="1275756515843" ID="ID_1559014937" MODIFIED="1275756549282" TEXT="enter: enter password">
@@ -13,6 +13,7 @@
 </node>
 <node CREATED="1276062721100" ID="ID_1806588076" MODIFIED="1276062727685" TEXT="rule: login?"/>
 </node>
+<node CREATED="1279700865182" ID="ID_630918549" MODIFIED="1279700920401" TEXT="link:&#xe04;&#xe39;&#xe48;&#xe21;&#xe37;&#xe2d;&#xe23;&#xe30;&#xe1a;&#xe1a;: /songrit/doc"/>
 <node CREATED="1278491598711" ID="ID_1662699954" MODIFIED="1278491602025" TEXT="role:m"/>
 </node>
 <node CREATED="1275752678377" FOLDED="true" ID="ID_1348489452" MODIFIED="1279397272867" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
@@ -64,12 +65,12 @@
 </node>
 <node CREATED="1279398214325" ID="ID_2259524" MODIFIED="1279398449447" TEXT="action: &#xe14;&#xe33;&#xe40;&#xe19;&#xe34;&#xe19;&#xe01;&#xe32;&#xe23;">
 <icon BUILTIN="attach"/>
-<node CREATED="1279398224377" ID="ID_1614223406" MODIFIED="1279401185419" TEXT="rule: assigned?"/>
+<node CREATED="1279398224377" ID="ID_1614223406" MODIFIED="1279737031126" TEXT="rule: OfficeController.assigned?"/>
 </node>
 <node CREATED="1279398427526" ID="ID_881349932" MODIFIED="1279398454324" TEXT="save_comment">
 <icon BUILTIN="bookmark"/>
 </node>
-<node CREATED="1279398254584" ID="ID_451473998" MODIFIED="1279398587054" TEXT="@xvars[:final][:final]">
+<node CREATED="1279398254584" ID="ID_451473998" MODIFIED="1279710751735" TEXT="@xvars[:action][:final]">
 <icon BUILTIN="help"/>
 <node CREATED="1279398273680" ID="ID_164345846" MODIFIED="1279398593678" TEXT="n:action"/>
 </node>
@@ -160,6 +161,56 @@
 <node CREATED="1279522561336" ID="ID_1625861182" MODIFIED="1279522564740" TEXT="section_id"/>
 <node CREATED="1279522565433" ID="ID_1874191663" MODIFIED="1279522576338" TEXT="code:string"/>
 <node CREATED="1279522569581" ID="ID_195169354" MODIFIED="1279522573443" TEXT="name:string"/>
+</node>
+</node>
+<node CREATED="1279699506823" FOLDED="true" ID="ID_263704773" MODIFIED="1279700809339" POSITION="right" TEXT="doc">
+<node CREATED="1279699256393" ID="ID_1255833428" MODIFIED="1279700043404">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      h2. &#3619;&#3632;&#3610;&#3610;&#3626;&#3634;&#3619;&#3626;&#3609;&#3648;&#3607;&#3624;&#3610;&#3641;&#3619;&#3603;&#3634;&#3585;&#3634;&#3619;&#3648;&#3614;&#3639;&#3656;&#3629;&#3585;&#3634;&#3619;&#3610;&#3619;&#3636;&#3627;&#3634;&#3619;&#3619;&#3634;&#3594;&#3585;&#3634;&#3619;&#3629;&#3591;&#3588;&#3660;&#3585;&#3619;&#3611;&#3585;&#3588;&#3619;&#3629;&#3591;&#3626;&#3656;&#3623;&#3609;&#3607;&#3657;&#3629;&#3591;&#3606;&#3636;&#3656;&#3609;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      h3. &#3627;&#3621;&#3633;&#3585;&#3585;&#3634;&#3619;&#3649;&#3621;&#3632;&#3648;&#3627;&#3605;&#3640;&#3612;&#3621;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      h3. &#3623;&#3633;&#3605;&#3606;&#3640;&#3611;&#3619;&#3632;&#3626;&#3591;&#3588;&#3660;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      h3. &#3648;&#3611;&#3657;&#3634;&#3627;&#3617;&#3634;&#3618;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      h3. &#3649;&#3612;&#3609;&#3585;&#3634;&#3619;&#3604;&#3635;&#3648;&#3609;&#3636;&#3609;&#3591;&#3634;&#3609;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      h3. &#3616;&#3634;&#3614;&#3619;&#3623;&#3617;&#3586;&#3629;&#3591;&#3619;&#3632;&#3610;&#3610;
+    </p>
+    <p>
+      !http://songrit.googlecode.com/files/mict.png(test image)!
+    </p>
+    <p>
+      
+    </p>
+  </body>
+</html></richcontent>
 </node>
 </node>
 </node>

@@ -7,6 +7,7 @@ class MainController < ApplicationController
   end
   def index
     @news = News.all :limit => 5, :order => "created_at DESC"
+    @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at"
   end
   def search
     if params[:q]

@@ -1,7 +1,7 @@
 <% if login? %>
   <div id="user" style="color:#0063DC; margin:5px;">
     <% user= GmaUser.find(session[:user_id]) %>
-    <%= align_text(user.login) %>
+    <%= align_text(user.full_name) %>
     <%= link_to image_tag("logout.png", :alt=>"log out", :title=>"log out"), {:controller=>"users", :action=>"logout"} %>
   </div>
 <% else %>
