@@ -41,6 +41,13 @@ class UsersController < ApplicationController
       render :action=>:new
     end
   end
+
+  # ajax
+  def subsections
+    @section= Section.find params[:id]
+#    include ActionView::Helpers::FormOptionsHelper
+    render :text => @template.options_from_collection_for_select(@section.subsections, :id, :name)
+  end
   def check_login
     red = "#FF796C" ; green = "#B5D19D"
     if params[:login].blank?
