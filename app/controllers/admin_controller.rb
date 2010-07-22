@@ -12,7 +12,7 @@ class AdminController < ApplicationController
   def destroy_gma
     GmaXmain.destroy_all
     GmaRunseq.destroy_all
-    redirect_to "admin/stat"
+    redirect_to "/admin/stat"
   end
 
   # gma methods

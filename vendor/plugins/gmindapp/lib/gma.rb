@@ -136,7 +136,8 @@ module Gma
     # remove params[:password] before log
     log_params= params
     log_params[:password]= nil
-    GmaLog.create :log_type=>log_type, :message=>message, :isession => session,
+    GmaLog.create :log_type=>log_type, :message=>message,
+#      :isession => session,
       :iparams=>log_params, :controller=>params[:controller], :action=>params[:action]
   end
   def exec_cmd(s)
