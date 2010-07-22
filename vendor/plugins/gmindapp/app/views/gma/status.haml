@@ -1,15 +1,15 @@
 .label
   = image_tag "cog.png"
-  Status Gma transaction id
+  สถานะการดำเนินงานหมายเลข
   = params[:id]
   %br= @xmain.name
 %table{:width=>"100%"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
-    %th status
-    %th step
-    %th role
-    %th begin
-    %th end
+    %th สถานะ
+    %th ขั้นตอน
+    %th อำนาจดำเนินการ
+    %th เริ่มต้น
+    %th เสร็จ
   - @xmain.gma_runseqs.form_action.each do |r|
     %tr
       - if @xmain.status=='X'

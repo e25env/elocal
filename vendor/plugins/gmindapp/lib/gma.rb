@@ -63,14 +63,30 @@ module Gma
 
   def status_icon(runseq)
     case runseq.status
-    when "F"
-      image_tag "tick.png"
-    when "R"
-      image_tag "user.png"
-    when "I"
-      image_tag "dot.gif"
+    when 'R'
+      image_tag 'user.png'
+    when 'F'
+      image_tag 'tick.png'
+    when 'I'
+      image_tag 'control_play.png'
+    when 'E'
+      image_tag 'logout.png'
+    when 'X'
+      image_tag 'cross.png'
+    else
+      image_tag 'cancel.png'
     end
   end
+#  def status_icon(runseq)
+#    case runseq.status
+#    when "F"
+#      image_tag "tick.png"
+#    when "R"
+#      image_tag "user.png"
+#    when "I"
+#      image_tag "dot.gif"
+#    end
+#  end
   def admin?
     role= current_user ? current_user.role : ""
     role.upcase.split(",").include?("A")
