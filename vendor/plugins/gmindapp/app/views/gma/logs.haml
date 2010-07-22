@@ -19,7 +19,7 @@
       - else
         %td{:align=>'center'} ???
       %td= date_us xmain.start
-      %td{:align=>'center'}= status_icon xmain.status
+      %td{:align=>'center'}= status_icon xmain
       %td{:align=>'center'}= link_to image_tag("delete.png",                          |
         :style=>'border:none; float:none;'),                                          |
         {:controller=>'engine', :action=>'cancel', :id=>xmain.id, :return=>url_for},  |
