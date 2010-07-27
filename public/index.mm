@@ -51,7 +51,7 @@
 </node>
 </node>
 <node CREATED="1279397496008" ID="ID_587395922" MODIFIED="1279795947519" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
-<node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1280189766733" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
+<node CREATED="1279397879537" FOLDED="true" ID="ID_1756095802" MODIFIED="1280212554079" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
 <node CREATED="1279398102937" ID="ID_1911892960" MODIFIED="1279398128306" TEXT="role:co"/>
@@ -79,7 +79,7 @@
 <node CREATED="1279986901801" ID="ID_496497925" MODIFIED="1279986904269" TEXT="role:co"/>
 </node>
 </node>
-<node CREATED="1279397887479" ID="ID_522235803" MODIFIED="1280189763216" TEXT="doc_out: &#xe2a;&#xe48;&#xe07;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
+<node CREATED="1279397887479" FOLDED="true" ID="ID_522235803" MODIFIED="1280212552973" TEXT="doc_out: &#xe2a;&#xe48;&#xe07;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279400010372" ID="ID_1625796057" MODIFIED="1280189817211" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe2a;&#xe48;&#xe07;">
 <icon BUILTIN="attach"/>
 <node CREATED="1279398102937" ID="ID_729314033" MODIFIED="1279398128306" TEXT="role:co"/>
@@ -88,7 +88,7 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1279397893091" FOLDED="true" ID="ID_1161286412" MODIFIED="1279588101476" TEXT="memo: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe20;&#xe32;&#xe22;&#xe43;&#xe19;">
+<node CREATED="1279397893091" FOLDED="true" ID="ID_1161286412" MODIFIED="1280212586125" TEXT="memo: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe20;&#xe32;&#xe22;&#xe43;&#xe19;">
 <node CREATED="1279398062261" ID="ID_1752771054" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
 </node>
