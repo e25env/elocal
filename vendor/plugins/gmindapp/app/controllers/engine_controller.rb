@@ -194,7 +194,7 @@ class EngineController < ApplicationController
         :ip=> get_ip, :gma_service_id=>service.id
       @message = "ดำเนินการต่อ"
       @message = "สิ้นสุดการทำงาน" if @runseq.end
-      eval "@xvars[:#{@runseq.code}] = url_for(:controller=>'engine', :action=>'document', :id=>@gma_doc)"
+      eval "@xvars[:#{@runseq.code}] = url_for(:controller=>'engine', :action=>'document', :id=>@gma_doc.id)"
     else
       flash[:notice]= "ไม่สามารถค้นหาบริการที่ต้องการได้"
       redirect_to_root
@@ -259,6 +259,40 @@ class EngineController < ApplicationController
     Notifier.deliver_gma(sender,recipients,subject, @gma_doc.data_text) unless defined?(DONT_SEND_MAIL)
     end_action
   end
+  def run_do
+    init_vars(params[:id])
+    @runseq.start ||= Time.now
+    @runseq.status= 'R' # running
+    $runseq_id= @runseq.id; $user_id= get_user.id
+    $xvars = @xvars
+    $xmain = @xmain
+    $runseq = @runseq
+#    result= eval("#{@xvars[:custom_controller]}.new.#{@runseq.code}")
+    controller = Kernel.const_get(@xvars[:custom_controller]).new
+    result = controller.send(@runseq.code)
+    init_vars_by_runseq($runseq_id)
+    @xvars = $xvars
+    @xvars[@runseq.code.to_sym]= result
+    @xvars[:current_step]= @runseq.rstep
+    @runseq.status= 'F' #finish
+    @runseq.stop= Time.now
+    @runseq.save
+    end_action
+  rescue => e
+    @xmain.status='E'
+    @xvars[:error]= e
+    @xmain.xvars= @xvars
+    @xmain.save
+    @runseq.status= 'F' #finish
+    @runseq.stop= Time.now
+    @runseq.save
+    flash[:notice]= "Sorry, there was some problem processing your request."
+#    flash[:notice]= "ERROR: Job Abort xmain #{@xmain.id} runseq #{@runseq.id}<br/>#{xml_text e}<hr/>"
+    gma_log("ERROR", "Job Abort xmain #{@xmain.id} runseq #{@runseq.id}<br/>#{xml_text e}<hr/>")
+#    end_action(nil)
+#    end_action
+    redirect_to_root
+  end
   def run_call
     init_vars(params[:id])
     # change from 'fork' (use in nso project) to 'background'
@@ -314,6 +348,7 @@ class EngineController < ApplicationController
   end
   def run_if
     init_vars(params[:id])
+#    debugger
     condition= eval(@runseq.code)
     match_found= false
     if condition
@@ -374,7 +409,7 @@ class EngineController < ApplicationController
     if GmaDoc.exists?(params[:id])
       doc = GmaDoc.find params[:id]
       if %w(output temp).include?(doc.content_type)
-        render :text=>doc.data_text
+        render :text=>doc.data_text, :layout => false
       else
 #        data= read_binary("#{path}/f#{params[:id]}")
 #        send_data(data, :filename=>doc.filename, :type=>doc.content_type, :disposition=>"inline")

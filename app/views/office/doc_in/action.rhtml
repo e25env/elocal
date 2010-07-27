@@ -1,53 +1,87 @@
-<%
-doc = Doc.find @xvars[:doc_id]
-%>
+<%  doc = Doc.find @xvars[:doc_id] %>
 <% fields_for doc do |f| %>
   <table id="doc" width="100%">
     <tr>
-      <td class="field-name">เลขที่ทะเบียนรับ</td>
+      <td class="field-name">เลขที่ทะเบียนรับ *</td>
       <td><%= doc.rnum %></td>
       <td style="width:50%;">&nbsp;</td>
     </tr>
     <tr>
       <td class="field-name">เลขที่หนังสือ</td>
-      <td><%= doc.num %></td>
+      <td><%= f.text_field :num, :style => "width:200px;" %></td>
       <td style="width:50%;">&nbsp;</td>
     </tr>
     <tr>
       <td class="field-name">ลงวันที่</td>
-      <td colspan="2"><%= date_thai doc.issue_on, :date_only=>true %></td>
+      <td colspan="2"><%= f.date_select_thai :issue_on %></td>
     </tr>
     <tr>
       <td class="field-name">จาก</td>
-      <td colspan="2"><%= doc.dfrom %></td>
+      <td colspan="2"><%= f.text_field :dfrom, :style => "width:400px;" %></td>
     </tr>
     <tr>
       <td class="field-name">ถึง</td>
-      <td colspan="2"><%= doc.dto %></td>
+      <td colspan="2"><%= f.text_field :dto, :style => "width:400px;" %></td>
     </tr>
     <tr>
       <td class="field-name">เรื่อง</td>
-      <td colspan="2"><%= doc.subject %></td>
+      <td colspan="2"><%= f.text_field :subject, :style => "width:400px;" %></td>
     </tr>
     <tr>
       <td class="field-name">วัน/เวลา ที่ รับ</td>
-      <td colspan="2"><%= date_thai doc.process_at %></td>
+      <td colspan="2"><%= f.datetime_select_thai :process_at %></td>
     </tr>
     <tr>
       <td class="field-name">สรุป</td>
-      <td colspan="2"><%= f.text_area :summary, :cols=>50, :rows=>6, :disabled => true  %></td>
+      <td colspan="2"><%= f.text_area :summary, :cols=>50, :rows=>6 %></td>
     </tr>
+    <% if doc.dscan %>
+      <tr>
+        <td class="field-name">เอกสารสแกน</td>
+        <td colspan="2"><%= link_to "ดาวน์โหลด", doc.dscan %></td>
+      </tr>
+    <% else %>
+      <tr>
+        <td class="field-name">เอกสารสแกน</td>
+        <td colspan="2"><%= f.file_field :dscan %></td>
+      </tr>
+    <% end %>
+    <% @xmain.comments.each do |c| %>
+      <tr>
+        <td class="field-name">
+          <%= c.gma_user.full_name %><br/>
+          (<%= c.gma_user.position %>)
+        </td>
+        <td colspan="2"><%= c.content %></td>
+      </tr>
+    <% end %>
     <tr>
-      <td class="field-name">เอกสารสแกน</td>
-      <td colspan="2"><%= link_to "ดาวน์โหลด", doc.dscan %></td>
-    </tr>
-    <tr>
-      <td class="field-name">การดำเนินงาน</td>
+      <td class="field-name">เกษียนหนังสือ</td>
       <td colspan="2"><%= text_area_tag :comment, nil, :cols=>50, :rows=>6  %></td>
     </tr>
     <tr>
       <td class="field-name">ส่งมอบการปฏิบัติงาน</td>
-      <td colspan="2"><%= select_tag :assign, options_from_collection_for_select(User.all_but_me, :id, :full_name) %></td>
+      <% options = "<option value='' selected='selected'>กรุณาเลือกผู้ดำเนินการท่านต่อไป</option>" %>
+      <% options << options_from_collection_for_select(User.all_but_me, :id, :full_name) %>
+      <td colspan="2"><%= select_tag :assign, options %></td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2">
+        <%= radio_button_tag "final", "y" %> สิ้นสุดการทำงาน
+        <%= radio_button_tag "final", "n", true %> ดำเนินการต่อ
+      </td>
     </tr>
   </table>
 <% end %>
+<%= fix_thai_year %>
+<script type="text/javascript">
+  function validate() {
+    if($('#assign').val()=="" && $('#final_n').is(':checked')) {
+      alert('กรุณาเลือกผู้ดำเนินการต่อ');
+      return false;
+    } else {
+      return true;
+    }
+  }
+</script>

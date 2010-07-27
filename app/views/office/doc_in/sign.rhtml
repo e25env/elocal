@@ -1,0 +1,38 @@
+<link href="/stylesheets/sarabun.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  table { -moz-border-radius:10px; -webkit-border-radius:10px;}
+  tr {page-break-inside: avoid;}
+  td {border:1px solid gray; width:50%;-moz-border-radius:10px; -webkit-border-radius:10px;}
+  .sign {border-bottom: 2px dashed gray; width:70%; height:70px;}
+  h2 {text-align:center; font-size:28pt;}
+  h3 {text-align:center; font-size:24pt; color: black;}
+</style>
+<%  doc = Doc.find @xvars[:doc_id] %>
+
+<h3>
+  เกษียณหนังสือ <b><%= @xmain.id %></b><br/>
+  เลขที่ทะเบียนรับ: <b><%= doc.rnum %></b>
+  เลขที่หนังสือ: <b><%= doc.num %></b>
+  ลงวันที่: <b><%= date_thai doc.issue_on, :date_only=>true, :monthfull => true %></b><br/>
+  จาก: <b><%= doc.dfrom %></b> ถึง: <b><%= doc.dto %></b><br/>
+  เรื่อง: <b><%= doc.subject %></b>
+</h3>
+<table style="width:100%;">
+  <% left=true %>
+<% @xmain.comments.each do |c| %>
+  <% if left %>
+    <tr>
+  <% end %>
+    <td align="center">
+      <div class="content"><%= c.content %></div>
+      <div class="sign"></div>
+      <%= c.gma_user.full_name %><br/>
+      (<%= c.gma_user.position %>)<br/>
+      <%= date_thai c.created_at %>
+    </td>
+  <% if !left %>
+    </tr>
+  <% end %>
+    <% left = !left %>
+<% end %>
+</table>

@@ -9,7 +9,7 @@ class UsersController < ApplicationController
 #      gma_log "LOGIN", "user #{user.login}(#{user.id}) logged in"
     else
       gma_log "SECURITY", "user #{params[:login]} log in failure"
-      flash[:notice]= "Incorrect username and password credential"
+      flash[:notice]= "ขออภัย รหัสไม่ถูกต้อง"
     end
 #    redirect_to_root
     redirect_to request.referrer

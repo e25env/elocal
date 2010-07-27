@@ -4,7 +4,7 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   helper_method :wwp_code, :dm, :dms, :valid_google_ad_script?
-  protect_from_forgery # See ActionController::RequestForgeryProtection for details
+  # protect_from_forgery # See ActionController::RequestForgeryProtection for details
   geocode_ip_address
 
   # Scrub sensitive parameters from your log

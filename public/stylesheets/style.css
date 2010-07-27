@@ -6,6 +6,60 @@ body {
   margin:0 auto;
   padding:0;
 }
+#topnavigation {
+  margin:0 auto;
+  /*padding:9px 0 8px;*/
+  padding:9px 0 8px;
+  width:980px;
+}
+
+#topnavigation #current a span,#downloadsource #current a span {
+  background-position:100% -125px;
+}
+
+#topnavigation #current a,#topnavigation a:hover,#downloadsource #current a,#downloadsource a:hover {
+  background-position:0 -125px;
+}
+
+#topnavigation a {
+  background:url(images/tab-left.png) no-repeat left top;
+  float:left;
+  font-size:15px;
+  margin-right:8px;
+  padding:0 0 0 9px;
+  text-decoration:none;
+}
+
+#topnavigation a span {
+  background:url(images/tab-right.png) no-repeat right top;
+  color:#fff;
+  display:block;
+  float:none;
+  padding:3px 9px 3px 0;
+}
+
+#topnavigation a:hover span,#downloadsource a:hover span {
+  background-position:100% -125px;
+  color:#fff;
+}
+
+#topnavigation ul,.cattopic ul {
+  list-style-type:none;
+  margin:0;
+  padding-left:0;
+}
+
+#check_status {
+/*  font-size: 18px;*/
+  text-align:right;
+  padding-right: 20px;
+}
+#search {
+  font-size: 18px;
+  text-align:center;
+  padding-left: 50px;
+}
+#search input { font-size: 18px; }
 #title {
   width: 100%;
   color: blue;
@@ -18,7 +72,7 @@ body {
 }
 .field-name {
   font-size:1.2em;
-  color:#BB3936;
+  color:#007B02;
   width:50%;
 }
 .featured {
@@ -167,14 +221,6 @@ h3 {
 #photo { background-color: #E7B1F3; }
 #video { background-color: #7DF590; }
 
-#search {
-  font-size: 18px;
-  text-align:center;
-}
-#search input
-{
-  font-size: 18px;
-}
 
 #content {
   margin:0 auto;
@@ -423,49 +469,6 @@ h3 {
   clear:both;
   height:10px;
   width:100%;
-}
-
-#topnavigation {
-  margin:0 auto;
-  /*padding:9px 0 8px;*/
-  padding:9px 0 8px;
-  width:980px;
-}
-
-#topnavigation #current a span,#downloadsource #current a span {
-  background-position:100% -125px;
-}
-
-#topnavigation #current a,#topnavigation a:hover,#downloadsource #current a,#downloadsource a:hover {
-  background-position:0 -125px;
-}
-
-#topnavigation a {
-  background:url(images/tab-left.png) no-repeat left top;
-  float:left;
-  font-size:15px;
-  margin-right:8px;
-  padding:0 0 0 9px;
-  text-decoration:none;
-}
-
-#topnavigation a span {
-  background:url(images/tab-right.png) no-repeat right top;
-  color:#fff;
-  display:block;
-  float:none;
-  padding:3px 9px 3px 0;
-}
-
-#topnavigation a:hover span,#downloadsource a:hover span {
-  background-position:100% -125px;
-  color:#fff;
-}
-
-#topnavigation ul,.cattopic ul {
-  list-style-type:none;
-  margin:0;
-  padding-left:0;
 }
 
 .button {

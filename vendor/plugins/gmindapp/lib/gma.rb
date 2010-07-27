@@ -219,7 +219,7 @@ module Gma
     @runseq= @xmain.gma_runseqs.find @xmain.current_runseq
     return false unless @runseq
     @user = current_user
-    $xmain= @xmain ; $runseq = @runseq ; $user = @user
+    $xmain= @xmain ; $runseq = @runseq ; $user = @user ; $xvars= @xmain.xvars
     return false unless eval(@runseq.rule) if @runseq.rule
     return true if true_action?(@runseq.action)
     return false if check_wait
@@ -477,8 +477,10 @@ module Gma
   end
   def freemind2action(s)
     case s.downcase
+    #when 'bookmark' # Excellent
+    #  'call'
     when 'bookmark' # Excellent
-      'call'
+      'do'
     when 'attach' # Look here
       'form'
     when 'edit' # Refine

@@ -1,7 +1,7 @@
 .head
   %title= @xmain.name
   = step(@runseq.form_step, @xvars[:total_form_steps])
-  #subtitle= "คลิ้กข้อความ '#{@runseq.name}' เพื่อจัดพิมพ์เอกสาร"
+  #title(style='text-align:right;')= "คลิ้กข้อความ '#{@runseq.name}' เพื่อจัดพิมพ์เอกสาร"
   %p
   =javascript_include_tag "disable_enter_key"
 - form_tag({ :action => 'end_output' } , {:multipart => true, :onKeyPress=>'return disableEnterKey(event)', :class=>'formtastic'}) do
@@ -9,7 +9,7 @@
   = hidden_field_tag 'runseq_id', @runseq.id
   = hidden_field_tag 'step', @xvars[:current_step]
   #output_link
-    = link_to @runseq.name, url_for(:controller=>'engine', :action=>'document', :id=>@tgel_doc), :target=>'_blank'
+    = link_to @runseq.name, url_for(:controller=>'engine', :action=>'document', :id=>@gma_doc.id), :target=>'_blank'
   %p
   = submit_tag @message
 %p
