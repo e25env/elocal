@@ -264,9 +264,10 @@ class EngineController < ApplicationController
     @runseq.start ||= Time.now
     @runseq.status= 'R' # running
     $runseq_id= @runseq.id; $user_id= get_user.id
-    $xvars = @xvars
-    $xmain = @xmain
-    $runseq = @runseq
+    set_global
+#    $xvars = @xvars
+#    $xmain = @xmain
+#    $runseq = @runseq
 #    result= eval("#{@xvars[:custom_controller]}.new.#{@runseq.code}")
     controller = Kernel.const_get(@xvars[:custom_controller]).new
     result = controller.send(@runseq.code)

@@ -19,17 +19,18 @@ Rails::Initializer.run do |config|
   # config.gem "hpricot", :version => '0.6', :source => "http://code.whytheluckystiff.net"
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
-   config.gem "linguistics"
-   config.gem "will_paginate"
-   config.gem "RedCloth"
-   config.gem "mechanize"
-   config.gem "rmagick", :lib => "RMagick"
-   config.gem "geokit"
-   config.gem 'rubyzip', :lib => 'zip/zip'
-   config.gem 'haml'
-   config.gem 'pg'
-   config.gem 'mongo_mapper'
-   config.gem 'bson_ext', :lib=>false
+
+  config.gem "linguistics"
+  config.gem "will_paginate"
+  config.gem "RedCloth"
+  config.gem "mechanize"
+  config.gem "rmagick", :lib => "RMagick"
+  config.gem "geokit"
+  config.gem 'rubyzip', :lib => 'zip/zip'
+  config.gem 'haml'
+  config.gem 'pg'
+  config.gem 'mongo_mapper'
+  config.gem 'bson_ext', :lib=>false
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named

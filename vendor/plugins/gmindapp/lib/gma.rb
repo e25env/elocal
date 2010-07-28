@@ -215,11 +215,15 @@ module Gma
     role= GmaRole.find_by_code(code)
     return role ? role.name : ""
   end
+  def set_global
+    $xmain= @xmain ; $runseq = @runseq ; $user = @user ; $xvars= @xmain.xvars
+  end
   def authorize? # use in pending tasks
     @runseq= @xmain.gma_runseqs.find @xmain.current_runseq
     return false unless @runseq
     @user = current_user
-    $xmain= @xmain ; $runseq = @runseq ; $user = @user ; $xvars= @xmain.xvars
+    set_global
+#    debugger
     return false unless eval(@runseq.rule) if @runseq.rule
     return true if true_action?(@runseq.action)
     return false if check_wait

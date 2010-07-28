@@ -51,7 +51,7 @@
 </node>
 </node>
 <node CREATED="1279397496008" ID="ID_587395922" MODIFIED="1279795947519" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
-<node CREATED="1279397879537" FOLDED="true" ID="ID_1756095802" MODIFIED="1280212554079" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
+<node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1280309561820" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
 <node CREATED="1279398102937" ID="ID_1911892960" MODIFIED="1279398128306" TEXT="role:co"/>
@@ -79,7 +79,7 @@
 <node CREATED="1279986901801" ID="ID_496497925" MODIFIED="1279986904269" TEXT="role:co"/>
 </node>
 </node>
-<node CREATED="1279397887479" FOLDED="true" ID="ID_522235803" MODIFIED="1280212552973" TEXT="doc_out: &#xe2a;&#xe48;&#xe07;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
+<node CREATED="1279397887479" ID="ID_522235803" MODIFIED="1280308751132" TEXT="doc_out: &#xe2a;&#xe48;&#xe07;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279400010372" ID="ID_1625796057" MODIFIED="1280189817211" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe2a;&#xe48;&#xe07;">
 <icon BUILTIN="attach"/>
 <node CREATED="1279398102937" ID="ID_729314033" MODIFIED="1279398128306" TEXT="role:co"/>
@@ -88,26 +88,29 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1279397893091" FOLDED="true" ID="ID_1161286412" MODIFIED="1280212586125" TEXT="memo: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe20;&#xe32;&#xe22;&#xe43;&#xe19;">
-<node CREATED="1279398062261" ID="ID_1752771054" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
+<node CREATED="1279397893091" ID="ID_1161286412" MODIFIED="1280283564933" TEXT="memo: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
+<node CREATED="1279398062261" ID="ID_1752771054" MODIFIED="1280282938615" TEXT="new: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
 <icon BUILTIN="attach"/>
+<node CREATED="1280283522691" ID="ID_1000444039" MODIFIED="1280296364105" TEXT="rule: login? &amp;&amp; $user.id==$xmain.gma_user.id"/>
+<node CREATED="1280309136546" ID="ID_1175687092" MODIFIED="1280309142340" TEXT="role: m"/>
 </node>
 <node CREATED="1279398669505" ID="ID_1551232367" MODIFIED="1279400117347" TEXT="create_memo">
 <icon BUILTIN="bookmark"/>
 </node>
 <node CREATED="1279398214325" ID="ID_722648014" MODIFIED="1279398449447" TEXT="action: &#xe14;&#xe33;&#xe40;&#xe19;&#xe34;&#xe19;&#xe01;&#xe32;&#xe23;">
 <icon BUILTIN="attach"/>
-<node CREATED="1279398224377" ID="ID_1307785451" MODIFIED="1279398242693" TEXT="rule: assign?"/>
+<node CREATED="1279398224377" ID="ID_896899145" MODIFIED="1279737031126" TEXT="rule: OfficeController.assigned?"/>
 </node>
 <node CREATED="1279398427526" ID="ID_380949675" MODIFIED="1279398454324" TEXT="save_comment">
 <icon BUILTIN="bookmark"/>
 </node>
-<node CREATED="1279398254584" ID="ID_1302487628" MODIFIED="1279398587054" TEXT="@xvars[:final][:final]">
+<node CREATED="1279398254584" ID="ID_1302487628" MODIFIED="1280330150994" TEXT="@xvars[:action][:final]">
 <icon BUILTIN="help"/>
 <node CREATED="1279398273680" ID="ID_1622302438" MODIFIED="1279398593678" TEXT="n:action"/>
 </node>
 <node CREATED="1279398278111" ID="ID_206256960" MODIFIED="1279398535508" TEXT="sign: &#xe25;&#xe07;&#xe25;&#xe32;&#xe22;&#xe21;&#xe37;&#xe2d;&#xe0a;&#xe37;&#xe48;&#xe2d;">
 <icon BUILTIN="pencil"/>
+<node CREATED="1279986897937" ID="ID_1544222728" MODIFIED="1279986900182" TEXT="role:co"/>
 </node>
 </node>
 </node>

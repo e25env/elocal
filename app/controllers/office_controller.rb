@@ -14,6 +14,13 @@ class OfficeController < ApplicationController
     $xvars[:doc_id]= doc.id
     set_songrit(:num_out, doc.rnum+1)
   end
+  def create_memo
+    doc= Doc.new $xvars[:new][:doc]
+    doc.dtype= 3
+    doc.save
+    $xvars[:doc_id]= doc.id
+    $xvars[:action]= {:assign=>$xvars[:new][:assign]}
+  end
   def save_comment
     comment = Comment.create(:content=>$xvars[:action][:comment], :gma_xmain_id=>$xmain.id)
     comment.id
