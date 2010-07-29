@@ -1,6 +1,10 @@
 class AdminController < ApplicationController
   before_filter :admin_action, :except=>[:daily_housekeeping, :hourly_housekeeping]
 
+  def users
+    @users= User.paginate :page=>params[:page], :per_page=>25,
+      :order=>:login
+  end
   def hourly_housekeeping
     render :text => "hourly done"
   end
