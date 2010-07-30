@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  otype: MyString
+  otype_abbrev: MyString
+  name: MyString
+  address: MyString
+  district: MyString
+  province: MyString
+  phone: MyString
+  gma_user_id: 1
+
+two:
+  otype: MyString
+  otype_abbrev: MyString
+  name: MyString
+  address: MyString
+  district: MyString
+  province: MyString
+  phone: MyString
+  gma_user_id: 1

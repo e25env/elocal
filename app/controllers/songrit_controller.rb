@@ -7,6 +7,9 @@ class SongritController < ApplicationController
 #  require 'nokogiri'
 #  require 'mechanize'
 
+  def test_file
+    render :text => File::expand_path("~")
+  end
   def test_timeout
     render :layout=>false
   end
