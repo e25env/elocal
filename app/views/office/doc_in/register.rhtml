@@ -10,8 +10,23 @@ doc.rnum = songrit :rnum
       <td style="width:50%;">&nbsp;</td>
     </tr>
     <tr>
+      <td class="field-name">ชั้นความลับ</td>
+      <td><%= f.select :confidential_id, Confidential.all.collect { |c| [c.name, c.id]} %></td>
+      <td style="width:50%;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="field-name">ชั้นความเร็ว</td>
+      <td><%= f.select :urgent_id, Urgent.all.collect { |c| [c.name, c.id]} %></td>
+      <td style="width:50%;">&nbsp;</td>
+    </tr>
+    <tr>
       <td class="field-name">เลขที่หนังสือ</td>
       <td><%= f.text_field :num, :style => "width:200px;" %></td>
+      <td style="width:50%;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="field-name">อ้างถึง</td>
+      <td><%= f.text_field :ref, :style => "width:400px;" %></td>
       <td style="width:50%;">&nbsp;</td>
     </tr>
     <tr>

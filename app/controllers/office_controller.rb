@@ -24,6 +24,15 @@ class OfficeController < ApplicationController
   def save_comment
     comment = Comment.create(:content=>$xvars[:action][:comment], :gma_xmain_id=>$xmain.id)
     comment.id
+    unless $xvars[:section_id]
+      if $xvars[:action][:assign]
+        u = User.find $xvars[:action][:assign].to_i
+        $xvars[:section_id]= u.section_id
+      else
+        # default to สำนักปลัด if not assign
+        $xvars[:section_id]= 1
+      end
+    end
   end
 
   private
