@@ -7,6 +7,9 @@ class SongritController < ApplicationController
 #  require 'nokogiri'
 #  require 'mechanize'
 
+  def test_timeout
+    render :layout=>false
+  end
   def test_document
 #    path = defined?(IMAGE_LOCATION) ? IMAGE_LOCATION : "tmp"
     if GmaDoc.exists?(params[:id])
