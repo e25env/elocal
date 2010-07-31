@@ -11,7 +11,8 @@
 
 <h3>
   เกษียณหนังสือ <b><%= @xmain.id %></b>
-  เลขที่ทะเบียนรับ: <b><%= doc.rnum %></b><br/>
+  เลขที่ทะเบียนรับ: <b><%= doc.rnum %></b>
+  <%= Section.find(@xvars[:section_id]).name %><br/>
   เลขที่หนังสือ: <b><%= doc.num %></b>
   ลงวันที่: <b><%= date_thai doc.issue_on, :date_only=>true, :monthfull => true %></b><br/>
   จาก: <b><%= doc.dfrom %></b> ถึง: <b><%= doc.dto %></b><br/>
