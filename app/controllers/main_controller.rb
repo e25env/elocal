@@ -27,10 +27,8 @@ class MainController < ApplicationController
       s.ip= request.env["REMOTE_ADDR"]
       s.save
     end
-    count = Search.count :conditions => ["item LIKE ?", "%#{@q.downcase}%" ]
-    gen_more_wwp(s) if count < ENOUGH_SEARCH
-#    @waypoints = Waypoint.all :conditions => ["code LIKE ? OR LOWER(name) LIKE ?", "%#{wwp_code(params[:gma_search][:q])}%", "%#{params[:gma_search][:q].downcase}%" ]
-    @searches = Search.search(@q.downcase, params[:page], 10)
+    @docs = GmaDoc.search(@q.downcase, params[:page], 10)
+    @xmains = GmaXmain.find @docs.map(&:gma_xmain_id)
   end
   def err404
     gma_log 'ERROR', 'main/err404'

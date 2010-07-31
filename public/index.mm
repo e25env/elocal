@@ -71,6 +71,10 @@
 <icon BUILTIN="help"/>
 <node CREATED="1279398273680" ID="ID_164345846" MODIFIED="1279398593678" TEXT="n:action"/>
 </node>
+<node CREATED="1280526198322" ID="ID_456392612" MODIFIED="1280526212454" TEXT="create_search">
+<icon BUILTIN="pencil"/>
+<node CREATED="1280526203689" ID="ID_1169690741" MODIFIED="1280526207204" TEXT="display:n"/>
+</node>
 <node CREATED="1279398278111" ID="ID_1605053326" MODIFIED="1279398535508" TEXT="sign: &#xe25;&#xe07;&#xe25;&#xe32;&#xe22;&#xe21;&#xe37;&#xe2d;&#xe0a;&#xe37;&#xe48;&#xe2d;">
 <icon BUILTIN="pencil"/>
 <node CREATED="1279986897937" ID="ID_1037841745" MODIFIED="1279986900182" TEXT="role:co"/>
@@ -81,16 +85,20 @@
 <node CREATED="1279986901801" ID="ID_496497925" MODIFIED="1279986904269" TEXT="role:co"/>
 </node>
 </node>
-<node CREATED="1279397887479" FOLDED="true" ID="ID_522235803" MODIFIED="1280354809052" TEXT="doc_out: &#xe2a;&#xe48;&#xe07;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
+<node CREATED="1279397887479" ID="ID_522235803" MODIFIED="1280526216673" TEXT="doc_out: &#xe2a;&#xe48;&#xe07;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279400010372" ID="ID_1625796057" MODIFIED="1280189817211" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe2a;&#xe48;&#xe07;">
 <icon BUILTIN="attach"/>
 <node CREATED="1279398102937" ID="ID_729314033" MODIFIED="1279398128306" TEXT="role:co"/>
+</node>
+<node CREATED="1280526198322" ID="ID_1891777543" MODIFIED="1280526212454" TEXT="create_search">
+<icon BUILTIN="pencil"/>
+<node CREATED="1280526203689" ID="ID_848822597" MODIFIED="1280526207204" TEXT="display:n"/>
 </node>
 <node CREATED="1279400013999" ID="ID_762525853" MODIFIED="1279400061590" TEXT="create_doc_out">
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1279397893091" FOLDED="true" ID="ID_1161286412" MODIFIED="1280354807485" TEXT="memo: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
+<node CREATED="1279397893091" FOLDED="true" ID="ID_1161286412" MODIFIED="1280526259803" TEXT="memo: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
 <node CREATED="1279398062261" ID="ID_1752771054" MODIFIED="1280282938615" TEXT="new: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
 <icon BUILTIN="attach"/>
 <node CREATED="1280283522691" ID="ID_1000444039" MODIFIED="1280296364105" TEXT="rule: login? &amp;&amp; $user.id==$xmain.gma_user.id"/>

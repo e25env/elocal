@@ -1,28 +1,18 @@
-= will_paginate @searches, :class=>'flickr_pagination', :params=>{:q=>@q}
-%hr(style='color:#E9EFF8;background-color:#E9EFF8;height:2px;border:0;')
-#new_waypoint(style='float:right')
-  = image_tag "add.png"
-  %span= link_to align_text("add new waypoint"), '/run/waypoint/add', :target=>"_blank"
-  = align_text image_tag("external-link.png")
-%table
-  - @searches.each do |s|
-    %tr.destination
-    - if s.sclass == 'Waypoint'
-      - w = s.waypoint
-      /- next if w.already_in_destination?(params[:d],@timeframe)
-      - if w.pic
-        %td(style='width:180px;')= link_to image_tag(w.pic), '/'+w.code
-      - else
-        %td(style='width:180px;')= image_tag 'no_pic.png'
-      %td(valign='top' style='width:100%; padding-left:10px;')
-        = image_tag 'anchor.png'
-        %b= link_to align_text(w.name), '/'+w.code
-        %br= w.full_address
-        %br= w.description
-    - else
-      - t = s.trip
-      %td(style='width:180px;')= image_tag 'no_pic.png'
-      %td(valign='top' style='width:100%; padding-left:10px;')
-        = image_tag 'car.png'
-        %b= link_to align_text(t.name), "/x/trip/show/#{t.id}?share=#{t.show_code}"
-        %br= t.description
+= will_paginate @docs, :class=>'flickr_pagination', :params=>{:q=>@q}
+
+%table{:width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th รหัสดำเนินการ
+    %th งาน
+    %th ผู้เริ่มงาน
+    %th เริ่มดำเนินการ
+    %th สิ้นสุด
+    %th สถานะ
+  - @xmains.each do |xmain|
+    %tr
+      %td= link_to xmain.id, :action=>"status", :id=>xmain.id
+      %td= link_to xmain.name, :action=>"status", :id=>xmain.id
+      %td{:align=>'center'}= xmain.gma_user.full_name
+      %td= date_thai xmain.start, :date_only=>true
+      %td= xmain.stop ? date_thai(xmain.stop, :date_only=>true) : '&nbsp;'
+      %td= status_icon xmain

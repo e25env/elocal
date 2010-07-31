@@ -7,8 +7,13 @@ class SongritController < ApplicationController
 #  require 'nokogiri'
 #  require 'mechanize'
 
-  def test_file
-    render :text => File::expand_path("~")
+  def test_search
+    q= 'พรชัย'
+    @docs = GmaDoc.all :conditions =>
+      ["content_type=? AND data_text LIKE ?", "output", "%#{q}%" ],
+      :order=>'gma_xmain_id DESC', :select=>'DISTINCT gma_xmain_id'
+    @xmains = GmaXmain.find @docs.map(&:gma_xmain_id)
+    render :text => debug(@xmains)
   end
   def test_timeout
     render :layout=>false
