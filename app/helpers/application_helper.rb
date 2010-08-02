@@ -3,6 +3,9 @@ module ApplicationHelper
   def home_page?
     request.path=='/'
   end
+  def currency(n)
+    number_to_currency(n,:unit=>'')
+  end
 
   def title(page_title, show_title = true)
     @content_for_title = page_title.to_s

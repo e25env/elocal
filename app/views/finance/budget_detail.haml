@@ -1,5 +1,11 @@
 %style
   td.num {text-align:right;}
+- if finance_office?
+  %div(style='float:right')
+    =image_tag 'add.png'
+    = link_to align_text('เพิ่มหมวด'), "/run/finance/add_cat?fy=#{params[:fy]}"
+    =image_tag 'add.png'
+    = link_to align_text('เพิ่มแผนงาน'), "/run/finance/add_plan?fy=#{params[:fy]}"
 %table{:class=>'budget_table', :width=>"100%"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
     %th หมวด / ประเภท
@@ -8,16 +14,20 @@
     %th ร้อยละ
   - @cats.each do |cat|
     %tr
-      %td= cat.name
-      %td(class='num')= cat.budget
-      %td(class='num')= cat.balance
-      %td(class='num')= "#{cat.budget==0 ? 0 : cat.balance/cat.budget}%"
+      %td
+        = cat.name
+        - if finance_office?
+          = image_tag 'add.png'
+          = link_to align_text('เพิ่มประเภท'), "/run/finance/add_ptype?fy=#{params[:fy]}&cat=#{cat.id}"
+      %td(class='num')= currency(cat.budget)
+      %td(class='num')= currency(cat.balance)
+      %td(class='num')= cat.budget==0 ? 0 : number_to_percentage(cat.balance/cat.budget*100, :precision=>0)
     - cat.ptypes.each do |ptype|
       %tr
         %td= '&nbsp;&nbsp; - '+ptype.name
-        %td(class='num')= ptype.budget
-        %td(class='num')= ptype.balance
-        %td(class='num')= "#{ptype.budget==0 ? 0 : ptype.balance/ptype.budget}%"
+        %td(class='num')= currency(ptype.budget)
+        %td(class='num')= currency(ptype.balance)
+        %td(class='num')= ptype.budget==0 ? 0 : number_to_percentage(ptype.balance/ptype.budget*100, :precision=>0)
 %table{:class=>'budget_table', :width=>"100%"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
     %th แผนงาน / งาน
@@ -26,13 +36,17 @@
     %th ร้อยละ
   - @plans.each do |plan|
     %tr
-      %td= plan.name
-      %td(class='num')= plan.budget
-      %td(class='num')= plan.balance
-      %td(class='num')= "#{plan.budget==0 ? 0 : plan.balance/plan.budget}%"
+      %td
+        = plan.name
+        - if finance_office?
+          = image_tag 'add.png'
+          = link_to align_text('เพิ่มงาน'), "/run/finance/add_task?fy=#{params[:fy]}&plan=#{plan.id}"
+      %td(class='num')= currency(plan.budget)
+      %td(class='num')= currency(plan.balance)
+      %td(class='num')= plan.budget==0 ? 0 : number_to_percentage(plan.balance/plan.budget*100, :precision=>0)
     - plan.tasks.each do |task|
       %tr
         %td= '&nbsp;&nbsp; - '+task.name
-        %td(class='num')= task.budget
-        %td(class='num')= task.balance
-        %td(class='num')= "#{task.budget==0 ? 0 : task.balance/task.budget}%"
+        %td(class='num')= currency(task.budget)
+        %td(class='num')= currency(task.balance)
+        %td(class='num')= task.budget==0 ? 0 : number_to_percentage(task.balance/task.budget*100, :precision=>0)

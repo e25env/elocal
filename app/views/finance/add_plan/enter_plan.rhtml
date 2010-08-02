@@ -1,13 +1,13 @@
 <%
-  y= fiscal_year
   plan = Plan.new
-  plan.fy = y
+  plan.fy = $xvars[:p][:fy]
 %>
 <% fields_for plan do |f| %>
   <table id="plan" width="100%">
+    <%= f.hidden_field :fy %>
     <tr>
       <td class="field-name">ปีงบประมาณ</td>
-      <td colspan="2"><%= f.select :fy, [y-1,y,y+1] %></td>
+      <td colspan="2"><%= plan.fy %></td>
     </tr>
     <tr>
       <td class="field-name">รหัสบัญชี</td>
