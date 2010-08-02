@@ -17,4 +17,14 @@ class FinanceController < ApplicationController
     ptype.budget= ptype.balance= 0
     ptype.save
   end
+  def create_plan
+    plan = Plan.new $xvars[:enter_plan][:plan]
+    plan.budget= plan.balance= 0
+    plan.save
+  end
+  def create_task
+    task = Task.new $xvars[:enter_task][:task]
+    task.budget= task.balance= 0
+    task.save
+  end
 end

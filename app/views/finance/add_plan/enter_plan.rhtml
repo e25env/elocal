@@ -1,0 +1,21 @@
+<%
+  y= fiscal_year
+  plan = Plan.new
+  plan.fy = y
+%>
+<% fields_for plan do |f| %>
+  <table id="plan" width="100%">
+    <tr>
+      <td class="field-name">ปีงบประมาณ</td>
+      <td colspan="2"><%= f.select :fy, [y-1,y,y+1] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รหัสบัญชี</td>
+      <td colspan="2"><%= f.text_field :code, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">แผนงาน</td>
+      <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
+    </tr>
+  </table>
+<% end %>

@@ -6,7 +6,6 @@
     %th งบประมาณ
     %th คงเหลือ
     %th ร้อยละ
-  - cat0_id = 0
   - @cats.each do |cat|
     %tr
       %td= cat.name
@@ -19,3 +18,21 @@
         %td(class='num')= ptype.budget
         %td(class='num')= ptype.balance
         %td(class='num')= "#{ptype.budget==0 ? 0 : ptype.balance/ptype.budget}%"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th แผนงาน / งาน
+    %th งบประมาณ
+    %th คงเหลือ
+    %th ร้อยละ
+  - @plans.each do |plan|
+    %tr
+      %td= plan.name
+      %td(class='num')= plan.budget
+      %td(class='num')= plan.balance
+      %td(class='num')= "#{plan.budget==0 ? 0 : plan.balance/plan.budget}%"
+    - plan.tasks.each do |task|
+      %tr
+        %td= '&nbsp;&nbsp; - '+task.name
+        %td(class='num')= task.budget
+        %td(class='num')= task.balance
+        %td(class='num')= "#{task.budget==0 ? 0 : task.balance/task.budget}%"
