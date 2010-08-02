@@ -4,7 +4,8 @@
       <% gma_module.gma_services.each do |s| %>
         <% next unless s.listed %>
         <% xml= REXML::Document.new(s.xml).root %>
-        <% rule= get_option_xml("rule", xml) %>
+        <% rule= get_option_xml("rule", xml.elements['node']) %>
+        <%# debugger %>
         <% next if rule && (!eval(rule)) %>
         <% role= get_option_xml("role", xml.elements['node']) %>
         <% next if role && ! current_user.role %>

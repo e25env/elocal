@@ -1,0 +1,21 @@
+%style
+  td.num {text-align:right;}
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th หมวด / ประเภท
+    %th งบประมาณ
+    %th คงเหลือ
+    %th ร้อยละ
+  - cat0_id = 0
+  - @cats.each do |cat|
+    %tr
+      %td= cat.name
+      %td(class='num')= cat.budget
+      %td(class='num')= cat.balance
+      %td(class='num')= "#{cat.budget==0 ? 0 : cat.balance/cat.budget}%"
+    - cat.ptypes.each do |ptype|
+      %tr
+        %td= '&nbsp;&nbsp; - '+ptype.name
+        %td(class='num')= ptype.budget
+        %td(class='num')= ptype.balance
+        %td(class='num')= "#{ptype.budget==0 ? 0 : ptype.balance/ptype.budget}%"

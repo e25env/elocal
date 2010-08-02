@@ -3,14 +3,20 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  helper_method :wwp_code, :dm, :dms, :valid_google_ad_script?
+  helper_method :fiscal_year
   # protect_from_forgery # See ActionController::RequestForgeryProtection for details
   geocode_ip_address
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
-
+  def fiscal_year(t=Time.now)
+    if (10..12).include? t.month
+      return t.year+544
+    else
+      return t.year+543
+    end
+  end
   private
   def mobile_device?
     request.user_agent =~ /Mobile|webOS/

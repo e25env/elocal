@@ -1,0 +1,26 @@
+<%
+  y= fiscal_year
+  ptype = Ptype.new
+  ptype.fy= y
+%>
+<% fields_for ptype do |f| %>
+  <table id="ptype" width="100%">
+    <tr>
+      <td class="field-name">ปีงบประมาณ</td>
+      <td colspan="2"><%= f.select :fy, [y-1,y,y+1] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมวด</td>
+      <% cats= Cat.all :conditions=>"fy=2553", :order=>'code' %>
+      <td colspan="2"><%= f.collection_select :cat_id, cats, :id, :name %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รหัสบัญชี</td>
+      <td colspan="2"><%= f.text_field :code, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมวด</td>
+      <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
+    </tr>
+  </table>
+<% end %>

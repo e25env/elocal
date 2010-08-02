@@ -1,0 +1,11 @@
+- t = Time.now
+- y= fiscal_year
+งบประมาณ
+= select_tag :fy, options_for_select([y-1,y,y+1], y)
+#budget
+:javascript
+  var animate = "<img src='/images/ajax-loader.gif' alt='loading...' />";
+  $('#fy').change(function() {
+    $('#budget').html(animate).load('/finance/budget_detail?fy='+$('#fy option:selected').val());
+  });
+  $('#budget').load('/finance/budget_detail?fy=#{y}');
