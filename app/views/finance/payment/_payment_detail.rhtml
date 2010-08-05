@@ -1,0 +1,36 @@
+<% fields_for "payment_detail[]", PaymentDetail.new do |f| %>
+  <table id="payment_detail" width="100%">
+    <tr>
+      <td class="field-name">ใบสำคัญ</td>
+      <td colspan="2"><%= f.text_field :doc, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำแหน่ง</td>
+      <td colspan="2"><%= f.text_field :position, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวนเงิน</td>
+      <td><%= f.text_field :amount, :style => "width:200px;" %></td>
+      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
+    </tr>
+    <tr>
+      <td class="field-name">ภาษีหัก ณ ที่จ่าย</td>
+      <td><%= f.text_field :deduct, :style => "width:200px;" %></td>
+      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
+    </tr>
+    <tr>
+      <td class="field-name">หัก ธ.ออมสิน</td>
+      <td><%= f.text_field :gsb, :style => "width:200px;" %></td>
+      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
+    </tr>
+    <tr>
+      <td class="field-name">หมายเหตุ</td>
+      <td colspan="2"><%= f.text_field :comment, :style => "width:200px;" %></td>
+    </tr>
+  </table>
+<% end %>
+<hr/>

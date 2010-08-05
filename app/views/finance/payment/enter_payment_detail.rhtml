@@ -1,0 +1,10 @@
+<div id="details">
+  <%= render :partial=>"finance/payment/payment_detail" %>
+</div>
+
+<%= link_to_function "เพิ่มรายการ", "append_detail()" %>
+<script type="text/javascript" >
+  function append_detail() {
+    $('#details').append("<%= escape_javascript(render(:partial=>"finance/payment/payment_detail")) %>")
+  }
+</script>

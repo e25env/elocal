@@ -11,5 +11,27 @@
   #output_link
     = link_to @runseq.name, url_for(:controller=>'engine', :action=>'document', :id=>@gma_doc.id), :target=>'_blank'
   %p
+  .label
+    = image_tag "cog.png"
+    เอกสารประกอบ
+  %table{:width=>"100%"}
+    %tr{:style=>"color:white; background-color:#6A6A6A;"}
+      %th เลขที่
+      %th เอกสาร
+      %th ชื่อไฟล์
+      %th ผู้ดำเนินการ
+      %th วันที่
+    - @xmain.gma_docs.each do |doc|
+      %tr
+        %td= doc.id
+        %td
+          - if doc.content_type=='output'
+            = image_tag 'page_output.png'
+          - else
+            = image_tag 'page_attach.png'
+          = link_to align_text(doc.name), "/engine/document/#{doc.id}", :target=>'_blank'
+        %td= doc.filename
+        %td= doc.gma_user.full_name
+        %td= date_thai doc.created_at
   = submit_tag @message
 %p

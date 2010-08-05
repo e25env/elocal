@@ -1,0 +1,43 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.2.3)
+    activesupport (2.3.8)
+    bson (1.0.4)
+    bson_ext (1.0.4)
+    geokit (1.5.0)
+    haml (3.0.13)
+    jnunemaker-validatable (1.8.4)
+      activesupport (>= 2.3.4)
+    linguistics (1.0.8)
+    mechanize (1.0.0)
+      nokogiri (>= 1.2.1)
+    mongo (1.0.5)
+      bson (>= 1.0.4)
+    mongo_mapper (0.8.2)
+      activesupport (>= 2.3.4)
+      jnunemaker-validatable (~> 1.8.4)
+      plucky (~> 0.3.1)
+    nokogiri (1.4.2)
+    pg (0.9.0)
+    plucky (0.3.2)
+      mongo (~> 1.0.1)
+    rmagick (2.13.1)
+    rubyzip (0.9.4)
+    will_paginate (2.3.14)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  RedCloth
+  bson_ext
+  geokit
+  haml
+  linguistics
+  mechanize
+  mongo_mapper
+  pg
+  rmagick
+  rubyzip
+  will_paginate

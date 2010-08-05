@@ -1,0 +1,153 @@
+<%
+  org = Org.find(1) rescue org= Org.new
+  payment = Payment.find @xvars[:payment_id]
+%>
+<%= stylesheet_link_tag "sarabun" %>
+<style type="text/css" >
+  table {
+    width:100%;
+    border-collapse: collapse;
+  }
+  td {
+    border:1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+</style>
+<h3 style="text-align:center">ฏีกาเบิกเงินตามงบประมาณ</h3>
+<table>
+  <tr>
+    <td colspan="4">
+      ส่วนราชการ: (1)
+      <%= b "#{org.otype}#{org.name}" %>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:33%;">
+      ปีงบประมาณ: (2)
+      <%= b payment.fy %>
+    </td>
+    <td colspan="2">
+      เลขที่ผู้เบิก: (3)
+      <%= b "ฏ#{payment.section.doc_code}" %>
+      <%= b "#{payment.num}/#{payment.fy}" %>
+    </td>
+    <td style="width:33%;">
+      เลขที่คลังรับ: (3)
+      <%= b "#{payment.finance_num}/#{payment.fy}" %>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:33%;">
+      แผนงาน: (5)
+      <%= b payment.plan.name %>
+    </td>
+    <td colspan="2">
+      งาน: (6)
+      <%= b payment.task.name %>
+    </td>
+    <td style="width:33%;">
+      วันที่คลังรับ: (7)
+      <%= b date_thai(payment.receive_on, :date_only=>true) %>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:33%;">
+      หมวด/ลักษณะ: (8)
+      <%= b payment.cat.name %>
+    </td>
+    <td colspan="3">
+      ประเภท: (9)
+      <%= b payment.ptype.name %>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:33%;text-align:center;">
+      รายการ
+    </td>
+    <td colspan="2" style="text-align:center;">
+      จำนวนเงิน
+    </td>
+    <td style="width:33%;text-align:center;">
+      หมายเหตุ
+    </td>
+  </tr>
+  <tr>
+    <td style="width:33%;vertical-align:top;">
+      มูลค่าสินค้า/บริการ (10)<br/>
+      <%= b 'บวก' %>: ภาษีมูลค่าเพิ่ม (11)<br/>
+      จำนวนเงินที่ขอเบิกทั้งสิ้น (12)<br/>
+      <%= b 'หัก' %>: ภาษีหัก ณ ที่จ่าย (13)<br/>
+      <%= nbsp 4 %> นำส่งธนาคารออมสิน (14)<p/>
+      จำนวนเงินที่รับสุทธิ (15)
+    </td>
+    <td style="vertical-align:top;text-align:right;">
+      <%= b num_baht(payment.amount) %><br/>
+      <%= b num_baht(payment.vat) %><br/>
+      <%= b num_baht(payment.total) %><br/>
+      <%= b num_baht(payment.deduct) %><br/>
+      <%= b num_baht(payment.gsb) %><p/>
+      <%= b num_baht(payment.net_amount) %>
+    </td>
+    <td style="width:40px;vertical-align:top;text-align:right;">
+      <%= b num_satang(payment.amount) %><br/>
+      <%= b num_satang(payment.vat) %><br/>
+      <%= b num_satang(payment.total) %><br/>
+      <%= b num_satang(payment.deduct) %><br/>
+      <%= b num_satang(payment.gsb) %><p/>
+      <%= b num_satang(payment.net_amount) %>
+    </td>
+    <td style="width:33%;vertical-align:top;">
+      <%= textilize payment.comment %>
+    </td>
+  </tr>
+  <tr>
+    <td colspan="4">
+      จำนวนเงินที่รับสุทธิ (ตัวอักษร)
+      <%= "( #{b thai_baht(payment.net_amount)} )" %>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:33%;text-align:center;vertical-align:top;">
+      หน่วยงาน
+      <%= b payment.section.name %>
+      ผู้เบิก<p/>
+      (ลงชื่อ)<%= '.'*50 %><br/>
+      (<%= nbsp 40 %>)<br/>
+      <%= '.'*50 %><br/>
+      วันที่ <%= '.'*50 %>
+    </td>
+    <td colspan="2" style="vertical-align:top;">
+      (13) งบประมาณคงเหลือ
+      <%= b to_currency(payment.budget) %> บาท<br/>
+      (14) หักเบิกจ่ายครั้งนี้แล้วคงเหลือ
+      <%= b to_currency(payment.net_budget) %> บาท<br/>
+      <div style="text-align:center;">
+        <p/>
+        <%= '.'*50 %> จนท.กง.บช.<br/>
+        (นางสาวธิติชญาณ์ เพ็ชรนพรัตน์)<br/>
+        นักวิชาการการเงินและบัญชี<br/>
+        วันที่ <%= '.'*50 %>
+      </div>
+    </td>
+    <td style="width:33%;text-align:center;">
+      ได้ตรวจสอบเอกสารประกอบฏีกาครบถ้วนถูกต้องแล้ว<br/>
+      <p/>
+      <%= '.'*50 %> ผู้ตรวจฏีกา<br/>
+      (นางอรุณรัตน์ พุ่มไสว)<br/>
+      หัวหน้าส่วนการคลัง<br/>
+      วันที่ <%= '.'*50 %>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:33%;text-align:center;vertical-align:top;">
+      รายการ
+    </td>
+    <td colspan="2" style="text-align:center;vertical-align:top;">
+      จำนวนเงิน
+    </td>
+    <td style="width:33%;text-align:center;vertical-align:top;">
+      หมายเหตุ
+    </td>
+  </tr>
+</table>

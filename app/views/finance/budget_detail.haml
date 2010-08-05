@@ -24,7 +24,10 @@
       %td(class='num')= cat.budget==0 ? 0 : number_to_percentage(cat.balance/cat.budget*100, :precision=>0)
     - cat.ptypes.each do |ptype|
       %tr
-        %td= '&nbsp;&nbsp; - '+ptype.name
+        %td
+          = '&nbsp;&nbsp; - '+ptype.name
+          - if finance_office?
+            = link_to image_tag('pencil.png'),"/run/finance/edit_ptype?ptype=#{ptype.id}"
         %td(class='num')= currency(ptype.budget)
         %td(class='num')= currency(ptype.balance)
         %td(class='num')= ptype.budget==0 ? 0 : number_to_percentage(ptype.balance/ptype.budget*100, :precision=>0)

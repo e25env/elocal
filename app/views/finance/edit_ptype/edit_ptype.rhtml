@@ -1,7 +1,5 @@
 <%
-  ptype = Ptype.new
-  ptype.fy= $xvars[:p][:fy]
-  ptype.cat_id= $xvars[:p][:cat]
+  ptype = Ptype.find @xvars[:p][:ptype]
 %>
 <% fields_for ptype do |f| %>
   <table id="ptype" width="100%">

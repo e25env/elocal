@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   helper_method :fiscal_year, :finance_office?
   # protect_from_forgery # See ActionController::RequestForgeryProtection for details
-  geocode_ip_address
+#  geocode_ip_address
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
