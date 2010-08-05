@@ -1,0 +1,13 @@
+<% bank = Bank.new %>
+<% fields_for bank do |f| %>
+  <table id="bank" width="100%">
+    <tr>
+      <td class="field-name">ธนาคาร</td>
+      <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">บัญชีเลขที่</td>
+      <td colspan="2"><%= f.text_field :account, :style => "width:400px;" %></td>
+    </tr>
+  </table>
+<% end %>
