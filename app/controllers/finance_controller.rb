@@ -38,6 +38,14 @@ class FinanceController < ApplicationController
     @plans = Plan.all :conditions=>"fy=#{params[:fy]}"
     render :layout=>false
   end
+  def budget_cat_detail
+    @cats = Cat.all :conditions=>"fy=#{params[:fy]}"
+    render :layout=>false
+  end
+  def budget_plan_detail
+    @plans = Plan.all :conditions=>"fy=#{params[:fy]}"
+    render :layout=>false
+  end
   def create_payment
     payment= Payment.new $xvars[:enter_payment][:payment]
     payment.fy= fiscal_year

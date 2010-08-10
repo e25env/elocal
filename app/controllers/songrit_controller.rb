@@ -7,6 +7,55 @@ class SongritController < ApplicationController
 #  require 'nokogiri'
 #  require 'mechanize'
 
+  def test_laas
+    ff=FireWatir::Firefox.new :waitTime=>4
+    ff.goto('http://www.laas.go.th/')
+    ff.text_field(:id,"_ctl0_txtUserName").set("abtbtnai714")
+    ff.text_field(:id,"_ctl0_txtPassword").set("318883")
+    ff.button(:name,"_ctl0:btnLogin").click
+    ff.goto('http://www.laas.go.th/Default.aspx?menu=514EE166-B162-412E-9A68-0B1C866DE50E&control=list')
+    ff.button(:name,'_ctl0:_ctl0:btnAdd').click # สร้างโครงการ
+    doc = Nokogiri::HTML(ff.html)
+    plans = doc.at_css('select')
+    # get plans
+    plans.css('option').each do |p|
+      next if p['value'].blank?
+      plan = Plan.create :name=>p['title'], :code=>p['value'],
+        :fy=>2553, :balance=>0, :budget=>0
+    end
+    # get tasks
+    Plan.all.each do |p|
+      url = "http://www.laas.go.th/DropDownService.asmx/GetExpExpenseJob?PlanID=#{p.code}"
+      doc = Nokogiri::XML(open(url))
+      doc.search('DropdownData').each do |t|
+        next if t.search('Value').text.blank?
+        Task.create :plan_id=>p.id, :name=>t.search('Text').text,
+          :code=>t.search('Value').text, :budget=>0, :balance=>0,
+          :fy=>2553
+      end
+    end
+    # get cats
+    cats= doc.at_css('#_ctl0__ctl0_usrPrjMGTForm_FbddlCategory_ddlMain')
+    cats.css('option').each do |p|
+      next if p['value'].blank?
+      cat = Cat.create :name=>p.text, :code=>p['value'],
+        :fy=>2553, :balance=>0, :budget=>0
+    end
+    # get ptypes
+    Cat.all.each do |p|
+      url = "http://www.laas.go.th/DropDownService.asmx/GetExpExpenseType?categoryID=#{p.code}"
+      doc = Nokogiri::XML(open(url))
+      doc.search('DropdownData').each do |t|
+        next if t.search('Value').text.blank?
+        Ptype.create :cat_id=>p.id, :name=>t.search('Text').text,
+          :code=>t.search('Value').text, :budget=>0, :balance=>0,
+          :fy=>2553
+      end
+    end
+ 
+    ff.close
+    render :text => 'hello'
+  end
   def test_search
     q= 'พรชัย'
     @docs = GmaDoc.all :conditions =>

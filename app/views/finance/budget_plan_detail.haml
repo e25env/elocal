@@ -1,0 +1,28 @@
+%style
+  td.num {text-align:right;}
+- if finance_office?
+  %div(style='float:right')
+    =image_tag 'add.png'
+    = link_to align_text('เพิ่มแผนงาน'), "/run/finance/add_plan?fy=#{params[:fy]}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th แผนงาน / งาน
+    %th งบประมาณ
+    %th คงเหลือ
+    %th ร้อยละ
+  - @plans.each do |plan|
+    %tr
+      %td
+        = plan.name
+        - if finance_office?
+          = image_tag 'add.png'
+          = link_to align_text('เพิ่มงาน'), "/run/finance/add_task?fy=#{params[:fy]}&plan=#{plan.id}"
+      %td(class='num')= currency(plan.budget)
+      %td(class='num')= currency(plan.balance)
+      %td(class='num')= plan.budget==0 ? 0 : number_to_percentage(plan.balance/plan.budget*100, :precision=>0)
+    - plan.tasks.each do |task|
+      %tr
+        %td= '&nbsp;&nbsp; - '+task.name
+        %td(class='num')= currency(task.budget)
+        %td(class='num')= currency(task.balance)
+        %td(class='num')= task.budget==0 ? 0 : number_to_percentage(task.balance/task.budget*100, :precision=>0)
