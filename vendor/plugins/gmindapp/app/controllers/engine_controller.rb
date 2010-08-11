@@ -188,10 +188,17 @@ class EngineController < ApplicationController
     if service
       f= "app/views/#{service.module}/#{service.code}/#{@runseq.code}.rhtml"
       @ui= File.read(f)
-      @gma_doc= GmaDoc.create :name=> @runseq.name,
-        :content_type=>"output", :data_text=> render_to_string(:inline=>@ui, :layout=>"utf8"),
-        :gma_xmain_id=>@xmain.id, :gma_runseq_id=>@runseq.id, :gma_user_id=>session[:user_id],
-        :ip=> get_ip, :gma_service_id=>service.id
+      if GmaDoc.exists? :gma_runseq_id=>@runseq.id
+        @gma_doc= GmaDoc.find_by_gma_runseq_id @runseq.id
+        GmaDoc.update @gma_doc.id, :data_text=> render_to_string(:inline=>@ui, :layout=>"utf8"),
+          :gma_xmain_id=>@xmain.id, :gma_runseq_id=>@runseq.id, :gma_user_id=>session[:user_id],
+          :ip=> get_ip, :gma_service_id=>service.id
+      else
+        @gma_doc= GmaDoc.create :name=> @runseq.name,
+          :content_type=>"output", :data_text=> render_to_string(:inline=>@ui, :layout=>"utf8"),
+          :gma_xmain_id=>@xmain.id, :gma_runseq_id=>@runseq.id, :gma_user_id=>session[:user_id],
+          :ip=> get_ip, :gma_service_id=>service.id
+      end
       @message = "ดำเนินการต่อ"
       @message = "สิ้นสุดการทำงาน" if @runseq.end
       eval "@xvars[:#{@runseq.code}] = url_for(:controller=>'engine', :action=>'document', :id=>@gma_doc.id)"
