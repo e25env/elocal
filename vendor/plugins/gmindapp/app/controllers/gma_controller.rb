@@ -4,6 +4,9 @@ class GmaController < ApplicationController
   helper :all # include all helpers, all the time
   before_filter :admin_action, :only => [:pending, :view_mm, :update_app, :delete_run_call_errors, :logs]
 
+  def git_pull
+    @t = exec_cmd("git pull").gsub("\n","<br/>")
+  end
   def logs
     @xmains= GmaXmain.paginate :per_page=>20, :page => params[:page] , :order=>"created_at DESC"
   end
