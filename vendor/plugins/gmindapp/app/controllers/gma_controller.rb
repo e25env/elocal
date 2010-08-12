@@ -7,6 +7,12 @@ class GmaController < ApplicationController
   def git_pull
     @t = exec_cmd("git pull").gsub("\n","<br/>")
   end
+  def db_push
+    @t= exec_cmd('heroku db:push postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force').gsub("\n","<br/>")
+  end
+  def db_pull
+    @t= exec_cmd('heroku db:pull postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force').gsub("\n","<br/>")
+  end
   def logs
     @xmains= GmaXmain.paginate :per_page=>20, :page => params[:page] , :order=>"created_at DESC"
   end

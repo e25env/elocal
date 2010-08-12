@@ -40,6 +40,10 @@
 <node CREATED="1273913393454" ID="ID_1088166839" MODIFIED="1278500854671" TEXT="link: pending transaction: /gma/pending"/>
 <node CREATED="1275698307377" ID="ID_940599341" MODIFIED="1278500863204" TEXT="link: process report: /gma/process_report"/>
 <node CREATED="1281608870255" ID="ID_1838687603" MODIFIED="1281609081264" TEXT="link: &#xe1b;&#xe23;&#xe31;&#xe1a;&#xe1b;&#xe23;&#xe38;&#xe07;&#xe23;&#xe30;&#xe1a;&#xe1a;&#xe07;&#xe32;&#xe19;: /gma/git_pull"/>
+<node CREATED="1281622393354" ID="ID_1716799184" MODIFIED="1281622450136" TEXT="link: &#xe2a;&#xe33;&#xe23;&#xe2d;&#xe07;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;: /gma/db_push"/>
+<node CREATED="1281622452231" ID="ID_622848092" MODIFIED="1281622469847" TEXT="link: &#xe40;&#xe23;&#xe35;&#xe22;&#xe01;&#xe01;&#xe25;&#xe31;&#xe1a;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;: /gma/db_pull">
+<node CREATED="1281622473039" ID="ID_729613885" MODIFIED="1281622475212" TEXT="confirm"/>
+</node>
 </node>
 <node CREATED="1273706796854" ID="ID_1003882979" MODIFIED="1281609056190" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
