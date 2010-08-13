@@ -8,6 +8,7 @@
 set :cron_log, "#{Rails.root}/log/cron.log"
 #
 every 1.days, :at=>"11:50pm" do
+  command "cd #{Rails.root} && heroku db:push postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force"
   command "shutdown now -P"
   #runner "AnotherModel.prune_old_records"
 end
