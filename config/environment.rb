@@ -58,7 +58,7 @@ Rails::Initializer.run do |config|
 #  config.time_zone = 'Bangkok'
   config.active_record.default_timezone = "Bangkok"
   THAI_MONTHS = %w(มกราคม กุมภาพันธ์ มีนาคม เมษายน พฤษภาคม มิถุนายน กรกฎาคม สิงหาคม กันยายน ตุลาคม พฤศจิกายน ธันวาคม)
-
+  APP_VERSION = '1.0'
   # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de

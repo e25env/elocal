@@ -33,12 +33,12 @@ class MainController < ApplicationController
   def err404
     gma_log 'ERROR', 'main/err404'
     flash[:notice] = "We're sorry, but something went wrong. We've been notified about this issue and we'll take a look at it shortly."
-    redirect_to root
+    redirect_to '/'
   end
   def err500
     gma_log 'ERROR', 'main/err500'
     flash[:notice] = "We're sorry, but something went wrong. We've been notified about this issue and we'll take a look at it shortly."
-    redirect_to root
+    redirect_to '/'
   end
 
   # ajax call to update modules menu and sidebar

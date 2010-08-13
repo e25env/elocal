@@ -4,9 +4,28 @@ class SongritController < ApplicationController
   require "csv"
   require "hpricot"
   require "open-uri"
-#  require 'nokogiri'
-#  require 'mechanize'
+  require 'nokogiri'
+  require 'mechanize'
 
+  def add_code_laas
+    Cat.all.each do |r|
+      r.code_laas= r.code
+      r.save
+    end
+    Ptype.all.each do |r|
+      r.code_laas= r.code
+      r.save
+    end
+    Plan.all.each do |r|
+      r.code_laas= r.code
+      r.save
+    end
+    Task.all.each do |r|
+      r.code_laas= r.code
+      r.save
+    end
+    render :text=>"done"
+  end
   def test_laas
     ff=FireWatir::Firefox.new :waitTime=>4
     ff.goto('http://www.laas.go.th/')

@@ -12,7 +12,9 @@ class AdminController < ApplicationController
     @t << exec_cmd("rake db:migrate").gsub("\n","<br/>")
     @t << "<hr/>"
     @t << "<b>db:pull</b><br/>"
-    @t << exec_cmd("heroku db:pull postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force --tables gma_modules,gma_services").gsub("\n","<br/>")
+    h = "heroku db:pull postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force --tables"
+    @t << exec_cmd("#{h} gma_modules,gma_services").gsub("\n","<br/>")
+    @t << exec_cmd("#{h} cats,ptypes,plans,tasks").gsub("\n","<br/>")
     @t << exec_cmd("touch tmp/restart.txt").gsub("\n","<br/>")
     @t << "<hr/>"
   end
