@@ -52,7 +52,7 @@ class SongritController < ApplicationController
           :fy=>2553
       end
     end
- 
+
     ff.close
     render :text => 'hello'
   end

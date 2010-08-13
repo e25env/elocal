@@ -37,9 +37,9 @@
 </node>
 </node>
 <node CREATED="1275790679363" ID="ID_829325467" MODIFIED="1278500851145" TEXT="link: logs: /gma/logs"/>
-<node CREATED="1273913393454" ID="ID_1088166839" MODIFIED="1278500854671" TEXT="link: pending transaction: /gma/pending"/>
-<node CREATED="1275698307377" ID="ID_940599341" MODIFIED="1278500863204" TEXT="link: process report: /gma/process_report"/>
-<node CREATED="1281608870255" ID="ID_1838687603" MODIFIED="1281609081264" TEXT="link: &#xe1b;&#xe23;&#xe31;&#xe1a;&#xe1b;&#xe23;&#xe38;&#xe07;&#xe23;&#xe30;&#xe1a;&#xe1a;&#xe07;&#xe32;&#xe19;: /gma/git_pull"/>
+<node CREATED="1273913393454" ID="ID_1088166839" MODIFIED="1281688801803" TEXT="link: &#xe07;&#xe32;&#xe19;&#xe17;&#xe35;&#xe48;&#xe2d;&#xe22;&#xe39;&#xe48;&#xe23;&#xe30;&#xe2b;&#xe27;&#xe48;&#xe32;&#xe07;&#xe01;&#xe32;&#xe23;&#xe17;&#xe33;&#xe07;&#xe32;&#xe19;: /gma/pending"/>
+<node CREATED="1275698307377" ID="ID_940599341" MODIFIED="1281688786759" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe01;&#xe32;&#xe23;&#xe1b;&#xe0f;&#xe34;&#xe1a;&#xe31;&#xe15;&#xe34;&#xe07;&#xe32;&#xe19;: /gma/process_report"/>
+<node CREATED="1281608870255" ID="ID_1838687603" MODIFIED="1281688763292" TEXT="link: &#xe1b;&#xe23;&#xe31;&#xe1a;&#xe1b;&#xe23;&#xe38;&#xe07;&#xe23;&#xe30;&#xe1a;&#xe1a;&#xe07;&#xe32;&#xe19;: /admin/git_pull"/>
 </node>
 <node CREATED="1273706796854" ID="ID_1003882979" MODIFIED="1281609056190" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
@@ -48,7 +48,7 @@
 <node CREATED="1275447796625" ID="ID_1998592758" MODIFIED="1278500842216" TEXT="link: statistics: /admin/stat"/>
 <node CREATED="1276986518055" ID="ID_1184016852" MODIFIED="1276986529980" TEXT="link: exceptions: /e"/>
 <node CREATED="1275788317299" ID="ID_716276608" MODIFIED="1278500859677" TEXT="link: run_call errors: /gma/run_call_errors"/>
-<node CREATED="1281681992475" ID="ID_757791014" MODIFIED="1281682023138" TEXT="link: push modules/services:/gma/db_push_ms"/>
+<node CREATED="1281681992475" ID="ID_757791014" MODIFIED="1281688867788" TEXT="link: push modules/services:/admin/db_push_ms"/>
 <node CREATED="1275670141007" ID="ID_1522864412" MODIFIED="1278500866922" TEXT="link:!!! destroy gma: /admin/destroy_gma">
 <node CREATED="1276157211697" ID="ID_1614782227" MODIFIED="1276157244254" TEXT="confirm"/>
 </node>

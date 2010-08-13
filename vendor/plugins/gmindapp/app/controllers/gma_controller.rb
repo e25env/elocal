@@ -4,24 +4,6 @@ class GmaController < ApplicationController
   helper :all # include all helpers, all the time
   before_filter :admin_action, :only => [:pending, :view_mm, :update_app, :delete_run_call_errors, :logs]
 
-  def git_pull
-    @t = "<b>git pull</b><br/>"
-    @t = exec_cmd("git pull").gsub("\n","<br/>")
-    @t << "<hr/>"
-    @t << "<b>gems:install</b><br/>"
-    @t << exec_cmd("rake gems:install").gsub("\n","<br/>")
-    @t << "<hr/>"
-    @t << "<b>db:migrate</b><br/>"
-    @t << exec_cmd("rake db:migrate").gsub("\n","<br/>")
-    @t << "<hr/>"
-    @t << "<b>db:pull</b><br/>"
-    @t << exec_cmd("heroku db:pull postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force --tables gma_modules,gma_services").gsub("\n","<br/>")
-    @t << exec_cmd("touch tmp/restart.txt").gsub("\n","<br/>")
-    @t << "<hr/>"
-  end
-  def db_push_ms
-    @t= exec_cmd('heroku db:push postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force --tables gma_modules,gma_services').gsub("\n","<br/>")
-  end
   def logs
     @xmains= GmaXmain.paginate :per_page=>20, :page => params[:page] , :order=>"created_at DESC"
   end
