@@ -15,3 +15,4 @@ mongo_mapper
 bson_ext
 firewatir
 chronic
+javan-whenever --source http://gems.github.com
