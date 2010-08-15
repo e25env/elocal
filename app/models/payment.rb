@@ -5,4 +5,7 @@ class Payment < ActiveRecord::Base
   belongs_to :task
   belongs_to :cat
   belongs_to :ptype
+  belongs_to :requester, :class_name=>'User'
+  belongs_to :budgeter, :class_name=>'User'
+  belongs_to :inspector, :class_name=>'User'
 end

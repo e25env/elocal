@@ -7,6 +7,13 @@ class SongritController < ApplicationController
   require 'nokogiri'
   require 'mechanize'
 
+  # set up new lao
+  def set_up
+    # create anonymous user
+    # create org
+    # view 'update User class methods'
+  end
+
   def add_code_laas
     Cat.all.each do |r|
       r.code_laas= r.code

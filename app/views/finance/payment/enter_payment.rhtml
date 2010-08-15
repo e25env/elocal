@@ -4,6 +4,7 @@ payment = Payment.new
 payment.fy = y
 payment.finance_num = songrit "payment_#{y}",1
 payment.law_moi_year = 2547
+payment.law_moi_item = 52
 %>
 <% fields_for payment do |f| %>
   <table id="doc" width="100%">
@@ -83,6 +84,35 @@ payment.law_moi_year = 2547
       <td>&nbsp;</td>
     </tr>
     <tr>
+      <td class="field-name">ผู้เบิก</td>
+      <td><%= f.collection_select :requester_id, User.all, :id, :full_name %></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำแหน่ง</td>
+      <td colspan='2'><%= f.text_field :requester_position, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ผู้ตรวจสอบ งป.</td>
+      <td><%= f.collection_select :budgeter_id, User.finance, :id, :full_name %></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำแหน่ง</td>
+      <td colspan='2'><%= f.text_field :budgeter_position, :style => "width:400px;" %></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="field-name">ผู้ตรวจสอบ</td>
+      <td><%= f.collection_select :inspector_id, User.finance, :id, :full_name %></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำแหน่ง</td>
+      <td colspan='2'><%= f.text_field :inspector_position, :style => "width:400px;" %></td>
+      <td>&nbsp;</td>
+    </tr>
+    <tr>
       <td class="field-name">ธนาคาร</td>
       <td><%= f.collection_select :bank_id, Bank.all, :id, :full_name %></td>
       <td>&nbsp;</td>
@@ -117,4 +147,29 @@ payment.law_moi_year = 2547
   $('#payment_ptype_id').change(function() {
     $('#balance').html(animate).load('/finance/get_balance?ptype='+$('#payment_ptype_id option:selected').val())
   })
+  $(function() {
+    id=$('#payment_requester_id').val();
+    $('#payment_requester_position').val($('position[id='+id+']').attr('pos'));
+    id=$('#payment_budgeter_id').val();
+    $('#payment_budgeter_position').val($('position[id='+id+']').attr('pos'));
+    id=$('#payment_inspector_id').val();
+    $('#payment_inspector_position').val($('position[id='+id+']').attr('pos'));
+    $('#payment_requester_id').change(function() {
+      id=$('#payment_requester_id').val();
+      $('#payment_requester_position').val($('position[id='+id+']').attr('pos'));
+    })
+    $('#payment_budgeter_id').change(function() {
+      id=$('#payment_budgeter_id').val();
+      $('#payment_budgeter_position').val($('position[id='+id+']').attr('pos'));
+    })
+    $('#payment_inspector_id').change(function() {
+      id=$('#payment_inspector_id').val();
+      $('#payment_inspector_position').val($('position[id='+id+']').attr('pos'));
+    })
+  })
 </script>
+<positions>
+  <% User.all.each do |u| %>
+    <position id='<%= u.id %>' pos='<%= u.position %>'/>
+  <% end %>
+</positions>

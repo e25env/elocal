@@ -14,7 +14,7 @@ class AdminController < ApplicationController
     @t << "<b>db:pull</b><br/>"
     h = "heroku db:pull postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force --tables"
     @t << exec_cmd("#{h} gma_modules,gma_services").gsub("\n","<br/>")
-    @t << exec_cmd("#{h} cats,ptypes,plans,tasks").gsub("\n","<br/>")
+    #@t << exec_cmd("#{h} cats,ptypes,plans,tasks").gsub("\n","<br/>")
     @t << exec_cmd("touch tmp/restart.txt").gsub("\n","<br/>")
     @t << "<hr/>"
   end

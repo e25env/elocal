@@ -14,10 +14,12 @@
     padding-right: 5px;
   }
 </style>
-<h3 style="text-align:center">ฏีกาเบิกเงินตามงบประมาณ</h3>
 <table>
   <tr>
     <td colspan="4">
+      <div style="text-align:center;font-size:120%;">
+        <%= b "ฎีกาเบิกเงินตามงบประมาณ" %>
+      </div>
       ส่วนราชการ: (1)
       <%= b "#{org.otype}#{org.name}" %>
     </td>
@@ -29,11 +31,11 @@
     </td>
     <td colspan="2">
       เลขที่ผู้เบิก: (3)
-      <%= b "ฏ#{payment.section.doc_code}" %>
+      <%= b "ฎ#{payment.section.doc_code}" %>
       <%= b "#{payment.num}/#{payment.fy}" %>
     </td>
     <td style="width:33%;">
-      เลขที่คลังรับ: (3)
+      เลขที่คลังรับ: (4)
       <%= b "#{payment.finance_num}/#{payment.fy}" %>
     </td>
   </tr>
@@ -112,9 +114,10 @@
       หน่วยงาน
       <%= b payment.section.name %>
       ผู้เบิก<p/>
+      &nbsp;<br/>
       (ลงชื่อ)<%= '.'*50 %><br/>
-      (<%= nbsp 40 %>)<br/>
-      <%= '.'*50 %><br/>
+      (<%= b payment.requester.full_name %>)<br/>
+      <%= b payment.requester_position %><br/>
       วันที่ <%= '.'*50 %>
     </td>
     <td colspan="2" style="vertical-align:top;">
@@ -125,20 +128,71 @@
       <div style="text-align:center;">
         <p/>
         <%= '.'*50 %> จนท.กง.บช.<br/>
-        (นางสาวธิติชญาณ์ เพ็ชรนพรัตน์)<br/>
-        นักวิชาการการเงินและบัญชี<br/>
+        (<%= b payment.budgeter.full_name %>)<br/>
+        <%= b payment.budgeter_position %><br/>
+                วันที่ <%= '.'*50 %>
+      </div>
+    </td>
+    <td style="width:33%;text-align:center;vertical-align:top;">
+      ได้ตรวจสอบเอกสารประกอบฏีกาครบถ้วนถูกต้องแล้ว<br/>
+      <p/>
+      &nbsp;<br/>
+      <%= '.'*50 %> ผู้ตรวจฏีกา<br/>
+      (<%= b payment.inspector.full_name %>)<br/>
+      <%= b payment.inspector_position %><br/>
+           วันที่ <%= '.'*50 %>
+    </td>
+  </tr>
+  <tr>
+    <td style="width:33%;vertical-align:top;">
+      <%= b "เรียน ปลัด" %>
+      <%= b org.otype_abbrev %>
+      <%= b org.name %><br/>
+      <div style='text-align:center'>
+        เห็นควรให้เบิกจ่ายได้<br/>
+        จำนวนเงิน ... <%= b to_currency(payment.net_amount) %> ... บาท<p/>
+        (ลงชื่อ)<%= '.'*50 %><br/>
+        <% finance_head= User.finance_head %>
+        (<%= b finance_head.full_name %>)<br/>
+        <%= b finance_head.position %><br/>
         วันที่ <%= '.'*50 %>
       </div>
     </td>
-    <td style="width:33%;text-align:center;">
-      ได้ตรวจสอบเอกสารประกอบฏีกาครบถ้วนถูกต้องแล้ว<br/>
-      <p/>
-      <%= '.'*50 %> ผู้ตรวจฏีกา<br/>
-      (นางอรุณรัตน์ พุ่มไสว)<br/>
-      หัวหน้าส่วนการคลัง<br/>
+    <td colspan="2" style="vertical-align:top;">
+      <%= b "เรียน ผู้บริหารท้องถิ่น" %>
+      <div style='text-align:center'>
+        เห็นควรอนุมัติให้เบิกจ่ายได้<br/>
+        จำนวนเงิน ... <%= b to_currency(payment.net_amount) %> ... บาท<p/>
+        (ลงชื่อ)<%= '.'*50 %><br/>
+        <% palat= User.palat %>
+        (<%= b palat.full_name %>)<br/>
+        <%= b palat.position %><br/>
+        วันที่ <%= '.'*50 %>
+      </div>
+    </td>
+    <td style="width:33%;text-align:center;vertical-align:top;">
+      <%= b "อนุมัติให้เบิกจ่ายได้" %><br/>
+      จำนวนเงิน ... <%= b to_currency(payment.net_amount) %> ... บาท<p/>
+      &nbsp;<br/>
+      (ลงชื่อ)<%= '.'*50 %><br/>
+      <% mayor= User.mayor %>
+      (<%= b mayor.full_name %>)<br/>
+      <%= b mayor.position %><br/>
       วันที่ <%= '.'*50 %>
     </td>
   </tr>
+  <tr>
+    <td colspan="3" style="vertical-align:top;">
+      ธนาคาร
+    </td>
+    <td style="width:33%;text-align:center;vertical-align:top;">
+      <%= b "ผู้มีอำนาจลงนามในใบถอน/เช็คธนาคาร" %><p/>
+      (ลงชื่อ) <%= '.'*50 %> ผู้ลงนาม<p/>
+      (ลงชื่อ) <%= '.'*50 %> ผู้ลงนาม<p/>
+      (ลงชื่อ) <%= '.'*50 %> ผู้ลงนาม
+    </td>
+  </tr>
+  <tr><td colspan='4' style='text-align:center;font-size:120%;'><%= b "หลักฐานการเบิกจ่ายเงิน" %></td></tr>
   <tr>
     <td style="width:33%;text-align:center;vertical-align:top;">
       รายการ
