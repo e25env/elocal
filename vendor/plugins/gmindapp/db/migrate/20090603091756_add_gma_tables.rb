@@ -83,9 +83,6 @@ class AddGmaTables < ActiveRecord::Migration
       t.datetime "updated_at"
     end
 
-    add_index "gma_runseqs", ["code"], :name => "code"
-    add_index "gma_runseqs", ["gma_xmain_id"], :name => "xmain"
-
     create_table "gma_services", :force => true do |t|
       t.string   "module"
       t.string   "code"
@@ -179,6 +176,14 @@ class AddGmaTables < ActiveRecord::Migration
 
     add_index :sessions, :session_id
     add_index :sessions, :updated_at
+    add_index :gma_docs, :gma_xmain_id
+    add_index :gma_docs, :gma_runseq_id
+    add_index :gma_docs, :gma_service_id
+    add_index :gma_runseqs, :code
+    add_index :gma_runseqs, :gma_xmain_id
+    add_index :gma_services, :gma_module_id
+    add_index :gma_songrits, :code
+    add_index :gma_users, :section_id
   end
 
   def self.down

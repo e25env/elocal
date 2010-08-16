@@ -1,6 +1,7 @@
 <%
-  org = Org.find(1) rescue org= Org.new
-  payment = Payment.find @xvars[:payment_id]
+org = Org.find(1) rescue org= Org.new
+payment = Payment.find @xvars[:payment_id]
+bank = payment.bank
 %>
 <%= stylesheet_link_tag "sarabun" %>
 <style type="text/css" >
@@ -130,7 +131,7 @@
         <%= '.'*50 %> จนท.กง.บช.<br/>
         (<%= b payment.budgeter.full_name %>)<br/>
         <%= b payment.budgeter_position %><br/>
-                วันที่ <%= '.'*50 %>
+        วันที่ <%= '.'*50 %>
       </div>
     </td>
     <td style="width:33%;text-align:center;vertical-align:top;">
@@ -140,7 +141,7 @@
       <%= '.'*50 %> ผู้ตรวจฏีกา<br/>
       (<%= b payment.inspector.full_name %>)<br/>
       <%= b payment.inspector_position %><br/>
-           วันที่ <%= '.'*50 %>
+      วันที่ <%= '.'*50 %>
     </td>
   </tr>
   <tr>
@@ -184,6 +185,19 @@
   <tr>
     <td colspan="3" style="vertical-align:top;">
       ธนาคาร
+      <%= b bank.name %>
+      บัญชีเลขที่
+      <%= b bank.account %><p/>
+      เลขที่เช็ค
+      <%= '.'*50 %>
+      ลงวันที่
+      <%= '.'*50 %><br/>
+      จำนวนเงิน
+      <%= b payment.net_amount %>
+      บาท
+      ( <%= b thai_baht(payment.net_amount) %> )<br/>
+      จ่ายให้
+      <%= b payment.payable %>
     </td>
     <td style="width:33%;text-align:center;vertical-align:top;">
       <%= b "ผู้มีอำนาจลงนามในใบถอน/เช็คธนาคาร" %><p/>
@@ -194,14 +208,26 @@
   </tr>
   <tr><td colspan='4' style='text-align:center;font-size:120%;'><%= b "หลักฐานการเบิกจ่ายเงิน" %></td></tr>
   <tr>
-    <td style="width:33%;text-align:center;vertical-align:top;">
-      รายการ
+    <td colspan="2" style="width:33%;text-align:center;vertical-align:top;">
+      ได้รับเงินจำนวน
+      <%= b payment.net_amount %> บาท<p/>
+      <%= b "ตามใบสำคัญรับเงิน" %> ผู้รับเงิน<br/>
+      ( <%= payment.payable %> )<br/>
+      วันที่
+      <%= '.'*50 %>
     </td>
-    <td colspan="2" style="text-align:center;vertical-align:top;">
-      จำนวนเงิน
-    </td>
-    <td style="width:33%;text-align:center;vertical-align:top;">
-      หมายเหตุ
+    <td colspan="2" style="width:33%;vertical-align:top;">
+      <%= b "ผู้จ่ายเงิน:" %>
+      <div style="text-align:center;">
+        <%= '.'*50 %> ผู้จ่ายเงิน<br/>
+        ( <%= finance_head.full_name %> )<br/>
+        <%= finance_head.position %><br/>
+        วันที่ <%= '.'*50 %>
+      </div>
     </td>
   </tr>
 </table>
+<div style="page-break-after:always;" />
+<h3>งบรายละเอียดสำคัญประกอบฎีกา</h3>
+<%= org.otype %>
+<%= b org.name %>
