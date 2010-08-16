@@ -22,6 +22,7 @@
       %th ผู้ดำเนินการ
       %th วันที่
     - @xmain.gma_docs.each do |doc|
+      - next unless doc.display
       %tr
         %td= doc.id
         %td

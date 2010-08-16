@@ -11,6 +11,7 @@ class AddGmaTables < ActiveRecord::Migration
       t.integer  "gma_user_id"
       t.integer  "gma_service_id"
       t.text     "ip"
+      t.boolean  "display"
       t.datetime "created_at"
       t.datetime "updated_at"
     end

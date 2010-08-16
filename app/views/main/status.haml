@@ -53,6 +53,7 @@
     %th ผู้ดำเนินการ
     %th วันที่
   - @xmain.gma_docs.each do |doc|
+    - next unless doc.display
     %tr
       %td
         - if doc.content_type=='output'

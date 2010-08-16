@@ -43,6 +43,8 @@ class AdminController < ApplicationController
     GmaRunseq.destroy_all
     GmaDoc.destroy_all
     GmaSearch.destroy_all
+    ActiveRecord::SessionStore::Session.destroy_all(
+      ['updated_at < ?', 40.minutes.ago.utc])
     redirect_to "/admin/stat"
   end
 

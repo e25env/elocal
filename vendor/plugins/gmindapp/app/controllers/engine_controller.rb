@@ -100,7 +100,7 @@ class EngineController < ApplicationController
     @gma_doc= GmaDoc.create :name=> @runseq.name,
       :content_type=>"temp", :data_text=> data_text,
       :gma_xmain_id=>@xmain.id, :gma_runseq_id=>@runseq.id, :gma_user_id=>session[:user_id],
-      :ip=> get_ip, :gma_service_id=>@xmain.gma_service_id
+      :ip=> get_ip, :gma_service_id=>@xmain.gma_service_id, :display=>true
     digest= EzCrypto::Digester.digest64(data_text)
     digest.gsub!(' ','%20')
     digest.gsub!('+','%2B')
@@ -155,7 +155,8 @@ class EngineController < ApplicationController
       :gma_runseq_id=> @runseq.id,
       :filename=> params.original_filename,
       :content_type => params.content_type || 'application/zip',
-      :data_text=> upload.id.to_s)
+      :data_text=> upload.id.to_s,
+      :display=>true)
 #    path = defined?(IMAGE_LOCATION) ? IMAGE_LOCATION : "tmp"
 #    File.open("#{path}/f#{doc.id}","wb") { |f|
 #      f.puts(params.read)
@@ -173,7 +174,8 @@ class EngineController < ApplicationController
       :gma_runseq_id=> @runseq.id,
       :filename=> params.original_filename,
       :content_type => params.content_type || 'application/zip',
-      :data_text=> upload.id.to_s)
+      :data_text=> upload.id.to_s,
+      :display=>true)
 #    path = defined?(IMAGE_LOCATION) ? IMAGE_LOCATION : "tmp"
 #    File.open("#{path}/f#{doc.id}","wb") { |f|
 #      f.puts(params.read)
@@ -185,6 +187,8 @@ class EngineController < ApplicationController
   def run_output
     init_vars(params[:id])
     service= @xmain.gma_service
+    disp= get_option("display")
+    display = (disp && !affirm(disp)) ? false : true
     if service
       f= "app/views/#{service.module}/#{service.code}/#{@runseq.code}.rhtml"
       @ui= File.read(f)
@@ -192,12 +196,12 @@ class EngineController < ApplicationController
         @gma_doc= GmaDoc.find_by_gma_runseq_id @runseq.id
         GmaDoc.update @gma_doc.id, :data_text=> render_to_string(:inline=>@ui, :layout=>"utf8"),
           :gma_xmain_id=>@xmain.id, :gma_runseq_id=>@runseq.id, :gma_user_id=>session[:user_id],
-          :ip=> get_ip, :gma_service_id=>service.id
+          :ip=> get_ip, :gma_service_id=>service.id, :display=>display
       else
         @gma_doc= GmaDoc.create :name=> @runseq.name,
           :content_type=>"output", :data_text=> render_to_string(:inline=>@ui, :layout=>"utf8"),
           :gma_xmain_id=>@xmain.id, :gma_runseq_id=>@runseq.id, :gma_user_id=>session[:user_id],
-          :ip=> get_ip, :gma_service_id=>service.id
+          :ip=> get_ip, :gma_service_id=>service.id, :display=>display
       end
       @message = "ดำเนินการต่อ"
       @message = "สิ้นสุดการทำงาน" if @runseq.end
@@ -206,8 +210,8 @@ class EngineController < ApplicationController
       flash[:notice]= "ไม่สามารถค้นหาบริการที่ต้องการได้"
       redirect_to_root
     end
-    display= get_option("display")
-    if display && !affirm(display)
+    #display= get_option("display")
+    unless display
       end_action
     end
   end
@@ -258,7 +262,7 @@ class EngineController < ApplicationController
     @gma_doc= GmaDoc.create :name=> @runseq.name,
       :content_type=>"output", :data_text=> render_to_string(:inline=>@ui, :layout=>"utf8"),
       :gma_xmain_id=>@xmain.id, :gma_runseq_id=>@runseq.id, :gma_user_id=>session[:user_id],
-      :ip=> get_ip, :gma_service_id=>service.id
+      :ip=> get_ip, :gma_service_id=>service.id, :display=>true
     eval "@xvars[:#{@runseq.code}] = url_for(:controller=>'engine', :action=>'document', :id=>@gma_doc.id)"
     sender= render_to_string(:inline=>get_option('from'))
     recipients= render_to_string(:inline=>get_option('to'))
