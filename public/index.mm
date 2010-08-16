@@ -41,14 +41,14 @@
 <node CREATED="1275698307377" ID="ID_940599341" MODIFIED="1281688786759" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe01;&#xe32;&#xe23;&#xe1b;&#xe0f;&#xe34;&#xe1a;&#xe31;&#xe15;&#xe34;&#xe07;&#xe32;&#xe19;: /gma/process_report"/>
 <node CREATED="1281608870255" ID="ID_1838687603" MODIFIED="1281688763292" TEXT="link: &#xe1b;&#xe23;&#xe31;&#xe1a;&#xe1b;&#xe23;&#xe38;&#xe07;&#xe23;&#xe30;&#xe1a;&#xe1a;&#xe07;&#xe32;&#xe19;: /admin/git_pull"/>
 </node>
-<node CREATED="1273706796854" FOLDED="true" ID="ID_1003882979" MODIFIED="1281744446653" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe23;&#xe30;&#xe1a;&#xe1a;">
+<node CREATED="1273706796854" ID="ID_1003882979" MODIFIED="1281964904133" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
 <node CREATED="1273706824535" ID="ID_682167045" MODIFIED="1278500871367" TEXT="link: update app: /gma/update_app"/>
+<node CREATED="1281681992475" ID="ID_757791014" MODIFIED="1281688867788" TEXT="link: push modules/services:/admin/db_push_ms"/>
 <node CREATED="1273706854639" ID="ID_1481857171" MODIFIED="1278500875816" TEXT="link: mind map: /gma/view_mm"/>
 <node CREATED="1275447796625" ID="ID_1998592758" MODIFIED="1278500842216" TEXT="link: statistics: /admin/stat"/>
 <node CREATED="1276986518055" ID="ID_1184016852" MODIFIED="1276986529980" TEXT="link: exceptions: /e"/>
 <node CREATED="1275788317299" ID="ID_716276608" MODIFIED="1278500859677" TEXT="link: run_call errors: /gma/run_call_errors"/>
-<node CREATED="1281681992475" ID="ID_757791014" MODIFIED="1281688867788" TEXT="link: push modules/services:/admin/db_push_ms"/>
 <node CREATED="1275670141007" ID="ID_1522864412" MODIFIED="1278500866922" TEXT="link:!!! destroy gma: /admin/destroy_gma">
 <node CREATED="1276157211697" ID="ID_1614782227" MODIFIED="1276157244254" TEXT="confirm"/>
 </node>
@@ -134,6 +134,11 @@
 <icon BUILTIN="pencil"/>
 <node CREATED="1279986897937" ID="ID_1544222728" MODIFIED="1279986900182" TEXT="role:co"/>
 <node CREATED="1280522482831" ID="ID_715221681" MODIFIED="1280522504233" TEXT="rule:$user.section_id==$xvars[:section_id]"/>
+</node>
+<node CREATED="1279986874485" ID="ID_1183378523" MODIFIED="1279986895584" TEXT="scan: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe2a;&#xe41;&#xe01;&#xe19;">
+<icon BUILTIN="attach"/>
+<node CREATED="1279986901801" ID="ID_1195800511" MODIFIED="1279986904269" TEXT="role:co"/>
+<node CREATED="1280522482831" ID="ID_399576949" MODIFIED="1280522504233" TEXT="rule:$user.section_id==$xvars[:section_id]"/>
 </node>
 </node>
 </node>
