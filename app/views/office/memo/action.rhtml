@@ -12,7 +12,7 @@
 </span>
 <b>เรื่อง</b> <%= doc.subject %>
 <% if doc.dscan %>
-  <b>สิ่งที่ส่งมาด้วย</b> <%= link_to image_tag("page_attach.png")+align_text("เอกสารสแกน"), doc.dscan, :target=>'_blank' %>
+  <br/><b>สิ่งที่ส่งมาด้วย</b> <%= link_to image_tag("page_attach.png")+align_text("เอกสารสแกน"), doc.dscan, :target=>'_blank' %>
 <% end %>
 <hr />
 <b>เรียน</b> <%= doc.dto %>
