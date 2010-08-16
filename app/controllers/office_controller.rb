@@ -20,6 +20,8 @@ class OfficeController < ApplicationController
     doc.save
     $xvars[:doc_id]= doc.id
     $xvars[:action]= {:assign=>$xvars[:new][:assign]}
+    u = User.find $user_id
+    $xvars[:section_id] = u.section_id
   end
   def save_comment
     comment = Comment.create(:content=>$xvars[:action][:comment], :gma_xmain_id=>$xmain.id)

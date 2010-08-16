@@ -62,8 +62,8 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1281414901243" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
-<node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1281353955245" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
+<node CREATED="1279397496008" ID="ID_587395922" MODIFIED="1281961462335" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
+<node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1281964014177" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
 <node CREATED="1279398102937" ID="ID_1911892960" MODIFIED="1279398128306" TEXT="role:co"/>
@@ -97,7 +97,7 @@
 <node CREATED="1280522482831" ID="ID_236249752" MODIFIED="1280522504233" TEXT="rule:$user.section_id==$xvars[:section_id]"/>
 </node>
 </node>
-<node CREATED="1279397887479" ID="ID_522235803" MODIFIED="1280602046112" TEXT="doc_out: &#xe2a;&#xe48;&#xe07;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
+<node CREATED="1279397887479" FOLDED="true" ID="ID_522235803" MODIFIED="1281963546651" TEXT="doc_out: &#xe2a;&#xe48;&#xe07;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279400010372" ID="ID_1625796057" MODIFIED="1280189817211" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe2a;&#xe48;&#xe07;">
 <icon BUILTIN="attach"/>
 <node CREATED="1279398102937" ID="ID_729314033" MODIFIED="1279398128306" TEXT="role:co"/>
@@ -133,6 +133,7 @@
 <node CREATED="1279398278111" ID="ID_206256960" MODIFIED="1279398535508" TEXT="sign: &#xe25;&#xe07;&#xe25;&#xe32;&#xe22;&#xe21;&#xe37;&#xe2d;&#xe0a;&#xe37;&#xe48;&#xe2d;">
 <icon BUILTIN="pencil"/>
 <node CREATED="1279986897937" ID="ID_1544222728" MODIFIED="1279986900182" TEXT="role:co"/>
+<node CREATED="1280522482831" ID="ID_715221681" MODIFIED="1280522504233" TEXT="rule:$user.section_id==$xvars[:section_id]"/>
 </node>
 </node>
 </node>

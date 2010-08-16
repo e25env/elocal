@@ -44,3 +44,11 @@ doc = Doc.new
   </table>
 <% end %>
 <%= fix_thai_year %>
+<script>
+  function validate() {
+    if ($('#assign').val()=='') {
+      alert('กรุณาเลือกผู้ดำเนินการ');
+      return false;
+    }
+  }
+</script>

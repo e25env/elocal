@@ -13,8 +13,8 @@
     - @xmain= xmain
     /- next unless authorize?
     %tr
-      %td= link_to xmain.id, :controller=>"engine", :action=>"run", :id=>xmain.id
-      %td= link_to xmain.name, :controller=>"engine", :action=>"run", :id=>xmain.id
+      %td= link_to xmain.id, :controller=>"gma", :action=>"status", :id=>xmain.id
+      %td= link_to xmain.name, :controller=>"gma", :action=>"status", :id=>xmain.id
       %td= @runseq.name
       %td{:align=>'center'}= xmain.gma_user.login
       %td= date_us xmain.start
