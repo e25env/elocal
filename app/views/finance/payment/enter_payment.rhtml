@@ -167,6 +167,29 @@ payment.law_moi_item = 52
       $('#payment_inspector_position').val($('position[id='+id+']').attr('pos'));
     })
   })
+
+  function validate() {
+    if ($('#payment_section_id').val()=='') {
+      alert('กรุณาเลือกส่วนงาน');
+      return false;
+    }
+    if ($('#payment_plan_id').val()=='') {
+      alert('กรุณาเลือกแผนงาน');
+      return false;
+    }
+    if ($('#payment_cat_id').val()=='') {
+      alert('กรุณาเลือกหมวดงบประมาณ');
+      return false;
+    }
+    if ($('#payment_ptype_id').val()=='') {
+      alert('กรุณาเลือกประเภทงบประมาณ');
+      return false;
+    }
+    if ($('#payment_amount').val()=='0') {
+      alert('กรุณาระบุจำนวนเงิน');
+      return false;
+    }
+  }
 </script>
 <positions>
   <% User.all.each do |u| %>

@@ -28,8 +28,8 @@ if gma_module && gma_module.role
   gma_module= nil unless current_user.role.upcase.split(',').include?(gma_module.role.upcase)
 end
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html>
   <%= render :partial => "layouts/head" %>
   <body>
     <div id="topnavigation"><ul><%= render :partial => "layouts/top" %></ul></div>

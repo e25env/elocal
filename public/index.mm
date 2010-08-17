@@ -16,7 +16,7 @@
 </node>
 <node CREATED="1279700865182" ID="ID_630918549" MODIFIED="1280602323307" TEXT="link:&#xe04;&#xe39;&#xe48;&#xe21;&#xe37;&#xe2d;&#xe01;&#xe32;&#xe23;&#xe43;&#xe0a;&#xe49;&#xe07;&#xe32;&#xe19;: /main/doc"/>
 </node>
-<node CREATED="1275752678377" ID="ID_1348489452" MODIFIED="1281965577355" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
+<node CREATED="1275752678377" FOLDED="true" ID="ID_1348489452" MODIFIED="1282009729956" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275752688167" ID="ID_229996461" MODIFIED="1275752690948" TEXT="role:a"/>
 <node CREATED="1280374214975" ID="ID_980297856" MODIFIED="1280374230097" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe0a;&#xe37;&#xe48;&#xe2d;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;: /admin/users"/>
 <node CREATED="1280601992129" ID="ID_149279552" MODIFIED="1280602017663" TEXT="edit_org: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25; &#xe2d;&#xe1b;&#xe17;.">
@@ -62,7 +62,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397496008" ID="ID_587395922" MODIFIED="1281961462335" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
+<node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1282009725956" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
 <node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1281964014177" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
@@ -142,7 +142,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397782743" FOLDED="true" ID="ID_782287751" MODIFIED="1281878875300" TEXT="finance: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe32;&#xe23;&#xe04;&#xe25;&#xe31;&#xe07;">
+<node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1282009731914" TEXT="finance: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe32;&#xe23;&#xe04;&#xe25;&#xe31;&#xe07;">
 <node CREATED="1280606688606" ID="ID_819043612" MODIFIED="1281414946023" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe2b;&#xe21;&#xe27;&#xe14;: /finance/budget_cat"/>
 <node CREATED="1281414908442" ID="ID_1331942068" MODIFIED="1281414930886" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe41;&#xe1c;&#xe19;:/finance/budget_plan"/>
 <node CREATED="1280809504423" ID="ID_888371375" MODIFIED="1280809525483" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
@@ -189,7 +189,7 @@
 </node>
 </node>
 <node CREATED="1280737814670" ID="ID_1286974173" MODIFIED="1280737838766" TEXT="link:&#xe01;&#xe23;&#xe30;&#xe17;&#xe1a;&#xe22;&#xe2d;&#xe14;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;:/finance/budget_adj"/>
-<node CREATED="1280676987865" ID="ID_1487545870" MODIFIED="1281353709173" TEXT="add_cat">
+<node CREATED="1280676987865" FOLDED="true" ID="ID_1487545870" MODIFIED="1282009736072" TEXT="add_cat">
 <icon BUILTIN="closed"/>
 <node CREATED="1280676999730" ID="ID_789754556" MODIFIED="1280739233101" TEXT="enter_cat:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2b;&#xe21;&#xe27;&#xe14;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;">
 <icon BUILTIN="attach"/>
@@ -200,7 +200,7 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1280676987865" ID="ID_1015531560" MODIFIED="1281353712405" TEXT="add_ptype">
+<node CREATED="1280676987865" FOLDED="true" ID="ID_1015531560" MODIFIED="1282009736809" TEXT="add_ptype">
 <icon BUILTIN="closed"/>
 <node CREATED="1280676999730" ID="ID_1182922624" MODIFIED="1280739222846" TEXT="enter_ptype:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe1b;&#xe23;&#xe30;&#xe40;&#xe20;&#xe17;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;">
 <icon BUILTIN="attach"/>
