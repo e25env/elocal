@@ -185,7 +185,7 @@ payment.law_moi_item = 52
       alert('กรุณาเลือกประเภทงบประมาณ');
       return false;
     }
-    if ($('#payment_amount').val()=='0') {
+    if ($('#payment_amount').val()=='0' || $('#payment_amount').val()=='') {
       alert('กรุณาระบุจำนวนเงิน');
       return false;
     }

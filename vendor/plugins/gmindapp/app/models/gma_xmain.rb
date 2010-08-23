@@ -13,4 +13,9 @@ class GmaXmain < ActiveRecord::Base
   def self.number(d)
     all(:conditions=>['DATE(created_at) =?', d.to_date]).count
   end
+  def self.search(q, page, per_page=10)
+    paginate :per_page=>per_page, :page => page, :conditions =>
+      ["LOWER(xvars) LIKE ?", "%#{q}%" ],
+      :order=>'created_at DESC'
+  end
 end

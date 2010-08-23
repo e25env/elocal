@@ -29,6 +29,7 @@ class MainController < ApplicationController
     end
     @docs = GmaDoc.search(@q.downcase, params[:page], 10)
     @xmains = GmaXmain.find @docs.map(&:gma_xmain_id)
+    #@xmains = GmaXmain.search(@q.downcase, params[:page], 10)
   end
   def err404
     gma_log 'ERROR', 'main/err404'

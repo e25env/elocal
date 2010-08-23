@@ -3,14 +3,26 @@ org = Org.find(1) rescue org= Org.new
 payment = Payment.find @xvars[:payment_id]
 bank = payment.bank
 %>
-<%= stylesheet_link_tag "sarabun" %>
+<%= stylesheet_link_tag "sarabun", :media=>"all" %>
 <style type="text/css" >
+  body {
+    size: A4;
+  }
   table {
     width:100%;
     border-collapse: collapse;
+    line-height: 98%;
+    padding:0;
+    margin:0;
   }
-  td {
+  td,th {
     border:1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  td.noline {
+    border:1px solid black;
+    border-style: none solid none solid;
     padding-left: 5px;
     padding-right: 5px;
   }
@@ -201,9 +213,9 @@ bank = payment.bank
     </td>
     <td style="width:33%;text-align:center;vertical-align:top;">
       <%= b "ผู้มีอำนาจลงนามในใบถอน/เช็คธนาคาร" %><p/>
-      (ลงชื่อ) <%= '.'*50 %> ผู้ลงนาม<p/>
-      (ลงชื่อ) <%= '.'*50 %> ผู้ลงนาม<p/>
-      (ลงชื่อ) <%= '.'*50 %> ผู้ลงนาม
+      (ลงชื่อ) <%= '.'*40 %> ผู้ลงนาม<p/>
+      (ลงชื่อ) <%= '.'*40 %> ผู้ลงนาม<p/>
+      (ลงชื่อ) <%= '.'*40 %> ผู้ลงนาม
     </td>
   </tr>
   <tr><td colspan='4' style='text-align:center;font-size:120%;'><%= b "หลักฐานการเบิกจ่ายเงิน" %></td></tr>
@@ -227,7 +239,111 @@ bank = payment.bank
     </td>
   </tr>
 </table>
-<div style="page-break-after:always;" />
-<h3>งบรายละเอียดสำคัญประกอบฎีกา</h3>
-<%= org.otype %>
-<%= b org.name %>
+<div style="page-break-before: always" />
+<h3 style="text-align:center;">งบรายละเอียดสำคัญประกอบฎีกา</h3>
+<div style='padding-left:20px; padding-bottom:20px;'>
+  <%= org.otype %> <%= b org.name.center(85,'.') %>
+  อำเภอ <%= b org.district.center(60,'.') %>
+  จังหวัด <%= b org.province.center(60,'.') %><br/>
+  กอง/แผนก <%= b '.'*215 %><br/>
+  ฎีกาเบิกเงิน <%= b "#{payment.num}/#{payment.fy}".center(80,'.') %>
+  วันที่ <%= b '.'*120 %><br/>
+  หมวด <%= b payment.cat.name.center(80,'.') %>
+  ประเภท <%= b payment.ptype.name.center(178,'.') %><br/>
+  เงิน <%= b num_baht(payment.net_amount).center(50,'.') %> บาท
+  <%= b num_satang(payment.net_amount).center(50,'.') %> สตางค์
+  ผลัดส่งใบสำคัญ <%= b '.'*80 %><br/>
+  เงิน <%= b '.'*50 %> บาท
+  <%= b '.'*50 %> สตางค์
+</div>
+<table>
+  <tr>
+    <th rowspan=2>ใบสำคัญ</th>
+    <th rowspan=2 style='width:500px;'>รายการ</th>
+    <th colspan=2>จำนวนเงิน</th>
+    <th colspan=2>จำนวนเงิน</th>
+    <th rowspan=2>หมายเหตุ</th>
+  </tr>
+  <tr>
+    <th>บาท</th>
+    <th style='width:30px;'>สต.</th>
+    <th>บาท</th>
+    <th style='width:30px;'>สต.</th>
+  </tr>
+  <% payment.payment_details.each do |d| %>
+    <tr>
+      <td class='noline'><%= d.doc %></td>
+      <td class='noline'><%= d.name %></td>
+      <td class='noline' align='right'><%= num_baht d.amount %></td>
+      <td class='noline' align='right'><%= num_satang d.amount %></td>
+      <td class='noline'>&nbsp;</td>
+      <td class='noline'>&nbsp;</td>
+      <td class='noline'><%= d.comment %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td class='noline'>&nbsp;</td>
+    <td class='noline'>&nbsp;</td>
+    <td class='noline'>&nbsp;</td>
+    <td class='noline'>&nbsp;</td>
+    <td class='noline' align='right'><%= num_baht payment.net_amount %></td>
+    <td class='noline' align='right'><%= num_satang payment.net_amount %></td>
+    <td class='noline'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td style='border-top-style:none;'>&nbsp;</td>
+    <td style='border-top-style:none;'>&nbsp;</td>
+    <td style='border-top-style:none;'>&nbsp;</td>
+    <td style='border-top-style:none;'>&nbsp;</td>
+    <td style='border-top-style:none;'>&nbsp;</td>
+    <td style='border-top-style:none;'>&nbsp;</td>
+    <td style='border-top-style:none;'>&nbsp;</td>
+  </tr>
+  <tr>
+    <td colspan=4 style='text-align:center; font-weight:bold; border:none;'>
+          รวมยอดเงินที่เบิกตามฎีกานี้
+    </td>
+    <td align='right'><%= num_baht payment.net_amount %></td>
+    <td align='right'><%= num_satang payment.net_amount %></td>
+    <td style='border:none;'>&nbsp;</td>
+  </tr>
+</table>
+<div style="padding-left:20px; padding-top:20px;">
+  ได้ตรวจสอบแล้วขอรับรองว่ารายการและตัวเลข<br/>
+  ที่ปรากฏข้างบนนี้ถูกต้อง<p/>&nbsp;<p/>
+  ลงชื่อ <%= '.'*50+'&nbsp;'*100 %>
+  ลงชื่อ <%= '.'*50 %><p/>
+  <%= '&nbsp;'*10 %> หัวหน้าส่วนการคลัง
+  <%= '&nbsp;'*120 %> ผู้เบิก<p/>
+  <div style="float:left;"><%= org.otype %></div>
+  <div style="float:right;">พิมพ์ที่โรงพิมพ์ส่วนท้องถิ่น</div>
+</div>
+<div style="page-break-before: always" />
+<h3 style="text-align:center;">ใบรับรองของผู้เบิก</h3>
+<div style='padding-left:20px;'>
+
+</div>
+<h3 style="text-align:center;">บันทึกข้อความ</h3>
+<div style='padding-left:20px;'>
+
+</div>
+<style>
+  @page landscape {size: A4 landscape;}
+  .land {page: landscape;}
+</style>
+<div style="page-break-before: always" />
+<div style='padding-left:20px; page: landscape;'>
+<h3 style="text-align:center;">ใบสำคัญรับเงิน</h3>
+<table>
+  <thead>
+    <tr>
+      <th>aa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dd</td>
+    </tr>
+  </tbody>
+</table>
+</div>

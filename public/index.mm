@@ -16,7 +16,7 @@
 </node>
 <node CREATED="1279700865182" ID="ID_630918549" MODIFIED="1280602323307" TEXT="link:&#xe04;&#xe39;&#xe48;&#xe21;&#xe37;&#xe2d;&#xe01;&#xe32;&#xe23;&#xe43;&#xe0a;&#xe49;&#xe07;&#xe32;&#xe19;: /main/doc"/>
 </node>
-<node CREATED="1275752678377" FOLDED="true" ID="ID_1348489452" MODIFIED="1282009729956" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
+<node CREATED="1275752678377" ID="ID_1348489452" MODIFIED="1282564562578" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275752688167" ID="ID_229996461" MODIFIED="1275752690948" TEXT="role:a"/>
 <node CREATED="1280374214975" ID="ID_980297856" MODIFIED="1280374230097" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe0a;&#xe37;&#xe48;&#xe2d;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;: /admin/users"/>
 <node CREATED="1280601992129" ID="ID_149279552" MODIFIED="1280602017663" TEXT="edit_org: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25; &#xe2d;&#xe1b;&#xe17;.">
@@ -28,9 +28,18 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1281608870255" ID="ID_1838687603" MODIFIED="1281688763292" TEXT="link: &#xe1b;&#xe23;&#xe31;&#xe1a;&#xe1b;&#xe23;&#xe38;&#xe07;&#xe23;&#xe30;&#xe1a;&#xe1a;&#xe07;&#xe32;&#xe19;: /admin/git_pull"/>
+<node CREATED="1282564569442" ID="ID_732787758" MODIFIED="1282564594913" TEXT="backup: &#xe2a;&#xe33;&#xe23;&#xe2d;&#xe07;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
+<node CREATED="1282564616771" ID="ID_1327347852" MODIFIED="1282571297064" TEXT="status:&#xe2a;&#xe33;&#xe23;&#xe2d;&#xe07;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe40;&#xe23;&#xe35;&#xe22;&#xe1a;&#xe23;&#xe49;&#xe2d;&#xe22;&#xe41;&#xe25;&#xe49;&#xe27;">
+<icon BUILTIN="attach"/>
+<node CREATED="1282564638392" ID="ID_511140213" MODIFIED="1282564641849" TEXT="role:a"/>
+</node>
+</node>
+<node CREATED="1281608870255" ID="ID_1838687603" MODIFIED="1282564647325" TEXT="link: &#xe1b;&#xe23;&#xe31;&#xe1a;&#xe1b;&#xe23;&#xe38;&#xe07;&#xe23;&#xe30;&#xe1a;&#xe1a;&#xe07;&#xe32;&#xe19;: /admin/git_pull">
+<icon BUILTIN="closed"/>
+</node>
 <node CREATED="1273913393454" ID="ID_1088166839" MODIFIED="1281878887025" TEXT="link: &#xe07;&#xe32;&#xe19;&#xe17;&#xe35;&#xe48;&#xe2d;&#xe22;&#xe39;&#xe48;&#xe23;&#xe30;&#xe2b;&#xe27;&#xe48;&#xe32;&#xe07;&#xe14;&#xe33;&#xe40;&#xe19;&#xe34;&#xe19;&#xe01;&#xe32;&#xe23;: /gma/pending"/>
-<node CREATED="1278314365121" ID="ID_1495226514" MODIFIED="1280603875907" TEXT="add news:&#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe02;&#xe48;&#xe32;&#xe27;">
+<node CREATED="1278314365121" ID="ID_1495226514" MODIFIED="1282564696682" TEXT="add news:&#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe02;&#xe48;&#xe32;&#xe27;">
+<icon BUILTIN="closed"/>
 <node CREATED="1278314372942" ID="ID_477009151" MODIFIED="1278314401455" TEXT="enter news">
 <icon BUILTIN="attach"/>
 </node>
@@ -39,7 +48,9 @@
 </node>
 </node>
 <node CREATED="1275790679363" ID="ID_829325467" MODIFIED="1278500851145" TEXT="link: logs: /gma/logs"/>
-<node CREATED="1275698307377" ID="ID_940599341" MODIFIED="1281688786759" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe01;&#xe32;&#xe23;&#xe1b;&#xe0f;&#xe34;&#xe1a;&#xe31;&#xe15;&#xe34;&#xe07;&#xe32;&#xe19;: /gma/process_report"/>
+<node CREATED="1275698307377" ID="ID_940599341" MODIFIED="1282564704377" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe01;&#xe32;&#xe23;&#xe1b;&#xe0f;&#xe34;&#xe1a;&#xe31;&#xe15;&#xe34;&#xe07;&#xe32;&#xe19;: /gma/process_report">
+<icon BUILTIN="closed"/>
+</node>
 </node>
 <node CREATED="1273706796854" FOLDED="true" ID="ID_1003882979" MODIFIED="1281965574274" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
@@ -142,7 +153,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1282009731914" TEXT="finance: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe32;&#xe23;&#xe04;&#xe25;&#xe31;&#xe07;">
+<node CREATED="1279397782743" FOLDED="true" ID="ID_782287751" MODIFIED="1282564560957" TEXT="finance: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe32;&#xe23;&#xe04;&#xe25;&#xe31;&#xe07;">
 <node CREATED="1280606688606" ID="ID_819043612" MODIFIED="1281414946023" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe2b;&#xe21;&#xe27;&#xe14;: /finance/budget_cat"/>
 <node CREATED="1281414908442" ID="ID_1331942068" MODIFIED="1281414930886" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe41;&#xe1c;&#xe19;:/finance/budget_plan"/>
 <node CREATED="1280809504423" ID="ID_888371375" MODIFIED="1280809525483" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
