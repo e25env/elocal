@@ -66,4 +66,6 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   config.action_controller.session_store = :active_record_store
   IMAGE_LOCATION = "doc/upload"
+  CDN = false
+  GMAP = false
 end

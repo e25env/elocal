@@ -8,7 +8,7 @@
   <%= stylesheet_link_tag "style", "gma", "sarabun" %>
   <meta name="description" content="ระบบบริหารงานองค์กรปกครองส่วนท้องถิ่น" />
   <meta name="keywords" content="อปท, องค์กรปกครองส่วนท้องถิ่น, lao" />
-  <% if RAILS_ENV=="production" %>
+  <% if CDN %>
     <%= javascript_include_tag "http://cdn.jquerytools.org/1.2.2/jquery.tools.min.js"  %>
   <% else %>
     <%= javascript_include_tag "jquery.tools.min.js"  %>
