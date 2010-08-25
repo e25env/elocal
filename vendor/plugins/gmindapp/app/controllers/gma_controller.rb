@@ -76,6 +76,45 @@ class GmaController < ApplicationController
 
   private
   def gen_views
+    t = ["generate ui<br/>"]
+    GmaModule.all.each do |m|
+      m.gma_services.each do |s|
+        next if s.code=='link'
+        dir ="app/views/#{s.module}"
+        unless File.exists?(dir)
+          Dir.mkdir(dir)
+          t << "create directory #{dir}"
+        end
+        dir ="app/views/#{s.module}/#{s.code}"
+        unless File.exists?(dir)
+          Dir.mkdir(dir)
+          t << "create directory #{dir}"
+        end
+        xml= REXML::Document.new(s.xml)
+        xml.elements.each('*/node') do |activity|
+          icon = activity.elements['icon']
+          next unless icon
+          action= freemind2action(icon.attributes['BUILTIN'])
+          next unless ui_action?(action)
+          code_name = activity.attributes["TEXT"].to_s
+          next if code_name.comment?
+          code= name2code(code_name)
+          if action=="pdf"
+            f= "app/views/#{s.module}/#{s.code}/#{code}.pdf.prawn"
+          else
+            f= "app/views/#{s.module}/#{s.code}/#{code}.rhtml"
+          end
+          unless File.exists?(f)
+            ff=File.open(f, 'w'); ff.close
+            t << "create file #{f}"
+          end
+        end
+      end
+    end
+    t.join("<br/>")
+  end
+
+  def gen_views_old
     doc= get_app
     modules= doc.elements["//node/node[@TEXT='services']"] || REXML::Document.new
     t = ["generate ui<br/>"]
