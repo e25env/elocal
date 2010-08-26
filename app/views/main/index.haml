@@ -7,11 +7,11 @@
     %th เริ่มดำเนินการ
     %th ยกเลิก
   - @xmains.each do |xmain|
-    /- debugger
     - @xmain= xmain
     - @runseq= GmaRunseq.find(xmain.current_runseq)
     - next unless @runseq
     - next unless %w(form output pdf).include?(@runseq.action)
+    /- debugger
     - next unless authorize?
     %tr
       %td= link_to xmain.id, :controller=>"engine", :action=>"run", :id=>xmain.id

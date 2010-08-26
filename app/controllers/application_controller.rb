@@ -3,13 +3,21 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  helper_method :fiscal_year, :finance_office?
+  helper_method :fiscal_year, :finance_office?, :own_xmain?
   # protect_from_forgery # See ActionController::RequestForgeryProtection for details
 #  geocode_ip_address
 
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
+  def own_xmain?
+    #debugger
+    if $xvars
+      return current_user.id==$xvars[:user_id]
+    else
+      return true
+    end
+  end
   def finance_office?
     current_user.role && current_user.role.upcase.split(',').include?('CO') && current_user.section_id==2
   end

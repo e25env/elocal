@@ -527,7 +527,7 @@ class EngineController < ApplicationController
     @runseq.save
   end
   def end_action(next_runseq = nil)
-#    @runseq.status='F' unless @runseq_not_f
+    #    @runseq.status='F' unless @runseq_not_f
     @runseq.status='F'
     @runseq.gma_user_id= session[:user_id]
     @runseq.stop= Time.now

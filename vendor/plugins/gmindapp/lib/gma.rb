@@ -17,6 +17,7 @@ module Gma
   end
   def gma_notice(s)
     GmaNotice.create :message=>s, :unread=>true
+    return true
   end
   def display_notices
     t = []

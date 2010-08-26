@@ -1,6 +1,16 @@
 class AdminController < ApplicationController
   before_filter :admin_action, :except=>[:daily_housekeeping, :hourly_housekeeping]
 
+  def update_role
+    GmaUser.update $xvars[:select_user][:user_id], :role=>$xvars[:edit_role][:role]
+    gma_notice "แก้ไขสิทธิเรียบร้อยแล้ว"
+  end
+  def update_pwd
+    GmaUser.update $xvars[:select_user][:user_id], :password=>$xvars[:edit_pwd][:pwd]
+    u= GmaUser.find $xvars[:select_user][:user_id]
+    $xvars[:email]= u.email
+    gma_notice "แก้ไขรหัสผ่านเรียบร้อยแล้ว"
+  end
   def git_pull
     @t = "<b>git pull</b><br/>"
     @t = exec_cmd("git pull").gsub("\n","<br/>")
