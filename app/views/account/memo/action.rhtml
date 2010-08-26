@@ -1,0 +1,64 @@
+<%  doc = Doc.find @xvars[:doc_id] %>
+<div style="padding-bottom:50px;">
+  <%= image_tag 'krut.gif', :style=>"float:left;" %>
+  <div style="padding-top:30px; font-size:30pt; text-align:center;">
+    บันทึกข้อความ
+  </div>
+</div>
+<b>ส่วนราชการ</b> <%= doc.dfrom %><br/>
+<b>ที่</b> <%= doc.num %>
+<span style="position:relative;left:50%;">
+  <b >วันที่</b> <%= date_thai doc.issue_on, :date_only=>true %><br/>
+</span>
+<b>เรื่อง</b> <%= doc.subject %>
+<% if doc.dscan %>
+  <br/><b>สิ่งที่ส่งมาด้วย</b> <%= link_to image_tag("page_attach.png")+align_text("เอกสารสแกน"), doc.dscan, :target=>'_blank' %>
+<% end %>
+<hr />
+<b>เรียน</b> <%= doc.dto %>
+<div id="body" style="padding-top:20px;">
+  <%= textilize doc.summary %>
+</div>
+<div style="text-align:center; padding-top:50px;">
+  (<%= @xmain.gma_user.full_name %>)<br/>
+  <%= @xmain.gma_user.position %>
+</div>
+<table width="100%">
+  <% @xmain.comments.each do |c| %>
+    <tr>
+      <td class="field-name">
+        <%= c.gma_user.full_name %><br/>
+        (<%= c.gma_user.position %>)
+      </td>
+      <td colspan="2"><%= c.content %></td>
+    </tr>
+  <% end %>
+  <tr>
+    <td class="field-name">เกษียนหนังสือ</td>
+    <td colspan="2"><%= text_area_tag :comment, nil, :cols=>50, :rows=>6  %></td>
+  </tr>
+  <tr>
+    <td class="field-name">ส่งมอบการปฏิบัติงาน</td>
+    <% options = "<option value='' selected='selected'>กรุณาเลือกผู้ดำเนินการท่านต่อไป</option>" %>
+    <% options << options_from_collection_for_select(User.all_but_me, :id, :full_name) %>
+    <td colspan="2"><%= select_tag :assign, options %></td>
+  </tr>
+  <tr>
+    <td>&nbsp;</td>
+    <td colspan="2">
+      <%= radio_button_tag "final", "y" %> สิ้นสุดการทำงาน
+      <%= radio_button_tag "final", "n", true %> ดำเนินการต่อ
+    </td>
+  </tr>
+</table>
+<%= fix_thai_year %>
+<script type="text/javascript">
+  function validate() {
+    if($('#assign').val()=="" && $('#final_n').is(':checked')) {
+      alert('กรุณาเลือกผู้ดำเนินการต่อ');
+      return false;
+    } else {
+      return true;
+    }
+  }
+</script>

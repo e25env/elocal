@@ -1,4 +1,26 @@
 class AccountController < ApplicationController
+  def create_memo
+    doc= Doc.new $xvars[:new][:doc]
+    doc.dtype= 3
+    doc.save
+    $xvars[:doc_id]= doc.id
+    $xvars[:action]= {:assign=>$xvars[:new][:assign]}
+    u = User.find $user_id
+    $xvars[:section_id] = u.section_id
+  end
+  def save_comment
+    comment = Comment.create(:content=>$xvars[:action][:comment], :gma_xmain_id=>$xmain.id)
+    comment.id
+    unless $xvars[:section_id]
+      if $xvars[:action][:assign]
+        u = User.find $xvars[:action][:assign].to_i
+        $xvars[:section_id]= u.section_id
+      else
+        # default to สำนักปลัด if not assign
+        $xvars[:section_id]= 1
+      end
+    end
+  end
   def update_user
     u= User.find $user_id
     u.update_attributes $xvars[:enter_user][:user]
