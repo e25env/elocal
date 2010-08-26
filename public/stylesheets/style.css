@@ -1,5 +1,5 @@
 body {
-  background:#fff url(images/bg.png) repeat-x;
+  background:#fff;
   color:#222;
   font-family:'Sarabun',Helvetica,Arial,FreeSans,sans-serif;
   font-size:16pt;
@@ -330,8 +330,9 @@ h3 {
 }
 
 #header {
-  margin:30px auto 0px;
-  padding:0;
+/*margin:30px auto 0px;*/
+  margin:0 auto;
+  padding:0 auto;
   width:980px;
   background:url(../images/bg_sky.jpg);
 }
