@@ -1,4 +1,11 @@
 class OfficeController < ApplicationController
+  def create_car_request
+    car= Car.new $xvars[:enter][:car]
+    car.vtype= 0
+    car.save
+    $xvars[:car_id]= car.id
+    $xvars[:section_id] = $user.section_id
+  end
   def create_doc_in
     doc= Doc.new $xvars[:register][:doc]
     doc.dtype= 1

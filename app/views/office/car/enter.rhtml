@@ -1,0 +1,35 @@
+<% 
+  car = Car.new :passenger=>1,
+    :name=> current_user.full_name,
+    :position=> current_user.position,
+    :car_code=>''
+%>
+<% fields_for car do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">ผู้ขอใช้รถ</td>
+      <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำแหน่ง</td>
+      <td colspan="2"><%= f.text_field :position, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สถานที่ที่ไป</td>
+      <td colspan="2"><%= f.text_field :destination, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วัตถุประสงค์</td>
+      <td colspan="2"><%= f.text_area :objective, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวนผู้โดยสาร</td>
+      <td colspan="2"><%= f.text_field :passenger, :style => "width:200px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วันที่ต้องการใช้</td>
+      <td colspan="2"><%= f.datetime_select_thai :schedule_at %></td>
+    </tr>
+  </table>
+<% end %>
+<%= fix_thai_year %>

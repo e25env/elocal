@@ -217,7 +217,7 @@ module Gma
     return role ? role.name : ""
   end
   def set_global
-    $xmain= @xmain ; $runseq = @runseq ; $user = @user ; $xvars= @xmain.xvars
+    $xmain= @xmain ; $runseq = @runseq ; $user = current_user ; $xvars= @xmain.xvars
   end
   def authorize? # use in pending tasks
     @runseq= @xmain.gma_runseqs.find @xmain.current_runseq
@@ -606,6 +606,11 @@ class ExecCmd
   end
 end
 
+class NilClass
+  def center(n,c)
+    c*n
+  end
+end
 class String
   def comment?
     self[0]==35 # check if first char is #
