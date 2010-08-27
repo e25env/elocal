@@ -6,6 +6,10 @@ class OfficeController < ApplicationController
     $xvars[:car_id]= car.id
     $xvars[:section_id] = $user.section_id
   end
+  def update_car
+    car= Car.find $xvars[:car_id]
+    car.update_attributes $xvars[:scan][:car]
+  end
   def create_doc_in
     doc= Doc.new $xvars[:register][:doc]
     doc.dtype= 1

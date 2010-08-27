@@ -1,0 +1,26 @@
+<%
+  org= Org.first
+  car= Car.find @xvars[:car_id]
+%>
+<div style='padding-left:20px; padding-bottom:20px;'>
+  <div style="text-align:right;">แบบ 3</div>
+  <h3 style="text-align:center;">ใบอนุญาตใช้รถจักรยานยนต์</h3>
+  <div style="text-align:right;">
+    วันที่ <%= date_thai Time.now, :date_only=>true, :monthfull=>true %>
+  </div>
+  <% section= current_user.section %>
+  เรียน หัวหน้า<%= section.name %><p/>
+  <%= nbsp 10 %>
+  ข้าพเจ้า <%= b car.name.center(90,'.') %>
+  ตำแหน่ง <%= b car.position.center(90,'.') %><br/>
+  ขออนุญาตใช้รถไป <%= b car.destination.center(60,'.') %>
+  เพื่อ <%= b car.objective.center(80,'.') %><br/>
+  มีคนนั่ง <%= b car.passenger.to_s.center(30,'.') %> คน
+  ในวันที่ <%= b "#{date_thai(car.schedule_at, :monthfull=>true)} น.".center(60,'.') %>
+  เลขไมล์ออก <%= b car.km_begin.to_s.center(38,'.')%><br/>
+  เลขไมล์กลับ <%= b car.km_end.to_s.center(40,'.')%>
+  ทะเบียนรถเลขที่ <%= b car.car_code.center(90,'.') %><p/>&nbsp;<p/>
+  <%= nbsp 60 %><%= '.'*50 %> ผู้ขออนุญาต<p/>
+  <%= nbsp 60 %><%= '.'*50 %> หัวหน้า<%= section.name %>หรือผู้แทน<p/>
+  <%= nbsp 60 %><%= '.'*50 %> ( วัน เดือน ปี )<p/>
+</div>

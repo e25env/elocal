@@ -1,4 +1,15 @@
 class AccountController < ApplicationController
+  def create_bike_request
+    car= Car.new $xvars[:enter][:car]
+    car.vtype= 1
+    car.save
+    $xvars[:car_id]= car.id
+    $xvars[:section_id] = $user.section_id
+  end
+  def update_car
+    car= Car.find $xvars[:car_id]
+    car.update_attributes $xvars[:scan][:car]
+  end
   def create_memo
     doc= Doc.new $xvars[:new][:doc]
     doc.dtype= 3

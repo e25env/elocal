@@ -56,10 +56,13 @@
 <node CREATED="1280522482831" ID="ID_399576949" MODIFIED="1280522504233" TEXT="rule:$user.section_id==$xvars[:section_id]"/>
 </node>
 </node>
-<node CREATED="1282828191238" FOLDED="true" ID="ID_362489444" MODIFIED="1282828511551" TEXT="bike:&#xe02;&#xe2d;&#xe43;&#xe0a;&#xe49;&#xe23;&#xe16;&#xe08;&#xe31;&#xe01;&#xe23;&#xe22;&#xe32;&#xe19;&#xe22;&#xe19;&#xe15;&#xe4c;">
+<node CREATED="1282828191238" ID="ID_362489444" MODIFIED="1282886570235" TEXT="bike:&#xe02;&#xe2d;&#xe43;&#xe0a;&#xe49;&#xe23;&#xe16;&#xe08;&#xe31;&#xe01;&#xe23;&#xe22;&#xe32;&#xe19;&#xe22;&#xe19;&#xe15;&#xe4c;">
 <node CREATED="1282828261055" ID="ID_1106826431" MODIFIED="1282828396814" TEXT="enter: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe43;&#xe1a;&#xe04;&#xe33;&#xe23;&#xe49;&#xe2d;&#xe07;">
 <icon BUILTIN="attach"/>
 <node CREATED="1282828277640" ID="ID_739039718" MODIFIED="1282828289305" TEXT="role:m"/>
+</node>
+<node CREATED="1282874711873" ID="ID_1630760371" MODIFIED="1282886584412" TEXT="create_bike_request">
+<icon BUILTIN="bookmark"/>
 </node>
 <node CREATED="1282828292944" ID="ID_217802815" MODIFIED="1282828392767" TEXT="print: &#xe1e;&#xe34;&#xe21;&#xe1e;&#xe4c;&#xe43;&#xe1a;&#xe2d;&#xe19;&#xe38;&#xe0d;&#xe32;&#xe15;">
 <icon BUILTIN="pencil"/>
@@ -69,6 +72,9 @@
 <icon BUILTIN="attach"/>
 <node CREATED="1279986901801" ID="ID_1540967186" MODIFIED="1279986904269" TEXT="role:co"/>
 <node CREATED="1280522482831" ID="ID_52523243" MODIFIED="1280522504233" TEXT="rule:$user.section_id==$xvars[:section_id]"/>
+</node>
+<node CREATED="1282887002974" ID="ID_1260572912" MODIFIED="1282887014254" TEXT="update_car">
+<icon BUILTIN="bookmark"/>
 </node>
 </node>
 <node CREATED="1279700865182" ID="ID_630918549" MODIFIED="1280602323307" TEXT="link:&#xe04;&#xe39;&#xe48;&#xe21;&#xe37;&#xe2d;&#xe01;&#xe32;&#xe23;&#xe43;&#xe0a;&#xe49;&#xe07;&#xe32;&#xe19;: /main/doc"/>
@@ -226,6 +232,9 @@
 <icon BUILTIN="attach"/>
 <node CREATED="1279986901801" ID="ID_1090161156" MODIFIED="1279986904269" TEXT="role:co"/>
 <node CREATED="1280522482831" ID="ID_539650589" MODIFIED="1280522504233" TEXT="rule:$user.section_id==$xvars[:section_id]"/>
+</node>
+<node CREATED="1282887002974" ID="ID_546589324" MODIFIED="1282887014254" TEXT="update_car">
+<icon BUILTIN="bookmark"/>
 </node>
 </node>
 </node>
