@@ -260,12 +260,12 @@ class GmaController < ApplicationController
           t << "rm app/views/layouts/#{model_code.pluralize}.html.erb"
           exec_cmd "rm app/views/layouts/#{model_code.pluralize}.html.erb"
         end
-#        table_name= model_code.downcase.pluralize
-#        migration_file= cmd.match(/db\/migrate\/\d+_create_#{table_name}.rb/).to_s
-#        table_statement= "create_table :#{table_name}, :options=>'default charset=utf8' do |t|"
-#        s= File.read migration_file
-#        ss = s.sub("create_table :#{table_name} do |t|", table_statement)
-#        File.open(migration_file, 'w') { |f| f << ss }
+        table_name= model_code.downcase.pluralize
+        migration_file= cmd.match(/db\/migrate\/\d+_create_#{table_name}.rb/).to_s
+        table_statement= "create_table :#{table_name}, :force=>true do |t|"
+        s= File.read migration_file
+        ss = s.sub("create_table :#{table_name} do |t|", table_statement)
+        File.open(migration_file, 'w') { |f| f << ss }
       else
         t << "-- skip because model already exists"
       end
