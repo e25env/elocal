@@ -1,6 +1,6 @@
-class CreateCars < ActiveRecord::Migration
+class CreateCarRequests < ActiveRecord::Migration
   def self.up
-    create_table :cars do |t|
+    create_table :car_requests, :force=>true do |t|
       t.string :name
       t.string :position
       t.string :destination
@@ -18,6 +18,6 @@ class CreateCars < ActiveRecord::Migration
   end
 
   def self.down
-    drop_table :cars
+    drop_table :car_requests
   end
 end

@@ -1,14 +1,14 @@
 class OfficeController < ApplicationController
   def create_car_request
-    car= Car.new $xvars[:enter][:car]
-    car.vtype= 0
-    car.save
-    $xvars[:car_id]= car.id
+    car_request= CarRequest.new $xvars[:enter][:car_request]
+    car_request.vtype= 0
+    car_request.save
+    $xvars[:car_id]= car_request.id
     $xvars[:section_id] = $user.section_id
   end
   def update_car
-    car= Car.find $xvars[:car_id]
-    car.update_attributes $xvars[:scan][:car]
+    car_request= CarRequest.find $xvars[:car_id]
+    car_request.update_attributes $xvars[:scan][:car_request]
   end
   def create_doc_in
     doc= Doc.new $xvars[:register][:doc]
@@ -46,10 +46,5 @@ class OfficeController < ApplicationController
         $xvars[:section_id]= 1
       end
     end
-  end
-
-  private
-  def self.assigned?
-    return $xvars[:action] ? $xvars[:action][:assign].to_i==$user.id : false
-  end
+  end  
 end

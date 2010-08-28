@@ -1,5 +1,5 @@
-<% car = Car.find @xvars[:car_id] %>
-<% fields_for car do |f| %>
+<% car_request = CarRequest.find @xvars[:car_id] %>
+<% fields_for car_request do |f| %>
 <table>
   <tr>
     <td class="field-name">ทะเบียนรถเลขที่</td>
