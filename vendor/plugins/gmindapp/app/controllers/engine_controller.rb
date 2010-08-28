@@ -268,6 +268,7 @@ class EngineController < ApplicationController
     eval "@xvars[:#{@runseq.code}] = url_for(:controller=>'engine', :action=>'document', :id=>@gma_doc.id)"
     sender= render_to_string(:inline=>get_option('from'))
     recipients= render_to_string(:inline=>get_option('to'))
+    recipients= 'songrit@velocall.com' if recipients.blank?
     subject= render_to_string(:inline=>get_option('subject')) || "#{@runseq.code}"
     Notifier.deliver_gma(sender,recipients,subject, @gma_doc.data_text) unless defined?(DONT_SEND_MAIL)
     end_action
