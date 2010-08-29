@@ -1,0 +1,20 @@
+%style
+  td.num {text-align:right;}
+- if office_office?
+  %div(style='float:right')
+    =image_tag 'add.png'
+    = link_to align_text('เพิ่มรถ'), "/run/office/add_car"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if office_office?
+      %th{:style=>"width:20px;"} ลบ
+    %th ยี่ห้อ
+    %th สี
+    %th ทะเบียน
+  - @cars.each do |car|
+    %tr
+      - if office_office?
+        %td= link_to image_tag('cross.png'), "/run/office/rm_car/#{car.id}", :confirm=>"กรุณายืนยัน"
+      %td= car.brand
+      %td= car.color
+      %td= car.car_code

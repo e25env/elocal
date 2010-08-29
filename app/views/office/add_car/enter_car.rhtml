@@ -1,0 +1,17 @@
+<% car = Car.new %>
+<% fields_for car do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">ยี่ห้อ</td>
+      <td colspan="2"><%= f.text_field :brand, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สี</td>
+      <td colspan="2"><%= f.text_field :color, :style => "width:200px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ทะเบียนเลขที่</td>
+      <td colspan="2"><%= f.text_field :car_code, :style => "width:400px;" %></td>
+    </tr>
+  </table>
+<% end %>

@@ -296,7 +296,7 @@ class EngineController < ApplicationController
   rescue => e
     @xmain.status='E'
     @xvars[:error]= e
-    @xmain.xvars= @xvars
+    @xmain.xvars= $xvars
     @xmain.save
     @runseq.status= 'F' #finish
     @runseq.stop= Time.now

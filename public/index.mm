@@ -2,7 +2,7 @@
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node CREATED="1273819432637" ID="ID_1098419600" MODIFIED="1279699253278" TEXT="elocal">
 <node CREATED="1273819462973" ID="ID_282419531" MODIFIED="1280603215416" POSITION="right" TEXT="services">
-<node CREATED="1275756501221" ID="ID_1720745721" MODIFIED="1282833686322" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
+<node CREATED="1275756501221" FOLDED="true" ID="ID_1720745721" MODIFIED="1282992880333" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
 <node CREATED="1278491598711" ID="ID_1662699954" MODIFIED="1278491602025" TEXT="role:m"/>
 <node CREATED="1279700865182" ID="ID_1266797279" MODIFIED="1282824456921" TEXT="link:&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;: /account"/>
 <node CREATED="1275905802131" FOLDED="true" ID="ID_154000410" MODIFIED="1282828480616" TEXT="user:&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
@@ -168,7 +168,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397496008" ID="ID_587395922" MODIFIED="1282828157960" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
+<node CREATED="1279397496008" ID="ID_587395922" MODIFIED="1283041780028" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
 <node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1282950785683" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
@@ -216,11 +216,29 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
+<node CREATED="1283041784895" ID="ID_969631356" MODIFIED="1283041808560" TEXT="link:&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;:/office/cars"/>
+<node CREATED="1283041828720" ID="ID_804211630" MODIFIED="1283044754629" TEXT="add car:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;">
+<icon BUILTIN="closed"/>
+<node CREATED="1280841997526" ID="ID_383989630" MODIFIED="1283041904964" TEXT="enter_car:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;&#xe43;&#xe2b;&#xe21;&#xe48;">
+<icon BUILTIN="attach"/>
+<node CREATED="1280677202424" ID="ID_1547506755" MODIFIED="1280677207161" TEXT="role:co"/>
+<node CREATED="1280677207860" ID="ID_1586356429" MODIFIED="1283041910923" TEXT="rule:current_user.section_id==1"/>
 </node>
-<node CREATED="1279397782743" FOLDED="true" ID="ID_782287751" MODIFIED="1282564560957" TEXT="finance: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe32;&#xe23;&#xe04;&#xe25;&#xe31;&#xe07;">
+<node CREATED="1280842013459" ID="ID_191150710" MODIFIED="1283041916446" TEXT="create_car">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1283043983621" ID="ID_453302529" MODIFIED="1283044757889" TEXT="rm_car">
+<icon BUILTIN="closed"/>
+<node CREATED="1283044729697" ID="ID_855726225" MODIFIED="1283044739129" TEXT="rm_car">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+</node>
+<node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1282992881779" TEXT="finance: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe32;&#xe23;&#xe04;&#xe25;&#xe31;&#xe07;">
 <node CREATED="1280606688606" ID="ID_819043612" MODIFIED="1281414946023" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe2b;&#xe21;&#xe27;&#xe14;: /finance/budget_cat"/>
 <node CREATED="1281414908442" ID="ID_1331942068" MODIFIED="1281414930886" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe41;&#xe1c;&#xe19;:/finance/budget_plan"/>
-<node CREATED="1280809504423" ID="ID_888371375" MODIFIED="1280809525483" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
+<node CREATED="1280809504423" FOLDED="true" ID="ID_888371375" MODIFIED="1283041859821" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
 <node CREATED="1280809530686" ID="ID_1366914323" MODIFIED="1280809746078" TEXT="enter_payment:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe0e;&#xe35;&#xe01;&#xe32;">
 <icon BUILTIN="attach"/>
 <node CREATED="1280809577780" ID="ID_1190902197" MODIFIED="1280809581582" TEXT="role:co"/>
@@ -253,7 +271,7 @@
 <node CREATED="1280677207860" ID="ID_1560585022" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
 </node>
 </node>
-<node CREATED="1280841977962" FOLDED="true" ID="ID_980204048" MODIFIED="1280941481449" TEXT="add_bank:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;&#xe18;&#xe19;&#xe32;&#xe04;&#xe32;&#xe23;">
+<node CREATED="1280841977962" ID="ID_980204048" MODIFIED="1283041858119" TEXT="add_bank:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;&#xe18;&#xe19;&#xe32;&#xe04;&#xe32;&#xe23;">
 <node CREATED="1280841997526" ID="ID_985131734" MODIFIED="1280842039054" TEXT="enter_bank:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;&#xe18;&#xe19;&#xe32;&#xe04;&#xe32;&#xe23;&#xe43;&#xe2b;&#xe21;&#xe48;">
 <icon BUILTIN="attach"/>
 <node CREATED="1280677202424" ID="ID_1147920464" MODIFIED="1280677207161" TEXT="role:co"/>
@@ -264,7 +282,7 @@
 </node>
 </node>
 <node CREATED="1280737814670" ID="ID_1286974173" MODIFIED="1280737838766" TEXT="link:&#xe01;&#xe23;&#xe30;&#xe17;&#xe1a;&#xe22;&#xe2d;&#xe14;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;:/finance/budget_adj"/>
-<node CREATED="1280676987865" FOLDED="true" ID="ID_1487545870" MODIFIED="1282009736072" TEXT="add_cat">
+<node CREATED="1280676987865" FOLDED="true" ID="ID_1487545870" MODIFIED="1283041952382" TEXT="add_cat">
 <icon BUILTIN="closed"/>
 <node CREATED="1280676999730" ID="ID_789754556" MODIFIED="1280739233101" TEXT="enter_cat:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2b;&#xe21;&#xe27;&#xe14;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;">
 <icon BUILTIN="attach"/>

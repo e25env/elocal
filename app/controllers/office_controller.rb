@@ -1,4 +1,18 @@
 class OfficeController < ApplicationController
+  def cars
+    @cars= Car.all :order=>'brand'
+  end
+  def create_car
+    car = Car.create $xvars[:enter_car][:car]
+    gma_notice "เพิ่มรถส่วนกลางเรียบร้อยแล้ว"
+    $xvars[:p][:return]="/office/cars"
+  end
+  def rm_car
+    car= Car.find $xvars[:p][:id]
+    gma_notice "ลบข้อมูลรถส่วนกลาง #{car.brand} สี#{car.color} ทะเบียน #{car.car_code} เรียบร้อยแล้ว"
+    car.destroy
+    $xvars[:p][:return]="/office/cars"
+  end
   def create_car_request
     car_request= CarRequest.new $xvars[:enter][:car_request]
     car_request.vtype= 0

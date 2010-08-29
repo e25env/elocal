@@ -3,7 +3,7 @@
 
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
-  helper_method :fiscal_year, :finance_office?, :own_xmain?
+  helper_method :fiscal_year, :finance_office?, :office_office?, :own_xmain?
   # protect_from_forgery # See ActionController::RequestForgeryProtection for details
 #  geocode_ip_address
 
@@ -20,6 +20,9 @@ class ApplicationController < ActionController::Base
   end
   def finance_office?
     current_user.role && current_user.role.upcase.split(',').include?('CO') && current_user.section_id==2
+  end
+  def office_office?
+    current_user.role && current_user.role.upcase.split(',').include?('CO') && current_user.section_id==1
   end
   def fiscal_year(t=Time.now)
     if (10..12).include? t.month
