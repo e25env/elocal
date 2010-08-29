@@ -216,6 +216,14 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
+<node CREATED="1283049819504" ID="ID_395810260" MODIFIED="1283049840188" TEXT="car_cancel:&#xe22;&#xe01;&#xe40;&#xe25;&#xe34;&#xe01;&#xe04;&#xe33;&#xe02;&#xe2d;&#xe43;&#xe0a;&#xe49;&#xe23;&#xe16;">
+<node CREATED="1283049906084" ID="ID_1798351894" MODIFIED="1283049930952" TEXT="select_request">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1283049912166" ID="ID_1149849974" MODIFIED="1283049926415" TEXT="cancel_car_request">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
 <node CREATED="1283041784895" ID="ID_969631356" MODIFIED="1283041808560" TEXT="link:&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;:/office/cars"/>
 <node CREATED="1283041828720" ID="ID_804211630" MODIFIED="1283044754629" TEXT="add car:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;">
 <icon BUILTIN="closed"/>
@@ -235,7 +243,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1282992881779" TEXT="finance: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe32;&#xe23;&#xe04;&#xe25;&#xe31;&#xe07;">
+<node CREATED="1279397782743" FOLDED="true" ID="ID_782287751" MODIFIED="1283048783528" TEXT="finance: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe32;&#xe23;&#xe04;&#xe25;&#xe31;&#xe07;">
 <node CREATED="1280606688606" ID="ID_819043612" MODIFIED="1281414946023" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe2b;&#xe21;&#xe27;&#xe14;: /finance/budget_cat"/>
 <node CREATED="1281414908442" ID="ID_1331942068" MODIFIED="1281414930886" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe41;&#xe1c;&#xe19;:/finance/budget_plan"/>
 <node CREATED="1280809504423" FOLDED="true" ID="ID_888371375" MODIFIED="1283041859821" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
@@ -516,6 +524,7 @@
 <node CREATED="1282873312961" ID="ID_1729592544" MODIFIED="1282873344403" TEXT="km_begin"/>
 <node CREATED="1282873345103" ID="ID_1911670689" MODIFIED="1282873347384" TEXT="km_end"/>
 <node CREATED="1282873352172" ID="ID_794425303" MODIFIED="1283046326975" TEXT="car_id"/>
+<node CREATED="1283050832123" ID="ID_560114782" MODIFIED="1283050838658" TEXT="gma_xmain_id"/>
 </node>
 </node>
 <node CREATED="1279699506823" FOLDED="true" ID="ID_263704773" MODIFIED="1280522007352" POSITION="right" TEXT="doc">

@@ -6,10 +6,11 @@ one:
   destination: MyString
   objective: MyString
   passenger: 1
-  schedule_at: 2010-08-29 08:48:50
+  schedule_at: 2010-08-29 10:02:57
   km_begin: 1
   km_end: 1
   car_id: 1
+  gma_xmain_id: 1
   gma_user_id: 1
 
 two:
@@ -18,8 +19,9 @@ two:
   destination: MyString
   objective: MyString
   passenger: 1
-  schedule_at: 2010-08-29 08:48:50
+  schedule_at: 2010-08-29 10:02:57
   km_begin: 1
   km_end: 1
   car_id: 1
+  gma_xmain_id: 1
   gma_user_id: 1

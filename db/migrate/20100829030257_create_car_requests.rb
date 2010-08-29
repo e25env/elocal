@@ -10,6 +10,7 @@ class CreateCarRequests < ActiveRecord::Migration
       t.integer :km_begin
       t.integer :km_end
       t.integer :car_id
+      t.integer :gma_xmain_id
       t.integer :gma_user_id
 
       t.timestamps
