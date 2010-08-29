@@ -9,8 +9,7 @@ class CreateCarRequests < ActiveRecord::Migration
       t.datetime :schedule_at
       t.integer :km_begin
       t.integer :km_end
-      t.string :car_code
-      t.integer :vtype
+      t.integer :car_id
       t.integer :gma_user_id
 
       t.timestamps

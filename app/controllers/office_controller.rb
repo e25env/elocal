@@ -2,20 +2,33 @@ class OfficeController < ApplicationController
   def cars
     @cars= Car.all :order=>'brand'
   end
+  def car_schedule
+    if params[:id]
+      car= Car.find params[:id]
+      t = []
+      car.car_requests.active.each do |r|
+        t << "#{date_thai r.schedule_at} #{r.name} (#{r.destination})"
+      end
+      render :text=> t.join('<br/>')
+    else
+      render :text=> ""
+    end
+  end
   def create_car
-    car = Car.create $xvars[:enter_car][:car]
+    car = Car.new $xvars[:enter_car][:car]
+    car.vtype=0
+    car.save
     gma_notice "เพิ่มรถส่วนกลางเรียบร้อยแล้ว"
     $xvars[:p][:return]="/office/cars"
   end
   def rm_car
     car= Car.find $xvars[:p][:id]
-    gma_notice "ลบข้อมูลรถส่วนกลาง #{car.brand} สี#{car.color} ทะเบียน #{car.car_code} เรียบร้อยแล้ว"
+    gma_notice "ลบข้อมูลรถส่วนกลาง #{car.name} เรียบร้อยแล้ว"
     car.destroy
     $xvars[:p][:return]="/office/cars"
   end
   def create_car_request
     car_request= CarRequest.new $xvars[:enter][:car_request]
-    car_request.vtype= 0
     car_request.save
     $xvars[:car_id]= car_request.id
     $xvars[:section_id] = $user.section_id

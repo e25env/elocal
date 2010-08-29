@@ -1,11 +1,18 @@
 <% 
   car = CarRequest.new :passenger=>1,
     :name=> current_user.full_name,
-    :position=> current_user.position,
-    :car_code=>''
+    :position=> current_user.position
 %>
 <% fields_for car do |f| %>
   <table width="100%">
+    <tr>
+      <td class="field-name">รถ</td>
+      <td colspan="2"><%= f.collection_select :car_id, Car.all_cars, :id, :name, :prompt=>"กรุณาเลือกรถ" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">&nbsp;</td>
+      <td id="schedule" colspan="2">&nbsp;</td>
+    </tr>
     <tr>
       <td class="field-name">ผู้ขอใช้รถ</td>
       <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
@@ -33,3 +40,9 @@
   </table>
 <% end %>
 <%= fix_thai_year %>
+<script type="text/javascript">
+var animate = "<img src='/images/ajax-loader.gif' alt='loading...' />";
+$('#car_request_car_id').change(function() {
+  $('#schedule').html(animate).load('/office/car_schedule/'+$('#car_request_car_id option:selected').val());
+})
+</script>

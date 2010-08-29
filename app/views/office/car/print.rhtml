@@ -18,7 +18,7 @@
   ในวันที่ <%= b "#{date_thai(car.schedule_at, :monthfull=>true)} น.".center(60,'.') %>
   เลขไมล์ออก <%= b car.km_begin.to_s.center(38,'.')%><br/>
   เลขไมล์กลับ <%= b car.km_end.to_s.center(40,'.')%>
-  ทะเบียนรถเลขที่ <%= b car.car_code.center(90,'.') %><p/>&nbsp;<p/>
+  ทะเบียนรถเลขที่ <%= b car.car.car_code.center(90,'.') %><p/>&nbsp;<p/>
   <% section= current_user.section %>
   <%= nbsp 60 %><%= '.'*50 %> ผู้ขออนุญาต<p/>
   <%= nbsp 60 %><%= '.'*50 %> หัวหน้า<%= section.name %>หรือผู้แทน<p/>

@@ -4,6 +4,7 @@ class CreateCars < ActiveRecord::Migration
       t.string :brand
       t.string :color
       t.string :car_code
+      t.integer :vtype
       t.integer :gma_user_id
 
       t.timestamps
