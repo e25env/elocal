@@ -7,7 +7,7 @@
   <table width="100%">
     <tr>
       <td class="field-name">รถ</td>
-      <td colspan="2"><%= f.collection_select :car_id, Car.all_cars, :id, :name, :prompt=>"กรุณาเลือกรถ" %></td>
+      <td colspan="2"><%= f.collection_select :car_id, Car.all(:order=>"vtype,brand"), :id, :name, :prompt=>"กรุณาเลือกรถ" %></td>
     </tr>
     <tr>
       <td class="field-name">&nbsp;</td>

@@ -2,6 +2,10 @@
 <% fields_for car do |f| %>
   <table width="100%">
     <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan="2"><%= f.select :vtype, [["รถยนต์",0],["รถจักรยานยนต์",1]] %></td>
+    </tr>
+    <tr>
       <td class="field-name">ยี่ห้อ</td>
       <td colspan="2"><%= f.text_field :brand, :style => "width:400px;" %></td>
     </tr>

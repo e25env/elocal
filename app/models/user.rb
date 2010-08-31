@@ -2,6 +2,7 @@ class User < GmaUser
   set_table_name :gma_users
   belongs_to :section
   belongs_to :subsection
+  has_many :car_requests, :foreign_key=>"gma_user_id", :order=>"schedule_at"
 
   named_scope :finance, :conditions=>{:section_id=>2}, :order=>:fname
 
