@@ -16,7 +16,12 @@
     %tr
       - if office_office?
         %td= link_to image_tag('cross.png'), "/run/office/rm_car/#{car.id}", :confirm=>"กรุณายืนยัน"
-      %td= car.vtype_name
+      %td(style="width:100px;")= car.vtype_name
       %td= car.brand
       %td= car.color
       %td= car.car_code
+    - car.car_requests.each do |r|
+      %tr
+        - if office_office?
+          %td &nbsp;
+        %td(colspan="4" style="padding-left:30px;")= "#{date_thai r.schedule_at} #{r.name} (#{r.destination})"
