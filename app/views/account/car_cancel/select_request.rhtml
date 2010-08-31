@@ -9,6 +9,7 @@
     <th>สถานที่</th>
   </tr>
   <% car_requests.each do |r| %>
+    <% next unless r.car %>
     <tr>
       <td><%= check_box_tag "car_request[]", r.id %></td>
       <td><%= r.gma_xmain_id %></td>

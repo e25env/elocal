@@ -1,5 +1,5 @@
 class Car < ActiveRecord::Base
-  has_many :car_requests, :order=>'schedule_at'
+  has_many :car_requests, :order=>'schedule_at', :dependent=>:destroy
   named_scope :all_cars, :conditions=>{:vtype=>0}
   named_scope :all_bikes, :conditions=>{:vtype=>1}
 
