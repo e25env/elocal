@@ -65,4 +65,9 @@ class OfficeController < ApplicationController
       render :text=> ""
     end
   end
+  
+  private
+  def self.assigned?
+    return $xvars[:action] ? $xvars[:action][:assign].to_i==$user.id : false
+  end
 end
