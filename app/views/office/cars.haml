@@ -20,7 +20,7 @@
       %td= car.brand
       %td= car.color
       %td= car.car_code
-    - car.car_requests.each do |r|
+    - car.car_requests.active.each do |r|
       %tr
         - if office_office?
           %td &nbsp;
