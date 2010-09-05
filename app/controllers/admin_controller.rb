@@ -31,6 +31,7 @@ class AdminController < ApplicationController
   def git_pull_only
     @t = "<b>git pull</b><br/>"
     @t = exec_cmd("git pull").gsub("\n","<br/>")
+    @t = exec_cmd("touch tmp/restart.txt").gsub("\n","<br/>")
   end
   def db_push_ms
     @t= exec_cmd('heroku db:push postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force --tables gma_modules,gma_services').gsub("\n","<br/>")
