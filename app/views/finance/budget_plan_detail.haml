@@ -15,8 +15,8 @@
       %td
         = plan.name
         - if finance_office?
-          = image_tag 'add.png'
-          = link_to align_text('เพิ่มงาน'), "/run/finance/add_task?fy=#{params[:fy]}&plan=#{plan.id}"
+          = link_to image_tag('pencil.png',:title=>'แก้ไขแผนงาน'), "/run/finance/edit_plan?fy=#{params[:fy]}&plan=#{plan.id}"
+          = link_to image_tag('add.png',:title=>'เพิ่มงาน'), "/run/finance/add_task?fy=#{params[:fy]}&plan=#{plan.id}"
       %td(class='num')= currency(plan.budget)
       %td(class='num')= currency(plan.balance)
       %td(class='num')= plan.budget==0 ? 0 : number_to_percentage(plan.balance/plan.budget*100, :precision=>0)

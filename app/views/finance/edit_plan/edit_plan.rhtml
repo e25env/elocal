@@ -1,5 +1,5 @@
 <%
-  plan = Plan.new
+  plan = Plan.find $xvars[:p][:plan]
   plan.fy = $xvars[:p][:fy]
 %>
 <% fields_for plan do |f| %>

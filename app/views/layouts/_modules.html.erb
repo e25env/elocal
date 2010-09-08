@@ -9,7 +9,7 @@
         <% elsif m.code == 'admin' %>
           <li class="m"><%= link_to "<span>#{m.name}</span>","/gma/logs?module=#{m.code}" %></li>
         <% elsif m.code == 'finance' %>
-          <li class="m"><%= link_to "<span>#{m.name}</span>","/finance/budget?module=#{m.code}" %></li>
+          <li class="m"><%= link_to "<span>#{m.name}</span>","/finance?module=#{m.code}" %></li>
         <% else %>
           <li class="m"><%= link_to "<span>#{m.name}</span>","/?module=#{m.code}" %></li>
         <% end %>

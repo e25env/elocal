@@ -7,11 +7,23 @@ class SongritController < ApplicationController
   require 'nokogiri'
   require 'mechanize'
 
+  def init_budget
+    Ptype.all(:conditions=>{:fy=>2554}).each do |p|
+      Budget.create :ptype_id=>p, :section_id=>nil,
+        :name=>p.name, :code_laas=>p.code_laas, :fy=>2554
+      Section.all.each do |s|
+        Budget.create :ptype_id=>p, :section_id=>s,
+          :name=>p.name, :code_laas=>p.code_laas, :fy=>2554
+      end
+    end
+    render :text=>"done"
+  end
+  
   # set up new lao
   def set_up
     # create anonymous user
     # create org
-    # view 'update User class methods'
+    # review User class methods
   end
 
   def add_code_laas

@@ -1,0 +1,3 @@
+%li= link_to 'งบกลาง', :action=>:budget_cat
+- Section.all.each do |s|
+  %li= link_to s.name, :action=>:budget_cat, :section=>s.id

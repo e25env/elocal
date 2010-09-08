@@ -1,11 +1,44 @@
 class FinanceController < ApplicationController
+  def index
+  end
+  def copy_structure
+    # plan, task, cat, ptype, budget
+    Plan.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+      pp= p.clone
+      pp.fy= $xvars[:select_years][:fy1]
+      pp.save
+    end
+    Task.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+      pp= p.clone
+      plan = Plan.first :conditions=>['name=? and fy=?',pp.plan.name,$xvars[:select_years][:fy1]]
+      pp.fy= $xvars[:select_years][:fy1]
+      pp.plan_id = plan.id
+      pp.save
+    end
+    Cat.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+      pp= p.clone
+      pp.fy= $xvars[:select_years][:fy1]
+      pp.save
+    end
+    Ptype.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+      pp= p.clone
+      cat = Cat.first :conditions=>['name=? and fy=?',pp.cat.name,$xvars[:select_years][:fy1]]
+      pp.fy= $xvars[:select_years][:fy1]
+      pp.cat_id = cat.id
+      pp.save
+    end
+  end
   def create_bank
     bank = Bank.create $xvars[:enter_bank][:bank]
     return bank.id
   end
+  def update_plan
+    Plan.update $xvars[:p][:plan], $xvars[:edit_plan][:plan]
+    $xvars[:p][:return]='/finance/budget_plan'
+  end
   def update_ptype
     Ptype.update $xvars[:p][:ptype], $xvars[:edit_ptype][:ptype]
-    $xvars[:p][:return]='/finance/budget'
+    $xvars[:p][:return]='/finance/budget_cat'
   end
   def budget
 #    render :text => "hello"
@@ -43,7 +76,7 @@ class FinanceController < ApplicationController
     render :layout=>false
   end
   def budget_plan_detail
-    @plans = Plan.all :conditions=>"fy=#{params[:fy]}"
+    @plans = Plan.all :conditions=>"fy=#{params[:fy]}", :order=>:id
     render :layout=>false
   end
   def create_payment
