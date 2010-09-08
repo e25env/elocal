@@ -31,6 +31,7 @@ class AdminController < ApplicationController
   def git_pull_only
     @t = "<b>git pull</b><br/>"
     @t = exec_cmd("git pull").gsub("\n","<br/>")
+    update_local_server
     @t = exec_cmd("touch tmp/restart.txt").gsub("\n","<br/>")
   end
   def db_push_ms
@@ -64,12 +65,18 @@ class AdminController < ApplicationController
     ActiveRecord::SessionStore::Session.destroy_all(
       ['updated_at < ?', 40.minutes.ago.utc])
     redirect_to "/admin/stat"
-  end
+  end  
 
   # gma methods
   def create_news
     get_xvars
     News.create @xvars[:enter_news][:news]
     gma_notice 'news created'
+  end
+  
+  private
+  def update_local_server
+    @t = exec_cmd("rake db:migrate").gsub("\n","<br/>")
+    @t = exec_cmd("heroku db:pull --tables plans,tasks,sections,budgets").gsub("\n","<br/>")
   end
 end

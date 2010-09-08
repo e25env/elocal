@@ -245,14 +245,14 @@ bank = payment.bank
   <%= org.otype %> <%= b org.name.center(85,'.') %>
   อำเภอ <%= b org.district.center(60,'.') %>
   จังหวัด <%= b org.province.center(60,'.') %><br/>
-  กอง/แผนก <%= b '.'*190 %><br/>
-  ฎีกาเบิกเงิน <%= b "#{payment.num}/#{payment.fy}".center(70,'.') %>
-  วันที่ <%= b '.'*100 %><br/>
+  กอง/แผนก <%= b '.'*215 %><br/>
+  ฎีกาเบิกเงิน <%= b "#{payment.num}/#{payment.fy}".center(80,'.') %>
+  วันที่ <%= b '.'*120 %><br/>
   หมวด <%= b payment.cat.name.center(80,'.') %>
   ประเภท <%= b payment.ptype.name.center(178,'.') %><br/>
-  เงิน <%= b num_baht(payment.net_amount).center(40,'.') %> บาท
-  <%= b num_satang(payment.net_amount).center(40,'.') %> สตางค์
-  ผลัดส่งใบสำคัญ <%= b '.'*60 %><br/>
+  เงิน <%= b num_baht(payment.net_amount).center(50,'.') %> บาท
+  <%= b num_satang(payment.net_amount).center(50,'.') %> สตางค์
+  ผลัดส่งใบสำคัญ <%= b '.'*80 %><br/>
   เงิน <%= b '.'*50 %> บาท
   <%= b '.'*50 %> สตางค์
 </div>
@@ -318,4 +318,32 @@ bank = payment.bank
   <div style="float:left;"><%= org.otype %></div>
   <div style="float:right;">พิมพ์ที่โรงพิมพ์ส่วนท้องถิ่น</div>
 </div>
+<div style="page-break-before: always" />
+<h3 style="text-align:center;">ใบรับรองของผู้เบิก</h3>
+<div style='padding-left:20px;'>
 
+</div>
+<h3 style="text-align:center;">บันทึกข้อความ</h3>
+<div style='padding-left:20px;'>
+
+</div>
+<style>
+  @page landscape {size: A4 landscape;}
+  .land {page: landscape;}
+</style>
+<div style="page-break-before: always" />
+<div style='padding-left:20px; page: landscape;'>
+<h3 style="text-align:center;">ใบสำคัญรับเงิน</h3>
+<table>
+  <thead>
+    <tr>
+      <th>aa</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dd</td>
+    </tr>
+  </tbody>
+</table>
+</div>
