@@ -2,13 +2,12 @@
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node CREATED="1273819432637" ID="ID_1098419600" MODIFIED="1279699253278" TEXT="elocal">
 <node CREATED="1273819462973" ID="ID_282419531" MODIFIED="1280603215416" POSITION="right" TEXT="services">
-<node CREATED="1275756501221" ID="ID_1720745721" MODIFIED="1283833891369" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
+<node CREATED="1275756501221" FOLDED="true" ID="ID_1720745721" MODIFIED="1283997678375" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
 <node CREATED="1278491598711" ID="ID_1662699954" MODIFIED="1278491602025" TEXT="role:m"/>
 <node CREATED="1279700865182" ID="ID_1266797279" MODIFIED="1282824456921" TEXT="link:&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;: /account"/>
-<node CREATED="1275905802131" FOLDED="true" ID="ID_154000410" MODIFIED="1282828480616" TEXT="user:&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
+<node CREATED="1275905802131" ID="ID_154000410" MODIFIED="1283988813604" TEXT="user:&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
 <node CREATED="1275756515843" ID="ID_1108188320" MODIFIED="1282822194653" TEXT="enter_user:&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
 <icon BUILTIN="attach"/>
-<node CREATED="1282816887988" ID="ID_1773767504" MODIFIED="1282822162486" TEXT="rule:own_xmain?"/>
 </node>
 <node CREATED="1275756530989" ID="ID_1221806432" MODIFIED="1282822205361" TEXT="update_user">
 <icon BUILTIN="bookmark"/>
@@ -158,7 +157,7 @@
 <icon BUILTIN="closed"/>
 </node>
 </node>
-<node CREATED="1273706796854" ID="ID_1003882979" MODIFIED="1283836648426" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe23;&#xe30;&#xe1a;&#xe1a;">
+<node CREATED="1273706796854" FOLDED="true" ID="ID_1003882979" MODIFIED="1283997680695" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
 <node CREATED="1273706824535" ID="ID_682167045" MODIFIED="1278500871367" TEXT="link: update app: /gma/update_app"/>
 <node CREATED="1281681992475" ID="ID_757791014" MODIFIED="1283285585589" TEXT="link: dbpush modules/services:/admin/db_push_ms"/>
@@ -277,6 +276,14 @@
 <icon BUILTIN="attach"/>
 </node>
 <node CREATED="1283833836735" ID="ID_1609734279" MODIFIED="1283833848701" TEXT="copy_structure">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1283833795535" ID="ID_25545190" MODIFIED="1284155060735" TEXT="rm_structure:&#xe25;&#xe1a;&#xe1c;&#xe31;&#xe07;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<node CREATED="1283833823442" ID="ID_240758991" MODIFIED="1283833852354" TEXT="select_years:&#xe40;&#xe25;&#xe37;&#xe2d;&#xe01;&#xe1b;&#xe35;&#xe17;&#xe35;&#xe48;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe32;&#xe23;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1283833836735" ID="ID_583709273" MODIFIED="1284155066400" TEXT="rm_structure">
 <icon BUILTIN="bookmark"/>
 </node>
 </node>

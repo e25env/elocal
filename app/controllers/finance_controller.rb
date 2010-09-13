@@ -1,31 +1,47 @@
 class FinanceController < ApplicationController
   def index
   end
+  def rm_structure
+    Plan.delete_all(:fy=>$xvars[:select_years][:fy])
+    Task.delete_all(:fy=>$xvars[:select_years][:fy])
+    Cat.delete_all(:fy=>$xvars[:select_years][:fy])
+    Ptype.delete_all(:fy=>$xvars[:select_years][:fy])
+    gma_notice "ลบผังบัญชีปีงบประมาณ #{$xvars[:select_years][:fy]} เรียบร้อยแล้ว"
+  end
   def copy_structure
     # plan, task, cat, ptype, budget
-    Plan.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
-      pp= p.clone
-      pp.fy= $xvars[:select_years][:fy1]
-      pp.save
-    end
-    Task.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
-      pp= p.clone
-      plan = Plan.first :conditions=>['name=? and fy=?',pp.plan.name,$xvars[:select_years][:fy1]]
-      pp.fy= $xvars[:select_years][:fy1]
-      pp.plan_id = plan.id
-      pp.save
-    end
-    Cat.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
-      pp= p.clone
-      pp.fy= $xvars[:select_years][:fy1]
-      pp.save
-    end
-    Ptype.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
-      pp= p.clone
-      cat = Cat.first :conditions=>['name=? and fy=?',pp.cat.name,$xvars[:select_years][:fy1]]
-      pp.fy= $xvars[:select_years][:fy1]
-      pp.cat_id = cat.id
-      pp.save
+    if Plan.first(:conditions=>{:fy=>$xvars[:select_years][:fy1]})
+      gma_notice "ปีที่ต้องการมีอยู่แล้ว ไม่สามารถสร้างใหม่ได้"
+    else
+      Plan.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+        pp= p.clone
+        pp.fy= $xvars[:select_years][:fy1]
+        pp.balance= pp.budget
+        pp.save
+      end
+      Task.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+        pp= p.clone
+        plan = Plan.first :conditions=>['name=? and fy=?',pp.plan.name,$xvars[:select_years][:fy1]]
+        pp.fy= $xvars[:select_years][:fy1]
+        pp.balance= pp.budget
+        pp.plan_id = plan.id
+        pp.save
+      end
+      Cat.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+        pp= p.clone
+        pp.fy= $xvars[:select_years][:fy1]
+        pp.balance= pp.budget
+        pp.save
+      end
+      Ptype.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+        pp= p.clone
+        cat = Cat.first :conditions=>['name=? and fy=?',pp.cat.name,$xvars[:select_years][:fy1]]
+        pp.fy= $xvars[:select_years][:fy1]
+        pp.balance= pp.budget
+        pp.cat_id = cat.id
+        pp.save
+      end
+      gma_notice "คัดลอกผังบัญชีปีงบประมาณ #{$xvars[:select_years][:fy1]} เรียบร้อยแล้ว"
     end
   end
   def create_bank

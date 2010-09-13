@@ -7,6 +7,21 @@ class SongritController < ApplicationController
   require 'nokogiri'
   require 'mechanize'
 
+  def send_dloc_mail
+    count= 0
+    DlocMail.unsent.each do |m|
+      from= "dlocthai@gmail.com"
+      #    if m.recipient =~ /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/
+      Notifier.deliver_gma(from, m.recipient.chomp(","), m.subject, m.body||="" )
+      #    end
+      m.sent= true
+      m.save
+      count += 1
+    end
+    logger.info "#{Time.now}: sent #{count} mails\n\n"
+    render :text => "#{Time.now}: sent #{count} mails\n\n"
+  end
+
   def init_budget
     Ptype.all(:conditions=>{:fy=>2554}).each do |p|
       Budget.create :ptype_id=>p, :section_id=>nil,
