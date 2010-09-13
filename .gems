@@ -18,3 +18,4 @@ chronic
 javan-whenever --source http://gems.github.com
 mail --version 2.2.1
 backup
+mysql
