@@ -19,7 +19,7 @@ class OfficeController < ApplicationController
     doc.dtype= 1
     doc.save
     $xvars[:doc_id]= doc.id
-    $xvars[:action]= {:assign=>User.find_by_login('pornchai').id}
+    # $xvars[:action]= {:assign=>User.find_by_login('pornchai').id}
     set_songrit(:num_in, doc.rnum+1)
   end
   def create_doc_out
