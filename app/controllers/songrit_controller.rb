@@ -14,66 +14,24 @@ class SongritController < ApplicationController
     ff.text_field(:id,"_ctl0_txtPassword").set("318883")
     ff.button(:name,"_ctl0:btnLogin").click
     ff.goto('http://www.laas.go.th/Default.aspx?menu=1CE460F9-658D-4EB9-A68D-27A129E0207B&control=list&editable=true&screenname=REC_ASSET_RENT_OUTSIDE')
+    # get rcat
     doc = Nokogiri::HTML(ff.html)
     cats = doc.at_css('select')
     cats.css('option').each do |c|
       next if c['value'].blank?
-      rcat = Rcat.create :name=>c['title'], :code_laas=>c['value']
+      Rcat.create :name=>c['title'], :code_laas=>c['value']
+    end
+    # get rtype
+    Rcat.all.each do |c|
+      ff.select_list(:id,'_ctl0__ctl0_ddlReceiveType_ddlMain').select_value(c.code_laas)
+      doc = Nokogiri::HTML(ff.html)
+      doc.at_css('#_ctl0__ctl0_ddlRecTypeName_ddlMain').css('option').each do |t|
+        next if t['value'].blank?
+        Rtype.create :rcat_id=>c.id, :name=>t['title'], :code_laas=>t['value']
+      end
     end
     ff.close
     render :text => "done"
-  end
-  def init_budget
-    Ptype.all.each do |p|
-      Budget.create :ptype_id=>p.id, :section_id=>nil, :fy=>2554,
-        :cat_id=>p.cat_id
-      Section.all.each do |s|
-        Budget.create :ptype_id=>p.id, :section_id=>s, :fy=>2554,
-          :cat_id=>p.cat_id
-      end
-    end
-    render :text=>"done"
-  end
-  def send_dloc_mail
-    count= 0
-    DlocMail.unsent.each do |m|
-      from= "dlocthai@gmail.com"
-      #    if m.recipient =~ /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/
-      Notifier.deliver_gma(from, m.recipient.chomp(","), m.subject, m.body||="" )
-      #    end
-      m.sent= true
-      m.save
-      count += 1
-    end
-    logger.info "#{Time.now}: sent #{count} mails\n\n"
-    render :text => "#{Time.now}: sent #{count} mails\n\n"
-  end
-  
-  # set up new lao
-  def set_up
-    # create anonymous user
-    # create org
-    # review User class methods
-  end
-
-  def add_code_laas
-    Cat.all.each do |r|
-      r.code_laas= r.code
-      r.save
-    end
-    Ptype.all.each do |r|
-      r.code_laas= r.code
-      r.save
-    end
-    Plan.all.each do |r|
-      r.code_laas= r.code
-      r.save
-    end
-    Task.all.each do |r|
-      r.code_laas= r.code
-      r.save
-    end
-    render :text=>"done"
   end
   def get_laas
     ff=FireWatir::Firefox.new :waitTime=>4
@@ -119,6 +77,47 @@ class SongritController < ApplicationController
 
     ff.close
     render :text => 'hello'
+  end
+  def send_dloc_mail
+    count= 0
+    DlocMail.unsent.each do |m|
+      from= "dlocthai@gmail.com"
+      #    if m.recipient =~ /^([0-9a-zA-Z]([-.\w]*[0-9a-zA-Z])*@([0-9a-zA-Z][-\w]*[0-9a-zA-Z]\.)+[a-zA-Z]{2,9})$/
+      Notifier.deliver_gma(from, m.recipient.chomp(","), m.subject, m.body||="" )
+      #    end
+      m.sent= true
+      m.save
+      count += 1
+    end
+    logger.info "#{Time.now}: sent #{count} mails\n\n"
+    render :text => "#{Time.now}: sent #{count} mails\n\n"
+  end
+  
+  # set up new lao
+  def set_up
+    # create anonymous user
+    # create org
+    # review User class methods
+  end
+
+  def add_code_laas
+    Cat.all.each do |r|
+      r.code_laas= r.code
+      r.save
+    end
+    Ptype.all.each do |r|
+      r.code_laas= r.code
+      r.save
+    end
+    Plan.all.each do |r|
+      r.code_laas= r.code
+      r.save
+    end
+    Task.all.each do |r|
+      r.code_laas= r.code
+      r.save
+    end
+    render :text=>"done"
   end
   def test_search
     q= 'พรชัย'

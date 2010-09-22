@@ -241,7 +241,8 @@
 </node>
 </node>
 <node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1284971255040" TEXT="finance: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe32;&#xe23;&#xe04;&#xe25;&#xe31;&#xe07;">
-<node CREATED="1280606688606" ID="ID_817246565" MODIFIED="1283756491051" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;: /finance"/>
+<node CREATED="1285183222740" ID="ID_725765001" MODIFIED="1285183242654" TEXT="link:&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;: /finance/revenue"/>
+<node CREATED="1280606688606" ID="ID_817246565" MODIFIED="1285183256692" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe23;&#xe32;&#xe22;&#xe08;&#xe48;&#xe32;&#xe22;: /finance"/>
 <node CREATED="1280606688606" ID="ID_819043612" MODIFIED="1281414946023" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe2b;&#xe21;&#xe27;&#xe14;: /finance/budget_cat"/>
 <node CREATED="1281414908442" ID="ID_1331942068" MODIFIED="1281414930886" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe41;&#xe1c;&#xe19;:/finance/budget_plan"/>
 <node CREATED="1280809504423" ID="ID_888371375" MODIFIED="1283942486345" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
