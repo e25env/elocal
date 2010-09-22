@@ -1,0 +1,64 @@
+<link href="/stylesheets/sarabun.css" rel="stylesheet" type="text/css" />
+<style type="text/css">
+  body {padding: 50px;}
+</style>
+<%  doc = Doc.find @xvars[:doc_id] %>
+<div style="padding-bottom:50px;">
+  <%= image_tag 'krut.gif', :style=>"float:left;" %>
+  <div style="padding-top:30px; font-size:30pt; text-align:center;">
+    บันทึกข้อความ
+  </div>
+</div>
+<b>ส่วนราชการ</b> <%= doc.dfrom %><br/>
+<b>ที่</b> <%= doc.num %>
+<span style="position:relative;left:50%;">
+  <b >วันที่</b> <%= date_thai doc.issue_on, :date_only=>true %><br/>
+</span>
+<b>เรื่อง</b> <%= doc.subject %>
+<% if doc.dscan %>
+  <br/><b>สิ่งที่ส่งมาด้วย</b> <%= link_to image_tag("page_attach.png")+align_text("เอกสารสแกน"), doc.dscan, :target=>'_blank' %>
+<% end %>
+<hr />
+<b>เรียน</b> <%= doc.dto %>
+<div id="body" style="padding-top:20px;">
+  <%= textilize doc.summary %>
+</div>
+<div style="text-align:center; padding-top:50px;">
+  (<%= @xmain.gma_user.full_name %>)<br/>
+  <%= @xmain.gma_user.position %>
+</div>
+<div style="page-break-before: always" />
+<style type="text/css">
+  table { -moz-border-radius:10px; -webkit-border-radius:10px;}
+  tr {page-break-inside: avoid;}
+  td {border:1px solid gray; width:50%;-moz-border-radius:10px; -webkit-border-radius:10px;}
+  .sign {border-bottom: 1px dashed gray; width:70%; height:70px;}
+  h2 {text-align:center; font-size:24pt;}
+  h3 {text-align:center; font-size:18pt; color: black;}
+</style>
+<h3>
+  เกษียณหนังสือ <b><%= @xmain.id %></b>
+  เลขที่หนังสือ: <b><%= doc.num %></b>
+  ลงวันที่: <b><%= date_thai doc.issue_on, :date_only=>true, :monthfull => true %></b><br/>
+  จาก: <b><%= doc.dfrom %></b> ถึง: <b><%= doc.dto %></b><br/>
+  เรื่อง: <b><%= doc.subject %></b>
+</h3>
+<table style="width:100%;">
+  <% left=true %>
+<% @xmain.comments.each do |c| %>
+  <% if left %>
+    <tr>
+  <% end %>
+    <td align="center">
+      <div class="content"><%= c.content %></div>
+      <div class="sign"></div>
+      <%= c.gma_user.full_name %><br/>
+      (<%= c.gma_user.position %>)<br/>
+      <%= date_thai c.created_at %>
+    </td>
+  <% if !left %>
+    </tr>
+  <% end %>
+    <% left = !left %>
+<% end %>
+</table>

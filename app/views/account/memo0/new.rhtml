@@ -1,0 +1,54 @@
+<%
+doc = Doc.new
+%>
+<% fields_for doc do |f| %>
+  <table id="doc" width="100%">
+    <tr>
+      <td class="field-name">ส่วนราชการ</td>
+      <td colspan="2"><%= f.text_field :dfrom, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เลขที่หนังสือ</td>
+      <td><%= f.text_field :num, :style => "width:200px;" %></td>
+      <td style="width:50%;">&nbsp;</td>
+    </tr>
+    <tr>
+      <td class="field-name">ลงวันที่</td>
+      <td colspan="2"><%= f.date_select_thai :issue_on %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เรื่อง</td>
+      <td colspan="2"><%= f.text_field :subject, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เรียน</td>
+      <td colspan="2"><%= f.text_field :dto, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">
+        ข้อความ<br/>รหัส
+        <%= link_to 'RedCloth','http://redcloth.org/hobix.com/textile/', :target=>'_blank' %>
+      </td>
+      <td colspan="2"><%= f.text_area :summary, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สแกนเอกสารแนบ</td>
+      <td colspan="2"><%= f.file_field :dscan %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ส่งมอบการปฏิบัติงาน</td>
+      <% options = "<option value='' selected='selected'>กรุณาเลือกผู้ดำเนินการท่านต่อไป</option>" %>
+      <% options << options_from_collection_for_select(User.all_but_me, :id, :full_name) %>
+      <td colspan="2"><%= select_tag :assign, options %></td>
+    </tr>
+  </table>
+<% end %>
+<%= fix_thai_year %>
+<script>
+  function validate() {
+    if ($('#assign').val()=='') {
+      alert('กรุณาเลือกผู้ดำเนินการ');
+      return false;
+    }
+  }
+</script>
