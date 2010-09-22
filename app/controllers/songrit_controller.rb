@@ -7,6 +7,33 @@ class SongritController < ApplicationController
   require 'nokogiri'
   require 'mechanize'
 
+  def get_laas_revenue
+    ff=FireWatir::Firefox.new :waitTime=>4
+    ff.goto('http://www.laas.go.th/')
+    ff.text_field(:id,"_ctl0_txtUserName").set("abtbtnai714")
+    ff.text_field(:id,"_ctl0_txtPassword").set("318883")
+    ff.button(:name,"_ctl0:btnLogin").click
+    ff.goto('http://www.laas.go.th/Default.aspx?menu=1CE460F9-658D-4EB9-A68D-27A129E0207B&control=list&editable=true&screenname=REC_ASSET_RENT_OUTSIDE')
+    doc = Nokogiri::HTML(ff.html)
+    cats = doc.at_css('select')
+    cats.css('option').each do |c|
+      next if c['value'].blank?
+      rcat = Rcat.create :name=>c['title'], :code_laas=>c['value']
+    end
+    ff.close
+    render :text => "done"
+  end
+  def init_budget
+    Ptype.all.each do |p|
+      Budget.create :ptype_id=>p.id, :section_id=>nil, :fy=>2554,
+        :cat_id=>p.cat_id
+      Section.all.each do |s|
+        Budget.create :ptype_id=>p.id, :section_id=>s, :fy=>2554,
+          :cat_id=>p.cat_id
+      end
+    end
+    render :text=>"done"
+  end
   def send_dloc_mail
     count= 0
     DlocMail.unsent.each do |m|
@@ -20,18 +47,6 @@ class SongritController < ApplicationController
     end
     logger.info "#{Time.now}: sent #{count} mails\n\n"
     render :text => "#{Time.now}: sent #{count} mails\n\n"
-  end
-
-  def init_budget
-    Ptype.all(:conditions=>{:fy=>2554}).each do |p|
-      Budget.create :ptype_id=>p, :section_id=>nil,
-        :name=>p.name, :code_laas=>p.code_laas, :fy=>2554
-      Section.all.each do |s|
-        Budget.create :ptype_id=>p, :section_id=>s,
-          :name=>p.name, :code_laas=>p.code_laas, :fy=>2554
-      end
-    end
-    render :text=>"done"
   end
   
   # set up new lao
@@ -60,7 +75,7 @@ class SongritController < ApplicationController
     end
     render :text=>"done"
   end
-  def test_laas
+  def get_laas
     ff=FireWatir::Firefox.new :waitTime=>4
     ff.goto('http://www.laas.go.th/')
     ff.text_field(:id,"_ctl0_txtUserName").set("abtbtnai714")
@@ -73,8 +88,7 @@ class SongritController < ApplicationController
     # get plans
     plans.css('option').each do |p|
       next if p['value'].blank?
-      plan = Plan.create :name=>p['title'], :code=>p['value'],
-        :fy=>2553, :balance=>0, :budget=>0
+      plan = Plan.create :name=>p['title'], :code_laas=>p['value']
     end
     # get tasks
     Plan.all.each do |p|
@@ -83,16 +97,14 @@ class SongritController < ApplicationController
       doc.search('DropdownData').each do |t|
         next if t.search('Value').text.blank?
         Task.create :plan_id=>p.id, :name=>t.search('Text').text,
-          :code=>t.search('Value').text, :budget=>0, :balance=>0,
-          :fy=>2553
+          :code_laas=>t.search('Value').text
       end
     end
     # get cats
     cats= doc.at_css('#_ctl0__ctl0_usrPrjMGTForm_FbddlCategory_ddlMain')
     cats.css('option').each do |p|
       next if p['value'].blank?
-      cat = Cat.create :name=>p.text, :code=>p['value'],
-        :fy=>2553, :balance=>0, :budget=>0
+      cat = Cat.create :name=>p.text, :code_laas=>p['value']
     end
     # get ptypes
     Cat.all.each do |p|
@@ -101,8 +113,7 @@ class SongritController < ApplicationController
       doc.search('DropdownData').each do |t|
         next if t.search('Value').text.blank?
         Ptype.create :cat_id=>p.id, :name=>t.search('Text').text,
-          :code=>t.search('Value').text, :budget=>0, :balance=>0,
-          :fy=>2553
+          :code_laas=>t.search('Value').text
       end
     end
 
