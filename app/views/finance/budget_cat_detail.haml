@@ -17,15 +17,15 @@
         - if finance_office?
           = link_to image_tag('add.png',:title=>'เพิ่มประเภท'), "/run/finance/add_ptype?fy=#{params[:fy]}&cat=#{cat.id}"
           /= link_to align_text('เพิ่มประเภท'), "/run/finance/add_ptype?fy=#{params[:fy]}&cat=#{cat.id}"
-      %td(class='num')= currency(cat.budget)
-      %td(class='num')= currency(cat.balance)
+      %td(class='num')= currency(cat.budget(params[:fy]))
+      %td(class='num')= currency(cat.balance(params[:fy]))
       %td(class='num')= cat.budget==0 ? 0 : number_to_percentage(cat.balance/cat.budget*100, :precision=>0)
     - cat.ptypes.each do |ptype|
       %tr
         %td
-          = '&nbsp;&nbsp; - '+ptype.name
+          = '&nbsp;&nbsp; - '+link_to(ptype.name, :action=>:ptype, :id=>ptype.id, :fy=>params[:fy])
           - if finance_office?
             = link_to image_tag('pencil.png',:title=>'แก้ไข'),"/run/finance/edit_ptype?ptype=#{ptype.id}"
-        %td(class='num')= currency(ptype.budget)
-        %td(class='num')= currency(ptype.balance)
-        %td(class='num')= ptype.budget==0 ? 0 : number_to_percentage(ptype.balance/ptype.budget*100, :precision=>0)
+        %td(class='num')= currency(ptype.budget(params[:fy]))
+        %td(class='num')= currency(ptype.balance(params[:fy]))
+        %td(class='num')= ptype.budget==0 ? 0 : number_to_percentage(ptype.balance(params[:fy])/ptype.budget(params[:fy])*100, :precision=>0)

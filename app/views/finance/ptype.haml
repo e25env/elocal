@@ -1,0 +1,25 @@
+%style
+  td.num {text-align:right;}
+= "งบประมาณปี #{params[:fy]} หมวด#{@ptype.cat.name} ประเภท#{@ptype.name}"
+- if finance_office?
+  %div(style='float:right')
+    =image_tag 'add.png'
+    = link_to align_text('เพิ่มงบประมาณ'), "/run/finance/add_budget/#{params[:id]}?fy=#{params[:fy]}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if finance_office?
+      %th(style="width:50px;") แก้ไข
+      %th(style="width:50px;") ลบ
+    %th ส่วน
+    %th งบประมาณ
+    %th คงเหลือ
+    %th ร้อยละ
+  - @budgets.each do |b|
+    %tr
+      - if finance_office?
+        %th= link_to image_tag('pencil.png'), "/run/finance/edit_budget/#{params[:id]}?fy=#{params[:fy]}"
+        %th= link_to image_tag('delete.png'), "/run/finance/rm_budget/#{params[:id]}?fy=#{params[:fy]}"
+      %td= b.section.name
+      %td(class='num')= currency(0)
+      %td(class='num')= currency(0)
+      %td(class='num')= 0==0 ? 0 : number_to_percentage(cat.balance/cat.budget*100, :precision=>0)

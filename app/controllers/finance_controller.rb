@@ -1,6 +1,22 @@
 class FinanceController < ApplicationController
   def index
   end
+  def create_budget
+    budget = Budget.create $xvars[:enter_budget][:budget]
+    $xvars[:p][:return]='/finance'
+  end
+  def rm_budget
+    Budget.destroy $xvars[:p][:id]
+    $xvars[:p][:return]='/finance'
+  end
+  def update_budget
+    Budget.update $xvars[:p][:id], $xvars[:edit_budget][:budget]
+    $xvars[:p][:return]='/finance'
+  end
+  def ptype
+    @ptype=Ptype.find params[:id]
+    @budgets= Budget.all :conditions=>{:fy=>params[:fy], :ptype_id=>@ptype.id}
+  end
   def rm_structure
     Plan.delete_all(:fy=>$xvars[:select_years][:fy])
     Task.delete_all(:fy=>$xvars[:select_years][:fy])
@@ -83,12 +99,11 @@ class FinanceController < ApplicationController
     redirect_to :action => "budget"
   end
   def budget_detail
-    @cats = Cat.all :conditions=>"fy=#{params[:fy]}"
-    @plans = Plan.all :conditions=>"fy=#{params[:fy]}"
+    @fsections = Fsection.all
     render :layout=>false
   end
   def budget_cat_detail
-    @cats = Cat.all :conditions=>"fy=#{params[:fy]}"
+    @cats = Cat.all
     render :layout=>false
   end
   def budget_plan_detail
@@ -121,33 +136,19 @@ class FinanceController < ApplicationController
     end
   end
   def create_cat
-    cat = Cat.new $xvars[:enter_cat][:cat]
-    cat.budget= cat.balance= 0
-    cat.save
+    cat = Cat.create $xvars[:enter_cat][:cat]
     $xvars[:p][:return]='/finance/budget'
   end
   def create_ptype
-    ptype = Ptype.new $xvars[:enter_ptype][:ptype]
-    ptype.save
-    cat= ptype.cat
-    cat.budget += ptype.budget
-    cat.balance += ptype.balance
-    cat.save
+    ptype = Ptype.create $xvars[:enter_ptype][:ptype]
     $xvars[:p][:return]='/finance/budget'
   end
   def create_plan
-    plan = Plan.new $xvars[:enter_plan][:plan]
-    plan.budget= plan.balance= 0
-    plan.save
+    plan = Plan.create $xvars[:enter_plan][:plan]
     $xvars[:p][:return]='/finance/budget'
   end
   def create_task
-    task = Task.new $xvars[:enter_task][:task]
-    task.save
-    plan = task.plan
-    plan.budget += task.budget
-    plan.balance += task.balance
-    plan.save
+    task = Task.create $xvars[:enter_task][:task]
     $xvars[:p][:return]='/finance/budget'
   end
 

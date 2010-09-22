@@ -1,14 +1,8 @@
 <%
   plan = Plan.new
-  plan.fy = $xvars[:p][:fy]
 %>
 <% fields_for plan do |f| %>
   <table id="plan" width="100%">
-    <%= f.hidden_field :fy %>
-    <tr>
-      <td class="field-name">ปีงบประมาณ</td>
-      <td colspan="2"><%= plan.fy %></td>
-    </tr>
     <tr>
       <td class="field-name">แผนงาน</td>
       <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>

@@ -1,14 +1,9 @@
 <%
   cat = Cat.new
-  cat.fy = $xvars[:p][:fy]
 %>
 <% fields_for cat do |f| %>
   <table id="cat" width="100%">
     <%= f.hidden_field :fy %>
-    <tr>
-      <td class="field-name">ปีงบประมาณ</td>
-      <td colspan="2"><%= cat.fy %></td>
-    </tr>
     <tr>
       <td class="field-name">รหัสบัญชี</td>
       <td colspan="2"><%= f.text_field :code, :style => "width:400px;" %></td>

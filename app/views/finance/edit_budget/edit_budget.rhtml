@@ -1,0 +1,52 @@
+<%
+  budget = Budget.find $xvars[:id]
+%>
+<% fields_for budget do |f| %>
+  <table id="budget" width="100%">
+    <%= f.hidden_field :fy %>
+    <%= f.hidden_field :fsection_id %>
+    <tr>
+      <td class="field-name">ส่วน</td>
+      <td colspan="2"><%= budget.fsection.name %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมวด</td>
+      <td colspan="2"><%= f.collection_select :cat_id, Cat.all(:order=>'code'), :id, :name, :prompt=>'..กรุณาเลือกหมวด' %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan="2"><%= f.collection_select :ptype_id, budget.cat.ptypes, :id, :name %></td>
+    </tr>
+    <tr>
+      <td class="field-name">งบประมาณ</td>
+      <td><%= f.text_field :budget, :style => "width:200px;" %></td>
+      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
+    </tr>
+    <tr>
+      <td class="field-name">งบประมาณคงเหลือ</td>
+      <td><%= f.text_field :balance, :style => "width:200px;" %></td>
+      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
+    </tr>
+    <tr>
+      <td class="field-name">แผนงาน</td>
+      <td colspan="2"><%= f.collection_select :plan_id, Plan.all(:order=>'code'), :id, :name, :prompt=>'..กรุณาเลือกแผนงาน' %></td>
+    </tr>
+    <tr>
+      <td class="field-name">งาน</td>
+      <td colspan="2"><%= f.collection_select :task_id, budget.plan.tasks, :id, :name %></td>
+    </tr>
+  </table>
+<% end %>
+<script type="text/javascript" >
+  var animate = "<img src='/images/ajax-loader.gif' alt='loading...' />";
+  $('#budget_cat_id').change(function() {
+    $('#balance').text('');
+    $('#budget_ptype_id').html('').load('/finance/get_ptypes?cat='+$('#budget_cat_id option:selected').val());
+  })
+  $('#budget_plan_id').change(function() {
+    $('#budget_task_id').html('').load('/finance/get_tasks?plan='+$('#budget_plan_id option:selected').val())
+  })
+  $('#budget_budget').change(function() {
+    $('#budget_balance').val($('#budget_budget').val());
+  })
+</script>

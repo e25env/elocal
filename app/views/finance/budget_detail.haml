@@ -1,55 +1,39 @@
-%style
-  td.num {text-align:right;}
-- if finance_office?
-  %div(style='float:right')
-    =image_tag 'add.png'
-    = link_to align_text('เพิ่มหมวด'), "/run/finance/add_cat?fy=#{params[:fy]}"
-    =image_tag 'add.png'
-    = link_to align_text('เพิ่มแผนงาน'), "/run/finance/add_plan?fy=#{params[:fy]}"
+:css
+  .num {text-align:right;width:100px;}
 %table{:class=>'budget_table', :width=>"100%"}
-  %tr{:style=>"color:white; background-color:#6A6A6A;"}
-    %th หมวด / ประเภท
-    %th งบประมาณ
-    %th คงเหลือ
-    %th ร้อยละ
-  - @cats.each do |cat|
-    %tr
-      %td
-        = cat.name
-        - if finance_office?
-          = image_tag 'add.png'
-          = link_to align_text('เพิ่มประเภท'), "/run/finance/add_ptype?fy=#{params[:fy]}&cat=#{cat.id}"
-      %td(class='num')= currency(cat.budget)
-      %td(class='num')= currency(cat.balance)
-      %td(class='num')= cat.budget==0 ? 0 : number_to_percentage(cat.balance/cat.budget*100, :precision=>0)
-    - cat.ptypes.each do |ptype|
+  - @fsections.each do |s|
+    - if finance_office?
       %tr
-        %td
-          = '&nbsp;&nbsp; - '+ptype.name
+        - if finance_office?
+          %td(align='right' colspan=6)
+            = image_tag 'add.png'
+            = link_to align_text("เพิ่มงบประมาณ#{s.name}"), "/run/finance/add_budget?fy=#{params[:fy]}&fsection=#{s.id}"
+        - else
+          %td(align='right' colspan=4)
+            = image_tag 'add.png'
+            = link_to align_text("เพิ่มงบประมาณ#{s.name}"), "/run/finance/add_budget?fy=#{params[:fy]}&fsection=#{s.id}"
+    %tr{:style=>"color:white; background-color:#6A6A6A;"}
+      - if finance_office?
+        %th(style="width:30px;") แก้ไข
+        %th(style="width:30px;") ลบ
+      %th= s.name
+      %th งบประมาณ
+      %th คงเหลือ
+      %th ร้อยละ
+    - @budgets= Budget.all :conditions=>{:fy=>params[:fy], :fsection_id=>s.id}, :order=>"cat_id,ptype_id"
+    - cat_id = nil
+    - @budgets.each do |b|
+      - if cat_id != b.cat_id
+        %tr
           - if finance_office?
-            = link_to image_tag('pencil.png'),"/run/finance/edit_ptype?ptype=#{ptype.id}"
-        %td(class='num')= currency(ptype.budget)
-        %td(class='num')= currency(ptype.balance)
-        %td(class='num')= ptype.budget==0 ? 0 : number_to_percentage(ptype.balance/ptype.budget*100, :precision=>0)
-%table{:class=>'budget_table', :width=>"100%"}
-  %tr{:style=>"color:white; background-color:#6A6A6A;"}
-    %th แผนงาน / งาน
-    %th งบประมาณ
-    %th คงเหลือ
-    %th ร้อยละ
-  - @plans.each do |plan|
-    %tr
-      %td
-        = plan.name
-        - if finance_office?
-          = image_tag 'add.png'
-          = link_to align_text('เพิ่มงาน'), "/run/finance/add_task?fy=#{params[:fy]}&plan=#{plan.id}"
-      %td(class='num')= currency(plan.budget)
-      %td(class='num')= currency(plan.balance)
-      %td(class='num')= plan.budget==0 ? 0 : number_to_percentage(plan.balance/plan.budget*100, :precision=>0)
-    - plan.tasks.each do |task|
+            %th(colspan="2")
+          %td(colspan="4")= b "หมวด#{b.cat.name}"
+        - cat_id= b.cat_id
       %tr
-        %td= '&nbsp;&nbsp; - '+task.name
-        %td(class='num')= currency(task.budget)
-        %td(class='num')= currency(task.balance)
-        %td(class='num')= task.budget==0 ? 0 : number_to_percentage(task.balance/task.budget*100, :precision=>0)
+        - if finance_office?
+          %th= link_to image_tag('pencil.png'), "/run/finance/edit_budget/#{b.id}"
+          %th= link_to image_tag('delete.png'), "/run/finance/rm_budget/#{b.id}", :confirm=>"กรุณายืนยันการลบข้อมูล"
+        %td= b.ptype.name
+        %td.num= currency(b.budget)
+        %td.num= currency(b.balance)
+        %td.num(style="width:50px;")= b.budget==0 ? 0 : number_to_percentage(b.balance/b.budget*100, :precision=>0)

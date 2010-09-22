@@ -3,12 +3,7 @@
 %>
 <% fields_for ptype do |f| %>
   <table id="ptype" width="100%">
-    <%= f.hidden_field :fy %>
     <%= f.hidden_field :cat_id %>
-    <tr>
-      <td class="field-name">ปีงบประมาณ</td>
-      <td colspan="2"><%= ptype.fy %></td>
-    </tr>
     <tr>
       <td class="field-name">หมวด</td>
       <td colspan="2"><%= ptype.cat.name %></td>
@@ -24,24 +19,6 @@
     <tr>
       <td class="field-name">ประเภท</td>
       <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">งบประมาณ</td>
-      <td><%= f.text_field :budget, :style => "width:200px;" %></td>
-      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
-    </tr>
-    <tr>
-      <td class="field-name">งบประมาณคงเหลือ</td>
-      <td><%= f.text_field :balance, :style => "width:200px;" %></td>
-      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
-    </tr>
-    <tr>
-      <td class="field-name">ข้อบัญญัติหน้า</td>
-      <td colspan="2"><%= f.text_field :law_page, :style => "width:200px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ข้อบัญญัติ ข้อที่</td>
-      <td colspan="2"><%= f.text_field :law_item, :style => "width:200px;" %></td>
     </tr>
   </table>
 <% end %>

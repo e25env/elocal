@@ -1,6 +1,20 @@
 class AdminController < ApplicationController
   before_filter :admin_action, :except=>[:daily_housekeeping, :hourly_housekeeping]
 
+  def gen_fsection
+    if Fsection.first :conditions=>"budget!=0 OR balance!=0"
+      flash[:notice]= "งบปัจจุบันไม่เป็นศูนย์ ไม่สามารถสร้างส่วนใหม่ได้"
+    else
+      Fsection.delete_all
+      Fsection.create :code=>"00", :name=>"งบกลาง", :balance=>0, :budget=>0
+      Section.all.each do |s|
+        Fsection.create :code=>s.code, :name=>s.name,
+          :balance=>0, :budget=>0
+      end
+      flash[:notice]= "สร้างส่วนสำหรับงบประมาณเรียบร้อยแล้ว"
+    end
+    redirect_to "/"
+  end
   def update_role
     GmaUser.update $xvars[:select_user][:user_id], :role=>$xvars[:edit_role][:role]
     gma_notice "แก้ไขสิทธิเรียบร้อยแล้ว"

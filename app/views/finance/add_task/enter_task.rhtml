@@ -1,16 +1,10 @@
 <%
   task = Task.new
-  task.fy= $xvars[:p][:fy]
   task.plan_id= $xvars[:p][:plan]
 %>
 <% fields_for task do |f| %>
   <table id="task" width="100%">
-    <%= f.hidden_field :fy %>
     <%= f.hidden_field :plan_id %>
-    <tr>
-      <td class="field-name">ปีงบประมาณ</td>
-      <td colspan="2"><%= task.fy %></td>
-    </tr>
     <tr>
       <td class="field-name">แผนงาน</td>
       <td colspan="2"><%= task.plan.name %></td>
@@ -26,16 +20,6 @@
     <tr>
       <td class="field-name">งาน</td>
       <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">งบประมาณ</td>
-      <td><%= f.text_field :budget, :style => "width:200px;" %></td>
-      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
-    </tr>
-    <tr>
-      <td class="field-name">งบประมาณคงเหลือ</td>
-      <td><%= f.text_field :balance, :style => "width:200px;" %></td>
-      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
     </tr>
   </table>
 <% end %>
