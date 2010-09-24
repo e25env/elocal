@@ -25,7 +25,7 @@ class AdminController < ApplicationController
     $xvars[:email]= u.email
     gma_notice "แก้ไขรหัสผ่านเรียบร้อยแล้ว"
   end
-  def git_pull
+  def git_pull_full
     @t = "<b>git pull</b><br/>"
     @t = exec_cmd("git pull").gsub("\n","<br/>")
     @t << "<hr/>"
@@ -91,6 +91,6 @@ class AdminController < ApplicationController
   private
   def update_local_server
     @t = exec_cmd("rake db:migrate").gsub("\n","<br/>")
-    @t = exec_cmd("heroku db:pull --tables plans,tasks,sections,budgets").gsub("\n","<br/>")
+    @t = exec_cmd("heroku db:pull --tables fsections,rcats,rtypes").gsub("\n","<br/>")
   end
 end
