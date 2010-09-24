@@ -4,14 +4,9 @@
   - @fsections.each do |s|
     - if finance_office?
       %tr
-        - if finance_office?
-          %td(align='right' colspan=6)
-            = image_tag 'add.png'
-            = link_to align_text("เพิ่มงบประมาณ#{s.name}"), "/run/finance/add_budget?fy=#{params[:fy]}&fsection=#{s.id}"
-        - else
-          %td(align='right' colspan=4)
-            = image_tag 'add.png'
-            = link_to align_text("เพิ่มงบประมาณ#{s.name}"), "/run/finance/add_budget?fy=#{params[:fy]}&fsection=#{s.id}"
+        %td(align='right' colspan=6)
+          = image_tag 'add.png'
+          = link_to align_text("เพิ่มงบประมาณ#{s.name}"), "/run/finance/add_budget?fy=#{params[:fy]}&fsection=#{s.id}"
     %tr{:style=>"color:white; background-color:#6A6A6A;"}
       - if finance_office?
         %th(style="width:30px;") แก้ไข

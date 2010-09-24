@@ -399,6 +399,34 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
+<node CREATED="1280676987865" ID="ID_1077102990" MODIFIED="1285284994720" TEXT="add_revenue: &#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
+<icon BUILTIN="closed"/>
+<node CREATED="1280676999730" ID="ID_1533416323" MODIFIED="1285234925454" TEXT="enter_revenue:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe01;&#xe32;&#xe23;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
+<icon BUILTIN="attach"/>
+<node CREATED="1280677202424" ID="ID_64812504" MODIFIED="1280677207161" TEXT="role:co"/>
+<node CREATED="1280677207860" ID="ID_1086188358" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
+</node>
+<node CREATED="1280677006720" ID="ID_173867913" MODIFIED="1285234933144" TEXT="create_revenue">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1280676987865" ID="ID_1059165896" MODIFIED="1285284987155" TEXT="edit_revenue: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
+<icon BUILTIN="closed"/>
+<node CREATED="1280676999730" ID="ID_1804238163" MODIFIED="1285290716687" TEXT="edit_revenue:&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe01;&#xe32;&#xe23;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
+<icon BUILTIN="attach"/>
+<node CREATED="1280677202424" ID="ID_1662057348" MODIFIED="1280677207161" TEXT="role:co"/>
+<node CREATED="1280677207860" ID="ID_616974866" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
+</node>
+<node CREATED="1280677006720" ID="ID_1794173879" MODIFIED="1285284961556" TEXT="update_revenue">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1285131538158" ID="ID_1613662592" MODIFIED="1285284979752" TEXT="rm_revenue: &#xe25;&#xe1a;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
+<icon BUILTIN="closed"/>
+<node CREATED="1285131548034" ID="ID_586996476" MODIFIED="1285284965697" TEXT="rm_revenue">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
 </node>
 <node CREATED="1279397823918" ID="ID_1341757428" MODIFIED="1279795978965" TEXT="construction: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe42;&#xe22;&#xe18;&#xe32;"/>
 <node CREATED="1279397843519" ID="ID_1305812282" MODIFIED="1279795974270" TEXT="health: &#xe2a;&#xe48;&#xe27;&#xe19;&#xe2a;&#xe32;&#xe18;&#xe32;&#xe23;&#xe13;&#xe2a;&#xe38;&#xe02;&#xe41;&#xe25;&#xe30;&#xe2a;&#xe34;&#xe48;&#xe07;&#xe41;&#xe27;&#xe14;&#xe25;&#xe49;&#xe2d;&#xe21;"/>

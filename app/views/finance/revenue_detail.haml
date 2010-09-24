@@ -1,0 +1,32 @@
+:css
+  .num {text-align:right;width:100px;}
+%table{:class=>'budget_table', :width=>"100%"}
+  - if finance_office?
+    %tr
+      %td(align='right' colspan=6)
+        = image_tag 'add.png'
+        = link_to align_text("เพิ่มประมาณการรายรับ"), "/run/finance/add_revenue?fy=#{params[:fy]}"
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if finance_office?
+      %th(style="width:30px;") แก้ไข
+      %th(style="width:30px;") ลบ
+    %th หมวด/ประเภท
+    %th ประมาณการ
+    %th รายรับ
+    %th ร้อยละ
+  - rcat_id = nil
+  - @revenues.each do |b|
+    - if rcat_id != b.rcat_id
+      %tr
+        - if finance_office?
+          %th(colspan="2")
+        %td(colspan="4")= b "#{b.rcat.name}"
+      - rcat_id= b.rcat_id
+    %tr
+      - if finance_office?
+        %th= link_to image_tag('pencil.png'), "/run/finance/edit_revenue/#{b.id}"
+        %th= link_to image_tag('delete.png'), "/run/finance/rm_revenue/#{b.id}", :confirm=>"กรุณายืนยันการลบข้อมูล#{b.name}"
+      %td= b.rtype.name
+      %td.num= currency(b.budget)
+      %td.num= currency(b.balance)
+      %td.num(style="width:50px;")= b.budget==0 ? 0 : number_to_percentage(b.balance/b.budget*100, :precision=>0)

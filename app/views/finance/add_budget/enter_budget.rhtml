@@ -44,7 +44,7 @@
 <script type="text/javascript" >
   var animate = "<img src='/images/ajax-loader.gif' alt='loading...' />";
   $('#budget_cat_id').change(function() {
-    $('#balance').text('');
+    $('#budget_balance').text('');
     $('#budget_ptype_id').html('').load('/finance/get_ptypes?cat='+$('#budget_cat_id option:selected').val());
   })
   $('#budget_plan_id').change(function() {

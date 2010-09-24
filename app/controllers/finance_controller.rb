@@ -1,6 +1,22 @@
 class FinanceController < ApplicationController
   def index
   end
+  def revenue_detail
+    @revenues= Revenue.all :conditions=>{:fy=>params[:fy]}, :order=>"rcat_id,rtype_id"
+    render :layout=>false
+  end
+  def create_revenue
+    revenue = Revenue.create $xvars[:enter_revenue][:revenue]
+    $xvars[:p][:return]='/finance/revenue'
+  end
+  def rm_revenue
+    Revenue.destroy $xvars[:p][:id]
+    $xvars[:p][:return]='/finance/revenue'
+  end
+  def update_revenue
+    Revenue.update $xvars[:p][:id], $xvars[:edit_revenue][:revenue]
+    $xvars[:p][:return]='/finance/revenue'
+  end
   def create_budget
     budget = Budget.create $xvars[:enter_budget][:budget]
     $xvars[:p][:return]='/finance'
@@ -169,6 +185,11 @@ class FinanceController < ApplicationController
     cat= Cat.find params[:cat]
     prompt= "<option value="">..กรุณาเลือกประเภท</option>"
     render :text => prompt+@template.options_from_collection_for_select(cat.ptypes,:id,:name)
+  end
+  def get_rtypes
+    rcat= Rcat.find params[:rcat]
+#    prompt= "<option value="">..กรุณาเลือกประเภท</option>"
+    render :text => @template.options_from_collection_for_select(rcat.rtypes,:id,:name)
   end
   def get_balance
     ptype= Ptype.find params[:ptype]

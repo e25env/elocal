@@ -1,0 +1,40 @@
+<%
+  revenue = Revenue.new
+  revenue.fy = $xvars[:p][:fy]
+  revenue.budget= 0
+  revenue.balance= 0
+%>
+<% fields_for revenue do |f| %>
+  <table id="revenue" width="100%">
+    <%= f.hidden_field :fy %>
+    <tr>
+      <td class="field-name">ปีงบประมาณ</td>
+      <td colspan="2"><%= revenue.fy %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมวด</td>
+      <td colspan="2"><%= f.collection_select :rcat_id, Rcat.all(:order=>'code'), :id, :name, :prompt=>'..กรุณาเลือกหมวด' %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan="2"><%= f.select :rtype_id, [] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ประมาณการ</td>
+      <td><%= f.text_field :budget, :style => "width:200px;" %></td>
+      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
+    </tr>
+    <tr>
+      <td class="field-name">จัดเก็บได้</td>
+      <td><%= f.text_field :balance, :style => "width:200px;" %></td>
+      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
+    </tr>
+  </table>
+<% end %>
+<script type="text/javascript" >
+  var animate = "<img src='/images/ajax-loader.gif' alt='loading...' />";
+  $('#revenue_rcat_id').change(function() {
+    $('#revenue_balance').text('');
+    $('#revenue_rtype_id').html('').load('/finance/get_rtypes?rcat='+$('#revenue_rcat_id option:selected').val());
+  })
+</script>
