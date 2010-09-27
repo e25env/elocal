@@ -15,7 +15,7 @@ payment.law_moi_item = 52
     </tr>
     <tr>
       <td class="field-name">ส่วน</td>
-      <td><%= f.collection_select :section_id, Section.all, :id, :name, :prompt=>'กรุณาเลือกส่วน' %></td>
+      <td><%= f.collection_select :section_id, Fsection.all, :id, :name, :prompt=>'กรุณาเลือกส่วน' %></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -29,20 +29,12 @@ payment.law_moi_item = 52
       <td>&nbsp;</td>
     </tr>
     <tr>
-      <td class="field-name">แผนงาน</td>
-      <td colspan="2"><%= f.collection_select :plan_id, Plan.all(:conditions=>"fy=#{y}",:order=>'code'), :id, :name, :prompt=>'..กรุณาเลือกแผนงาน' %></td>
-    </tr>
-    <tr>
-      <td class="field-name">งาน</td>
-      <td colspan="2"><%= f.select :task_id, [] %></td>
-    </tr>
-    <tr>
       <td class="field-name">วันที่คลังรับ</td>
       <td colspan="2"><%= f.date_select_thai :receive_on %></td>
     </tr>
     <tr>
       <td class="field-name">หมวด/ลักษณะ</td>
-      <td colspan="2"><%= f.collection_select :cat_id, Cat.all(:conditions=>"fy=#{y}",:order=>'code'), :id, :name, :prompt=>'..กรุณาเลือกหมวด' %></td>
+      <td colspan="2"><%= f.collection_select :cat_id, Cat.all(:order=>'code'), :id, :name, :prompt=>'..กรุณาเลือกหมวด' %></td>
     </tr>
     <tr>
       <td class="field-name">ประเภท</td>
@@ -145,7 +137,7 @@ payment.law_moi_item = 52
     $('#payment_ptype_id').html('').load('/finance/get_ptypes?cat='+$('#payment_cat_id option:selected').val());
   })
   $('#payment_ptype_id').change(function() {
-    $('#balance').html(animate).load('/finance/get_balance?ptype='+$('#payment_ptype_id option:selected').val())
+    $('#balance').html(animate).load('/finance/get_balance?ptype='+$('#payment_ptype_id option:selected').val()+'&section='+$('#payment_section_id option:selected').val())
   })
   $(function() {
     id=$('#payment_requester_id').val();
@@ -169,14 +161,6 @@ payment.law_moi_item = 52
   })
 
   function validate() {
-    if ($('#payment_section_id').val()=='') {
-      alert('กรุณาเลือกส่วนงาน');
-      return false;
-    }
-    if ($('#payment_plan_id').val()=='') {
-      alert('กรุณาเลือกแผนงาน');
-      return false;
-    }
     if ($('#payment_cat_id').val()=='') {
       alert('กรุณาเลือกหมวดงบประมาณ');
       return false;

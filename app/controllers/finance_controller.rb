@@ -184,15 +184,21 @@ class FinanceController < ApplicationController
   def get_ptypes
     cat= Cat.find params[:cat]
     prompt= "<option value="">..กรุณาเลือกประเภท</option>"
-    render :text => prompt+@template.options_from_collection_for_select(cat.ptypes,:id,:name)
+    render :text => prompt+@template.options_from_collection_for_select(cat.ptypes_fy,:id,:name)
   end
+#  def get_ptypes0
+#    cat= Cat.find params[:cat]
+#    prompt= "<option value="">..กรุณาเลือกประเภท</option>"
+#    render :text => prompt+@template.options_from_collection_for_select(cat.ptypes,:id,:name)
+#  end
   def get_rtypes
     rcat= Rcat.find params[:rcat]
 #    prompt= "<option value="">..กรุณาเลือกประเภท</option>"
     render :text => @template.options_from_collection_for_select(rcat.rtypes,:id,:name)
   end
   def get_balance
-    ptype= Ptype.find params[:ptype]
-    render :text => "คงเหลือ #{@template.number_to_currency(ptype.balance,:unit=>'')} บาท"
+    budget = Budget.first :conditions=>{:fy => fiscal_year, :ptype_id => params[:ptype], :fsection_id => params[:section] }
+    balance = budget ? budget.balance : 0
+      render :text => "คงเหลือ #{@template.number_to_currency(balance,:unit=>'')} บาท"
   end
 end
