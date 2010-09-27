@@ -7,6 +7,29 @@ class SongritController < ApplicationController
   require 'nokogiri'
   require 'mechanize'
 
+  def fix_rcat
+    Rcat.all.each {|c| 
+      c.update_attribute :name, c.name.sub('หมวด','')
+    }
+    render :text => "done"
+  end
+  def get_laas_atax
+#    rcat= Rcat.find 11
+    ff=FireWatir::Firefox.new :waitTime=>4
+    ff.goto('http://www.laas.go.th/')
+    ff.text_field(:id,"_ctl0_txtUserName").set("abtbtnai714")
+    ff.text_field(:id,"_ctl0_txtPassword").set("318883")
+    ff.button(:name,"_ctl0:btnLogin").click
+    ff.goto('http://www.laas.go.th/Default.aspx?menu=4E465433-EB5A-416A-8092-BBAE595C6CB7&control=list&screenname=REC_TAX_ALLOT&editable=true')
+    doc = Nokogiri::HTML(ff.html)
+    o= doc.at_css('select')
+    o.css('option').each do |oo|
+      next if c['value'].blank?
+      Rtype.create :rcat_id=>11, :name=>oo['title'], :code_laas=>oo['value']
+    end
+    ff.close
+    render :text => "done"
+  end
   def get_laas_revenue
     ff=FireWatir::Firefox.new :waitTime=>4
     ff.goto('http://www.laas.go.th/')

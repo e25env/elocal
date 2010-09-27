@@ -6,9 +6,9 @@ class AdminController < ApplicationController
       flash[:notice]= "งบปัจจุบันไม่เป็นศูนย์ ไม่สามารถสร้างส่วนใหม่ได้"
     else
       Fsection.delete_all
-      Fsection.create :code=>"00", :name=>"งบกลาง", :balance=>0, :budget=>0
+      Fsection.create :id=>0, :code=>"00", :name=>"งบกลาง", :balance=>0, :budget=>0
       Section.all.each do |s|
-        Fsection.create :code=>s.code, :name=>s.name,
+        Fsection.create :id=>s.id, :code=>s.code, :name=>s.name,
           :balance=>0, :budget=>0
       end
       flash[:notice]= "สร้างส่วนสำหรับงบประมาณเรียบร้อยแล้ว"

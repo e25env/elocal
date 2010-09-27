@@ -1,5 +1,8 @@
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
+  require "fusioncharts_helper"
+  include FusionChartsHelper
+
   def num_baht(n)
     return "-" unless n
     return n==0 ? "-" : number_to_currency(n, :unit=>'', :precision=>0)
