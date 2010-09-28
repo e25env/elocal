@@ -43,7 +43,7 @@ Rails::Initializer.run do |config|
   config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
   config.gem "mail", :version=>"2.2.1"
   config.gem "backup"
-  config.gem "yaml_db"
+#  config.gem "yaml_db"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
