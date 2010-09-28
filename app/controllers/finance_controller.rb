@@ -129,17 +129,18 @@ class FinanceController < ApplicationController
   def create_payment
     payment= Payment.new $xvars[:enter_payment][:payment]
     payment.fy= fiscal_year
-    payment.vat=0 unless payment.vat
-    payment.deduct=0 unless payment.deduct
-    payment.gsb=0 unless payment.gsb
     payment.total= payment.amount+payment.vat
     payment.net_amount = payment.total-payment.deduct-payment.gsb
-    ptype= payment.ptype
-    payment.total_budget= ptype.budget
-    payment.budget= ptype.balance
-    payment.net_budget= payment.budget-payment.total
-    ptype.balance -= payment.total
-    ptype.save
+#    ptype= payment.ptype
+    budget= Budget.first :conditions=>['ptype_id=? AND fy=?',payment.ptype_id,payment.fy]
+    payment.budget_id= budget.id
+    payment.plan_id= budget.plan_id
+    payment.total_budget= budget.budget
+    payment.budget_before= budget.balance
+    payment.net_budget= payment.budget_before-payment.total
+    payment.plan_id= budget.plan_id
+    budget.balance -= payment.total
+    budget.save
     payment.save
     set_songrit "payment_#{payment.fy}", payment.finance_num+1
     set_songrit "payment_#{payment.fy}_#{payment.section_id}", payment.num+1
@@ -181,10 +182,15 @@ class FinanceController < ApplicationController
     plan= Plan.find params[:plan]
     render :text => @template.options_from_collection_for_select(plan.tasks,:id,:name)
   end
+  def get_cats
+    fsection= Fsection.find params[:section]
+    prompt= "<option value="">..กรุณาเลือกหมวด</option>"
+    render :text => prompt+@template.options_from_collection_for_select(fsection.cats_fy,:id,:name)
+  end
   def get_ptypes
     cat= Cat.find params[:cat]
     prompt= "<option value="">..กรุณาเลือกประเภท</option>"
-    render :text => prompt+@template.options_from_collection_for_select(cat.ptypes_fy,:id,:name)
+    render :text => prompt+@template.options_from_collection_for_select(cat.ptypes_fy(params[:section],fiscal_year),:id,:name)
   end
 #  def get_ptypes0
 #    cat= Cat.find params[:cat]

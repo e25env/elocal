@@ -5,12 +5,16 @@ payment.fy = y
 payment.finance_num = songrit "payment_#{y}",1
 payment.law_moi_year = 2547
 payment.law_moi_item = 52
+payment.amount=0
+payment.vat=0
+payment.deduct=0
+payment.gsb=0
 %>
 <% fields_for payment do |f| %>
   <table id="doc" width="100%">
     <tr>
       <td class="field-name">ปีงบประมาณ</td>
-      <td><%= payment.fy %></td>
+      <td id="fy"><%= payment.fy %></td>
       <td>&nbsp;</td>
     </tr>
     <tr>
@@ -34,7 +38,7 @@ payment.law_moi_item = 52
     </tr>
     <tr>
       <td class="field-name">หมวด/ลักษณะ</td>
-      <td colspan="2"><%= f.collection_select :cat_id, Cat.all(:order=>'code'), :id, :name, :prompt=>'..กรุณาเลือกหมวด' %></td>
+      <td colspan="2"><%= f.select :cat_id, [] %></td>
     </tr>
     <tr>
       <td class="field-name">ประเภท</td>
@@ -124,21 +128,23 @@ payment.law_moi_item = 52
 <script type="text/javascript" >
   var animate = "<img src='/images/ajax-loader.gif' alt='loading...' />";
   function set_payment_section_num() {
-    $('#payment_num').val('โปรดรอ ...').load("/finance/get_payment_section_num/?fy=#{y}&section="+$('#payment_section_id option:selected').val(),
+    $('#payment_num').val('โปรดรอ ...').load("/finance/get_payment_section_num/?fy="+$('#fy').text()+"&section="+$('#payment_section_id option:selected').val(),
       null, function(t) { $('#payment_num').val(t)}
     )
   }
-  $('#payment_section_id').change(function(){ set_payment_section_num() })
-  $('#payment_plan_id').change(function() {
-    $('#payment_task_id').html('').load('/finance/get_tasks?plan='+$('#payment_plan_id option:selected').val())
-  })
+  $('#payment_section_id').change(function(){ set_payment_section_num() });
+  $('#payment_section_id').change(function() {
+    $('#balance').text('');
+    $('#payment_ptype_id').html('');
+    $('#payment_cat_id').html('').load('/finance/get_cats?section='+$('#payment_section_id option:selected').val());
+  });
   $('#payment_cat_id').change(function() {
     $('#balance').text('');
-    $('#payment_ptype_id').html('').load('/finance/get_ptypes?cat='+$('#payment_cat_id option:selected').val());
-  })
+    $('#payment_ptype_id').html('').load('/finance/get_ptypes?cat='+$('#payment_cat_id option:selected').val()+'&section='+$('#payment_section_id option:selected').val());
+  });
   $('#payment_ptype_id').change(function() {
     $('#balance').html(animate).load('/finance/get_balance?ptype='+$('#payment_ptype_id option:selected').val()+'&section='+$('#payment_section_id option:selected').val())
-  })
+  });
   $(function() {
     id=$('#payment_requester_id').val();
     $('#payment_requester_position').val($('position[id='+id+']').attr('pos'));

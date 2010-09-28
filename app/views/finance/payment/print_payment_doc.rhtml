@@ -55,11 +55,11 @@ bank = payment.bank
   <tr>
     <td style="width:33%;">
       แผนงาน: (5)
-      <%= b payment.plan.name %>
+      <%= b payment.budget.plan.name %>
     </td>
     <td colspan="2">
       งาน: (6)
-      <%= b payment.task.name %>
+      <%= b payment.budget.task.name %>
     </td>
     <td style="width:33%;">
       วันที่คลังรับ: (7)
@@ -69,11 +69,11 @@ bank = payment.bank
   <tr>
     <td style="width:33%;">
       หมวด/ลักษณะ: (8)
-      <%= b payment.cat.name %>
+      <%= b payment.budget.cat.name %>
     </td>
     <td colspan="3">
       ประเภท: (9)
-      <%= b payment.ptype.name %>
+      <%= b payment.budget.ptype.name %>
     </td>
   </tr>
   <tr>
@@ -135,7 +135,7 @@ bank = payment.bank
     </td>
     <td colspan="2" style="vertical-align:top;">
       (13) งบประมาณคงเหลือ
-      <%= b to_currency(payment.budget) %> บาท<br/>
+      <%= b to_currency(payment.budget_before) %> บาท<br/>
       (14) หักเบิกจ่ายครั้งนี้แล้วคงเหลือ
       <%= b to_currency(payment.net_budget) %> บาท<br/>
       <div style="text-align:center;">
