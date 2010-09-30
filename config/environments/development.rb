@@ -18,3 +18,4 @@ config.reload_plugins = true
 # Don't care if the mailer can't send
 config.action_mailer.raise_delivery_errors = false
 
+config.gem "yaml_db"
