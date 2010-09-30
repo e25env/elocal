@@ -10,6 +10,17 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
 
+  def lscript(s,confirm)
+    ff=FireWatir::Firefox.new :waitTime=>4
+    ff.goto('http://www.laas.go.th/')
+    ff.text_field(:id,"_ctl0_txtUserName").set(LAAS_USER)
+    ff.text_field(:id,"_ctl0_txtPassword").set(LAAS_PASSWORD)
+    ff.button(:name,"_ctl0:btnLogin").click
+    eval(s)
+    match= (ff.html =~ Regexp.new(confirm))
+    ff.close
+    return match
+  end
   def own_xmain?
     #debugger
     if $xvars
