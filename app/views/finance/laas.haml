@@ -1,0 +1,27 @@
+:css
+  .num {text-align:right;width:100px;padding-right:10px;}
+%table{:class=>'budget_table', :width=>"100%"}
+  - if finance_office?
+    %tr
+      %td(align='right' colspan=7)
+        = image_tag 'control_fastforward.png'
+        = link_to align_text("ส่งข้อมูลทั้งหมดเดี๋ยวนี้"), "/run/finance/submit_all_laases"
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if finance_office?
+      %th(style="width:30px;") ส่ง
+      %th(style="width:30px;") ลบ
+    %th รหัส
+    %th งาน
+    %th(style="width:30px;") สถานะ
+    %th(style="width:100px;") วันที่ดำเนินการ
+    %th(style="width:100px;") วันที่ส่ง
+  - @laases.each do |l|
+    %tr
+      - if finance_office?
+        %th= link_to image_tag('control_play.png'), "/run/finance/submit_laas/#{l.id}"
+        %th= link_to image_tag('delete.png'), "/run/finance/rm_laas/#{l.id}", :confirm=>"กรุณายืนยันการลบข้อมูล LAAS #{l.name}"
+      %td.num(style='width:50px;')= l.xmain_id
+      %td= l.name
+      %td(align='center')= image_tag l.status_icon
+      %td(align='center')= date_thai l.created_at, :date_only=>true
+      %td(align='center')= date_thai l.submitted_at, :date_only=>true

@@ -70,4 +70,5 @@ Rails::Initializer.run do |config|
   GMAP = false
   LAAS_USER = "abtbtnai714"
   LAAS_PASSWORD = "318883"
+  LAAS_RETRY = 3
 end

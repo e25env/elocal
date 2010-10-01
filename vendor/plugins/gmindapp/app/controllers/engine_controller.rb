@@ -7,7 +7,7 @@ class EngineController < ApplicationController
   def init
     @service= GmaService.first :conditions=>['module=? AND code=?',
       params[:module], params[:service] ]
-    if authorize_init?
+    if @service && authorize_init?
       xmain = create_xmain(@service)
       result = create_runseq(xmain)
       unless result
@@ -20,7 +20,7 @@ class EngineController < ApplicationController
       xmain.gma_runseqs.last.update_attribute(:end,true)
       redirect_to :action=>'run', :id=>xmain.id
     else
-      flash[:notice]= "ขออภัย ไม่สามารถทำงานได้เนื่องจากปัญหาอำนาจดำเนินการ"
+      flash[:notice]= "ขออภัย ไม่สามารถทำงานได้"
       redirect_to_root
     end
   end

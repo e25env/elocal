@@ -7,6 +7,14 @@ class SongritController < ApplicationController
   require 'nokogiri'
   require 'mechanize'
 
+  def sample_laas
+    x= GmaXmain.last
+    s = "ff.goto('http://www.google.com')"
+    LaasQueue.create :xmain_id=>x.id, :name=>x.name,
+      :description => "test", :script => s, :confirm => "จัดสรร",
+      :status => 0, :retry => 0
+    redirect_to :controller => "finance", :action => "laas"
+  end
   def fix_rcat
     Rcat.all.each {|c| 
       c.update_attribute :name, c.name.sub('หมวด','')

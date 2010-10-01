@@ -1,6 +1,27 @@
 class FinanceController < ApplicationController
   def index
   end
+  def laas
+    @laases= LaasQueue.active
+  end
+  def submit_laas
+    l = LaasQueue.find $xvars[:p][:id]
+    ff= login_laas
+    l.submit(ff)
+    if ff.html =~ Regexp.new(l.confirm)
+      l.update_attribute(:status, 1)
+    else
+      l.update_attributes :status=>2, :retry=> l.retry+1
+      l.update_attribute(:status, 3) if (l.retry > LAAS_RETRY)
+    end
+    ff.close
+    $xvars[:p][:return]= "/finance/laas"
+  end
+  def rm_laas
+    l = LaasQueue.find $xvars[:p][:id]
+    l.update_attribute(:status, 4)
+    $xvars[:p][:return]='/finance/laas'
+  end
   def revenue_detail
     @revenues= Revenue.all :conditions=>{:fy=>params[:fy]}, :order=>"rcat_id,rtype_id"
     render :layout=>false
