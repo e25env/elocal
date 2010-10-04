@@ -1,0 +1,21 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  income_id: 1
+  receipt: MyString
+  description: MyString
+  task_id: 1
+  account_number: MyString
+  amount: 1.5
+  remark: MyString
+  gma_user_id: 1
+
+two:
+  income_id: 1
+  receipt: MyString
+  description: MyString
+  task_id: 1
+  account_number: MyString
+  amount: 1.5
+  remark: MyString
+  gma_user_id: 1

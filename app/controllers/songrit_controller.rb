@@ -21,11 +21,6 @@ class SongritController < ApplicationController
     }
     render :text => "done"
   end
-  def test_lscript
-    s = "ff.goto('http://www.laas.go.th/Default.aspx?menu=4E465433-EB5A-416A-8092-BBAE595C6CB7&control=list&screenname=REC_TAX_ALLOT&editable=true')"
-    result= lscript(s,"จัดสรร")
-    render :text => "done #{result}"
-  end
   def get_laas_atax
 #    rcat= Rcat.find 11
     ff=FireWatir::Firefox.new :waitTime=>4

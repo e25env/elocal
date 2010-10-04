@@ -194,7 +194,7 @@ class GmaController < ApplicationController
     @services.each_element('node') do |m|
       ss= m.attributes["TEXT"]
       code, name= ss.split(':', 2)
-      next unless code
+      next if code.blank?
       next if code.comment?
       module_code= name2code(code)
       # create or update to GmaModule
