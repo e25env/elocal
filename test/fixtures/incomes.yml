@@ -1,21 +1,17 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  revenue_id: 1
   ref: MyString
-  section_id: 1
-  subsection_id: 1
   deliver_id: 1
   receiver_id: 1
-  amount: 1.5
+  fy: 1
+  receive_on: 2010-10-06
   gma_user_id: 1
 
 two:
-  revenue_id: 1
   ref: MyString
-  section_id: 1
-  subsection_id: 1
   deliver_id: 1
   receiver_id: 1
-  amount: 1.5
+  fy: 1
+  receive_on: 2010-10-06
   gma_user_id: 1

@@ -5,9 +5,12 @@ class CreateIncomeDetails < ActiveRecord::Migration
       t.string :receipt
       t.string :description
       t.integer :task_id
-      t.string :account_number
       t.float :amount
+      t.integer :num_receipt
       t.string :remark
+      t.integer :rcat_id
+      t.integer :rtype_id
+      t.integer :revenue_id
       t.integer :gma_user_id
 
       t.timestamps

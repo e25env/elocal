@@ -147,6 +147,24 @@ class FinanceController < ApplicationController
     @plans = Plan.all :conditions=>"fy=#{params[:fy]}", :order=>:id
     render :layout=>false
   end
+  def create_income
+    income= Income.create $xvars[:enter_income][:income]
+    $xvars[:income_id]= income.id
+  end
+  def create_income_detail
+    income_detail= IncomeDetail.new $xvars[:enter_income_detail][:income_detail]
+    revenue= Revenue.first :conditions=>{:rcat_id=>income_detail.rcat_id, :rtype_id => income_detail.rtype_id}
+    income_detail.revenue_id= revenue.id
+    income_detail.save
+  end
+  def create_laas
+    s = "ff.goto('http://www.laas.go.th/Default.aspx?menu=4E465433-EB5A-416A-8092-BBAE595C6CB7&control=list&screenname=REC_TAX_ALLOT&editable=true');"
+    s << "ff.text_field(:name,'_ctl0:_ctl0:txtPayer:txtMain').set('test');"
+    s << "ff.select_list(:id,'_ctl0__ctl0_ddlRecTypeName').select_value('9EC7EB15-83DD-4AE5-AD57-259F754DD3DA');"
+    LaasQueue.create :xmain_id=>$xmain.id, :name=>$xmain.name,
+      :description => "test", :script => s, :confirm => "จัดสรร",
+      :status => 0, :retry => 0
+  end
   def create_payment
     payment= Payment.new $xvars[:enter_payment][:payment]
     payment.fy= fiscal_year
@@ -213,15 +231,10 @@ class FinanceController < ApplicationController
     prompt= "<option value="">..กรุณาเลือกประเภท</option>"
     render :text => prompt+@template.options_from_collection_for_select(cat.ptypes_fy(params[:section],fiscal_year),:id,:name)
   end
-#  def get_ptypes0
-#    cat= Cat.find params[:cat]
-#    prompt= "<option value="">..กรุณาเลือกประเภท</option>"
-#    render :text => prompt+@template.options_from_collection_for_select(cat.ptypes,:id,:name)
-#  end
   def get_rtypes
     rcat= Rcat.find params[:rcat]
 #    prompt= "<option value="">..กรุณาเลือกประเภท</option>"
-    render :text => @template.options_from_collection_for_select(rcat.rtypes,:id,:name)
+    render :text => @template.options_from_collection_for_select(rcat.rtypes_fy(params[:fy]),:id,:name)
   end
   def get_balance
     budget = Budget.first :conditions=>{:fy => fiscal_year, :ptype_id => params[:ptype], :fsection_id => params[:section] }

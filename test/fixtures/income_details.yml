@@ -5,9 +5,12 @@ one:
   receipt: MyString
   description: MyString
   task_id: 1
-  account_number: MyString
   amount: 1.5
+  num_receipt: 1
   remark: MyString
+  rcat_id: 1
+  rtype_id: 1
+  revenue_id: 1
   gma_user_id: 1
 
 two:
@@ -15,7 +18,10 @@ two:
   receipt: MyString
   description: MyString
   task_id: 1
-  account_number: MyString
   amount: 1.5
+  num_receipt: 1
   remark: MyString
+  rcat_id: 1
+  rtype_id: 1
+  revenue_id: 1
   gma_user_id: 1
