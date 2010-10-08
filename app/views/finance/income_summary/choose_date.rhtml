@@ -1,0 +1,23 @@
+<% fields_for :choose do |f| %>
+<table id="doc" width="100%">
+  <tr>
+    <td class="required" style="width:100px;">เลขที่</td>
+    <td><%= f.text_field :num %></td>
+  </tr>
+  <tr>
+    <td style="width:100px;">วันที่รับเงิน</td>
+    <td><%= f.date_select_thai :receive_on %></td>
+  </tr>
+</table>
+<% end %>
+<%= fix_thai_year %>
+<script type="text/javascript" >
+  $('.required').append('<span style="color:red"> *</span>');
+
+  function validate() {
+    if ($('#choose_num').val()=='') {
+      alert('กรุณาระบุเลขที่');
+      return false;
+    }
+  }
+</script>

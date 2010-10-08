@@ -517,6 +517,8 @@ class EngineController < ApplicationController
       @runseq.status= 'R' # running
       @runseq.save
     end
+    $xmain= @xmain; $xvars= @xvars
+    $runseq_id= @runseq.id; $user_id= get_user.id
   end
   def init_vars_by_runseq(runseq_id)
     @runseq= GmaRunseq.find runseq_id

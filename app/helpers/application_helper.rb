@@ -3,14 +3,24 @@ module ApplicationHelper
   require "fusioncharts_helper"
   include FusionChartsHelper
 
+  def palad
+    User.find 4
+  end
+  def income_summary_maker
+    User.find 2
+  end
+  def i2date(t,f)
+    Time.utc t["#{f}(1i)"],t["#{f}(2i)"],t["#{f}(3i)"]
+  end
   def num_baht(n)
     return "-" unless n
-    return n==0 ? "-" : number_to_currency(n, :unit=>'', :precision=>0)
+    baht= n.to_s.split('.')[0]
+    return baht=="0" ? "-" : baht
   end
   def num_satang(n)
     return "-" unless n
-    nn = ((n-n.to_i)*100).to_i
-    return nn==0 ? "-" : nn
+    satang = ((n-n.to_i)*100).to_s
+    return satang=="0" ? "-" : satang
   end
   def nbsp(n)
     "&nbsp;"*n

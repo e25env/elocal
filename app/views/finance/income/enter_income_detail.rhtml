@@ -1,6 +1,6 @@
 <%
 income = Income.find $xvars[:income_id]
-income_detail = IncomeDetail.new :amount=>0, :num_receipt=>0
+income_detail = IncomeDetail.new :amount=>0, :num_receipt=>1
 %>
 <% fields_for income_detail do |f| %>
   <table id="doc" width="100%">
