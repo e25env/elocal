@@ -1,14 +1,109 @@
+<style type="text/css" >
+  #ear-right {
+    float:right;
+    padding-right:20px;
+  }
+  hr#top {
+    height:3px;
+    border-top:1px solid gray;
+    border-bottom:1px solid gray;
+  }
+  table.signature {
+    position: absolute;
+    top: 7.8in;
+  }
+  table.income {
+    border-style: none;
+    border-color: gray;
+    border-collapse: collapse;
+    width:100%;
+    margin-top: 10px;
+  }
+  table.income th {
+    border-width: thin;
+    padding: 5px;
+    border-style: solid;
+    border-color: gray;
+  }
+  table.income td {
+    border-width: thin;
+    padding: 5px;
+    border-style: solid;
+    border-color: gray;
+  }
+  table.income td.total {
+    padding-right: 10px;
+    border-style: none;
+  }
+</style>
+
 <% income= Income.find $xvars[:income_id] %>
 <%= image_tag 'logo_bangtanai150.png', :style=>'float:left;' %>
-<div id="ear-right" style="float:right;padding-right:20px;">
+<div id="ear-right">
+  <%= "&nbsp;"*25 %>
+  <%= b "54-30-16" %><br/>&nbsp;<br/>
   เลขที่ <%= b income.ref %><br/>
   วันที่ <%= b(date_thai income.receive_on, :date_only=>true, :monthfull => true)  %><br/>
   กอง <%= b income.deliver.section.name %><br/>
   ฝ่าย <%= b income.deliver.subsection.name %>
 </div>
-<h2 style="text-align:center;">ใบนำส่งเงิน</h2>
+<h2 style="text-align:center;">
+  &nbsp;<br/>ใบนำส่งเงิน
+</h2>
 <div style="clear:both;padding-top:10px;"/>
-<hr style="height:4px;border-top:1px solid black; border-bottom:1px solid black"/>
+<hr id="top"/>
 <%= "&nbsp;"*5 %>
 ข้าพเจ้า <%= b income.deliver.full_name %> ขอนำส่งเงินดังรายการต่อไปนี้
-<hr style="height:4px;border-top:1px solid black; border-bottom:1px solid black"/>
+<table class="income">
+  <tr>
+    <th rowspan="2">ลำดับ</th>
+    <th rowspan="2">เล่มที่-เลขที่<br/>ใบเสร็จ</th>
+    <th rowspan="2">ประเภทเงิน</th>
+    <th rowspan="2">รหัสงาน</th>
+    <th rowspan="2">รหัสบัญชี</th>
+    <th colspan="2">จำนวนเงิน</th>
+    <th rowspan="2">หมายเหตุ</th>
+  </tr>
+  <tr>
+    <th>บาท</th><th>สต.</th>
+  </tr>
+  <% i= 1 ; total= 0 %>
+  <% income.income_details.each do |d| %>
+    <% next if d.num_receipt==0 %>
+  <tr>
+    <td align="right"><%= i %></td>
+    <td align="center"><%= d.receipt %></td>
+    <td><%= d.rtype.name %></td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td align="right"><%= num_baht d.amount %></td>
+    <td align="right"><%= num_satang d.amount %></td>
+    <td><%= d.remark %></td>
+  </tr>
+  <% i += 1 ; total += d.amount %>
+  <% end %>
+  <tr>
+    <td class="total" colspan="5" align="right">รวมจำนวนเงินที่นำส่ง</td>
+    <td align="right"><%= num_baht total %></td>
+    <td align="right"><%= num_satang total %></td>
+    <td class="total">&nbsp;</td>
+  </tr>
+</table>
+<%= "&nbsp;"*5 %>
+( <%= b thai_baht total %> )
+<table class="income signature">
+  <tr>
+    <th style="width:50%;">
+      &nbsp;<br/>
+      ผู้นำส่งเงิน <%= "."*50 %><br/>
+      ( <%= income.deliver.full_name %> )<br/>
+      <%= income.deliver.position %>
+    </th>
+    <th style="width:50%;">
+      &nbsp;<br/>
+      ผู้รับเงิน <%= "."*50 %><br/>
+      ( <%= income.receiver.full_name %> )<br/>
+      <%= income.receiver.position %>
+    </th>
+  </tr>
+</table>

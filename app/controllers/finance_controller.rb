@@ -153,6 +153,7 @@ class FinanceController < ApplicationController
   end
   def create_income_detail
     income_detail= IncomeDetail.new $xvars[:enter_income_detail][:income_detail]
+    income_detail.income_id= $xvars[:income_id]
     revenue= Revenue.first :conditions=>{:rcat_id=>income_detail.rcat_id, :rtype_id => income_detail.rtype_id}
     income_detail.revenue_id= revenue.id
     income_detail.save

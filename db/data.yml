@@ -883,6 +883,101 @@ tasks:
     - 040C0601-CEE0-48D6-9EA9-AC1C02DD4578
 
 --- 
+gma_logs: 
+  columns: 
+  - id
+  - log_type
+  - message
+  - controller
+  - action
+  - iparams
+  - isession
+  - gma_user_id
+  - created_at
+  - updated_at
+  records: 
+  - - "44"
+    - ERROR
+    - "Job Abort xmain 148 runseq 494<br/>undefined local variable or method `confirm' for #&lt;FinanceController:0xc391b04 @real_format=nil&gt;<hr/>"
+    - engine
+    - run_do
+    - |
+      --- !map:HashWithIndifferentAccess 
+      action: run_do
+      id: "148"
+      controller: engine
+      password: 
+
+    - 
+    - "2"
+    - 2010-10-01 12:54:36.156843
+    - 2010-10-01 12:54:36.156843
+  - - "45"
+    - ERROR
+    - Job Abort xmain 156 runseq 513<br/>Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id<hr/>
+    - engine
+    - run_do
+    - |
+      --- !map:HashWithIndifferentAccess 
+      action: run_do
+      id: "156"
+      controller: engine
+      password: 
+
+    - 
+    - "2"
+    - 2010-10-05 12:12:20.198452
+    - 2010-10-05 12:12:20.198452
+  - - "46"
+    - ERROR
+    - "Job Abort xmain 159 runseq 531<br/>undefined method `rcat_id' for #&lt;Income:0xbe2ca9c&gt;<hr/>"
+    - engine
+    - run_do
+    - |
+      --- !map:HashWithIndifferentAccess 
+      action: run_do
+      id: "159"
+      controller: engine
+      password: 
+
+    - 
+    - "2"
+    - 2010-10-06 09:31:05.543051
+    - 2010-10-06 09:31:05.543051
+  - - "47"
+    - ERROR
+    - "Job Abort xmain 161 runseq 545<br/>undefined method `create_income_details' for #&lt;FinanceController:0xbc398ac @real_format=nil&gt;<hr/>"
+    - engine
+    - run_do
+    - |
+      --- !map:HashWithIndifferentAccess 
+      action: run_do
+      id: "161"
+      controller: engine
+      password: 
+
+    - 
+    - "2"
+    - 2010-10-06 09:56:26.623876
+    - 2010-10-06 09:56:26.623876
+  - - "48"
+    - ERROR
+    - "Job Abort xmain 162 runseq 552<br/>undefined method `create_income_details' for #&lt;FinanceController:0xbe1bc88 @real_format=nil&gt;<hr/>"
+    - engine
+    - run_do
+    - |
+      --- !map:HashWithIndifferentAccess 
+      action: run_do
+      id: "162"
+      controller: engine
+      password: 
+
+    - 
+    - "2"
+    - 2010-10-06 09:59:38.672199
+    - 2010-10-06 09:59:38.672199
+
+--- 
 car_requests: 
   columns: 
   - id
@@ -3976,12 +4071,238 @@ laas_queues:
     - !binary |
       4LiI4Lix4LiU4Liq4Lij4Lij
 
-    - "0"
+    - "4"
     - 
     - "0"
     - "2"
     - 2010-10-01 08:56:30.34897
-    - 2010-10-01 08:56:30.34897
+    - 2010-10-07 08:35:02.300409
+  - - "2"
+    - "145"
+    - !binary |
+      4LmB4LiB4LmJ4LmE4LiC4Lij4Liy4Lii4Lij4Lix4Lia
+
+    - test
+    - ff.goto('http://www.laas.go.th/Default.aspx?menu=4E465433-EB5A-416A-8092-BBAE595C6CB7&control=list&screenname=REC_TAX_ALLOT&editable=true')
+    - !binary |
+      4LiI4Lix4LiU4Liq4Lij4Lij
+
+    - "1"
+    - 
+    - "0"
+    - "2"
+    - 2010-10-01 12:37:49.955675
+    - 2010-10-01 12:58:41.296866
+  - - "3"
+    - "145"
+    - !binary |
+      4LmB4LiB4LmJ4LmE4LiC4Lij4Liy4Lii4Lij4Lix4Lia
+
+    - test
+    - ff.goto('http://www.google.com')
+    - !binary |
+      4LiI4Lix4LiU4Liq4Lij4Lij
+
+    - "4"
+    - 
+    - "1"
+    - "2"
+    - 2010-10-01 12:38:27.493294
+    - 2010-10-07 08:34:56.231302
+  - - "4"
+    - "163"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - test
+    - ff.goto('http://www.laas.go.th/Default.aspx?menu=4E465433-EB5A-416A-8092-BBAE595C6CB7&control=list&screenname=REC_TAX_ALLOT&editable=true')
+    - !binary |
+      4LiI4Lix4LiU4Liq4Lij4Lij
+
+    - "1"
+    - 
+    - "0"
+    - "2"
+    - 2010-10-07 08:33:38.756058
+    - 2010-10-07 08:34:31.844298
+  - - "5"
+    - "164"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - test
+    - ff.goto('http://www.laas.go.th/Default.aspx?menu=4E465433-EB5A-416A-8092-BBAE595C6CB7&control=list&screenname=REC_TAX_ALLOT&editable=true');ff.text_field(:name,'_ctl0:_ctl0:txtPayer:txtMain').set('test')ff.select_list(:id,'_ctl0__ctl0_ddlRecTypeName').select_value('9EC7EB15-83DD-4AE5-AD57-259F754DD3DA')
+    - !binary |
+      4LiI4Lix4LiU4Liq4Lij4Lij
+
+    - "4"
+    - 
+    - "0"
+    - "2"
+    - 2010-10-07 08:53:07.795925
+    - 2010-10-07 09:02:46.094095
+  - - "6"
+    - "171"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - test
+    - ff.goto('http://www.laas.go.th/Default.aspx?menu=4E465433-EB5A-416A-8092-BBAE595C6CB7&control=list&screenname=REC_TAX_ALLOT&editable=true');ff.text_field(:name,'_ctl0:_ctl0:txtPayer:txtMain').set('test');ff.select_list(:id,'_ctl0__ctl0_ddlRecTypeName').select_value('9EC7EB15-83DD-4AE5-AD57-259F754DD3DA');
+    - !binary |
+      4LiI4Lix4LiU4Liq4Lij4Lij
+
+    - "1"
+    - 
+    - "0"
+    - "2"
+    - 2010-10-07 09:01:42.272107
+    - 2010-10-07 09:02:36.856833
+
+--- 
+incomes: 
+  columns: 
+  - id
+  - ref
+  - deliver_id
+  - receiver_id
+  - fy
+  - receive_on
+  - gma_user_id
+  - created_at
+  - updated_at
+  records: 
+  - - "1"
+    - aa
+    - "10"
+    - "10"
+    - "2554"
+    - "2010-10-06"
+    - "2"
+    - 2010-10-06 09:34:25.059103
+    - 2010-10-06 09:34:25.059103
+  - - "2"
+    - "22"
+    - "10"
+    - "10"
+    - "2554"
+    - "2010-10-06"
+    - "2"
+    - 2010-10-06 09:56:04.674467
+    - 2010-10-06 09:56:04.674467
+  - - "3"
+    - "22"
+    - "10"
+    - "10"
+    - "2554"
+    - "2010-10-06"
+    - "2"
+    - 2010-10-06 09:59:21.113963
+    - 2010-10-06 09:59:21.113963
+  - - "4"
+    - ""
+    - "10"
+    - "10"
+    - "2554"
+    - "2010-10-06"
+    - "2"
+    - 2010-10-06 10:00:59.538864
+    - 2010-10-06 10:00:59.538864
+  - - "5"
+    - ""
+    - "10"
+    - "10"
+    - "2554"
+    - "2010-10-06"
+    - "2"
+    - 2010-10-06 11:17:03.664716
+    - 2010-10-06 11:17:03.664716
+  - - "6"
+    - aa
+    - "10"
+    - "10"
+    - "2554"
+    - "2010-10-07"
+    - "2"
+    - 2010-10-07 09:01:17.205622
+    - 2010-10-07 09:01:17.205622
+
+--- 
+income_details: 
+  columns: 
+  - id
+  - income_id
+  - receipt
+  - description
+  - task_id
+  - amount
+  - num_receipt
+  - remark
+  - rcat_id
+  - rtype_id
+  - revenue_id
+  - gma_user_id
+  - created_at
+  - updated_at
+  records: 
+  - - "1"
+    - 
+    - ""
+    - ww
+    - 
+    - "11"
+    - "0"
+    - ""
+    - "1"
+    - "102"
+    - "2"
+    - "2"
+    - 2010-10-06 10:01:15.829437
+    - 2010-10-06 10:01:15.829437
+  - - "2"
+    - 
+    - ""
+    - qqq
+    - 
+    - "22"
+    - "0"
+    - ss
+    - "2"
+    - "21"
+    - "10"
+    - "2"
+    - 2010-10-06 10:01:41.658712
+    - 2010-10-06 10:01:41.658712
+  - - "3"
+    - 
+    - ""
+    - ss
+    - 
+    - "11"
+    - "0"
+    - ""
+    - "2"
+    - "5"
+    - "4"
+    - "2"
+    - 2010-10-06 11:23:17.148594
+    - 2010-10-06 11:23:17.148594
+  - - "4"
+    - 
+    - ""
+    - aa
+    - 
+    - "11"
+    - "0"
+    - ""
+    - "1"
+    - "102"
+    - "2"
+    - "2"
+    - 2010-10-07 09:01:35.226157
+    - 2010-10-07 09:01:35.226157
 
 --- 
 payments: 
@@ -6229,6 +6550,102 @@ payment_details:
     - ""
 
 --- 
+gma_docs: 
+  columns: 
+  - id
+  - name
+  - filename
+  - content_type
+  - data_text
+  - gma_xmain_id
+  - gma_runseq_id
+  - gma_user_id
+  - gma_service_id
+  - ip
+  - created_at
+  - updated_at
+  - display
+  records: 
+  - - "42"
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - output
+    - "<!DOCTYPE html>\n\
+      <html>\n  <head>\n    <title>eLocal Output</title>\n    <meta content='text/html; charset=utf-8' http-equiv='content-type' />\n    <link href='/stylesheets/style.css' rel='stylesheet' type='text/css' media=\"all\"/>\n    <link href=\"/stylesheets/sarabun.css?1283476188\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />\n  </head>\n  <style type=\"text/css\" >\n    body {\n      background:#fff;\n      color:#000;\n      padding: 0px;\n      margin: 0px;\n      size: A4;\n    }\n  </style>\n  <body>\n    \n\
+      <img alt=\"Logo_bangtanai150\" src=\"/images/logo_bangtanai150.png?1282033009\" style=\"float:left;\" />\n\
+      <div id=\"ear-right\" style=\"float:right;padding-right:20px;\">\n  \xE0\xB9\x80\xE0\xB8\xA5\xE0\xB8\x82\xE0\xB8\x97\xE0\xB8\xB5\xE0\xB9\x88 <b></b><br/>\n  \xE0\xB8\xA7\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB5\xE0\xB9\x88 <b>6 \xE0\xB8\x95\xE0\xB8\xB8\xE0\xB8\xA5\xE0\xB8\xB2\xE0\xB8\x84\xE0\xB8\xA1 2553</b><br/>\n  \xE0\xB8\x81\xE0\xB8\xAD\xE0\xB8\x87 <b>\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\xA7\xE0\xB8\x99\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\x84\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x87</b><br/>\n  \xE0\xB8\x9D\xE0\xB9\x88\xE0\xB8\xB2\xE0\xB8\xA2 <b>\xE0\xB8\x87\xE0\xB8\xB2\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\x9A\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9E\xE0\xB8\xA2\xE0\xB9\x8C\xE0\xB8\xAA\xE0\xB8\xB4\xE0\xB8\x99\xE0\xB9\x81\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB8\x9E\xE0\xB8\xB1\xE0\xB8\xAA\xE0\xB8\x94\xE0\xB8\xB8</b>\n\
+      </div>\n\
+      <h2 style=\"text-align:center;\">\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99</h2>\n\
+      <div style=\"clear:both;padding-top:10px;\"/>\n\
+      <hr style=\"height:4px;border-top:1px solid black; border-bottom:1px solid black\"/>\n\
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n\
+      \xE0\xB8\x82\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x9E\xE0\xB9\x80\xE0\xB8\x88\xE0\xB9\x89\xE0\xB8\xB2 <b>\xE0\xB8\x99\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB8\xAA\xE0\xB8\xB2\xE0\xB8\xA7\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x81\xE0\xB8\xA9\xE0\xB8\x93\xE0\xB8\xB2 \xE0\xB9\x80\xE0\xB8\x82\xE0\xB9\x87\xE0\xB8\xA1\xE0\xB8\x81\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x94</b> \xE0\xB8\x82\xE0\xB8\xAD\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99\xE0\xB8\x94\xE0\xB8\xB1\xE0\xB8\x87\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\x95\xE0\xB9\x88\xE0\xB8\xAD\xE0\xB9\x84\xE0\xB8\x9B\xE0\xB8\x99\xE0\xB8\xB5\xE0\xB9\x89\n\
+      <hr style=\"height:4px;border-top:1px solid black; border-bottom:1px solid black\"/>\n\n  </body>\n\
+      </html>\n"
+    - "163"
+    - "561"
+    - "2"
+    - "89"
+    - 127.0.0.1
+    - 2010-10-06 10:01:43.898438
+    - 2010-10-07 08:33:23.631685
+    - true
+  - - "43"
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - output
+    - "<!DOCTYPE html>\n\
+      <html>\n  <head>\n    <title>eLocal Output</title>\n    <meta content='text/html; charset=utf-8' http-equiv='content-type' />\n    <link href='/stylesheets/style.css' rel='stylesheet' type='text/css' media=\"all\"/>\n    <link href=\"/stylesheets/sarabun.css?1283476188\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />\n  </head>\n  <style type=\"text/css\" >\n    body {\n      background:#fff;\n      color:#000;\n      padding: 0px;\n      margin: 0px;\n      size: A4;\n    }\n  </style>\n  <body>\n    \n\
+      <img alt=\"Logo_bangtanai150\" src=\"/images/logo_bangtanai150.png?1282033009\" style=\"float:left;\" />\n\
+      <div id=\"ear-right\" style=\"float:right;padding-right:20px;\">\n  \xE0\xB9\x80\xE0\xB8\xA5\xE0\xB8\x82\xE0\xB8\x97\xE0\xB8\xB5\xE0\xB9\x88 <b></b><br/>\n  \xE0\xB8\xA7\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB5\xE0\xB9\x88 <b>6 \xE0\xB8\x95\xE0\xB8\xB8\xE0\xB8\xA5\xE0\xB8\xB2\xE0\xB8\x84\xE0\xB8\xA1 2553</b><br/>\n  \xE0\xB8\x81\xE0\xB8\xAD\xE0\xB8\x87 <b>\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\xA7\xE0\xB8\x99\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\x84\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x87</b><br/>\n  \xE0\xB8\x9D\xE0\xB9\x88\xE0\xB8\xB2\xE0\xB8\xA2 <b>\xE0\xB8\x87\xE0\xB8\xB2\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\x9A\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9E\xE0\xB8\xA2\xE0\xB9\x8C\xE0\xB8\xAA\xE0\xB8\xB4\xE0\xB8\x99\xE0\xB9\x81\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB8\x9E\xE0\xB8\xB1\xE0\xB8\xAA\xE0\xB8\x94\xE0\xB8\xB8</b>\n\
+      </div>\n\
+      <h2 style=\"text-align:center;\">\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99</h2>\n\
+      <div style=\"clear:both;padding-top:10px;\"/>\n\
+      <hr style=\"height:4px;border-top:1px solid black; border-bottom:1px solid black\"/>\n\
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n\
+      \xE0\xB8\x82\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x9E\xE0\xB9\x80\xE0\xB8\x88\xE0\xB9\x89\xE0\xB8\xB2 <b>\xE0\xB8\x99\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB8\xAA\xE0\xB8\xB2\xE0\xB8\xA7\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x81\xE0\xB8\xA9\xE0\xB8\x93\xE0\xB8\xB2 \xE0\xB9\x80\xE0\xB8\x82\xE0\xB9\x87\xE0\xB8\xA1\xE0\xB8\x81\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x94</b> \xE0\xB8\x82\xE0\xB8\xAD\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99\xE0\xB8\x94\xE0\xB8\xB1\xE0\xB8\x87\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\x95\xE0\xB9\x88\xE0\xB8\xAD\xE0\xB9\x84\xE0\xB8\x9B\xE0\xB8\x99\xE0\xB8\xB5\xE0\xB9\x89\n\
+      <hr style=\"height:4px;border-top:1px solid black; border-bottom:1px solid black\"/>\n\n  </body>\n\
+      </html>\n"
+    - "164"
+    - "568"
+    - "2"
+    - "89"
+    - 127.0.0.1
+    - 2010-10-06 11:23:19.289157
+    - 2010-10-06 11:52:00.99041
+    - true
+  - - "44"
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - output
+    - "<!DOCTYPE html>\n\
+      <html>\n  <head>\n    <title>eLocal Output</title>\n    <meta content='text/html; charset=utf-8' http-equiv='content-type' />\n    <link href='/stylesheets/style.css' rel='stylesheet' type='text/css' media=\"all\"/>\n    <link href=\"/stylesheets/sarabun.css?1283476188\" media=\"all\" rel=\"stylesheet\" type=\"text/css\" />\n  </head>\n  <style type=\"text/css\" >\n    body {\n      background:#fff;\n      color:#000;\n      padding: 0px;\n      margin: 0px;\n      size: A4;\n    }\n  </style>\n  <body>\n    \n\
+      <img alt=\"Logo_bangtanai150\" src=\"/images/logo_bangtanai150.png?1282033009\" style=\"float:left;\" />\n\
+      <div id=\"ear-right\" style=\"float:right;padding-right:20px;\">\n  \xE0\xB9\x80\xE0\xB8\xA5\xE0\xB8\x82\xE0\xB8\x97\xE0\xB8\xB5\xE0\xB9\x88 <b>aa</b><br/>\n  \xE0\xB8\xA7\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB5\xE0\xB9\x88 <b>7 \xE0\xB8\x95\xE0\xB8\xB8\xE0\xB8\xA5\xE0\xB8\xB2\xE0\xB8\x84\xE0\xB8\xA1 2553</b><br/>\n  \xE0\xB8\x81\xE0\xB8\xAD\xE0\xB8\x87 <b>\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\xA7\xE0\xB8\x99\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\x84\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x87</b><br/>\n  \xE0\xB8\x9D\xE0\xB9\x88\xE0\xB8\xB2\xE0\xB8\xA2 <b>\xE0\xB8\x87\xE0\xB8\xB2\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\x9A\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9E\xE0\xB8\xA2\xE0\xB9\x8C\xE0\xB8\xAA\xE0\xB8\xB4\xE0\xB8\x99\xE0\xB9\x81\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB8\x9E\xE0\xB8\xB1\xE0\xB8\xAA\xE0\xB8\x94\xE0\xB8\xB8</b>\n\
+      </div>\n\
+      <h2 style=\"text-align:center;\">\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99</h2>\n\
+      <div style=\"clear:both;padding-top:10px;\"/>\n\
+      <hr style=\"height:4px;border-top:1px solid black; border-bottom:1px solid black\"/>\n\
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;\n\
+      \xE0\xB8\x82\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x9E\xE0\xB9\x80\xE0\xB8\x88\xE0\xB9\x89\xE0\xB8\xB2 <b>\xE0\xB8\x99\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB8\xAA\xE0\xB8\xB2\xE0\xB8\xA7\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x81\xE0\xB8\xA9\xE0\xB8\x93\xE0\xB8\xB2 \xE0\xB9\x80\xE0\xB8\x82\xE0\xB9\x87\xE0\xB8\xA1\xE0\xB8\x81\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x94</b> \xE0\xB8\x82\xE0\xB8\xAD\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99\xE0\xB8\x94\xE0\xB8\xB1\xE0\xB8\x87\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\x95\xE0\xB9\x88\xE0\xB8\xAD\xE0\xB9\x84\xE0\xB8\x9B\xE0\xB8\x99\xE0\xB8\xB5\xE0\xB9\x89\n\
+      <hr style=\"height:4px;border-top:1px solid black; border-bottom:1px solid black\"/>\n\n  </body>\n\
+      </html>\n"
+    - "171"
+    - "581"
+    - "2"
+    - "89"
+    - 127.0.0.1
+    - 2010-10-07 09:01:37.507131
+    - 2010-10-07 09:01:37.507131
+    - true
+
+--- 
 gma_modules: 
   columns: 
   - id
@@ -6579,11 +6996,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1284971319685' FOLDED='true' TEXT='add_cat' ID='ID_1487545870' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1280739233101' TEXT='enter_cat:\xE0\xB8\xAA\xE0\xB8\xA3\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB8\xAB\xE0\xB8\xA1\xE0\xB8\xA7\xE0\xB8\x94\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93' ID='ID_789754556' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_664240602' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1771718331' CREATED='1280677207860'/></node><node MODIFIED='1280677183891' TEXT='create_cat' ID='ID_1739406695' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "11"
+    - "12"
     - false
     - "2"
     - 2010-08-01 22:41:50.29742
-    - 2010-10-01 08:45:51.823581
+    - 2010-10-04 08:54:17.545515
   - - "29"
     - finance
     - add_ptype
@@ -6591,11 +7008,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1282009736809' FOLDED='true' TEXT='add_ptype' ID='ID_1015531560' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1280739222846' TEXT='enter_ptype:\xE0\xB8\xAA\xE0\xB8\xA3\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xA0\xE0\xB8\x97\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93' ID='ID_1182922624' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_1107177278' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1594609887' CREATED='1280677207860'/></node><node MODIFIED='1280704884325' TEXT='create_ptype' ID='ID_626056341' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "12"
+    - "13"
     - false
     - "2"
     - 2010-08-02 06:22:32.781306
-    - 2010-10-01 08:45:51.864808
+    - 2010-10-04 08:54:17.613675
   - - "30"
     - finance
     - add_plan
@@ -6605,11 +7022,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1283827439169' FOLDED='true' TEXT='add_plan:\xE0\xB8\xAA\xE0\xB8\xA3\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB9\x81\xE0\xB8\x9C\xE0\xB8\x99\xE0\xB8\x87\xE0\xB8\xB2\xE0\xB8\x99\xE0\xB9\x83\xE0\xB8\xAB\xE0\xB8\xA1\xE0\xB9\x88' ID='ID_1511863174' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1280739198822' TEXT='enter_plan:\xE0\xB8\xAA\xE0\xB8\xA3\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB9\x81\xE0\xB8\x9C\xE0\xB8\x99\xE0\xB8\x87\xE0\xB8\xB2\xE0\xB8\x99' ID='ID_43222079' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_1894156282' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_945992495' CREATED='1280677207860'/></node><node MODIFIED='1280710756963' TEXT='create_plan' ID='ID_993698159' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "14"
+    - "15"
     - false
     - "2"
     - 2010-08-02 08:00:28.403063
-    - 2010-10-01 08:45:51.961
+    - 2010-10-04 08:54:17.813892
   - - "31"
     - finance
     - add_task
@@ -6617,11 +7034,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1283827441393' FOLDED='true' TEXT='add_task' ID='ID_213761744' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1280739209974' TEXT='enter_task:\xE0\xB8\xAA\xE0\xB8\xA3\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB8\x87\xE0\xB8\xB2\xE0\xB8\x99' ID='ID_293018937' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_371017876' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_526731785' CREATED='1280677207860'/></node><node MODIFIED='1280710783016' TEXT='create_task' ID='ID_1939156578' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "16"
+    - "17"
     - false
     - "2"
     - 2010-08-02 08:00:28.519568
-    - 2010-10-01 08:45:52.058343
+    - 2010-10-04 08:54:17.968443
   - - "32"
     - finance
     - link
@@ -6637,11 +7054,11 @@ gma_services:
       VEVEPScxMjgwNzM3ODE0NjcwJy8+
 
     - 
-    - "10"
+    - "11"
     - true
     - "2"
     - 2010-08-02 15:31:47.184899
-    - 2010-10-01 08:45:51.778694
+    - 2010-10-04 08:54:17.458842
   - - "33"
     - finance
     - payment
@@ -6649,13 +7066,13 @@ gma_services:
       4LiP4Li14LiB4Liy4LmA4Lia4Li04LiB4LmA4LiH4Li04LiZ
 
     - "5"
-    - "<node MODIFIED='1283942486345' TEXT='payment:\xE0\xB8\x8F\xE0\xB8\xB5\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB9\x80\xE0\xB8\x9A\xE0\xB8\xB4\xE0\xB8\x81\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_888371375' CREATED='1280809504423'><node MODIFIED='1280809746078' TEXT='enter_payment:\xE0\xB8\xAA\xE0\xB8\xA3\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB8\x8E\xE0\xB8\xB5\xE0\xB8\x81\xE0\xB8\xB2' ID='ID_1366914323' CREATED='1280809530686'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1190902197' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1495821636' CREATED='1280677207860'/></node><node MODIFIED='1280809634987' TEXT='create_payment' ID='ID_1964275077' CREATED='1280809626425'><icon BUILTIN='bookmark'/></node><node MODIFIED='1283954210982' TEXT='enter_payment_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\xAA\xE0\xB8\xB3\xE0\xB8\x84\xE0\xB8\xB1\xE0\xB8\x8D' ID='ID_104231908' CREATED='1280825402664'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_341314277' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1590406110' CREATED='1280677207860'/></node><node MODIFIED='1280912927852' TEXT='create_payment_details' ID='ID_446780202' CREATED='1280809626425'><icon BUILTIN='bookmark'/></node><node MODIFIED='1280809760200' TEXT='print_payment_doc:\xE0\xB8\x9E\xE0\xB8\xB4\xE0\xB8\xA1\xE0\xB8\x9E\xE0\xB9\x8C\xE0\xB8\x8F\xE0\xB8\xB5\xE0\xB8\x81\xE0\xB8\xB2' ID='ID_1477925760' CREATED='1280809596416'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1113926279' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1829717855' CREATED='1280677207860'/></node><node MODIFIED='1283955134120' TEXT='issue_check:\xE0\xB8\xAD\xE0\xB8\xAD\xE0\xB8\x81\xE0\xB9\x80\xE0\xB8\x8A\xE0\xB9\x87\xE0\xB8\x84' ID='ID_525468512' CREATED='1280825184033'><icon BUILTIN='attach'/><node MODIFIED='1280825252734' TEXT='role:ho' ID='ID_1877177530' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_229386603' CREATED='1280677207860'/></node><node MODIFIED='1280809776391' TEXT='archive_payment:\xE0\xB8\xAA\xE0\xB9\x81\xE0\xB8\x81\xE0\xB8\x99\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\x81\xE0\xB8\xAA\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xAB\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x81\xE0\xB8\x90\xE0\xB8\xB2\xE0\xB8\x99' ID='ID_714188073' CREATED='1280809651373'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1719697037' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1560585022' CREATED='1280677207860'/></node></node>"
+    - "<node MODIFIED='1286249793675' FOLDED='true' TEXT='payment:\xE0\xB8\x8F\xE0\xB8\xB5\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB9\x80\xE0\xB8\x9A\xE0\xB8\xB4\xE0\xB8\x81\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_888371375' CREATED='1280809504423'><node MODIFIED='1280809746078' TEXT='enter_payment:\xE0\xB8\xAA\xE0\xB8\xA3\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB8\x8E\xE0\xB8\xB5\xE0\xB8\x81\xE0\xB8\xB2' ID='ID_1366914323' CREATED='1280809530686'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1190902197' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1495821636' CREATED='1280677207860'/></node><node MODIFIED='1280809634987' TEXT='create_payment' ID='ID_1964275077' CREATED='1280809626425'><icon BUILTIN='bookmark'/></node><node MODIFIED='1283954210982' TEXT='enter_payment_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\xAA\xE0\xB8\xB3\xE0\xB8\x84\xE0\xB8\xB1\xE0\xB8\x8D' ID='ID_104231908' CREATED='1280825402664'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_341314277' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1590406110' CREATED='1280677207860'/></node><node MODIFIED='1280912927852' TEXT='create_payment_details' ID='ID_446780202' CREATED='1280809626425'><icon BUILTIN='bookmark'/></node><node MODIFIED='1280809760200' TEXT='print_payment_doc:\xE0\xB8\x9E\xE0\xB8\xB4\xE0\xB8\xA1\xE0\xB8\x9E\xE0\xB9\x8C\xE0\xB8\x8F\xE0\xB8\xB5\xE0\xB8\x81\xE0\xB8\xB2' ID='ID_1477925760' CREATED='1280809596416'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1113926279' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1829717855' CREATED='1280677207860'/></node><node MODIFIED='1283955134120' TEXT='issue_check:\xE0\xB8\xAD\xE0\xB8\xAD\xE0\xB8\x81\xE0\xB9\x80\xE0\xB8\x8A\xE0\xB9\x87\xE0\xB8\x84' ID='ID_525468512' CREATED='1280825184033'><icon BUILTIN='attach'/><node MODIFIED='1280825252734' TEXT='role:ho' ID='ID_1877177530' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_229386603' CREATED='1280677207860'/></node><node MODIFIED='1280809776391' TEXT='archive_payment:\xE0\xB8\xAA\xE0\xB9\x81\xE0\xB8\x81\xE0\xB8\x99\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\x81\xE0\xB8\xAA\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xAB\xE0\xB8\xA5\xE0\xB8\xB1\xE0\xB8\x81\xE0\xB8\x90\xE0\xB8\xB2\xE0\xB8\x99' ID='ID_714188073' CREATED='1280809651373'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1719697037' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1560585022' CREATED='1280677207860'/></node></node>"
     - 
-    - "3"
+    - "1"
     - true
     - "2"
     - 2010-08-06 04:34:14.616295
-    - 2010-09-28 10:51:59.304758
+    - 2010-10-05 12:07:58.590428
   - - "34"
     - finance
     - add_bank
@@ -6666,11 +7083,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1285634728377' FOLDED='true' TEXT='add_bank:\xE0\xB8\xAA\xE0\xB8\xA3\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x8D\xE0\xB8\x8A\xE0\xB8\xB5\xE0\xB8\x98\xE0\xB8\x99\xE0\xB8\xB2\xE0\xB8\x84\xE0\xB8\xB2\xE0\xB8\xA3' ID='ID_980204048' CREATED='1280841977962'><node MODIFIED='1280842039054' TEXT='enter_bank:\xE0\xB8\xAA\xE0\xB8\xA3\xE0\xB9\x89\xE0\xB8\xB2\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x8D\xE0\xB8\x8A\xE0\xB8\xB5\xE0\xB8\x98\xE0\xB8\x99\xE0\xB8\xB2\xE0\xB8\x84\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB9\x83\xE0\xB8\xAB\xE0\xB8\xA1\xE0\xB9\x88' ID='ID_985131734' CREATED='1280841997526'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_1147920464' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1803366206' CREATED='1280677207860'/></node><node MODIFIED='1280842043013' TEXT='create_bank' ID='ID_1634875682' CREATED='1280842013459'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "5"
+    - "6"
     - true
     - "2"
     - 2010-08-06 04:34:14.848189
-    - 2010-10-01 08:45:51.367387
+    - 2010-10-04 08:54:17.207526
   - - "35"
     - finance
     - edit_ptype
@@ -6680,11 +7097,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1283827440153' FOLDED='true' TEXT='edit_ptype:\xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xA0\xE0\xB8\x97' ID='ID_581685624' CREATED='1280903234255'><icon BUILTIN='closed'/><node MODIFIED='1283827417395' TEXT='edit_ptype:\xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xA0\xE0\xB8\x97' ID='ID_291843063' CREATED='1280903240589'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_1247828882' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_928368533' CREATED='1280677207860'/></node><node MODIFIED='1280903280424' TEXT='update_ptype' ID='ID_68224264' CREATED='1280903249454'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "13"
+    - "14"
     - false
     - "2"
     - 2010-08-06 04:34:15.394255
-    - 2010-10-01 08:45:51.909944
+    - 2010-10-04 08:54:17.718082
   - - "36"
     - finance
     - link
@@ -6695,11 +7112,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1281414946023' TEXT='link:\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93\xE0\xB8\x95\xE0\xB8\xB2\xE0\xB8\xA1\xE0\xB8\xAB\xE0\xB8\xA1\xE0\xB8\xA7\xE0\xB8\x94: /finance/budget_cat' ID='ID_819043612' CREATED='1280606688606'/>"
     - 
-    - "6"
+    - "7"
     - true
     - "2"
     - 2010-08-10 11:40:42.478468
-    - 2010-10-01 08:45:51.411026
+    - 2010-10-04 08:54:17.239532
   - - "37"
     - finance
     - link
@@ -6710,11 +7127,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1281414930886' TEXT='link:\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93\xE0\xB8\x95\xE0\xB8\xB2\xE0\xB8\xA1\xE0\xB9\x81\xE0\xB8\x9C\xE0\xB8\x99:/finance/budget_plan' ID='ID_1331942068' CREATED='1281414908442'/>"
     - 
-    - "7"
+    - "8"
     - true
     - "2"
     - 2010-08-10 11:40:42.642876
-    - 2010-10-01 08:45:51.451047
+    - 2010-10-04 08:54:17.279171
   - - "43"
     - admin
     - link
@@ -6951,13 +7368,13 @@ gma_services:
       4LmB4LiB4LmJ4LmE4LiC4LmB4Lic4LiZ4LiH4Liy4LiZ
 
     - "5"
-    - "<node MODIFIED='1285133060507' TEXT='edit_plan:\xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB9\x81\xE0\xB8\x9C\xE0\xB8\x99\xE0\xB8\x87\xE0\xB8\xB2\xE0\xB8\x99' ID='ID_1484051567' CREATED='1280903234255'><icon BUILTIN='closed'/><node MODIFIED='1283827374896' TEXT='edit_plan:\xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB9\x81\xE0\xB8\x9C\xE0\xB8\x99\xE0\xB8\x87\xE0\xB8\xB2\xE0\xB8\x99' ID='ID_1208374587' CREATED='1280903240589'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_679652044' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1104462969' CREATED='1280677207860'/></node><node MODIFIED='1283826557859' TEXT='update_plan' ID='ID_1342714133' CREATED='1280903249454'><icon BUILTIN='bookmark'/></node></node>"
+    - "<node MODIFIED='1285961262087' FOLDED='true' TEXT='edit_plan:\xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB9\x81\xE0\xB8\x9C\xE0\xB8\x99\xE0\xB8\x87\xE0\xB8\xB2\xE0\xB8\x99' ID='ID_1484051567' CREATED='1280903234255'><icon BUILTIN='closed'/><node MODIFIED='1283827374896' TEXT='edit_plan:\xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB9\x81\xE0\xB8\x9C\xE0\xB8\x99\xE0\xB8\x87\xE0\xB8\xB2\xE0\xB8\x99' ID='ID_1208374587' CREATED='1280903240589'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_679652044' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1104462969' CREATED='1280677207860'/></node><node MODIFIED='1283826557859' TEXT='update_plan' ID='ID_1342714133' CREATED='1280903249454'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "15"
+    - "16"
     - false
     - "2"
     - 2010-09-07 09:30:03.128786
-    - 2010-10-01 08:45:52.020214
+    - 2010-10-04 08:54:17.88752
   - - "69"
     - finance
     - copy_structure
@@ -6967,11 +7384,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1285634729255' FOLDED='true' TEXT='copy_structure:\xE0\xB8\x84\xE0\xB8\xB1\xE0\xB8\x94\xE0\xB8\xA5\xE0\xB8\xAD\xE0\xB8\x81\xE0\xB8\x9C\xE0\xB8\xB1\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x8D\xE0\xB8\x8A\xE0\xB8\xB5' ID='ID_1686154103' CREATED='1283833795535'><node MODIFIED='1283833852354' TEXT='select_years:\xE0\xB9\x80\xE0\xB8\xA5\xE0\xB8\xB7\xE0\xB8\xAD\xE0\xB8\x81\xE0\xB8\x9B\xE0\xB8\xB5\xE0\xB8\x97\xE0\xB8\xB5\xE0\xB9\x88\xE0\xB8\x95\xE0\xB9\x89\xE0\xB8\xAD\xE0\xB8\x87\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3' ID='ID_463490785' CREATED='1283833823442'><icon BUILTIN='attach'/></node><node MODIFIED='1283833848701' TEXT='copy_structure' ID='ID_1609734279' CREATED='1283833836735'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "8"
+    - "9"
     - true
     - "2"
     - 2010-09-07 11:31:41.383623
-    - 2010-10-01 08:45:51.490317
+    - 2010-10-04 08:54:17.33144
   - - "71"
     - finance
     - rm_structure
@@ -6981,11 +7398,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1285634730064' FOLDED='true' TEXT='rm_structure:\xE0\xB8\xA5\xE0\xB8\x9A\xE0\xB8\x9C\xE0\xB8\xB1\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x8D\xE0\xB8\x8A\xE0\xB8\xB5' ID='ID_25545190' CREATED='1283833795535'><node MODIFIED='1283833852354' TEXT='select_years:\xE0\xB9\x80\xE0\xB8\xA5\xE0\xB8\xB7\xE0\xB8\xAD\xE0\xB8\x81\xE0\xB8\x9B\xE0\xB8\xB5\xE0\xB8\x97\xE0\xB8\xB5\xE0\xB9\x88\xE0\xB8\x95\xE0\xB9\x89\xE0\xB8\xAD\xE0\xB8\x87\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3' ID='ID_240758991' CREATED='1283833823442'><icon BUILTIN='attach'/></node><node MODIFIED='1284155066400' TEXT='rm_structure' ID='ID_583709273' CREATED='1283833836735'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "9"
+    - "10"
     - true
     - "2"
     - 2010-09-11 04:45:11.232211
-    - 2010-10-01 08:45:51.542077
+    - 2010-10-04 08:54:17.411998
   - - "72"
     - account
     - memo0
@@ -7039,37 +7456,37 @@ gma_services:
     - add_budget
     - add_budget
     - "5"
-    - "<node MODIFIED='1284971280168' TEXT='add_budget' ID='ID_716621917' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1284971299341' TEXT='enter_budget:\xE0\xB9\x80\xE0\xB8\x9E\xE0\xB8\xB4\xE0\xB9\x88\xE0\xB8\xA1\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93' ID='ID_1627881985' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_1595194260' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_540452425' CREATED='1280677207860'/></node><node MODIFIED='1284971315318' TEXT='create_budget' ID='ID_811504806' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
+    - "<node MODIFIED='1285961264059' FOLDED='true' TEXT='add_budget' ID='ID_716621917' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1284971299341' TEXT='enter_budget:\xE0\xB9\x80\xE0\xB8\x9E\xE0\xB8\xB4\xE0\xB9\x88\xE0\xB8\xA1\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93' ID='ID_1627881985' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_1595194260' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_540452425' CREATED='1280677207860'/></node><node MODIFIED='1284971315318' TEXT='create_budget' ID='ID_811504806' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "17"
+    - "18"
     - false
     - "2"
     - 2010-09-22 09:38:02.960568
-    - 2010-10-01 08:45:52.102211
+    - 2010-10-04 08:54:18.016994
   - - "76"
     - finance
     - rm_budget
     - rm_budget
     - "5"
-    - <node MODIFIED='1285131546022' TEXT='rm_budget' ID='ID_54108832' CREATED='1285131538158'><icon BUILTIN='closed'/><node MODIFIED='1285131557356' TEXT='rm_budget' ID='ID_21576320' CREATED='1285131548034'><icon BUILTIN='bookmark'/></node></node>
+    - <node MODIFIED='1285961266353' FOLDED='true' TEXT='rm_budget' ID='ID_54108832' CREATED='1285131538158'><icon BUILTIN='closed'/><node MODIFIED='1285131557356' TEXT='rm_budget' ID='ID_21576320' CREATED='1285131548034'><icon BUILTIN='bookmark'/></node></node>
     - 
-    - "18"
+    - "19"
     - false
     - "2"
     - 2010-09-22 12:03:47.249291
-    - 2010-10-01 08:45:52.143766
+    - 2010-10-04 08:54:18.052174
   - - "77"
     - finance
     - edit_budget
     - edit_budget
     - "5"
-    - "<node MODIFIED='1285133088279' TEXT='edit_budget' ID='ID_1971340302' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1285133102916' TEXT='edit_budget:\xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93' ID='ID_420730335' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_479473439' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_208775336' CREATED='1280677207860'/></node><node MODIFIED='1285133109969' TEXT='update_budget' ID='ID_184587309' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
+    - "<node MODIFIED='1285961267452' FOLDED='true' TEXT='edit_budget' ID='ID_1971340302' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1285133102916' TEXT='edit_budget:\xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB8\x87\xE0\xB8\x9A\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93' ID='ID_420730335' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_479473439' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_208775336' CREATED='1280677207860'/></node><node MODIFIED='1285133109969' TEXT='update_budget' ID='ID_184587309' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "19"
+    - "20"
     - false
     - "2"
     - 2010-09-22 12:26:55.749938
-    - 2010-10-01 08:45:52.203745
+    - 2010-10-04 08:54:18.100076
   - - "78"
     - finance
     - link
@@ -7079,11 +7496,11 @@ gma_services:
     - "5"
     - "<node MODIFIED='1285183242654' TEXT='link:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A: /finance/revenue' ID='ID_725765001' CREATED='1285183222740'/>"
     - 
-    - "0"
+    - "2"
     - true
     - "2"
     - 2010-09-23 02:21:46.792696
-    - 2010-09-23 02:21:46.899546
+    - 2010-10-04 08:54:17.059337
   - - "79"
     - finance
     - link
@@ -7099,11 +7516,11 @@ gma_services:
       ODYwNicvPg==
 
     - 
-    - "1"
+    - "3"
     - true
     - "2"
     - 2010-09-23 02:21:46.923633
-    - 2010-09-23 02:21:46.952985
+    - 2010-10-04 08:54:17.098065
   - - "80"
     - finance
     - add_revenue
@@ -7111,13 +7528,13 @@ gma_services:
       4LmA4Lie4Li04LmI4Lih4Lij4Liy4Lii4Lij4Lix4Lia
 
     - "5"
-    - "<node MODIFIED='1285284994720' TEXT='add_revenue: \xE0\xB9\x80\xE0\xB8\x9E\xE0\xB8\xB4\xE0\xB9\x88\xE0\xB8\xA1\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A' ID='ID_1077102990' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1285234925454' TEXT='enter_revenue:\xE0\xB9\x80\xE0\xB8\x9E\xE0\xB8\xB4\xE0\xB9\x88\xE0\xB8\xA1\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A' ID='ID_1533416323' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_64812504' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1086188358' CREATED='1280677207860'/></node><node MODIFIED='1285234933144' TEXT='create_revenue' ID='ID_173867913' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
+    - "<node MODIFIED='1285961268711' FOLDED='true' TEXT='add_revenue: \xE0\xB9\x80\xE0\xB8\x9E\xE0\xB8\xB4\xE0\xB9\x88\xE0\xB8\xA1\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A' ID='ID_1077102990' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1285234925454' TEXT='enter_revenue:\xE0\xB9\x80\xE0\xB8\x9E\xE0\xB8\xB4\xE0\xB9\x88\xE0\xB8\xA1\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A' ID='ID_1533416323' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_64812504' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1086188358' CREATED='1280677207860'/></node><node MODIFIED='1285234933144' TEXT='create_revenue' ID='ID_173867913' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "20"
+    - "21"
     - false
     - "2"
     - 2010-09-24 06:45:06.452954
-    - 2010-10-01 08:45:52.253485
+    - 2010-10-04 08:54:18.142341
   - - "81"
     - finance
     - edit_revenue
@@ -7125,13 +7542,13 @@ gma_services:
       4LmB4LiB4LmJ4LmE4LiC4Lij4Liy4Lii4Lij4Lix4Lia
 
     - "5"
-    - "<node MODIFIED='1285284987155' TEXT='edit_revenue: \xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A' ID='ID_1059165896' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1285290716687' TEXT='edit_revenue:\xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A' ID='ID_1804238163' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_1662057348' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_616974866' CREATED='1280677207860'/></node><node MODIFIED='1285284961556' TEXT='update_revenue' ID='ID_1794173879' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
+    - "<node MODIFIED='1285961270607' FOLDED='true' TEXT='edit_revenue: \xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A' ID='ID_1059165896' CREATED='1280676987865'><icon BUILTIN='closed'/><node MODIFIED='1285290716687' TEXT='edit_revenue:\xE0\xB9\x81\xE0\xB8\x81\xE0\xB9\x89\xE0\xB9\x84\xE0\xB8\x82\xE0\xB8\x9B\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\xA1\xE0\xB8\xB2\xE0\xB8\x93\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A' ID='ID_1804238163' CREATED='1280676999730'><icon BUILTIN='attach'/><node MODIFIED='1280677207161' TEXT='role:co' ID='ID_1662057348' CREATED='1280677202424'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_616974866' CREATED='1280677207860'/></node><node MODIFIED='1285284961556' TEXT='update_revenue' ID='ID_1794173879' CREATED='1280677006720'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "21"
+    - "22"
     - false
     - "2"
     - 2010-09-24 06:45:06.746929
-    - 2010-10-01 08:45:52.300523
+    - 2010-10-04 08:54:18.191569
   - - "82"
     - finance
     - rm_revenue
@@ -7139,13 +7556,13 @@ gma_services:
       4Lil4Lia4Lij4Liy4Lii4Lij4Lix4Lia
 
     - "5"
-    - "<node MODIFIED='1285284979752' TEXT='rm_revenue: \xE0\xB8\xA5\xE0\xB8\x9A\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A' ID='ID_1613662592' CREATED='1285131538158'><icon BUILTIN='closed'/><node MODIFIED='1285284965697' TEXT='rm_revenue' ID='ID_586996476' CREATED='1285131548034'><icon BUILTIN='bookmark'/></node></node>"
+    - "<node MODIFIED='1285961274567' FOLDED='true' TEXT='rm_revenue: \xE0\xB8\xA5\xE0\xB8\x9A\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A' ID='ID_1613662592' CREATED='1285131538158'><icon BUILTIN='closed'/><node MODIFIED='1285284965697' TEXT='rm_revenue' ID='ID_586996476' CREATED='1285131548034'><icon BUILTIN='bookmark'/></node></node>"
     - 
-    - "22"
+    - "23"
     - false
     - "2"
     - 2010-09-24 06:45:06.889683
-    - 2010-10-01 08:45:52.347291
+    - 2010-10-04 08:54:18.466593
   - - "84"
     - finance
     - link
@@ -7161,11 +7578,11 @@ gma_services:
       NDQnIENSRUFURUQ9JzEyODU0MDcxMjM1NzInLz4=
 
     - 
-    - "2"
+    - "4"
     - true
     - "2"
     - 2010-09-25 16:35:44.304343
-    - 2010-09-25 16:35:44.403173
+    - 2010-10-04 08:54:17.127984
   - - "85"
     - finance
     - link
@@ -7175,11 +7592,54 @@ gma_services:
     - "5"
     - "<node MODIFIED='1285894185434' TEXT='link:\xE0\xB8\xA3\xE0\xB8\xB0\xE0\xB8\x9A\xE0\xB8\x9A LAAS:/finance/laas' ID='ID_90848612' CREATED='1285894147947'/>"
     - 
-    - "4"
+    - "5"
     - true
     - "2"
     - 2010-10-01 08:45:51.235027
-    - 2010-10-01 08:45:51.332657
+    - 2010-10-04 08:54:17.169226
+  - - "86"
+    - finance
+    - submit_laas
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - "5"
+    - "<node MODIFIED='1285961279438' FOLDED='true' TEXT='submit_laas:\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB8\x82\xE0\xB9\x89\xE0\xB8\xAD\xE0\xB8\xA1\xE0\xB8\xB9\xE0\xB8\xA5 LAAS' ID='ID_1061752391' CREATED='1285911752249'><icon BUILTIN='closed'/><node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node></node>"
+    - 
+    - "24"
+    - false
+    - "2"
+    - 2010-10-01 12:43:57.864984
+    - 2010-10-04 08:54:18.517338
+  - - "87"
+    - finance
+    - rm_laas
+    - !binary |
+      4Lil4Lia4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - "5"
+    - "<node MODIFIED='1285961280997' FOLDED='true' TEXT='rm_laas:\xE0\xB8\xA5\xE0\xB8\x9A\xE0\xB8\x82\xE0\xB9\x89\xE0\xB8\xAD\xE0\xB8\xA1\xE0\xB8\xB9\xE0\xB8\xA5 LAAS' ID='ID_1979295705' CREATED='1285914705235'><icon BUILTIN='closed'/><node MODIFIED='1285914735303' TEXT='rm_laas' ID='ID_286513796' CREATED='1285914729481'><icon BUILTIN='bookmark'/></node></node>"
+    - 
+    - "25"
+    - false
+    - "2"
+    - 2010-10-01 13:40:47.685345
+    - 2010-10-04 08:54:18.553554
+  - - "89"
+    - finance
+    - income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - "5"
+    - "<node MODIFIED='1286157334310' TEXT='income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_597417624' CREATED='1286155577194'><node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node><node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node><node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node><node MODIFIED='1286334004937' TEXT='create_income_detail' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node><node MODIFIED='1286333389331' TEXT='$xvars[:enter_income_detail][:done]' ID='ID_1728152605' CREATED='1286333348708'><icon BUILTIN='help'/><node MODIFIED='1286333699926' TEXT='n: enter_income_detail' ID='ID_1999001065' CREATED='1286333688827'/></node><node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node><node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node></node>"
+    - 
+    - "0"
+    - true
+    - "2"
+    - 2010-10-04 09:01:20.820896
+    - 2010-10-06 10:00:47.470621
 
 --- 
 backup: 
@@ -7277,54 +7737,54 @@ gma_roles:
   - created_at
   - updated_at
   records: 
-  - - "396"
+  - - "462"
     - M
     - !binary |
       4Liq4Lih4Liy4LiK4Li04LiB
 
     - "1"
-    - 2010-10-01 08:44:59.12447
-    - 2010-10-01 08:44:59.12447
-  - - "397"
+    - 2010-10-06 10:00:20.473029
+    - 2010-10-06 10:00:20.473029
+  - - "463"
     - A
     - !binary |
       4Lic4Li54LmJ4LiU4Li54LmB4Lil4Lij4Liw4Lia4Lia
 
     - "1"
-    - 2010-10-01 08:44:59.252554
-    - 2010-10-01 08:44:59.252554
-  - - "398"
+    - 2010-10-06 10:00:20.514384
+    - 2010-10-06 10:00:20.514384
+  - - "464"
     - D
     - !binary |
       4Lic4Li54LmJ4Lie4Lix4LiS4LiZ4Liy4Lij4Liw4Lia4Lia
 
     - "1"
-    - 2010-10-01 08:44:59.280821
-    - 2010-10-01 08:44:59.280821
-  - - "399"
+    - 2010-10-06 10:00:20.533804
+    - 2010-10-06 10:00:20.533804
+  - - "465"
     - HO
     - !binary |
       4Lir4Lix4Lin4Lir4LiZ4LmJ4Liy4Liq4LmI4Lin4LiZ
 
     - "1"
-    - 2010-10-01 08:44:59.317378
-    - 2010-10-01 08:44:59.317378
-  - - "400"
+    - 2010-10-06 10:00:20.55606
+    - 2010-10-06 10:00:20.55606
+  - - "466"
     - CO
     - !binary |
       4LiY4Li44Lij4LiB4Liy4Lij
 
     - "1"
-    - 2010-10-01 08:44:59.350454
-    - 2010-10-01 08:44:59.350454
-  - - "401"
+    - 2010-10-06 10:00:20.582309
+    - 2010-10-06 10:00:20.582309
+  - - "467"
     - P
     - !binary |
       4LiI4Lix4LiU4LiL4Li34LmJ4Lit
 
     - "1"
-    - 2010-10-01 08:44:59.420507
-    - 2010-10-01 08:44:59.420507
+    - 2010-10-06 10:00:20.617523
+    - 2010-10-06 10:00:20.617523
 
 --- 
 banks: 
@@ -7596,6 +8056,1857 @@ gma_runseqs:
     - 
     - 2010-09-29 13:34:39.907479
     - 2010-09-29 13:35:05.868128
+  - - "492"
+    - do
+    - F
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "146"
+    - "1"
+    - "0"
+    - 2010-10-01 05:46:33.260146
+    - 2010-10-01 05:47:13.274587
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-01 12:46:32.584374
+    - 2010-10-01 12:47:13.278569
+  - - "493"
+    - do
+    - R
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "147"
+    - "1"
+    - "0"
+    - 2010-10-01 05:49:41.172545
+    - 
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-01 12:49:40.861669
+    - 2010-10-01 12:49:41.176166
+  - - "494"
+    - do
+    - F
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "148"
+    - "1"
+    - "0"
+    - 2010-10-01 05:54:03.512419
+    - 2010-10-01 05:54:36.056564
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-01 12:54:03.143145
+    - 2010-10-01 12:54:36.061811
+  - - "495"
+    - do
+    - F
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "149"
+    - "1"
+    - "0"
+    - 2010-10-01 05:55:49.058125
+    - 2010-10-01 05:56:31.194938
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-01 12:55:48.728512
+    - 2010-10-01 12:56:31.200137
+  - - "496"
+    - do
+    - F
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "150"
+    - "1"
+    - "0"
+    - 2010-10-01 05:57:13.641354
+    - 2010-10-01 05:57:53.92283
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-01 12:57:13.048492
+    - 2010-10-01 12:57:53.929835
+  - - "497"
+    - do
+    - F
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "151"
+    - "1"
+    - "0"
+    - 2010-10-01 05:58:07.071105
+    - 2010-10-01 05:58:42.953173
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-01 12:58:06.731183
+    - 2010-10-01 12:58:42.958318
+  - - "498"
+    - do
+    - F
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "152"
+    - "1"
+    - "0"
+    - 2010-10-01 06:27:40.797016
+    - 2010-10-01 06:28:16.105143
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-01 13:27:40.477357
+    - 2010-10-01 13:28:16.109051
+  - - "499"
+    - do
+    - F
+    - rm_laas
+    - rm_laas
+    - 
+    - ""
+    - "true"
+    - "153"
+    - "1"
+    - "0"
+    - 2010-10-01 06:41:24.885297
+    - 2010-10-01 06:41:25.509072
+    - true
+    - <node MODIFIED='1285914735303' TEXT='rm_laas' ID='ID_286513796' CREATED='1285914729481'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-01 13:41:24.299808
+    - 2010-10-01 13:41:25.513672
+  - - "500"
+    - form
+    - R
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "154"
+    - "1"
+    - "1"
+    - 2010-10-04 02:28:56.955588
+    - 
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-04 09:28:55.995688
+    - 2010-10-04 09:28:56.960143
+  - - "501"
+    - do
+    - I
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "154"
+    - "2"
+    - "1"
+    - 
+    - 
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-04 09:28:56.272819
+    - 2010-10-04 09:28:56.272819
+  - - "502"
+    - form
+    - I
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "154"
+    - "3"
+    - "2"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-04 09:28:56.307716
+    - 2010-10-04 09:28:56.307716
+  - - "503"
+    - do
+    - I
+    - create_income_details
+    - create_income_details
+    - 
+    - ""
+    - "true"
+    - "154"
+    - "4"
+    - "2"
+    - 
+    - 
+    - false
+    - <node MODIFIED='1286156967330' TEXT='create_income_details' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-04 09:28:56.346459
+    - 2010-10-04 09:28:56.346459
+  - - "504"
+    - output
+    - I
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "154"
+    - "5"
+    - "3"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-04 09:28:56.384532
+    - 2010-10-04 09:28:56.384532
+  - - "505"
+    - do
+    - I
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "154"
+    - "6"
+    - "3"
+    - 
+    - 
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-04 09:28:56.619615
+    - 2010-10-04 09:28:56.672622
+  - - "506"
+    - form
+    - R
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "155"
+    - "1"
+    - "1"
+    - 2010-10-04 02:30:25.068095
+    - 
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-04 09:30:24.352876
+    - 2010-10-04 09:30:25.072886
+  - - "507"
+    - do
+    - I
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "155"
+    - "2"
+    - "1"
+    - 
+    - 
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-04 09:30:24.481533
+    - 2010-10-04 09:30:24.481533
+  - - "508"
+    - form
+    - I
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "155"
+    - "3"
+    - "2"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-04 09:30:24.526002
+    - 2010-10-04 09:30:24.526002
+  - - "509"
+    - do
+    - I
+    - create_income_details
+    - create_income_details
+    - 
+    - ""
+    - "true"
+    - "155"
+    - "4"
+    - "2"
+    - 
+    - 
+    - false
+    - <node MODIFIED='1286156967330' TEXT='create_income_details' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-04 09:30:24.564921
+    - 2010-10-04 09:30:24.564921
+  - - "510"
+    - output
+    - I
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "155"
+    - "5"
+    - "3"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-04 09:30:24.600698
+    - 2010-10-04 09:30:24.600698
+  - - "511"
+    - do
+    - I
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "155"
+    - "6"
+    - "3"
+    - 
+    - 
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-04 09:30:24.663112
+    - 2010-10-04 09:30:24.773501
+  - - "512"
+    - form
+    - F
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "156"
+    - "1"
+    - "1"
+    - 2010-10-05 05:08:57.241409
+    - 2010-10-05 05:12:19.01835
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-05 12:08:56.43904
+    - 2010-10-05 12:12:19.022024
+  - - "513"
+    - do
+    - F
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "156"
+    - "2"
+    - "1"
+    - 2010-10-05 05:12:19.367034
+    - 2010-10-05 05:12:20.109088
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-05 12:08:56.58585
+    - 2010-10-05 12:12:20.114171
+  - - "514"
+    - form
+    - I
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "156"
+    - "3"
+    - "2"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-05 12:08:56.813494
+    - 2010-10-05 12:08:56.813494
+  - - "515"
+    - do
+    - I
+    - create_income_details
+    - create_income_details
+    - 
+    - ""
+    - "true"
+    - "156"
+    - "4"
+    - "2"
+    - 
+    - 
+    - false
+    - <node MODIFIED='1286156967330' TEXT='create_income_details' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-05 12:08:56.853602
+    - 2010-10-05 12:08:56.853602
+  - - "516"
+    - output
+    - I
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "156"
+    - "5"
+    - "3"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-05 12:08:56.88892
+    - 2010-10-05 12:08:56.88892
+  - - "517"
+    - do
+    - I
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "156"
+    - "6"
+    - "3"
+    - 
+    - 
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-05 12:08:56.930418
+    - 2010-10-05 12:08:56.985152
+  - - "518"
+    - form
+    - F
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "157"
+    - "1"
+    - "1"
+    - 2010-10-05 05:20:20.598268
+    - 2010-10-05 05:28:57.752364
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-05 12:20:20.103588
+    - 2010-10-05 12:28:57.755318
+  - - "519"
+    - do
+    - F
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "157"
+    - "2"
+    - "1"
+    - 2010-10-05 05:28:58.31624
+    - 2010-10-05 05:28:59.408178
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-05 12:20:20.142524
+    - 2010-10-05 12:28:59.413003
+  - - "520"
+    - form
+    - R
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "157"
+    - "3"
+    - "2"
+    - 2010-10-05 05:28:59.804204
+    - 
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-05 12:20:20.182519
+    - 2010-10-05 12:28:59.808066
+  - - "521"
+    - do
+    - I
+    - create_income_details
+    - create_income_details
+    - 
+    - ""
+    - "true"
+    - "157"
+    - "4"
+    - "2"
+    - 
+    - 
+    - false
+    - <node MODIFIED='1286156967330' TEXT='create_income_details' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-05 12:20:20.218598
+    - 2010-10-05 12:20:20.218598
+  - - "522"
+    - output
+    - I
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "157"
+    - "5"
+    - "3"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-05 12:20:20.259476
+    - 2010-10-05 12:20:20.259476
+  - - "523"
+    - do
+    - I
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "157"
+    - "6"
+    - "3"
+    - 
+    - 
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-05 12:20:20.29938
+    - 2010-10-05 12:20:20.364009
+  - - "524"
+    - form
+    - R
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "158"
+    - "1"
+    - "1"
+    - 2010-10-05 05:57:34.400129
+    - 
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-05 12:57:33.860414
+    - 2010-10-05 12:57:34.405137
+  - - "525"
+    - do
+    - I
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "158"
+    - "2"
+    - "1"
+    - 
+    - 
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-05 12:57:33.902097
+    - 2010-10-05 12:57:33.902097
+  - - "526"
+    - form
+    - I
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "158"
+    - "3"
+    - "2"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-05 12:57:33.955745
+    - 2010-10-05 12:57:33.955745
+  - - "527"
+    - do
+    - I
+    - create_income_details
+    - create_income_details
+    - 
+    - ""
+    - "true"
+    - "158"
+    - "4"
+    - "2"
+    - 
+    - 
+    - false
+    - <node MODIFIED='1286156967330' TEXT='create_income_details' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-05 12:57:33.987514
+    - 2010-10-05 12:57:33.987514
+  - - "528"
+    - output
+    - I
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "158"
+    - "5"
+    - "3"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-05 12:57:34.034217
+    - 2010-10-05 12:57:34.034217
+  - - "529"
+    - do
+    - I
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "158"
+    - "6"
+    - "3"
+    - 
+    - 
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-05 12:57:34.084246
+    - 2010-10-05 12:57:34.135536
+  - - "530"
+    - form
+    - F
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "159"
+    - "1"
+    - "1"
+    - 2010-10-06 02:30:09.559062
+    - 2010-10-06 02:31:04.310893
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:30:08.950489
+    - 2010-10-06 09:31:04.314053
+  - - "531"
+    - do
+    - F
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "159"
+    - "2"
+    - "1"
+    - 2010-10-06 02:31:04.697855
+    - 2010-10-06 02:31:05.469118
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:30:09.070619
+    - 2010-10-06 09:31:05.474574
+  - - "532"
+    - form
+    - I
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "159"
+    - "3"
+    - "2"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:30:09.143529
+    - 2010-10-06 09:30:09.143529
+  - - "533"
+    - do
+    - I
+    - create_income_details
+    - create_income_details
+    - 
+    - ""
+    - "true"
+    - "159"
+    - "4"
+    - "2"
+    - 
+    - 
+    - false
+    - <node MODIFIED='1286156967330' TEXT='create_income_details' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:30:09.189092
+    - 2010-10-06 09:30:09.189092
+  - - "534"
+    - output
+    - I
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "159"
+    - "5"
+    - "3"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:30:09.225668
+    - 2010-10-06 09:30:09.225668
+  - - "535"
+    - do
+    - I
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "159"
+    - "6"
+    - "3"
+    - 
+    - 
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:30:09.261889
+    - 2010-10-06 09:30:09.317154
+  - - "536"
+    - form
+    - F
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "160"
+    - "1"
+    - "1"
+    - 2010-10-06 02:34:17.940665
+    - 2010-10-06 02:34:23.873905
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:34:17.400442
+    - 2010-10-06 09:34:23.878577
+  - - "537"
+    - do
+    - F
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "160"
+    - "2"
+    - "1"
+    - 2010-10-06 02:34:24.283988
+    - 2010-10-06 02:34:25.142817
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:34:17.429323
+    - 2010-10-06 09:34:25.14752
+  - - "538"
+    - form
+    - R
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "160"
+    - "3"
+    - "2"
+    - 2010-10-06 02:34:25.529792
+    - 
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:34:17.474487
+    - 2010-10-06 09:34:25.536793
+  - - "539"
+    - do
+    - I
+    - create_income_details
+    - create_income_details
+    - 
+    - ""
+    - "true"
+    - "160"
+    - "4"
+    - "2"
+    - 
+    - 
+    - false
+    - <node MODIFIED='1286156967330' TEXT='create_income_details' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:34:17.509812
+    - 2010-10-06 09:34:17.509812
+  - - "540"
+    - output
+    - I
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "160"
+    - "5"
+    - "3"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:34:17.552624
+    - 2010-10-06 09:34:17.552624
+  - - "541"
+    - do
+    - I
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "160"
+    - "6"
+    - "3"
+    - 
+    - 
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:34:17.602916
+    - 2010-10-06 09:34:17.661579
+  - - "542"
+    - form
+    - F
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "161"
+    - "1"
+    - "1"
+    - 2010-10-06 02:55:51.643243
+    - 2010-10-06 02:56:03.545317
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:55:51.055982
+    - 2010-10-06 09:56:03.548271
+  - - "543"
+    - do
+    - F
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "161"
+    - "2"
+    - "1"
+    - 2010-10-06 02:56:03.932307
+    - 2010-10-06 02:56:04.773862
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:55:51.098287
+    - 2010-10-06 09:56:04.779318
+  - - "544"
+    - form
+    - F
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "161"
+    - "3"
+    - "2"
+    - 2010-10-06 02:56:05.169844
+    - 2010-10-06 02:56:25.289088
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:55:51.13817
+    - 2010-10-06 09:56:25.292309
+  - - "545"
+    - do
+    - F
+    - create_income_details
+    - create_income_details
+    - 
+    - ""
+    - "true"
+    - "161"
+    - "4"
+    - "2"
+    - 2010-10-06 02:56:25.709736
+    - 2010-10-06 02:56:26.521511
+    - false
+    - <node MODIFIED='1286156967330' TEXT='create_income_details' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:55:51.176061
+    - 2010-10-06 09:56:26.526722
+  - - "546"
+    - if
+    - I
+    - $xvars[:enter_income_detail][:done]
+    - $xvars[:enter_income_detail][:done]
+    - 
+    - ""
+    - "true"
+    - "161"
+    - "5"
+    - "2"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286333389331' TEXT='$xvars[:enter_income_detail][:done]' ID='ID_1728152605' CREATED='1286333348708'><icon BUILTIN='help'/><node MODIFIED='1286333699926' TEXT='n: enter_income_detail' ID='ID_1999001065' CREATED='1286333688827'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:55:51.207184
+    - 2010-10-06 09:55:51.207184
+  - - "547"
+    - output
+    - I
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "161"
+    - "6"
+    - "3"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:55:51.252582
+    - 2010-10-06 09:55:51.252582
+  - - "548"
+    - do
+    - I
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "161"
+    - "7"
+    - "3"
+    - 
+    - 
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:55:51.310299
+    - 2010-10-06 09:55:51.368927
+  - - "549"
+    - form
+    - F
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "162"
+    - "1"
+    - "1"
+    - 2010-10-06 02:59:14.630295
+    - 2010-10-06 02:59:19.969304
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:59:13.782688
+    - 2010-10-06 09:59:19.972275
+  - - "550"
+    - do
+    - F
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "162"
+    - "2"
+    - "1"
+    - 2010-10-06 02:59:20.386253
+    - 2010-10-06 02:59:21.219086
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:59:13.83476
+    - 2010-10-06 09:59:21.226703
+  - - "551"
+    - form
+    - F
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "162"
+    - "3"
+    - "2"
+    - 2010-10-06 02:59:21.622667
+    - 2010-10-06 02:59:37.21906
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:59:13.87628
+    - 2010-10-06 09:59:37.2235
+  - - "552"
+    - do
+    - F
+    - create_income_details
+    - create_income_details
+    - 
+    - ""
+    - "true"
+    - "162"
+    - "4"
+    - "2"
+    - 2010-10-06 02:59:37.85686
+    - 2010-10-06 02:59:38.629295
+    - false
+    - <node MODIFIED='1286156967330' TEXT='create_income_details' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:59:13.916157
+    - 2010-10-06 09:59:38.636684
+  - - "553"
+    - if
+    - I
+    - $xvars[:enter_income_detail][:done]
+    - $xvars[:enter_income_detail][:done]
+    - 
+    - ""
+    - "true"
+    - "162"
+    - "5"
+    - "2"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286333389331' TEXT='$xvars[:enter_income_detail][:done]' ID='ID_1728152605' CREATED='1286333348708'><icon BUILTIN='help'/><node MODIFIED='1286333699926' TEXT='n: enter_income_detail' ID='ID_1999001065' CREATED='1286333688827'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:59:13.96661
+    - 2010-10-06 09:59:13.96661
+  - - "554"
+    - output
+    - I
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "162"
+    - "6"
+    - "3"
+    - 
+    - 
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 09:59:14.017959
+    - 2010-10-06 09:59:14.017959
+  - - "555"
+    - do
+    - I
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "162"
+    - "7"
+    - "3"
+    - 
+    - 
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 09:59:14.059687
+    - 2010-10-06 09:59:14.107229
+  - - "556"
+    - form
+    - F
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "163"
+    - "1"
+    - "1"
+    - 2010-10-06 03:00:54.725899
+    - 2010-10-06 03:00:58.41501
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 10:00:54.096385
+    - 2010-10-06 10:00:58.419626
+  - - "557"
+    - do
+    - F
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "163"
+    - "2"
+    - "1"
+    - 2010-10-06 03:00:58.820599
+    - 2010-10-06 03:00:59.632102
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 10:00:54.139523
+    - 2010-10-06 10:00:59.637012
+  - - "558"
+    - form
+    - F
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "163"
+    - "3"
+    - "2"
+    - 2010-10-06 03:01:00.240337
+    - 2010-10-06 03:01:40.467876
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 10:00:54.188549
+    - 2010-10-06 10:01:40.472943
+  - - "559"
+    - do
+    - F
+    - create_income_detail
+    - create_income_detail
+    - 
+    - ""
+    - "true"
+    - "163"
+    - "4"
+    - "2"
+    - 2010-10-06 03:01:15.044933
+    - 2010-10-06 03:01:41.744374
+    - false
+    - <node MODIFIED='1286334004937' TEXT='create_income_detail' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 10:00:54.226422
+    - 2010-10-06 10:01:41.750025
+  - - "560"
+    - if
+    - F
+    - $xvars[:enter_income_detail][:done]
+    - $xvars[:enter_income_detail][:done]
+    - 
+    - ""
+    - "true"
+    - "163"
+    - "5"
+    - "2"
+    - 2010-10-06 03:01:16.330766
+    - 2010-10-06 03:01:42.786557
+    - false
+    - "<node MODIFIED='1286333389331' TEXT='$xvars[:enter_income_detail][:done]' ID='ID_1728152605' CREATED='1286333348708'><icon BUILTIN='help'/><node MODIFIED='1286333699926' TEXT='n: enter_income_detail' ID='ID_1999001065' CREATED='1286333688827'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 10:00:54.263498
+    - 2010-10-06 10:01:42.791385
+  - - "561"
+    - output
+    - F
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "163"
+    - "6"
+    - "3"
+    - 2010-10-06 03:01:43.405718
+    - 2010-10-07 01:33:37.590273
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 10:00:54.308895
+    - 2010-10-07 08:33:37.593288
+  - - "562"
+    - do
+    - F
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "163"
+    - "7"
+    - "3"
+    - 2010-10-07 01:33:38.006835
+    - 2010-10-07 01:33:38.971454
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 10:00:54.34508
+    - 2010-10-07 08:33:38.976683
+  - - "563"
+    - form
+    - F
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "164"
+    - "1"
+    - "1"
+    - 2010-10-06 04:16:58.73617
+    - 2010-10-06 04:17:02.532862
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 11:16:57.900956
+    - 2010-10-06 11:17:02.535994
+  - - "564"
+    - do
+    - F
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "164"
+    - "2"
+    - "1"
+    - 2010-10-06 04:17:03.119564
+    - 2010-10-06 04:17:03.751269
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 11:16:57.933371
+    - 2010-10-06 11:17:03.759999
+  - - "565"
+    - form
+    - F
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "164"
+    - "3"
+    - "2"
+    - 2010-10-06 04:17:04.342306
+    - 2010-10-06 04:23:15.965426
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 11:16:58.220193
+    - 2010-10-06 11:23:15.968563
+  - - "566"
+    - do
+    - F
+    - create_income_detail
+    - create_income_detail
+    - 
+    - ""
+    - "true"
+    - "164"
+    - "4"
+    - "2"
+    - 2010-10-06 04:23:16.606354
+    - 2010-10-06 04:23:17.223622
+    - false
+    - <node MODIFIED='1286334004937' TEXT='create_income_detail' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 11:16:58.253154
+    - 2010-10-06 11:23:17.226885
+  - - "567"
+    - if
+    - F
+    - $xvars[:enter_income_detail][:done]
+    - $xvars[:enter_income_detail][:done]
+    - 
+    - ""
+    - "true"
+    - "164"
+    - "5"
+    - "2"
+    - 2010-10-06 04:23:17.872478
+    - 2010-10-06 04:23:18.245812
+    - false
+    - "<node MODIFIED='1286333389331' TEXT='$xvars[:enter_income_detail][:done]' ID='ID_1728152605' CREATED='1286333348708'><icon BUILTIN='help'/><node MODIFIED='1286333699926' TEXT='n: enter_income_detail' ID='ID_1999001065' CREATED='1286333688827'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 11:16:58.289316
+    - 2010-10-06 11:23:18.249059
+  - - "568"
+    - output
+    - F
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "164"
+    - "6"
+    - "3"
+    - 2010-10-06 04:23:18.926773
+    - 2010-10-07 01:53:06.672059
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-06 11:16:58.343991
+    - 2010-10-07 08:53:06.675182
+  - - "569"
+    - do
+    - F
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "164"
+    - "7"
+    - "3"
+    - 2010-10-07 01:53:07.069649
+    - 2010-10-07 01:53:07.888559
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 11:16:58.385288
+    - 2010-10-07 08:53:07.892794
+  - - "570"
+    - do
+    - F
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "165"
+    - "1"
+    - "0"
+    - 2010-10-06 16:41:16.11559
+    - 2010-10-06 16:42:07.058231
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-06 23:41:15.620801
+    - 2010-10-06 23:42:07.064213
+  - - "571"
+    - do
+    - F
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "166"
+    - "1"
+    - "0"
+    - 2010-10-07 01:33:52.159485
+    - 2010-10-07 01:34:33.460215
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-07 08:33:51.681055
+    - 2010-10-07 08:34:33.464796
+  - - "572"
+    - do
+    - F
+    - rm_laas
+    - rm_laas
+    - 
+    - ""
+    - "true"
+    - "167"
+    - "1"
+    - "0"
+    - 2010-10-07 01:34:55.443111
+    - 2010-10-07 01:34:56.331367
+    - true
+    - <node MODIFIED='1285914735303' TEXT='rm_laas' ID='ID_286513796' CREATED='1285914729481'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-07 08:34:55.118945
+    - 2010-10-07 08:34:56.336743
+  - - "573"
+    - do
+    - F
+    - rm_laas
+    - rm_laas
+    - 
+    - ""
+    - "true"
+    - "168"
+    - "1"
+    - "0"
+    - 2010-10-07 01:35:01.802843
+    - 2010-10-07 01:35:02.362378
+    - true
+    - <node MODIFIED='1285914735303' TEXT='rm_laas' ID='ID_286513796' CREATED='1285914729481'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-07 08:35:01.219133
+    - 2010-10-07 08:35:02.365603
+  - - "574"
+    - do
+    - R
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "169"
+    - "1"
+    - "0"
+    - 2010-10-07 01:53:16.566835
+    - 
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-07 08:53:16.257903
+    - 2010-10-07 08:53:16.571114
+  - - "575"
+    - do
+    - R
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "170"
+    - "1"
+    - "0"
+    - 2010-10-07 01:59:34.980618
+    - 
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-07 08:59:34.665665
+    - 2010-10-07 08:59:34.984197
+  - - "576"
+    - form
+    - F
+    - enter_income
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "171"
+    - "1"
+    - "1"
+    - 2010-10-07 02:01:08.63604
+    - 2010-10-07 02:01:16.09008
+    - false
+    - "<node MODIFIED='1286157105153' TEXT='enter_income:\xE0\xB8\x9A\xE0\xB8\xB1\xE0\xB8\x99\xE0\xB8\x97\xE0\xB8\xB6\xE0\xB8\x81\xE0\xB8\x81\xE0\xB8\xB2\xE0\xB8\xA3\xE0\xB8\xA3\xE0\xB8\xB1\xE0\xB8\x9A\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_308925966' CREATED='1286155600214'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_621853623' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1225372635' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-07 09:01:08.041072
+    - 2010-10-07 09:01:16.093803
+  - - "577"
+    - do
+    - F
+    - create_income
+    - create_income
+    - 
+    - ""
+    - "true"
+    - "171"
+    - "2"
+    - "1"
+    - 2010-10-07 02:01:16.702997
+    - 2010-10-07 02:01:17.516119
+    - false
+    - <node MODIFIED='1286156942633' TEXT='create_income' ID='ID_1193183255' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-07 09:01:08.080443
+    - 2010-10-07 09:01:17.519596
+  - - "578"
+    - form
+    - F
+    - enter_income_detail
+    - !binary |
+      4Lij4Liy4Lii4Lil4Liw4LmA4Lit4Li14Lii4LiU
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "171"
+    - "3"
+    - "2"
+    - 2010-10-07 02:01:17.872923
+    - 2010-10-07 02:01:33.804358
+    - false
+    - "<node MODIFIED='1286157109332' TEXT='enter_income_detail:\xE0\xB8\xA3\xE0\xB8\xB2\xE0\xB8\xA2\xE0\xB8\xA5\xE0\xB8\xB0\xE0\xB9\x80\xE0\xB8\xAD\xE0\xB8\xB5\xE0\xB8\xA2\xE0\xB8\x94' ID='ID_1501279424' CREATED='1286156874956'><icon BUILTIN='attach'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_1463875492' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1776318677' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-07 09:01:08.116329
+    - 2010-10-07 09:01:33.808751
+  - - "579"
+    - do
+    - F
+    - create_income_detail
+    - create_income_detail
+    - 
+    - ""
+    - "true"
+    - "171"
+    - "4"
+    - "2"
+    - 2010-10-07 02:01:34.502392
+    - 2010-10-07 02:01:35.665692
+    - false
+    - <node MODIFIED='1286334004937' TEXT='create_income_detail' ID='ID_1162729320' CREATED='1286156935861'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-07 09:01:08.151713
+    - 2010-10-07 09:01:35.669668
+  - - "580"
+    - if
+    - F
+    - $xvars[:enter_income_detail][:done]
+    - $xvars[:enter_income_detail][:done]
+    - 
+    - ""
+    - "true"
+    - "171"
+    - "5"
+    - "2"
+    - 2010-10-07 02:01:36.03964
+    - 2010-10-07 02:01:36.385181
+    - false
+    - "<node MODIFIED='1286333389331' TEXT='$xvars[:enter_income_detail][:done]' ID='ID_1728152605' CREATED='1286333348708'><icon BUILTIN='help'/><node MODIFIED='1286333699926' TEXT='n: enter_income_detail' ID='ID_1999001065' CREATED='1286333688827'/></node>"
+    - "2"
+    - 
+    - 2010-10-07 09:01:08.193335
+    - 2010-10-07 09:01:36.389871
+  - - "581"
+    - output
+    - F
+    - print_income_doc
+    - !binary |
+      4LmD4Lia4LiZ4Liz4Liq4LmI4LiH4LmA4LiH4Li04LiZ
+
+    - 
+    - CO
+    - current_user.section_id==2
+    - "171"
+    - "6"
+    - "3"
+    - 2010-10-07 02:01:36.997972
+    - 2010-10-07 02:01:41.078434
+    - false
+    - "<node MODIFIED='1286157031146' TEXT='print_income_doc:\xE0\xB9\x83\xE0\xB8\x9A\xE0\xB8\x99\xE0\xB8\xB3\xE0\xB8\xAA\xE0\xB9\x88\xE0\xB8\x87\xE0\xB9\x80\xE0\xB8\x87\xE0\xB8\xB4\xE0\xB8\x99' ID='ID_1931797765' CREATED='1286157002596'><icon BUILTIN='pencil'/><node MODIFIED='1280809581582' TEXT='role:co' ID='ID_179671890' CREATED='1280809577780'/><node MODIFIED='1280677613126' TEXT='rule:current_user.section_id==2' ID='ID_1260638778' CREATED='1280677207860'/></node>"
+    - "2"
+    - 
+    - 2010-10-07 09:01:08.243424
+    - 2010-10-07 09:01:41.081537
+  - - "582"
+    - do
+    - F
+    - create_laas
+    - create_laas
+    - 
+    - ""
+    - "true"
+    - "171"
+    - "7"
+    - "3"
+    - 2010-10-07 02:01:41.544213
+    - 2010-10-07 02:01:42.35828
+    - true
+    - <node MODIFIED='1286157066659' TEXT='create_laas' ID='ID_364453677' CREATED='1286157057078'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-07 09:01:08.273583
+    - 2010-10-07 09:01:42.362102
+  - - "583"
+    - do
+    - F
+    - submit_laas
+    - submit_laas
+    - 
+    - ""
+    - "true"
+    - "172"
+    - "1"
+    - "0"
+    - 2010-10-07 02:01:52.312728
+    - 2010-10-07 02:02:39.118229
+    - true
+    - <node MODIFIED='1285911775389' TEXT='submit_laas' ID='ID_73914634' CREATED='1285911767375'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-07 09:01:51.994236
+    - 2010-10-07 09:02:39.123553
+  - - "584"
+    - do
+    - F
+    - rm_laas
+    - rm_laas
+    - 
+    - ""
+    - "true"
+    - "173"
+    - "1"
+    - "0"
+    - 2010-10-07 02:02:45.348812
+    - 2010-10-07 02:02:46.17587
+    - true
+    - <node MODIFIED='1285914735303' TEXT='rm_laas' ID='ID_286513796' CREATED='1285914729481'><icon BUILTIN='bookmark'/></node>
+    - "2"
+    - 
+    - 2010-10-07 09:02:44.998736
+    - 2010-10-07 09:02:46.181026
 
 --- 
 sections: 
@@ -7959,6 +10270,1580 @@ gma_xmains:
     - 127.0.0.1
     - 2010-09-29 13:34:39.395647
     - 2010-09-29 13:35:05.997654
+  - - "146"
+    - F
+    - |
+      --- 
+      :total_form_steps: 0
+      :current_step: 1
+      :host: localhost
+      :submit_laas: /finance/laas
+      :user_id: 2
+      :gma_service_id: 86
+      :id: "3"
+      :total_steps: 1
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "3"
+        controller: engine
+        return: /finance/laas
+      :custom_controller: FinanceController
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-01 05:46:32.349463
+    - "86"
+    - 2010-10-01 05:47:13.337904
+    - "492"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-01 12:46:32.407584
+    - 2010-10-01 12:47:13.341624
+  - - "147"
+    - X
+    - |
+      --- 
+      :total_form_steps: 0
+      :host: localhost
+      :user_id: 2
+      :total_steps: 1
+      :id: "3"
+      :gma_service_id: 86
+      :referer: http://localhost:6005/finance/laas
+      :custom_controller: FinanceController
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "3"
+        controller: engine
+
+    - 2010-10-01 05:49:40.695285
+    - "86"
+    - 
+    - "493"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-01 12:49:40.762353
+    - 2010-10-01 12:49:40.883258
+  - - "148"
+    - E
+    - |
+      --- 
+      :custom_controller: FinanceController
+      :gma_service_id: 86
+      :host: localhost
+      :total_steps: 1
+      :current_step: 1
+      :error: !ruby/exception:NameError 
+        message: "undefined local variable or method `confirm' for #<FinanceController:0xc391b04 @real_format=nil>"
+      :user_id: 2
+      :total_form_steps: 0
+      :id: "3"
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "3"
+        controller: engine
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-01 05:54:02.791695
+    - "86"
+    - 
+    - "494"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-01 12:54:02.846341
+    - 2010-10-01 12:54:36.016154
+  - - "149"
+    - F
+    - |
+      --- 
+      :submit_laas: /finance/laas
+      :custom_controller: FinanceController
+      :gma_service_id: 86
+      :host: localhost
+      :total_steps: 1
+      :current_step: 1
+      :user_id: 2
+      :total_form_steps: 0
+      :id: "3"
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "3"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-01 05:55:48.575153
+    - "86"
+    - 2010-10-01 05:56:31.730965
+    - "495"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-01 12:55:48.631821
+    - 2010-10-01 12:56:31.745254
+  - - "150"
+    - F
+    - |
+      --- 
+      :submit_laas: /finance/laas
+      :custom_controller: FinanceController
+      :gma_service_id: 86
+      :host: localhost
+      :total_steps: 1
+      :current_step: 1
+      :user_id: 2
+      :total_form_steps: 0
+      :id: "3"
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "3"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-01 05:57:12.784879
+    - "86"
+    - 2010-10-01 05:57:54.006689
+    - "496"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-01 12:57:12.888382
+    - 2010-10-01 12:57:54.0133
+  - - "151"
+    - F
+    - |
+      --- 
+      :submit_laas: /finance/laas
+      :custom_controller: FinanceController
+      :gma_service_id: 86
+      :host: localhost
+      :total_steps: 1
+      :current_step: 1
+      :user_id: 2
+      :total_form_steps: 0
+      :id: "2"
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "2"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-01 05:58:06.582318
+    - "86"
+    - 2010-10-01 05:58:43.018604
+    - "497"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-01 12:58:06.645027
+    - 2010-10-01 12:58:43.022268
+  - - "152"
+    - F
+    - |
+      --- 
+      :submit_laas: /finance/laas
+      :custom_controller: FinanceController
+      :gma_service_id: 86
+      :host: localhost
+      :total_steps: 1
+      :current_step: 1
+      :user_id: 2
+      :total_form_steps: 0
+      :id: "3"
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "3"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-01 06:27:40.12716
+    - "86"
+    - 2010-10-01 06:28:16.170707
+    - "498"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-01 13:27:40.388708
+    - 2010-10-01 13:28:16.174906
+  - - "153"
+    - F
+    - |
+      --- 
+      :current_step: 1
+      :total_form_steps: 0
+      :host: localhost
+      :user_id: 2
+      :custom_controller: FinanceController
+      :gma_service_id: 87
+      :id: "3"
+      :rm_laas: /finance/laas
+      :p: !map:HashWithIndifferentAccess 
+        service: rm_laas
+        module: finance
+        action: init
+        id: "3"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+      :total_steps: 1
+
+    - 2010-10-01 06:41:24.136925
+    - "87"
+    - 2010-10-01 06:41:25.579226
+    - "499"
+    - !binary |
+      4Lil4Lia4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-01 13:41:24.209034
+    - 2010-10-01 13:41:25.583274
+  - - "154"
+    - X
+    - |
+      --- 
+      :host: localhost
+      :total_steps: 6
+      :custom_controller: FinanceController
+      :total_form_steps: 3
+      :user_id: 2
+      :id: 
+      :gma_service_id: 89
+      :referer: http://localhost:6005/finance?module=finance
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+
+    - 2010-10-04 02:28:55.323142
+    - "89"
+    - 
+    - "500"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-04 09:28:55.774298
+    - 2010-10-04 09:28:56.641792
+  - - "155"
+    - X
+    - |
+      --- 
+      :host: localhost
+      :total_steps: 6
+      :custom_controller: FinanceController
+      :total_form_steps: 3
+      :user_id: 2
+      :id: 
+      :gma_service_id: 89
+      :referer: http://localhost:6005/
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+
+    - 2010-10-04 02:30:24.222675
+    - "89"
+    - 
+    - "506"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-04 09:30:24.242475
+    - 2010-10-04 09:30:24.692714
+  - - "156"
+    - E
+    - |
+      --- 
+      :custom_controller: FinanceController
+      :total_form_steps: 3
+      :enter_income: 
+        :action: end_form
+        :income: !map:HashWithIndifferentAccess 
+          receiver_id: !str 
+            str: "12"
+            "@_rails_html_safe": false
+          rcat_id: !str 
+            str: "2"
+            "@_rails_html_safe": false
+          rtype_id: !str 
+            str: "2"
+            "@_rails_html_safe": false
+          receive_on(1i): !str 
+            str: "2010"
+            "@_rails_html_safe": false
+          receive_on(2i): !str 
+            str: "10"
+            "@_rails_html_safe": false
+          fy: !str 
+            str: "2554"
+            "@_rails_html_safe": false
+          ref: !str 
+            str: "11"
+            "@_rails_html_safe": false
+          receive_on(3i): !str 
+            str: "5"
+            "@_rails_html_safe": false
+          deliver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+        :xmain_id: !str 
+          str: "156"
+          "@_rails_html_safe": false
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :runseq_id: !str 
+          str: "512"
+          "@_rails_html_safe": false
+        :controller: engine
+        :step: !str 
+          str: "1"
+          "@_rails_html_safe": false
+      :host: localhost
+      :gma_service_id: 89
+      :error: !ruby/exception:RuntimeError 
+        message: Called id for nil, which would mistakenly be 4 -- if you really wanted the id of nil, use object_id
+      :user_id: 2
+      :total_steps: 6
+      :id: 
+      :current_step: 2
+      :referer: http://localhost:6005/finance?module=finance
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+
+    - 2010-10-05 05:08:56.258477
+    - "89"
+    - 
+    - "513"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-05 12:08:56.28276
+    - 2010-10-05 12:12:20.069305
+  - - "157"
+    - X
+    - |
+      --- 
+      :user_id: 2
+      :host: localhost
+      :enter_income: 
+        :xmain_id: !str 
+          str: "157"
+          "@_rails_html_safe": false
+        :controller: engine
+        :runseq_id: !str 
+          str: "518"
+          "@_rails_html_safe": false
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :action: end_form
+        :income: !map:HashWithIndifferentAccess 
+          receiver_id: !str 
+            str: "2"
+            "@_rails_html_safe": false
+          rcat_id: !str 
+            str: "2"
+            "@_rails_html_safe": false
+          rtype_id: !str 
+            str: "5"
+            "@_rails_html_safe": false
+          receive_on(1i): !str 
+            str: "2010"
+            "@_rails_html_safe": false
+          receive_on(2i): !str 
+            str: "10"
+            "@_rails_html_safe": false
+          fy: !str 
+            str: "2554"
+            "@_rails_html_safe": false
+          ref: !str 
+            str: ""
+            "@_rails_html_safe": false
+          receive_on(3i): !str 
+            str: "5"
+            "@_rails_html_safe": false
+          deliver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+        :step: !str 
+          str: "1"
+          "@_rails_html_safe": false
+      :gma_service_id: 89
+      :custom_controller: FinanceController
+      :total_form_steps: 3
+      :total_steps: 6
+      :create_income: 1
+      :id: 
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+      :referer: http://localhost:6005/
+      :current_step: 2
+      :income_id: 1
+
+    - 2010-10-05 05:20:19.784996
+    - "89"
+    - 
+    - "520"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-05 12:20:19.805028
+    - 2010-10-05 12:49:07.680534
+  - - "158"
+    - X
+    - |
+      --- 
+      :custom_controller: FinanceController
+      :total_form_steps: 3
+      :host: localhost
+      :gma_service_id: 89
+      :user_id: 2
+      :total_steps: 6
+      :id: 
+      :referer: http://localhost:6005/finance?module=finance
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+
+    - 2010-10-05 05:57:33.728024
+    - "89"
+    - 
+    - "524"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-05 12:57:33.746032
+    - 2010-10-05 12:57:34.107058
+  - - "159"
+    - E
+    - |
+      --- 
+      :current_step: 2
+      :host: localhost
+      :gma_service_id: 89
+      :enter_income: 
+        :action: end_form
+        :runseq_id: !str 
+          str: "530"
+          "@_rails_html_safe": false
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :income: !map:HashWithIndifferentAccess 
+          receiver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+          receive_on(1i): !str 
+            str: "2010"
+            "@_rails_html_safe": false
+          receive_on(2i): !str 
+            str: "10"
+            "@_rails_html_safe": false
+          fy: !str 
+            str: "2554"
+            "@_rails_html_safe": false
+          ref: !str 
+            str: aa
+            "@_rails_html_safe": false
+          receive_on(3i): !str 
+            str: "6"
+            "@_rails_html_safe": false
+          deliver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+        :controller: engine
+        :xmain_id: !str 
+          str: "159"
+          "@_rails_html_safe": false
+        :step: !str 
+          str: "1"
+          "@_rails_html_safe": false
+      :custom_controller: FinanceController
+      :error: !ruby/exception:NoMethodError 
+        message: "undefined method `rcat_id' for #<Income:0xbe2ca9c>"
+      :user_id: 2
+      :total_form_steps: 3
+      :id: 
+      :total_steps: 6
+      :referer: http://localhost:6005/finance?module=finance
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+
+    - 2010-10-06 02:30:08.578403
+    - "89"
+    - 
+    - "531"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-06 09:30:08.600071
+    - 2010-10-06 09:31:05.426743
+  - - "160"
+    - X
+    - |
+      --- 
+      :create_income: 1
+      :current_step: 2
+      :host: localhost
+      :gma_service_id: 89
+      :enter_income: 
+        :action: end_form
+        :runseq_id: !str 
+          str: "536"
+          "@_rails_html_safe": false
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :income: !map:HashWithIndifferentAccess 
+          receiver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+          receive_on(1i): !str 
+            str: "2010"
+            "@_rails_html_safe": false
+          receive_on(2i): !str 
+            str: "10"
+            "@_rails_html_safe": false
+          fy: !str 
+            str: "2554"
+            "@_rails_html_safe": false
+          ref: !str 
+            str: aa
+            "@_rails_html_safe": false
+          receive_on(3i): !str 
+            str: "6"
+            "@_rails_html_safe": false
+          deliver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+        :controller: engine
+        :xmain_id: !str 
+          str: "160"
+          "@_rails_html_safe": false
+        :step: !str 
+          str: "1"
+          "@_rails_html_safe": false
+      :income_id: 1
+      :custom_controller: FinanceController
+      :user_id: 2
+      :total_form_steps: 3
+      :id: 
+      :total_steps: 6
+      :referer: http://localhost:6005/gma/run_call_errors
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+
+    - 2010-10-06 02:34:17.265598
+    - "89"
+    - 
+    - "538"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-06 09:34:17.28518
+    - 2010-10-06 09:34:25.216805
+  - - "161"
+    - E
+    - |
+      --- 
+      :create_income: 2
+      :current_step: 4
+      :host: localhost
+      :gma_service_id: 89
+      :enter_income: 
+        :action: end_form
+        :runseq_id: !str 
+          str: "542"
+          "@_rails_html_safe": false
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :income: !map:HashWithIndifferentAccess 
+          receiver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+          receive_on(1i): !str 
+            str: "2010"
+            "@_rails_html_safe": false
+          receive_on(2i): !str 
+            str: "10"
+            "@_rails_html_safe": false
+          fy: !str 
+            str: "2554"
+            "@_rails_html_safe": false
+          ref: !str 
+            str: "22"
+            "@_rails_html_safe": false
+          receive_on(3i): !str 
+            str: "6"
+            "@_rails_html_safe": false
+          deliver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+        :controller: engine
+        :xmain_id: !str 
+          str: "161"
+          "@_rails_html_safe": false
+        :step: !str 
+          str: "1"
+          "@_rails_html_safe": false
+      :income_id: 2
+      :custom_controller: FinanceController
+      :error: !ruby/exception:NoMethodError 
+        message: "undefined method `create_income_details' for #<FinanceController:0xbc398ac @real_format=nil>"
+      :user_id: 2
+      :total_form_steps: 3
+      :enter_income_detail: 
+        :action: end_form
+        :runseq_id: !str 
+          str: "544"
+          "@_rails_html_safe": false
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :done: !str 
+          str: n
+          "@_rails_html_safe": false
+        :controller: engine
+        :income_detail: !map:HashWithIndifferentAccess 
+          num_receipt: !str 
+            str: "0"
+            "@_rails_html_safe": false
+          remark: !str 
+            str: ""
+            "@_rails_html_safe": false
+          rcat_id: !str 
+            str: "2"
+            "@_rails_html_safe": false
+          amount: !str 
+            str: "22"
+            "@_rails_html_safe": false
+          rtype_id: !str 
+            str: "5"
+            "@_rails_html_safe": false
+          receipt: !str 
+            str: "33"
+            "@_rails_html_safe": false
+          description: !str 
+            str: ww
+            "@_rails_html_safe": false
+        :xmain_id: !str 
+          str: "161"
+          "@_rails_html_safe": false
+        :step: !str 
+          str: "3"
+          "@_rails_html_safe": false
+      :id: 
+      :total_steps: 7
+      :referer: http://localhost:6005/
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+
+    - 2010-10-06 02:55:50.927051
+    - "89"
+    - 
+    - "545"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-06 09:55:50.947541
+    - 2010-10-06 09:56:26.460331
+  - - "162"
+    - E
+    - |
+      --- 
+      :create_income: 3
+      :current_step: 4
+      :host: localhost
+      :gma_service_id: 89
+      :enter_income: 
+        :action: end_form
+        :runseq_id: !str 
+          str: "549"
+          "@_rails_html_safe": false
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :income: !map:HashWithIndifferentAccess 
+          receiver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+          receive_on(1i): !str 
+            str: "2010"
+            "@_rails_html_safe": false
+          receive_on(2i): !str 
+            str: "10"
+            "@_rails_html_safe": false
+          fy: !str 
+            str: "2554"
+            "@_rails_html_safe": false
+          ref: !str 
+            str: "22"
+            "@_rails_html_safe": false
+          receive_on(3i): !str 
+            str: "6"
+            "@_rails_html_safe": false
+          deliver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+        :controller: engine
+        :xmain_id: !str 
+          str: "162"
+          "@_rails_html_safe": false
+        :step: !str 
+          str: "1"
+          "@_rails_html_safe": false
+      :income_id: 3
+      :custom_controller: FinanceController
+      :error: !ruby/exception:NoMethodError 
+        message: "undefined method `create_income_details' for #<FinanceController:0xbe1bc88 @real_format=nil>"
+      :user_id: 2
+      :total_form_steps: 3
+      :enter_income_detail: 
+        :action: end_form
+        :runseq_id: !str 
+          str: "551"
+          "@_rails_html_safe": false
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :done: !str 
+          str: n
+          "@_rails_html_safe": false
+        :controller: engine
+        :income_detail: !map:HashWithIndifferentAccess 
+          num_receipt: !str 
+            str: "0"
+            "@_rails_html_safe": false
+          remark: !str 
+            str: ""
+            "@_rails_html_safe": false
+          rcat_id: !str 
+            str: "2"
+            "@_rails_html_safe": false
+          amount: !str 
+            str: "11"
+            "@_rails_html_safe": false
+          rtype_id: !str 
+            str: "5"
+            "@_rails_html_safe": false
+          receipt: !str 
+            str: "11"
+            "@_rails_html_safe": false
+          description: !str 
+            str: ww
+            "@_rails_html_safe": false
+        :xmain_id: !str 
+          str: "162"
+          "@_rails_html_safe": false
+        :step: !str 
+          str: "3"
+          "@_rails_html_safe": false
+      :id: 
+      :total_steps: 7
+      :referer: http://localhost:6005/finance?module=finance
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+
+    - 2010-10-06 02:59:13.657977
+    - "89"
+    - 
+    - "552"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-06 09:59:13.681454
+    - 2010-10-06 09:59:38.568402
+  - - "163"
+    - F
+    - |
+      --- 
+      :current_step: 7
+      :total_steps: 7
+      :create_income_detail: true
+      :create_laas: &id002 !ruby/object:LaasQueue 
+        attributes: 
+          script: ff.goto('http://www.laas.go.th/Default.aspx?menu=4E465433-EB5A-416A-8092-BBAE595C6CB7&control=list&screenname=REC_TAX_ALLOT&editable=true')
+          name: !binary |
+            4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+            4LiZ
+      
+          created_at: &id001 2010-10-07 08:33:38.756058 +07:00
+          retry: 0
+          confirm: !binary |
+            4LiI4Lix4LiU4Liq4Lij4Lij
+      
+          updated_at: *id001
+          submitted_at: 
+          gma_user_id: 2
+          id: "4"
+          description: test
+          status: 0
+          xmain_id: 163
+        attributes_cache: {}
+      
+        changed_attributes: {}
+      
+        errors: !ruby/object:ActiveRecord::Errors 
+          base: *id002
+          errors: !map:ActiveSupport::OrderedHash {}
+      
+        new_record: false
+      :custom_controller: FinanceController
+      :host: localhost
+      :gma_service_id: 89
+      :total_form_steps: 3
+      :user_id: 2
+      :enter_income: 
+        :action: end_form
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :runseq_id: !str 
+          str: "556"
+          "@_rails_html_safe": false
+        :income: !map:HashWithIndifferentAccess 
+          receiver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+          receive_on(1i): !str 
+            str: "2010"
+            "@_rails_html_safe": false
+          receive_on(2i): !str 
+            str: "10"
+            "@_rails_html_safe": false
+          fy: !str 
+            str: "2554"
+            "@_rails_html_safe": false
+          ref: !str 
+            str: ""
+            "@_rails_html_safe": false
+          receive_on(3i): !str 
+            str: "6"
+            "@_rails_html_safe": false
+          deliver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+        :xmain_id: !str 
+          str: "163"
+          "@_rails_html_safe": false
+        :controller: engine
+        :step: !str 
+          str: "1"
+          "@_rails_html_safe": false
+      :create_income: 4
+      :enter_income_detail: 
+        :action: end_form
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :done: !str 
+          str: y
+          "@_rails_html_safe": false
+        :runseq_id: !str 
+          str: "558"
+          "@_rails_html_safe": false
+        :xmain_id: !str 
+          str: "163"
+          "@_rails_html_safe": false
+        :income_detail: !map:HashWithIndifferentAccess 
+          num_receipt: !str 
+            str: "0"
+            "@_rails_html_safe": false
+          remark: !str 
+            str: ss
+            "@_rails_html_safe": false
+          rcat_id: !str 
+            str: "2"
+            "@_rails_html_safe": false
+          amount: !str 
+            str: "22"
+            "@_rails_html_safe": false
+          rtype_id: !str 
+            str: "21"
+            "@_rails_html_safe": false
+          receipt: !str 
+            str: ""
+            "@_rails_html_safe": false
+          description: !str 
+            str: qqq
+            "@_rails_html_safe": false
+        :controller: engine
+        :step: !str 
+          str: "3"
+          "@_rails_html_safe": false
+      :id: 
+      :income_id: 4
+      :referer: http://localhost:6005/
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+
+    - 2010-10-06 03:00:53.952554
+    - "89"
+    - 2010-10-07 01:33:39.188491
+    - "562"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-06 10:00:53.97106
+    - 2010-10-07 08:33:39.193785
+  - - "164"
+    - F
+    - |
+      --- 
+      :current_step: 7
+      :total_steps: 7
+      :create_income_detail: true
+      :create_laas: &id002 !ruby/object:LaasQueue 
+        attributes: 
+          script: !str 
+            str: ff.goto('http://www.laas.go.th/Default.aspx?menu=4E465433-EB5A-416A-8092-BBAE595C6CB7&control=list&screenname=REC_TAX_ALLOT&editable=true');ff.text_field(:name,'_ctl0:_ctl0:txtPayer:txtMain').set('test')ff.select_list(:id,'_ctl0__ctl0_ddlRecTypeName').select_value('9EC7EB15-83DD-4AE5-AD57-259F754DD3DA')
+            "@_rails_html_safe": false
+          name: !binary |
+            4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+            4LiZ
+      
+          created_at: &id001 2010-10-07 08:53:07.795925 +07:00
+          retry: 0
+          confirm: !binary |
+            4LiI4Lix4LiU4Liq4Lij4Lij
+      
+          updated_at: *id001
+          submitted_at: 
+          gma_user_id: 2
+          id: "5"
+          description: test
+          status: 0
+          xmain_id: 164
+        attributes_cache: {}
+      
+        changed_attributes: {}
+      
+        errors: !ruby/object:ActiveRecord::Errors 
+          base: *id002
+          errors: !map:ActiveSupport::OrderedHash {}
+      
+        new_record: false
+      :custom_controller: FinanceController
+      :gma_service_id: 89
+      :host: localhost
+      :total_form_steps: 3
+      :user_id: 2
+      :enter_income: 
+        :action: end_form
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :runseq_id: !str 
+          str: "563"
+          "@_rails_html_safe": false
+        :income: !map:HashWithIndifferentAccess 
+          receiver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+          receive_on(1i): !str 
+            str: "2010"
+            "@_rails_html_safe": false
+          receive_on(2i): !str 
+            str: "10"
+            "@_rails_html_safe": false
+          fy: !str 
+            str: "2554"
+            "@_rails_html_safe": false
+          ref: !str 
+            str: ""
+            "@_rails_html_safe": false
+          receive_on(3i): !str 
+            str: "6"
+            "@_rails_html_safe": false
+          deliver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+        :xmain_id: !str 
+          str: "164"
+          "@_rails_html_safe": false
+        :controller: engine
+        :step: !str 
+          str: "1"
+          "@_rails_html_safe": false
+      :create_income: 5
+      :enter_income_detail: 
+        :action: end_form
+        :done: !str 
+          str: y
+          "@_rails_html_safe": false
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :runseq_id: !str 
+          str: "565"
+          "@_rails_html_safe": false
+        :xmain_id: !str 
+          str: "164"
+          "@_rails_html_safe": false
+        :income_detail: !map:HashWithIndifferentAccess 
+          num_receipt: !str 
+            str: "0"
+            "@_rails_html_safe": false
+          remark: !str 
+            str: ""
+            "@_rails_html_safe": false
+          rcat_id: !str 
+            str: "2"
+            "@_rails_html_safe": false
+          amount: !str 
+            str: "11"
+            "@_rails_html_safe": false
+          rtype_id: !str 
+            str: "5"
+            "@_rails_html_safe": false
+          receipt: !str 
+            str: ""
+            "@_rails_html_safe": false
+          description: !str 
+            str: ss
+            "@_rails_html_safe": false
+        :controller: engine
+        :step: !str 
+          str: "3"
+          "@_rails_html_safe": false
+      :id: 
+      :income_id: 5
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+      :referer: http://localhost:6005/finance?module=finance
+
+    - 2010-10-06 04:16:57.784139
+    - "89"
+    - 2010-10-07 01:53:08.029488
+    - "569"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-06 11:16:57.804172
+    - 2010-10-07 08:53:08.043676
+  - - "165"
+    - F
+    - |
+      --- 
+      :current_step: 1
+      :total_steps: 1
+      :custom_controller: FinanceController
+      :submit_laas: /finance/laas
+      :gma_service_id: 86
+      :host: localhost
+      :total_form_steps: 0
+      :user_id: 2
+      :id: "3"
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "3"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-06 16:41:15.253151
+    - "86"
+    - 2010-10-06 16:42:07.121384
+    - "570"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-06 23:41:15.31605
+    - 2010-10-06 23:42:07.125932
+  - - "166"
+    - F
+    - |
+      --- 
+      :current_step: 1
+      :total_steps: 1
+      :custom_controller: FinanceController
+      :gma_service_id: 86
+      :host: localhost
+      :submit_laas: /finance/laas
+      :total_form_steps: 0
+      :user_id: 2
+      :id: "4"
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "4"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-07 01:33:51.460644
+    - "86"
+    - 2010-10-07 01:34:33.523411
+    - "571"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-07 08:33:51.51872
+    - 2010-10-07 08:34:33.531189
+  - - "167"
+    - F
+    - |
+      --- 
+      :current_step: 1
+      :total_steps: 1
+      :custom_controller: FinanceController
+      :gma_service_id: 87
+      :host: localhost
+      :total_form_steps: 0
+      :user_id: 2
+      :rm_laas: /finance/laas
+      :id: "3"
+      :p: !map:HashWithIndifferentAccess 
+        service: rm_laas
+        module: finance
+        action: init
+        id: "3"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-07 01:34:54.945763
+    - "87"
+    - 2010-10-07 01:34:56.401857
+    - "572"
+    - !binary |
+      4Lil4Lia4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-07 08:34:55.018842
+    - 2010-10-07 08:34:56.407736
+  - - "168"
+    - F
+    - |
+      --- 
+      :current_step: 1
+      :total_steps: 1
+      :custom_controller: FinanceController
+      :gma_service_id: 87
+      :host: localhost
+      :total_form_steps: 0
+      :user_id: 2
+      :rm_laas: /finance/laas
+      :id: "1"
+      :p: !map:HashWithIndifferentAccess 
+        service: rm_laas
+        module: finance
+        action: init
+        id: "1"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-07 01:35:01.042238
+    - "87"
+    - 2010-10-07 01:35:02.42533
+    - "573"
+    - !binary |
+      4Lil4Lia4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-07 08:35:01.106912
+    - 2010-10-07 08:35:02.431471
+  - - "169"
+    - I
+    - |
+      --- 
+      :total_steps: 1
+      :custom_controller: FinanceController
+      :host: localhost
+      :gma_service_id: 86
+      :total_form_steps: 0
+      :user_id: 2
+      :id: "5"
+      :referer: http://localhost:6005/finance/laas
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "5"
+        controller: engine
+
+    - 2010-10-07 01:53:15.854019
+    - "86"
+    - 
+    - "574"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-07 08:53:15.9331
+    - 2010-10-07 08:53:16.281259
+  - - "170"
+    - I
+    - |
+      --- 
+      :total_steps: 1
+      :custom_controller: FinanceController
+      :host: localhost
+      :gma_service_id: 86
+      :total_form_steps: 0
+      :user_id: 2
+      :id: "5"
+      :referer: http://localhost:6005/finance/laas
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "5"
+        controller: engine
+
+    - 2010-10-07 01:59:34.501524
+    - "86"
+    - 
+    - "575"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-07 08:59:34.579885
+    - 2010-10-07 08:59:34.685231
+  - - "171"
+    - F
+    - |
+      --- 
+      :current_step: 7
+      :total_steps: 7
+      :create_income_detail: true
+      :create_laas: &id002 !ruby/object:LaasQueue 
+        attributes: 
+          script: !str 
+            str: ff.goto('http://www.laas.go.th/Default.aspx?menu=4E465433-EB5A-416A-8092-BBAE595C6CB7&control=list&screenname=REC_TAX_ALLOT&editable=true');ff.text_field(:name,'_ctl0:_ctl0:txtPayer:txtMain').set('test');ff.select_list(:id,'_ctl0__ctl0_ddlRecTypeName').select_value('9EC7EB15-83DD-4AE5-AD57-259F754DD3DA');
+            "@_rails_html_safe": false
+          name: !binary |
+            4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+            4LiZ
+      
+          created_at: &id001 2010-10-07 09:01:42.272107 +07:00
+          retry: 0
+          confirm: !binary |
+            4LiI4Lix4LiU4Liq4Lij4Lij
+      
+          updated_at: *id001
+          submitted_at: 
+          gma_user_id: 2
+          id: "6"
+          description: test
+          status: 0
+          xmain_id: 171
+        attributes_cache: {}
+      
+        changed_attributes: {}
+      
+        errors: !ruby/object:ActiveRecord::Errors 
+          base: *id002
+          errors: !map:ActiveSupport::OrderedHash {}
+      
+        new_record: false
+      :custom_controller: FinanceController
+      :gma_service_id: 89
+      :host: localhost
+      :total_form_steps: 3
+      :user_id: 2
+      :enter_income: 
+        :action: end_form
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :runseq_id: !str 
+          str: "576"
+          "@_rails_html_safe": false
+        :income: !map:HashWithIndifferentAccess 
+          receiver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+          receive_on(1i): !str 
+            str: "2010"
+            "@_rails_html_safe": false
+          receive_on(2i): !str 
+            str: "10"
+            "@_rails_html_safe": false
+          fy: !str 
+            str: "2554"
+            "@_rails_html_safe": false
+          ref: !str 
+            str: aa
+            "@_rails_html_safe": false
+          receive_on(3i): !str 
+            str: "7"
+            "@_rails_html_safe": false
+          deliver_id: !str 
+            str: "10"
+            "@_rails_html_safe": false
+        :xmain_id: !str 
+          str: "171"
+          "@_rails_html_safe": false
+        :controller: engine
+        :step: !str 
+          str: "1"
+          "@_rails_html_safe": false
+      :enter_income_detail: 
+        :action: end_form
+        :done: !str 
+          str: y
+          "@_rails_html_safe": false
+        :commit: !binary |
+          4LiU4Liz4LmA4LiZ4Li04LiZ4LiB4Liy4Lij4LiV4LmI4LitID4=
+      
+        :runseq_id: !str 
+          str: "578"
+          "@_rails_html_safe": false
+        :xmain_id: !str 
+          str: "171"
+          "@_rails_html_safe": false
+        :income_detail: !map:HashWithIndifferentAccess 
+          num_receipt: !str 
+            str: "0"
+            "@_rails_html_safe": false
+          remark: !str 
+            str: ""
+            "@_rails_html_safe": false
+          rcat_id: !str 
+            str: "1"
+            "@_rails_html_safe": false
+          amount: !str 
+            str: "11"
+            "@_rails_html_safe": false
+          rtype_id: !str 
+            str: "102"
+            "@_rails_html_safe": false
+          receipt: !str 
+            str: ""
+            "@_rails_html_safe": false
+          description: !str 
+            str: aa
+            "@_rails_html_safe": false
+        :controller: engine
+        :step: !str 
+          str: "3"
+          "@_rails_html_safe": false
+      :id: 
+      :create_income: 6
+      :p: !map:HashWithIndifferentAccess 
+        service: income
+        module: finance
+        action: init
+        controller: engine
+      :referer: http://localhost:6005/
+      :income_id: 6
+
+    - 2010-10-07 02:01:07.713921
+    - "89"
+    - 2010-10-07 02:01:42.468938
+    - "582"
+    - !binary |
+      4Lia4Lix4LiZ4LiX4Li24LiB4LiB4Liy4Lij4Lij4Lix4Lia4LmA4LiH4Li0
+      4LiZ
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-07 09:01:07.735518
+    - 2010-10-07 09:01:42.473757
+  - - "172"
+    - F
+    - |
+      --- 
+      :current_step: 1
+      :total_steps: 1
+      :custom_controller: FinanceController
+      :gma_service_id: 86
+      :host: localhost
+      :submit_laas: /finance/laas
+      :total_form_steps: 0
+      :user_id: 2
+      :id: "6"
+      :p: !map:HashWithIndifferentAccess 
+        service: submit_laas
+        module: finance
+        action: init
+        id: "6"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-07 02:01:51.835826
+    - "86"
+    - 2010-10-07 02:02:39.207688
+    - "583"
+    - !binary |
+      4Liq4LmI4LiH4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-07 09:01:51.903058
+    - 2010-10-07 09:02:39.214301
+  - - "173"
+    - F
+    - |
+      --- 
+      :current_step: 1
+      :total_steps: 1
+      :custom_controller: FinanceController
+      :gma_service_id: 87
+      :host: localhost
+      :total_form_steps: 0
+      :user_id: 2
+      :rm_laas: /finance/laas
+      :id: "5"
+      :p: !map:HashWithIndifferentAccess 
+        service: rm_laas
+        module: finance
+        action: init
+        id: "5"
+        controller: engine
+        return: /finance/laas
+      :referer: http://localhost:6005/finance/laas
+
+    - 2010-10-07 02:02:44.827702
+    - "87"
+    - 2010-10-07 02:02:46.27573
+    - "584"
+    - !binary |
+      4Lil4Lia4LiC4LmJ4Lit4Lih4Li54LilIExBQVM=
+
+    - 
+    - "2"
+    - 127.0.0.1
+    - 2010-10-07 09:02:44.898183
+    - 2010-10-07 09:02:46.283883
 
 --- 
 sessions: 
@@ -8023,10 +11908,82 @@ sessions:
   - - "187"
     - fcb68454cb8956bd26bed773bb0e85e4
     - |
-      BAh7BjoMdXNlcl9pZGkH
+      BAh7CjoLbW9kdWxlIghkZXY6DXhtYWluX2lkaQGZOg5ydW5zZXFfaWRpAvMB
+      Ogx1c2VyX2lkaQciCmZsYXNoSUM6J0FjdGlvbkNvbnRyb2xsZXI6OkZsYXNo
+      OjpGbGFzaEhhc2h7AAY6CkB1c2VkewA=
 
     - 2010-10-01 09:55:44.179233
-    - 2010-10-01 10:19:45.965372
+    - 2010-10-01 14:13:54.317872
+  - - "188"
+    - 889e8db4b80c644d323784d15c9bb39b
+    - |
+      BAh7BzoLbW9kdWxlIgxmaW5hbmNlOgx1c2VyX2lkaQc=
+
+    - 2010-10-02 02:28:39.449869
+    - 2010-10-02 02:40:32.096674
+  - - "189"
+    - a06ef362564fa51b687338be7a0e9dc2
+    - |
+      BAh7BzoLbW9kdWxlIgxmaW5hbmNlOgx1c2VyX2lkaQc=
+
+    - 2010-10-03 13:15:12.627199
+    - 2010-10-03 13:15:21.116702
+  - - "190"
+    - 9f342cc9020efb6200aec4713231dea5
+    - |
+      BAh7CToLbW9kdWxlIgxmaW5hbmNlOgx1c2VyX2lkaQc6DXhtYWluX2lkaQGb
+      Og5ydW5zZXFfaWRpAvoB
+
+    - 2010-10-04 08:25:36.396494
+    - 2010-10-04 09:30:25.179358
+  - - "191"
+    - acb02fa1fd1c22cd52936d7baa996551
+    - |
+      BAh7CDoMdXNlcl9pZGkHOg14bWFpbl9pZGkBmzoOcnVuc2VxX2lkaQL6AQ==
+
+    - 2010-10-04 09:34:27.342591
+    - 2010-10-04 09:34:40.608623
+  - - "192"
+    - aa9d3aeadd93eccf8bb5b5f72b193c50
+    - |
+      BAh7CjoNeG1haW5faWRpAZ46C21vZHVsZSIMZmluYW5jZToOcnVuc2VxX2lk
+      aQIMAjoMdXNlcl9pZGkHIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpG
+      bGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA
+
+    - 2010-10-05 10:07:04.855309
+    - 2010-10-05 12:57:34.481555
+  - - "193"
+    - 66c35a52a4ac604277a6f5abec57bfaf
+    - |
+      BAh7CDoNeG1haW5faWRpAZ06DnJ1bnNlcV9pZGkCBgI6DHVzZXJfaWRpBw==
+
+    - 2010-10-05 12:26:55.181087
+    - 2010-10-05 12:27:08.066389
+  - - "194"
+    - f2508b3e62e2ced28929ab43ce4c9787
+    - |
+      BAh7CjoOcnVuc2VxX2lkaQI4AjoLbW9kdWxlIgxmaW5hbmNlOgx1c2VyX2lk
+      aQc6DXhtYWluX2lkaQGkIgpmbGFzaElDOidBY3Rpb25Db250cm9sbGVyOjpG
+      bGFzaDo6Rmxhc2hIYXNoewAGOgpAdXNlZHsA
+
+    - 2010-10-06 09:06:27.612278
+    - 2010-10-06 11:52:01.635757
+  - - "195"
+    - 98f27d2ff81bc64b5a9bf128ccff0daf
+    - |
+      BAh7CToLbW9kdWxlIgxmaW5hbmNlOg5ydW5zZXFfaWRpAjoCOg14bWFpbl9p
+      ZGkBpToMdXNlcl9pZGkH
+
+    - 2010-10-06 23:40:50.371199
+    - 2010-10-06 23:41:16.19166
+  - - "196"
+    - 580c7bd97714c5f702f886a7a66b3df4
+    - |
+      BAh7CToLbW9kdWxlIgxmaW5hbmNlOg5ydW5zZXFfaWRpAkgCOg14bWFpbl9p
+      ZGkBrToMdXNlcl9pZGkH
+
+    - 2010-10-07 08:29:01.197053
+    - 2010-10-07 09:02:45.441017
 
 --- 
 plans: 
