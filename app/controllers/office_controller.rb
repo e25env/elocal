@@ -1,4 +1,44 @@
 class OfficeController < ApplicationController
+  def seniors
+    @seniors= Senior.all
+  end
+  def create_senior
+    Senior.create $xvars[:enter][:senior]
+    gma_notice "ขึ้นทะเบียนผู้สูงอายุเรียบร้อยแล้ว"
+    $xvars[:p][:return]="/office/seniors"
+  end
+  def update_senior
+    senior= Senior.find $xvars[:p][:id]
+    senior.update_attributes $xvars[:edit][:senior]
+    gma_notice "แก้ไขข้อมูล #{senior.full_name} เรียบร้อยแล้ว"
+    $xvars[:p][:return]= "/office/seniors"
+  end
+  def rm_senior
+    senior= Senior.find $xvars[:p][:id]
+    gma_notice "ลบข้อมูล #{senior.full_name} เรียบร้อยแล้ว"
+    senior.destroy
+    $xvars[:p][:return]= "/office/seniors"
+  end
+  def village_heads
+    @village_heads= VillageHead.all :order=>"moo"
+  end
+  def create_village_head
+    VillageHead.create $xvars[:enter][:village_head]
+    gma_notice "ขึ้นทะเบียนผู้ใหญ่บ้านเรียบร้อยแล้ว"
+    $xvars[:p][:return]="/office/village_heads"
+  end
+  def update_village_head
+    village_head= VillageHead.find $xvars[:p][:id]
+    village_head.update_attributes $xvars[:edit][:village_head]
+    gma_notice "แก้ไขข้อมูล #{village_head.full_name} เรียบร้อยแล้ว"
+    $xvars[:p][:return]= "/office/village_heads"
+  end
+  def rm_village_head
+    village_head= VillageHead.find $xvars[:p][:id]
+    gma_notice "ลบข้อมูล #{village_head.full_name} เรียบร้อยแล้ว"
+    village_head.destroy
+    $xvars[:p][:return]= "/office/village_heads"
+  end
   def cars
     @cars= Car.all :order=>'vtype,brand'
   end
