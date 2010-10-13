@@ -1,0 +1,137 @@
+GEM
+  remote: http://rubygems.org/
+  specs:
+    RedCloth (4.2.3)
+    actionmailer (2.3.5)
+      actionpack (= 2.3.5)
+    actionpack (2.3.5)
+      activesupport (= 2.3.5)
+      rack (~> 1.0.0)
+    activerecord (2.3.5)
+      activesupport (= 2.3.5)
+    activeresource (2.3.5)
+      activesupport (= 2.3.5)
+    activesupport (2.3.5)
+    backup (2.4.0)
+      activerecord (>= 2.3.5)
+      cloudfiles (>= 1.4.7)
+      hirb (>= 0.2.9)
+      net-scp (>= 1.0.2)
+      net-sftp (>= 2.0.4)
+      net-ssh (>= 2.0.15)
+      pony (>= 0.5)
+      s3 (>= 0.3.0)
+      sqlite3-ruby (>= 1.2.5)
+    bson (1.1)
+    bson_ext (1.1)
+    builder (2.1.2)
+    chronic (0.2.3)
+      hoe (>= 1.2.1)
+    cloudfiles (1.4.8)
+      mime-types (>= 1.16)
+    columnize (0.3.1)
+    commonwatir (1.6.5)
+      user-choices
+    firewatir (1.6.5)
+      activesupport
+      commonwatir (= 1.6.5)
+    geokit (1.5.0)
+    haml (3.0.21)
+    hirb (0.3.4)
+    hoe (2.6.2)
+      rake (>= 0.8.7)
+      rubyforge (>= 2.0.4)
+    hpricot (0.8.2)
+    jnunemaker-validatable (1.8.4)
+      activesupport (>= 2.3.4)
+    json_pure (1.4.6)
+    linecache (0.43)
+    linguistics (1.0.8)
+    mail (2.2.1)
+      activesupport (>= 2.3.4)
+      mime-types
+      treetop (>= 1.4.5)
+    mechanize (1.0.0)
+      nokogiri (>= 1.2.1)
+    mime-types (1.16)
+    mongo (1.1)
+      bson (>= 1.0.5)
+    mongo_mapper (0.8.5)
+      activesupport (>= 2.3.4)
+      jnunemaker-validatable (~> 1.8.4)
+      plucky (~> 0.3.6)
+    net-scp (1.0.4)
+      net-ssh (>= 1.99.1)
+    net-sftp (2.0.5)
+      net-ssh (>= 2.0.9)
+    net-ssh (2.0.23)
+    nokogiri (1.4.3.1)
+    pg (0.9.0)
+    plucky (0.3.6)
+      mongo (~> 1.1)
+    polyglot (0.3.1)
+    pony (1.0.1)
+      mail (> 2.0)
+    prawn (0.8.4)
+      prawn-core (>= 0.8.4, < 0.9)
+      prawn-layout (>= 0.8.4, < 0.9)
+      prawn-security (>= 0.8.4, < 0.9)
+    prawn-core (0.8.4)
+    prawn-layout (0.8.4)
+    prawn-security (0.8.4)
+    proxies (0.2.1)
+    rack (1.0.1)
+    rails (2.3.5)
+      actionmailer (= 2.3.5)
+      actionpack (= 2.3.5)
+      activerecord (= 2.3.5)
+      activeresource (= 2.3.5)
+      activesupport (= 2.3.5)
+      rake (>= 0.8.3)
+    rake (0.8.7)
+    rmagick (2.13.1)
+    ruby-debug (0.10.3)
+      columnize (>= 0.1)
+      ruby-debug-base (~> 0.10.3.0)
+    ruby-debug-base (0.10.3)
+      linecache (>= 0.3)
+    rubyforge (2.0.4)
+      json_pure (>= 1.1.7)
+    rubyzip (0.9.4)
+    s3 (0.3.7)
+      proxies
+    s4t-utils (1.0.4)
+      hoe (>= 1.3.0)
+    sqlite3-ruby (1.3.1)
+    treetop (1.4.8)
+      polyglot (>= 0.3.1)
+    user-choices (1.1.6.1)
+      builder (>= 2.1.2)
+      s4t-utils (>= 1.0.3)
+      xml-simple (>= 1.0.11)
+    will_paginate (2.3.15)
+    xml-simple (1.0.12)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  RedCloth
+  backup
+  bson_ext
+  chronic
+  firewatir (= 1.6.5)
+  geokit
+  haml
+  hpricot
+  linguistics
+  mail (= 2.2.1)
+  mechanize
+  mongo_mapper
+  pg
+  prawn
+  rails (= 2.3.5)
+  rmagick
+  ruby-debug
+  rubyzip
+  will_paginate
