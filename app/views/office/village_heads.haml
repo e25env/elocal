@@ -1,0 +1,21 @@
+%h4(style='text-align:center;') ทะเบียนผู้ใหญ่บ้าน
+- if office_office?
+  %div(style='float:right')
+    =image_tag 'add.png'
+    = link_to align_text('ขึ้นทะเบียนผู้ใหญ่บ้าน'), "/run/office/add_village_head"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if office_office?
+      %th{:style=>"width:30px;"} แก้ไข
+      %th{:style=>"width:30px;"} ลบ
+    %th(style='width:50px;') หมู่
+    %th ชื่อ
+    %th โทรศัพท์
+  - @village_heads.each do |v|
+    %tr
+      - if office_office?
+        %td= link_to image_tag('pencil.png'), "/run/office/edit_village_head/#{v.id}"
+        %td= link_to image_tag('cross.png'), "/run/office/rm_village_head/#{v.id}", :confirm=>"กรุณายืนยัน"
+      %td(align='center')= v.moo
+      %td= v.full_name
+      %td= v.phone

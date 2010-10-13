@@ -1,0 +1,21 @@
+%h4(style='text-align:center;') ทะเบียนผู้สูงอายุ
+- if office_office?
+  %div(style='float:right')
+    =image_tag 'add.png'
+    = link_to align_text('ขึ้นทะเบียนผู้สูงอายุ'), "/run/office/add_senior"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if office_office?
+      %th{:style=>"width:30px;"} แก้ไข
+      %th{:style=>"width:30px;"} ลบ
+    %th(style='width:50px;') หมู่
+    %th ชื่อ
+    %th โทรศัพท์
+  - @seniors.each do |s|
+    %tr
+      - if office_office?
+        %td= link_to image_tag('pencil.png'), "/run/office/edit_senior/#{s.id}"
+        %td= link_to image_tag('cross.png'), "/run/office/rm_senior/#{s.id}", :confirm=>"กรุณายืนยัน"
+      %td(align='center')= v.moo
+      %td= s.full_name
+      %td= s.phone

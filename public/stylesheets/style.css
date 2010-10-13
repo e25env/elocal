@@ -70,6 +70,9 @@ body {
 #check {
   padding-left: 20px;
 }
+
+td.num {text-align:right;}
+
 .field-name {
   font-size:1.2em;
   color:#007B02;
