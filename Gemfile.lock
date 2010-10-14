@@ -60,6 +60,7 @@ GEM
       activesupport (>= 2.3.4)
       jnunemaker-validatable (~> 1.8.4)
       plucky (~> 0.3.6)
+    mysql (2.8.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
     net-sftp (2.0.5)
@@ -88,6 +89,7 @@ GEM
       activeresource (= 2.3.5)
       activesupport (= 2.3.5)
       rake (>= 0.8.3)
+    rails-footnotes (3.6.7)
     rake (0.8.7)
     rmagick (2.13.1)
     ruby-debug (0.10.3)
@@ -128,9 +130,11 @@ DEPENDENCIES
   mail (= 2.2.1)
   mechanize
   mongo_mapper
+  mysql
   pg
   prawn
   rails (= 2.3.5)
+  rails-footnotes
   rmagick
   ruby-debug
   rubyzip
