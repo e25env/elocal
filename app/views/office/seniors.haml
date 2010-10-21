@@ -3,6 +3,10 @@
   %div(style='float:right')
     =image_tag 'add.png'
     = link_to align_text('ขึ้นทะเบียนผู้สูงอายุ'), "/run/office/add_senior"
+    =image_tag 'printer.png'
+    = link_to align_text('งบท้องถิ่น'), "/office/senior_local", :target=>"_blank"
+    =image_tag 'printer.png'
+    = link_to align_text('งบรัฐบาล'), "/office/senior_state", :target=>"_blank"
 %table{:class=>'budget_table', :width=>"100%"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
     - if office_office?
@@ -16,6 +20,6 @@
       - if office_office?
         %td= link_to image_tag('pencil.png'), "/run/office/edit_senior/#{s.id}"
         %td= link_to image_tag('cross.png'), "/run/office/rm_senior/#{s.id}", :confirm=>"กรุณายืนยัน"
-      %td(align='center')= v.moo
+      %td(align='center')= s.moo
       %td= s.full_name
       %td= s.phone

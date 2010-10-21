@@ -17,4 +17,4 @@
       %td{:align=>'center'}= xmain.gma_user.full_name
       %td= date_thai xmain.start, :date_only=>true
       %td= xmain.stop ? date_thai(xmain.stop, :date_only=>true) : '&nbsp;'
-      %td= status_icon xmain
+      %td(align='center')= status_icon xmain

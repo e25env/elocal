@@ -6,7 +6,7 @@ class CreateSeniors < ActiveRecord::Migration
       t.string :lname
       t.string :address
       t.integer :moo
-      t.integer :nid
+      t.string :nid
       t.date :dob
       t.boolean :year_only
       t.integer :yob
@@ -14,7 +14,8 @@ class CreateSeniors < ActiveRecord::Migration
       t.integer :budget
       t.date :dod
       t.string :phone
-      t.string :ref
+      t.string :ref_in
+      t.string :ref_out
       t.integer :gma_user_id
 
       t.timestamps

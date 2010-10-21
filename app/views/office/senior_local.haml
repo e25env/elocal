@@ -1,0 +1,74 @@
+:css
+  table {
+    border-spacing:0;
+    border: 1px solid black;
+    margin:5px auto;
+  }
+  td,th {
+    border: 1px solid black;
+    padding: 3px;
+  }
+- @village_heads.each do |v|
+  %h3(style='text-align:center')
+    หนังสือรับรองการมีชีวิตผู้สูงอายุ
+    = @budget_title
+  #date(style='text-align:right')
+    วันที่
+    = date_thai Time.now, :date_only=>true, :monthfull=>true
+  = nbsp 10
+  ข้าพเจ้า
+  = b v.full_name
+  อยู่บ้านเลขที่
+  = b v.address
+  ตำบล
+  = b v.sub_district
+  อำเภอ
+  = b v.district
+  จังหวัด
+  = b v.province
+  ตำแหน่ง
+  = b "ผู้ใหญ่บ้านหมู่ที่ #{v.moo}"
+  โทรศัพท์
+  = v.phone
+  %br
+  ขอรับรองว่าบุคคลดังต่อไปนี้
+  %table
+    %tr
+      %th ลำดับ
+      %th ชื่อ - สกุล
+      %th เลขประจำตัวประชาชน
+      %th หมู่ที่
+      %th บ้านเลขที่
+      %th วันเดือนปีเกิด
+      %th เพศ
+      %th(colspan='2') สถานะปัจจุบัน (ทำเครื่องหมาย / หน้าสถานะ)
+    - @seniors= Senior.find_all_by_moo_and_budget v.moo, @budget, :order=>"fname"
+    - @seniors.each_with_index do |s,i|
+      %tr
+        %td(align='right')= i+1
+        %td= s.full_name
+        %td= s.nid
+        %td= s.moo
+        %td= s.address
+        %td(align='center')
+          - if s.year_only
+            = s.yob
+          - else
+            = date_thai s.dob.to_datetime, :date_only=>true
+        %td(align='center')= image_tag sex_img(s.title)
+        %td
+          = check_box_tag :alive
+          ยังมีชีวิตอยู่
+        %td
+          = check_box_tag :dead
+          ถึงแก่กรรมเมื่อวันที่
+          = "."*40
+  #sig(style="padding:20px 0 0 200px; text-align:center;")
+    รับรองว่าถูกต้อง
+    %p
+    ลงชื่อ
+    = "."*50
+    %br
+    = "( #{v.full_name} )"
+  - unless v==@village_heads.last
+    #page(style="page-break-after:always")

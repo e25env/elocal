@@ -6,15 +6,16 @@ one:
   lname: MyString
   address: MyString
   moo: 1
-  nid: 1
-  dob: 2010-10-09
+  nid: MyString
+  dob: 2010-10-21
   year_only: false
   yob: 1
   status: 1
   budget: 1
-  dod: 2010-10-09
+  dod: 2010-10-21
   phone: MyString
-  ref: MyString
+  ref_in: MyString
+  ref_out: MyString
   gma_user_id: 1
 
 two:
@@ -23,13 +24,14 @@ two:
   lname: MyString
   address: MyString
   moo: 1
-  nid: 1
-  dob: 2010-10-09
+  nid: MyString
+  dob: 2010-10-21
   year_only: false
   yob: 1
   status: 1
   budget: 1
-  dod: 2010-10-09
+  dod: 2010-10-21
   phone: MyString
-  ref: MyString
+  ref_in: MyString
+  ref_out: MyString
   gma_user_id: 1

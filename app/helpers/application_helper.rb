@@ -9,6 +9,10 @@ module ApplicationHelper
   def income_summary_maker
     User.find 2
   end
+  #------------------------
+  def sex_img(title)
+    return title=="นาย" ? "male.png" : "female.png"
+  end
   def i2date(t,f)
     Time.utc t["#{f}(1i)"],t["#{f}(2i)"],t["#{f}(3i)"]
   end
@@ -110,5 +114,15 @@ module ApplicationHelper
       convert = convert + 'สตางค์'
     end
     return convert
+  end
+end
+
+module ActionView
+  module Helpers
+    class FormBuilder
+      def date_select_senior(method)
+        date_select method, :default => 60.years.ago, :use_month_names=>THAI_MONTHS, :order=>[:day, :month, :year], :start_year=>Time.now.year-110, :end_year=>Time.now.year-60
+      end
+    end
   end
 end

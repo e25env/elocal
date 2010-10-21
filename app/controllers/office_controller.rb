@@ -1,6 +1,18 @@
 class OfficeController < ApplicationController
+  def senior_local
+    @budget= 1
+    @budget_title= "งบท้องถิ่น"
+    @village_heads= VillageHead.all :order=>:moo
+    render :layout => "print"
+  end
+  def senior_state
+    @budget= 2
+    @budget_title= "งบรัฐบาล"
+    @village_heads= VillageHead.all :order=>:moo
+    render :layout => "print", :template=>"office/senior_local"
+  end
   def seniors
-    @seniors= Senior.all
+    @seniors= Senior.all :order=>'moo,fname'
   end
   def create_senior
     Senior.create $xvars[:enter][:senior]

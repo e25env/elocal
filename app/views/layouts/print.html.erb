@@ -3,35 +3,15 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <meta name="distribution" content="global" />
-    <meta name="robots" content="follow, all" />
     <meta name="language" content="en, th" />
-    <title>WorldWaypoint</title>
+    <title>eLocal</title>
     <link rel="shortcut icon" href="/images/favicon.ico" />
-    <%= stylesheet_link_tag "print", "gma", "molengo" %>
-    <meta name="description" content="WorldWaypoint: waypoints of the world." />
-    <meta name="keywords" content="waypoint,gps" />
-    <% if RAILS_ENV=="production" %>
-      <script type="text/javascript">
-        var _gaq = _gaq || [];
-        _gaq.push(['_setAccount', 'UA-93826-4']);
-        _gaq.push(['_setDomainName', '.worldwaypoint.com']);
-        _gaq.push(['_trackPageview']);
-
-        (function() {
-          var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-          ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-          var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-        })();
-      </script>
-      <%= javascript_include_tag "http://cdn.jquerytools.org/1.2.2/jquery.tools.min.js"  %>
-    <% else %>
-      <%= javascript_include_tag "jquery.tools.min.js"  %>
-    <% end %>
+    <%= stylesheet_link_tag "style", "gma", "sarabun" %>
+    <%= javascript_include_tag "jquery.tools.min.js"  %>
     <%= javascript_include_tag "application", "flashobject", "jquery-ui"  %>
   </head>
   <body>
     <%= yield %>
-    <div id="footer"><%= url_for :only_path=>false %></div>
   </body>
 </html>
 
