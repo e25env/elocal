@@ -41,9 +41,9 @@
       <td colspan="2"><%= f.file_field :ref_in %></td>
     </tr>
     <tr>
-      <td class="field-name">ทราบวันเดือนปีเกิด ?</td>
-      <td colspan="2"><%= f.radio_button :year_only, true %> ทราบ
-        <%= f.radio_button :year_only, false %> ไม่ทราบ</td>
+      <td class="field-name">บันทึกวันเดือนปีเกิด ?</td>
+      <td colspan="2"><%= f.radio_button :year_only, true %> เฉพาะปีเกิดเท่านั้น
+        <%= f.radio_button :year_only, false %> วันเดือนปีเกิด</td>
     </tr>
     <tr id="dob">
       <td class="field-name">วันเดือนปีเกิด</td>
@@ -57,7 +57,7 @@
 <% end %>
 <%= fix_thai_year %>
 <script type="text/javascript" >
-  if ($('input[name="senior[year_only]"]:checked').val()=="false") {
+  if ($('input[name="senior[year_only]"]:checked').val()=="true") {
     $('#yob').show();
     $('#dob').hide();
   } else {
@@ -65,7 +65,7 @@
     $('#yob').hide();
   }
   $('input[name="senior[year_only]"]').change(function() {
-    if ($('input[name="senior[year_only]"]:checked').val()=="false") {
+    if ($('input[name="senior[year_only]"]:checked').val()=="true") {
       $('#yob').show();
       $('#dob').hide();
     } else {

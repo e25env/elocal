@@ -15,9 +15,10 @@ class OfficeController < ApplicationController
     @seniors= Senior.all :order=>'moo,fname'
   end
   def create_senior
-    Senior.create $xvars[:enter][:senior]
+    s= Senior.create $xvars[:enter][:senior]
     gma_notice "ขึ้นทะเบียนผู้สูงอายุเรียบร้อยแล้ว"
-    $xvars[:p][:return]="/office/seniors"
+    $xvars[:senior_id]= s.id
+    $xvars[:p][:return]= "/office/seniors"
   end
   def update_senior
     senior= Senior.find $xvars[:p][:id]
