@@ -13,6 +13,9 @@ module ApplicationHelper
   def sex_img(title)
     return title=="นาย" ? "male.png" : "female.png"
   end
+  def sex(title)
+    return title=="นาย" ? "ช" : "ญ"
+  end
   def i2date(t,f)
     Time.utc t["#{f}(1i)"],t["#{f}(2i)"],t["#{f}(3i)"]
   end

@@ -55,7 +55,7 @@
             = s.yob
           - else
             = date_thai s.dob.to_datetime, :date_only=>true
-        %td(align='center')= image_tag sex_img(s.title)
+        %td(align='center')=  sex(s.title)
         %td
           = check_box_tag :alive
           ยังมีชีวิตอยู่
