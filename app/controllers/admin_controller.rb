@@ -94,6 +94,6 @@ class AdminController < ApplicationController
   private
   def update_local_server
     @t = exec_cmd("rake db:migrate").gsub("\n","<br/>")
-    @t = exec_cmd("heroku db:pull --tables fsections,rcats,rtypes").gsub("\n","<br/>")
+#    @t = exec_cmd("heroku db:pull --tables fsections,rcats,rtypes").gsub("\n","<br/>")
   end
 end

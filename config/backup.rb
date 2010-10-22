@@ -10,7 +10,7 @@ backup 'elocal-db' do
     ip        'localhost'
     user      'songrit'
     password  'aa'
-    path      '/home/songrit/tmp/back'
+    path      '/home/songrit/tmp/backup'
   end
 
   keep_backups 5
@@ -29,7 +29,7 @@ backup 'elocal-up' do
     ip        'localhost'
     user      'songrit'
     password  'aa'
-    path      '/home/songrit/tmp/back'
+    path      '/home/songrit/tmp/backup'
   end
 
   keep_backups 5
