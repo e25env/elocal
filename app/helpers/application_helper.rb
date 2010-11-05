@@ -10,6 +10,17 @@ module ApplicationHelper
     User.find 2
   end
   #------------------------
+  def underprivileged(u)
+    case u
+    when 1
+      img= "seniors16.png"
+    when 2
+      img= "handicap16.png"
+    when 3
+      img= "aids16.png"
+    end
+    image_tag img
+  end
   def sex_img(title)
     return title=="นาย" ? "male.png" : "female.png"
   end

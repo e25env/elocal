@@ -3,6 +3,7 @@ class CreateNurseries < ActiveRecord::Migration
     create_table :nurseries, :force=>true do |t|
       t.string :code
       t.string :name
+      t.string :phone
       t.integer :gma_user_id
 
       t.timestamps

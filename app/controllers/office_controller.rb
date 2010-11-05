@@ -1,4 +1,24 @@
 class OfficeController < ApplicationController
+  def nurseries
+    @nurseries= Nursery.all
+  end
+  def create_nursery
+    Nursery.create $xvars[:enter][:nursery]
+    gma_notice "ขึ้นทะเบียนเรียบร้อยแล้ว"
+    $xvars[:p][:return]="/office/nurseries"
+  end
+  def update_nursery
+    nursery= Nursery.find $xvars[:p][:id]
+    nursery.update_attributes $xvars[:edit][:nursery]
+    gma_notice "แก้ไขข้อมูลเรียบร้อยแล้ว"
+    $xvars[:p][:return]= "/office/nurseries"
+  end
+  def rm_nursery
+    nursery= Nursery.find $xvars[:p][:id]
+    gma_notice "ลบข้อมูลเรียบร้อยแล้ว"
+    nursery.destroy
+    $xvars[:p][:return]= "/office/nurseries"
+  end
   def senior_local
     @budget= 1
     @budget_title= "งบท้องถิ่น"
@@ -16,7 +36,11 @@ class OfficeController < ApplicationController
   end
   def create_senior
     s= Senior.create $xvars[:enter][:senior]
-    gma_notice "ขึ้นทะเบียนผู้สูงอายุเรียบร้อยแล้ว"
+    if s.id
+      gma_notice "ขึ้นทะเบียนผู้ด้อยโอกาสเรียบร้อยแล้ว"
+    else
+      gma_notice s.errors[:nid]
+    end
     $xvars[:senior_id]= s.id
     $xvars[:p][:return]= "/office/seniors"
   end

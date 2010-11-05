@@ -17,6 +17,7 @@ class CreateChildren < ActiveRecord::Migration
       t.string :mother_lname
       t.integer :parent_status
       t.string :comment
+      t.integer :nusery_id
       t.integer :gma_user_id
 
       t.timestamps

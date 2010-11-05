@@ -3,9 +3,11 @@
 one:
   code: MyString
   name: MyString
+  phone: MyString
   gma_user_id: 1
 
 two:
   code: MyString
   name: MyString
+  phone: MyString
   gma_user_id: 1

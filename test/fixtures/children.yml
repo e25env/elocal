@@ -4,7 +4,7 @@ one:
   title: MyString
   fname: MyString
   lname: MyString
-  bod: 2010-10-22
+  bod: 2010-10-28
   nid: MyString
   address: MyString
   sub_district: MyString
@@ -17,13 +17,14 @@ one:
   mother_lname: MyString
   parent_status: 1
   comment: MyString
+  nusery_id: 1
   gma_user_id: 1
 
 two:
   title: MyString
   fname: MyString
   lname: MyString
-  bod: 2010-10-22
+  bod: 2010-10-28
   nid: MyString
   address: MyString
   sub_district: MyString
@@ -36,4 +37,5 @@ two:
   mother_lname: MyString
   parent_status: 1
   comment: MyString
+  nusery_id: 1
   gma_user_id: 1
