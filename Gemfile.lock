@@ -22,7 +22,6 @@ GEM
       pony (>= 0.5)
       s3 (>= 0.3.0)
       sqlite3-ruby (>= 1.2.5)
-    bson (1.1)
     bson_ext (1.1)
     builder (2.1.2)
     chronic (0.2.3)
@@ -47,8 +46,6 @@ GEM
       rake (>= 0.8.7)
       rubyforge (>= 2.0.4)
     hpricot (0.8.2)
-    jnunemaker-validatable (1.8.4)
-      activesupport (>= 2.3.4)
     json_pure (1.4.6)
     launchy (0.3.7)
       configuration (>= 0.0.5)
@@ -62,12 +59,6 @@ GEM
     mechanize (1.0.0)
       nokogiri (>= 1.2.1)
     mime-types (1.16)
-    mongo (1.1)
-      bson (>= 1.0.5)
-    mongo_mapper (0.8.5)
-      activesupport (>= 2.3.4)
-      jnunemaker-validatable (~> 1.8.4)
-      plucky (~> 0.3.6)
     mysql (2.8.1)
     net-scp (1.0.4)
       net-ssh (>= 1.99.1)
@@ -76,8 +67,6 @@ GEM
     net-ssh (2.0.23)
     nokogiri (1.4.3.1)
     pg (0.9.0)
-    plucky (0.3.6)
-      mongo (~> 1.1)
     polyglot (0.3.1)
     pony (1.0.1)
       mail (> 2.0)
@@ -151,7 +140,6 @@ DEPENDENCIES
   linguistics
   mail (= 2.2.1)
   mechanize
-  mongo_mapper
   mysql
   pg
   prawn
