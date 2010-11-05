@@ -42,7 +42,7 @@
       %th วันเดือนปีเกิด
       %th เพศ
       %th(colspan='2') สถานะปัจจุบัน (ทำเครื่องหมาย / หน้าสถานะ)
-    - @seniors= Senior.find_all_by_moo_and_budget v.moo, @budget, :order=>"fname"
+    - @seniors= Senior.seniors.find_all_by_moo_and_budget v.moo, @budget, :order=>"fname"
     - @seniors.each_with_index do |s,i|
       %tr
         %td(align='right')= i+1

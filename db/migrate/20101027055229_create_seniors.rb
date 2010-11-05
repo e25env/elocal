@@ -12,6 +12,7 @@ class CreateSeniors < ActiveRecord::Migration
       t.integer :yob
       t.integer :status
       t.integer :budget
+      t.integer :underprivileged
       t.date :dod
       t.string :phone
       t.string :ref_in

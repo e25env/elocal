@@ -7,12 +7,13 @@ one:
   address: MyString
   moo: 1
   nid: MyString
-  dob: 2010-10-21
+  dob: 2010-10-27
   year_only: false
   yob: 1
   status: 1
   budget: 1
-  dod: 2010-10-21
+  underprivileged: 1
+  dod: 2010-10-27
   phone: MyString
   ref_in: MyString
   ref_out: MyString
@@ -25,12 +26,13 @@ two:
   address: MyString
   moo: 1
   nid: MyString
-  dob: 2010-10-21
+  dob: 2010-10-27
   year_only: false
   yob: 1
   status: 1
   budget: 1
-  dod: 2010-10-21
+  underprivileged: 1
+  dod: 2010-10-27
   phone: MyString
   ref_in: MyString
   ref_out: MyString

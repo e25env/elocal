@@ -1,12 +1,16 @@
-%h4(style='text-align:center;') ทะเบียนผู้สูงอายุ
+%h4(style='text-align:center;') ทะเบียนผู้ด้อยโอกาส
 - if office_office?
-  %div(style='float:right')
-    =image_tag 'add.png'
-    = link_to align_text('ขึ้นทะเบียนผู้สูงอายุ'), "/run/office/add_senior"
-    =image_tag 'printer.png'
-    = link_to align_text('งบท้องถิ่น'), "/office/senior_local", :target=>"_blank"
-    =image_tag 'printer.png'
-    = link_to align_text('งบรัฐบาล'), "/office/senior_state", :target=>"_blank"
+  /%div(style='float:right')
+  =image_tag 'add.png'
+  = link_to align_text('ขึ้นทะเบียนผู้ด้อยโอกาส'), "/run/office/add_senior"
+  =image_tag 'printer.png'
+  = link_to align_text('ผู้สูงอายุ-งบรัฐบาล'), "/office/senior_state", :target=>"_blank"
+  =image_tag 'printer.png'
+  = link_to align_text('ผู้สูงอายุ-งบท้องถิ่น'), "/office/senior_local", :target=>"_blank"
+  =image_tag 'printer.png'
+  = link_to align_text('ผู้พิการ'), "/office/handicap", :target=>"_blank"
+  =image_tag 'printer.png'
+  = link_to align_text('ผู้ป่วยโรคเอดส์'), "/office/aids", :target=>"_blank"
 %table{:class=>'budget_table', :width=>"100%"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
     - if office_office?
@@ -15,6 +19,7 @@
     %th(style='width:50px;') หมู่
     %th ชื่อ
     %th โทรศัพท์
+    %th ประเภท
   - @seniors.each do |s|
     %tr
       - if office_office?
@@ -23,3 +28,4 @@
       %td(align='center')= s.moo
       %td= s.full_name
       %td= s.phone
+      %td{:align=>'center'}= underprivileged s.underprivileged

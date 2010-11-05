@@ -9,6 +9,10 @@
       <td colspan='2'><%= f.select :budget, [['ท้องถิ่น',1],['รัฐบาล',2]] %></td>
     </tr>
     <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan='2'><%= f.select :underprivileged, [['ผู้สูงอายุ',1],['ผู้พิการ',2],['ผู้ป่วยโรคเอดส์',3]] %></td>
+    </tr>
+    <tr>
       <td class="field-name">คำนำหน้า</td>
       <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
     </tr>
@@ -43,8 +47,10 @@
     </tr>
     <tr>
       <td class="field-name">บันทึกวันเดือนปีเกิด ?</td>
-      <td colspan="2"><%= f.radio_button :year_only, true %> เฉพาะปีเกิดเท่านั้น
-        <%= f.radio_button :year_only, false %> วันเดือนปีเกิด</td>
+      <td colspan="2">
+        <%= f.radio_button :year_only, false %> วันเดือนปีเกิด
+        <%= f.radio_button :year_only, true %> เฉพาะปีเกิดเท่านั้น
+      </td>
     </tr>
     <tr id="dob">
       <td class="field-name">วันเดือนปีเกิด</td>
