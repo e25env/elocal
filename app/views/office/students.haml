@@ -1,0 +1,19 @@
+%h4(style='text-align:center;')= @nursery.name
+- if office_office?
+  %div(style='float:right')
+    =image_tag 'add.png'
+    = link_to align_text('ขึ้นทะเบียน'), "/run/office/add_student/#{@nursery.id}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if office_office?
+      %th{:style=>"width:30px;"} แก้ไข
+      %th{:style=>"width:30px;"} ลบ
+    %th ชื่อ
+    %th(style="width:150px;") โทรศัพท์
+  - @nursery.students.each do |n|
+    %tr
+      - if office_office?
+        %td= link_to image_tag('pencil.png'), "/run/office/edit_student/#{n.id}"
+        %td= link_to image_tag('cross.png'), "/run/office/rm_student/#{n.id}", :confirm=>"กรุณายืนยัน"
+      %td= n.name
+      %td= n.phone

@@ -1,4 +1,7 @@
 class OfficeController < ApplicationController
+  def students
+    @nursery= Nursery.find params[:id]
+  end
   def nurseries
     @nurseries= Nursery.all
   end

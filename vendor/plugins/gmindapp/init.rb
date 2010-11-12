@@ -42,12 +42,13 @@ class ActiveRecord::Base
     if self.respond_to?("gma_user_id")
       unless gma_user_id
         if session && session[:user_id]
-          user = GmaUser.find(session[:user_id])
+#          user = GmaUser.find(session[:user_id])
+          user_id = session[:user_id]
         else
           anonymous = GmaUser.find_by_login("anonymous")
-          user = anonymous if anonymous
+          user_id = anonymous.id if anonymous
         end
-        self.gma_user_id= user.id if user
+        self.gma_user_id= user_id if user_id
       end
     end
   end

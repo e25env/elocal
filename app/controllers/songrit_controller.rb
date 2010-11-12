@@ -7,6 +7,17 @@ class SongritController < ApplicationController
   require 'nokogiri'
   require 'mechanize'
 
+  def gen_sub_district
+    SubDistrict.delete_all
+#    SubDistrictOld.all(:limit => 5).each do |p|
+    SubDistrictOld.all.each do |p|
+      district= District.find_by_code p.code[0,4]
+      SubDistrict.create :code=>p.code,
+        :name => p.name,
+        :district_id => district ? district.id : nil
+    end
+    render :text => "done"
+  end
   def sample_laas
     x= GmaXmain.last
     s = "ff.goto('http://www.google.com')"
