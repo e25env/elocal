@@ -5,7 +5,7 @@ one:
   title: MyString
   fname: MyString
   lname: MyString
-  dob: 2010-11-08
+  dob: 2010-11-12
   nid: MyString
   address: MyString
   moo: MyString
@@ -18,13 +18,15 @@ one:
   district_reg_id: 1
   province_reg_id: 1
   phone: MyString
-  cell_phonestring: 1
+  cell_phone: MyString
   father_fname: MyString
   father_lname: MyString
   father_job: MyString
+  mother_title: MyString
   mother_fname: MyString
   mother_lname: MyString
   mother_job: MyString
+  guardian_title: MyString
   guardian_fname: MyString
   guardian_lname: MyString
   guardian_job: MyString
@@ -35,15 +37,17 @@ one:
   income: 1
   next_school: MyString
   illness: MyString
+  blood_type: MyString
   clinic: MyString
   caution: MyText
   allergy: MyText
   other_nursery: MyText
-  accepted_on: 2010-11-08
-  acquitted_on: 2010-11-08
+  accepted_on: 2010-11-12
+  acquitted_on: 2010-11-12
   reason: MyText
   status: 1
   nursery_id: 1
+  application_form: MyString
   gma_user_id: 1
 
 two:
@@ -51,7 +55,7 @@ two:
   title: MyString
   fname: MyString
   lname: MyString
-  dob: 2010-11-08
+  dob: 2010-11-12
   nid: MyString
   address: MyString
   moo: MyString
@@ -64,13 +68,15 @@ two:
   district_reg_id: 1
   province_reg_id: 1
   phone: MyString
-  cell_phonestring: 1
+  cell_phone: MyString
   father_fname: MyString
   father_lname: MyString
   father_job: MyString
+  mother_title: MyString
   mother_fname: MyString
   mother_lname: MyString
   mother_job: MyString
+  guardian_title: MyString
   guardian_fname: MyString
   guardian_lname: MyString
   guardian_job: MyString
@@ -81,13 +87,15 @@ two:
   income: 1
   next_school: MyString
   illness: MyString
+  blood_type: MyString
   clinic: MyString
   caution: MyText
   allergy: MyText
   other_nursery: MyText
-  accepted_on: 2010-11-08
-  acquitted_on: 2010-11-08
+  accepted_on: 2010-11-12
+  acquitted_on: 2010-11-12
   reason: MyText
   status: 1
   nursery_id: 1
+  application_form: MyString
   gma_user_id: 1

@@ -1,0 +1,188 @@
+<%  student = Student.new %>
+<% fields_for student do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">เลขประจำตัวนักเรียน</td>
+      <td colspan='2'><%= f.text_field :code, :style=>"width:100px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['ด.ช.','ด.ญ.'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr id="dob">
+      <td class="field-name">วันเดือนปีเกิด</td>
+      <td colspan="2"><%= f.date_select_thai :dob %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ที่อยู่ปัจจุบัน</td>
+      <td colspan='2'><%= f.text_field :address, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.text_field :moo, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จังหวัด</td>
+      <td colspan='2'><%= f.collection_select :province_id, Province.all, :id, :name %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อำเภอ</td>
+      <td colspan='2'><%= f.select :district_id, [] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำบล</td>
+      <td colspan='2'><%= f.select :sub_district_id, [] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ที่อยู่ตามทะเบียนบ้าน</td>
+      <td colspan='2'><%= f.text_field :address_reg, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.text_field :moo_reg, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จังหวัด</td>
+      <td colspan='2'><%= f.collection_select :province_reg_id, Province.all, :id, :name %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อำเภอ</td>
+      <td colspan='2'><%= f.select :district_reg_id, [] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำบล</td>
+      <td colspan='2'><%= f.select :sub_district_reg_id, [] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">โทรศัพท์</td>
+      <td colspan='2'><%= f.text_field :phone, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">โทรศัพท์มือถือ</td>
+      <td colspan='2'><%= f.text_field :cell_phone, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ขื่อบิดา</td>
+      <td colspan='2'><%= f.text_field :father_fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :father_lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อาชีพ</td>
+      <td colspan='2'><%= f.text_field :father_job, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">คำนำหน้ามารดา</td>
+      <td colspan='2'><%= f.select :mother_title, ['นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ขื่อมารดา</td>
+      <td colspan='2'><%= f.text_field :mother_fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :mother_lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อาชีพ</td>
+      <td colspan='2'><%= f.text_field :mother_job, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">คำนำหน้าผู้ปกครอง</td>
+      <td colspan='2'><%= f.select :guardian_title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ขื่อผู้ปกครอง</td>
+      <td colspan='2'><%= f.text_field :guardian_fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :guardian_lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อาชีพ</td>
+      <td colspan='2'><%= f.text_field :guardian_job, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ความสัมพันธ์</td>
+      <td colspan='2'><%= f.text_field :relationship, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สถานะ</td>
+      <td colspan='2'><%= f.select :parent_status, [['อยู่ด้วยกัน',1],['เลิกร้างกัน',2],['บิดาถึงแก่กรรม',3],['มารดาถึงแก่กรรม',4],['บิดาและมารดาถึงแก่กรรม',5]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมายเหตุ</td>
+      <td colspan='2'><%= f.text_field :comment, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ที่พัก</td>
+      <td colspan='2'><%= f.select :resident_type, [['เช่าที่ดินวัด',1],['ห้องเช่า',2],['บ้านพัก',3]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รายได้ครัวเรือนรวมต่อเดือน</td>
+      <td colspan='2'><%= f.text_field :income, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">โรคประจำตัวของเด็ก</td>
+      <td colspan='2'><%= f.text_field :illness, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่โลหิต</td>
+      <td colspan='2'><%= f.text_field :blood_type, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สถานพยาบาลที่เด็กเข้ารักษาประจำ</td>
+      <td colspan='2'><%= f.text_field :clinic, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เด็กเคยได้รับอุบัติเหตุ หรือข้อควรระวัง</td>
+      <td colspan='2'><%= f.text_field :caution, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">แพ้ยา, อาหาร</td>
+      <td colspan='2'><%= f.text_field :allergy, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เคยเข้าศูนย์พัฒนาเด็กเล็กที่ไหนมาบ้าง</td>
+      <td colspan='2'><%= f.text_field :other_nursery, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วันที่รับเข้า</td>
+      <td colspan='2'><%= f.date_select_thai :accepted_on %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สแกนใบสมัคร</td>
+      <td colspan='2'><%= f.file_field :application_form %></td>
+    </tr>
+  </table>
+<% end %>
+<%= fix_thai_year %>
+<script type="text/javascript" >
+  $('#student_province_id').change(function() {
+    $('#student_district_id').html('').load('/office/get_districts/'+$('#student_province_id option:selected').val());
+  });
+  $('#student_district_id').change(function() {
+    $('#student_sub_district_id').html('').load('/office/get_sub_districts/'+$('#student_district_id option:selected').val());
+  });
+  $('#student_province_reg_id').change(function() {
+    $('#student_district_reg_id').html('').load('/office/get_districts/'+$('#student_province_reg_id option:selected').val());
+  });
+  $('#student_district_reg_id').change(function() {
+    $('#student_sub_district_reg_id').html('').load('/office/get_sub_districts/'+$('#student_district_reg_id option:selected').val());
+  });
+</script>

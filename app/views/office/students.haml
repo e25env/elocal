@@ -15,5 +15,5 @@
       - if office_office?
         %td= link_to image_tag('pencil.png'), "/run/office/edit_student/#{n.id}"
         %td= link_to image_tag('cross.png'), "/run/office/rm_student/#{n.id}", :confirm=>"กรุณายืนยัน"
-      %td= n.name
+      %td= n.full_name
       %td= n.phone

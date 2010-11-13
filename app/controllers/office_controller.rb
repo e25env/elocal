@@ -1,4 +1,12 @@
 class OfficeController < ApplicationController
+  def create_student
+    s= Student.new $xvars[:enter][:student]
+    s.status= 1
+    s.nursery_id= $xvars[:p][:id]
+    s.save
+    $xvars[:student_id]= s.id
+    $xvars[:p][:return]= "/office/students/#{$xvars[:p][:id]}"
+  end
   def students
     @nursery= Nursery.find params[:id]
   end
@@ -144,6 +152,15 @@ class OfficeController < ApplicationController
     else
       render :text=> ""
     end
+  end
+  def get_districts
+    province= Province.find params[:id]
+    prompt= "<option value="">..กรุณาเลือกอำเภอ</option>"
+    render :text => prompt+@template.options_from_collection_for_select(province.districts,:id,:name)
+  end
+  def get_sub_districts
+    district= District.find params[:id]
+    render :text => @template.options_from_collection_for_select(district.sub_districts,:id,:name)
   end
   
   private
