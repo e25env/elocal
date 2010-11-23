@@ -1,0 +1,17 @@
+<% vision = Vision.last || Vision.new %>
+<% fields_for vision do |f| %>
+  <table id="org" width="100%">
+    <tr>
+      <td class="field-name">วิสัยทัศน์</td>
+      <td colspan="2"><%= f.text_field :vision, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">พันธกิจ</td>
+      <td colspan="2"><%= f.text_area :mission, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จุดมุ่งหมาย</td>
+      <td colspan="2"><%= f.text_area :goal, :cols=>50, :rows=>6 %></td>
+    </tr>
+  </table>
+<% end %>

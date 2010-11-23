@@ -1,0 +1,32 @@
+<%
+   strategy = Strategy.new
+%>
+<% fields_for strategy do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">ยุทธศาสตร์</td>
+      <td colspan='2'><%= f.text_field :name, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">คำอธิบาย</td>
+      <td colspan="2"><%= f.text_area :description, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ยุทธศาสตร์ชาติ</td>
+      <td colspan='2'><%= f.select :national, [['๑. ยุทธศาสตร์การพัฒนาคุณภาพคนและสังคมไทยสู่สังคมแห่งภูมิปัญญาและการเรียนรู้ ','01'],
+        ['๒. ยุทธศาสตร์การสร้างความเข้มแข็งของชุมชนและสังคมให้เป็นรากฐานที่มั่นคงของประเทศ','02'],
+        ['๓. ยุทธศาสตร์การปรับโครงสร้างทางเศรษฐกิจให้สมดุลและยั่งยืน', '03'],
+        ['๔. ยุทธศาสตร์การพัฒนาบนฐานความหลากหลายทางชีวภาพและการสร้างความมั่นคงของฐานทรัพยากรและสิ่งแวดล้อม','04'],
+        ['๕. ยุทธศาสตร์การเสริมสร้างธรรมาภิบาลในการบริหารจัดการประเทศ','05']
+      ] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ยุทธศาสตร์จังหวัด</td>
+      <td colspan='2'><%= f.text_field :province, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">น้ำหนัก</td>
+      <td colspan='2'><%= f.text_field :weight, :style=>"width:200px;" %></td>
+    </tr>
+  </table>
+<% end %>

@@ -56,8 +56,7 @@ class AdminController < ApplicationController
   end
 
   def update_org
-    org = Org.update 1,$xvars[:edit][:org]
-    org.id
+    Org.create $xvars[:edit][:org]
   end
   def users
     @users= User.paginate :page=>params[:page], :per_page=>25,

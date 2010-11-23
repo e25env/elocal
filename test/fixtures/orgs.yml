@@ -8,6 +8,7 @@ one:
   district: MyString
   province: MyString
   phone: MyString
+  villages: 1
   gma_user_id: 1
 
 two:
@@ -18,4 +19,5 @@ two:
   district: MyString
   province: MyString
   phone: MyString
+  villages: 1
   gma_user_id: 1

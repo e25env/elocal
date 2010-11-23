@@ -1,4 +1,4 @@
-<% org = Org.find_or_create_by_id 1 %>
+<% org = Org.last || Org.new %>
 <% fields_for org do |f| %>
   <table id="org" width="100%">
     <tr>
@@ -29,6 +29,10 @@
     <tr>
       <td class="field-name">โทรศัพท์</td>
       <td colspan="2"><%= f.text_field :phone, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวนหมู่บ้าน</td>
+      <td colspan="2"><%= f.text_field :villages, :style => "width:200px;" %></td>
     </tr>
   </table>
 <% end %>

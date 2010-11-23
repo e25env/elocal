@@ -1,4 +1,7 @@
 class OfficeController < ApplicationController
+  def update_vision
+    Vision.create $xvars[:edit][:vision]
+  end
   def create_student
     s= Student.new $xvars[:enter][:student]
     s.status= 1
@@ -9,6 +12,9 @@ class OfficeController < ApplicationController
   end
   def students
     @nursery= Nursery.find params[:id]
+  end
+  def policies
+    @nurseries= Nursery.all
   end
   def nurseries
     @nurseries= Nursery.all
