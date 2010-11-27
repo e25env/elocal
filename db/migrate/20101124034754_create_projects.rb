@@ -8,7 +8,7 @@ class CreateProjects < ActiveRecord::Migration
       t.string :contract
       t.boolean :coordinated
       t.integer :strategy_id
-      t.integer :method_id
+      t.integer :approach_id
       t.integer :section_id
       t.integer :project_type_id
       t.integer :activity_id

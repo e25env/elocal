@@ -1,0 +1,25 @@
+<%= image_tag @employee.photo, :style => "float:left" %>
+<h2 style="padding-left:150px;"><%= @employee.full_name %></h2>
+<div style="clear:both;"></div>
+<%= stylesheet_link_tag 'tabs' %>
+<ul class="tabs">
+	<li><a href="#">ข้อมูลทั่วไป</a></li>
+	<li><a href="#">ตำแหน่ง</a></li>
+	<li><a href="#">การศึกษา</a></li>
+	<li><a href="#">ความผิด</a></li>
+	<li><a href="#">การลา</a></li>
+</ul>
+<div class="panes">
+	<div>pane 1 content</div>
+	<div>pane 2 content</div>
+	<div>pane 3 content</div>
+	<div>pane 4 content</div>
+	<div>pane 5 content</div>
+</div>
+
+<script type="text/javascript" >
+$(function() {
+	// setup ul.tabs to work as tabs for each div directly under div.panes
+	$("ul.tabs").tabs("div.panes > div");
+});
+</script>

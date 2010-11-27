@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  reported_on: 2010-11-25
+  late_type: 1
+  total_days: 1
+  employee_id: 1
+  gma_user_id: 1
+
+two:
+  reported_on: 2010-11-25
+  late_type: 1
+  total_days: 1
+  employee_id: 1
+  gma_user_id: 1

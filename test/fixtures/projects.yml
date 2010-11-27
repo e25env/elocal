@@ -8,7 +8,7 @@ one:
   contract: MyString
   coordinated: false
   strategy_id: 1
-  method_id: 1
+  approach_id: 1
   section_id: 1
   project_type_id: 1
   activity_id: 1
@@ -26,7 +26,7 @@ two:
   contract: MyString
   coordinated: false
   strategy_id: 1
-  method_id: 1
+  approach_id: 1
   section_id: 1
   project_type_id: 1
   activity_id: 1

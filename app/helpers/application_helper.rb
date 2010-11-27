@@ -137,6 +137,9 @@ module ActionView
       def date_select_senior(method)
         date_select method, :default => 60.years.ago, :use_month_names=>THAI_MONTHS, :order=>[:day, :month, :year], :start_year=>Time.now.year-110, :end_year=>Time.now.year-60
       end
+      def date_select_year(method, o={})
+        date_select method, :default => o[:default], :use_month_names=>THAI_MONTHS, :order=>[:day, :month, :year], :start_year=>o[:start_year], :end_year=>o[:end_year]
+      end
     end
   end
 end

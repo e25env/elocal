@@ -1,6 +1,20 @@
 class OfficeController < ApplicationController
+  def employee
+    @employee= Employee.find params[:id]
+  end
   def update_vision
     Vision.create $xvars[:edit][:vision]
+  end
+  def create_employee
+    e= Employee.new $xvars[:enter][:employee]
+    e.status= 1
+    e.save
+    $xvars[:employee_id]= e.id
+    EmployeePhoto.create :employee_id=> e.id,
+      :photo => e.photo,
+      :taken_on => e.taken_on
+    $xvars[:p][:return]= "/office/employee/#{e.id}"
+    gma_notice "กรุณาเลือกแท็บตำแหน่ง, การศึกษา, ฯลฯ และใส่รายละเอียดเพิ่มเติมให้ครบถ้วนสมบูรณ์"
   end
   def create_student
     s= Student.new $xvars[:enter][:student]
@@ -12,6 +26,9 @@ class OfficeController < ApplicationController
   end
   def students
     @nursery= Nursery.find params[:id]
+  end
+  def hr
+    @nurseries= Nursery.all
   end
   def policies
     @nurseries= Nursery.all

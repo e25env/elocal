@@ -19,7 +19,7 @@
     </tr>
     <tr id="dob">
       <td class="field-name">วันเดือนปีเกิด</td>
-      <td colspan="2"><%= f.date_select_thai :dob %></td>
+      <td colspan="2"><%= f.date_select_year :dob, :end_year => Time.now.year-1 %></td>
     </tr>
     <tr>
       <td class="field-name">เลขประจำตัวประชาชน</td>
@@ -163,7 +163,7 @@
     </tr>
     <tr>
       <td class="field-name">วันที่รับเข้า</td>
-      <td colspan='2'><%= f.date_select_thai :accepted_on %></td>
+      <td colspan='2'><%= f.date_select_year :accepted_on, :end_year => Time.now.year  %></td>
     </tr>
     <tr>
       <td class="field-name">สแกนใบสมัคร</td>
