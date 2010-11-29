@@ -1,6 +1,84 @@
 class OfficeController < ApplicationController
-  def employee
+  def update_employee
+    employee= Employee.find $xvars[:p][:id]
+    employee.update_attributes $xvars[:enter][:employee]
+    gma_notice "แก้ไขข้อมูลเรียบร้อยแล้ว"
+    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}"
+  end
+  def employee_photo
     @employee= Employee.find params[:id]
+  end
+  def rm_employee_photo
+    ep= EmployeePhoto.find $xvars[:p][:id]
+    employee_id= ep.employee_id
+    gma_notice "ลบภาพถ่ายเรียบร้อยแล้ว"
+    ep.destroy
+    $xvars[:p][:return]= "/office/employee_photo/#{employee_id}"
+  end
+  def create_education
+    e= Education.new $xvars[:enter][:education]
+    e.employee_id= $xvars[:p][:id]
+    e.save
+    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}?i=2"
+  end
+  def rm_education
+    e= Education.find $xvars[:p][:id]
+    employee_id= e.employee_id
+    gma_notice "ลบข้อมูลการศึกษาเรียบร้อยแล้ว"
+    e.destroy
+    $xvars[:p][:return]= "/office/employee/#{employee_id}?i=2"
+  end
+  def create_decoration
+    e= Decoration.new $xvars[:enter][:decoration]
+    e.employee_id= $xvars[:p][:id]
+    e.save
+    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}?i=1"
+  end
+  def rm_decoration
+    d= Decoration.find $xvars[:p][:id]
+    employee_id= d.employee_id
+    gma_notice "ลบข้อมูลเครื่องราชอิสริยาภรณ์เรียบร้อยแล้ว"
+    d.destroy
+    $xvars[:p][:return]= "/office/employee/#{employee_id}?i=1"
+  end
+  def create_job
+    j= Job.new $xvars[:enter][:job]
+    j.employee_id= $xvars[:p][:id]
+    j.save
+    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}?i=1"
+  end
+  def rm_job
+    j= Job.find $xvars[:p][:id]
+    employee_id= j.employee_id
+    gma_notice "ลบข้อมูลตำแหน่งเรียบร้อยแล้ว"
+    j.destroy
+    $xvars[:p][:return]= "/office/employee/#{employee_id}?i=1"
+  end
+  def create_employee_photo
+    e= Employee.find $xvars[:p][:id]
+    if $xvars[:enter][:employee_photo]
+      ep= EmployeePhoto.create $xvars[:enter][:employee_photo]
+      e.photo= ep.photo
+      e.taken_on= ep.taken_on
+      # scale file to 150
+      filename= "doc/upload/f#{$xvars[:enter][:employee_photo_photo_doc_id]}"
+      img_orig = Magick::Image.read(filename).first
+#      tmp = "tmp/#{doc.filename}"
+      if img_orig.columns > 150
+        img = img_orig.resize_to_fit(150,150)
+        img.write(filename)
+      end
+    end
+    e.save
+    $xvars[:p][:return]= "/office/employee_photo/#{e.id}"
+  end
+  def employee
+    if Employee.exists? params[:id]
+      @employee= Employee.find params[:id]
+    else
+      flash[:notice]="ขออภัย ไม่สามารถค้นหาเจ้าหน้าที่หมายเลข #{params[:id]}"
+      redirect_to :action => "hr"
+    end
   end
   def update_vision
     Vision.create $xvars[:edit][:vision]
@@ -8,6 +86,7 @@ class OfficeController < ApplicationController
   def create_employee
     e= Employee.new $xvars[:enter][:employee]
     e.status= 1
+    e.retired_on= Date.new e.dob.year+60,9,30
     e.save
     $xvars[:employee_id]= e.id
     EmployeePhoto.create :employee_id=> e.id,
@@ -28,7 +107,7 @@ class OfficeController < ApplicationController
     @nursery= Nursery.find params[:id]
   end
   def hr
-    @nurseries= Nursery.all
+    @employees= Employee.all
   end
   def policies
     @nurseries= Nursery.all

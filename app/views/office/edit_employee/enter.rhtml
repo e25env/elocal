@@ -1,4 +1,4 @@
-<% employee = Employee.new :blood_type => "O"  %>
+<% employee = Employee.find $xvars[:p][:id]  %>
 <% fields_for employee do |f| %>
   <table width="100%">
     <tr>
@@ -32,11 +32,11 @@
     </tr>
     <tr>
       <td class="field-name">อำเภอ</td>
-      <td colspan='2'><%= f.select :district_id, [] %></td>
+      <td colspan='2'><%= f.collection_select :district_id, employee.province.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
     </tr>
     <tr>
       <td class="field-name">ตำบล</td>
-      <td colspan='2'><%= f.select :sub_district_id, [] %></td>
+      <td colspan='2'><%= f.collection_select :sub_district_id, employee.district.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
     </tr>
     <tr>
       <td class="field-name">ที่อยู่ตามทะเบียนบ้าน</td>
@@ -52,11 +52,11 @@
     </tr>
     <tr>
       <td class="field-name">อำเภอ</td>
-      <td colspan='2'><%= f.select :district_reg_id, [] %></td>
+      <td colspan='2'><%= f.collection_select :district_reg_id, employee.province_reg.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
     </tr>
     <tr>
       <td class="field-name">ตำบล</td>
-      <td colspan='2'><%= f.select :sub_district_reg_id, [] %></td>
+      <td colspan='2'><%= f.collection_select :sub_district_reg_id, employee.district_reg.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
     </tr>
     <tr>
       <td class="field-name">โทรศัพท์</td>
@@ -124,11 +124,11 @@
     </tr>
     <tr>
       <td class="field-name">อำเภอ</td>
-      <td colspan='2'><%= f.select :parent_district_id, [] %></td>
+      <td colspan='2'><%= f.collection_select :parent_district_id, employee.parent_province.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
     </tr>
     <tr>
       <td class="field-name">ตำบล</td>
-      <td colspan='2'><%= f.select :parent_sub_district_id, [] %></td>
+      <td colspan='2'><%= f.collection_select :parent_sub_district_id, employee.parent_district.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
     </tr>
     <tr>
       <td class="field-name">โทรศัพท์</td>
@@ -141,14 +141,6 @@
     <tr>
       <td class="field-name">หมู่เลือด</td>
       <td colspan='2'><%= f.select :blood_type, ['A','B','AB','O'] %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ภาพถ่าย</td>
-      <td colspan='2'><%= f.file_field :photo %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ถ่ายเมื่อวันที่</td>
-      <td colspan='2'><%= f.date_select_year :taken_on, :start_year=>Time.now.year-1,:end_year => Time.now.year  %></td>
     </tr>
     <tr>
       <td class="field-name">ภาพสแกนลายมือชื่อ</td>

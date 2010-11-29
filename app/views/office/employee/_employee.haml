@@ -1,0 +1,101 @@
+- if employee.photo
+  = link_to image_tag(employee.photo, :style => "float:left"), "/office/employee_photo/#{params[:id]}"
+- else
+  = link_to "เพิ่มภาพถ่าย", "/run/office/add_employee_photo/#{params[:id]}"
+#ear(style="padding-left:130px;")
+  - if current_user.role.upcase.split(',').include?('HR')
+    = image_tag "pencil.png"
+    = link_to "แก้ไข", "/run/office/edit_employee/#{params[:id]}"
+    %br
+  %b
+    = employee.full_name
+  %br
+  - if employee.position
+    = employee.position
+    %br
+  - if employee.section
+    = employee.section.name
+    %br
+  %b
+    ที่อยู่ปัจจุบัน
+  = employee.address
+  - if employee.moo
+    = "หมู่ "+employee.moo
+  = employee.sub_district.name
+  = district_prefix(employee.province_id)+employee.district.name
+  = province_prefix(employee.province_id)+employee.province.name
+  %br
+  %b
+    ที่อยู่ตามทะเบียนบ้าน
+  = employee.address_reg
+  - if employee.moo_reg
+    = "หมู่ "+employee.moo_reg
+  = employee.sub_district_reg.name
+  = district_prefix(employee.province_reg_id)+employee.district_reg.name
+  = province_prefix(employee.province_reg_id)+employee.province_reg.name
+  %br
+  %b
+    โทรศัพท์
+  = employee.phone
+  %b
+    โทรศัพท์มือถือ
+  = employee.cell_phone
+:css
+  .b {font-weight:bold;}
+%table(style="clear:both;")
+  %tr
+    %td.b
+      เริ่มรับราชการเมื่อ
+    %td
+      = date_thai employee.begin_gov_service_on, :date_only=>true, :monthfull=>true
+  %tr
+    %td.b
+      วันเกษียณอายุ
+    %td
+      = date_thai employee.retired_on, :date_only=>true, :monthfull=>true
+  %tr
+    %td.b
+      คู่สมรส
+    %td
+      = employee.spouse_full_name
+  %tr
+    %td.b
+      สถานที่ประกอบอาชีพ
+    %td
+      = employee.spouse_work
+  %tr
+    %td.b
+      บิดา
+    %td
+      = employee.father_full_name
+  %tr
+    %td.b
+      มารดา
+    %td
+      = employee.mother_full_name
+  %tr
+    %td.b
+      ที่อยู่ปัจจุบัน
+    %td
+      = employee.parent_address
+      - unless employee.parent_moo.blank?
+        = "หมู่ "+employee.parent_moo
+      = employee.parent_sub_district.name if employee.parent_sub_district
+      = district_prefix(employee.parent_province_id)+employee.parent_district.name if employee.parent_district
+      = province_prefix(employee.parent_province_id)+employee.parent_province.name if employee.parent_province
+  %tr
+    %td.b
+      โทรศัพท์
+    %td
+      = employee.parent_phone
+  %tr
+    %td.b
+      ความสามารถพิเศษ
+    %td
+      = employee.skill
+  %tr
+    %td.b
+      หมู่โลหิต
+    %td
+      = employee.blood_type
+

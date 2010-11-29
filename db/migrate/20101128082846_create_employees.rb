@@ -9,6 +9,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :nid
       t.string :position
       t.date :position_on
+      t.integer :section_id
       t.integer :level
       t.float :salary
       t.string :appointed_by
@@ -55,6 +56,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.integer :late
       t.integer :missing
       t.integer :leave_study
+      t.datetime :leaved_at
       t.integer :manpower_id
       t.string :manpower_code
       t.string :comment

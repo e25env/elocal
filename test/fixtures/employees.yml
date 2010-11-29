@@ -5,10 +5,11 @@ one:
   title: MyString
   fname: MyString
   lname: MyString
-  dob: 2010-11-27
+  dob: 2010-11-28
   nid: MyString
   position: MyString
-  position_on: 2010-11-27
+  position_on: 2010-11-28
+  section_id: 1
   level: 1
   salary: 1.5
   appointed_by: MyString
@@ -24,8 +25,8 @@ one:
   sub_district_reg_id: 1
   district_reg_id: 1
   province_reg_id: 1
-  begin_gov_service_on: 2010-11-27
-  retired_on: 2010-11-27
+  begin_gov_service_on: 2010-11-28
+  retired_on: 2010-11-28
   phone: MyString
   cell_phone: MyString
   spouse_title: MyString
@@ -48,13 +49,14 @@ one:
   blood_type: MyString
   status: 1
   photo: MyString
-  taken_on: 2010-11-27
+  taken_on: 2010-11-28
   signature: MyString
   leave_sick: 1
   leave_vacation: 1
   late: 1
   missing: 1
   leave_study: 1
+  leaved_at: 2010-11-28 15:28:46
   manpower_id: 1
   manpower_code: MyString
   comment: MyString
@@ -65,10 +67,11 @@ two:
   title: MyString
   fname: MyString
   lname: MyString
-  dob: 2010-11-27
+  dob: 2010-11-28
   nid: MyString
   position: MyString
-  position_on: 2010-11-27
+  position_on: 2010-11-28
+  section_id: 1
   level: 1
   salary: 1.5
   appointed_by: MyString
@@ -84,8 +87,8 @@ two:
   sub_district_reg_id: 1
   district_reg_id: 1
   province_reg_id: 1
-  begin_gov_service_on: 2010-11-27
-  retired_on: 2010-11-27
+  begin_gov_service_on: 2010-11-28
+  retired_on: 2010-11-28
   phone: MyString
   cell_phone: MyString
   spouse_title: MyString
@@ -108,13 +111,14 @@ two:
   blood_type: MyString
   status: 1
   photo: MyString
-  taken_on: 2010-11-27
+  taken_on: 2010-11-28
   signature: MyString
   leave_sick: 1
   leave_vacation: 1
   late: 1
   missing: 1
   leave_study: 1
+  leaved_at: 2010-11-28 15:28:46
   manpower_id: 1
   manpower_code: MyString
   comment: MyString

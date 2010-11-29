@@ -1,0 +1,17 @@
+=image_tag 'add.png'
+= link_to align_text('บันทึกการลา'), "/run/office/add_leave/#{params[:id]}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th{:style=>"width:30px;"} ลบ
+    %th วัน เดือน ปี
+    %th การลา
+    %th จำนวนวัน
+  - leave.leaves.each do |s|
+    %tr
+      %td= link_to image_tag('cross.png'), "/run/office/rm_penalty/#{s.id}", :confirm=>"กรุณายืนยัน"
+      %td
+        = date_thai s.leave_begin, :date_only=>true
+        = " - "
+        = date_thai s.leave_end, :date_only=>true
+      %td= s.leave_type_name
+      %td= s.total_days

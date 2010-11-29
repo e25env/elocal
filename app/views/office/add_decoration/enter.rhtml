@@ -1,0 +1,23 @@
+<% decoration = Decoration.new  %>
+<% fields_for decoration do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">เครื่องราชอิสริยาภรณ์</td>
+      <td colspan='2'><%= f.text_field :name, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วันที่ได้รับ</td>
+      <td colspan="2"><%= f.date_select_year :received_on, :start_year=>Time.now.year-5, :end_year => Time.now.year %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เอกสารอ้างอิง</td>
+      <td colspan='2'><%= f.text_field :ref, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สแกนเอกสารอ้างอิง</td>
+      <td colspan='2'><%= f.file_field :ref_file %></td>
+    </tr>
+  </table>
+<% end %>
+<%= fix_thai_year %>
+

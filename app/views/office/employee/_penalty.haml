@@ -1,0 +1,19 @@
+=image_tag 'add.png'
+= link_to align_text('บันทึกความผิดทางวินัย'), "/run/office/add_penalty/#{params[:id]}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th{:style=>"width:30px;"} ลบ
+    %th วัน เดือน ปี
+    %th เรื่อง
+    %th โทษ
+    %th คำสั่ง
+  - penalty.penalties.each do |s|
+    %tr
+      %td= link_to image_tag('cross.png'), "/run/office/rm_penalty/#{s.id}", :confirm=>"กรุณายืนยัน"
+      %td= date_thai s.issued_on, :date_only=>true
+      %td= s.summary
+      %td= s.sentence
+      %td
+        = s.ref
+        - unless s.ref_file.blank?
+          = link_to image_tag('page_output.png'), s.ref_file, :target=>'_blank'

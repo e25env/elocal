@@ -1,0 +1,30 @@
+<% education= Education.new %>
+<% fields_for education do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">สถานศึกษา</td>
+      <td colspan='2'><%= f.text_field :school, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วุฒิที่ได้รับ</td>
+      <td colspan='2'><%= f.collection_select :education_level_id, EducationLevel.all, :id, :name %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สาขาวิชาเอก</td>
+      <td colspan='2'><%= f.text_field :major, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วันที่เริ่มการศึกษา</td>
+      <td colspan='2'><%= f.date_select_year :edu_begin, :start_year=>30.years.ago.year, :end_year=>Time.now.year %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วันที่สำเร็จการศึกษา</td>
+      <td colspan='2'><%= f.date_select_year :edu_end, :start_year=>30.years.ago.year, :end_year=>Time.now.year %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เอกสารอ้างอิง</td>
+      <td colspan='2'><%= f.file_field :ref_file %></td>
+    </tr>
+  </table>
+<% end %>
+<%= fix_thai_year %>

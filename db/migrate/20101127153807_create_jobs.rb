@@ -4,6 +4,7 @@ class CreateJobs < ActiveRecord::Migration
       t.date :effective_on
       t.string :name
       t.text :description
+      t.integer :section_id
       t.integer :level
       t.float :salary
       t.string :authorized_by

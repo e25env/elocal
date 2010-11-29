@@ -10,6 +10,12 @@ module ApplicationHelper
     User.find 2
   end
   #------------------------
+  def province_prefix(province_id)
+    return province_id==1 ? "" : "จังหวัด"
+  end
+  def district_prefix(province_id)
+    return province_id==1 ? "" : "อำเภอ"
+  end
   def underprivileged(u)
     case u
     when 1

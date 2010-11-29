@@ -1,0 +1,46 @@
+=image_tag 'add.png'
+= link_to align_text('บันทึกเครื่องราชอิสริยาภรณ์ ประกาศเกียรติคุณ และเหรียญเชิดชูเกียรติที่ได้รับ'), "/run/office/add_decoration/#{params[:id]}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th{:style=>"width:30px;"} ลบ
+    %th รายการ
+    %th วันที่ได้รับ
+    %th วันส่งคืน
+    %th เอกสารอ้างอิง
+  - job.decorations.each do |s|
+    %tr
+      %td= link_to image_tag('cross.png'), "/run/office/rm_decoration/#{s.id}", :confirm=>"กรุณายืนยัน"
+      %td= s.name
+      %td= date_thai s.received_on, :date_only=>true
+      %td= date_thai s.returned_on, :date_only=>true
+      %td
+        = s.ref
+        - unless s.ref_file.blank?
+          = link_to image_tag('page_output.png'), s.ref_file, :target=>'_blank'
+
+=image_tag 'add.png'
+= link_to align_text('บันทึกตำแหน่งและอัตราเงินเดือน'), "/run/office/add_job/#{params[:id]}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th{:style=>"width:30px;"} ลบ
+    %th วัน เดือน ปี
+    %th ตำแหน่ง
+    %th ระดับ
+    %th ชั้น
+    %th คำสั่ง
+    %th พนักงานประวัติ
+  - job.jobs.each do |s|
+    %tr
+      %td= link_to image_tag('cross.png'), "/run/office/rm_job/#{s.id}", :confirm=>"กรุณายืนยัน"
+      %td= date_thai s.effective_on, :date_only=>true
+      %td= s.name
+      %td(align='right')= s.level
+      %td(align='right')= currency s.salary
+      %td
+        = s.ref
+        - unless s.ref_file.blank?
+          = link_to image_tag('page_output.png'), s.ref_file, :target=>'_blank'
+      %td
+        = s.authorized_by
+        - unless s.authorized_position.blank?
+          = " (#{s.authorized_position})"

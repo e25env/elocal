@@ -1,0 +1,47 @@
+<% job= Job.new %>
+<% fields_for job do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">วันที่</td>
+      <td colspan='2'><%= f.date_select_thai :effective_on %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำแหน่ง</td>
+      <td colspan='2'><%= f.text_field :name, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รายละเอียด</td>
+      <td colspan="2"><%= f.text_area :description, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ระดับ</td>
+      <td colspan="2"><%= f.select :level, 1..11 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชั้นเงินเดือน</td>
+      <td><%= f.text_field :salary, :style => "width:200px;" %></td>
+      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
+    </tr>
+    <tr>
+      <td class="field-name">ส่วน</td>
+      <td colspan="2"><%= f.collection_select :section_id, Section.all, :id, :name %></td>
+    </tr>
+    <tr>
+      <td class="field-name">คำสั่ง</td>
+      <td colspan='2'><%= f.text_field :ref, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สแกนคำสั่ง</td>
+      <td colspan='2'><%= f.file_field :ref_file %></td>
+    </tr>
+    <tr>
+      <td class="field-name">พนักงานประวัติ</td>
+      <td colspan='2'><%= f.text_field :authorized_by, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำแหน่ง</td>
+      <td colspan='2'><%= f.text_field :authorized_position, :style=>"width:300px;" %></td>
+    </tr>
+  </table>
+<% end %>
+<%= fix_thai_year %>

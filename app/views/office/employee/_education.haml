@@ -1,0 +1,41 @@
+=image_tag 'add.png'
+= link_to align_text('บันทึกประวัติการศึกษา'), "/run/office/add_education/#{params[:id]}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th{:style=>"width:30px;"} ลบ
+    %th สถานศึกษา
+    %th วุฒิที่ได้รับ
+    %th ตั้งแต่ - ถึง
+    %th เอกสารอ้างอิง
+  - education.educations.each do |s|
+    %tr
+      %td= link_to image_tag('cross.png'), "/run/office/rm_education/#{s.id}", :confirm=>"กรุณายืนยัน"
+      %td= s.school
+      %td
+        = s.education_level.name
+        - unless s.major.blank?
+          = " (#{s.major})"
+      %td
+        = date_thai s.edu_begin, :date_only=>true
+        = " - "
+        = date_thai s.edu_end, :date_only=>true
+      - unless s.ref_file.blank?
+        %td= link_to image_tag('page_output.png'), s.ref_file, :target=>'_blank'
+
+=image_tag 'add.png'
+= link_to align_text('ประวัติการดูงาน หรือฝึกอบรม'), "/run/office/add_training/#{params[:id]}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th{:style=>"width:30px;"} ลบ
+    %th สถานที่ดูงาน หรือฝึกอบรม
+    %th วุฒิที่ได้รับ
+    %th ตั้งแต่ - ถึง
+  - education.trainings.each do |s|
+    %tr
+      %td= link_to image_tag('cross.png'), "/run/office/rm_training/#{s.id}", :confirm=>"กรุณายืนยัน"
+      %td= s.name
+      %td= s.certificate
+      %td
+        = date_thai s.train_begin, :date_only=>true
+        = " - "
+        = date_thai s.train_end, :date_only=>true

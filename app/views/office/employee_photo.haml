@@ -1,0 +1,24 @@
+:css
+  .gallery li {
+    display: inline;
+    list-style: none;
+    /*width: 150px;*/
+    min-height: 175px;
+    float: left;
+    margin: 0 20px 20px 0;
+    text-align: center;
+  }
+
+=image_tag 'add.png'
+= link_to align_text('บันทึกภาพถ่าย'), "/run/office/add_employee_photo/#{params[:id]}"
+=image_tag 'arrow_turn_left.png'
+= link_to align_text('ข้อมูลทั่วไป'), "/office/employee/#{params[:id]}"
+%ul.gallery
+  - @employee.employee_photos.each do |ep|
+    - if ep.photo
+      %li
+        = image_tag ep.photo
+        %br
+        = link_to image_tag('cross.png'), "/run/office/rm_employee_photo/#{ep.id}", :confirm=>"กรุณายืนยัน"
+        = date_thai ep.taken_on, :date_only=>true
+

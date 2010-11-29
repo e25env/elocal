@@ -1,0 +1,21 @@
+<% employee= Employee.find $xvars[:p][:id] %>
+<% ep = EmployeePhoto.new :employee_id=> employee.id %>
+<% fields_for ep do |f| %>
+  <%= f.hidden_field :employee_id %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">เจ้าหน้าที่</td>
+      <td colspan='2'><%= employee.full_name %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ภาพถ่าย</td>
+      <td colspan='2'><%= f.file_field :photo %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ถ่ายเมื่อวันที่</td>
+      <td colspan='2'><%= f.date_select_year :taken_on, :start_year=>Time.now.year-1,:end_year => Time.now.year  %></td>
+    </tr>
+  </table>
+<% end %>
+<%= fix_thai_year %>
+
