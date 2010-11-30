@@ -21,18 +21,20 @@
   = employee.address
   - if employee.moo
     = "หมู่ "+employee.moo
-  = employee.sub_district.name
-  = district_prefix(employee.province_id)+employee.district.name
-  = province_prefix(employee.province_id)+employee.province.name
+  - if employee.sub_district
+    = employee.sub_district.name
+    = district_prefix(employee.province_id)+employee.district.name
+    = province_prefix(employee.province_id)+employee.province.name
   %br
   %b
     ที่อยู่ตามทะเบียนบ้าน
   = employee.address_reg
   - if employee.moo_reg
     = "หมู่ "+employee.moo_reg
-  = employee.sub_district_reg.name
-  = district_prefix(employee.province_reg_id)+employee.district_reg.name
-  = province_prefix(employee.province_reg_id)+employee.province_reg.name
+  - if employee.sub_district_reg
+    = employee.sub_district_reg.name
+    = district_prefix(employee.province_reg_id)+employee.district_reg.name
+    = province_prefix(employee.province_reg_id)+employee.province_reg.name
   %br
   %b
     โทรศัพท์
@@ -80,9 +82,10 @@
       = employee.parent_address
       - unless employee.parent_moo.blank?
         = "หมู่ "+employee.parent_moo
-      = employee.parent_sub_district.name if employee.parent_sub_district
-      = district_prefix(employee.parent_province_id)+employee.parent_district.name if employee.parent_district
-      = province_prefix(employee.parent_province_id)+employee.parent_province.name if employee.parent_province
+      - if employee.parent_sub_district
+        = employee.parent_sub_district.name if employee.parent_sub_district
+        = district_prefix(employee.parent_province_id)+employee.parent_district.name if employee.parent_district
+        = province_prefix(employee.parent_province_id)+employee.parent_province.name if employee.parent_province
   %tr
     %td.b
       โทรศัพท์
