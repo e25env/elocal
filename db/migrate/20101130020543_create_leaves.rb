@@ -1,13 +1,14 @@
 class CreateLeaves < ActiveRecord::Migration
   def self.up
     create_table :leaves, :force=>true do |t|
-      t.date :filed_on
       t.integer :leave_type
       t.date :leave_begin
       t.date :leave_end
-      t.integer :total_days
+      t.float :total_days_this_period
+      t.float :total_days_next_period
       t.string :ref_file
       t.integer :employee_id
+      t.date :reported_on
       t.integer :gma_user_id
 
       t.timestamps

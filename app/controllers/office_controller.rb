@@ -28,6 +28,19 @@ class OfficeController < ApplicationController
     e.destroy
     $xvars[:p][:return]= "/office/employee/#{employee_id}?i=2"
   end
+  def create_training
+    e= Training.new $xvars[:enter][:training]
+    e.employee_id= $xvars[:p][:id]
+    e.save
+    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}?i=2"
+  end
+  def rm_training
+    d= Training.find $xvars[:p][:id]
+    employee_id= d.employee_id
+    gma_notice "ลบข้อมูลการฝึกอบรมเรียบร้อยแล้ว"
+    d.destroy
+    $xvars[:p][:return]= "/office/employee/#{employee_id}?i=2"
+  end
   def create_decoration
     e= Decoration.new $xvars[:enter][:decoration]
     e.employee_id= $xvars[:p][:id]
@@ -40,6 +53,34 @@ class OfficeController < ApplicationController
     gma_notice "ลบข้อมูลเครื่องราชอิสริยาภรณ์เรียบร้อยแล้ว"
     d.destroy
     $xvars[:p][:return]= "/office/employee/#{employee_id}?i=1"
+  end
+  def create_penalty
+    e= Penalty.new $xvars[:enter][:penalty]
+    e.employee_id= $xvars[:p][:id]
+    e.save
+    gma_notice "บันทึกข้อมูลความผิดทางวินัยแล้ว"
+    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}?i=3"
+  end
+  def rm_penalty
+    d= Penalty.find $xvars[:p][:id]
+    employee_id= d.employee_id
+    gma_notice "ลบข้อมูลความผิดทางวินัยเรียบร้อยแล้ว"
+    d.destroy
+    $xvars[:p][:return]= "/office/employee/#{employee_id}?i=3"
+  end
+  def create_leave
+    e= Leave.new $xvars[:enter][:leave]
+    e.employee_id= $xvars[:p][:id]
+    e.save
+    gma_notice "บันทึกข้อมูลการลาเรียบร้อยแล้ว"
+    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}?i=4"
+  end
+  def rm_leave
+    d= Leave.find $xvars[:p][:id]
+    employee_id= d.employee_id
+    gma_notice "ลบข้อมูลการลาเรียบร้อยแล้ว"
+    d.destroy
+    $xvars[:p][:return]= "/office/employee/#{employee_id}?i=4"
   end
   def create_job
     j= Job.new $xvars[:enter][:job]

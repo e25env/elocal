@@ -1,21 +1,23 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  filed_on: 2010-11-25
   leave_type: 1
-  leave_begin: 2010-11-25
-  leave_end: 2010-11-25
-  total_days: 1
+  leave_begin: 2010-11-30
+  leave_end: 2010-11-30
+  total_days_this_period: 1.5
+  total_days_next_period: 1.5
   ref_file: MyString
   employee_id: 1
+  reported_on: 2010-11-30
   gma_user_id: 1
 
 two:
-  filed_on: 2010-11-25
   leave_type: 1
-  leave_begin: 2010-11-25
-  leave_end: 2010-11-25
-  total_days: 1
+  leave_begin: 2010-11-30
+  leave_end: 2010-11-30
+  total_days_this_period: 1.5
+  total_days_next_period: 1.5
   ref_file: MyString
   employee_id: 1
+  reported_on: 2010-11-30
   gma_user_id: 1

@@ -7,6 +7,38 @@ class SongritController < ApplicationController
   require 'nokogiri'
   require 'mechanize'
 
+  def update_leave
+    e= Employee.find 1
+    l= Leave.find 1
+    leave_summary_this= LeaveSummary.last :order => "reported_on"
+    unless leave_summary_this
+      leave_summary_this= LeaveSummary.create :reported_on=>l.leave_begin
+    end
+    unless leave_summary_this.this_period?(l.leave_begin)
+      leave_summary_this= LeaveSummary.create :reported_on=>l.leave_begin
+    end
+    unless leave_summary_this.this_period?(l.leave_end)
+      leave_summary_next= LeaveSummary.create :reported_on=>Time.now
+    end
+    case l.leave_type
+    when 1
+      leave_summary_this.sick += l.total_days_this_period
+      leave_summary_next.sick += l.total_days_next_period if leave_summary_next
+    when 2
+      leave_summary_this.vacation += l.total_days_this_period
+      leave_summary_next.vacation += l.total_days_next_period if leave_summary_next
+    when 3
+      leave_summary_this.late += l.total_days_this_period
+      leave_summary_next.late += l.total_days_next_period if leave_summary_next
+    when 4
+      leave_summary_this.missing += l.total_days_this_period
+      leave_summary_next.missing += l.total_days_next_period if leave_summary_next
+    when 5
+      leave_summary_this.education += l.total_days_this_period
+      leave_summary_next.education += l.total_days_next_period if leave_summary_next
+    end
+    render :text => "done #{r}"
+  end
   def gen_sub_district
     SubDistrict.delete_all
 #    SubDistrictOld.all(:limit => 5).each do |p|

@@ -1,6 +1,18 @@
 =image_tag 'add.png'
 = link_to align_text('บันทึกการลา'), "/run/office/add_leave/#{params[:id]}"
-%table{:class=>'budget_table', :width=>"100%"}
+=image_tag 'printer.png'
+= link_to align_text('รายละเอียด'), "#"
+=image_tag 'calendar.png'
+= link_to align_text('สรุปยอด 6 เดือน'), "#"
+%table{:id=>"summary", :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th วันที่
+    %th ลาป่วย
+    %th ลากิจและพักผ่อน
+    %th มาสาย
+    %th ขาดราชการ
+    %th ลาศึกษาต่อ
+%table{:id=>"detail", :width=>"100%", :style=>"display:none;"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
     %th{:style=>"width:30px;"} ลบ
     %th วัน เดือน ปี
@@ -14,4 +26,4 @@
         = " - "
         = date_thai s.leave_end, :date_only=>true
       %td= s.leave_type_name
-      %td= s.total_days
+      %td= s.total_days_this_period+s.total_days_next_period

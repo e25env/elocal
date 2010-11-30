@@ -1,0 +1,19 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  reported_on: 2010-11-30
+  sick: 1.5
+  vacation: 1.5
+  late: 1
+  missing: 1
+  education: 1.5
+  gma_user_id: 1
+
+two:
+  reported_on: 2010-11-30
+  sick: 1.5
+  vacation: 1.5
+  late: 1
+  missing: 1
+  education: 1.5
+  gma_user_id: 1
