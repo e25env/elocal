@@ -3,11 +3,10 @@ source "http://rubygems.org"
 
 gem "rails", "2.3.5"
 gem "heroku"
-gem "taps"
+gem "taps", "0.3.14"
 gem 'pg'
 gem 'mysql'
 #gem 'inherited_resources', '1.0.3'
-
 gem "linguistics"
 gem "will_paginate"
 gem "RedCloth"

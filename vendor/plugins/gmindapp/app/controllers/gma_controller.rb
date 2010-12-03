@@ -1,5 +1,4 @@
 class GmaController < ApplicationController
-#  require 'gruff'
   layout "application"
   helper :all # include all helpers, all the time
   before_filter :admin_action, :only => [:pending, :view_mm, :update_app, :delete_run_call_errors, :logs]
@@ -215,16 +214,23 @@ class GmaController < ApplicationController
           next
         end
         if scode.downcase=="link"
+          role= get_option_xml("role", s) || ""
+          rule= get_option_xml("rule", s) || ""
           gma_service= GmaService.find_or_create_by_module_and_code_and_name module_code, scode, sname
           gma_service.update_attributes :xml=>s.to_s, :name=>sname, :listed=>listed(s),
-            :gma_module_id=>gma_module.id, :seq => seq
+            :gma_module_id=>gma_module.id, :seq => seq,
+            :role => role, :rule => rule
           seq += 1
           protected_services << gma_service.id
         else
           # normal service
+          step1 = s.elements['node']
+          role= get_option_xml("role", step1) || ""
+          rule= get_option_xml("rule", step1) || ""
           gma_service= GmaService.find_or_create_by_module_and_code module_code, scode
           gma_service.update_attributes :xml=>s.to_s, :name=>sname, :listed=>listed(s),
-            :gma_module_id=>gma_module.id, :seq => seq
+            :gma_module_id=>gma_module.id, :seq => seq,
+            :role => role, :rule => rule
           seq += 1
           protected_services << gma_service.id
         end

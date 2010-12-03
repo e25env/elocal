@@ -19,7 +19,7 @@
   %b
     ที่อยู่ปัจจุบัน
   = employee.address
-  - if employee.moo
+  - unless employee.moo.blank?
     = "หมู่ "+employee.moo
   - if employee.sub_district
     = employee.sub_district.name
@@ -29,7 +29,7 @@
   %b
     ที่อยู่ตามทะเบียนบ้าน
   = employee.address_reg
-  - if employee.moo_reg
+  - unless employee.moo_reg.blank?
     = "หมู่ "+employee.moo_reg
   - if employee.sub_district_reg
     = employee.sub_district_reg.name

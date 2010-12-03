@@ -51,12 +51,7 @@ class CreateEmployees < ActiveRecord::Migration
       t.string :photo
       t.date :taken_on
       t.string :signature
-      t.integer :leave_sick
-      t.integer :leave_vacation
-      t.integer :late
-      t.integer :missing
-      t.integer :leave_study
-      t.datetime :leaved_at
+      t.float :leave_balance
       t.integer :manpower_id
       t.string :manpower_code
       t.string :comment

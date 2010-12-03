@@ -1,0 +1,9 @@
+<% employee= Employee.find $xvars[:p][:id]  %>
+<% fields_for employee do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">วันลาสะสมคงเหลือ</td>
+      <td colspan='2'><%= f.text_field :leave_balance, :style=>"width:300px;" %></td>
+    </tr>
+  </table>
+<% end %>

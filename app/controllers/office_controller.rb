@@ -1,4 +1,38 @@
 class OfficeController < ApplicationController
+  def sum_leave
+    last_period= Date.today-180
+    period_begin= Leave.period_begin(last_period)
+    period_end= Leave.period_end(last_period)
+    Employee.all.each do |e|
+      leave_summary= LeaveSummary.first :conditions=>
+        ["employee_id=? AND reported_on >= ? AND reported_on <= ?",
+        e.id, period_begin, period_end]
+      leave_summary.update_attribute(:reported_on, period_end) if leave_summary
+      # add vacation if September
+      if period_end.month==9
+        e.leave_balance= 0 unless e.leave_balance
+        # employee less than 6 months do not have vacation
+        e.leave_balance += 10 unless (Date.today-e.begin_gov_service_on)<180
+        service_year= Date.today.year - e.begin_gov_service_on.year
+        case service_year
+        when 0..9
+          max= 20
+        else
+          max= 30
+        end
+        e.leave_balance= max if e.leave_balance > max
+        e.save
+      end
+    end
+    gma_notice "สรุปวันลางวด #{date_thai period_begin,:date_only=>true} - #{date_thai period_end, :date_only=>true} เรียบร้อยแล้ว"
+    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}?i=4"
+  end
+  def update_leave_balance
+    employee= Employee.find $xvars[:p][:id]
+    employee.update_attributes $xvars[:enter][:employee]
+    gma_notice "บันทึกวันลาสะสมเรียบร้อยแล้ว"
+    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}?i=4"
+  end
   def update_employee
     employee= Employee.find $xvars[:p][:id]
     employee.update_attributes $xvars[:enter][:employee]
@@ -69,9 +103,22 @@ class OfficeController < ApplicationController
     $xvars[:p][:return]= "/office/employee/#{employee_id}?i=3"
   end
   def create_leave
-    e= Leave.new $xvars[:enter][:leave]
-    e.employee_id= $xvars[:p][:id]
-    e.save
+    employee_id= $xvars[:p][:id]
+    l= Leave.new $xvars[:enter][:leave]
+    l.employee_id= employee_id
+    l.reported_on= l.leave_begin
+    l.save
+    leave_summary= LeaveSummary.first :conditions=>["employee_id=? AND reported_on >= ? AND reported_on <= ?", employee_id, Leave.period_begin(l.leave_begin), Leave.period_end(l.leave_begin)]
+    unless leave_summary
+      leave_summary= LeaveSummary.create :reported_on=>l.leave_begin, :employee_id=>employee_id
+    end
+    leave_days= leave_summary.send("leave#{l.leave_type}")+l.total_days
+    leave_summary.update_attribute "leave#{l.leave_type}", leave_days
+    # vacation
+    if l.leave_type==4
+      employee= Employee.find employee_id
+      employee.update_attribute :leave_balance, employee.leave_balance-l.total_days
+    end
     gma_notice "บันทึกข้อมูลการลาเรียบร้อยแล้ว"
     $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}?i=4"
   end

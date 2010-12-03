@@ -1,17 +1,35 @@
 =image_tag 'add.png'
 = link_to align_text('บันทึกการลา'), "/run/office/add_leave/#{params[:id]}"
-=image_tag 'printer.png'
-= link_to align_text('รายละเอียด'), "#"
+=image_tag 'report.png'
+= link_to align_text('สรุปทุกประเภทการลา'), "#", :id=>"show_summary", :style=>"display:none"
+= link_to align_text('รายละเอียด'), "#", :id=>"show_detail"
+=image_tag 'clock.png'
+= link_to align_text('ตั้งค่าวันลาสะสม'), "/run/office/set_leave_balance/#{params[:id]}"
 =image_tag 'calendar.png'
-= link_to align_text('สรุปยอด 6 เดือน'), "#"
+= link_to align_text('สรุปยอด 6 เดือน'), "/run/office/sum_leave/#{params[:id]}", :confirm=>"สรุปยอดลาและปรับวันลาสะสมสำหรับเจ้าหน้าที่ทั้งหมด ?"
+#leave_balance(style="float:right;position:relative;top:-3px;")
+  วันลาสะสมคงเหลือ
+  = leave.leave_balance
+  วัน
 %table{:id=>"summary", :width=>"100%"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
-    %th วันที่
+    %th(style='width:100px;') วันที่
     %th ลาป่วย
-    %th ลากิจและพักผ่อน
+    %th ลาคลอด
+    %th ลากิจ
+    %th ลาพักผ่อน
+    %th ลาอุปสมบท
+    %th ลาทหาร
+    %th ลาศึกษา
+    %th ลาองค์กรระหว่างประเทศ
+    %th ลาติดตามคู่สมรส
     %th มาสาย
     %th ขาดราชการ
-    %th ลาศึกษาต่อ
+  - leave.leave_summaries.each do |l|
+    %tr
+      %td= date_thai l.reported_on, :date_only=>true
+      - (1..11).each do |n|
+        %td(style="text-align:right; width:50px;")= l.send "leave#{n}"
 %table{:id=>"detail", :width=>"100%", :style=>"display:none;"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
     %th{:style=>"width:30px;"} ลบ
@@ -25,5 +43,18 @@
         = date_thai s.leave_begin, :date_only=>true
         = " - "
         = date_thai s.leave_end, :date_only=>true
-      %td= s.leave_type_name
-      %td= s.total_days_this_period+s.total_days_next_period
+      %td(style="text-align:center")= s.leave_type_name
+      %td(style="text-align:center")= s.total_days
+:javascript
+  $("#show_summary").click(function() {
+    $("#summary").toggle()
+    $("#detail").toggle()
+    $("#show_summary").toggle()
+    $("#show_detail").toggle()
+  });
+  $("#show_detail").click(function() {
+    $("#summary").toggle()
+    $("#detail").toggle()
+    $("#show_summary").toggle()
+    $("#show_detail").toggle()
+  });

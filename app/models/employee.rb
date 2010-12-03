@@ -6,7 +6,8 @@ class Employee < ActiveRecord::Base
   has_many :trainings, :order=>"train_end"
   has_many :penalties, :order=>"issued_on"
   has_many :leaves, :order=>"leave_begin", :class_name => "Leave"
-  
+  has_many :leave_summaries, :order=>"reported_on"
+
   belongs_to :section
   belongs_to :sub_district
   belongs_to :district

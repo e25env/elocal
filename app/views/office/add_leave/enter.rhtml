@@ -1,9 +1,10 @@
-<% leave= Leave.new :total_days_this_period => 1,:total_days_next_period => 0  %>
+<% leave= Leave.new :total_days => 1  %>
+<div id="notice">หมายเหตุ: กรณีที่ลาข้ามช่วงการประเมินผล ให้ลงแยกเป็น 2 รายการ</div>
 <% fields_for leave do |f| %>
   <table width="100%">
     <tr>
       <td class="field-name">ประเภท</td>
-      <td colspan='2'><%= f.select :leave_type, [["ลาป่วย",1],["ลากิจ",2],["มาสาย",3],["ขาดราชการ",4],["ลาศึกษาต่อ",5]] %></td>
+      <td colspan='2'><%= f.select :leave_type, leave_options %></td>
     </tr>
     <tr>
       <td class="field-name">วันที่เริ่มต้น</td>
@@ -14,12 +15,8 @@
       <td colspan='2'><%= f.date_select_year :leave_end, :start_year=>Time.now.year, :end_year=>Time.now.year+1 %></td>
     </tr>
     <tr>
-      <td class="field-name">รวมจำนวนวันทำการที่หยุดในรอบนี้</td>
-      <td colspan='2'><%= f.text_field :total_days_this_period, :style=>"width:300px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">รวมจำนวนวันทำการที่หยุดในรอบต่อไป</td>
-      <td colspan='2'><%= f.text_field :total_days_next_period, :style=>"width:300px;" %></td>
+      <td class="field-name">รวมจำนวนวันทำการที่หยุด</td>
+      <td colspan='2'><%= f.text_field :total_days, :style=>"width:300px;" %></td>
     </tr>
     <tr>
       <td class="field-name">เอกสารประกอบ</td>

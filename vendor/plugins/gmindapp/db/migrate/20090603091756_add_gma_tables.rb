@@ -91,6 +91,8 @@ class AddGmaTables < ActiveRecord::Migration
       t.integer  "gma_module_id"
       t.text     "xml"
       t.string   "auth"
+      t.string   "role"
+      t.string   "rule"
       t.integer  "seq"
       t.boolean  "listed"
       t.integer  "gma_user_id"

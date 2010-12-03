@@ -4,8 +4,7 @@ class CreateLeaves < ActiveRecord::Migration
       t.integer :leave_type
       t.date :leave_begin
       t.date :leave_end
-      t.float :total_days_this_period
-      t.float :total_days_next_period
+      t.float :total_days
       t.string :ref_file
       t.integer :employee_id
       t.date :reported_on

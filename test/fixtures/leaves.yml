@@ -2,22 +2,20 @@
 
 one:
   leave_type: 1
-  leave_begin: 2010-11-30
-  leave_end: 2010-11-30
-  total_days_this_period: 1.5
-  total_days_next_period: 1.5
+  leave_begin: 2010-12-01
+  leave_end: 2010-12-01
+  total_days: 1.5
   ref_file: MyString
   employee_id: 1
-  reported_on: 2010-11-30
+  reported_on: 2010-12-01
   gma_user_id: 1
 
 two:
   leave_type: 1
-  leave_begin: 2010-11-30
-  leave_end: 2010-11-30
-  total_days_this_period: 1.5
-  total_days_next_period: 1.5
+  leave_begin: 2010-12-01
+  leave_end: 2010-12-01
+  total_days: 1.5
   ref_file: MyString
   employee_id: 1
-  reported_on: 2010-11-30
+  reported_on: 2010-12-01
   gma_user_id: 1

@@ -103,15 +103,15 @@ GEM
       proxies
     s4t-utils (1.0.4)
       hoe (>= 1.3.0)
-    sequel (3.15.0)
+    sequel (3.17.0)
     sinatra (1.0)
       rack (>= 1.0)
     sqlite3-ruby (1.3.1)
-    taps (0.3.13)
+    taps (0.3.14)
       json_pure (>= 1.2.0, < 1.5.0)
       rack (>= 1.0.1)
       rest-client (>= 1.4.0, < 1.7.0)
-      sequel (~> 3.15.0)
+      sequel (~> 3.17.0)
       sinatra (~> 1.0.0)
       sqlite3-ruby (~> 1.2)
     treetop (1.4.8)
@@ -148,5 +148,5 @@ DEPENDENCIES
   rmagick
   ruby-debug
   rubyzip
-  taps
+  taps (= 0.3.14)
   will_paginate

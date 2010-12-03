@@ -2,20 +2,28 @@
 <% fields_for penalty do |f| %>
   <table width="100%">
     <tr>
-      <td class="field-name">สถานที่ดูงานหรือฝึกอบรม</td>
-      <td colspan='2'><%= f.text_field :name, :style=>"width:300px;" %></td>
+      <td class="field-name">วันที่ดำเนินการ</td>
+      <td colspan='2'><%= f.date_select_year :issued_on, :start_year=>Time.now.year-2, :end_year=>Time.now.year %></td>
     </tr>
     <tr>
-      <td class="field-name">วุฒิที่ได้รับ</td>
-      <td colspan='2'><%= f.text_field :certificate, :style=>"width:300px;" %></td>
+      <td class="field-name">เรื่อง</td>
+      <td colspan='2'><%= f.text_field :summary, :style=>"width:300px;" %></td>
     </tr>
     <tr>
-      <td class="field-name">วันที่เริ่มต้น</td>
-      <td colspan='2'><%= f.date_select_year :train_begin, :start_year=>30.years.ago.year, :end_year=>Time.now.year %></td>
+      <td class="field-name">รายละเอียด</td>
+      <td colspan="2"><%= f.text_area :description, :cols=>50, :rows=>6 %></td>
     </tr>
     <tr>
-      <td class="field-name">วันที่สิ้นสุด</td>
-      <td colspan='2'><%= f.date_select_year :train_end, :start_year=>30.years.ago.year, :end_year=>Time.now.year %></td>
+      <td class="field-name">โทษ</td>
+      <td colspan="2"><%= f.text_area :sentence, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">คำสั่ง</td>
+      <td colspan='2'><%= f.text_field :ref, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สแกนเอกสารอ้างอิง</td>
+      <td colspan='2'><%= f.file_field :ref_file %></td>
     </tr>
   </table>
 <% end %>

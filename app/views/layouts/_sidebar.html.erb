@@ -4,12 +4,12 @@
       <% gma_module.gma_services.each do |s| %>
         <% next unless s.listed %>
         <% xml= REXML::Document.new(s.xml).root %>
-        <% rule= get_option_xml("rule", xml.elements['node']) %>
-        <%# debugger %>
-        <% next if rule && (!eval(rule)) %>
-        <% role= get_option_xml("role", xml.elements['node']) %>
-        <% next if role && ! current_user.role %>
-        <% next unless current_user.role.upcase.split(',').include?(role.upcase) if role %>
+        <% unless s.rule.blank? %>
+          <% next if (!eval(s.rule)) %>
+        <% end %>
+        <% unless s.role.blank? %>
+          <% next unless current_user.role.upcase.split(',').include?(s.role.upcase) %>
+        <% end %>
         <% confirm= get_option_xml("confirm", xml) %>
         <% confirm_hash = confirm ? {:confirm=> confirm.to_s=='true' ? "Are you sure ?" : confirm} : {} %>
         <% if s.code.downcase=="link" %>

@@ -8,6 +8,7 @@
     %th ยกเลิก
   - @xmains.each do |xmain|
     - @xmain= xmain
+    - next unless xmain.current_runseq
     - @runseq= GmaRunseq.find(xmain.current_runseq)
     - next unless @runseq
     - next unless %w(form output pdf).include?(@runseq.action)
