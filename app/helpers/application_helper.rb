@@ -4,10 +4,10 @@ module ApplicationHelper
   include FusionChartsHelper
 
   def palad
-    User.find 4
+    User.find PALAD
   end
   def income_summary_maker
-    User.find 2
+    User.find INCOME_SUMMARY_MAKER
   end
   #------------------------
   def leave_options

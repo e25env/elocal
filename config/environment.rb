@@ -1,11 +1,5 @@
 # Be sure to restart your server when you modify this file
 
-# Passenger and Nginx doesn't work, they cannot find gem
-#ENV['PATH'] = "#{ENV['PATH']}:/usr/lib/ruby/gems/1.8"
-#ENV['LD_LIBRARY_PATH'] = "#{ENV['LD_LIBRARY_PATH']}:/usr/lib/ruby/gems/1.8"
-#ENV['GEM_PATH'] = "/usr/lib/ruby/gems/1.8:#{ENV['GEM_PATH']}"
-#Gem.clear_paths
-
 # Specifies gem version of Rails to use when vendor/rails is not present
 RAILS_GEM_VERSION = '2.3.5' unless defined? RAILS_GEM_VERSION
 
@@ -26,24 +20,6 @@ Rails::Initializer.run do |config|
   # config.gem "sqlite3-ruby", :lib => "sqlite3"
   # config.gem "aws-s3", :lib => "aws/s3"
 
-  # move to Gemfile
-#  config.gem "linguistics"
-#  config.gem "will_paginate"
-#  config.gem "RedCloth"
-#  config.gem "mechanize"
-#  config.gem "rmagick", :lib => "RMagick"
-#  config.gem "geokit"
-#  config.gem 'rubyzip', :lib => 'zip/zip'
-#  config.gem 'haml'
-#  config.gem 'hpricot'
-#  config.gem 'pg'
-#  config.gem 'mongo_mapper'
-#  config.gem 'bson_ext', :lib=>false
-#  config.gem 'firewatir', :version => "1.6.5"
-#  config.gem 'chronic'
-##  config.gem 'javan-whenever', :lib => false, :source => 'http://gems.github.com'
-#  config.gem "mail", :version=>"2.2.1"
-#  config.gem "backup"
 
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
@@ -69,7 +45,4 @@ Rails::Initializer.run do |config|
   IMAGE_LOCATION = "doc/upload"
   CDN = false
   GMAP = false
-  LAAS_USER = "abtbtnai714"
-  LAAS_PASSWORD = "318883"
-  LAAS_RETRY = 3
 end
