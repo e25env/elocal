@@ -10,13 +10,13 @@ class User < GmaUser
     find :all, :conditions=>['id!=? AND login!=?', session[:user_id], 'anonymous'], :order=>:fname
   end
   def self.finance_head
-    find 5
+    find FINANCE_HEAD
   end
   def self.palat
-    find 4
+    find PALAD
   end
   def self.mayor
-    find 3
+    find MAYOR
   end
   def full_name
     "#{title}#{fname} #{lname}"
