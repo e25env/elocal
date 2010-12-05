@@ -21,4 +21,7 @@ class User < GmaUser
   def full_name
     "#{title}#{fname} #{lname}"
   end
+  def secured?
+    role.upcase.split(',').include?(SECURED_ROLE)
+  end
 end

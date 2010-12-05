@@ -21,15 +21,24 @@ class MainController < ApplicationController
   def search
     if params[:q]
       @q = params[:q]
-    else
+      do_search
+    elsif params[:gma_search]
       @q = params[:gma_search][:q]
       s= GmaSearch.new params[:gma_search]
       s.ip= request.env["REMOTE_ADDR"]
       s.save
+      do_search
+    else
+      redirect_to "/"
     end
-    @docs = GmaDoc.search(@q.downcase, params[:page], 10)
+  end
+  def do_search
+    if current_user.secured?
+      @docs = GmaDoc.search_secured(@q.downcase, params[:page], 10)
+    else
+      @docs = GmaDoc.search(@q.downcase, params[:page], 10)
+    end
     @xmains = GmaXmain.find @docs.map(&:gma_xmain_id)
-    #@xmains = GmaXmain.search(@q.downcase, params[:page], 10)
   end
   def err404
     gma_log 'ERROR', 'main/err404'

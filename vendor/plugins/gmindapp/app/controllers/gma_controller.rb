@@ -217,7 +217,8 @@ class GmaController < ApplicationController
           role= get_option_xml("role", s) || ""
           rule= get_option_xml("rule", s) || ""
           gma_service= GmaService.find_or_create_by_module_and_code_and_name module_code, scode, sname
-          gma_service.update_attributes :xml=>s.to_s, :name=>sname, :listed=>listed(s),
+          gma_service.update_attributes :xml=>s.to_s, :name=>sname,
+            :listed=>listed(s), :secured=>secured?(s),
             :gma_module_id=>gma_module.id, :seq => seq,
             :role => role, :rule => rule
           seq += 1
@@ -228,7 +229,8 @@ class GmaController < ApplicationController
           role= get_option_xml("role", step1) || ""
           rule= get_option_xml("rule", step1) || ""
           gma_service= GmaService.find_or_create_by_module_and_code module_code, scode
-          gma_service.update_attributes :xml=>s.to_s, :name=>sname, :listed=>listed(s),
+          gma_service.update_attributes :xml=>s.to_s, :name=>sname,
+            :listed=>listed(s), :secured=>secured?(s),
             :gma_module_id=>gma_module.id, :seq => seq,
             :role => role, :rule => rule
           seq += 1

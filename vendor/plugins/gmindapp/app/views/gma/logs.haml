@@ -9,6 +9,7 @@
     %th สถานะ
     %th ยกเลิก
   - @xmains.each do |xmain|
+    - next unless xmain.current_runseq
     - runseq= GmaRunseq.find(xmain.current_runseq)
     %tr
       %td= xmain.id

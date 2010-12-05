@@ -12,6 +12,7 @@ class AddGmaTables < ActiveRecord::Migration
       t.integer  "gma_service_id"
       t.text     "ip"
       t.boolean  "display"
+      t.boolean  "secured", :default=>false
       t.datetime "created_at"
       t.datetime "updated_at"
     end
@@ -95,6 +96,7 @@ class AddGmaTables < ActiveRecord::Migration
       t.string   "rule"
       t.integer  "seq"
       t.boolean  "listed"
+      t.boolean  "secured"
       t.integer  "gma_user_id"
       t.datetime "created_at"
       t.datetime "updated_at"

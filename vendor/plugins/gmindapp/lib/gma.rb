@@ -459,16 +459,6 @@ module Gma
     end
     f
   end
-#  def make_fields(n)
-#    f= ""
-#    n.each_element('node') do |nn|
-#      next if nn.attributes['TEXT'] =~ /\#.*/
-#      k,v= nn.attributes['TEXT'].split(/:\s*/,2)
-#      v ||= 'integer'
-#      f << "      t.#{v.strip} :#{name2code(k.strip)}\n"
-#    end
-#    f
-#  end
 
   # old listed use edge to identified unlisted services, on my machine it's very
   # difficult to see the difference between thin edge and normal edge
@@ -477,8 +467,20 @@ module Gma
 #    return edge ? node.elements["edge"].attributes["WIDTH"] != "thin" : true
 #  end
   def listed(node)
-    icon= node.elements["icon"]
-    return icon ? node.elements["icon"].attributes["BUILTIN"] != "closed" : true
+    icons=[]
+    node.each_element("icon") do |nn|
+      icons << nn.attributes["BUILTIN"]
+    end
+    return !icons.include?("closed")
+##    icon= node.elements["icon"]
+#    return icon ? node.elements["icon"].attributes["BUILTIN"] != "closed" : true
+  end
+  def secured?(node)
+    icons=[]
+    node.each_element("icon") do |nn|
+      icons << nn.attributes["BUILTIN"]
+    end
+    return icons.include?("password")
   end
   def freemind2action(s)
     case s.downcase

@@ -11,6 +11,7 @@ class AddRoleToGmaService < ActiveRecord::Migration
       t.string   "rule"
       t.integer  "seq"
       t.boolean  "listed"
+      t.boolean  "secured"
       t.integer  "gma_user_id"
       t.datetime "created_at"
       t.datetime "updated_at"

@@ -5,6 +5,12 @@ class GmaDoc < ActiveRecord::Base
 
   def self.search(q, page, per_page=10)
     paginate :per_page=>per_page, :page => page, :conditions =>
+      ["content_type=? AND data_text LIKE ? AND secured = ?",
+      "output", "%#{q}%", false ],
+      :order=>'gma_xmain_id DESC', :select=>'DISTINCT gma_xmain_id'
+  end
+  def self.search_secured(q, page, per_page=10)
+    paginate :per_page=>per_page, :page => page, :conditions =>
       ["content_type=? AND data_text LIKE ?", "output", "%#{q}%" ],
       :order=>'gma_xmain_id DESC', :select=>'DISTINCT gma_xmain_id'
   end
