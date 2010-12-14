@@ -47,15 +47,15 @@
       %tr
         %td(align='right')= i+1
         %td= s.full_name
-        %td= s.nid
+        %td= s.person.nid
         %td= s.moo
-        %td= s.address
+        %td= s.person.address.address
         %td(align='center')
-          - if s.year_only
-            = s.yob
+          - if s.person.year_only
+            = s.person.yob
           - else
-            = date_thai s.dob.to_datetime, :date_only=>true
-        %td(align='center')=  sex(s.title)
+            = date_thai s.person.dob.to_datetime, :date_only=>true
+        %td(align='center')=  sex(s.person.title)
         %td
           = check_box_tag :alive
           ยังมีชีวิตอยู่

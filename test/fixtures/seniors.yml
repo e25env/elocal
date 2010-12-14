@@ -1,39 +1,25 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
-  title: MyString
-  fname: MyString
-  lname: MyString
-  address: MyString
-  moo: 1
-  nid: MyString
-  dob: 2010-10-27
-  year_only: false
-  yob: 1
+  person_id: 1
+  address_id: 1
   status: 1
   budget: 1
   underprivileged: 1
-  dod: 2010-10-27
-  phone: MyString
   ref_in: MyString
   ref_out: MyString
+  moo: 1
+  fname: MyString
   gma_user_id: 1
 
 two:
-  title: MyString
-  fname: MyString
-  lname: MyString
-  address: MyString
-  moo: 1
-  nid: MyString
-  dob: 2010-10-27
-  year_only: false
-  yob: 1
+  person_id: 1
+  address_id: 1
   status: 1
   budget: 1
   underprivileged: 1
-  dod: 2010-10-27
-  phone: MyString
   ref_in: MyString
   ref_out: MyString
+  moo: 1
+  fname: MyString
   gma_user_id: 1
