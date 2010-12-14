@@ -1,4 +1,11 @@
 # lao specific
+PROVINCE_ID= 3
+DISTRICT_ID= 364
+# for lao with multiple sub_districts, do not define this constant
+SUB_DISTRICT_ID= 426
+# maximum number of moo (village)
+MAX_MOO= 5
+
 LAAS_USER = "abtbtnai714"
 LAAS_PASSWORD = "318883"
 LAAS_RETRY = 3

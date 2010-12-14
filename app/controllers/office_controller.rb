@@ -236,8 +236,26 @@ class OfficeController < ApplicationController
     @seniors= Senior.all :order=>'moo,fname'
   end
   def create_senior
+    address= Address.create $xvars[:enter][:address]
+    if SUB_DISTRICT_ID
+      address.sub_district_id= SUB_DISTRICT_ID
+    end
+    address.district_id= DISTRICT_ID
+    address.province_id= PROVINCE_ID
+    address.save
+    if Person.exists? :nid=>$xvars[:enter][:person][:nid]
+      person= Person.find_by_nid $xvars[:enter][:person][:nid]
+    else
+      person= Person.create $xvars[:enter][:person]
+      person.address_id= address.id
+      person.save
+    end
     s= Senior.create $xvars[:enter][:senior]
     if s.id
+      s.person_id= person.id
+      s.fname= person.fname
+      s.moo= address.moo
+      s.save
       gma_notice "ขึ้นทะเบียนผู้ด้อยโอกาสเรียบร้อยแล้ว"
     else
       gma_notice s.errors[:nid]

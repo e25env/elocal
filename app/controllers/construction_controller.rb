@@ -1,2 +1,0 @@
-class ConstructionController < ApplicationController
-end

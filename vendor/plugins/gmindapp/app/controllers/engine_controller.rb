@@ -429,7 +429,7 @@ class EngineController < ApplicationController
     if GmaDoc.exists?(params[:id])
       doc = GmaDoc.find params[:id]
       if doc.secured
-        if current_user.secured?
+        if current_user.secured? || doc.gma_user_id==session[:user_id]
           view= true
         else
           view= false

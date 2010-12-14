@@ -1,0 +1,67 @@
+<% 
+  construction = Construction.new :received_on=>Date.today,
+    :issued_on => Date.today,
+    :receiver=> current_user.full_name, :written_at => Org.full_name
+  applicant = Person.new
+  applicant_address = Address.new
+  building_owner = Person.new
+  land_owner = Person.new
+  engineer = Person.new
+  architect = Person.new
+  company = Company.new
+  site = Address.new
+%>
+<table width="100%">
+  <% fields_for construction do |f| %>
+    <tr><td colspan='3' class="section">รายละเอียดทั่วไป</td></tr>
+    <tr>
+      <td class="field-name">ใบอนุญาตทำการ</td>
+      <td colspan='2'><%= f.select :construction_type, ['ก่อสร้างอาคาร','ดัดแปลงอาคาร','รื้อถอนอาคาร'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เลขรับที่</td>
+      <td colspan='2'><%= f.text_field :receive_num, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วันที่รับ</td>
+      <td colspan="2"><%= f.date_select_year :received_on, :start_year=>Time.now.year-1, :end_year => Time.now.year %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ผู้รับคำขอ</td>
+      <td colspan='2'><%= f.text_field :receiver, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เขียนที่</td>
+      <td colspan='2'><%= f.text_field :written_at, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วันที่</td>
+      <td colspan="2"><%= f.date_select_year :issued_on, :start_year=>Time.now.year-1, :end_year => Time.now.year %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ยื่นแบบในนาม</td>
+      <td colspan='2'><%= f.select :applicant_type, ['บุคคลธรรมดา','นิติบุคคล'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ยื่นขออนุญาต</td>
+      <td colspan='2'><%= f.select :license_type, ['ก่อสร้างอาคาร','ถมดิน'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">การใช้ประโยชน์</td>
+      <td colspan='2'><%= f.select :purpose, ['ที่อยู่อาศัย','การพาณิชย์','อุตสาหกรรม','อื่นๆ'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ระบุ</td>
+      <td colspan='2'><%= f.text_field :purpose_other, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เอกสารสิทธิ์</td>
+      <td colspan='2'><%= f.select :land_doc_type, ['โฉนดที่ดิน','น.ส. 3','ส.ค.1'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เอกสารสิทธิ์เลขที่</td>
+      <td colspan='2'><%= f.text_field :land_doc_num, :style=>"width:300px;" %></td>
+    </tr>
+  <% end %>
+</table>
+<%= fix_thai_year %>
