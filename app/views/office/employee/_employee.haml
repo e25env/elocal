@@ -8,7 +8,7 @@
     = link_to "แก้ไข", "/run/office/edit_employee/#{params[:id]}"
     %br
   %b
-    = employee.full_name
+    = employee.person.full_name
   %br
   - if employee.position
     = employee.position
@@ -18,30 +18,30 @@
     %br
   %b
     ที่อยู่ปัจจุบัน
-  = employee.address
-  - unless employee.moo.blank?
-    = "หมู่ "+employee.moo
-  - if employee.sub_district
-    = employee.sub_district.name
-    = district_prefix(employee.province_id)+employee.district.name
-    = province_prefix(employee.province_id)+employee.province.name
+  = employee.address.address
+  - unless employee.address.moo.blank?
+    = "หมู่ "+employee.address.moo
+  - if employee.address.sub_district
+    = employee.address.sub_district.name
+    = district_prefix(employee.address.province_id)+employee.address.district.name
+    = province_prefix(employee.address.province_id)+employee.address.province.name
   %br
   %b
     ที่อยู่ตามทะเบียนบ้าน
-  = employee.address_reg
-  - unless employee.moo_reg.blank?
-    = "หมู่ "+employee.moo_reg
-  - if employee.sub_district_reg
-    = employee.sub_district_reg.name
-    = district_prefix(employee.province_reg_id)+employee.district_reg.name
-    = province_prefix(employee.province_reg_id)+employee.province_reg.name
+  = employee.address_reg.address
+  - unless employee.address_reg.moo.blank?
+    = "หมู่ "+employee.address_reg.moo
+  - if employee.address_reg.sub_district
+    = employee.address_reg.sub_district.name
+    = district_prefix(employee.address_reg.province_id)+employee.address_reg.district.name
+    = province_prefix(employee.address_reg.province_id)+employee.province.name
   %br
   %b
     โทรศัพท์
-  = employee.phone
+  = employee.person.phone
   %b
     โทรศัพท์มือถือ
-  = employee.cell_phone
+  = employee.person.cell_phone
 :css
   .b {font-weight:bold;}
 %table(style="clear:both;")
@@ -59,38 +59,38 @@
     %td.b
       คู่สมรส
     %td
-      = employee.spouse_full_name
+      = employee.spouse.full_name
   %tr
     %td.b
       สถานที่ประกอบอาชีพ
     %td
-      = employee.spouse_work
+      = employee.spouse.work
   %tr
     %td.b
       บิดา
     %td
-      = employee.father_full_name
+      = employee.father.full_name
   %tr
     %td.b
       มารดา
     %td
-      = employee.mother_full_name
+      = employee.mother.full_name
   %tr
     %td.b
       ที่อยู่ปัจจุบัน
     %td
-      = employee.parent_address
-      - unless employee.parent_moo.blank?
-        = "หมู่ "+employee.parent_moo
-      - if employee.parent_sub_district
-        = employee.parent_sub_district.name if employee.parent_sub_district
-        = district_prefix(employee.parent_province_id)+employee.parent_district.name if employee.parent_district
-        = province_prefix(employee.parent_province_id)+employee.parent_province.name if employee.parent_province
+      = employee.address_relative.address
+      - unless employee.address_relative.moo.blank?
+        = "หมู่ "+employee.address_relative.moo
+      - if employee.address_relative.sub_district
+        = employee.address_relative.sub_district.name if employee.address_relative.sub_district
+        = district_prefix(employee.address_relative.province_id)+employee.parent_district.name if employee.address_relative.district
+        = province_prefix(employee.parent_province_id)+employee.address_relative.province.name if employee.address_relative.province
   %tr
     %td.b
       โทรศัพท์
     %td
-      = employee.parent_phone
+      = employee.address_relative.phone
   %tr
     %td.b
       ความสามารถพิเศษ

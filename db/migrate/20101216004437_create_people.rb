@@ -12,6 +12,8 @@ class CreatePeople < ActiveRecord::Migration
       t.integer :yob
       t.date :dod
       t.string :phone
+      t.string :cell_phone
+      t.string :work
       t.integer :gma_user_id
 
       t.timestamps

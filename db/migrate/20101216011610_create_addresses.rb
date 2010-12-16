@@ -7,6 +7,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.integer :sub_district_id
       t.integer :district_id
       t.integer :province_id
+      t.string :phone
       t.integer :address_type
       t.string :doc
       t.float :latitude

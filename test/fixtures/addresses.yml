@@ -7,6 +7,7 @@ one:
   sub_district_id: 1
   district_id: 1
   province_id: 1
+  phone: MyString
   address_type: 1
   doc: MyString
   latitude: 1.5
@@ -20,6 +21,7 @@ two:
   sub_district_id: 1
   district_id: 1
   province_id: 1
+  phone: MyString
   address_type: 1
   doc: MyString
   latitude: 1.5

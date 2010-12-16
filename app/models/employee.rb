@@ -8,28 +8,20 @@ class Employee < ActiveRecord::Base
   has_many :leaves, :order=>"leave_begin", :class_name => "Leave"
   has_many :leave_summaries, :order=>"reported_on"
 
-  belongs_to :section
-  belongs_to :sub_district
-  belongs_to :district
-  belongs_to :province
-  belongs_to :sub_district_reg, :class_name => "SubDistrict"
-  belongs_to :district_reg, :class_name => "District"
-  belongs_to :province_reg, :class_name => "Province"
-  belongs_to :parent_sub_district, :class_name => "SubDistrict"
-  belongs_to :parent_district, :class_name => "District"
-  belongs_to :parent_province, :class_name => "Province"
-#  belongs_to :education_level
+  belongs_to :person
+  belongs_to :address
+  belongs_to :address_reg, :class_name=>"Address"
+  belongs_to :address_relative, :class_name=>"Address"
+  belongs_to :spouse, :class_name=>"Person"
+  belongs_to :mother, :class_name=>"Person"
+  belongs_to :father, :class_name=>"Person"
 
-  def full_name
-    "#{title}#{fname} #{lname}"
-  end
-  def father_full_name
-    return father_fname.blank? ? "-" : "นาย#{father_fname} #{father_lname}"
-  end
-  def mother_full_name
-    return mother_fname.blank? ? "-" : "#{mother_title}#{mother_fname} #{mother_lname}"
-  end
-  def spouse_full_name
-    return spouse_fname.blank? ? "-" : "#{spouse_title}#{spouse_fname} #{spouse_lname}"
-  end
+  belongs_to :section
+#  belongs_to :sub_district_reg, :class_name => "SubDistrict"
+#  belongs_to :district_reg, :class_name => "District"
+#  belongs_to :province_reg, :class_name => "Province"
+#  belongs_to :parent_sub_district, :class_name => "SubDistrict"
+#  belongs_to :parent_district, :class_name => "District"
+#  belongs_to :parent_province, :class_name => "Province"
+#  belongs_to :education_level
 end

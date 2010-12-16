@@ -173,8 +173,24 @@ class OfficeController < ApplicationController
   end
   def create_employee
     e= Employee.new $xvars[:enter][:employee]
+    address= Address.create $xvars[:enter][:address]
+    person= Person.create $xvars[:enter][:person]
+    person.address_id= address.id
+    person.save
+    address_reg= Address.create $xvars[:enter][:address_reg]
+    spouse= Person.create $xvars[:enter][:spouse]
+    father= Person.create $xvars[:enter][:father]
+    mother= Person.create $xvars[:enter][:mother]
+    address_relative= Address.create $xvars[:enter][:address_relative]
+    e.person_id= person.id
+    e.address_id= address.id
+    e.address_reg_id= address_reg.id
+    e.address_relative_id= address_relative.id
+    e.spouse_id= spouse.id
+    e.father_id= father.id
+    e.mother_id= mother.id
     e.status= 1
-    e.retired_on= Date.new e.dob.year+60,9,30
+    e.retired_on= Date.new e.person.dob.year+60,9,30
     e.save
     $xvars[:employee_id]= e.id
     EmployeePhoto.create :employee_id=> e.id,
