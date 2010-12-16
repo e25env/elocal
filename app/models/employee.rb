@@ -1,4 +1,6 @@
 class Employee < ActiveRecord::Base
+  named_scope :active, :conditions=>"status=1"
+
   has_many :employee_photos, :order=>"taken_on"
   has_many :jobs, :order=>"effective_on"
   has_many :decorations, :order=>"received_on"
@@ -17,11 +19,6 @@ class Employee < ActiveRecord::Base
   belongs_to :father, :class_name=>"Person"
 
   belongs_to :section
-#  belongs_to :sub_district_reg, :class_name => "SubDistrict"
-#  belongs_to :district_reg, :class_name => "District"
-#  belongs_to :province_reg, :class_name => "Province"
-#  belongs_to :parent_sub_district, :class_name => "SubDistrict"
-#  belongs_to :parent_district, :class_name => "District"
-#  belongs_to :parent_province, :class_name => "Province"
-#  belongs_to :education_level
+  belongs_to :education_level
+
 end

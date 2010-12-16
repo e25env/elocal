@@ -199,6 +199,11 @@ class OfficeController < ApplicationController
     $xvars[:p][:return]= "/office/employee/#{e.id}"
     gma_notice "กรุณาเลือกแท็บตำแหน่ง, การศึกษา, ฯลฯ และใส่รายละเอียดเพิ่มเติมให้ครบถ้วนสมบูรณ์"
   end
+  def rm_employee
+    e= Employee.find $xvars[:p][:id]
+    e.update_attribute :status, 2
+    $xvars[:p][:return]= "/office/hr"
+  end
   def create_student
     s= Student.new $xvars[:enter][:student]
     s.status= 1
@@ -211,7 +216,7 @@ class OfficeController < ApplicationController
     @nursery= Nursery.find params[:id]
   end
   def hr
-    @employees= Employee.all
+    @employees= Employee.active
   end
   def policies
     @nurseries= Nursery.all

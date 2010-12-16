@@ -180,7 +180,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1292277703471" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
+<node CREATED="1279397496008" ID="ID_587395922" MODIFIED="1292470780603" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
 <node CREATED="1279397879537" FOLDED="true" ID="ID_1756095802" MODIFIED="1289549642509" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
@@ -416,7 +416,7 @@
 <icon BUILTIN="password"/>
 <node CREATED="1280841997526" ID="ID_1461839110" MODIFIED="1286584288110" TEXT="enter:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
 <icon BUILTIN="attach"/>
-<node CREATED="1286584320837" ID="ID_827394581" MODIFIED="1286584323809" TEXT="role:co"/>
+<node CREATED="1286584320837" ID="ID_827394581" MODIFIED="1292470823164" TEXT="role:HR"/>
 </node>
 <node CREATED="1291590678095" ID="ID_575210138" MODIFIED="1291590707463" TEXT="search">
 <icon BUILTIN="pencil"/>
@@ -424,6 +424,13 @@
 </node>
 <node CREATED="1280842013459" ID="ID_625061469" MODIFIED="1290737477761" TEXT="create_employee: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe1a;&#xe38;&#xe04;&#xe04;&#xe25;&#xe32;&#xe01;&#xe23;">
 <icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1292470796396" ID="ID_661483257" MODIFIED="1292470829806" TEXT="rm_employee">
+<icon BUILTIN="closed"/>
+<node CREATED="1292470802648" ID="ID_1978697981" MODIFIED="1292470836562" TEXT="rm_employee">
+<icon BUILTIN="bookmark"/>
+<node CREATED="1292470810366" ID="ID_537742549" MODIFIED="1292470813258" TEXT="role:HR"/>
 </node>
 </node>
 <node CREATED="1283041828720" ID="ID_1285114214" MODIFIED="1291036590081" TEXT="edit_employee:&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe1a;&#xe38;&#xe04;&#xe04;&#xe25;&#xe32;&#xe01;&#xe23;">
@@ -1334,6 +1341,7 @@
 <node CREATED="1289549172115" ID="ID_314588305" MODIFIED="1289549183685" TEXT="blood_type:string"/>
 <node CREATED="1289074553582" ID="ID_1348881289" MODIFIED="1289074558029" TEXT="status">
 <node CREATED="1290737875534" ID="ID_732091802" MODIFIED="1290737878814" TEXT="1: active"/>
+<node CREATED="1292471062784" ID="ID_1386798541" MODIFIED="1292471075063" TEXT="2: removed"/>
 </node>
 <node CREATED="1290823140269" ID="ID_1490852031" MODIFIED="1290823144705" TEXT="photo:string"/>
 <node CREATED="1290823291228" ID="ID_250814046" MODIFIED="1290823298319" TEXT="taken_on:date"/>
