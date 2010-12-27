@@ -7,6 +7,18 @@ class SongritController < ApplicationController
   require 'nokogiri'
   require 'mechanize'
 
+  def sample_laas
+    x= GmaXmain.last
+#    s = "ff.goto('http://www.google.com')"
+    s = "ff.goto('http://www.laas.go.th/Default.aspx?menu=09B4E06F-B898-442C-915E-663BA50E82DC&control=list&screenname=budget_expense_first');"
+    s << "ff.select_list(:id,'_ctl0__ctl0_FbddlPlan_ddlMain').select_value('2111E72B-829F-41C3-B9D9-9F0F74FE3D7E');"
+    s << "ff.select_list(:id,'_ctl0__ctl0_FbddlJob_ddlMain').select_value('C8BB79D4-34EA-456F-9DD8-2E88FED268EF');"
+    s << "ff.button(:name,'_ctl0:_ctl0:search').click;"
+    LaasQueue.create :xmain_id=>x.id, :name=>"ทดสอบ",
+      :description => "test", :script => s, :confirm => "จัดสรร",
+      :status => 0, :retry => 0
+    redirect_to :controller => "finance", :action => "laas"
+  end
   def test_period
 #    l = Leave.first
 #    render :text => l.this_period?
@@ -33,14 +45,6 @@ class SongritController < ApplicationController
         :district_id => district ? district.id : nil
     end
     render :text => "done"
-  end
-  def sample_laas
-    x= GmaXmain.last
-    s = "ff.goto('http://www.google.com')"
-    LaasQueue.create :xmain_id=>x.id, :name=>x.name,
-      :description => "test", :script => s, :confirm => "จัดสรร",
-      :status => 0, :retry => 0
-    redirect_to :controller => "finance", :action => "laas"
   end
   def fix_rcat
     Rcat.all.each {|c| 

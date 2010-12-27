@@ -15,5 +15,8 @@ PALAD = 4
 FINANCE_HEAD = 5
 # GmaUser for income summary person
 INCOME_SUMMARY_MAKER = 2
+
+FINANCE_SECTION = 2
+
 # role for security officer (can search for everything)
 SECURED_ROLE = 'S'
