@@ -1,0 +1,179 @@
+<% employee = Employee.find $xvars[:p][:id]  %>
+<% fields_for employee do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td><%= f.text_field :nid, :style=>"width:200px;" %></td>
+      <td>เลข 13 หลัก ไม่ต้องใส่เครื่องหมาย -</td>
+    </tr>
+    <tr>
+      <td class="field-name">ที่อยู่ปัจจุบัน</td>
+      <td colspan='2'><%= f.text_field :address, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.text_field :moo, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จังหวัด</td>
+      <td colspan='2'><%= f.collection_select :province_id, Province.all, :id, :name, :include_blank=>"กรุณาเลือกจังหวัด" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อำเภอ</td>
+      <td colspan='2'><%= f.collection_select :district_id, employee.province.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำบล</td>
+      <td colspan='2'><%= f.collection_select :sub_district_id, employee.district.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ที่อยู่ตามทะเบียนบ้าน</td>
+      <td colspan='2'><%= f.text_field :address_reg, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.text_field :moo_reg, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จังหวัด</td>
+      <td colspan='2'><%= f.collection_select :province_reg_id, Province.all, :id, :name, :include_blank=>"กรุณาเลือกจังหวัด" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อำเภอ</td>
+      <td colspan='2'><%= f.collection_select :district_reg_id, employee.province_reg.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำบล</td>
+      <td colspan='2'><%= f.collection_select :sub_district_reg_id, employee.district_reg.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">โทรศัพท์</td>
+      <td colspan='2'><%= f.text_field :phone, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">โทรศัพท์มือถือ</td>
+      <td colspan='2'><%= f.text_field :cell_phone, :style=>"width:300px;" %></td>
+    </tr>
+    <tr id="dob">
+      <td class="field-name">วันเดือนปีเกิด</td>
+      <td colspan="2"><%= f.date_select_year :dob, :default=>16.years.ago, :start_year=>Time.now.year-60, :end_year => Time.now.year-16 %></td>
+    </tr>
+    <tr id="dob">
+      <td class="field-name">เริ่มต้นรับราชการ</td>
+      <td colspan="2"><%= f.date_select_year :begin_gov_service_on, :start_year => Time.now.year-45, :end_year => Time.now.year    %></td>
+    </tr>
+    <tr>
+      <td class="field-name">คำนำหน้าคู่สมรส</td>
+      <td colspan='2'><%= f.select :spouse_title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อคู่สมรส</td>
+      <td colspan='2'><%= f.text_field :spouse_fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุลคู่สมรส</td>
+      <td colspan='2'><%= f.text_field :spouse_lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อาชีพคู่สมรส</td>
+      <td colspan='2'><%= f.text_field :spouse_work, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อบิดา</td>
+      <td colspan='2'><%= f.text_field :father_fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุลบิดา</td>
+      <td colspan='2'><%= f.text_field :father_lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">คำนำหน้ามารดา</td>
+      <td colspan='2'><%= f.select :mother_title, ['นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อมารดา</td>
+      <td colspan='2'><%= f.text_field :mother_fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุลมารดา</td>
+      <td colspan='2'><%= f.text_field :mother_lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ที่อยู่บิดา-มารดา</td>
+      <td colspan='2'><%= f.text_field :parent_address, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.text_field :parent_moo, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จังหวัด</td>
+      <td colspan='2'><%= f.collection_select :parent_province_id, Province.all, :id, :name, :include_blank=>"กรุณาเลือกจังหวัด" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อำเภอ</td>
+      <td colspan='2'><%= f.collection_select :parent_district_id, employee.parent_province.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำบล</td>
+      <td colspan='2'><%= f.collection_select :parent_sub_district_id, employee.parent_district.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">โทรศัพท์</td>
+      <td colspan='2'><%= f.text_field :parent_phone, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ทักษะ</td>
+      <td colspan="2"><%= f.text_area :skill, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่เลือด</td>
+      <td colspan='2'><%= f.select :blood_type, ['A','B','AB','O'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ภาพสแกนลายมือชื่อ</td>
+      <td colspan='2'><%= f.file_field :signature %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รหัสประจำตำแหน่ง</td>
+      <td colspan='2'><%= f.text_field :manpower_code, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อื่นๆ</td>
+      <td colspan="2"><%= f.text_area :comment, :cols=>50, :rows=>6 %></td>
+    </tr>
+  </table>
+<% end %>
+<%= fix_thai_year %>
+<script type="text/javascript" >
+  $('#employee_province_id').change(function() {
+    $('#employee_district_id').html('').load('/office/get_districts/'+$('#employee_province_id option:selected').val());
+  });
+  $('#employee_district_id').change(function() {
+    $('#employee_sub_district_id').html('').load('/office/get_sub_districts/'+$('#employee_district_id option:selected').val());
+  });
+  $('#employee_province_reg_id').change(function() {
+    $('#employee_district_reg_id').html('').load('/office/get_districts/'+$('#employee_province_reg_id option:selected').val());
+  });
+  $('#employee_district_reg_id').change(function() {
+    $('#employee_sub_district_reg_id').html('').load('/office/get_sub_districts/'+$('#employee_district_reg_id option:selected').val());
+  });
+  $('#employee_parent_province_id').change(function() {
+    $('#employee_parent_district_id').html('').load('/office/get_districts/'+$('#employee_parent_province_id option:selected').val());
+  });
+  $('#employee_parent_district_id').change(function() {
+    $('#employee_parent_sub_district_id').html('').load('/office/get_sub_districts/'+$('#employee_parent_district_id option:selected').val());
+  });
+</script>

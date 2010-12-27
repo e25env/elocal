@@ -13,7 +13,7 @@
   - @employees.each do |e|
     %tr
       - if office_office?
-        %td= link_to image_tag('pencil.png'), "/run/office/edit_employee/#{e.id}", :confirm=>"กรุณายืนยัน"
+        %td= link_to image_tag('pencil.png'), "/run/office/edit_employee/#{e.id}"
         %td= link_to image_tag('cross.png'), "/run/office/rm_employee/#{e.id}", :confirm=>"กรุณายืนยัน"
       %td= link_to e.person.full_name, "/office/employee/#{e.id}"
       %td= e.position

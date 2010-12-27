@@ -33,12 +33,6 @@ class OfficeController < ApplicationController
     gma_notice "บันทึกวันลาสะสมเรียบร้อยแล้ว"
     $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}?i=4"
   end
-  def update_employee
-    employee= Employee.find $xvars[:p][:id]
-    employee.update_attributes $xvars[:enter][:employee]
-    gma_notice "แก้ไขข้อมูลเรียบร้อยแล้ว"
-    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}"
-  end
   def employee_photo
     @employee= Employee.find params[:id]
   end
@@ -198,6 +192,19 @@ class OfficeController < ApplicationController
       :taken_on => e.taken_on
     $xvars[:p][:return]= "/office/employee/#{e.id}"
     gma_notice "กรุณาเลือกแท็บตำแหน่ง, การศึกษา, ฯลฯ และใส่รายละเอียดเพิ่มเติมให้ครบถ้วนสมบูรณ์"
+  end
+  def update_employee
+    employee= Employee.find $xvars[:p][:id]
+    employee.update_attributes $xvars[:enter][:employee]
+    employee.person.update_attributes $xvars[:enter][:person]
+    employee.address.update_attributes $xvars[:enter][:address]
+    employee.address_reg.update_attributes $xvars[:enter][:address_reg]
+    employee.address_relative.update_attributes $xvars[:enter][:address_relative]
+    employee.spouse.update_attributes $xvars[:enter][:spouse]
+    employee.father.update_attributes $xvars[:enter][:father]
+    employee.mother.update_attributes $xvars[:enter][:mother]
+    gma_notice "แก้ไขข้อมูลเรียบร้อยแล้ว"
+    $xvars[:p][:return]= "/office/employee/#{$xvars[:p][:id]}"
   end
   def rm_employee
     e= Employee.find $xvars[:p][:id]
