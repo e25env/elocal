@@ -20,3 +20,4 @@ FINANCE_SECTION = 2
 
 # role for security officer (can search for everything)
 SECURED_ROLE = 'S'
+PER_PAGE = 25

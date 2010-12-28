@@ -1,0 +1,13 @@
+<%  nursery = Nursery.new %>
+<% fields_for nursery do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :name, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">โทรศัพท์</td>
+      <td colspan='2'><%= f.text_field :phone, :style=>"width:300px;" %></td>
+    </tr>
+  </table>
+<% end %>

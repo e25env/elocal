@@ -10,6 +10,10 @@
           <li class="m"><%= link_to "<span>#{m.name}</span>","/gma/logs?module=#{m.code}" %></li>
         <% elsif m.code == 'finance' %>
           <li class="m"><%= link_to "<span>#{m.name}</span>","/finance?module=#{m.code}" %></li>
+        <% elsif m.code == 'education' %>
+          <li class="m"><%= link_to "<span>#{m.name}</span>","/education/nurseries?module=#{m.code}" %></li>
+        <% elsif m.code == 'social' %>
+          <li class="m"><%= link_to "<span>#{m.name}</span>","/social/seniors?module=#{m.code}" %></li>
         <% else %>
           <li class="m"><%= link_to "<span>#{m.name}</span>","/?module=#{m.code}" %></li>
         <% end %>

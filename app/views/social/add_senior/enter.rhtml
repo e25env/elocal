@@ -1,0 +1,89 @@
+<% y = Time.now.year+543
+   senior = Senior.new :budget=>1
+   person = Person.new :dob=>60.years.ago, :yob=>y-60,
+     :year_only=>false
+   address = Address.new
+%>
+<table width="100%">
+  <% fields_for senior do |f| %>
+    <tr>
+      <td class="field-name">งบประมาณ</td>
+      <td colspan='2'><%= f.select :budget, [['ท้องถิ่น',1],['รัฐบาล',2]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan='2'><%= f.select :underprivileged, [['ผู้สูงอายุ',1],['ผู้พิการ',2],['ผู้ป่วยโรคเอดส์',3]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เอกสารอ้างอิง</td>
+      <td colspan="2"><%= f.file_field :ref_in %></td>
+    </tr>
+  <% end %>
+  <% fields_for person do |f| %>
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td><%= f.text_field :nid, :style=>"width:300px;" %></td>
+      <td>เลข 13 หลัก ไม่ต้องใส่เครื่องหมาย -</td>
+    </tr>
+    <tr>
+      <td class="field-name">โทรศัพท์</td>
+      <td colspan='2'><%= f.text_field :phone, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">บันทึกวันเดือนปีเกิด ?</td>
+      <td colspan="2">
+        <%= f.radio_button :year_only, false %> วันเดือนปีเกิด
+        <%= f.radio_button :year_only, true %> เฉพาะปีเกิดเท่านั้น
+      </td>
+    </tr>
+    <tr id="dob">
+      <td class="field-name">วันเดือนปีเกิด</td>
+      <td colspan="2"><%= f.date_select_senior :dob %></td>
+    </tr>
+    <tr id="yob" style="display:none;">
+      <td class="field-name">ปีเกิด</td>
+      <td colspan="2"><%= f.select :yob, (y-110)..(y-60) %></td>
+    </tr>
+  <% end %>
+  <% fields_for address do |f| %>
+    <tr>
+      <td class="field-name">บ้านเลขที่</td>
+      <td colspan='2'><%= f.text_field :address, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.select :moo, 1..MAX_MOO %></td>
+    </tr>
+    <% unless SUB_DISTRICT_ID %>
+      <tr>
+        <td class="field-name">ตำบล</td>
+        <% district= District.find DISTRICT_ID %>
+        <td colspan='2'><%= f.select :sub_district_id, district.sub_districts.collect{|s| [s.name,s.id]} %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>
+<%= fix_thai_year %>
+<script type="text/javascript" >
+  $('input[name="person[year_only]"]').change(function() {
+    if ($('input[name="person[year_only]"]:checked').val()=="true") {
+      $('#yob').show();
+      $('#dob').hide();
+    } else {
+      $('#dob').show();
+      $('#yob').hide();
+    }
+  });
+</script>

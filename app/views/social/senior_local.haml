@@ -49,7 +49,7 @@
         %td= s.full_name
         %td= s.person.nid
         %td= s.moo
-        %td= s.person.address.address
+        %td= s.person.address ? s.person.address.address : ''
         %td(align='center')
           - if s.person.year_only
             = s.person.yob

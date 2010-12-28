@@ -34,9 +34,9 @@ class MainController < ApplicationController
   end
   def do_search
     if current_user.secured?
-      @docs = GmaDoc.search_secured(@q.downcase, params[:page], 10)
+      @docs = GmaDoc.search_secured(@q.downcase, params[:page], PER_PAGE)
     else
-      @docs = GmaDoc.search(@q.downcase, params[:page], 10)
+      @docs = GmaDoc.search(@q.downcase, params[:page], PER_PAGE)
     end
     @xmains = GmaXmain.find @docs.map(&:gma_xmain_id)
   end
