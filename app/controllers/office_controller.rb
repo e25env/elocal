@@ -141,6 +141,7 @@ class OfficeController < ApplicationController
     if $xvars[:enter][:employee_photo]
       ep= EmployeePhoto.create $xvars[:enter][:employee_photo]
       e.photo= ep.photo
+      e.person.photo= ep.photo
       e.taken_on= ep.taken_on
       # scale file to 150
       filename= "doc/upload/f#{$xvars[:enter][:employee_photo_photo_doc_id]}"
@@ -170,6 +171,7 @@ class OfficeController < ApplicationController
     address= Address.create $xvars[:enter][:address]
     person= Person.create $xvars[:enter][:person]
     person.address_id= address.id
+    person.photo= e.photo
     person.save
     address_reg= Address.create $xvars[:enter][:address_reg]
     spouse= Person.create $xvars[:enter][:spouse]

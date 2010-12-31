@@ -14,6 +14,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :phone
       t.string :cell_phone
       t.string :work
+      t.string :photo
       t.integer :gma_user_id
 
       t.timestamps

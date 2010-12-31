@@ -7,13 +7,14 @@ one:
   address_id: 1
   nid: MyString
   doc: MyString
-  dob: 2010-12-16
+  dob: 2011-01-01
   year_only: false
   yob: 1
-  dod: 2010-12-16
+  dod: 2011-01-01
   phone: MyString
   cell_phone: MyString
   work: MyString
+  photo: MyString
   gma_user_id: 1
 
 two:
@@ -23,11 +24,12 @@ two:
   address_id: 1
   nid: MyString
   doc: MyString
-  dob: 2010-12-16
+  dob: 2011-01-01
   year_only: false
   yob: 1
-  dod: 2010-12-16
+  dod: 2011-01-01
   phone: MyString
   cell_phone: MyString
   work: MyString
+  photo: MyString
   gma_user_id: 1

@@ -11,6 +11,7 @@
     %th ชื่อ
     %th ตำแหน่ง
   - @employees.each do |e|
+    - next unless e.person
     %tr
       - if office_office?
         %td= link_to image_tag('pencil.png'), "/run/office/edit_employee/#{e.id}"

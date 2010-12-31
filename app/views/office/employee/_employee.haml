@@ -20,7 +20,7 @@
     ที่อยู่ปัจจุบัน
   = employee.address.address
   - unless employee.address.moo.blank?
-    = "หมู่ "+employee.address.moo
+    = "หมู่ "+employee.address.moo.to_s
   - if employee.address.sub_district
     = employee.address.sub_district.name
     = district_prefix(employee.address.province_id)+employee.address.district.name
@@ -30,7 +30,7 @@
     ที่อยู่ตามทะเบียนบ้าน
   = employee.address_reg.address
   - unless employee.address_reg.moo.blank?
-    = "หมู่ "+employee.address_reg.moo
+    = "หมู่ "+employee.address_reg.moo.to_s
   - if employee.address_reg.sub_district
     = employee.address_reg.sub_district.name
     = district_prefix(employee.address_reg.province_id)+employee.address_reg.district.name
@@ -81,7 +81,7 @@
     %td
       = employee.address_relative.address
       - unless employee.address_relative.moo.blank?
-        = "หมู่ "+employee.address_relative.moo
+        = "หมู่ "+employee.address_relative.moo.to_s
       - if employee.address_relative.sub_district
         = employee.address_relative.sub_district.name if employee.address_relative.sub_district
         = district_prefix(employee.address_relative.province_id)+employee.address_relative.district.name if employee.address_relative.district

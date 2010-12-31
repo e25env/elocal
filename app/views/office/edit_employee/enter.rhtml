@@ -42,7 +42,12 @@
     </tr>
     <tr>
       <td class="field-name">สำเนาบัตรประชาชน</td>
-      <td colspan='2'><%= f.file_field :doc %></td>
+      <td><%= f.file_field :doc %></td>
+      <% if person.doc %>
+        <td><%= link_to image_tag("page_attach.png"), person.doc, :target => "_blank" %></td>
+      <% else %>
+        <td>&nbsp;</td>
+      <% end %>
     </tr>
   <% end %>
   <% fields_for address do |f| %>
@@ -60,11 +65,19 @@
     </tr>
     <tr>
       <td class="field-name">อำเภอ</td>
-      <td colspan='2'><%= f.collection_select :district_id, address.province.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
+      <% if address.province %>
+        <td colspan='2'><%= f.collection_select :district_id, address.province.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
+      <% else %>
+        <td colspan='2'><%= f.select :district_id, [] %></td>
+      <% end %>
     </tr>
     <tr>
       <td class="field-name">ตำบล</td>
-      <td colspan='2'><%= f.collection_select :sub_district_id, address.district.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
+      <% if address.district %>
+        <td colspan='2'><%= f.collection_select :sub_district_id, address.district.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
+      <% else %>
+        <td colspan='2'><%= f.select :sub_district_id, [] %></td>
+      <% end %>
     </tr>
   <% end %>
   <% fields_for :address_reg, address_reg do |f| %>
@@ -82,15 +95,28 @@
     </tr>
     <tr>
       <td class="field-name">อำเภอ</td>
-      <td colspan='2'><%= f.collection_select :district_id, address_reg.province.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
+      <% if address_reg.province %>
+        <td colspan='2'><%= f.collection_select :district_id, address_reg.province.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
+      <% else %>
+        <td colspan='2'><%= f.select :district_id, [] %></td>
+      <% end %>
     </tr>
     <tr>
       <td class="field-name">ตำบล</td>
-      <td colspan='2'><%= f.collection_select :sub_district_id, address_reg.district.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
+      <% if address_reg.district %>
+        <td colspan='2'><%= f.collection_select :sub_district_id, address_reg.district.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
+      <% else %>
+        <td colspan='2'><%= f.select :sub_district_id, [] %></td>
+      <% end %>
     </tr>
     <tr>
       <td class="field-name">สำเนาทะเบียนบ้าน</td>
-      <td colspan='2'><%= f.file_field :doc %></td>
+      <td><%= f.file_field :doc %></td>
+      <% if address_reg.doc %>
+        <td><%= link_to image_tag("page_attach.png"), address_reg.doc, :target => "_blank" %></td>
+      <% else %>
+        <td>&nbsp;</td>
+      <% end %>
     </tr>
   <% end %>
   <% fields_for :spouse, spouse do |f| %>
@@ -150,11 +176,19 @@
     </tr>
     <tr>
       <td class="field-name">อำเภอ</td>
-      <td colspan='2'><%= f.collection_select :district_id, address_relative.province.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
+      <% if address_relative.province %>
+        <td colspan='2'><%= f.collection_select :district_id, address_relative.province.districts, :id, :name, :include_blank=>"กรุณาเลือกอำเภอ" %></td>
+      <% else %>
+        <td colspan='2'><%= f.select :district_id, [] %></td>
+      <% end %>
     </tr>
     <tr>
       <td class="field-name">ตำบล</td>
-      <td colspan='2'><%= f.collection_select :sub_district_id, address_relative.district.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
+      <% if address_relative.district %>
+        <td colspan='2'><%= f.collection_select :sub_district_id, address_relative.district.sub_districts, :id, :name, :include_blank=>"กรุณาเลือกตำบล" %></td>
+      <% else %>
+        <td colspan='2'><%= f.select :sub_district_id, [] %></td>
+      <% end %>
     </tr>
     <tr>
       <td class="field-name">โทรศัพท์</td>
@@ -173,14 +207,6 @@
     <tr>
       <td class="field-name">หมู่เลือด</td>
       <td colspan='2'><%= f.select :blood_type, ['A','B','AB','O'] %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ภาพถ่าย</td>
-      <td colspan='2'><%= f.file_field :photo %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ถ่ายเมื่อวันที่</td>
-      <td colspan='2'><%= f.date_select_year :taken_on, :start_year=>Time.now.year-1,:end_year => Time.now.year  %></td>
     </tr>
     <tr>
       <td class="field-name">ตัวอย่างลายมือชื่อ</td>
