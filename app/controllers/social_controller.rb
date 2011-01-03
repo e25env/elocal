@@ -34,8 +34,9 @@ class SocialController < ApplicationController
       s.person_id= person.id
       s.fname= person.fname
       s.moo= address.moo
+      s.address= address
       s.save
-      gma_notice "ขึ้นทะเบียนผู้ด้อยโอกาสเรียบร้อยแล้ว"
+      gma_notice "ขึ้นทะเบียนผู้รับเบี้ยยังชีพเรียบร้อยแล้ว"
     else
       gma_notice s.errors[:nid]
     end

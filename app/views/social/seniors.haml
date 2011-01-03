@@ -21,11 +21,12 @@
     %th โทรศัพท์
     %th ประเภท
   - @seniors.each do |s|
+    - next unless s.person
     %tr
       - if office_office?
         /%td= link_to image_tag('pencil.png'), "/run/office/edit_senior/#{s.id}"
         %td= link_to image_tag('cross.png'), "/run/social/rm_senior/#{s.id}", :confirm=>"กรุณายืนยัน"
       %td(align='center')= s.moo
-      %td= s.full_name
+      %td= s.person.full_name
       %td= s.person.phone
       %td{:align=>'center'}= underprivileged s.underprivileged
