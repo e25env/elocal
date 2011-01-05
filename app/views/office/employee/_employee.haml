@@ -59,22 +59,22 @@
     %td.b
       คู่สมรส
     %td
-      = employee.spouse.full_name
+      = employee.spouse.full_name if employee.spouse
   %tr
     %td.b
       สถานที่ประกอบอาชีพ
     %td
-      = employee.spouse.work
+      = employee.spouse.work if employee.spouse
   %tr
     %td.b
       บิดา
     %td
-      = employee.father.full_name
+      = employee.father.full_name if employee.father
   %tr
     %td.b
       มารดา
     %td
-      = employee.mother.full_name
+      = employee.mother.full_name if employee.mother
   %tr
     %td.b
       ที่อยู่ปัจจุบัน

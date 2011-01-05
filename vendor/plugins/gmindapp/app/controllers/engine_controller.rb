@@ -7,6 +7,7 @@ class EngineController < ApplicationController
   def init
     @service= GmaService.first :conditions=>['module=? AND code=?',
       params[:module], params[:service] ]
+    debugger
     if @service && authorize_init?
       xmain = create_xmain(@service)
       result = create_runseq(xmain)
@@ -21,6 +22,7 @@ class EngineController < ApplicationController
       redirect_to :action=>'run', :id=>xmain.id
     else
       flash[:notice]= "ขออภัย ไม่สามารถทำงานได้"
+      gma_log("SECURITY", "unauthorize access: #{params.inspect}")
       redirect_to_root
     end
   end

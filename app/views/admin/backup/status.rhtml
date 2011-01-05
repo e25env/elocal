@@ -1,3 +1,4 @@
-<% system "/usr/bin/rake backup:run trigger=elocal-db --trace 2>&1 >> #{Rails.root}/log/rake.log &" %>
-<% system "/usr/bin/rake backup:run trigger=elocal-up --trace 2>&1 >> #{Rails.root}/log/rake.log &" %>
+<% #system "/usr/bin/rake backup:run trigger=elocal-db --trace 2>&1 >> #{Rails.root}/log/rake.log &" %>
+<% #system "/usr/bin/rake backup:run trigger=elocal-up --trace 2>&1 >> #{Rails.root}/log/rake.log &" %>
+<% system %q(pg_dump elocal | gzip -c > "doc/upload/db_elocal`date --rfc-3339=date`.sql.gz") %>
 <h3 style="text-align:center;">สำรองข้อมูลเรียบร้อยแล้ว</h3>
