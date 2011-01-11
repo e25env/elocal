@@ -2,34 +2,16 @@
 
 one:
   code: MyString
-  title: MyString
+  person_id: 1
   fname: MyString
-  lname: MyString
-  dob: 2010-11-12
-  nid: MyString
-  address: MyString
-  moo: MyString
-  sub_district_id: 1
-  district_id: 1
-  province_id: 1
-  address_reg: MyString
-  moo_reg: MyString
-  sub_district_reg_id: 1
-  district_reg_id: 1
-  province_reg_id: 1
+  address_id: 1
+  address_reg_id: 1
   phone: MyString
   cell_phone: MyString
-  father_fname: MyString
+  father_id: 1
   father_lname: MyString
-  father_job: MyString
-  mother_title: MyString
-  mother_fname: MyString
-  mother_lname: MyString
-  mother_job: MyString
-  guardian_title: MyString
-  guardian_fname: MyString
-  guardian_lname: MyString
-  guardian_job: MyString
+  mother_id: 1
+  guardian_id: 1
   relationship: MyString
   parent_status: 1
   comment: MyString
@@ -42,8 +24,8 @@ one:
   caution: MyText
   allergy: MyText
   other_nursery: MyText
-  accepted_on: 2010-11-12
-  acquitted_on: 2010-11-12
+  accepted_on: 2011-01-03
+  acquitted_on: 2011-01-03
   reason: MyText
   status: 1
   nursery_id: 1
@@ -52,34 +34,16 @@ one:
 
 two:
   code: MyString
-  title: MyString
+  person_id: 1
   fname: MyString
-  lname: MyString
-  dob: 2010-11-12
-  nid: MyString
-  address: MyString
-  moo: MyString
-  sub_district_id: 1
-  district_id: 1
-  province_id: 1
-  address_reg: MyString
-  moo_reg: MyString
-  sub_district_reg_id: 1
-  district_reg_id: 1
-  province_reg_id: 1
+  address_id: 1
+  address_reg_id: 1
   phone: MyString
   cell_phone: MyString
-  father_fname: MyString
+  father_id: 1
   father_lname: MyString
-  father_job: MyString
-  mother_title: MyString
-  mother_fname: MyString
-  mother_lname: MyString
-  mother_job: MyString
-  guardian_title: MyString
-  guardian_fname: MyString
-  guardian_lname: MyString
-  guardian_job: MyString
+  mother_id: 1
+  guardian_id: 1
   relationship: MyString
   parent_status: 1
   comment: MyString
@@ -92,8 +56,8 @@ two:
   caution: MyText
   allergy: MyText
   other_nursery: MyText
-  accepted_on: 2010-11-12
-  acquitted_on: 2010-11-12
+  accepted_on: 2011-01-03
+  acquitted_on: 2011-01-03
   reason: MyText
   status: 1
   nursery_id: 1
