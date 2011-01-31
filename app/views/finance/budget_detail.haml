@@ -21,7 +21,8 @@
       - if cat_id != b.cat_id
         %tr
           - if finance_office?
-            %th(colspan="2")
+            %th= link_to image_tag('pencil.png'), "/run/finance/edit_cat/#{b.cat_id}"
+            %th &nbsp;
           %td(colspan="4")= b "หมวด#{b.cat.name}"
         - cat_id= b.cat_id
       %tr

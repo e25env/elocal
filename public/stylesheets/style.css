@@ -6,6 +6,12 @@ body {
   margin:0 auto;
   padding:0;
 }
+#logo a {
+  font: bold 40pt 'TH SarabunPSK'; 
+  color:#006699;
+  text-decoration:none;
+}
+
 #topnavigation {
   margin:0 auto;
   /*padding:9px 0 8px;*/
@@ -662,6 +668,7 @@ lmid ul li a:hover {
   line-height:15px;
   margin:0;
 }
+/*
 .label {
   /*background: transparent url(../images/label.png) repeat-x;*/
   background: #858585 url(../images/label.png) repeat-x;
@@ -703,6 +710,7 @@ lmid ul li a:hover {
   font-size:11px;
   text-transform:lowercase;
 }
+*/
 
 a,a:visited,#contentmiddle ul li a {
   color:#507aa5;
@@ -834,7 +842,25 @@ table.stats td.hed {
   border: none;
 }
 
-.commentlist .avatar {
+#head-report {
+  text-align: center;
+  font-weight:bold;
+}
+#head {
+  text-align: center;
+}
+.right {
+  text-align: right;
+  padding-left: 20px;
+}
+.subhead {
+  font-weight: bold;
+}
+.indent {
+  padding-left: 50px;
+}
+
+/*.right .avatar {
   float: right;
   width: auto;
   margin: 0;
@@ -866,7 +892,7 @@ table.stats td.hed {
   border: none!important;
   margin:0px;
 }
-
+*/
 #content .commentlist ul.children {
   margin: 0px;
   padding: 0px;

@@ -1,0 +1,30 @@
+<% 
+  tran = AccountTrans.find $xvars[:p][:id]
+  account = tran.account
+%>
+<center>แก้ไขบัญชี
+  <%= account.code %> ( <%= account.code_dla %> )
+  <%= account.name %>
+</center>
+<% fields_for tran do |f| %>
+  <%= f.hidden_field :account_id %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">รายการ</td>
+      <td colspan="2"><%= f.text_field :description, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวนเงิน</td>
+      <td colspan="2"><%= f.text_field :amount %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ลงบัญชี</td>
+      <td colspan="2"><%= f.select :rtype, [['เดบิต',1],['เครดิต',2]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วันที่ดำเนินการ</td>
+      <td colspan='2'><%= f.date_select_year :reported_on, :start_year => Time.now.year-1, :end_year => Time.now.year  %></td>
+    </tr>
+  </table>
+<% end %>
+<%= fix_thai_year %>

@@ -1,0 +1,27 @@
+%h4(style='text-align:center;') บัญชี
+- if finance_office?
+  %div(style='float:right')
+    =image_tag 'add.png'
+    = link_to align_text('ขึ้นทะเบียนบัญชีใหม่'), "/run/finance/add_account"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if finance_office?
+      %th{:style=>"width:30px;"} แก้ไข
+      %th{:style=>"width:30px;"} ลบ
+      %th{:style=>"width:30px;"} ลงรายการ
+    %th รหัสกรมฯ
+    %th รหัส eLocal
+    %th ชื่อ
+    %th ประเภท
+    %th ยอดคงเหลือ
+  - @accounts.each do |a|
+    %tr
+      - if finance_office?
+        %td{:align=>'center'}= link_to image_tag('pencil.png'), "/run/finance/edit_account/#{a.id}"
+        %td{:align=>'center'}= link_to image_tag('cross.png'), "/run/finance/rm_account/#{a.id}", :confirm=>"กรุณายืนยัน"
+        %td{:align=>'center'}= link_to image_tag('page_attach.png'), "/run/finance/add_account_trans/#{a.id}"
+      %td(align='center')= a.code_dla
+      %td(align='center')= a.code
+      %td= link_to a.name, :action=>:account, :code=>a.code
+      %td= atype(a.atype)
+      %td{:align=>'right'}= currency(a.balance)

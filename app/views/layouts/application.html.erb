@@ -1,4 +1,6 @@
-<% @amodules= [] # authorized modules
+<% 
+@org= Org.last
+@amodules= [] # authorized modules
 @gma_modules= GmaModule.all(:order=>"seq").each do |m|
   if m.role
     if current_user.role
@@ -31,16 +33,17 @@ end
 <!DOCTYPE html>
 <html>
   <%= render :partial => "layouts/head" %>
-  <body><font face='TH SarabunPSK'>
+  <body>
     <div id="header">
       <div style="float:right; color:#1C2795;">
         <%= render :partial => "layouts/login" %>
       </div>
-      <div style="padding:5px 0 0 50px;">
-        <a href="/"><div style="font: bold 40pt 'TH SarabunPSK'; color:#006699;">
+      <div id="logo" style="padding:5px 0 0 50px;">
+        <a href="/">
             <%= image_tag 'logo_bangtanai150.png', :style=>'float:left;padding-right:10px;' %>
-            ระบบสารสนเทศบูรณาการเพื่อการบริหารงาน อบต.บางตะไนย์
-          </div>
+            ระบบสารสนเทศบูรณาการเพื่อการบริหารงาน
+            <%= @org.otype_abbrev %>.
+            <%= @org.name %>
         </a>
       </div>
       <div id="search">
@@ -69,6 +72,6 @@ end
         powered by <a href="http://gmindapp.com">GMindApp</a><br/>
       </div>
     </div>
-  </font></body>
+  </body>
 </html>
 

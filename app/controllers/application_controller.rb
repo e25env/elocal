@@ -1,7 +1,8 @@
 class ApplicationController < ActionController::Base
   helper :all # include all helpers, all the time
   helper_method :fiscal_year, :finance_office?, :office_office?,
-    :own_xmain?, :mobile_device?
+    :own_xmain?, :mobile_device?, :atype, :b, :end_of_last_month,
+    :begin_of_last_month, :begin_of_fiscal_year
 
   # protect_from_forgery # See ActionController::RequestForgeryProtection for details
   #
@@ -17,7 +18,33 @@ class ApplicationController < ActionController::Base
     current_user.role && current_user.role.upcase.split(',').include?('CO') && current_user.section_id==1
   end
 #----------------------
-
+  def atype(a)
+    ACCOUNT_TYPE[a-1]
+  end
+  def end_of_last_month
+    d= Date.today
+    dd= Date.new d.year, d.month, 1
+    dd-1
+  end
+  def begin_of_last_month
+    d= Date.today
+    if d.month==1
+      m = 12
+      y = d.year-1
+    else
+      m = d.month-1
+      y = d.year
+    end
+    dd= Date.new y, m, 1
+  end
+  def begin_of_fiscal_year
+    d= Date.today
+    year = d.month<10 ? d.year-1 : d.year
+    dd= Date.new year, 10, 1
+  end
+  def b(s)
+    "<b>#{s}</b>"
+  end
   def login_laas
     ff=FireWatir::Firefox.new :waitTime=>4
     ff.goto('http://www.laas.go.th/')

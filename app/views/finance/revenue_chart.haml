@@ -1,0 +1,47 @@
+/- render_chart_html '/FusionCharts/StackedColumn2D.swf', '/data/revenue_chart.xml', '', 'myFirstHTML', 600, 400, false
+= javascript_include_tag "rgraph/RGraph.common.core.js"
+= javascript_include_tag "rgraph/RGraph.common.annotate.js"
+= javascript_include_tag "rgraph/RGraph.common.tooltips.js"
+= javascript_include_tag "rgraph/RGraph.bar.js"
+
+%canvas(id="bar5" width="600" height="300") [No canvas support]
+:javascript
+  window.onload = function ()
+  {
+    var bar5 = new RGraph.Bar('bar5', [[827,740,1530], [129,1150, 2150], [255,1250,1810], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0]]);
+    bar5.Set('chart.text.font', 'TH SarabunPSK');
+    bar5.Set('chart.text.size', 14);
+    bar5.Set('chart.title', 'รายได้ปีงบประมาณ 2554 (หน่วย: พันบาท)');
+    bar5.Set('chart.colors', ['#C1E1F9', '#F1F151', '#91BD0E']);
+    bar5.Set('chart.gutter', 40);
+    bar5.Set('chart.background.barcolor1', 'white');
+    bar5.Set('chart.background.barcolor2', 'white');
+    bar5.Set('chart.background.grid.hsize', 5);
+    bar5.Set('chart.background.grid.vsize', 5);
+    bar5.Set('chart.grouping', 'stacked');
+    bar5.Set('chart.labels', ['ต.ค.','\r\nพ.ย.','ธ.ค.', '\r\nม.ค.', 'ก.พ.', '\r\nมี.ค.', 'เม.ย.', '\r\nพ.ค.', 'มิ.ย.', '\r\nก.ค.', 'ส.ค.', '\r\nก.ย.']);
+    bar5.Set('chart.labels.above', true);
+    
+    bar5.Set('chart.key', ['เงินท้องถิ่น', 'เงินอุดหนุน', 'เงินจัดสรร']);
+    bar5.Set('chart.key.background', 'rgba(255,255,255,0.7)');
+    bar5.Set('chart.key.position', 'gutter');
+    bar5.Set('chart.key.position.gutter.boxed', false);
+    bar5.Set('chart.key.position.y', bar5.Get('chart.gutter') - 15);
+    bar5.Set('chart.key.border', false);
+    
+    bar5.Set('chart.background.grid.width', 0.3); // Decimals are permitted
+    bar5.Set('chart.text.angle', 0);
+    bar5.Set('chart.strokecolor', 'rgba(0,0,0,0)');
+    bar5.Set('chart.tooltips.event', 'onmousemove');
+    
+    if (!RGraph.isIE8()) {
+      bar5.Set('chart.tooltips', [
+      'เงินท้องถิ่น', 'เงินอุดหนุน', 'เงินจัดสรร',
+      'เงินท้องถิ่น', 'เงินอุดหนุน', 'เงินจัดสรร',
+      'เงินท้องถิ่น', 'เงินอุดหนุน', 'เงินจัดสรร'
+      ]);
+    }
+    
+    bar5.Draw();
+  
+  }

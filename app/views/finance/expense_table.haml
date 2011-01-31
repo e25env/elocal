@@ -1,0 +1,44 @@
+:css
+  body {
+    size: A4;
+  }
+  table {
+    width:100%;
+    border-collapse: collapse;
+    line-height: 98%;
+    padding:0;
+    margin:0;
+  }
+  td,th {
+    border:1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  td.noline {
+    border-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+- org= Org.last
+#head-report
+  ตารางรายจ่ายขององค์กรปกครองส่วนท้องถิ่น ประจำปีงบประมาณ พ.ศ.
+  = fiscal_year
+  %br
+  ประจำเดือน
+  - period= end_of_last_month
+  = MONTHS[period.month-1]
+  = period.year+543
+  %br
+  = Org.head_report
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr
+    %th ประเภทรายรับ
+    %th(style="width:120px;") จำนวนเงิน (บาท)
+  - @lines.each do |a|
+    %tr
+      %td= a[0]
+      - if a[0]=~ /\<b\>/
+        %td{:align=>'right'}= b(currency(a[1]))
+      - else
+        %td{:align=>'right'}= currency(a[1])
+        

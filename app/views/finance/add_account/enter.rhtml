@@ -1,0 +1,33 @@
+<% 
+  account = Account.new :reported=>true
+%>
+<% fields_for account do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">รหัสบัญชี</td>
+      <td colspan="2"><%= f.text_field :code_dla, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รหัสบัญชี eLocal</td>
+      <td><%= f.text_field :code, :style => "width:200px;" %></td>
+      <td>ตัวเลขจำเพาะ 6 หลัก</td
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อบัญชี</td>
+      <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan="2"><%= f.select :atype, [
+        ['สินทรัพย์',1],['เจ้าหนี้',2],['ทุน',3],['รายรับ',4],['รายจ่าย',5]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">บัญชีคุม</td>
+      <td colspan="2"><%= f.collection_select :parent_id, Account.all, :id, :name, :prompt=>"กรุณาเลือกบัญชีคุม (ถ้ามี)" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">แสดงในงบทดลอง</td>
+      <td colspan="2"><%= f.check_box :reported %></td>
+    </tr>
+  </table>
+<% end %>

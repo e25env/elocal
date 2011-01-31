@@ -45,24 +45,26 @@ module ApplicationHelper
   def num_baht(n)
     return "-" unless n
     baht= n.to_s.split('.')[0]
-    return baht=="0" ? "-" : baht
+    # return baht=="0" ? "-" : baht
+    baht.to_i
   end
   def num_satang(n)
     return "-" unless n
     satang = ((n-n.to_i)*100).to_s
-    return satang=="0" ? "-" : satang
+    # return satang=="0" ? "-" : satang
+    satang.to_i
   end
   def nbsp(n)
     "&nbsp;"*n
   end
-  def b(s)
-    "<b>#{s}</b>"
-  end
   def home_page?
     request.path=='/'
   end
+  def num(n)
+    return n==0 ? "-" : number_to_currency(n,:unit=>'', :precision=>0)
+  end
   def currency(n)
-    number_to_currency(n,:unit=>'')
+    return n==0 ? "-" : number_to_currency(n,:unit=>'')
   end
   alias_method(:to_currency, :currency)
   

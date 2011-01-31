@@ -1,10 +1,10 @@
 <map version="0.9.0">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node CREATED="1273819432637" ID="ID_1098419600" MODIFIED="1279699253278" TEXT="elocal">
-<node CREATED="1273819462973" ID="ID_282419531" MODIFIED="1290432054772" POSITION="right" TEXT="services">
-<node CREATED="1275756501221" FOLDED="true" ID="ID_1720745721" MODIFIED="1293540405773" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
+<node CREATED="1273819462973" ID="ID_282419531" MODIFIED="1295163838658" POSITION="right" TEXT="services">
+<node CREATED="1275756501221" FOLDED="true" ID="ID_1720745721" MODIFIED="1295164031064" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
 <node CREATED="1278491598711" ID="ID_1662699954" MODIFIED="1278491602025" TEXT="role:m"/>
-<node CREATED="1293332713220" ID="ID_1765957683" MODIFIED="1293332727334" TEXT="new_message: &#xe2a;&#xe48;&#xe07;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
+<node CREATED="1293332713220" FOLDED="true" ID="ID_1765957683" MODIFIED="1295163365395" TEXT="new_message: &#xe2a;&#xe48;&#xe07;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
 <node CREATED="1293332729817" ID="ID_604745038" MODIFIED="1293332758567" TEXT="enter: &#xe1e;&#xe34;&#xe21;&#xe1e;&#xe4c;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
 <icon BUILTIN="attach"/>
 </node>
@@ -96,7 +96,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1294451248034" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
+<node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1295163361755" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
 <node CREATED="1279397879537" FOLDED="true" ID="ID_1756095802" MODIFIED="1294188221296" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
@@ -393,8 +393,8 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1294451250034" TEXT="finance: &#xe04;&#xe25;&#xe31;&#xe07;">
-<node CREATED="1286155577194" ID="ID_597417624" MODIFIED="1286157334310" TEXT="income:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe01;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe07;&#xe34;&#xe19;">
+<node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1295965412979" TEXT="finance: &#xe04;&#xe25;&#xe31;&#xe07;">
+<node CREATED="1286155577194" FOLDED="true" ID="ID_597417624" MODIFIED="1295623352859" TEXT="income:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe01;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe07;&#xe34;&#xe19;">
 <node CREATED="1286155600214" ID="ID_308925966" MODIFIED="1286157105153" TEXT="enter_income:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe01;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe07;&#xe34;&#xe19;">
 <icon BUILTIN="attach"/>
 <node CREATED="1280809577780" ID="ID_621853623" MODIFIED="1280809581582" TEXT="role:co"/>
@@ -424,19 +424,7 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1286505051970" ID="ID_24409927" MODIFIED="1286505077047" TEXT="income_summary:&#xe2a;&#xe23;&#xe38;&#xe1b;&#xe43;&#xe1a;&#xe19;&#xe33;&#xe2a;&#xe48;&#xe07;&#xe40;&#xe07;&#xe34;&#xe19;">
-<node CREATED="1286505079711" ID="ID_106423926" MODIFIED="1286505126119" TEXT="choose_date:&#xe40;&#xe25;&#xe37;&#xe2d;&#xe01;&#xe27;&#xe31;&#xe19;&#xe17;&#xe35;&#xe48;&#xe19;&#xe33;&#xe2a;&#xe48;&#xe07;">
-<icon BUILTIN="attach"/>
-<node CREATED="1280809577780" ID="ID_715182606" MODIFIED="1280809581582" TEXT="role:co"/>
-<node CREATED="1280677207860" ID="ID_311176836" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
-</node>
-<node CREATED="1286505097170" ID="ID_1507705928" MODIFIED="1286505121704" TEXT="print_summary:&#xe43;&#xe1a;&#xe2a;&#xe33;&#xe04;&#xe31;&#xe0d;&#xe2a;&#xe23;&#xe38;&#xe1b;&#xe43;&#xe1a;&#xe19;&#xe33;&#xe2a;&#xe48;&#xe07;&#xe40;&#xe07;&#xe34;&#xe19;">
-<icon BUILTIN="pencil"/>
-<node CREATED="1280809577780" ID="ID_609326255" MODIFIED="1280809581582" TEXT="role:co"/>
-<node CREATED="1280677207860" ID="ID_1994697633" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
-</node>
-</node>
-<node CREATED="1280809504423" FOLDED="true" ID="ID_888371375" MODIFIED="1286249793675" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
+<node CREATED="1280809504423" FOLDED="true" ID="ID_888371375" MODIFIED="1295422942108" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
 <node CREATED="1280809530686" ID="ID_1366914323" MODIFIED="1280809746078" TEXT="enter_payment:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe0e;&#xe35;&#xe01;&#xe32;">
 <icon BUILTIN="attach"/>
 <node CREATED="1280809577780" ID="ID_1190902197" MODIFIED="1280809581582" TEXT="role:co"/>
@@ -470,10 +458,26 @@
 </node>
 </node>
 <node CREATED="1285183222740" ID="ID_725765001" MODIFIED="1285183242654" TEXT="link:&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;: /finance/revenue"/>
-<node CREATED="1280606688606" ID="ID_817246565" MODIFIED="1285183256692" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe23;&#xe32;&#xe22;&#xe08;&#xe48;&#xe32;&#xe22;: /finance"/>
+<node CREATED="1280606688606" ID="ID_817246565" MODIFIED="1295623392123" TEXT="link:&#xe23;&#xe32;&#xe22;&#xe08;&#xe48;&#xe32;&#xe22;: /finance"/>
+<node CREATED="1289263467761" ID="ID_305331660" MODIFIED="1295415264120" TEXT="link: &#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;: /finance/accounts">
+<node CREATED="1295415140414" ID="ID_706296266" MODIFIED="1295415142634" TEXT="role:a"/>
+</node>
+<node CREATED="1295415084438" ID="ID_1049122894" MODIFIED="1295415104400" TEXT="link: &#xe01;&#xe32;&#xe23;&#xe40;&#xe07;&#xe34;&#xe19;: /finance/reports"/>
+<node CREATED="1286505051970" FOLDED="true" ID="ID_24409927" MODIFIED="1295419893389" TEXT="income_summary:&#xe2a;&#xe23;&#xe38;&#xe1b;&#xe43;&#xe1a;&#xe19;&#xe33;&#xe2a;&#xe48;&#xe07;&#xe40;&#xe07;&#xe34;&#xe19;">
+<node CREATED="1286505079711" ID="ID_106423926" MODIFIED="1286505126119" TEXT="choose_date:&#xe40;&#xe25;&#xe37;&#xe2d;&#xe01;&#xe27;&#xe31;&#xe19;&#xe17;&#xe35;&#xe48;&#xe19;&#xe33;&#xe2a;&#xe48;&#xe07;">
+<icon BUILTIN="attach"/>
+<node CREATED="1280809577780" ID="ID_715182606" MODIFIED="1280809581582" TEXT="role:co"/>
+<node CREATED="1280677207860" ID="ID_311176836" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
+</node>
+<node CREATED="1286505097170" ID="ID_1507705928" MODIFIED="1286505121704" TEXT="print_summary:&#xe43;&#xe1a;&#xe2a;&#xe33;&#xe04;&#xe31;&#xe0d;&#xe2a;&#xe23;&#xe38;&#xe1b;&#xe43;&#xe1a;&#xe19;&#xe33;&#xe2a;&#xe48;&#xe07;&#xe40;&#xe07;&#xe34;&#xe19;">
+<icon BUILTIN="pencil"/>
+<node CREATED="1280809577780" ID="ID_609326255" MODIFIED="1280809581582" TEXT="role:co"/>
+<node CREATED="1280677207860" ID="ID_1994697633" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
+</node>
+</node>
 <node CREATED="1285407123572" ID="ID_572104144" MODIFIED="1285407301322" TEXT="link:&#xe27;&#xe34;&#xe40;&#xe04;&#xe23;&#xe32;&#xe30;&#xe2b;&#xe4c;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;: /finance/budget_analysis"/>
 <node CREATED="1285894147947" ID="ID_90848612" MODIFIED="1285894185434" TEXT="link:&#xe23;&#xe30;&#xe1a;&#xe1a; LAAS:/finance/laas"/>
-<node CREATED="1280841977962" FOLDED="true" ID="ID_980204048" MODIFIED="1285634728377" TEXT="add_bank:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;&#xe18;&#xe19;&#xe32;&#xe04;&#xe32;&#xe23;">
+<node CREATED="1280841977962" ID="ID_980204048" MODIFIED="1294958991463" TEXT="add_bank:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;&#xe18;&#xe19;&#xe32;&#xe04;&#xe32;&#xe23;">
 <node CREATED="1280841997526" ID="ID_985131734" MODIFIED="1280842039054" TEXT="enter_bank:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;&#xe18;&#xe19;&#xe32;&#xe04;&#xe32;&#xe23;&#xe43;&#xe2b;&#xe21;&#xe48;">
 <icon BUILTIN="attach"/>
 <node CREATED="1280677202424" ID="ID_1147920464" MODIFIED="1280677207161" TEXT="role:co"/>
@@ -485,12 +489,11 @@
 </node>
 <node CREATED="1280606688606" ID="ID_819043612" MODIFIED="1281414946023" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe2b;&#xe21;&#xe27;&#xe14;: /finance/budget_cat"/>
 <node CREATED="1281414908442" ID="ID_1331942068" MODIFIED="1281414930886" TEXT="link:&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe15;&#xe32;&#xe21;&#xe41;&#xe1c;&#xe19;:/finance/budget_plan"/>
-<node CREATED="1289263467761" ID="ID_305331660" MODIFIED="1289263477939" TEXT="link: &#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;&#xe41;&#xe25;&#xe30;&#xe01;&#xe32;&#xe23;&#xe40;&#xe07;&#xe34;&#xe19;: #"/>
 <node CREATED="1289263487002" ID="ID_1981919050" MODIFIED="1289263492405" TEXT="link: &#xe01;&#xe32;&#xe23;&#xe04;&#xe27;&#xe1a;&#xe04;&#xe38;&#xe21;&#xe20;&#xe32;&#xe22;&#xe43;&#xe19;: #"/>
 <node CREATED="1289263512491" ID="ID_1521257493" MODIFIED="1289263526390" TEXT="link: &#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe20;&#xe32;&#xe29;&#xe35;: #"/>
 <node CREATED="1289263569887" ID="ID_328141762" MODIFIED="1289263578024" TEXT="link: &#xe1e;&#xe31;&#xe2a;&#xe14;&#xe38; &#xe41;&#xe25;&#xe30;&#xe04;&#xe23;&#xe38;&#xe20;&#xe31;&#xe13;&#xe11;&#xe4c;: #"/>
 <node CREATED="1289263666673" ID="ID_359973028" MODIFIED="1289263672302" TEXT="link: &#xe1b;&#xe23;&#xe30;&#xe01;&#xe32;&#xe28;&#xe08;&#xe31;&#xe14;&#xe0b;&#xe37;&#xe49;&#xe2d;&#xe08;&#xe31;&#xe14;&#xe08;&#xe49;&#xe32;&#xe07;: #"/>
-<node CREATED="1283833795535" FOLDED="true" ID="ID_1686154103" MODIFIED="1285634729255" TEXT="copy_structure:&#xe04;&#xe31;&#xe14;&#xe25;&#xe2d;&#xe01;&#xe1c;&#xe31;&#xe07;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<node CREATED="1283833795535" FOLDED="true" ID="ID_1686154103" MODIFIED="1295415066912" TEXT="copy_structure:&#xe04;&#xe31;&#xe14;&#xe25;&#xe2d;&#xe01;&#xe1c;&#xe31;&#xe07;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
 <node CREATED="1283833823442" ID="ID_463490785" MODIFIED="1283833852354" TEXT="select_years:&#xe40;&#xe25;&#xe37;&#xe2d;&#xe01;&#xe1b;&#xe35;&#xe17;&#xe35;&#xe48;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe32;&#xe23;">
 <icon BUILTIN="attach"/>
 </node>
@@ -507,7 +510,7 @@
 </node>
 </node>
 <node CREATED="1280737814670" ID="ID_1286974173" MODIFIED="1280737838766" TEXT="link:&#xe01;&#xe23;&#xe30;&#xe17;&#xe1a;&#xe22;&#xe2d;&#xe14;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;:/finance/budget_adj"/>
-<node CREATED="1280676987865" FOLDED="true" ID="ID_1487545870" MODIFIED="1284971319685" TEXT="add_cat">
+<node CREATED="1280676987865" ID="ID_1487545870" MODIFIED="1295129094510" TEXT="add_cat">
 <icon BUILTIN="closed"/>
 <node CREATED="1280676999730" ID="ID_789754556" MODIFIED="1280739233101" TEXT="enter_cat:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2b;&#xe21;&#xe27;&#xe14;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;">
 <icon BUILTIN="attach"/>
@@ -515,6 +518,17 @@
 <node CREATED="1280677207860" ID="ID_1771718331" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
 </node>
 <node CREATED="1280677006720" ID="ID_1739406695" MODIFIED="1280677183891" TEXT="create_cat">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1280676987865" ID="ID_1431732871" MODIFIED="1295129460532" TEXT="edit_cat: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe2b;&#xe21;&#xe27;&#xe14;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;">
+<icon BUILTIN="closed"/>
+<node CREATED="1280676999730" ID="ID_1162654141" MODIFIED="1295129525124" TEXT="edit_cat: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe2b;&#xe21;&#xe27;&#xe14;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;">
+<icon BUILTIN="attach"/>
+<node CREATED="1280677202424" ID="ID_187660054" MODIFIED="1280677207161" TEXT="role:co"/>
+<node CREATED="1280677207860" ID="ID_1415896538" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
+</node>
+<node CREATED="1280677006720" ID="ID_634925277" MODIFIED="1295129474332" TEXT="update_cat">
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
@@ -584,13 +598,7 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1285131538158" FOLDED="true" ID="ID_54108832" MODIFIED="1285961266353" TEXT="rm_budget">
-<icon BUILTIN="closed"/>
-<node CREATED="1285131548034" ID="ID_21576320" MODIFIED="1285131557356" TEXT="rm_budget">
-<icon BUILTIN="bookmark"/>
-</node>
-</node>
-<node CREATED="1280676987865" FOLDED="true" ID="ID_1971340302" MODIFIED="1285961267452" TEXT="edit_budget">
+<node CREATED="1280676987865" FOLDED="true" ID="ID_1971340302" MODIFIED="1295129425673" TEXT="edit_budget">
 <icon BUILTIN="closed"/>
 <node CREATED="1280676999730" ID="ID_420730335" MODIFIED="1285133102916" TEXT="edit_budget:&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;">
 <icon BUILTIN="attach"/>
@@ -601,7 +609,13 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1280676987865" FOLDED="true" ID="ID_1077102990" MODIFIED="1285961268711" TEXT="add_revenue: &#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
+<node CREATED="1285131538158" FOLDED="true" ID="ID_54108832" MODIFIED="1285961266353" TEXT="rm_budget">
+<icon BUILTIN="closed"/>
+<node CREATED="1285131548034" ID="ID_21576320" MODIFIED="1285131557356" TEXT="rm_budget">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1280676987865" FOLDED="true" ID="ID_1077102990" MODIFIED="1295303856473" TEXT="add_revenue: &#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="closed"/>
 <node CREATED="1280676999730" ID="ID_1533416323" MODIFIED="1285234925454" TEXT="enter_revenue:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe01;&#xe32;&#xe23;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
@@ -612,7 +626,7 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1280676987865" FOLDED="true" ID="ID_1059165896" MODIFIED="1285961270607" TEXT="edit_revenue: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
+<node CREATED="1280676987865" FOLDED="true" ID="ID_1059165896" MODIFIED="1295303831117" TEXT="edit_revenue: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="closed"/>
 <node CREATED="1280676999730" ID="ID_1804238163" MODIFIED="1285290716687" TEXT="edit_revenue:&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;&#xe01;&#xe32;&#xe23;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
@@ -623,7 +637,7 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1285131538158" FOLDED="true" ID="ID_1613662592" MODIFIED="1285961274567" TEXT="rm_revenue: &#xe25;&#xe1a;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
+<node CREATED="1285131538158" FOLDED="true" ID="ID_1613662592" MODIFIED="1295303848380" TEXT="rm_revenue: &#xe25;&#xe1a;&#xe23;&#xe32;&#xe22;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="closed"/>
 <node CREATED="1285131548034" ID="ID_586996476" MODIFIED="1285284965697" TEXT="rm_revenue">
 <icon BUILTIN="bookmark"/>
@@ -638,6 +652,62 @@
 <node CREATED="1285914705235" FOLDED="true" ID="ID_1979295705" MODIFIED="1285961280997" TEXT="rm_laas:&#xe25;&#xe1a;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25; LAAS">
 <icon BUILTIN="closed"/>
 <node CREATED="1285914729481" ID="ID_286513796" MODIFIED="1285914735303" TEXT="rm_laas">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1280676987865" ID="ID_1073156753" MODIFIED="1295308653918" TEXT="add_account: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;&#xe43;&#xe2b;&#xe21;&#xe48;">
+<icon BUILTIN="closed"/>
+<node CREATED="1280676999730" ID="ID_657770701" MODIFIED="1295308684704" TEXT="enter: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe23;&#xe32;&#xe22;&#xe25;&#xe30;&#xe40;&#xe2d;&#xe35;&#xe22;&#xe14;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<icon BUILTIN="attach"/>
+<node CREATED="1280677202424" ID="ID_136744605" MODIFIED="1280677207161" TEXT="role:co"/>
+<node CREATED="1280677207860" ID="ID_276025809" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
+</node>
+<node CREATED="1280677006720" ID="ID_1024328286" MODIFIED="1295303949970" TEXT="create_account">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1280676987865" ID="ID_213728835" MODIFIED="1295303985170" TEXT="add_account_trans: &#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe32;&#xe22;&#xe01;&#xe32;&#xe23;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<icon BUILTIN="closed"/>
+<node CREATED="1280676999730" ID="ID_55015955" MODIFIED="1295304009764" TEXT="enter: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe23;&#xe32;&#xe22;&#xe01;&#xe32;&#xe23;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<icon BUILTIN="attach"/>
+<node CREATED="1280677202424" ID="ID_731462164" MODIFIED="1280677207161" TEXT="role:co"/>
+<node CREATED="1280677207860" ID="ID_117663818" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
+</node>
+<node CREATED="1280677006720" ID="ID_1298918467" MODIFIED="1295304017636" TEXT="create_account_trans">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1280676987865" ID="ID_723014512" MODIFIED="1295304165437" TEXT="edit_account: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<icon BUILTIN="closed"/>
+<node CREATED="1280676999730" ID="ID_443003735" MODIFIED="1295304171911" TEXT="edit:&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<icon BUILTIN="attach"/>
+<node CREATED="1280677202424" ID="ID_1526052085" MODIFIED="1280677207161" TEXT="role:co"/>
+<node CREATED="1280677207860" ID="ID_1223519145" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
+</node>
+<node CREATED="1280677006720" ID="ID_1852338117" MODIFIED="1295304132878" TEXT="update_account">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1280676987865" ID="ID_1139545065" MODIFIED="1295304088307" TEXT="edit_account_trans: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe23;&#xe32;&#xe22;&#xe01;&#xe32;&#xe23;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<icon BUILTIN="closed"/>
+<node CREATED="1280676999730" ID="ID_1653310559" MODIFIED="1295304092894" TEXT="edit: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe23;&#xe32;&#xe22;&#xe01;&#xe32;&#xe23;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<icon BUILTIN="attach"/>
+<node CREATED="1280677202424" ID="ID_1495790116" MODIFIED="1280677207161" TEXT="role:co"/>
+<node CREATED="1280677207860" ID="ID_898815359" MODIFIED="1280677613126" TEXT="rule:current_user.section_id==2"/>
+</node>
+<node CREATED="1280677006720" ID="ID_572954" MODIFIED="1295304052471" TEXT="update_account_trans">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1285131538158" ID="ID_24895291" MODIFIED="1295304182008" TEXT="rm_account: &#xe25;&#xe1a;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<icon BUILTIN="closed"/>
+<node CREATED="1285131548034" ID="ID_295805785" MODIFIED="1295304151045" TEXT="rm_account">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1285131538158" ID="ID_1341807925" MODIFIED="1295304101458" TEXT="rm_account_trans: &#xe25;&#xe1a;&#xe23;&#xe32;&#xe22;&#xe01;&#xe32;&#xe23;&#xe1a;&#xe31;&#xe0d;&#xe0a;&#xe35;">
+<icon BUILTIN="closed"/>
+<node CREATED="1285131548034" ID="ID_1136263196" MODIFIED="1295304073368" TEXT="rm_account_trans">
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
@@ -663,7 +733,7 @@
 <node CREATED="1289263593703" ID="ID_820408112" MODIFIED="1289263598456" TEXT="link: &#xe42;&#xe04;&#xe23;&#xe07;&#xe01;&#xe32;&#xe23;: #"/>
 <node CREATED="1289263616335" ID="ID_1666728556" MODIFIED="1289263622206" TEXT="link: &#xe1b;&#xe23;&#xe30;&#xe1b;&#xe32;: #"/>
 </node>
-<node CREATED="1293540435826" ID="ID_265459726" MODIFIED="1293542137041" TEXT="education: &#xe28;&#xe36;&#xe01;&#xe29;&#xe32;">
+<node CREATED="1293540435826" FOLDED="true" ID="ID_265459726" MODIFIED="1295162974627" TEXT="education: &#xe28;&#xe36;&#xe01;&#xe29;&#xe32;">
 <node CREATED="1287681257173" ID="ID_1653567621" MODIFIED="1293542359339" TEXT="link:&#xe28;&#xe39;&#xe19;&#xe22;&#xe4c;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe40;&#xe14;&#xe47;&#xe01;&#xe40;&#xe25;&#xe47;&#xe01;:/education/nurseries"/>
 <node CREATED="1283041828720" FOLDED="true" ID="ID_238508958" MODIFIED="1291041234821" TEXT="add_nursery:&#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe28;&#xe39;&#xe19;&#xe22;&#xe4c;&#xe40;&#xe14;&#xe47;&#xe01;&#xe40;&#xe25;&#xe47;&#xe01;">
 <icon BUILTIN="closed"/>
@@ -706,7 +776,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1293541131354" ID="ID_1294476792" MODIFIED="1293542143887" TEXT="social: &#xe2a;&#xe27;&#xe31;&#xe2a;&#xe14;&#xe34;&#xe01;&#xe32;&#xe23;&#xe2a;&#xe31;&#xe07;&#xe04;&#xe21;">
+<node CREATED="1293541131354" FOLDED="true" ID="ID_1294476792" MODIFIED="1295162976365" TEXT="social: &#xe2a;&#xe27;&#xe31;&#xe2a;&#xe14;&#xe34;&#xe01;&#xe32;&#xe23;&#xe2a;&#xe31;&#xe07;&#xe04;&#xe21;">
 <node CREATED="1286576754565" ID="ID_899003462" MODIFIED="1293542441183" TEXT="link:&#xe40;&#xe1a;&#xe35;&#xe49;&#xe22;&#xe22;&#xe31;&#xe07;&#xe0a;&#xe35;&#xe1e;:/social/seniors"/>
 <node CREATED="1283041828720" FOLDED="true" ID="ID_1629563624" MODIFIED="1293542878434" TEXT="add_senior:&#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe1c;&#xe39;&#xe49;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe1a;&#xe35;&#xe49;&#xe22;&#xe22;&#xe31;&#xe07;&#xe0a;&#xe35;&#xe1e;">
 <icon BUILTIN="closed"/>
@@ -739,7 +809,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397843519" ID="ID_1305812282" MODIFIED="1293542147606" TEXT="health: &#xe2a;&#xe32;&#xe18;&#xe32;&#xe23;&#xe13;&#xe2a;&#xe38;&#xe02;">
+<node CREATED="1279397843519" FOLDED="true" ID="ID_1305812282" MODIFIED="1295162978703" TEXT="health: &#xe2a;&#xe32;&#xe18;&#xe32;&#xe23;&#xe13;&#xe2a;&#xe38;&#xe02;">
 <node CREATED="1289263221438" ID="ID_1477391298" MODIFIED="1289263246232" TEXT="link: &#xe15;&#xe25;&#xe32;&#xe14;: #"/>
 <node CREATED="1289263270311" ID="ID_725889616" MODIFIED="1289263276324" TEXT="link: &#xe01;&#xe34;&#xe08;&#xe01;&#xe32;&#xe23;&#xe17;&#xe35;&#xe48;&#xe40;&#xe1b;&#xe47;&#xe19;&#xe2d;&#xe31;&#xe19;&#xe15;&#xe23;&#xe32;&#xe22;&#xe15;&#xe48;&#xe2d;&#xe2a;&#xe38;&#xe02;&#xe20;&#xe32;&#xe1e;: #"/>
 </node>
@@ -836,7 +906,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1273819465949" FOLDED="true" ID="ID_855471610" MODIFIED="1293243109060" POSITION="right" TEXT="roles">
+<node CREATED="1273819465949" FOLDED="true" ID="ID_855471610" MODIFIED="1295162968352" POSITION="right" TEXT="roles">
 <node CREATED="1273819847470" ID="ID_1681080231" MODIFIED="1279311618057" TEXT="m: &#xe2a;&#xe21;&#xe32;&#xe0a;&#xe34;&#xe01;"/>
 <node CREATED="1273819855875" ID="ID_1429503284" MODIFIED="1279311626723" TEXT="a: &#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;"/>
 <node CREATED="1273819859775" ID="ID_568365839" MODIFIED="1279311634899" TEXT="d: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;&#xe23;&#xe30;&#xe1a;&#xe1a;"/>
@@ -846,7 +916,7 @@
 <node CREATED="1285360442147" ID="ID_1404641640" MODIFIED="1285360453459" TEXT="p: &#xe08;&#xe31;&#xe14;&#xe0b;&#xe37;&#xe49;&#xe2d;"/>
 <node CREATED="1291001423153" ID="ID_1751609311" MODIFIED="1291001430173" TEXT="hr: &#xe1a;&#xe38;&#xe04;&#xe04;&#xe25;"/>
 </node>
-<node CREATED="1273819456867" ID="ID_1677010054" MODIFIED="1290154101489" POSITION="left" TEXT="models">
+<node CREATED="1273819456867" ID="ID_1677010054" MODIFIED="1295302482672" POSITION="left" TEXT="models">
 <node CREATED="1280465401089" FOLDED="true" ID="ID_1592717923" MODIFIED="1290871968433" TEXT="org">
 <node CREATED="1280465404206" ID="ID_1460093496" MODIFIED="1280465817515" TEXT="otype:string"/>
 <node CREATED="1280465800509" ID="ID_1349480184" MODIFIED="1280465812254" TEXT="otype_abbrev:string"/>
@@ -857,12 +927,20 @@
 <node CREATED="1280467255683" ID="ID_4932921" MODIFIED="1280467259613" TEXT="phone:string"/>
 <node CREATED="1290430725864" ID="ID_98991278" MODIFIED="1290430734419" TEXT="villages"/>
 </node>
-<node CREATED="1280824264551" FOLDED="true" ID="ID_182363243" MODIFIED="1290871969702" TEXT="bank">
+<node CREATED="1280824264551" ID="ID_182363243" MODIFIED="1295965358387" TEXT="bank">
 <node CREATED="1280824281165" ID="ID_1757019726" MODIFIED="1280824294480" TEXT="code:string"/>
 <node CREATED="1280824294860" ID="ID_1613755496" MODIFIED="1280824298810" TEXT="name:string"/>
+<node CREATED="1294959254135" ID="ID_1317439380" MODIFIED="1294959259357" TEXT="branch: string"/>
 <node CREATED="1280824299255" ID="ID_1301086528" MODIFIED="1280824307114" TEXT="account:string"/>
+<node CREATED="1294959115184" ID="ID_1841233883" MODIFIED="1294959133334" TEXT="atype">
+<node CREATED="1294959133339" ID="ID_714537614" MODIFIED="1294959145013" TEXT="1: &#xe2d;&#xe2d;&#xe21;&#xe17;&#xe23;&#xe31;&#xe1e;&#xe22;&#xe4c;"/>
+<node CREATED="1294959145902" ID="ID_1038315571" MODIFIED="1294959155412" TEXT="2: &#xe01;&#xe23;&#xe30;&#xe41;&#xe2a;&#xe23;&#xe32;&#xe22;&#xe27;&#xe31;&#xe19;"/>
+<node CREATED="1294959156311" ID="ID_1244646681" MODIFIED="1294959166306" TEXT="3: &#xe1b;&#xe23;&#xe30;&#xe08;&#xe33; 3 &#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;"/>
+<node CREATED="1294959166856" ID="ID_1453682062" MODIFIED="1294959180300" TEXT="4: &#xe1b;&#xe23;&#xe30;&#xe08;&#xe33; 6 &#xe40;&#xe14;&#xe37;&#xe2d;&#xe19;"/>
 </node>
-<node CREATED="1282952383087" FOLDED="true" ID="ID_1353407674" MODIFIED="1290871970800" TEXT="car">
+<node CREATED="1294958548576" ID="ID_125961415" MODIFIED="1294958555843" TEXT="balance: float"/>
+</node>
+<node CREATED="1282952383087" FOLDED="true" ID="ID_1353407674" MODIFIED="1295162909240" TEXT="car">
 <node CREATED="1282952649508" ID="ID_210085866" MODIFIED="1282952655703" TEXT="brand:string"/>
 <node CREATED="1282952656308" ID="ID_332050655" MODIFIED="1282952662474" TEXT="color:string"/>
 <node CREATED="1282952675282" ID="ID_511608649" MODIFIED="1282952687247" TEXT="car_code:string"/>
@@ -870,7 +948,7 @@
 <node CREATED="1282873587662" ID="ID_594416829" MODIFIED="1282873607857" TEXT="# 0=car, 1=motorbike"/>
 </node>
 </node>
-<node CREATED="1282873200614" FOLDED="true" ID="ID_1741439715" MODIFIED="1290154106446" TEXT="car_request">
+<node CREATED="1282873200614" FOLDED="true" ID="ID_1741439715" MODIFIED="1295163905518" TEXT="car_request">
 <node CREATED="1282873203536" ID="ID_204587018" MODIFIED="1282873237091" TEXT="name:string"/>
 <node CREATED="1282873237728" ID="ID_1604277369" MODIFIED="1282873248726" TEXT="position:string"/>
 <node CREATED="1282873249476" ID="ID_714280987" MODIFIED="1282873262802" TEXT="destination:string"/>
@@ -918,24 +996,26 @@
 <node CREATED="1280457720366" ID="ID_465305543" MODIFIED="1280457725864" TEXT="code:string"/>
 <node CREATED="1280457727439" ID="ID_1839098562" MODIFIED="1280457731087" TEXT="name:string"/>
 </node>
-<node CREATED="1279522389893" FOLDED="true" ID="ID_1358819418" MODIFIED="1291026769387" TEXT="section">
+<node CREATED="1279522389893" FOLDED="true" ID="ID_1358819418" MODIFIED="1295128254242" TEXT="section">
 <node CREATED="1279522421717" ID="ID_886891745" MODIFIED="1279522495056" TEXT="code: string"/>
-<node CREATED="1279522495579" ID="ID_1464694201" MODIFIED="1279522498183" TEXT="name: string">
+<node CREATED="1279522495579" FOLDED="true" ID="ID_1464694201" MODIFIED="1295127805778" TEXT="name: string">
 <node CREATED="1279588293604" ID="ID_1023185905" MODIFIED="1279588306558" TEXT="label:&#xe2a;&#xe48;&#xe27;&#xe19;"/>
 <node CREATED="1279588307351" ID="ID_737761650" MODIFIED="1279588328627" TEXT="help: &#xe0a;&#xe37;&#xe48;&#xe2d;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe2b;&#xe23;&#xe37;&#xe2d;&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;"/>
 </node>
-<node CREATED="1279522498712" ID="ID_1314759083" MODIFIED="1279522505168" TEXT="doc_code: string">
+<node CREATED="1279522498712" FOLDED="true" ID="ID_1314759083" MODIFIED="1295127807142" TEXT="doc_code: string">
 <node CREATED="1279588337513" ID="ID_394067502" MODIFIED="1279588346265" TEXT="label:&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;"/>
 <node CREATED="1279588346884" ID="ID_759179225" MODIFIED="1279588365892" TEXT="help:&#xe23;&#xe2b;&#xe31;&#xe2a;&#xe1b;&#xe23;&#xe30;&#xe01;&#xe2d;&#xe1a;&#xe01;&#xe32;&#xe23;&#xe2d;&#xe2d;&#xe01;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23; &#xe40;&#xe0a;&#xe48;&#xe19; 01, 02"/>
 </node>
 </node>
-<node CREATED="1279522557476" FOLDED="true" ID="ID_470790600" MODIFIED="1286156520623" TEXT="subsection">
+<node CREATED="1279522557476" FOLDED="true" ID="ID_470790600" MODIFIED="1295127863264" TEXT="subsection">
 <node CREATED="1279522561336" ID="ID_1625861182" MODIFIED="1279522564740" TEXT="section_id"/>
 <node CREATED="1279522565433" ID="ID_1874191663" MODIFIED="1279522576338" TEXT="code:string"/>
 <node CREATED="1279522569581" ID="ID_195169354" MODIFIED="1279522573443" TEXT="name:string"/>
 </node>
-<node CREATED="1279522389893" FOLDED="true" ID="ID_1634413037" MODIFIED="1291026766315" TEXT="fsection">
-<node CREATED="1279522421717" ID="ID_1494381385" MODIFIED="1279522495056" TEXT="code: string"/>
+<node CREATED="1279522389893" FOLDED="true" ID="ID_1634413037" MODIFIED="1295128256450" TEXT="fsection">
+<node CREATED="1279522421717" ID="ID_1494381385" MODIFIED="1279522495056" TEXT="code: string">
+<node CREATED="1295128184564" ID="ID_142914169" MODIFIED="1295128207940" TEXT="&#xe2a;&#xe48;&#xe27;&#xe19;&#xe2a;&#xe33;&#xe2b;&#xe23;&#xe31;&#xe1a;&#xe01;&#xe32;&#xe23;&#xe04;&#xe25;&#xe31;&#xe07; &#xe40;&#xe1e;&#xe34;&#xe48;&#xe21; 00: &#xe07;&#xe1a;&#xe01;&#xe25;&#xe32;&#xe07;"/>
+</node>
 <node CREATED="1279522495579" ID="ID_310832225" MODIFIED="1279522498183" TEXT="name: string"/>
 <node CREATED="1279522498712" ID="ID_1948369792" MODIFIED="1284767934450" TEXT="account: string"/>
 <node CREATED="1284767971563" ID="ID_1152304147" MODIFIED="1284768001045" TEXT="budget: float"/>
@@ -990,7 +1070,7 @@
 <node CREATED="1280466609803" ID="ID_1555077196" MODIFIED="1280466613104" TEXT="gsb:float"/>
 <node CREATED="1280466018695" ID="ID_1634208151" MODIFIED="1280466023315" TEXT="comment:string"/>
 </node>
-<node CREATED="1280471039294" FOLDED="true" ID="ID_1467381899" MODIFIED="1285634199199" TEXT="cat">
+<node CREATED="1280471039294" FOLDED="true" ID="ID_1467381899" MODIFIED="1295162807042" TEXT="cat">
 <node CREATED="1280471041986" ID="ID_1719496944" MODIFIED="1280471044848" TEXT="code:string"/>
 <node CREATED="1281807524882" ID="ID_9660834" MODIFIED="1281807528713" TEXT="code_laas:string"/>
 <node CREATED="1280471045261" ID="ID_656452575" MODIFIED="1280471047701" TEXT="name:string"/>
@@ -1054,7 +1134,7 @@
 <node CREATED="1280826808043" ID="ID_383850822" MODIFIED="1280826813457" TEXT="law_page"/>
 <node CREATED="1280826815121" ID="ID_1413845541" MODIFIED="1280826819721" TEXT="law_item:string"/>
 </node>
-<node CREATED="1280471049827" ID="ID_612699606" MODIFIED="1294451229495" TEXT="revenue">
+<node CREATED="1280471049827" ID="ID_612699606" MODIFIED="1295967421640" TEXT="revenue">
 <node CREATED="1280471052406" ID="ID_30528850" MODIFIED="1280471055427" TEXT="code:string"/>
 <node CREATED="1280471055870" ID="ID_236875058" MODIFIED="1280471058415" TEXT="name:string"/>
 <node CREATED="1281807524882" ID="ID_1417401637" MODIFIED="1281807528713" TEXT="code_laas:string"/>
@@ -1067,7 +1147,7 @@
 <node CREATED="1280826808043" ID="ID_723218464" MODIFIED="1280826813457" TEXT="law_page"/>
 <node CREATED="1280826815121" ID="ID_105956896" MODIFIED="1280826819721" TEXT="law_item:string"/>
 </node>
-<node CREATED="1286156074522" FOLDED="true" ID="ID_693717917" MODIFIED="1291090311008" TEXT="income">
+<node CREATED="1286156074522" ID="ID_693717917" MODIFIED="1295967403712" TEXT="income">
 <node CREATED="1286156484881" ID="ID_1611070200" MODIFIED="1286156494545" TEXT="ref:string"/>
 <node CREATED="1286156579799" ID="ID_1448718120" MODIFIED="1286156605091" TEXT="deliver_id"/>
 <node CREATED="1286156611367" ID="ID_673131597" MODIFIED="1286156615052" TEXT="receiver_id"/>
@@ -1085,6 +1165,31 @@
 <node CREATED="1286158913612" ID="ID_98629874" MODIFIED="1286158915759" TEXT="rcat_id"/>
 <node CREATED="1286158920363" ID="ID_273171923" MODIFIED="1286158923731" TEXT="rtype_id"/>
 <node CREATED="1286156426305" ID="ID_102586" MODIFIED="1286156429766" TEXT="revenue_id"/>
+</node>
+<node CREATED="1295302987722" FOLDED="true" ID="ID_1711209782" MODIFIED="1295965352259" TEXT="account">
+<node CREATED="1295302992020" ID="ID_34859186" MODIFIED="1295303003935" TEXT="code: string"/>
+<node CREATED="1295322252554" ID="ID_1397570100" MODIFIED="1295322264647" TEXT="code_dla: string"/>
+<node CREATED="1295303004529" ID="ID_807550455" MODIFIED="1295303007354" TEXT="name: string"/>
+<node CREATED="1295304245294" ID="ID_797302467" MODIFIED="1295304253221" TEXT="atype">
+<node CREATED="1295304253223" ID="ID_599763605" MODIFIED="1295304263315" TEXT="1: assets"/>
+<node CREATED="1295304348256" ID="ID_1196602595" MODIFIED="1295304353221" TEXT="2: liability"/>
+<node CREATED="1295304263811" ID="ID_717584184" MODIFIED="1295305149228" TEXT="3: equity"/>
+<node CREATED="1295304274231" ID="ID_759350602" MODIFIED="1295328078110" TEXT="4: income"/>
+<node CREATED="1295305154542" ID="ID_1848839054" MODIFIED="1295400217002" TEXT="5: expense"/>
+</node>
+<node CREATED="1295303720883" ID="ID_1981030814" MODIFIED="1295303726176" TEXT="balance:float"/>
+<node CREATED="1295305333782" ID="ID_1399847693" MODIFIED="1295305336464" TEXT="parent_id"/>
+<node CREATED="1295305364965" ID="ID_715310251" MODIFIED="1295305371413" TEXT="reported: boolean"/>
+</node>
+<node CREATED="1295303021143" ID="ID_106584235" MODIFIED="1295303039537" TEXT="account_trans">
+<node CREATED="1295303039540" ID="ID_1729754796" MODIFIED="1295303044622" TEXT="account_id"/>
+<node CREATED="1295303462018" ID="ID_504737105" MODIFIED="1295303467113" TEXT="description: string"/>
+<node CREATED="1295303046222" ID="ID_1670356694" MODIFIED="1295303078782" TEXT="reported_on:date"/>
+<node CREATED="1295303081726" ID="ID_815838115" MODIFIED="1295303108974" TEXT="rtype">
+<node CREATED="1295303110313" ID="ID_1730616673" MODIFIED="1295329844358" TEXT="1: debit"/>
+<node CREATED="1295303113640" ID="ID_1784453714" MODIFIED="1295329849026" TEXT="2: crebit"/>
+</node>
+<node CREATED="1295303119576" ID="ID_1942060220" MODIFIED="1295303124538" TEXT="amount: float"/>
 </node>
 <node CREATED="1285777234400" FOLDED="true" ID="ID_700937331" MODIFIED="1289546671394" TEXT="laas_queue">
 <node CREATED="1285777239290" ID="ID_1101929416" MODIFIED="1285777242313" TEXT="xmain_id"/>
@@ -1216,7 +1321,7 @@
 </node>
 <node CREATED="1288929082074" ID="ID_687209736" MODIFIED="1288929085906" TEXT="student_id"/>
 </node>
-<node CREATED="1289075110980" FOLDED="true" ID="ID_368397054" MODIFIED="1289265150578" TEXT="province">
+<node CREATED="1289075110980" FOLDED="true" ID="ID_368397054" MODIFIED="1295163384554" TEXT="province">
 <node CREATED="1289075151288" ID="ID_78781077" MODIFIED="1289075158157" TEXT="code:string"/>
 <node CREATED="1289075158657" ID="ID_1416837730" MODIFIED="1289075166030" TEXT="name:string"/>
 <node CREATED="1289075166384" ID="ID_1861395536" MODIFIED="1289075170063" TEXT="region"/>
@@ -1534,7 +1639,7 @@
 <node CREATED="1292123154938" ID="ID_1876549913" MODIFIED="1292123179021" TEXT="utiliized_area"/>
 <node CREATED="1292122680357" ID="ID_388394770" MODIFIED="1292122683620" TEXT="construction_id"/>
 </node>
-<node CREATED="1292122118499" ID="ID_1957754752" MODIFIED="1294019316573" TEXT="person">
+<node CREATED="1292122118499" FOLDED="true" ID="ID_1957754752" MODIFIED="1295162938667" TEXT="person">
 <node CREATED="1292122126444" ID="ID_620482750" MODIFIED="1292277914140" TEXT="title: string"/>
 <node CREATED="1292122135809" ID="ID_1617970069" MODIFIED="1292122148820" TEXT="fname: string"/>
 <node CREATED="1292122150362" ID="ID_1200135538" MODIFIED="1292122153801" TEXT="lname: string"/>
@@ -1610,7 +1715,7 @@
 <node CREATED="1293240596884" ID="ID_399988193" MODIFIED="1293240602946" TEXT="name: string"/>
 <node CREATED="1293242846810" ID="ID_1798637495" MODIFIED="1293242853190" TEXT="shared: boolean"/>
 </node>
-<node CREATED="1293240658689" ID="ID_507633839" MODIFIED="1293241338083" TEXT="mgroup_membership">
+<node CREATED="1293240658689" FOLDED="true" ID="ID_507633839" MODIFIED="1295162942946" TEXT="mgroup_membership">
 <node CREATED="1293241269806" ID="ID_1675912599" MODIFIED="1293241274088" TEXT="user_id"/>
 <node CREATED="1293241274647" ID="ID_444635637" MODIFIED="1293241278644" TEXT="mgroup_id"/>
 </node>

@@ -1,0 +1,142 @@
+= javascript_include_tag "rgraph/RGraph.common.core.js"
+= javascript_include_tag "rgraph/RGraph.common.annotate.js"
+= javascript_include_tag "rgraph/RGraph.common.tooltips.js"
+= javascript_include_tag "rgraph/RGraph.pie.js"
+:css
+  body {
+    size: A4;
+    font-size: 12pt;
+  }
+  table {
+    width:100%;
+    border-collapse: collapse;
+    line-height: 98%;
+    padding:0;
+    margin:0;
+  }
+  td,th {
+    border:1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .noline {
+    border-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  td.double {
+    border-bottom: double;
+  }
+  td.num {
+    text-align: right;
+    width: 1in;
+  }
+#head-report
+  รายงานการใช้จ่ายงบประมาณ พ.ศ.
+  = fiscal_year
+  %br
+  = Org.head_report
+  %br
+  ประจำเดือน
+  = MONTHS[end_of_last_month.month-1]
+  = end_of_last_month.year+543
+%table
+  %tr
+    %th(rowspan=2) องค์กรปกครองส่วนท้องถิ่น
+    %th(colspan=2) รายรับ
+    %th(colspan=2) รายจ่ายประจำ
+    %th(colspan=2) รายจ่ายเพื่อการลงทุน
+    %th(rowspan=2) หมายเหตุ
+  %tr
+    %td(align="center") ประมาณการ
+    %td(align="center") รับจริง
+    %td(align="center") ประมาณการ
+    %td(align="center") ผลการเบิกจ่ายจริง
+    %td(align="center") ประมาณการ
+    %td(align="center") ผลการเบิกจ่ายจริง
+  %tr
+    %td= Org.full_name
+    %td.num= currency(@revenue_plan)
+    %td.num= currency(@revenue_actual)
+    %td.num= currency(@fixed_plan)
+    %td.num= currency(@fixed_actual)
+    %td.num= currency(@invest_plan)
+    %td.num= currency(@invest_actual)
+    %td &nbsp;
+  - 4.times do
+    %tr
+      - 8.times do
+        %td &nbsp;
+  %tr
+    %th.double รวม
+    %td.num.double= b currency(@revenue_plan)
+    %td.num.double= b currency(@revenue_actual)
+    %td.num.double= b currency(@fixed_plan)
+    %td.num.double= b currency(@fixed_actual)
+    %td.num.double= b currency(@invest_plan)
+    %td.num.double= b currency(@invest_actual)
+    %td.double &nbsp;
+%table
+  %tr
+    %th.noline(style="padding-top:1in; width:33%;")
+      = "(#{@finance_head.full_name})"
+      %br
+      = @finance_head.position
+    %th.noline(style="padding-top:1in; width:33%;")
+      = "(#{@palat.full_name})"
+      %br
+      = @palat.position
+    %th.noline(style="padding-top:1in; width:33%;")
+      = "(#{@mayor.full_name})"
+      %br
+      = @mayor.position
+%table
+  %tr
+    %td.noline
+      /- render_chart_html '/FusionCharts/Doughnut2D.swf', '/data/budget_expense_chart.xml', '', 'myFirstHTML', 500, 400, false
+      <canvas id="donut1" width="350" height="350">[No canvas support]</canvas> 
+    %td.noline
+      /- render_chart_html '/FusionCharts/Doughnut2D.swf', '/data/budget_expense_chart_actual.xml', '', 'myFirstHTML', 500, 400, false
+      <canvas id="donut2" width="350" height="350">[No canvas support]</canvas> 
+
+:javascript
+  window.onload = function ()
+  {
+    var donut = new RGraph.Pie('donut1', [26528000,23022400,3505600]);
+    donut.Set('chart.variant', 'donut');
+    donut.Set('chart.colors', ['#9DF2F1','#A7E34F','#FAD360']);
+    donut.Set('chart.tooltips', ['26,528,000','23,022,400','3,505,600']);
+    donut.Set('chart.tooltips.event', 'onmousemove');
+    donut.Set('chart.linewidth', 5);
+    donut.Set('chart.strokestyle', 'white');
+    donut.Set('chart.gutter', 45);
+    donut.Set('chart.title', "ประมาณการ");
+    donut.Set('chart.key', ['รายรับ', 'รายจ่ายประจำ', 'รายจ่ายลงทุน']);
+    donut.Set('chart.key.shadow', true);
+    donut.Set('chart.key.shadow.offsetx', 3);
+    donut.Set('chart.key.shadow.offsety', 3);
+    donut.Set('chart.key.shadow.blur', 3);
+    donut.Set('chart.key.shadow.color', 'gray');
+    donut.Set('chart.key.position', 'graph');
+    donut.Set('chart.align', 'left');
+    donut.Draw();
+    
+    var donut2 = new RGraph.Pie('donut2', [1358814.43,1498533.06,0]);
+    donut2.Set('chart.variant', 'donut');
+    donut2.Set('chart.colors', ['#9DF2F1','#A7E34F','#FAD360']);
+    donut2.Set('chart.tooltips', ['1,358,814.43','1,498,533.06','0']);
+    donut2.Set('chart.tooltips.event', 'onmousemove');
+    donut2.Set('chart.linewidth', 5);
+    donut2.Set('chart.strokestyle', 'white');
+    donut2.Set('chart.gutter', 45);
+    donut2.Set('chart.title', "ผลการดำเนินงาน");
+    donut2.Set('chart.key', ['รายรับ', 'รายจ่ายประจำ', 'รายจ่ายลงทุน']);
+    donut2.Set('chart.key.shadow', true);
+    donut2.Set('chart.key.shadow.offsetx', 3);
+    donut2.Set('chart.key.shadow.offsety', 3);
+    donut2.Set('chart.key.shadow.blur', 3);
+    donut2.Set('chart.key.shadow.color', 'gray');
+    donut2.Set('chart.key.position', 'graph');
+    donut2.Set('chart.align', 'left');
+    donut2.Draw();
+  }

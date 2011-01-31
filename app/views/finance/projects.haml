@@ -1,0 +1,63 @@
+= javascript_include_tag "rgraph/RGraph.common.core.js"
+= javascript_include_tag "rgraph/RGraph.common.annotate.js"
+= javascript_include_tag "rgraph/RGraph.common.tooltips.js"
+= javascript_include_tag "rgraph/RGraph.meter.js"
+
+%h3
+  สถานะโครงการปีงบประมาณ 2554
+%table(width="100%")
+  %tr
+    %th
+      %canvas(id="meter1" width="250" height="170") [No canvas support]
+      %br
+      โครงการซ่อมถนนหมู่ 3
+    %th
+      %canvas(id="meter2" width="250" height="170") [No canvas support]
+      %br
+      โครงการฝึกอาชีพ
+  %tr
+    %th
+      %canvas(id="meter3" width="250" height="170") [No canvas support]
+      %br
+      โครงการก่อสร้างสะพานทางเดินเท้า ค.ส.ล. หมู่ 1
+    %th
+      %canvas(id="meter4" width="250" height="170") [No canvas support]
+      %br
+      โครงการก่อสร้างลานคอนกรีตเสริมเหล็กเอนกประสงค์ หมู่ 4
+:javascript
+  window.onload = function ()
+  {
+    var meter1 = new RGraph.Meter('meter1', 0, 100, 21);
+    meter1.Set('chart.red.start', 0);
+    meter1.Set('chart.red.end', 25);
+    meter1.Set('chart.yellow.start', 25);
+    meter1.Set('chart.yellow.end', 50);
+    meter1.Set('chart.green.start', 50);
+    meter1.Set('chart.green.end', 100);
+    meter1.Draw();
+    var meter2 = new RGraph.Meter('meter2', 0, 100, 81);
+    meter2.Set('chart.red.start', 0);
+    meter2.Set('chart.red.end', 25);
+    meter2.Set('chart.yellow.start', 25);
+    meter2.Set('chart.yellow.end', 50);
+    meter2.Set('chart.green.start', 50);
+    meter2.Set('chart.green.end', 100);
+    meter2.Draw();
+    var meter3 = new RGraph.Meter('meter3', 0, 100, 45);
+    meter3.Set('chart.red.start', 0);
+    meter3.Set('chart.red.end', 25);
+    meter3.Set('chart.yellow.start', 25);
+    meter3.Set('chart.yellow.end', 50);
+    meter3.Set('chart.green.start', 50);
+    meter3.Set('chart.green.end', 100);
+    meter3.Draw();
+    var meter4 = new RGraph.Meter('meter4', 0, 100, 34);
+    meter4.Set('chart.red.start', 0);
+    meter4.Set('chart.red.end', 25);
+    meter4.Set('chart.yellow.start', 25);
+    meter4.Set('chart.yellow.end', 50);
+    meter4.Set('chart.green.start', 50);
+    meter4.Set('chart.green.end', 100);
+    meter4.Draw();
+  }
+  $("#meter1").click(function() { window.location="/finance/reports" });

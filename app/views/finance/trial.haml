@@ -1,0 +1,68 @@
+:css
+  body {
+    size: A4;
+  }
+  table {
+    width:100%;
+    border-collapse: collapse;
+    line-height: 98%;
+    padding:0;
+    margin:0;
+  }
+  td,th {
+    border:1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  td.noline {
+    border-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+- org= Org.last
+#head-report
+  = Org.head_report
+  %br
+  งบทดลอง
+  %br
+  = "ณ วันที่ #{date_thai end_of_last_month, :date_only=>true, :monthfull=>true}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr
+    %th ชื่อบัญชี
+    %th รหัสบัญชี
+    %th(style="width:120px;") เดบิท
+    %th(style="width:120px;") เครดิต
+  - debit= 0 ; credit= 0
+  - @accounts.each do |a|
+    %tr
+      %td= a.name
+      %td(align='center')= a.code_dla
+      - if a.balance>=0
+        %td{:align=>'right'}= currency(a.balance)
+        %td{:align=>'right'}= currency(0)
+        - debit += a.balance
+      - else
+        %td{:align=>'right'}= currency(0)
+        %td{:align=>'right'}= currency(-a.balance)
+        - credit -= a.balance
+  %tr
+    %td.noline(colspan=2) &nbsp;
+    %td{:align=>'right'}= currency(debit)
+    %td{:align=>'right'}= currency(credit)
+%p &nbsp;
+%p &nbsp;
+%center
+  %table
+    %tr
+      %td.noline(style="text-align:center; width:33%;")
+        = "(#{b @finance_head.full_name})"
+        %br
+        = b @finance_head.position
+      %td.noline(style="text-align:center; width:33%;")
+        = "(#{b @palat.full_name})"
+        %br
+        = b @palat.position
+      %td.noline(style="text-align:center; width:33%;")
+        = "(#{b @mayor.full_name})"
+        %br
+        = b @mayor.position

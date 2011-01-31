@@ -1,0 +1,44 @@
+%table(width="100%")
+  %tr
+    %td(valign="top" width="50%")
+      %p
+      /= image_tag "report.png"
+      /= link_to align_text("รายงานสถานะการเงินประจำวัน"), :action=> :daily
+      = image_tag "printer.png"
+      = link_to align_text("รายงานสถานะการเงินประจำวัน"), {:action=> :daily_print}, :target=>"_blank"
+      = image_tag "external-link.png"
+      %p
+      = image_tag "printer.png"
+      = link_to align_text("งบทดลอง"), {:action=> :trial}, :target=>"_blank"
+      = image_tag "external-link.png"
+      %p
+      = image_tag "printer.png"
+      = link_to align_text("รายงานรับ-จ่าย เงินสด"), {:action=> :income}, :target=>"_blank"
+      = image_tag "external-link.png"
+      %p
+      = image_tag "printer.png"
+      = link_to align_text("รายงานสรุปเงินฝากและรายจ่าย (ฝจ.02)"), {:action=> :banks}, :target=>"_blank"
+      = image_tag "external-link.png"
+      %p
+      = image_tag "printer.png"
+      = link_to align_text("ตารางรายได้"), {:action=> :revenue_table}, :target=>"_blank"
+      = image_tag "external-link.png"
+      %p
+      = image_tag "printer.png"
+      = link_to align_text("ตารางรายจ่าย"), {:action=> :expense_table}, :target=>"_blank"
+      = image_tag "external-link.png"
+    %td(valign="top"  width="50%")
+      %p
+      = image_tag "chart_bar.png"
+      = link_to align_text("ติดตามโครงการ"), :action=> :projects
+      %p
+      = image_tag "chart_bar.png"
+      = link_to align_text("รายได้"), :action=> :revenue_chart
+      %p
+      = image_tag "printer.png"
+      = link_to align_text("รายงานการใช้จ่ายงบประมาณ"), {:action=> :budget_expense}, :target=>"_blank"
+      = image_tag "external-link.png"
+      %p
+      = image_tag "printer.png"
+      = link_to align_text("งบแสดงฐานะการเงิน"), {:action=> :balance}, :target=>"_blank"
+      = image_tag "external-link.png"

@@ -1,0 +1,23 @@
+%h4(style='text-align:center;') 
+  = @account.code
+  บัญชี
+  = @account.name
+  = "( #{@account.code_dla} )"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if finance_office?
+      %th{:style=>"width:30px;"} แก้ไข
+      %th{:style=>"width:30px;"} ลบ
+    %th วันที่
+    %th ประเภท
+    %th รายการ
+    %th จำนวนเงิน
+  - @account.account_trans.each do |a|
+    %tr
+      - if finance_office?
+        %td{:align=>'center'}= link_to image_tag('pencil.png'), "/run/finance/edit_account_trans/#{a.id}"
+        %td{:align=>'center'}= link_to image_tag('cross.png'), "/run/finance/rm_account_trans/#{a.id}", :confirm=>"กรุณายืนยัน"
+      %td(align='center')= a.reported_on
+      %td(align='center')= a.rtype
+      %td= a.description
+      %td{:align=>'right'}= currency(a.amount)

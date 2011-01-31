@@ -21,3 +21,7 @@ FINANCE_SECTION = 2
 # role for security officer (can search for everything)
 SECURED_ROLE = 'S'
 PER_PAGE = 25
+
+ACCOUNT_TYPE = ['สินทรัพย์','เจ้าหนี้','ทุน','รายรับ','รายจ่าย']
+MONTHS= ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฏาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม']
+  

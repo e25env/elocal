@@ -1,4 +1,4 @@
-<% bank = Bank.new %>
+<% bank = Bank.new :balance=>0 %>
 <% fields_for bank do |f| %>
   <table id="bank" width="100%">
     <tr>
@@ -6,8 +6,20 @@
       <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
     </tr>
     <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan='2'><%= f.select :atype, [['ออมทรัพย์',1],['กระแสรายวัน',2],['ประจำ 3 เดือน',3],['ประจำ 6 เดือน',4]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สาขา</td>
+      <td colspan="2"><%= f.text_field :branch, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
       <td class="field-name">บัญชีเลขที่</td>
       <td colspan="2"><%= f.text_field :account, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ยอดคงเหลือ</td>
+      <td colspan="2"><%= f.text_field :balance, :style => "width:400px;" %></td>
     </tr>
   </table>
 <% end %>

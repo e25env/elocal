@@ -1,0 +1,127 @@
+:css
+  body {
+    size: A4;
+  }
+  table {
+    width:100%;
+    border-collapse: collapse;
+    line-height: 98%;
+    padding:0;
+    margin:0;
+  }
+  td {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  td.num,th {
+    border:1px solid black;
+  }
+  td.noline {
+    border-style: none;
+  }
+  td.top {
+    border: none;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+  }
+  td.left {
+    border: none;
+    border-left: 1px solid black;
+  }
+  td.tl {
+    border: none;
+    border-left: 1px solid black;
+    border-top: 1px solid black;
+  }
+  td.tlr {
+    border-bottom: none;
+    border-top: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+  td.lr {
+    border: none;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+  td.double {
+    border-bottom: double;
+  }
+- org= Org.last
+#head-report
+  = Org.head_report
+  %br
+  รายงานสถานะการเงินประจำวัน
+  %br
+  = "ประจำวันที่ #{date_thai 1.day.ago, :date_only=>true, :monthfull=>true}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr
+    %td.top(colspan=2)= b("เงินสดคงเหลือ")
+    %td.num(align="center" style="width:150px;") จำนวนเงิน
+  - @lines.each do |a|
+    %tr
+      %td.left(colspan=2)= a[0]
+      - if a[2]
+        %td.num.double{:align=>'right'}= b(currency(a[1]))
+        - elsif a[1]=="&nbsp;"
+        %td.lr= a[1]
+        - else
+          %td.num{:align=>'right'}= currency(a[1])
+  %tr
+    %td.left(colspan=2) &nbsp;
+    %td.num &nbsp;
+  %tr
+    %td.tl &nbsp;
+    %td.tlr(colspan=2) &nbsp;
+  %tr
+    %td.left(align="center" style="width:3in;")
+      (ลงชื่อ)
+      = "."*60
+      ผู้ตรวจ
+      %br
+      = "(#{@finance_head.full_name})"
+      %br
+      = @finance_head.position
+    %td.lr(colspan=2)
+      = b "กรณีมีเงินสดคงเหลือ"
+      %br
+      = nbsp(4)
+      คณะกรรมการเก็บรักษาเงินได้ตรวจสอบเงินสดคงเหลือถูกต้องแล้ว จึงได้นำเข้าเก็บรักษาไว้ในตู้นิรภัย
+      %p
+      %table(width="100%")
+        %tr
+          %td(align="center" style="padding-top:1cm;")
+            = "."*60
+            %br
+            กรรมการ
+          %td(align="center" style="padding-top:1cm;")
+            = "."*60
+            %br
+            กรรมการ
+          %td(align="center" style="padding-top:1cm;")
+            = "."*60
+            %br
+            กรรมการ
+        %tr
+          %td(colspan=3 align="center" style="padding-top:1cm;")
+            = "."*80
+            %br
+            นายก
+            = Org.full_name
+      %p
+      = b "นำเงินสดคงเหลือฝากธนาคารในวันทำการถัดไป"
+      %br
+      = nbsp(4)
+      ข้าพเจ้าได้รับเงินจำนวน - บาท นำฝากธนาคารในวันที่ - เรียบร้อยแล้ว
+      %table
+        %tr
+          %td(align="center" style="padding-top:1cm;")
+            (ลงชื่อ)
+            = "."*60
+            = @cash_keeper[:position]
+            %br
+            = "(#{@cash_keeper[:name]})"
+          
+          
+
+    

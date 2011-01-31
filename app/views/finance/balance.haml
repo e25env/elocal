@@ -1,0 +1,68 @@
+:css
+  body {
+    size: A4;
+  }
+  table {
+    width:100%;
+    border-collapse: collapse;
+    line-height: 98%;
+    padding:0;
+    margin:0;
+  }
+  td,th {
+    border:none;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  td.double {
+    border-bottom: double;
+  }
+  td.num {
+    text-align: right;
+    width: 1in;
+  }
+#head-report
+  = Org.head_report
+  %br
+  งบแสดงฐานะการเงิน
+  %br
+  ณ วันที่
+  = date_thai (begin_of_fiscal_year-1), :date_only=>true, :monthfull=>true
+%p
+%table
+  %tr
+    %th(colspan=3) ทรัพย์สิน
+  - @assets.each do |a|
+    %tr
+      %td= a[0]
+      %td= a[1]
+      - if a[3]
+        %td.num.double= b currency(a[2])
+      - else
+        %td.num= currency(a[2])
+  %tr
+    %td(colspan=3) &nbsp;
+  %tr
+    %th(colspan=3) หนี้สินและเงินสะสม
+  - @equity.each do |a|
+    %tr
+      %td= a[0]
+      %td= a[1]
+      - if a[3]
+        %td.num.double= b currency(a[2])
+      - else
+        %td.num= currency(a[2])
+%table
+  %tr
+    %th.noline(style="padding-top:1in; width:33%;")
+      = "(#{@finance_head.full_name})"
+      %br
+      = @finance_head.position
+    %th.noline(style="padding-top:1in; width:33%;")
+      = "(#{@palat.full_name})"
+      %br
+      = @palat.position
+    %th.noline(style="padding-top:1in; width:33%;")
+      = "(#{@mayor.full_name})"
+      %br
+      = @mayor.position

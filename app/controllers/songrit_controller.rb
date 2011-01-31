@@ -7,6 +7,11 @@ class SongritController < ApplicationController
   require 'nokogiri'
   require 'mechanize'
 
+  def end_of_last_month
+    d= Date.today
+    dd= Date.new d.year, d.month, 1
+    render :text=> dd-1
+  end
   def sample_laas
     x= GmaXmain.last
 #    s = "ff.goto('http://www.google.com')"

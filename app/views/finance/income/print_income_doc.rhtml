@@ -76,16 +76,16 @@
     <td><%= d.rtype.name %></td>
     <td>&nbsp;</td>
     <td>&nbsp;</td>
-    <td align="right"><%= num_baht d.amount %></td>
-    <td align="right"><%= num_satang d.amount %></td>
+    <td align="right"><%= num num_baht(d.amount) %></td>
+    <td align="right"><%= num num_satang(d.amount) %></td>
     <td><%= d.remark %></td>
   </tr>
   <% i += 1 ; total += d.amount %>
   <% end %>
   <tr>
     <td class="total" colspan="5" align="right">รวมจำนวนเงินที่นำส่ง</td>
-    <td align="right"><%= num_baht total %></td>
-    <td align="right"><%= num_satang total %></td>
+    <td align="right"><%= num num_baht(total) %></td>
+    <td align="right"><%= num num_satang(total) %></td>
     <td class="total">&nbsp;</td>
   </tr>
 </table>

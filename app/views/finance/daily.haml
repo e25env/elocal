@@ -1,0 +1,75 @@
+- total = 27143635.64
+#head
+  รายงานสถานะการเงินประจำวัน<br/>
+  ประจำวันที่ 
+  = date_thai 1.day.ago, :date_only=>true
+.right
+  = image_tag "printer.png"
+  = align_text "พิมพ์รายงาน"
+%table
+  %tr
+    %td.subhead
+      เงินสดคงเหลือ
+    %td &nbsp;
+    
+  %tr
+    %td.indent ยอดเงินสดคงเหลือยกมา
+    %td.right= currency 0
+    
+  %tr
+    %td.indent เงินสดรับ
+    %td.right= currency 0
+    
+  %tr
+    %td.indent เงินนำฝากธนาคาร
+    %td.right= currency 0
+    
+  %tr
+    %td.indent ยอดเงินสดคงเหลือยกไป
+    %td.right= currency 0
+
+  %tr
+    %td.subhead
+      เงินฝากธนาคาร
+    %td &nbsp;
+
+  %tr
+    %td.indent ยอดเงินฝากธนาคารคงเหลือยกมา
+    %td.right= currency total+117716
+
+  %tr
+    %td.indent เงินนำฝากธนาคาร
+    %td.right= currency 0
+
+  %tr
+    %td.indent รายจ่าย
+    %td.right= currency 117716
+
+  %tr
+    %td.indent ยอดเงินฝากธนาคารคงเหลือยกไป
+    %td.right= b currency(total)
+
+  %tr
+    %td.indent
+      เช็คที่อนุมัติแล้วผู้มีสิทธิยังไม่มารับ <br/>
+      จำนวน
+      = num(0)
+      ฉบับ เป็นเงิน
+      = currency(0)
+      บาท
+    %td.right &nbsp;
+
+  %tr
+    %td.subhead(colspan=2)
+      รายละเอียดยอดเงินฝากธนาคาร
+    %td &nbsp;
+  - @banks.each do |bank|
+    %tr
+      %td
+        เงินฝากธนาคาร
+        = bank.full_name
+      %td.right= currency bank.balance
+
+  %tr
+    %td.indent รวมเงินฝากธนาคารคงเหลือยกไป
+    %td.right= b currency(total)

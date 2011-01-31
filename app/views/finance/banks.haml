@@ -1,0 +1,179 @@
+:css
+  body {
+    size: A4;
+    font-size: 11pt;
+  }
+  table {
+    width:100%;
+    border-collapse: collapse;
+    line-height: 98%;
+    padding:0;
+    margin:0;
+  }
+  td,th {
+    border:1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .noline {
+    border-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .split {
+    border-right: double;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  td.double {
+    border-bottom: double;
+  }
+  td.num {
+    text-align: right;
+    width: 0.5in;
+  }
+
+#ear(style="float:right; font-size:12pt;")
+  แบบ ฝจ. 02
+  %br
+  หน่วย: บาท
+#head-report
+  แบบรายงานสรุปเงินฝากและรายจ่ายขององค์กรปกครองส่วนท้องถิ่น
+  งบประมาณรายจ่ายประจำปีงบประมาณ พ.ศ.
+  = fiscal_year
+  %br
+  = Org.head_report
+%table
+  %tr
+    %th.split(rowspan=2 colspan=3)
+      เงินฝากธนาคาร/ประเภทเงินฝาก ณ วันที่ 
+      = date_thai end_of_last_month, :date_only=>true, :monthfull=>true
+    %th.split(colspan=4)
+      ยอดรายจ่ายจริงตั้งแต่
+      = date_thai begin_of_last_month, :date_only=>true, :monthfull=>true
+      = "-"
+      = date_thai end_of_last_month, :date_only=>true, :monthfull=>true
+    %th(colspan=3)
+      ยอดรายจ่ายจริงตั้งแต่
+      = date_thai begin_of_fiscal_year, :date_only=>true, :monthfull=>true
+      = "-"
+      = date_thai end_of_last_month, :date_only=>true, :monthfull=>true
+    %th(rowspan=2) รวม
+  %tr
+    %th ประเภทรายจ่าย
+    %th ประจำ
+    %th ลงทุน
+    %th.split รวม
+    %th ประเภทรายจ่าย
+    %th ประจำ
+    %th ลงทุน
+  %tr
+    %th ชื่อธนาคาร ประเภทเงินฝาก
+    %th จำนวนเงินฝาก แต่ละประเภท
+    %th.split จำนวนเงิน แต่ละประเภท
+    %th &nbsp;
+    %th จำนวนเงิน
+    %th จำนวนเงิน
+    %th.split จำนวนเงิน
+    %th &nbsp;
+    %th จำนวนเงิน
+    %th จำนวนเงิน
+    %th จำนวนเงิน
+  %tr
+    %td(align="center") (1)
+    %td(align="center") (2)
+    %td.split(align="center") (3)
+    %td(align="center") (4)
+    %td(align="center") (5)
+    %td(align="center") (6)
+    %td.split(align="center") (7)
+    %td(align="center") (8)
+    %td(align="center") (9)
+    %td(align="center") (10)
+    %td(align="center") (11)
+  %tr
+    %td= b "รวมเงินฝากธนาคาร"
+    %td &nbsp;
+    %td.num.split= b currency(@total)
+    %td= b "รวมประเภทรายจ่าย"
+    %td.num= b currency(@expense_month_fixed.sum)
+    %td.num= b currency(@expense_month_invest.sum)
+    %td.num.split= b currency(@expense_month_total)
+    %td= b "รวมประเภทรายจ่าย"
+    %td.num= b currency(@expense_acc_fixed.sum)
+    %td.num= b currency(@expense_acc_invest.sum)
+    %td.num.split= b currency(@expense_acc_total)
+  - @banks.each_with_index do |b,i|
+    %tr
+      %td= b[:name]
+      %td= b[:btype]
+      %td.num.split= currency(b[:balance])
+      - if i<=2
+        %td= @etypes[i]
+        %td.num= currency(@expense_month_fixed[i])
+        %td.num= currency(@expense_month_invest[i])
+        %td.num.split= currency(@expense_month_fixed[i]+@expense_month_invest[i])
+        %td= @etypes[i]
+        %td.num= currency(@expense_acc_fixed[i])
+        %td.num= currency(@expense_acc_invest[i])
+        %td.num= currency(@expense_acc_fixed[i]+@expense_acc_invest[i])
+      - else
+        %td &nbsp;
+        %td &nbsp;
+        %td &nbsp;
+        %td.split &nbsp;
+        %td &nbsp;
+        %td &nbsp;
+        %td &nbsp;
+        %td &nbsp;
+  %tr
+    %td= b "รวมประเภทเงินฝาก"
+    %td.num= b currency(@funds.sum)
+    %td.split &nbsp;
+    %td &nbsp;
+    %td &nbsp;
+    %td &nbsp;
+    %td.split &nbsp;
+    %td &nbsp;
+    %td &nbsp;
+    %td &nbsp;
+    %td &nbsp;
+  - 4.times do |i|
+    %tr
+      %td= "- #{@ftypes[i]}"
+      %td.num= currency(@funds[i])
+      %td.split &nbsp;
+      %td &nbsp;
+      %td &nbsp;
+      %td &nbsp;
+      %td.split &nbsp;
+      %td &nbsp;
+      %td &nbsp;
+      %td &nbsp;
+      %td &nbsp;
+  %tr
+    %th รวมทั้งสิ้น
+    %td.num.double= b currency(@total)
+    %td.num.double.split= b currency(@total)
+    %th รวมทั้งสิ้น
+    %td.num.double= b currency(@expense_month_fixed.sum)
+    %td.num.double= b currency(@expense_month_invest.sum)
+    %td.num.double.split= b currency(@expense_month_total)
+    %th รวมทั้งสิ้น
+    %td.num.double= b currency(@expense_acc_fixed.sum)
+    %td.num.double= b currency(@expense_acc_invest.sum)
+    %td.num.double= b currency(@expense_acc_total)
+%table
+  %tr
+    %th.noline(style="padding-top:1in; width:33%;")
+      = "(#{@finance_head.full_name})"
+      %br
+      = @finance_head.position
+    %th.noline(style="padding-top:1in; width:33%;")
+      = "(#{@palat.full_name})"
+      %br
+      = @palat.position
+    %th.noline(style="padding-top:1in; width:33%;")
+      = "(#{@mayor.full_name})"
+      %br
+      = @mayor.position

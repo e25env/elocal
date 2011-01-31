@@ -10,7 +10,8 @@ class GmaController < ApplicationController
     @xmain = GmaXmain.find params[:id]
   end
   def run_call_errors
-    @errors = GmaLog.find_all_by_log_type "ERROR", :order=>"created_at DESC", :limit => 20
+#    @gerrors = GmaLog.paginate :conditions=>{:log_type=>"ERROR"}, :order=>"created_at DESC", :per_page=>20, :page => params[:page] 
+    @gerrors = GmaLog.paginate :order=>"created_at DESC", :per_page=>20, :page => params[:page] 
   end
   def delete_run_call_errors
     GmaLog.delete_all "log_type='ERROR'"

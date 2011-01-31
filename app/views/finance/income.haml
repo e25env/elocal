@@ -1,0 +1,164 @@
+:css
+  body {
+    size: A4;
+    font-size: 12px;
+  }
+  table {
+    width:100%;
+    border-collapse: collapse;
+    line-height: 98%;
+    padding:0;
+    margin:0;
+  }
+  td,th {
+    border:1px solid black;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  td.noline {
+    border-style: none;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  td.half,th.half {
+    border-right: double;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  td.double {
+    border-bottom: double;
+  }
+#head-report
+  = Org.head_report
+  %br
+  รายงานรับ - จ่าย เงินสด
+  %br
+  ประจำเดือน
+  - period= end_of_last_month
+  = MONTHS[period.month-1]
+  = period.year+543
+%table{:width=>"100%"}
+  %tr
+    %th(colspan=2) จนถึงปัจจุบัน
+    %th(rowspan=2 width="25%") รายการ
+    %th.half(colspan=2)= "เดือนนี้ (#{date_thai period, :date_only=>true})"
+    %th(colspan=2) จนถึงปัจจุบัน
+    %th(rowspan=2 width="25%") รายการ
+    %th(colspan=2)= "เดือนนี้ (#{date_thai period, :date_only=>true})"
+  %tr
+    %th(width="7%")
+      ประมาณการ
+      %br
+      บาท
+    %th(width="7%")
+      เกิดขึ้นจริง
+      %br
+      บาท
+    %th(width="4%")
+      รหัสบัญชี
+    %th.half(width="7%")
+      เกิดขึ้นจริง
+      %br
+      บาท
+    %th(width="7%")
+      ประมาณการ
+      %br
+      บาท
+    %th(width="7%")
+      เกิดขึ้นจริง
+      %br
+      บาท
+    %th(width="4%")
+      รหัสบัญชี
+    %th(width="7%")
+      เกิดขึ้นจริง
+      %br
+      บาท
+  %tr
+    %td &nbsp;
+    %td.double(align="right")= currency @carry
+    %td= b "ยอดยกมา"
+    %td &nbsp;
+    %td.double.half(align="right")= currency @carry
+    %td &nbsp;
+    %td &nbsp;
+    %td &nbsp;
+    %td &nbsp;
+    %td &nbsp;
+  %tr
+    %td &nbsp;
+    %td &nbsp;
+    %td= b "รายรับ"
+    %td &nbsp;
+    %td.half &nbsp;
+    %td &nbsp;
+    %td &nbsp;
+    %td= b "รายจ่าย"
+    %td &nbsp;
+    %td &nbsp;
+  - max = [@revenues.size,@expenses.size].max
+  - max.times do |i|
+    %tr
+      - if @revenues[i]
+        %td(align="right")= currency @revenues[i][0]
+        - if @revenues[i][5]
+          %td.double(align="right")= currency @revenues[i][1]
+        - else
+          %td(align="right")= currency @revenues[i][1]
+        %td= @revenues[i][2]
+        %td(align="center")= @revenues[i][3]
+        - if @revenues[i][5]
+          %td.half.double(align="right")= currency @revenues[i][4]
+        - else
+          %td.half(align="right")= currency @revenues[i][4]
+      - else
+        %td &nbsp;
+        %td &nbsp;
+        %td &nbsp;
+        %td &nbsp;
+        %td &nbsp;
+      - if @expenses[i]
+        %td(align="right")= currency @expenses[i][0]
+        - if @expenses[i][5]
+          %td.double(align="right")= currency @expenses[i][1]
+        - else
+          %td(align="right")= currency @expenses[i][1]
+        %td= @expenses[i][2]
+        %td(align="center")= @expenses[i][3]
+        - if @expenses[i][5]
+          %td.double(align="right")= currency @expenses[i][4]
+        - else
+          %td(align="right")= currency @expenses[i][4]
+      - else
+        %td &nbsp;
+        %td &nbsp;
+        %td &nbsp;
+        %td &nbsp;
+        %td &nbsp;
+  %tr
+    %td.double(align="right")= b currency(@sum_revenues[0])
+    %td.double(align="right")= b currency(@sum_revenues[1])
+    %td.noline(align="center" colspan=2)= b @sum_revenues[2]
+    %td.double(align="right")= b currency(@sum_revenues[3])
+    %td.double(align="right")= b currency(@sum_expenses[0])
+    %td.double(align="right")= b currency(@sum_expenses[1])
+    %td.noline(align="center" colspan=2)= b @sum_expenses[2]
+    %td.double(align="right")= b currency(@sum_expenses[3])
+  %tr
+    %td.noline &nbsp;
+    %td.noline &nbsp;
+    %td.noline(align="center" colspan=2)= b("รวมยอดเงินคงเหลือ + เงินรายรับ")
+    %td.double(align="right")= b currency(@carry+@sum_revenues[3]) 
+    %td.noline &nbsp;
+    %td.noline &nbsp;
+    %td.noline(align="center" colspan=2)= b "รายรับ สูงกว่า (ต่ำกว่า) รายจ่าย"
+    %td.double(align="right")= b currency(@sum_revenues[3]-@sum_expenses[3]) 
+  %tr
+    %td.noline เงินฝาก+รับฝาก
+    %td.noline(align="right")= currency(@deposit)
+    %td.noline(align="right" colspan=2) หักรวมรายจ่ายตั้งแต่ต้นปี - ปัจจุบัน
+    %td.noline(align="right")= currency(@acc_expenses)
+    %td.noline ยอดคงเหลือ
+    %td.noline(align="right")= currency(@carry_over)
+    %td.noline(align="right" colspan=2) ยอดยกไป
+    %td.noline(align="right")= currency(@carry_over)

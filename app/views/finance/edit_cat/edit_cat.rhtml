@@ -1,0 +1,19 @@
+<%
+  cat = Cat.find $xvars[:p][:id]
+%>
+<% fields_for cat do |f| %>
+  <table id="cat" width="100%">
+    <tr>
+      <td class="field-name">รหัสบัญชี</td>
+      <td colspan="2"><%= f.text_field :code, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รหัส LAAS</td>
+      <td colspan="2"><%= f.text_field :code_laas, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมวด</td>
+      <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
+    </tr>
+  </table>
+<% end %>
