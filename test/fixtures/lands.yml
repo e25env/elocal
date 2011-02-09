@@ -1,0 +1,45 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  owner_id: 1
+  owner_address_id: 1
+  pt4_code: MyString
+  land_code: MyString
+  location_id: 1
+  doc_type: 1
+  doc_num: MyString
+  location_plan: 1
+  location_num: 1
+  location_survey: 1
+  area_rai: 1
+  area_ngan: 1
+  area_wa: 1
+  area_sqm: 1
+  usage: MyString
+  utilize: MyString
+  utilizer_id: 1
+  utilizer_address_id: 1
+  comment: MyText
+  gma_user_id: 1
+
+two:
+  owner_id: 1
+  owner_address_id: 1
+  pt4_code: MyString
+  land_code: MyString
+  location_id: 1
+  doc_type: 1
+  doc_num: MyString
+  location_plan: 1
+  location_num: 1
+  location_survey: 1
+  area_rai: 1
+  area_ngan: 1
+  area_wa: 1
+  area_sqm: 1
+  usage: MyString
+  utilize: MyString
+  utilizer_id: 1
+  utilizer_address_id: 1
+  comment: MyText
+  gma_user_id: 1
