@@ -16,7 +16,7 @@ gem "rmagick", :require => "RMagick"
 gem "geokit"
 gem 'rubyzip', :require => 'zip/zip'
 gem 'haml'
-gem 'hpricot'
+#gem 'hpricot'
 #gem 'mongo_mapper'
 #gem 'bson_ext', :require=>false
 #gem 'firewatir', "1.6.5"
