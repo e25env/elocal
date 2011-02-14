@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  scope: 1
+  moo: 1
+  start_on: 2011-02-09
+  stop_on: 2011-02-09
+  gma_user_id: 1
+
+two:
+  name: MyString
+  scope: 1
+  moo: 1
+  start_on: 2011-02-09
+  stop_on: 2011-02-09
+  gma_user_id: 1

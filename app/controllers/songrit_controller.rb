@@ -3,10 +3,17 @@ class SongritController < ApplicationController
   include ERB::Util
   require "csv"
   require "hpricot"
-  require "open-uri"
+  # require "rest-open-uri"
+  require "rest_client"
   require 'nokogiri'
   require 'mechanize'
 
+  def test_api
+    body= File.open("public/OTA_HotelDescriptiveContentNotifRQ.xml").read
+    # f= open("http://pob-ws.local/api/hotel_descriptive_content_notif", :method=>:post, :body=>body)
+    f= RestClient.post "http://pob-ws.heroku.com/api/hotel_descriptive_content_notif", body
+    render :text => f.body
+  end
   def end_of_last_month
     d= Date.today
     dd= Date.new d.year, d.month, 1
