@@ -16,21 +16,11 @@ gem "rmagick", :require => "RMagick"
 gem "geokit"
 gem 'rubyzip', :require => 'zip/zip'
 gem 'haml'
-#gem 'hpricot'
-#gem 'mongo_mapper'
-#gem 'bson_ext', :require=>false
-#gem 'firewatir', "1.6.5"
-#gem 'commonwatir', "1.6.5"
-#gem 'chronic'
 gem "mail", "2.2.1"
-gem "backup"
 gem "prawn"
-#gem "rails-footnotes-linux", :group => "development"
 group :development do
-  gem "ruby-debug"
+#  gem "ruby-debug"
   gem "rails-footnotes"
   gem "rspec", "1.3.1"
   gem "rspec-rails", "1.3.3"
-#  gem "rails-erd" # rails 3 only
-#  gem "wirble"
 end

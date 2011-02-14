@@ -1,6 +1,6 @@
 class MainController < ApplicationController
   require "open-uri"
-  require "hpricot"
+  # require "hpricot"
 
   def status
     @xmain= GmaXmain.find params[:id]
