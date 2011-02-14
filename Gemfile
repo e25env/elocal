@@ -10,7 +10,7 @@ gem 'pg'
 #gem 'inherited_resources', '1.0.3'
 gem "linguistics"
 gem "will_paginate"
-gem "RedCloth"
+#gem "RedCloth"
 gem "mechanize"
 gem "rmagick", :require => "RMagick"
 gem "geokit"
