@@ -1,0 +1,25 @@
+<% poll_selection = PollSelection.new %>
+<% fields_for poll_selection do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">รหัส</td>
+      <td colspan="2"><%= f.text_field :code, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สี</td>
+      <td><%= f.text_field :color, :style => "width:200px;" %></td>
+      <td>ตัวอย่าง เช่น red หรือ #aabbcc</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2">
+        <%= radio_button_tag :done, 'y', true  %> สิ้นสุดการบันทึกตัวเลือก
+        <%= radio_button_tag :done, 'n'  %> ยังมีรายการตัวเลือกบันทึกต่อ
+      </td>
+    </tr>
+  </table>
+<% end %>

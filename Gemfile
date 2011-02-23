@@ -4,7 +4,7 @@ source "http://rubygems.org"
 gem "rails", "2.3.5"
 gem "rest-open-uri"
 gem "heroku"
-gem "taps", "0.3.14"
+#gem "taps", "0.3.14"
 gem 'pg'
 #gem 'mysql'
 #gem 'inherited_resources', '1.0.3'

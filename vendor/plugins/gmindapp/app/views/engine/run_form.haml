@@ -12,7 +12,7 @@
 %script
   function validate() { return true; }
 %p
-- user = current_user || TgelUser.new
+- user = current_user || User.new
 - if @sign
   .notice= "เอกสารอนุมัติด้วยระบบลายมือชื่ออิเล็กทรอนิกส์ ใช้งานได้เฉพาะเครื่องที่มีการติดตั้งโปรแกรม และกุญแจส่วนบุคคลของ<u>#{user.title} #{user.fname} #{user.lname}</u> เรียบร้อยแล้วเท่านั้น"
   - form_class = 'sign formtastic'
@@ -32,4 +32,4 @@
   = submit_tag @message
 %p
 %script
-  $('#content input[type=text]').first().focus();
+  $('#content input')[3].focus();

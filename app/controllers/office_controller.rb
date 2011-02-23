@@ -1,7 +1,18 @@
 class OfficeController < ApplicationController
+  def polls
+    @polls = Poll.all
+  end
   def create_poll
     p= Poll.create $xvars[:enter][:poll]
     $xvars[:poll_id]= p.id
+  end
+  def rm_poll
+    Poll.destroy $xvars[:p][:id]
+  end
+  def create_poll_selection
+    ps= PollSelection.new $xvars[:enter_selection][:poll_selection]
+    ps.poll_id= $xvars[:poll_id]
+    ps.save
   end
   def sum_leave
     last_period= Date.today-180
