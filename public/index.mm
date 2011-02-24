@@ -468,6 +468,15 @@
 </node>
 </node>
 <node CREATED="1298552981743" ID="ID_603746587" MODIFIED="1298553240446" TEXT="link: &#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe17;&#xe23;&#xe31;&#xe1e;&#xe22;&#xe4c;&#xe2a;&#xe34;&#xe19; - &#xe17;&#xe35;&#xe48;&#xe14;&#xe34;&#xe19;: /finance/lands"/>
+<node CREATED="1298578705837" ID="ID_1648254598" MODIFIED="1298578774560" TEXT="land: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe17;&#xe35;&#xe48;&#xe14;&#xe34;&#xe19;">
+<icon BUILTIN="closed"/>
+<node CREATED="1298578718365" ID="ID_1583413967" MODIFIED="1298578755342" TEXT="enter_land: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1298578737494" ID="ID_199015317" MODIFIED="1298578760262" TEXT="create_land">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
 <node CREATED="1280809504423" FOLDED="true" ID="ID_888371375" MODIFIED="1297227004803" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
 <node CREATED="1280809530686" ID="ID_1366914323" MODIFIED="1280809746078" TEXT="enter_payment:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe0e;&#xe35;&#xe01;&#xe32;">
 <icon BUILTIN="attach"/>

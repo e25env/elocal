@@ -3,6 +3,8 @@
 one:
   owner_id: 1
   owner_address_id: 1
+  utilizer_id: 1
+  utilizer_address_id: 1
   pt4_code: MyString
   land_code: MyString
   location_id: 1
@@ -17,14 +19,15 @@ one:
   area_sqm: 1
   usage: MyString
   utilize: MyString
-  utilizer_id: 1
-  utilizer_address_id: 1
   comment: MyText
+  tax: 1.5
   gma_user_id: 1
 
 two:
   owner_id: 1
   owner_address_id: 1
+  utilizer_id: 1
+  utilizer_address_id: 1
   pt4_code: MyString
   land_code: MyString
   location_id: 1
@@ -39,7 +42,6 @@ two:
   area_sqm: 1
   usage: MyString
   utilize: MyString
-  utilizer_id: 1
-  utilizer_address_id: 1
   comment: MyText
+  tax: 1.5
   gma_user_id: 1

@@ -3,6 +3,8 @@ class CreateLands < ActiveRecord::Migration
     create_table :lands, :force=>true do |t|
       t.integer :owner_id
       t.integer :owner_address_id
+      t.integer :utilizer_id
+      t.integer :utilizer_address_id
       t.string :pt4_code
       t.string :land_code
       t.integer :location_id
@@ -17,9 +19,8 @@ class CreateLands < ActiveRecord::Migration
       t.integer :area_sqm
       t.string :usage
       t.string :utilize
-      t.integer :utilizer_id
-      t.integer :utilizer_address_id
       t.text :comment
+      t.float :tax
       t.integer :gma_user_id
 
       t.timestamps
