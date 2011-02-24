@@ -1,6 +1,9 @@
 class FinanceController < ApplicationController
   def index
   end
+  def lands
+    @lands= Land.all
+  end
   def balance
     @fixed_asset = 22199616.27
     @assets = []

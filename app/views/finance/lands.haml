@@ -1,0 +1,21 @@
+%h4(style='text-align:center;') ทะเบียนทรัพย์สิน - ที่ดิน
+- if finance_office? || true
+  %div(style='float:right')
+    = image_tag 'add.png'
+    = link_to align_text("ขึ้นทะเบียนที่ดิน"), "/run/finance/land"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if finance_office? || true
+      %th{:style=>"width:30px;"} แก้ไข
+      %th{:style=>"width:30px;"} ลบ
+    %th ชื่อผู้มีกรรมสิทธิ์
+    %th(style='width:50px;') หมู่
+    %th เนื้อที่
+  - @lands.each do |l|
+    %tr
+      - if finance_office? || true
+        %td= link_to image_tag('pencil.png'), "/run/finance/edit_land/#{l.id}"
+        %td= link_to image_tag('cross.png'), "/run/finance/rm_land/#{l.id}", :confirm=>"กรุณายืนยัน"
+      %td= l.owner.full_name
+      %td(align='center')= s.moo
+      %td= "area"
