@@ -10,3 +10,4 @@ nbproject
 database.yml
 schema.rb
 doc/upload
+Gemfile*

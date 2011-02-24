@@ -4,6 +4,7 @@ class User < GmaUser
   belongs_to :subsection
   has_many :car_requests, :foreign_key=>"gma_user_id", :order=>"schedule_at"
 
+  default_scope :order=>"fname"
   named_scope :finance, :conditions=>{:section_id=>FINANCE_SECTION}, :order=>:fname
 
   def self.mayor

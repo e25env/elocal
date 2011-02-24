@@ -14,6 +14,17 @@ class OfficeController < ApplicationController
     ps.poll_id= $xvars[:poll_id]
     ps.save
   end
+  def poll_zones
+    @poll_zones = PollZone.all
+  end
+  def create_poll_zone
+    p= PollZone.create $xvars[:enter_poll_zone][:poll_zone]
+    $xvars[:p][:return]= "/office/poll_zones"
+  end
+  def rm_poll_zone
+    PollZone.destroy $xvars[:p][:id]
+    $xvars[:p][:return]= "/office/poll_zones"
+  end
   def sum_leave
     last_period= Date.today-180
     period_begin= Leave.period_begin(last_period)

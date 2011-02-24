@@ -1,0 +1,19 @@
+%h4(style='text-align:center;') กลุ่มสำรวจ
+- if office_office? || true
+  %div(style='float:right')
+    =image_tag 'add.png'
+    = link_to align_text('สร้างกลุ่มสำรวจ'), "/run/office/poll_zone"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if office_office? || true
+      %th{:style=>"width:30px;"} ลบ
+    %th ชื่อ
+    %th หมู่
+    %th ผู้รับผิดชอบ
+  - @poll_zones.each do |p|
+    %tr
+      - if office_office? || true
+        %td= link_to image_tag('cross.png'), "/run/office/rm_poll_zone/#{p.id}", :confirm=>"กรุณายืนยัน"
+        %td= p.code
+      %td(align='center')= p.moo
+      %td(style="text-align:center;")= p.user.full_name

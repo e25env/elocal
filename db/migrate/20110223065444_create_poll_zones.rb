@@ -3,7 +3,7 @@ class CreatePollZones < ActiveRecord::Migration
     create_table :poll_zones, :force=>true do |t|
       t.string :code
       t.integer :moo
-      t.integer :contact_id
+      t.integer :user_id
       t.integer :gma_user_id
 
       t.timestamps

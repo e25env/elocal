@@ -1,2 +1,3 @@
 class PollZone < ActiveRecord::Base
+  belongs_to :user
 end

@@ -1,0 +1,17 @@
+<% poll_zone = PollZone.new %>
+<% fields_for poll_zone do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">ชื่อกลุ่ม</td>
+      <td colspan="2"><%= f.text_field :code, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan="2"><%= f.text_field :moo, :style => "width:200px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ผู้รับผิดชอบ</td>
+      <td colspan="2"><%= f.collection_select :user_id, User.all, :id, :full_name %></td>
+    </tr>
+  </table>
+<% end %>
