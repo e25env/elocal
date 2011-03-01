@@ -2,7 +2,7 @@ class SongritController < ApplicationController
   include ActionView::Helpers::DebugHelper
   include ERB::Util
   require "csv"
-  require "hpricot"
+#  require "hpricot"
   # require "rest-open-uri"
   require "rest_client"
   require 'nokogiri'
