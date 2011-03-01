@@ -61,4 +61,8 @@ class MainController < ApplicationController
     @waypoint= Waypoint.find session[:waypoint_id]
     render :layout => false
   end
+  def person
+    @people= Person.find :all, :conditions=>['nid LIKE ?', "#{params[:nid]}%"], :limit=>10
+    render :layout=>false
+  end
 end

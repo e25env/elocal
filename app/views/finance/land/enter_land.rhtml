@@ -1,0 +1,32 @@
+<%= javascript_include_tag 'prototype' %>
+<script type="text/javascript">
+function getPerson(text, li) {
+  $('owner_fname').value=li.id;
+}
+</script>
+<% owner = Person.new %>
+<table width="100%">
+  <% fields_for :owner do |f| %>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td><%= text_field_with_auto_complete :owner, :nid, {}, 
+        { :method=> :get, :url => "/main/person", 
+          :select=>'name', 
+          :after_update_element => "getPerson", 
+          :with => "'nid='+element.value" } %>
+      </td>
+    </tr>
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+  <% end %>
+</table>

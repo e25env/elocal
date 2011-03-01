@@ -1,0 +1,7 @@
+%ul(class="auto_complete")
+- @people.each do |p|
+  %li{:class=>"big", :id=>p.nid}
+    %span(class="nid")
+      = p.nid
+    %span(class="name")
+      = p.full_name
