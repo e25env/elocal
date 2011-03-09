@@ -13,7 +13,7 @@ gem "linguistics"
 gem "will_paginate"
 #gem "RedCloth"
 gem "mechanize"
-gem "rmagick", :require => "RMagick"
+gem "rmagick", "2.12.0", :require => "RMagick"
 gem "geokit"
 gem 'rubyzip', :require => 'zip/zip'
 gem 'haml'

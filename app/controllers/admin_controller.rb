@@ -49,10 +49,10 @@ class AdminController < ApplicationController
     @t = exec_cmd("touch tmp/restart.txt").gsub("\n","<br/>")
   end
   def db_push_ms
-    @t= exec_cmd('heroku db:push postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force --tables gma_modules,gma_services').gsub("\n","<br/>")
+    @t= exec_cmd('heroku db:push postgres://postgres:songrit@localhost/elocal?encoding=utf8 --tables gma_modules,gma_services --confirm elocal').gsub("\n","<br/>")
   end
   def db_pull_ms
-    @t= exec_cmd('heroku db:pull postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force --tables gma_modules,gma_services').gsub("\n","<br/>")
+    @t= exec_cmd('heroku db:pull postgres://postgres:songrit@localhost/elocal?encoding=utf8 --tables gma_modules,gma_services --confirm elocal').gsub("\n","<br/>")
   end
 
   def update_org

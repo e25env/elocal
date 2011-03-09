@@ -1,21 +1,40 @@
-<%= javascript_include_tag 'prototype' %>
 <script type="text/javascript">
 function getPerson(text, li) {
   $('owner_fname').value=li.id;
 }
 </script>
+<%= javascript_include_tag "jquery.ui.core" %>
+<%= javascript_include_tag "jquery.ui.widget" %>
+<%= javascript_include_tag "jquery.ui.position" %>
+<%= javascript_include_tag "jquery.ui.autocomplete" %>
+
+<%= stylesheet_link_tag "jquery.ui","jquery.ui.autocomplete" %>
+<style>
+.ui-autocomplete-loading { background: white url('/images/ajax-loader-circle.gif') right center no-repeat; }
+</style>
 <% owner = Person.new %>
+<% land = Land.new %>
 <table width="100%">
   <% fields_for :owner do |f| %>
     <tr>
       <td class="field-name">เลขประจำตัวประชาชน</td>
-      <td><%= text_field_with_auto_complete :owner, :nid, {}, 
-        { :method=> :get, :url => "/main/person", 
-          :select=>'name', 
-          :after_update_element => "getPerson", 
-          :with => "'nid='+element.value" } %>
-      </td>
+      <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
     </tr>
+    <script>
+    $(function(){
+      function populatePerson(nid) {
+        alert(nid)
+      }
+      var data = "Core Selectors Attributes Traversing Manipulation CSS Events Effects Ajax Utilities".split(" ");
+      $("#owner_nid").autocomplete({
+        source: "/main/person",
+        minLength: 2,
+        select: function(e,ui) {
+          populatePerson(ui.item.value)
+        }
+      });
+    });
+    </script>
     <tr>
       <td class="field-name">คำนำหน้า</td>
       <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
@@ -27,6 +46,56 @@ function getPerson(text, li) {
     <tr>
       <td class="field-name">นามสกุล</td>
       <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+  <% end %>
+  <% fields_for :land do |f| %>
+    <tr>
+      <td class="field-name">ผ.ท. ๔</td>
+      <td colspan='2'><%= f.text_field :pt4_code, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รหัสที่ดิน</td>
+      <td colspan='2'><%= f.text_field :land_code, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ประเภทเอกสารสิทธิ์</td>
+      <td colspan='2'><%= f.select :doc_type, [['โฉนด',1],['นส. ๓ ก.',2]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เลขที่เอกสารสิทธิ์</td>
+      <td colspan='2'><%= f.text_field :doc_num, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ระวาง</td>
+      <td colspan='2'><%= f.text_field :location_plan, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">เลขที่ดิน</td>
+      <td colspan='2'><%= f.text_field :location_num, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หน้าสำรวจ</td>
+      <td colspan='2'><%= f.text_field :location_survey, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวนเนื้อที่ - ไร่</td>
+      <td colspan='2'><%= f.text_field :area_rai, :style=>"width:150px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวนเนื้อที่ - งาน</td>
+      <td colspan='2'><%= f.text_field :area_ngan, :style=>"width:150px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวนเนื้อที่ - ตารางวา</td>
+      <td colspan='2'><%= f.text_field :area_wa, :style=>"width:150px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ลักษณะการใช้</td>
+      <td colspan='2'><%= f.text_area :usage, :cols=>50, :rows => 3  %></td>
+    </tr>
+    <tr>
+      <td class="field-name">การใช้ประโยชน์</td>
+      <td colspan='2'><%= f.text_area :utilize, :cols=>50, :rows => 3 %></td>
     </tr>
   <% end %>
 </table>

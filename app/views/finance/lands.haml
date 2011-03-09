@@ -16,6 +16,9 @@
       - if finance_office? || true
         %td= link_to image_tag('pencil.png'), "/run/finance/edit_land/#{l.id}"
         %td= link_to image_tag('cross.png'), "/run/finance/rm_land/#{l.id}", :confirm=>"กรุณายืนยัน"
-      %td= l.owner.full_name
-      %td(align='center')= s.moo
+      - if l.owner
+        %td= l.owner.full_name
+      - else
+        %td ***
+      %td(align='center')= l.doc_num
       %td= "area"

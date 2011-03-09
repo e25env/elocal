@@ -97,7 +97,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397496008" ID="ID_587395922" MODIFIED="1298579293514" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
+<node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1299669459993" TEXT="office:&#xe2a;&#xe33;&#xe19;&#xe31;&#xe01;&#xe07;&#xe32;&#xe19;&#xe1b;&#xe25;&#xe31;&#xe14;">
 <node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1298456576626" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
@@ -436,7 +436,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1298552958138" TEXT="finance: &#xe04;&#xe25;&#xe31;&#xe07;">
+<node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1299671127634" TEXT="finance: &#xe04;&#xe25;&#xe31;&#xe07;">
 <node CREATED="1286155577194" FOLDED="true" ID="ID_597417624" MODIFIED="1298552966790" TEXT="income:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe01;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe07;&#xe34;&#xe19;">
 <node CREATED="1286155600214" ID="ID_308925966" MODIFIED="1286157105153" TEXT="enter_income:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe01;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe07;&#xe34;&#xe19;">
 <icon BUILTIN="attach"/>
@@ -471,6 +471,9 @@
 <node CREATED="1298578705837" ID="ID_1648254598" MODIFIED="1298578774560" TEXT="land: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe17;&#xe35;&#xe48;&#xe14;&#xe34;&#xe19;">
 <icon BUILTIN="closed"/>
 <node CREATED="1298578718365" ID="ID_1583413967" MODIFIED="1298578755342" TEXT="enter_land: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1299671941524" ID="ID_1122950932" MODIFIED="1299671956049" TEXT="display">
 <icon BUILTIN="attach"/>
 </node>
 <node CREATED="1298578737494" ID="ID_199015317" MODIFIED="1298578760262" TEXT="create_land">
@@ -1787,7 +1790,9 @@
 <node CREATED="1297151703759" ID="ID_1243200017" MODIFIED="1297151717272" TEXT="1: &#xe42;&#xe09;&#xe19;&#xe14;"/>
 <node CREATED="1297151718936" ID="ID_550678215" MODIFIED="1297151727529" TEXT="2: &#xe19;&#xe2a; 3 &#xe01;."/>
 </node>
-<node CREATED="1297151733841" ID="ID_977283080" MODIFIED="1297151737765" TEXT="doc_num: string"/>
+<node CREATED="1297151733841" ID="ID_977283080" MODIFIED="1297151737765" TEXT="doc_num: string">
+<node CREATED="1299669742612" ID="ID_1882789121" MODIFIED="1299669750874" TEXT="&#xe40;&#xe25;&#xe02;&#xe17;&#xe35;&#xe48;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe2a;&#xe34;&#xe17;&#xe18;&#xe34;&#xe4c;"/>
+</node>
 <node CREATED="1297151742227" ID="ID_1294623734" MODIFIED="1297151764110" TEXT="location_plan">
 <node CREATED="1297151765607" ID="ID_1489595719" MODIFIED="1297151768141" TEXT="&#xe23;&#xe30;&#xe27;&#xe32;&#xe07;"/>
 </node>

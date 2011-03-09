@@ -4,6 +4,10 @@ class FinanceController < ApplicationController
   def lands
     @lands= Land.all
   end
+  def create_land
+    Land.create $xvars[:enter_land][:land]
+    $xvars[:p][:return]= "/finance/lands"
+  end
   def balance
     @fixed_asset = 22199616.27
     @assets = []
