@@ -63,7 +63,7 @@ class MainController < ApplicationController
   end
   def person
     @people= Person.find :all, :conditions=>['nid LIKE ?', "#{params[:term]}%"], :limit=>10
-    @select= @people.map {|p| {:label=>"#{p.nid} #{p.full_name}", :value=>p.nid }}
+    @select= @people.map {|p| {:label=>"#{p.nid} #{p.full_name}", :value => p.nid }}
     render :json=>@select
   end
 end

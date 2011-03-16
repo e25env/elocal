@@ -9,9 +9,9 @@ class SongritController < ApplicationController
   require 'mechanize'
 
   def test_api
-    body= File.open("public/OTA_HotelDescriptiveContentNotifRQ.xml").read
+    body= File.open("public/OTA_HotelAvailNotifRQ.xml").read
     # f= open("http://pob-ws.local/api/hotel_descriptive_content_notif", :method=>:post, :body=>body)
-    f= RestClient.post "http://pob-ws.heroku.com/api/hotel_descriptive_content_notif", body
+    f= RestClient.post "http://pob-ws.local/api/post", body
     render :text => f.body
   end
   def end_of_last_month

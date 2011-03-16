@@ -22,10 +22,9 @@ function getPerson(text, li) {
     </tr>
     <script>
     $(function(){
-      function populatePerson(nid) {
-        alert(nid)
+      function populatePerson(item) {
+        alert(item)
       }
-      var data = "Core Selectors Attributes Traversing Manipulation CSS Events Effects Ajax Utilities".split(" ");
       $("#owner_nid").autocomplete({
         source: "/main/person",
         minLength: 2,
