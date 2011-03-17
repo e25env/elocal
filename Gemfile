@@ -6,7 +6,7 @@ gem "rails", "2.3.5"
 gem "rest-open-uri"
 gem "heroku"
 #gem "taps", "0.3.14"
-gem 'pg'
+gem 'pg', "0.9.0"
 gem 'mysql'
 #gem 'inherited_resources', '1.0.3'
 gem "linguistics"
