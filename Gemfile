@@ -7,7 +7,7 @@ gem "rest-open-uri"
 gem "heroku"
 #gem "taps", "0.3.14"
 gem 'pg'
-#gem 'mysql'
+gem 'mysql'
 #gem 'inherited_resources', '1.0.3'
 gem "linguistics"
 gem "will_paginate"
