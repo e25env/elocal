@@ -11,7 +11,7 @@ gem 'mysql'
 #gem 'inherited_resources', '1.0.3'
 gem "linguistics"
 gem "will_paginate"
-#gem "RedCloth"
+gem "RedCloth"
 gem "mechanize"
 gem "rmagick", "2.12.0", :require => "RMagick"
 gem "geokit"
