@@ -8,9 +8,13 @@
 .ui-autocomplete-loading { background: white url('/images/ajax-loader-circle.gif') right center no-repeat; }
 </style>
 <% owner = Person.new %>
+<% utilizer = Person.new %>
 <% land = Land.new %>
 <table width="100%">
   <% fields_for :owner do |f| %>
+    <tr>
+      <td colspan="3" style="font-weight:bold;">ผู้มีกรรมสิทธิ์</td>
+    </tr>
     <tr>
       <td class="field-name">เลขประจำตัวประชาชน</td>
       <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
@@ -24,6 +28,44 @@
         $("#owner_lname").val(personelement[3]);
       }
       $("#owner_nid").autocomplete({
+        source: "/main/person",
+        minLength: 2,
+        select: function(e,ui) {
+          populatePerson(ui.item.label)
+        }
+      });
+    });
+    </script>
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+  <% end %>
+  <% fields_for :utilizer do |f| %>
+    <tr>
+      <td colspan="3" style="font-weight:bold;">ผู้ทำประโยชน์</td>
+    </tr>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
+    </tr>
+    <script>
+    $(function(){
+      function populatePerson(label) {
+        var personelement = label.split(" ");
+        $("#utilizer_title option:selected").text(personelement[1]);
+        $("#utilizer_fname").val(personelement[2]);
+        $("#utilizer_lname").val(personelement[3]);
+      }
+      $("#utilizer_nid").autocomplete({
         source: "/main/person",
         minLength: 2,
         select: function(e,ui) {
@@ -93,6 +135,14 @@
     <tr>
       <td class="field-name">การใช้ประโยชน์</td>
       <td colspan='2'><%= f.text_area :utilize, :cols=>50, :rows => 3 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมายเหตุ</td>
+      <td colspan='2'><%= f.text_area :comment, :cols=>50, :rows => 3 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อัตราภาษีบำรุงท้องที่ต่อปี</td>
+      <td colspan='2'><%= f.text_field :tax, :style=>"width:300px;" %></td>
     </tr>
   <% end %>
 </table>

@@ -1,11 +1,22 @@
 class FinanceController < ApplicationController
   def index
   end
+  def buildings
+    @buildings = Building.all
+  end
   def lands
     @lands= Land.all
   end
   def create_land
-    Land.create $xvars[:enter_land][:land]
+    owner= Person.find_by_nid($xvars[:enter_land][:owner][:nid]) ||
+      Person.create($xvars[:enter_land][:owner])
+    utilizer= Person.find_by_nid($xvars[:enter_land][:utilizer][:nid]) ||
+      Person.create($xvars[:enter_land][:utilizer])
+    land = Land.new $xvars[:enter_land][:land]
+    land.owner_id = owner.id
+    land.utilizer_id = utilizer.id
+    land.area_sqm= land.area_rai*1
+    land.save
     $xvars[:p][:return]= "/finance/lands"
   end
   def balance
