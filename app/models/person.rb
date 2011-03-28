@@ -6,6 +6,6 @@ class Person < ActiveRecord::Base
   end
   # split element using space, use in ajax call for enter land
   def full_names
-    return fname.blank? ? "" : "#{title} #{fname} #{lname}"
+    return fname.blank? ? "" : "#{title} #{fname} #{lname} (#{id})"
   end
 end

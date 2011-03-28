@@ -8,12 +8,14 @@
     - if finance_office? || true
       %th{:style=>"width:30px;"} แก้ไข
       %th{:style=>"width:30px;"} ลบ
-    %th ชื่อผู้มีกรรมสิทธิ์
+    %th(style='width:100px;') รหัสที่ดิน
+    %th ชื่อผู้ครอบครอง
   - @buildings.each do |b|
     %tr
       - if finance_office? || true
         %td= link_to image_tag('pencil.png'), "/run/finance/edit_building/#{b.id}"
         %td= link_to image_tag('cross.png'), "/run/finance/rm_building/#{b.id}", :confirm=>"กรุณายืนยัน"
+      %td= b.land_id
       - if b.owner
         %td= b.owner.full_name
       - else

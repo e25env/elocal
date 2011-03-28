@@ -4,6 +4,11 @@ class FinanceController < ApplicationController
   def buildings
     @buildings = Building.all
   end
+  def create_building
+    building = Building.new $xvars[:enter_building][:building]
+    building.save
+    $xvars[:p][:return]= "/finance/buildings"
+  end
   def lands
     @lands= Land.all
   end
@@ -566,5 +571,10 @@ class FinanceController < ApplicationController
     budget = Budget.first :conditions=>{:fy => fiscal_year, :ptype_id => params[:ptype], :fsection_id => params[:section] }
     balance = budget ? budget.balance : 0
       render :text => "คงเหลือ #{@template.number_to_currency(balance,:unit=>'')} บาท"
+  end
+  def landcode
+    @lands= Land.find :all, :conditions=>['land_code LIKE ?', "#{params[:term]}%"], :limit=>10
+    @select= @lands.map {|l| {:label=>"#{l.land_code} #{l.land_code}", :value => l.land_code }}
+    render :json=>@select
   end
 end
