@@ -21,7 +21,7 @@ gem "mail", "2.2.1"
 gem "prawn"
 gem "aaronchi-jrails"
 group :development do
-#  gem "ruby-debug"
+  gem "ruby-debug", "0.10.4", :platform=>:ruby
   gem "rails-footnotes"
   gem "rspec", "1.3.1"
   gem "rspec-rails", "1.3.3"

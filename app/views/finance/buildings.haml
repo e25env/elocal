@@ -1,0 +1,21 @@
+%h4(style='text-align:center;') ทะเบียนทรัพย์สิน - โรงเรือน
+- if finance_office? || true
+  %div(style='float:right')
+    = image_tag 'add.png'
+    = link_to align_text("ขึ้นทะเบียนโรงเรือน"), "/run/finance/building"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if finance_office? || true
+      %th{:style=>"width:30px;"} แก้ไข
+      %th{:style=>"width:30px;"} ลบ
+    %th ชื่อผู้มีกรรมสิทธิ์
+  - @buildings.each do |b|
+    %tr
+      - if finance_office? || true
+        %td= link_to image_tag('pencil.png'), "/run/finance/edit_building/#{b.id}"
+        %td= link_to image_tag('cross.png'), "/run/finance/rm_building/#{b.id}", :confirm=>"กรุณายืนยัน"
+      - if b.owner
+        %td= b.owner.full_name
+      - else
+        %td ***
+

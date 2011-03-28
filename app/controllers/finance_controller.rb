@@ -15,7 +15,7 @@ class FinanceController < ApplicationController
     land = Land.new $xvars[:enter_land][:land]
     land.owner_id = owner.id
     land.utilizer_id = utilizer.id
-    land.area_sqm= land.area_rai*1
+    land.area_sqm= (land.area_rai*1600) + (land.area_ngan*400) + (land.area_wa*4)
     land.save
     $xvars[:p][:return]= "/finance/lands"
   end

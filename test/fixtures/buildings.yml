@@ -1,0 +1,31 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  owner_id: 1
+  utilizer_id: 1
+  utilizer_address_id: 1
+  land_id: 1
+  location_id: 1
+  appearance: 1
+  rooms: 1
+  floors: 1
+  width: 1.5
+  length: 1.5
+  utilization: 1
+  comment: MyText
+  gma_user_id: 1
+
+two:
+  owner_id: 1
+  utilizer_id: 1
+  utilizer_address_id: 1
+  land_id: 1
+  location_id: 1
+  appearance: 1
+  rooms: 1
+  floors: 1
+  width: 1.5
+  length: 1.5
+  utilization: 1
+  comment: MyText
+  gma_user_id: 1

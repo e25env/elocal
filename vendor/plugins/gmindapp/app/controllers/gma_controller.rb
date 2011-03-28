@@ -262,13 +262,13 @@ class GmaController < ApplicationController
         cmd= exec_cmd("ruby script/generate model #{model_code} #{attr_list} --force").gsub("\n","<br/>")
         t << cmd
         # remove custom layout therefore all controller will default to application.rhtml layout
-        if win32?
-          t << "del app\\views\\layouts\\#{model_code.pluralize}.html.erb"
-          exec_cmd "del app\\views\\layouts\\#{model_code.pluralize}.html.erb"
-        else
-          t << "rm app/views/layouts/#{model_code.pluralize}.html.erb"
-          exec_cmd "rm app/views/layouts/#{model_code.pluralize}.html.erb"
-        end
+        # if win32?
+        #   t << "del app\\views\\layouts\\#{model_code.pluralize}.html.erb"
+        #   exec_cmd "del app\\views\\layouts\\#{model_code.pluralize}.html.erb"
+        # else
+        #   t << "rm app/views/layouts/#{model_code.pluralize}.html.erb"
+        #   exec_cmd "rm app/views/layouts/#{model_code.pluralize}.html.erb"
+        # end
         table_name= model_code.downcase.pluralize
         migration_file= cmd.match(/db\/migrate\/\d+_create_#{table_name}.rb/).to_s
         table_statement= "create_table :#{table_name}, :force=>true do |t|"

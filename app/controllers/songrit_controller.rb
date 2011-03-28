@@ -9,9 +9,14 @@ class SongritController < ApplicationController
   require 'mechanize'
 
   def test_api
+    body= File.open("public/OTA_HotelDescriptiveContentNotifRQ.xml").read
+    f= RestClient.post "http://pob-ws.local/api/hotel_descriptive_content_notif", body
+    render :xml => f.body
+  end
+  def test_api1
     body= File.open("public/OTA_HotelSearchRQ.xml").read
     f= RestClient.post "http://pob-ws.local/api/hotel_search", body
-    render :text => f.body
+    render :xml => f.body
   end
   def end_of_last_month
     d= Date.today
