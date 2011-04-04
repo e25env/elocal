@@ -10,7 +10,11 @@ class Senior < ActiveRecord::Base
 #    self[:nid]= val.gsub(/[\s-]/,'')
 #  end
   def full_name
-    "#{person.title}#{person.fname} #{person.lname}"
+    if person
+      "#{person.title}#{person.fname} #{person.lname}"
+    else
+      "id: #{id.to_s}"
+    end
   end
   def no_duplicate
     errors.add(:nid, "ขออภัย มีบุคคลนี้ในระบบอยู่แล้ว") if

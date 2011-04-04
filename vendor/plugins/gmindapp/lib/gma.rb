@@ -3,6 +3,9 @@ module Gma
   include ActionView::Helpers::DateHelper
   include ActionView::Helpers::TextHelper
 
+  def local_ip
+    RestClient.get "http://www.whatismyip.com/automation/n09230945.asp"
+  end  
   def admin_action
 #    flash[:notice]= "admin only"
     redirect_to "/" unless admin?

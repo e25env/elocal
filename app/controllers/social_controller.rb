@@ -9,7 +9,7 @@ class SocialController < ApplicationController
     @budget= 2
     @budget_title= "งบรัฐบาล"
     @village_heads= VillageHead.all :order=>:moo
-    render :layout => "print", :template=>"office/senior_local"
+    render :layout => "print", :template=>"social/senior_local"
   end
   def seniors
     @seniors= Senior.all :order=>'moo,fname'

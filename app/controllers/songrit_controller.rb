@@ -6,11 +6,11 @@ class SongritController < ApplicationController
   # require "rest-open-uri"
   require "rest_client"
   require 'nokogiri'
-  require 'mechanize'
+  # require 'mechanize'
 
   def test_api
-    body= File.open("public/OTA_HotelDescriptiveContentNotifRQ.xml").read
-    f= RestClient.post "http://pob-ws.local/api/hotel_descriptive_content_notif", body
+    body= File.open("public/OTA_HotelAvailNotifRQ.xml").read
+    f= RestClient.post "http://pob-ws.local/api/hotel_avail_notif", body
     render :xml => f.body
   end
   def test_api1

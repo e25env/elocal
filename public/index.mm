@@ -436,7 +436,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1300705931640" TEXT="finance: &#xe04;&#xe25;&#xe31;&#xe07;">
+<node CREATED="1279397782743" FOLDED="true" ID="ID_782287751" MODIFIED="1301559748555" TEXT="finance: &#xe04;&#xe25;&#xe31;&#xe07;">
 <node CREATED="1286155577194" FOLDED="true" ID="ID_597417624" MODIFIED="1300276566246" TEXT="income:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe01;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe07;&#xe34;&#xe19;">
 <node CREATED="1286155600214" ID="ID_308925966" MODIFIED="1286157105153" TEXT="enter_income:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe01;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe07;&#xe34;&#xe19;">
 <icon BUILTIN="attach"/>
@@ -487,7 +487,7 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1280809504423" FOLDED="true" ID="ID_888371375" MODIFIED="1297227004803" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
+<node CREATED="1280809504423" ID="ID_888371375" MODIFIED="1301447370040" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
 <node CREATED="1280809530686" ID="ID_1366914323" MODIFIED="1280809746078" TEXT="enter_payment:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe0e;&#xe35;&#xe01;&#xe32;">
 <icon BUILTIN="attach"/>
 <node CREATED="1280809577780" ID="ID_1190902197" MODIFIED="1280809581582" TEXT="role:co"/>
@@ -947,11 +947,12 @@
 </node>
 <node CREATED="1284768073186" ID="ID_1531359078" MODIFIED="1284768100870" TEXT="link: &#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe2a;&#xe33;&#xe2b;&#xe23;&#xe31;&#xe1a;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;: /admin/gen_fsection"/>
 </node>
-<node CREATED="1273706796854" FOLDED="true" ID="ID_1003882979" MODIFIED="1293542102191" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
+<node CREATED="1273706796854" FOLDED="true" ID="ID_1003882979" MODIFIED="1301902837875" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
 <node CREATED="1273706824535" ID="ID_682167045" MODIFIED="1278500871367" TEXT="link: update app: /gma/update_app"/>
 <node CREATED="1281681992475" ID="ID_757791014" MODIFIED="1283285585589" TEXT="link: dbpush modules/services:/admin/db_push_ms"/>
 <node CREATED="1273706854639" ID="ID_1481857171" MODIFIED="1278500875816" TEXT="link: mind map: /gma/view_mm"/>
+<node CREATED="1301794306865" ID="ID_618068276" MODIFIED="1301794338407" TEXT="link: rspec result: /spec.html"/>
 <node CREATED="1275447796625" ID="ID_1998592758" MODIFIED="1278500842216" TEXT="link: statistics: /admin/stat"/>
 <node CREATED="1276986518055" ID="ID_1184016852" MODIFIED="1276986529980" TEXT="link: exceptions: /e"/>
 <node CREATED="1275788317299" ID="ID_716276608" MODIFIED="1278500859677" TEXT="link: run_call errors: /gma/run_call_errors"/>
@@ -979,7 +980,7 @@
 <node CREATED="1285360442147" ID="ID_1404641640" MODIFIED="1285360453459" TEXT="p: &#xe08;&#xe31;&#xe14;&#xe0b;&#xe37;&#xe49;&#xe2d;"/>
 <node CREATED="1291001423153" ID="ID_1751609311" MODIFIED="1291001430173" TEXT="hr: &#xe1a;&#xe38;&#xe04;&#xe04;&#xe25;"/>
 </node>
-<node CREATED="1273819456867" ID="ID_1677010054" MODIFIED="1300706891851" POSITION="left" TEXT="models">
+<node CREATED="1273819456867" FOLDED="true" ID="ID_1677010054" MODIFIED="1301559744724" POSITION="left" TEXT="models">
 <node CREATED="1280465401089" FOLDED="true" ID="ID_1592717923" MODIFIED="1290871968433" TEXT="org">
 <node CREATED="1280465404206" ID="ID_1460093496" MODIFIED="1280465817515" TEXT="otype:string"/>
 <node CREATED="1280465800509" ID="ID_1349480184" MODIFIED="1280465812254" TEXT="otype_abbrev:string"/>
