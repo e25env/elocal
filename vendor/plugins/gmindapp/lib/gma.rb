@@ -145,9 +145,14 @@ module Gma
       :iparams=>log_params, :controller=>params[:controller], :action=>params[:action]
   end
   def exec_cmd(s)
-    cmd= ExecCmd.new(s)
-    cmd.run
-    cmd.output
+    if win32?
+      "******** You are using WIN32 system, please copy this command and execute in command prompt ********<br/>"+
+      s+"<br/>"+"****************************************************************************************"
+    else
+      cmd= ExecCmd.new(s)
+      cmd.run
+      cmd.output
+    end
   end
   def link_view_mm(msg)
     "<a href='#{root}/Gma/view_mm'>#{msg}</a>"
@@ -210,7 +215,7 @@ module Gma
 #  end
 
   def win32?
-        !(RUBY_PLATFORM =~ /win32/).nil?
+    !(RUBY_PLATFORM =~ /win32/).nil?
   end
   def nbsp(n)
     "&nbsp;"*n

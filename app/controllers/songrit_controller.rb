@@ -8,6 +8,9 @@ class SongritController < ApplicationController
   require 'nokogiri'
   # require 'mechanize'
 
+  def test
+    render :text => exec_cmd("dir")
+  end
   def test_api
     body= File.open("public/OTA_HotelAvailNotifRQ.xml").read
     f= RestClient.post "http://pob-ws.local/api/hotel_avail_notif", body
