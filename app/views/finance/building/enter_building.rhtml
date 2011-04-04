@@ -91,15 +91,18 @@
     </tr>
   <% end %>
   <% fields_for :land do |l| %>
+    <tr>
+      <td class="field-name">รหัสที่ดิน</td>
+      <td colspan='2'><%= l.text_field :land_code, :style=>"width:300px;" %></td>
+    </tr>
     <script>
     $(function(){
       function populateLand(label) {
         var landelement = label.split(" ");
-        $("#land_land_code").val(landelement[1]);
 		$("#building_land_id").val(landelement[2].substring(1,(landelement[2].length-1)));
       }
-      $("#land_land_id").autocomplete({
-        source: "/finance/land",
+      $("#land_land_code").autocomplete({
+        source: "/finance/landcode",
         minLength: 2,
         select: function(e,ui) {
           populateLand(ui.item.label)
@@ -107,10 +110,6 @@
       });
     });
     </script>
-    <tr>
-      <td class="field-name">รหัสที่ดิน</td>
-      <td colspan='2'><%= l.text_field :land_code, :style=>"width:300px;" %></td>
-    </tr>
   <% end %>
   <% fields_for :building do |b| %>
     <tr>

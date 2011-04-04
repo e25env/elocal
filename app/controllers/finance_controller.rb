@@ -574,7 +574,7 @@ class FinanceController < ApplicationController
   end
   def landcode
     @lands= Land.find :all, :conditions=>['land_code LIKE ?', "#{params[:term]}%"], :limit=>10
-    @select= @lands.map {|l| {:label=>"#{l.land_code} #{l.land_code}", :value => l.land_code }}
+    @select= @lands.map {|l| {:label=>"#{l.land_code} #{l.landcode}", :value => l.land_code }}
     render :json=>@select
   end
 end
