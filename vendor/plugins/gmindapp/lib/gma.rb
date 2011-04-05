@@ -215,7 +215,7 @@ module Gma
 #  end
 
   def win32?
-    !(RUBY_PLATFORM =~ /win32/).nil?
+    (RUBY_PLATFORM =~ /linux/).nil?
   end
   def nbsp(n)
     "&nbsp;"*n

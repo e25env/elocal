@@ -2,6 +2,22 @@ class MainController < ApplicationController
   # require "open-uri"
   # require "hpricot"
 
+  def store_asset
+    if params[:content]
+      doc = GmaDoc.create! :name=> 'asset',
+        :filename=> (params[:file_name]||''),
+        :content_type => (params[:content_type] || 'application/zip'),
+        :data_text=> '',
+        :display=>true 
+      path = (IMAGE_LOCATION || "tmp")
+      File.open("#{path}/f#{doc.id}","wb") { |f|
+        f.puts(params[:content])
+      }
+      render :xml=>"<elocal><doc id='#{doc.id}' /><success /></elocal>"
+    else
+      render :xml=>"<elocal><fail /></elocal>"
+    end
+  end
   def status
     @xmain= GmaXmain.find params[:id]
     @xvars= @xmain.xvars

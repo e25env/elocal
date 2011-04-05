@@ -436,7 +436,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397782743" FOLDED="true" ID="ID_782287751" MODIFIED="1301559748555" TEXT="finance: &#xe04;&#xe25;&#xe31;&#xe07;">
+<node CREATED="1279397782743" ID="ID_782287751" MODIFIED="1301918604927" TEXT="finance: &#xe04;&#xe25;&#xe31;&#xe07;">
 <node CREATED="1286155577194" FOLDED="true" ID="ID_597417624" MODIFIED="1300276566246" TEXT="income:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe01;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe07;&#xe34;&#xe19;">
 <node CREATED="1286155600214" ID="ID_308925966" MODIFIED="1286157105153" TEXT="enter_income:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe01;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe07;&#xe34;&#xe19;">
 <icon BUILTIN="attach"/>
@@ -487,7 +487,7 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1280809504423" ID="ID_888371375" MODIFIED="1301447370040" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
+<node CREATED="1280809504423" FOLDED="true" ID="ID_888371375" MODIFIED="1301918618024" TEXT="payment:&#xe0f;&#xe35;&#xe01;&#xe32;&#xe40;&#xe1a;&#xe34;&#xe01;&#xe40;&#xe07;&#xe34;&#xe19;">
 <node CREATED="1280809530686" ID="ID_1366914323" MODIFIED="1280809746078" TEXT="enter_payment:&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe0e;&#xe35;&#xe01;&#xe32;">
 <icon BUILTIN="attach"/>
 <node CREATED="1280809577780" ID="ID_1190902197" MODIFIED="1280809581582" TEXT="role:co"/>

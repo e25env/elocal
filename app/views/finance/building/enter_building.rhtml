@@ -129,11 +129,13 @@
     </tr>
     <tr>
       <td class="field-name">กว้าง</td>
-      <td colspan='2'><%= b.text_field :width, :style=>"width:300px;" %></td>
+      <td><%= b.text_field :width, :style=>"width:200px;" %></td>
+      <td>เมตร</td>
     </tr>
     <tr>
       <td class="field-name">ยาว</td>
-      <td colspan='2'><%= b.text_field :length, :style=>"width:300px;" %></td>
+      <td><%= b.text_field :length, :style=>"width:200px;" %></td>
+      <td>เมตร</td>
     </tr>
     <tr>
       <td colspan="3" style="font-weight:bold;">โรงเรือน</td>
@@ -147,7 +149,9 @@
       <td colspan='2'><%= b.text_area :comment, :cols=>50, :rows => 3 %></td>
     </tr>
     <tr><td></td><td></td><td>
-	<%= b.text_field :owner_id, :style=>"visibility:hidden;" %><%= b.text_field :utilizer_id, :style=>"visibility:hidden;" %><%= b.text_field :land_id, :style=>"visibility:hidden;" %>
+    	<%= b.text_field :owner_id, :style=>"visibility:hidden;" %>
+      <%= b.text_field :utilizer_id, :style=>"visibility:hidden;" %>
+      <%= b.text_field :land_id, :style=>"visibility:hidden;" %>
     </td></tr>
   <% end %>
 </table>
