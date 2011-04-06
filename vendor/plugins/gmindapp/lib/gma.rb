@@ -575,7 +575,12 @@ module Gma
   end
   def songrit(k, default='')
     songrit = GmaSongrit.find_by_code(k)
-    songrit= GmaSongrit.create(:code=>k, :value=>default, :gma_user_id=>session[:user]) unless songrit
+    begin
+      gma_user_id= session[:user_id]
+    rescue
+      gma_user_id= nil
+    end
+    songrit= GmaSongrit.create(:code=>k, :value=>default, :gma_user_id=>gma_user_id) unless songrit
     return songrit.value
   end
 end

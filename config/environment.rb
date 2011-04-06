@@ -15,5 +15,5 @@ Rails::Initializer.run do |config|
   IMAGE_LOCATION = "doc/upload"
   CDN = false
   GMAP = false
-  WWW = "http://elocal-www.local/ws/intranet_ping"
+  # set_songrit :www, "http://elocal-www.heroku.com/ws/intranet_ping"
 end

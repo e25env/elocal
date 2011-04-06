@@ -31,7 +31,8 @@ class MainController < ApplicationController
 #    render :text => "help"
   end
   def index
-    RestClient.post WWW, :ip=>local_ip if WWW
+    www= songrit(:www)
+    RestClient.post www, :ip=>local_ip unless www.empty?
     @news = News.all :limit => 5, :order => "created_at DESC"
     @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at", :include=>:gma_runseqs
   end
