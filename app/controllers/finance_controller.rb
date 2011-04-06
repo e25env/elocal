@@ -9,6 +9,14 @@ class FinanceController < ApplicationController
     building.save
     $xvars[:p][:return]= "/finance/buildings"
   end
+  def update_building
+    Building.update $xvars[:p][:id], $xvars[:enter_building][:building]
+    $xvars[:p][:return]='/finance/buildings'
+  end
+  def rm_building
+    Building.destroy $xvars[:p][:id]
+    $xvars[:p][:return]='/finance/buildings'
+  end  
   def lands
     @lands= Land.all
   end

@@ -1,0 +1,27 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  location_id: 1
+  owner_id: 1
+  sign_type: 1
+  width: 1.5
+  length: 1.5
+  area: 1.5
+  sides: 1
+  message: MyString
+  comment: MyText
+  tax: 1.5
+  gma_user_id: 1
+
+two:
+  location_id: 1
+  owner_id: 1
+  sign_type: 1
+  width: 1.5
+  length: 1.5
+  area: 1.5
+  sides: 1
+  message: MyString
+  comment: MyText
+  tax: 1.5
+  gma_user_id: 1

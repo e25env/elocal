@@ -17,7 +17,7 @@ class SongritController < ApplicationController
     render :xml => f.body
   end
   def test_api1
-    body= File.open("public/OTA_HotelSearchRQ.xml").read
+    body= File.open("public/OTA_HotelSearchRQ1.xml").read
     f= RestClient.post "http://pob-ws.local/api/hotel_search", body
     render :xml => f.body
   end
