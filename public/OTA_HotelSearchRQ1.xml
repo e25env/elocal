@@ -16,7 +16,7 @@
       <Position Longitude="98.3975" />
     </Criterion>
     <Criterion>
-      <Radius DistanceMeasure="MILES" Distance="1" />
+      <Radius DistanceMeasure="MILES" Distance="0.1" />
     </Criterion>
   </Criteria>
 </OTA_HotelSearchRQ>
