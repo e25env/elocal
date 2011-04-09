@@ -20,7 +20,7 @@ gem 'rubyzip', :require => 'zip/zip'
 gem 'haml'
 gem "mail", "2.2.1"
 gem "prawn"
-gem "aaronchi-jrails"
+# gem "aaronchi-jrails"
 group :development do
   gem "ruby-debug", "0.10.4", :platform=>:ruby
   gem "rails-footnotes"
