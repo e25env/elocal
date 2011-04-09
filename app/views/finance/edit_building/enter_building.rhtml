@@ -98,8 +98,8 @@
     <script>
     $(function(){
       function populateLand(label) {
-        var landelement = label.split(" ");
-		$("#building_land_id").val(landelement[2].substring(1,(landelement[2].length-1)));
+        var landelement = label.split("(");
+		$("#building_land_id").val(landelement[1].substring(0,(landelement[1].length-1)));
       }
       $("#land_land_code").autocomplete({
         source: "/finance/landcode",
