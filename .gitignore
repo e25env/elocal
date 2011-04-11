@@ -6,6 +6,7 @@ nbproject
 .svn
 .project
 .bundle
+.bundle/*
 *.sqlite3
 *~
 database.yml
