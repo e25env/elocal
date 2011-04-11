@@ -7,7 +7,8 @@ gem "rest-open-uri"
 gem "heroku"
 gem "taps"
 gem 'pg', "0.9.0"
-# gem 'mysql'
+# mysql gem is required to access dloc db
+gem 'mysql'
 # gem 'inherited_resources', '1.0.3'
 gem "linguistics"
 gem "will_paginate"
