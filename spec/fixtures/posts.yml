@@ -4,10 +4,16 @@ one:
   subject: MyString
   body: MyText
   stick: false
+  post_type: 1
+  begin_on: 2011-04-11
+  end_on: 2011-04-11
   gma_user_id: 1
 
 two:
   subject: MyString
   body: MyText
   stick: false
+  post_type: 1
+  begin_on: 2011-04-11
+  end_on: 2011-04-11
   gma_user_id: 1

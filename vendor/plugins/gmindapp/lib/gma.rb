@@ -6,6 +6,12 @@ module Gma
   def local_ip
     RestClient.get "http://www.whatismyip.com/automation/n09230945.asp"
   end  
+
+  def ping(server)
+    ping_count = 3
+    result = `ping -q -c #{ping_count} #{server}`
+    $?.exitstatus == 0
+  end
   def admin_action
 #    flash[:notice]= "admin only"
     redirect_to "/" unless admin?
@@ -106,7 +112,7 @@ module Gma
     Digest::SHA1.hexdigest(s)
   end
   def http(href)
-    require 'open-uri'
+    # require 'open-uri'
     if PROXY
       open(href, :proxy=>PROXY).read
     else
@@ -162,10 +168,6 @@ module Gma
       File.mtime("#{RAILS_ROOT}/public/#{source}").to_i.to_s rescue ""
     #source << '?' + asset_id
     image_path "../#{source}?#{asset_id}"
-  end
-  def http(href)
-    require 'open-uri'
-    open(href).read
   end
   def date_select_thai(object, method, default= Time.now, disabled=false)
     date_select object, method, :default => default, :use_month_names=>THAI_MONTHS, :order=>[:day, :month, :year], :disabled=>disabled

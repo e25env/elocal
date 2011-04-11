@@ -181,14 +181,88 @@ a {
 <div class="results">
 <div class="example_group">
   <dl>
-  <dt id="example_group_1">FinanceController</dt>
+  <dt id="example_group_1">WsController</dt>
+    <script type="text/javascript">makeYellow('rspec-header');</script>
+    <script type="text/javascript">makeYellow('example_group_1');</script>
+    <script type="text/javascript">moveProgressBar('8.3');</script>
+    <dd class="spec not_implemented"><span class="not_implemented_spec_name">should manage ws queue (PENDING: Not Yet Implemented)</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_2">WwwController</dt>
     <script type="text/javascript">makeRed('rspec-header');</script>
-    <script type="text/javascript">makeRed('example_group_1');</script>
+    <script type="text/javascript">makeRed('example_group_2');</script>
+    <script type="text/javascript">moveProgressBar('16.6');</script>
+    <dd class="spec failed">
+      <span class="failed_spec_name">should post news to internet server</span>
+      <div class="failure" id="failure_1">
+        <div class="message"><pre>No action responded to create. Actions: atype, b, begin_of_fiscal_year, begin_of_last_month, end_of_last_month, finance_office?, fiscal_year, login_laas, mobile_device?, office_office?, and own_xmain?</pre></div>
+        <div class="backtrace"><pre>/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/filters.rb:638:in `run_before_filters'
+/home/songrit/apps/elocal/vendor/plugins/gmindapp/init.rb:24:in `make_session_available_in_model'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-2.3.5/lib/active_support/callbacks.rb:178:in `send'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-2.3.5/lib/active_support/callbacks.rb:178:in `evaluate_method'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/filters.rb:186:in `call'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/filters.rb:635:in `run_before_filters'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/filters.rb:615:in `call_filters'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activesupport-2.3.5/lib/active_support/core_ext/benchmark.rb:17:in `ms'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/rescue.rb:160:in `perform_action_without_flash'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/flash.rb:146:in `perform_action'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `send'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/base.rb:532:in `process_without_filters'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/filters.rb:606:in `process'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:567:in `process_with_test'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:447:in `process'
+/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:403:in `post'
+/home/songrit/apps/elocal/spec/controllers/www_controller_spec.rb:6:</pre></div>
+    <pre class="ruby"><code><span class="linenum">615</span>          index = run_before_filters(chain, index, nesting)
+<span class="linenum">616</span>          aborted = @before_filter_chain_aborted
+<span class="offending"><span class="linenum">617</span>          perform_action_without_filters unless performed? || aborted</span>
+<span class="linenum">618</span>          return index if nesting != 0 || aborted
+<span class="linenum">619</span>          run_after_filters(chain, index)
+<span class="linenum">620</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+      </div>
+    </dd>
+    <script type="text/javascript">moveProgressBar('25');</script>
+    <dd class="spec not_implemented"><span class="not_implemented_spec_name">should queue post if network not available (PENDING: Not Yet Implemented)</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_3">PublicWorksController</dt>
+    <script type="text/javascript">makeYellow('example_group_3');</script>
+    <script type="text/javascript">moveProgressBar('33.3');</script>
+    <dd class="spec not_implemented"><span class="not_implemented_spec_name">should manage landfill permit (PENDING: Not Yet Implemented)</span></dd>
+    <script type="text/javascript">makeYellow('example_group_3');</script>
+    <script type="text/javascript">moveProgressBar('41.6');</script>
+    <dd class="spec not_implemented"><span class="not_implemented_spec_name">should manage construction projects (PENDING: Not Yet Implemented)</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_4">PublicWorksController construction permit</dt>
+    <script type="text/javascript">makeYellow('example_group_4');</script>
     <script type="text/javascript">moveProgressBar('50');</script>
+    <dd class="spec not_implemented"><span class="not_implemented_spec_name">should manage permit (PENDING: Not Yet Implemented)</span></dd>
+    <script type="text/javascript">makeYellow('example_group_4');</script>
+    <script type="text/javascript">moveProgressBar('58.3');</script>
+    <dd class="spec not_implemented"><span class="not_implemented_spec_name">should check for zoning (PENDING: Not Yet Implemented)</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_5">FinanceController</dt>
+    <script type="text/javascript">makeRed('example_group_5');</script>
+    <script type="text/javascript">moveProgressBar('66.6');</script>
     <dd class="spec failed">
       <span class="failed_spec_name">should create sign (pt4)</span>
-      <div class="failure" id="failure_1">
-        <div class="message"><pre>No action responded to /run/finance/create_sign. Actions: account, accounts, atype, b, balance, banks, begin_of_fiscal_year, begin_of_last_month, budget, budget_adj, budget_cat_detail, budget_detail, budget_expense, budget_plan_detail, buildings, copy_structure, create_account, create_account_trans, create_bank, create_budget, create_building, create_cat, create_income, create_income_detail, create_laas, create_land, create_payment, create_payment_details, create_plan, create_ptype, create_revenue, create_task, daily, daily_print, end_of_last_month, expense_table, finance_office?, fiscal_year, get_balance, get_cats, get_payment_num, get_payment_section_num, get_ptypes, get_rtypes, get_tasks, income, index, laas, landcode, lands, login_laas, mobile_device?, office_office?, own_xmain?, ptype, revenue_detail, revenue_table, rm_budget, rm_laas, rm_revenue, rm_structure, submit_laas, trial, update_account, update_account_trans, update_budget, update_cat, update_plan, update_ptype, and update_revenue</pre></div>
+      <div class="failure" id="failure_2">
+        <div class="message"><pre>No action responded to create_sign. Actions: account, accounts, atype, b, balance, banks, begin_of_fiscal_year, begin_of_last_month, budget, budget_adj, budget_cat_detail, budget_detail, budget_expense, budget_plan_detail, buildings, copy_structure, create_account, create_account_trans, create_bank, create_budget, create_building, create_cat, create_income, create_income_detail, create_laas, create_land, create_payment, create_payment_details, create_plan, create_ptype, create_revenue, create_task, daily, daily_print, end_of_last_month, expense_table, finance_office?, fiscal_year, get_balance, get_cats, get_payment_num, get_payment_section_num, get_ptypes, get_rtypes, get_tasks, income, index, laas, landcode, lands, login_laas, mobile_device?, office_office?, own_xmain?, ptype, revenue_detail, revenue_table, rm_budget, rm_building, rm_laas, rm_revenue, rm_structure, submit_laas, trial, update_account, update_account_trans, update_budget, update_building, update_cat, update_plan, update_ptype, and update_revenue</pre></div>
         <div class="backtrace"><pre>/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/filters.rb:617:in `call_filters'
 /home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/filters.rb:638:in `run_before_filters'
 /home/songrit/apps/elocal/vendor/plugins/gmindapp/init.rb:24:in `make_session_available_in_model'
@@ -219,17 +293,33 @@ a {
 <span class="linenum">620</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
       </div>
     </dd>
+    <script type="text/javascript">moveProgressBar('75');</script>
+    <dd class="spec not_implemented"><span class="not_implemented_spec_name">should manage license (PENDING: Not Yet Implemented)</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_2">MainController</dt>
-    <script type="text/javascript">moveProgressBar('100');</script>
+  <dt id="example_group_6">MainController</dt>
+    <script type="text/javascript">moveProgressBar('83.3');</script>
     <dd class="spec passed"><span class="passed_spec_name">should update ip address to www server</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>1.450693 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "2 examples, 1 failure";</script>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_7">Post</dt>
+    <script type="text/javascript">moveProgressBar('91.6');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should create a new instance given valid attributes</span></dd>
+  </dl>
+</div>
+<div class="example_group">
+  <dl>
+  <dt id="example_group_8">PublicWorksHelper</dt>
+    <script type="text/javascript">moveProgressBar('100');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should be included in the object returned by #helper</span></dd>
+  </dl>
+</div>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>1.491984 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "12 examples, 2 failures, 7 pending";</script>
 </div>
 </div>
 </body>

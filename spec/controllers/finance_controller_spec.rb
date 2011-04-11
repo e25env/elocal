@@ -7,5 +7,6 @@ describe FinanceController do
     get :create_sign
     response.should be_success
   end
+  it "should manage license"
 
 end

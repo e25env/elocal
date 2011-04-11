@@ -168,7 +168,7 @@ class GmaController < ApplicationController
     modules.each do |m|
       next if controller_exists?(m.code)
       t << "= #{m.code}"
-      t << exec_cmd("script/generate controller #{m.code}")
+      t << exec_cmd("script/generate rspec_controller #{m.code}").gsub("\n","<br/>")
     end
     t.join("<br/>")
   end
@@ -258,8 +258,8 @@ class GmaController < ApplicationController
       model_code= name2code(model_name)
       unless model_exists?(model_code)
         attr_list= make_fields(model)+" gma_user_id:integer"
-        t << "ruby script/generate model #{model_code} #{attr_list} --force<br/>"
-        cmd= exec_cmd("ruby script/generate model #{model_code} #{attr_list} --force").gsub("\n","<br/>")
+        t << "script/generate rspec_model #{model_code} #{attr_list} --force<br/>"
+        cmd= exec_cmd("script/generate model #{model_code} #{attr_list} --force").gsub("\n","<br/>")
         t << cmd
         # remove custom layout therefore all controller will default to application.rhtml layout
         # if win32?

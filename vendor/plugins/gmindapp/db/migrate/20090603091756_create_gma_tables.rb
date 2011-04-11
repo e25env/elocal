@@ -10,7 +10,9 @@ class AddGmaTables < ActiveRecord::Migration
       t.integer  "gma_runseq_id"
       t.integer  "gma_user_id"
       t.integer  "gma_service_id"
-      t.text     "ip"
+      t.string    "ip"
+      t.boolean  "display"
+      t.boolean  "secured", :default=>false
       t.datetime "created_at"
       t.datetime "updated_at"
     end
@@ -78,7 +80,7 @@ class AddGmaTables < ActiveRecord::Migration
       t.boolean  "end"
       t.text     "xml"
       t.integer  "gma_user_id"
-      t.text     "ip"
+      t.string   "ip"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
@@ -90,8 +92,11 @@ class AddGmaTables < ActiveRecord::Migration
       t.integer  "gma_module_id"
       t.text     "xml"
       t.string   "auth"
+      t.string   "role"
+      t.string   "rule"
       t.integer  "seq"
       t.boolean  "listed"
+      t.boolean  "secured"
       t.integer  "gma_user_id"
       t.datetime "created_at"
       t.datetime "updated_at"
@@ -125,11 +130,12 @@ class AddGmaTables < ActiveRecord::Migration
 
     create_table "gma_ws_queues", :force => true do |t|
       t.string   "url"
+      t.text     "body"
       t.string   "poll_url"
-      t.string   "status",         :limit => 1
+      t.integer  "wait"
+      t.integer  "status"
       t.integer  "gma_runseq_id"
       t.datetime "next_poll_at"
-      t.integer  "wait"
       t.integer  "gma_user_id"
       t.datetime "created_at"
       t.datetime "updated_at"
@@ -145,11 +151,10 @@ class AddGmaTables < ActiveRecord::Migration
       t.string   "name"
       t.integer  "location_id"
       t.integer  "gma_user_id"
-      t.text     "ip"
+      t.string   "ip"
       t.datetime "created_at"
       t.datetime "updated_at"
     end
-    add_index "gma_xmains", ["gma_service_id"], :name => "gma_service"
 
     create_table "gma_searches", :force => true do |t|
       t.string   "q"
@@ -159,11 +164,6 @@ class AddGmaTables < ActiveRecord::Migration
       t.datetime "updated_at"
     end
 
-    create_table :sessions do |t|
-      t.string :session_id, :null => false
-      t.text :data
-      t.timestamps
-    end
     create_table :searches, :force=>true do |t|
       t.string :item
       t.string :class
@@ -174,16 +174,42 @@ class AddGmaTables < ActiveRecord::Migration
       t.timestamps
     end
 
+    create_table :sessions do |t|
+      t.string :session_id, :null => false
+      t.text :data
+      t.timestamps
+    end
+
+    create_table "logged_exceptions", :force => true do |t|
+      t.column :exception_class, :string
+      t.column :controller_name, :string
+      t.column :action_name,     :string
+      t.column :message,         :text
+      t.column :backtrace,       :text
+      t.column :environment,     :text
+      t.column :request,         :text
+      t.column :created_at,      :datetime
+    end
+
+    create_table :news do |t|
+      t.string :subject
+      t.text :body
+      t.boolean :stick
+      t.integer :gma_user_id
+
+      t.timestamps
+    end
+    
     add_index :sessions, :session_id
     add_index :sessions, :updated_at
     add_index :gma_docs, :gma_xmain_id
     add_index :gma_docs, :gma_runseq_id
     add_index :gma_docs, :gma_service_id
+    add_index :gma_xmains, :gma_service_id
     add_index :gma_runseqs, :code
     add_index :gma_runseqs, :gma_xmain_id
     add_index :gma_services, :gma_module_id
     add_index :gma_songrits, :code
-    add_index :gma_users, :section_id
   end
 
   def self.down
@@ -198,7 +224,10 @@ class AddGmaTables < ActiveRecord::Migration
     drop_table "gma_users"
     drop_table "gma_logs"
     drop_table "gma_notices"
-    drop_table "sessions"
+    drop_table "gma_searches"
     drop_table "searches"
+    drop_table "sessions"
+    drop_table "logged_exceptions"
+    drop_table "news"
   end
 end

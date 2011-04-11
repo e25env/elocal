@@ -33,7 +33,7 @@ class MainController < ApplicationController
   def index
     www= songrit(:www)
     RestClient.post www, :ip=>local_ip unless www.empty?
-    @news = News.all :limit => 5, :order => "created_at DESC"
+    # @news = News.all :limit => 5, :order => "created_at DESC"
     @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at", :include=>:gma_runseqs
   end
   def search

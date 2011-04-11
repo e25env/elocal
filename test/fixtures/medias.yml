@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  post_id: 1
+  file_name: MyString
+  content_type: MyString
+  size: 1
+  url: MyString
+  gma_user_id: 1
+
+two:
+  post_id: 1
+  file_name: MyString
+  content_type: MyString
+  size: 1
+  url: MyString
+  gma_user_id: 1
