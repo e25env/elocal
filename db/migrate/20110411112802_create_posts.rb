@@ -7,6 +7,7 @@ class CreatePosts < ActiveRecord::Migration
       t.integer :post_type
       t.date :begin_on
       t.date :end_on
+      t.string :pic
       t.integer :gma_user_id
 
       t.timestamps

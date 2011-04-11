@@ -1,0 +1,6 @@
+<tr class='media'>
+  <% fields_for "media[]", Media.new do |f| %>
+    <td class="field-name">เอกสารแนบ</td>
+    <td colspan="2"><%= f.file_field :content %></td>
+  <% end %>
+</tr>

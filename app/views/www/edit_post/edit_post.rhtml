@@ -1,0 +1,30 @@
+<% @post = Post.find $xvars[:p][:id] %>
+<table width="100%">
+  <% fields_for @post do |f| %>
+    <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan='2'><%= f.select :post_type, [['ข่าว',1],['กิจกรรม',2],['รายงานการประชุม',3],['ท่องเที่ยว',4],['ประกาศ',5],['คำสั่ง',6],['จัดซื้อจัดจ้าง',7]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หัวข้อข่าว</td>
+      <td colspan='2'><%= f.text_field :subject, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รายละเอียด</td>
+      <td colspan='2'><%= f.text_area :body, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ภาพประกอบ</td>
+      <td colspan='2'><%= f.file_field :pic %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วันที่เริ่มต้น</td>
+      <td colspan="2"><%= f.date_select_year :begin_on, :start_year=>Time.now.year %></td>
+    </tr>
+    <tr>
+      <td class="field-name">วันที่สิ้นสุด</td>
+      <td colspan="2"><%= f.date_select_year :end_on, :start_year=> Time.now.year %></td>
+    </tr>
+  <% end %>
+</table>
+<%= fix_thai_year %>

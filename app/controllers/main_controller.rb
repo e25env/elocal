@@ -31,6 +31,15 @@ class MainController < ApplicationController
 #    render :text => "help"
   end
   def index
+    if params[:module]
+      session[:module]= params[:module]
+      redirect_to :controller=>params[:module]
+    else
+      redirect_to :action => "pending"
+      # render :text => "coming soon ...", :layout => true 
+    end
+  end
+  def pending
     www= songrit(:www)
     RestClient.post www, :ip=>local_ip unless www.empty?
     # @news = News.all :limit => 5, :order => "created_at DESC"

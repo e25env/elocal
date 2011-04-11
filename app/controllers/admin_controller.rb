@@ -1,6 +1,9 @@
 class AdminController < ApplicationController
   before_filter :admin_action, :except=>[:daily_housekeeping, :hourly_housekeeping]
 
+  def index
+    redirect_to "/gma/logs"
+  end
   def gen_fsection
     if Fsection.first :conditions=>"budget!=0 OR balance!=0"
       flash[:notice]= "งบปัจจุบันไม่เป็นศูนย์ ไม่สามารถสร้างส่วนใหม่ได้"

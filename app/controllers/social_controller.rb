@@ -1,4 +1,7 @@
 class SocialController < ApplicationController
+  def index
+    redirect_to :action => "seniors"
+  end
   def senior_local
     @budget= 1
     @budget_title= "งบท้องถิ่น"

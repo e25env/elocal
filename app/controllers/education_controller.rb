@@ -1,4 +1,7 @@
 class EducationController < ApplicationController
+  def index
+    redirect_to :action => "nurseries"
+  end
   def nurseries
     @nurseries= Nursery.all :order => "name"
   end
