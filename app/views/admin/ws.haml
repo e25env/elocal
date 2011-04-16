@@ -1,0 +1,15 @@
+= will_paginate @ws, :class=>'flickr_pagination'
+:css
+  #ws td {border-bottom: 1px solid grey}
+%table#ws{:width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th id
+    %th url
+    %th body
+    %th created_at
+  - @ws.each do |w|
+    %tr
+      %td= w.id
+      %td= w.url
+      %td= h(truncate w.body, 120)
+      %td= date_thai w.created_at

@@ -4,6 +4,13 @@ class AdminController < ApplicationController
   def index
     redirect_to "/gma/logs"
   end
+  def ws
+    @ws= GmaWsQueue.active.paginate :per_page => 20, :page=>params[:page]
+  end
+  def dispatch_ws
+    ws_dispatch
+    $xvars[:p][:return]= '/admin/ws'
+  end
   def gen_fsection
     if Fsection.first :conditions=>"budget!=0 OR balance!=0"
       flash[:notice]= "งบปัจจุบันไม่เป็นศูนย์ ไม่สามารถสร้างส่วนใหม่ได้"

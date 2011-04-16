@@ -184,23 +184,19 @@ a {
   <dt id="example_group_1">WsController</dt>
     <script type="text/javascript">makeYellow('rspec-header');</script>
     <script type="text/javascript">makeYellow('example_group_1');</script>
-    <script type="text/javascript">moveProgressBar('7.1');</script>
+    <script type="text/javascript">moveProgressBar('7.6');</script>
     <dd class="spec not_implemented"><span class="not_implemented_spec_name">should manage ws queue (PENDING: Not Yet Implemented)</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
   <dt id="example_group_2">WwwController</dt>
-    <script type="text/javascript">moveProgressBar('14.2');</script>
+    <script type="text/javascript">moveProgressBar('15.3');</script>
     <dd class="spec passed"><span class="passed_spec_name">should create news</span></dd>
-    <script type="text/javascript">makeYellow('rspec-header');</script>
-    <script type="text/javascript">makeYellow('example_group_2');</script>
-    <script type="text/javascript">moveProgressBar('21.4');</script>
-    <dd class="spec not_implemented"><span class="not_implemented_spec_name">should post news to internet server (PENDING: Not Yet Implemented)</span></dd>
-    <script type="text/javascript">makeYellow('rspec-header');</script>
-    <script type="text/javascript">makeYellow('example_group_2');</script>
-    <script type="text/javascript">moveProgressBar('28.5');</script>
-    <dd class="spec not_implemented"><span class="not_implemented_spec_name">should queue post if network not available (PENDING: Not Yet Implemented)</span></dd>
+    <script type="text/javascript">moveProgressBar('23');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should queue post</span></dd>
+    <script type="text/javascript">moveProgressBar('30.7');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should post news to internet server</span></dd>
   </dl>
 </div>
 <div class="example_group">
@@ -208,11 +204,11 @@ a {
   <dt id="example_group_3">PublicWorksController</dt>
     <script type="text/javascript">makeYellow('rspec-header');</script>
     <script type="text/javascript">makeYellow('example_group_3');</script>
-    <script type="text/javascript">moveProgressBar('35.7');</script>
+    <script type="text/javascript">moveProgressBar('38.4');</script>
     <dd class="spec not_implemented"><span class="not_implemented_spec_name">should manage landfill permit (PENDING: Not Yet Implemented)</span></dd>
     <script type="text/javascript">makeYellow('rspec-header');</script>
     <script type="text/javascript">makeYellow('example_group_3');</script>
-    <script type="text/javascript">moveProgressBar('42.8');</script>
+    <script type="text/javascript">moveProgressBar('46.1');</script>
     <dd class="spec not_implemented"><span class="not_implemented_spec_name">should manage construction projects (PENDING: Not Yet Implemented)</span></dd>
   </dl>
 </div>
@@ -221,11 +217,11 @@ a {
   <dt id="example_group_4">PublicWorksController construction permit</dt>
     <script type="text/javascript">makeYellow('rspec-header');</script>
     <script type="text/javascript">makeYellow('example_group_4');</script>
-    <script type="text/javascript">moveProgressBar('50');</script>
+    <script type="text/javascript">moveProgressBar('53.8');</script>
     <dd class="spec not_implemented"><span class="not_implemented_spec_name">should manage permit (PENDING: Not Yet Implemented)</span></dd>
     <script type="text/javascript">makeYellow('rspec-header');</script>
     <script type="text/javascript">makeYellow('example_group_4');</script>
-    <script type="text/javascript">moveProgressBar('57.1');</script>
+    <script type="text/javascript">moveProgressBar('61.5');</script>
     <dd class="spec not_implemented"><span class="not_implemented_spec_name">should check for zoning (PENDING: Not Yet Implemented)</span></dd>
   </dl>
 </div>
@@ -234,7 +230,7 @@ a {
   <dt id="example_group_5">FinanceController</dt>
     <script type="text/javascript">makeRed('rspec-header');</script>
     <script type="text/javascript">makeRed('example_group_5');</script>
-    <script type="text/javascript">moveProgressBar('64.2');</script>
+    <script type="text/javascript">moveProgressBar('69.2');</script>
     <dd class="spec failed">
       <span class="failed_spec_name">should create sign (pt4)</span>
       <div class="failure" id="failure_1">
@@ -261,93 +257,40 @@ a {
 /home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:447:in `process'
 /home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/actionpack-2.3.5/lib/action_controller/test_process.rb:398:in `get'
 /home/songrit/apps/elocal/spec/controllers/finance_controller_spec.rb:7:</pre></div>
-    <pre class="ruby"><code><span class="linenum">615</span>          index = run_before_filters(chain, index, nesting)
-<span class="linenum">616</span>          aborted = @before_filter_chain_aborted
-<span class="offending"><span class="linenum">617</span>          perform_action_without_filters unless performed? || aborted</span>
-<span class="linenum">618</span>          return index if nesting != 0 || aborted
-<span class="linenum">619</span>          run_after_filters(chain, index)
-<span class="linenum">620</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
+    <pre class="ruby"><code><span class="linenum">615</span>          <span class="ident">index</span> <span class="punct">=</span> <span class="ident">run_before_filters</span><span class="punct">(</span><span class="ident">chain</span><span class="punct">,</span> <span class="ident">index</span><span class="punct">,</span> <span class="ident">nesting</span><span class="punct">)</span>
+<span class="linenum">616</span>          <span class="ident">aborted</span> <span class="punct">=</span> <span class="attribute">@before_filter_chain_aborted</span>
+<span class="offending"><span class="linenum">617</span>          <span class="ident">perform_action_without_filters</span> <span class="keyword">unless</span> <span class="ident">performed?</span> <span class="punct">||</span> <span class="ident">aborted</span></span>
+<span class="linenum">618</span>          <span class="keyword">return</span> <span class="ident">index</span> <span class="keyword">if</span> <span class="ident">nesting</span> <span class="punct">!=</span> <span class="number">0</span> <span class="punct">||</span> <span class="ident">aborted</span>
+<span class="linenum">619</span>          <span class="ident">run_after_filters</span><span class="punct">(</span><span class="ident">chain</span><span class="punct">,</span> <span class="ident">index</span><span class="punct">)</span></code></pre>
       </div>
     </dd>
-    <script type="text/javascript">moveProgressBar('71.4');</script>
+    <script type="text/javascript">moveProgressBar('76.9');</script>
     <dd class="spec not_implemented"><span class="not_implemented_spec_name">should manage license (PENDING: Not Yet Implemented)</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
   <dt id="example_group_6">MainController</dt>
-    <script type="text/javascript">makeRed('example_group_6');</script>
-    <script type="text/javascript">moveProgressBar('78.5');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should update ip address to www server</span>
-      <div class="failure" id="failure_2">
-        <div class="message"><pre>expected success? to return true, got false</pre></div>
-        <div class="backtrace"><pre>/home/songrit/apps/elocal/spec/controllers/main_controller_spec.rb:11:</pre></div>
-    <pre class="ruby"><code><span class="linenum">9</span>    RestClient.should_receive(:post)
-<span class="linenum">10</span>    get :index
-<span class="offending"><span class="linenum">11</span>    response.should be_success</span>
-<span class="linenum">12</span>  end
-<span class="linenum">13</span>
-<span class="linenum">14</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
+    <script type="text/javascript">moveProgressBar('84.6');</script>
+    <dd class="spec passed"><span class="passed_spec_name">should update ip address to www server</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_7">Media</dt>
-    <script type="text/javascript">makeRed('example_group_7');</script>
-    <script type="text/javascript">moveProgressBar('85.7');</script>
-    <dd class="spec failed">
-      <span class="failed_spec_name">should create a new instance given valid attributes</span>
-      <div class="failure" id="failure_3">
-        <div class="message"><pre>PGError: ERROR:  relation &quot;medias&quot; does not exist
-LINE 4:              WHERE a.attrelid = '&quot;medias&quot;'::regclass
-                                        ^
-:             SELECT a.attname, format_type(a.atttypid, a.atttypmod), d.adsrc, a.attnotnull
-              FROM pg_attribute a LEFT JOIN pg_attrdef d
-                ON a.attrelid = d.adrelid AND a.attnum = d.adnum
-             WHERE a.attrelid = '&quot;medias&quot;'::regclass
-               AND a.attnum &gt; 0 AND NOT a.attisdropped
-             ORDER BY a.attnum
-</pre></div>
-        <div class="backtrace"><pre>/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-2.3.5/lib/active_record/connection_adapters/abstract_adapter.rb:219:in `log'
-/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:537:in `query'
-/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:1091:in `column_definitions'
-/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-2.3.5/lib/active_record/connection_adapters/postgresql_adapter.rb:705:in `columns'
-/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-2.3.5/lib/active_record/base.rb:1271:in `columns'
-/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-2.3.5/lib/active_record/base.rb:3014:in `attributes_from_column_definition_without_lock'
-/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-2.3.5/lib/active_record/locking/optimistic.rb:55:in `attributes_from_column_definition'
-/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-2.3.5/lib/active_record/base.rb:2434:in `initialize'
-/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-2.3.5/lib/active_record/validations.rb:1057:in `new'
-/home/songrit/.rvm/gems/ree-1.8.7-2010.02/gems/activerecord-2.3.5/lib/active_record/validations.rb:1057:in `create!'
-/home/songrit/apps/elocal/spec/models/media_spec.rb:16:</pre></div>
-    <pre class="ruby"><code><span class="linenum">217</span>          message = "#{e.class.name}: #{e.message}: #{sql}"
-<span class="linenum">218</span>          log_info(message, name, 0)
-<span class="offending"><span class="linenum">219</span>          raise ActiveRecord::StatementInvalid, message</span>
-<span class="linenum">220</span>        end
-<span class="linenum">221</span>
-<span class="linenum">222</span><span class="comment"># gem install syntax to get syntax highlighting</span></code></pre>
-      </div>
-    </dd>
-  </dl>
-</div>
-<div class="example_group">
-  <dl>
-  <dt id="example_group_8">Post</dt>
-    <script type="text/javascript">moveProgressBar('92.8');</script>
+  <dt id="example_group_7">Post</dt>
+    <script type="text/javascript">moveProgressBar('92.3');</script>
     <dd class="spec passed"><span class="passed_spec_name">should create a new instance given valid attributes</span></dd>
   </dl>
 </div>
 <div class="example_group">
   <dl>
-  <dt id="example_group_9">PublicWorksHelper</dt>
+  <dt id="example_group_8">PublicWorksHelper</dt>
     <script type="text/javascript">moveProgressBar('100');</script>
     <dd class="spec passed"><span class="passed_spec_name">should be included in the object returned by #helper</span></dd>
   </dl>
 </div>
-<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>1.021159 seconds</strong>";</script>
-<script type="text/javascript">document.getElementById('totals').innerHTML = "14 examples, 3 failures, 8 pending";</script>
+<script type="text/javascript">document.getElementById('duration').innerHTML = "Finished in <strong>118.451277 seconds</strong>";</script>
+<script type="text/javascript">document.getElementById('totals').innerHTML = "13 examples, 1 failure, 6 pending";</script>
 </div>
 </div>
 </body>

@@ -18,6 +18,17 @@ class ApplicationController < ActionController::Base
     current_user.role && current_user.role.upcase.split(',').include?('CO') && current_user.section_id==1
   end
 #----------------------
+  def ws_dispatch
+    GmaWsQueue.active.each do |q|
+      begin
+        # debugger
+        RestClient.post(q.url, q.body)
+      rescue Exception=>e
+        # debugger
+        logger.debug "ws_dispatch fail at #{Time.now}: #{e.message}"
+      end
+    end
+  end
   def atype(a)
     ACCOUNT_TYPE[a-1]
   end

@@ -2,6 +2,15 @@ class MainController < ApplicationController
   # require "open-uri"
   # require "hpricot"
 
+  def index
+    update_intranet_ip
+    if params[:module]
+      session[:module]= params[:module]
+      redirect_to :controller=>params[:module]
+    else
+      redirect_to :action => "pending"
+    end
+  end
   def store_asset
     if params[:content]
       doc = GmaDoc.create! :name=> 'asset',
@@ -30,19 +39,7 @@ class MainController < ApplicationController
   def help
 #    render :text => "help"
   end
-  def index
-    if params[:module]
-      session[:module]= params[:module]
-      redirect_to :controller=>params[:module]
-    else
-      redirect_to :action => "pending"
-      # render :text => "coming soon ...", :layout => true 
-    end
-  end
   def pending
-    www= songrit(:www)
-    RestClient.post www, :ip=>local_ip unless www.empty?
-    # @news = News.all :limit => 5, :order => "created_at DESC"
     @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at", :include=>:gma_runseqs
   end
   def search
@@ -93,4 +90,12 @@ class MainController < ApplicationController
     @select= @people.map {|p| {:label=>"#{p.nid} #{p.full_names}", :value => p.nid }}
     render :json=>@select
   end
+  
+  private
+  def update_intranet_ip
+    www= songrit(:www)
+    RestClient.post www, :ip=>local_ip unless www.empty?
+  rescue
+  end
+  
 end

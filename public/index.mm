@@ -930,8 +930,14 @@
 <node CREATED="1302489811362" ID="ID_1281252312" MODIFIED="1302489816029" TEXT="ws">
 <node CREATED="1302511963798" ID="ID_1938803349" MODIFIED="1302511968793" TEXT="role: a"/>
 </node>
-<node CREATED="1275752678377" FOLDED="true" ID="ID_1348489452" MODIFIED="1302511977038" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
+<node CREATED="1275752678377" ID="ID_1348489452" MODIFIED="1302916175101" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275752688167" ID="ID_229996461" MODIFIED="1275752690948" TEXT="role:a"/>
+<node CREATED="1302916180371" ID="ID_868306661" MODIFIED="1302916225911" TEXT="link: ws queue: /admin/ws"/>
+<node CREATED="1302918872723" ID="ID_845555708" MODIFIED="1302918902682" TEXT="dispatch_ws: &#xe2a;&#xe48;&#xe07;&#xe02;&#xe48;&#xe32;&#xe27;&#xe40;&#xe02;&#xe49;&#xe32;&#xe23;&#xe30;&#xe1a;&#xe1a;&#xe2d;&#xe34;&#xe19;&#xe40;&#xe15;&#xe2d;&#xe23;&#xe4c;&#xe40;&#xe19;&#xe47;&#xe15;">
+<node CREATED="1302918902687" ID="ID_1822483193" MODIFIED="1302918917603" TEXT="dispatch_ws">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
 <node CREATED="1280374214975" ID="ID_980297856" MODIFIED="1280374230097" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe0a;&#xe37;&#xe48;&#xe2d;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;: /admin/users"/>
 <node CREATED="1280601992129" ID="ID_149279552" MODIFIED="1280602017663" TEXT="edit_org: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25; &#xe2d;&#xe1b;&#xe17;.">
 <node CREATED="1280602020164" ID="ID_638196162" MODIFIED="1280602064881" TEXT="edit: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">

@@ -28,3 +28,6 @@ group :development do
   gem "rspec", "1.3.1"
   gem "rspec-rails", "1.3.3"
 end
+group :test do
+  gem "syntax"
+end

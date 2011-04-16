@@ -10,6 +10,7 @@
       %th{:style=>"width:30px;"} ลบ
     %th วันที่
     %th หัวข้อข่าว
+    %th ประเภท
   - @posts.each do |s|
     %tr
       - if admin?
@@ -17,3 +18,4 @@
         %td= link_to image_tag('cross.png'), "/run/www/rm_post/#{s.id}", :confirm=>"กรุณายืนยัน"
       %td= date_thai s.created_at
       %td= s.subject
+      %td= post_type(s.post_type)

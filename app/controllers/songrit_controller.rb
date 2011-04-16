@@ -7,18 +7,28 @@ class SongritController < ApplicationController
   require "rest_client"
   require 'nokogiri'
   # require 'mechanize'
-
+  def test_sort
+    t = ""
+    Province.all(:order=>'name').each do |p|
+      t << p.name+'<br/>'
+    end
+    render :text => t
+  end
+  def songrit
+    set_songrit :www, "http://elocal-www.local"
+    render :text => "text to render..."
+  end
   def test
     render :text => exec_cmd("dir")
   end
   def test_api
     body= File.open("public/OTA_HotelAvailNotifRQ.xml").read
-    f= RestClient.post "http://pob-ws.heroku.com/api/hotel_avail_notif", body
+    f= RestClient.post "http://pob-ws.local/api/hotel_avail_notif", body
     render :xml => f.body
   end
   def test_api1
     body= File.open("public/OTA_HotelSearchRQ1.xml").read
-    f= RestClient.post "http://pob-ws.local/api/hotel_search", body
+    f= RestClient.post "http://pob-ws.heroku.com/api/hotel_search", body
     render :xml => f.body
   end
   def end_of_last_month
