@@ -11,6 +11,11 @@ class AdminController < ApplicationController
     ws_dispatch
     $xvars[:p][:return]= '/admin/ws'
   end
+  def upd_intranet_ip
+    update_intranet_ip
+    flash[:notice] = "ตำแหน่งเครื่องแม่ข่าย #{local_ip}"
+    redirect_to :action => "index"
+  end
   def gen_fsection
     if Fsection.first :conditions=>"budget!=0 OR balance!=0"
       flash[:notice]= "งบปัจจุบันไม่เป็นศูนย์ ไม่สามารถสร้างส่วนใหม่ได้"

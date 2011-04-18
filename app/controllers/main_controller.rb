@@ -91,11 +91,4 @@ class MainController < ApplicationController
     render :json=>@select
   end
   
-  private
-  def update_intranet_ip
-    www= songrit(:www)
-    RestClient.post www, :ip=>local_ip unless www.empty?
-  rescue
-  end
-  
 end

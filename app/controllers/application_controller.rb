@@ -18,6 +18,11 @@ class ApplicationController < ActionController::Base
     current_user.role && current_user.role.upcase.split(',').include?('CO') && current_user.section_id==1
   end
 #----------------------
+  def update_intranet_ip
+    www= songrit(:www)+"/ws/intranet_ping"
+    RestClient.post www, :ip=>local_ip unless www.empty?
+  rescue
+  end
   def ws_dispatch
     GmaWsQueue.active.each do |q|
       begin
