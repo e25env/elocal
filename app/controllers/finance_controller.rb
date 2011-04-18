@@ -1,6 +1,18 @@
 class FinanceController < ApplicationController
   def index
   end
+  def signs
+    
+  end
+  def create_sign
+    debugger
+    owner= Person.create $xvars[:enter_sign][:owner] if $xvars[:enter_sign][:sign][:owner_id].empty?
+    location= Address.create $xvars[:enter_sign][:location] if $xvars[:enter_sign][:sign][:location_id].empty?
+    sign= Sign.new $xvars[:enter_sign][:sign]
+    sign.owner_id= owner.id if $xvars[:enter_sign][:sign][:owner_id].empty?
+    sign.location_id= location.id if $xvars[:enter_sign][:sign][:location_id].empty?
+    sign.save
+  end
   def buildings
     @buildings = Building.all
   end

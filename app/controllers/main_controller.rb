@@ -90,5 +90,10 @@ class MainController < ApplicationController
     @select= @people.map {|p| {:label=>"#{p.nid} #{p.full_names}", :value => p.nid }}
     render :json=>@select
   end
+  def address
+    @addresses= Address.find :all, :conditions=>['address LIKE ?', "#{params[:term]}%"], :limit=>10
+    @select= @addresses.map {|p| {:label=>"#{p.id}:#{p.street}:#{p.address}:#{p.moo}", :value => p.address }}
+    render :json=>@select
+  end
   
 end

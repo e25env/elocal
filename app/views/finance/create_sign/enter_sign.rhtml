@@ -27,7 +27,7 @@
         $("#owner_fname").val(e[2]);
         $("#owner_lname").val(e[3]);
 		    $("#sign_owner_id").val(e[4].substring(1,(e[4].length-1)));
-      }
+      };
       $("#owner_nid").autocomplete({
         source: "/main/person",
         minLength: 2,
@@ -35,42 +35,17 @@
           populatePerson(ui.item.label)
         }
       });
-    });
-    </script>
-    <tr>
-      <td class="field-name">คำนำหน้า</td>
-      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ชื่อ</td>
-      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">นามสกุล</td>
-      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
-    </tr>
-  <% end %>
-  <% fields_for :utilizer do |f| %>
-    <tr>
-      <td colspan="3" style="font-weight:bold;">ผู้ทำประโยชน์</td>
-    </tr>
-    <tr>
-      <td class="field-name">เลขประจำตัวประชาชน</td>
-      <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
-    </tr>
-    <script>
-    $(function(){
-      function populatePerson(label) {
-        var personelement = label.split(" ");
-        $("#utilizer_title option:selected").text(personelement[1]);
-        $("#utilizer_fname").val(personelement[2]);
-        $("#utilizer_lname").val(personelement[3]);
-      }
-      $("#utilizer_nid").autocomplete({
-        source: "/main/person",
+      function populateLocation(label) {
+        var e = label.split(":");
+        $("#sign_location_id").val(e[1]
+        $("#location_street").val(e[2]);
+        $("#location_moo option:selected").text(e[3]);
+      };
+      $("#location_address").autocomplete({
+        source: "/main/address",
         minLength: 2,
         select: function(e,ui) {
-          populatePerson(ui.item.label)
+          populateLocation(ui.item.label)
         }
       });
     });
@@ -88,61 +63,61 @@
       <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
     </tr>
   <% end %>
-  <% fields_for :land do |f| %>
+  <% fields_for :location do |f| %>
     <tr>
-      <td class="field-name">ผ.ท. ๔</td>
-      <td colspan='2'><%= f.text_field :pt4_code, :style=>"width:300px;" %></td>
+      <td colspan="3" style="font-weight:bold;">ที่ตั้ง</td>
     </tr>
     <tr>
-      <td class="field-name">รหัสที่ดิน</td>
-      <td colspan='2'><%= f.text_field :land_code, :style=>"width:300px;" %></td>
+      <td class="field-name">เลขที่</td>
+      <td colspan='2'><%= f.text_field :address, :style=>"width:300px;" %></td>
     </tr>
     <tr>
-      <td class="field-name">ประเภทเอกสารสิทธิ์</td>
-      <td colspan='2'><%= f.select :doc_type, [['โฉนด',1],['นส. ๓ ก.',2]] %></td>
+      <td class="field-name">ถนน</td>
+      <td colspan='2'><%= f.text_field :street, :style=>"width:300px;" %></td>
     </tr>
     <tr>
-      <td class="field-name">เลขที่เอกสารสิทธิ์</td>
-      <td colspan='2'><%= f.text_field :doc_num, :style=>"width:300px;" %></td>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.select :moo, 1..MAX_MOO %></td>
+    </tr>
+  <% end %>
+  <% fields_for :sign do |f| %>
+    <%= f.hidden_field :owner_id %>
+    <%= f.hidden_field :location_id %>
+    <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan='2'><%= f.select :sign_type, [['อักษรไทยล้วน',1],
+        ['ป้ายที่มีอักษรไทยปนกับอักษรต่างประเทศหรือภาพ',2],
+        ['ป้ายที่ไม่มีอักษรไทย หรืออักษรไทยอยู่ใต้หรือต่ำกว่าอักษรต่างประเทศ',3]] %></td>
     </tr>
     <tr>
-      <td class="field-name">ระวาง</td>
-      <td colspan='2'><%= f.text_field :location_plan, :style=>"width:300px;" %></td>
+      <td class="field-name">กว้าง</td>
+      <td><%= f.text_field :width, :style=>"width:200px;" %></td>
+      <td>(เซ็นติเมตร)</td>
     </tr>
     <tr>
-      <td class="field-name">เลขที่ดิน</td>
-      <td colspan='2'><%= f.text_field :location_num, :style=>"width:300px;" %></td>
+      <td class="field-name">ยาว</td>
+      <td><%= f.text_field :length, :style=>"width:200px;" %></td>
+      <td>(เซ็นติเมตร)</td>
     </tr>
     <tr>
-      <td class="field-name">หน้าสำรวจ</td>
-      <td colspan='2'><%= f.text_field :location_survey, :style=>"width:300px;" %></td>
+      <td class="field-name">พื้นที่</td>
+      <td><%= f.text_field :area, :style=>"width:200px;" %></td>
+      <td>(ตารางเซ็นติเมตร)</td>
     </tr>
     <tr>
-      <td class="field-name">จำนวนเนื้อที่ - ไร่</td>
-      <td colspan='2'><%= f.text_field :area_rai, :style=>"width:150px;" %></td>
+      <td class="field-name">จำนวนด้าน</td>
+      <td colspan='2'><%= f.text_field :sides, :style=>"width:300px;" %></td>
     </tr>
     <tr>
-      <td class="field-name">จำนวนเนื้อที่ - งาน</td>
-      <td colspan='2'><%= f.text_field :area_ngan, :style=>"width:150px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">จำนวนเนื้อที่ - ตารางวา</td>
-      <td colspan='2'><%= f.text_field :area_wa, :style=>"width:150px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ลักษณะการใช้</td>
-      <td colspan='2'><%= f.text_area :usage, :cols=>50, :rows => 3  %></td>
-    </tr>
-    <tr>
-      <td class="field-name">การใช้ประโยชน์</td>
-      <td colspan='2'><%= f.text_area :utilize, :cols=>50, :rows => 3 %></td>
+      <td class="field-name">ข้อความ</td>
+      <td colspan='2'><%= f.text_area :message, :cols=>50, :rows=>6 %></td>
     </tr>
     <tr>
       <td class="field-name">หมายเหตุ</td>
-      <td colspan='2'><%= f.text_area :comment, :cols=>50, :rows => 3 %></td>
+      <td colspan='2'><%= f.text_area :comment, :cols=>50, :rows=>6 %></td>
     </tr>
     <tr>
-      <td class="field-name">อัตราภาษีบำรุงท้องที่ต่อปี</td>
+      <td class="field-name">อัตราภาษีต่อปี</td>
       <td colspan='2'><%= f.text_field :tax, :style=>"width:300px;" %></td>
     </tr>
   <% end %>
