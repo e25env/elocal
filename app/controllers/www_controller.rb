@@ -7,9 +7,14 @@ class WwwController < ApplicationController
     @posts= Post.all
   end
   def create_post
-    post= Post.create $xvars[:enter_post][:post]
+    post= Post.new $xvars[:enter_post][:post]
     img= $xvars[:enter_post][:post_pic_doc_id]
-    scale_image(img) if img
+    if img
+      scale_image(img)
+      @pic_postimg= postimg(File.join(IMAGE_LOCATION,"f#{img}"))
+      post.pic_postimg= @pic_postimg
+    end
+    post.save
     $xvars[:p][:return]= '/www/posts'
     GmaWsQueue.create :url=>songrit(:www)+"/ws/post",
       :body => post.to_xml, :status => 0, :gma_runseq_id=> $runseq.id 
@@ -19,15 +24,23 @@ class WwwController < ApplicationController
     post = Post.update $xvars[:p][:id], $xvars[:edit_post][:post]
     $xvars[:p][:return]='/www/posts'
     img= $xvars[:edit_post][:post_pic_doc_id]
-    scale_image(img) if img
+    if img
+      scale_image(img)
+      @pic_postimg= postimg(File.join(IMAGE_LOCATION,"f#{img}"))
+      post.pic_postimg= @pic_postimg
+    end
     $xvars[:p][:return]= '/www/posts'
     GmaWsQueue.create :url=>songrit(:www)+"/ws/post",
       :body => post.to_xml, :status => 0, :gma_runseq_id=> $runseq.id 
     ws_dispatch
-  end
+    end
   def rm_post
     Post.destroy $xvars[:p][:id]
     $xvars[:p][:return]='/www/posts'
+    GmaWsQueue.create :url=>songrit(:www)+"/ws/rm_post",
+      :body => {:id=> $xvars[:p][:id]}.to_xml(:root=>'post'), 
+      :status => 0, :gma_runseq_id=> $runseq.id 
+    ws_dispatch
   end
   
   private

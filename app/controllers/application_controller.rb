@@ -26,10 +26,8 @@ class ApplicationController < ActionController::Base
   def ws_dispatch
     GmaWsQueue.active.each do |q|
       begin
-        # debugger
         RestClient.post(q.url, q.body)
       rescue Exception=>e
-        # debugger
         logger.debug "ws_dispatch fail at #{Time.now}: #{e.message}"
       end
     end

@@ -5,7 +5,6 @@ class FinanceController < ApplicationController
     
   end
   def create_sign
-    debugger
     owner= Person.create $xvars[:enter_sign][:owner] if $xvars[:enter_sign][:sign][:owner_id].empty?
     location= Address.create $xvars[:enter_sign][:location] if $xvars[:enter_sign][:sign][:location_id].empty?
     sign= Sign.new $xvars[:enter_sign][:sign]

@@ -27,7 +27,9 @@ group :development do
   gem "rails-footnotes"
   gem "rspec", "1.3.1"
   gem "rspec-rails", "1.3.3"
+  gem "hirb-unicode"
 end
 group :test do
   gem "syntax"
+  gem "webmock"
 end

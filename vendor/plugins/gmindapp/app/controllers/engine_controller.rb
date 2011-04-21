@@ -46,7 +46,7 @@ class EngineController < ApplicationController
         if service
           f= "app/views/#{service.module}/#{service.code}/#{@runseq.code}.rhtml"
           @ui= File.read(f)
-          @message = "ดำเนินการต่อ &gt;"
+          @message = defined?(MSG_NEXT) ? MSG_NEXT : "Next &gt;"
           #      @message = "Done" if @runseq.form_step==@xvars[:total_form_steps]
         else
           flash[:notice]= "ไม่สามารถค้นหาบริการที่ต้องการได้"
@@ -211,7 +211,7 @@ class EngineController < ApplicationController
           :ip=> get_ip, :gma_service_id=>service.id, :display=>display,
           :secured => @xmain.gma_service.secured
       end
-      @message = "ดำเนินการต่อ"
+      @message = defined?(MSG_NEXT) ? MSG_NEXT : "Next &gt;"
       @message = "สิ้นสุดการทำงาน" if @runseq.end
       eval "@xvars[:#{@runseq.code}] = url_for(:controller=>'engine', :action=>'document', :id=>@gma_doc.id)"
     else

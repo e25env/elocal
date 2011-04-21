@@ -1,4 +1,4 @@
-<% @post = Post.new %>
+<% @post = Post.new :end_on=>10.days.from_now %>
 <table width="100%">
   <% fields_for @post do |f| %>
     <tr>

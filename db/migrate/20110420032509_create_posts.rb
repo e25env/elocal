@@ -8,6 +8,7 @@ class CreatePosts < ActiveRecord::Migration
       t.date :begin_on
       t.date :end_on
       t.string :pic
+      t.string :pic_postimg
       t.integer :gma_user_id
 
       t.timestamps
