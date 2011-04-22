@@ -27,6 +27,7 @@ class ApplicationController < ActionController::Base
     GmaWsQueue.active.each do |q|
       begin
         RestClient.post(q.url, q.body)
+        q.update_attribute :status, 1
       rescue Exception=>e
         logger.debug "ws_dispatch fail at #{Time.now}: #{e.message}"
       end
