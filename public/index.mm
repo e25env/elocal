@@ -487,7 +487,8 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1302090714595" ID="ID_1376100609" MODIFIED="1302090730718" TEXT="edit_building: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe42;&#xe23;&#xe07;&#xe40;&#xe23;&#xe37;&#xe2d;&#xe19;">
+<node CREATED="1302090714595" ID="ID_1376100609" MODIFIED="1303731745794" TEXT="edit_building: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe42;&#xe23;&#xe07;&#xe40;&#xe23;&#xe37;&#xe2d;&#xe19;">
+<icon BUILTIN="closed"/>
 <node CREATED="1302090734778" ID="ID_1738529391" MODIFIED="1302090778562" TEXT="enter_building: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
 <icon BUILTIN="attach"/>
 </node>
@@ -495,7 +496,8 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1302090822351" ID="ID_665907406" MODIFIED="1302090832394" TEXT="rm_building: &#xe25;&#xe1a;&#xe42;&#xe23;&#xe07;&#xe40;&#xe23;&#xe37;&#xe2d;&#xe19;">
+<node CREATED="1302090822351" ID="ID_665907406" MODIFIED="1303731752322" TEXT="rm_building: &#xe25;&#xe1a;&#xe42;&#xe23;&#xe07;&#xe40;&#xe23;&#xe37;&#xe2d;&#xe19;">
+<icon BUILTIN="closed"/>
 <node CREATED="1302090836245" ID="ID_526815296" MODIFIED="1302090846800" TEXT="rm_building">
 <icon BUILTIN="bookmark"/>
 </node>
@@ -506,6 +508,15 @@
 <icon BUILTIN="attach"/>
 </node>
 <node CREATED="1302084048097" ID="ID_1031007657" MODIFIED="1302084063239" TEXT="create_sign">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1303733127344" ID="ID_55827760" MODIFIED="1303733195269" TEXT="edit_sign">
+<icon BUILTIN="closed"/>
+<node CREATED="1303733137579" ID="ID_1914315097" MODIFIED="1303733178715" TEXT="enter_sign: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1303733159739" ID="ID_1946318092" MODIFIED="1303733187880" TEXT="update_sign">
 <icon BUILTIN="bookmark"/>
 </node>
 </node>

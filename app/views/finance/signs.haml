@@ -1,1 +1,29 @@
-hello
+%h4(style='text-align:center;') ทะเบียนทรัพย์สิน - ป้าย
+- if finance_office? || true
+  %div(style='float:right')
+    = image_tag 'add.png'
+    = link_to align_text("ขึ้นทะเบียนป้าย"), "/run/finance/create_sign"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    - if finance_office? || true
+      %th{:style=>"width:30px;"} แก้ไข
+      %th{:style=>"width:30px;"} ลบ
+    %th ชื่อผู้มีกรรมสิทธิ์
+    %th ข้อความ
+    %th(style='width:50px;') หมู่
+    %th พื้นที่ (ตร.ซม.)
+    %th อัตราภาษี
+  - @signs.each do |l|
+    %tr
+      - if finance_office? || true
+        %td= link_to image_tag('pencil.png'), "/run/finance/edit_sign/#{l.id}"
+        %td= link_to image_tag('cross.png'), "/run/finance/rm_sign/#{l.id}", :confirm=>"กรุณายืนยัน"
+      - if l.owner
+        %td= l.owner.full_name
+      - else
+        %td ***
+      %td= l.message
+      %td(align='center')= l.location.moo
+      %td(align='right')= num l.area
+      %td(align='right')= num l.tax
+

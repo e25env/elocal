@@ -2,7 +2,7 @@ class FinanceController < ApplicationController
   def index
   end
   def signs
-    
+    @signs= Sign.all
   end
   def create_sign
     owner= Person.create $xvars[:enter_sign][:owner] if $xvars[:enter_sign][:sign][:owner_id].empty?
@@ -27,7 +27,7 @@ class FinanceController < ApplicationController
   def rm_building
     Building.destroy $xvars[:p][:id]
     $xvars[:p][:return]='/finance/buildings'
-  end  
+  end
   def lands
     @lands= Land.all
   end
