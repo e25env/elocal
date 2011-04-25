@@ -1,0 +1,124 @@
+<%= javascript_include_tag "jquery.ui.core" %>
+<%= javascript_include_tag "jquery.ui.widget" %>
+<%= javascript_include_tag "jquery.ui.position" %>
+<%= javascript_include_tag "jquery.ui.autocomplete" %>
+
+<%= stylesheet_link_tag "jquery.ui","jquery.ui.autocomplete" %>
+<style>
+.ui-autocomplete-loading { background: white url('/images/ajax-loader-circle.gif') right center no-repeat; }
+</style>
+<% sign = Sign.find $xvars[:p][:id] %>
+<% owner = sign.owner %>
+<% location= sign.location %>
+<table width="100%">
+  <% fields_for owner do |f| %>
+    <tr>
+      <td colspan="3" style="font-weight:bold;">ผู้ครอบครอง</td>
+    </tr>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
+    </tr>
+    <script>
+    $(function(){
+      function populatePerson(label) {
+        var e = label.split(" ");
+        $("#owner_title option:selected").text(e[1]);
+        $("#owner_fname").val(e[2]);
+        $("#owner_lname").val(e[3]);
+		    $("#sign_owner_id").val(e[4].substring(1,(e[4].length-1)));
+      };
+      $("#owner_nid").autocomplete({
+        source: "/main/person",
+        minLength: 2,
+        select: function(e,ui) {
+          populatePerson(ui.item.label)
+        }
+      });
+      function populateLocation(label) {
+        var e = label.split(":");
+        $("#sign_location_id").val(e[1]
+        $("#location_street").val(e[2]);
+        $("#location_moo option:selected").text(e[3]);
+      };
+      $("#location_address").autocomplete({
+        source: "/main/address",
+        minLength: 2,
+        select: function(e,ui) {
+          populateLocation(ui.item.label)
+        }
+      });
+    });
+    </script>
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+  <% end %>
+  <% fields_for location do |f| %>
+    <tr>
+      <td colspan="3" style="font-weight:bold;">ที่ตั้ง</td>
+    </tr>
+    <tr>
+      <td class="field-name">เลขที่</td>
+      <td colspan='2'><%= f.text_field :address, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ถนน</td>
+      <td colspan='2'><%= f.text_field :street, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.select :moo, 1..MAX_MOO %></td>
+    </tr>
+  <% end %>
+  <% fields_for sign do |f| %>
+    <%= f.hidden_field :owner_id %>
+    <%= f.hidden_field :location_id %>
+    <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan='2'><%= f.select :sign_type, [['อักษรไทยล้วน',1],
+        ['ป้ายที่มีอักษรไทยปนกับอักษรต่างประเทศหรือภาพ',2],
+        ['ป้ายที่ไม่มีอักษรไทย หรืออักษรไทยอยู่ใต้หรือต่ำกว่าอักษรต่างประเทศ',3]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">กว้าง</td>
+      <td><%= f.text_field :width, :style=>"width:200px;" %></td>
+      <td>(เซ็นติเมตร)</td>
+    </tr>
+    <tr>
+      <td class="field-name">ยาว</td>
+      <td><%= f.text_field :length, :style=>"width:200px;" %></td>
+      <td>(เซ็นติเมตร)</td>
+    </tr>
+    <tr>
+      <td class="field-name">พื้นที่</td>
+      <td><%= f.text_field :area, :style=>"width:200px;" %></td>
+      <td>(ตารางเซ็นติเมตร)</td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวนด้าน</td>
+      <td colspan='2'><%= f.text_field :sides, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ข้อความ</td>
+      <td colspan='2'><%= f.text_area :message, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมายเหตุ</td>
+      <td colspan='2'><%= f.text_area :comment, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อัตราภาษีต่อปี</td>
+      <td colspan='2'><%= f.text_field :tax, :style=>"width:300px;" %></td>
+    </tr>
+  <% end %>
+</table>

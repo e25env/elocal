@@ -511,12 +511,18 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1303733127344" ID="ID_55827760" MODIFIED="1303733195269" TEXT="edit_sign">
+<node CREATED="1303733127344" ID="ID_55827760" MODIFIED="1303734295689" TEXT="edit_sign: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe1b;&#xe49;&#xe32;&#xe22;">
 <icon BUILTIN="closed"/>
 <node CREATED="1303733137579" ID="ID_1914315097" MODIFIED="1303733178715" TEXT="enter_sign: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
 <icon BUILTIN="attach"/>
 </node>
 <node CREATED="1303733159739" ID="ID_1946318092" MODIFIED="1303733187880" TEXT="update_sign">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1303734315203" ID="ID_926113472" MODIFIED="1303734335383" TEXT="rm_sign">
+<icon BUILTIN="closed"/>
+<node CREATED="1303734321092" ID="ID_727582842" MODIFIED="1303734342265" TEXT="rm_sign">
 <icon BUILTIN="bookmark"/>
 </node>
 </node>

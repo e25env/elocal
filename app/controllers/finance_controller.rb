@@ -12,6 +12,16 @@ class FinanceController < ApplicationController
     sign.location_id= location.id if $xvars[:enter_sign][:sign][:location_id].empty?
     sign.save
   end
+  def update_sign
+    Sign.update $xvars[:p][:id], $xvars[:enter_sign][:sign]
+    $xvars[:p][:return]='/finance/signs'
+    gma_notice "แก้ไขข้อมูลป้ายเรียบร้อยแล้ว"
+  end
+  def rm_sign
+    Sign.destroy $xvars[:p][:id]
+    $xvars[:p][:return]='/finance/signs'
+    gma_notice "ลบข้อมูลป้ายเรียบร้อยแล้ว"
+  end
   def buildings
     @buildings = Building.all
   end
