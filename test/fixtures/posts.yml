@@ -5,10 +5,11 @@ one:
   body: MyText
   stick: false
   post_type: 1
-  begin_on: 2011-04-20
-  end_on: 2011-04-20
+  begin_on: 2011-04-22
+  end_on: 2011-04-22
   pic: MyString
   pic_postimg: MyString
+  video: MyText
   gma_user_id: 1
 
 two:
@@ -16,8 +17,9 @@ two:
   body: MyText
   stick: false
   post_type: 1
-  begin_on: 2011-04-20
-  end_on: 2011-04-20
+  begin_on: 2011-04-22
+  end_on: 2011-04-22
   pic: MyString
   pic_postimg: MyString
+  video: MyText
   gma_user_id: 1

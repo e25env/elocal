@@ -22,7 +22,6 @@ class WwwController < ApplicationController
   end
   def update_post
     post = Post.update $xvars[:p][:id], $xvars[:edit_post][:post]
-    $xvars[:p][:return]='/www/posts'
     img= $xvars[:edit_post][:post_pic_doc_id]
     if img
       scale_image(img)
@@ -33,7 +32,7 @@ class WwwController < ApplicationController
     GmaWsQueue.create :url=>songrit(:www)+"/ws/post",
       :body => post.to_xml, :status => 0, :gma_runseq_id=> $runseq.id 
     ws_dispatch
-    end
+  end
   def rm_post
     Post.destroy $xvars[:p][:id]
     $xvars[:p][:return]='/www/posts'

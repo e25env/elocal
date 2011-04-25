@@ -38,7 +38,7 @@ end
       <div style="float:right; color:#1C2795;">
         <%= render :partial => "layouts/login" %>
       </div>
-      <div id="logo" style="padding:5px 0 0 50px;">
+      <div id="logo" style="padding:5px 0 0 0px;">
         <a href="/">
             <%= image_tag 'logo_bangtanai150.png', :style=>'float:left;padding-right:10px;' %>
             ระบบสารสนเทศบูรณาการเพื่อการบริหารงาน
@@ -49,11 +49,11 @@ end
       <div id="search">
         <% @search = GmaSearch.new %>
         <% form_for(@search, :url => { :controller=>"main", :action => "search" }) do |f| %>
-          <%= f.text_field "q", :style=>"width:320px;" %>
+          <%= f.text_field :q, :style=>"width:320px;" %>
           <%= f.submit "ค้นหา" %>
         <% end %>
       </div>
-      <% if @amodules.size>0 %>
+      <% if @amodules.size > 0 %>
         <%= render :partial => "layouts/modules", :object => @amodules, :locals=>{:gma_module=>gma_module}  %>
       <% end %>
     </div>

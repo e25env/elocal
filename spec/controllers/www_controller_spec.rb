@@ -50,6 +50,11 @@ describe WwwController do
     Post.should_receive(:update).and_return(@post)
     post :update_post
   end
-  it "should delete news"
-
+  it "could embed video" do
+    $xvars= {:enter_post=>{:post_pic_doc_id => 138, :post=>{:subject=>'test', 
+      :pic=>'http://localhost:3000/engine/document/138',
+      :video => '<iframe title="YouTube video player" width="640" height="390" src="http://www.youtube.com/embed/NS1TPCkbDrA" frameborder="0" allowfullscreen></iframe>' }},
+      :p=>{:return=>"", :id=>@post.id}}
+    post :create_post        
+  end
 end

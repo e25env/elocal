@@ -19,6 +19,10 @@
       <td colspan='2'><%= f.file_field :pic %></td>
     </tr>
     <tr>
+      <td class="field-name">วิดีโอ</td>
+      <td colspan='2'><%= f.text_area :video, :cols=>50, :rows=>6 %></td>
+    </tr>
+    <tr>
       <td class="field-name">วันที่เริ่มต้น</td>
       <td colspan="2"><%= f.date_select_year :begin_on, :start_year=>Time.now.year %></td>
     </tr>
