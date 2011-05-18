@@ -7,6 +7,32 @@ class SongritController < ApplicationController
   require "rest_client"
   require 'nokogiri'
   # require 'mechanize'
+  def gen_provinces_for_mysql
+    t=["TRUNCATE TABLE provinces;"]
+    t << "SET NAMES 'utf8';"
+    Province.all.each do |p|
+      t << "INSERT INTO provinces(id,code,name,region) VALUES(#{p.id},'#{p.code}','#{p.name}',#{p.region});"
+    end
+    render :text=>t.join("<br/>")
+  end
+  def gen_districts_for_mysql
+    t=["TRUNCATE TABLE districts;"]
+    t << "SET NAMES 'utf8';"
+    District.all.each do |d|
+      t << "INSERT INTO districts(id,code,name,prefix, lat, lng, province_id) "+
+        "VALUES(#{d.id},'#{d.code}','#{d.name}','#{d.prefix}',#{d.latitude},#{d.longitude},#{d.province_id});"
+    end
+    render :text=>t.join("<br/>")
+  end
+  def gen_sub_districts_for_mysql
+    t=["TRUNCATE TABLE sub_districts;"]
+    t << "SET NAMES 'utf8';"
+    SubDistrict.all.each do |d|
+      t << "INSERT INTO sub_districts(id,code,name,district_id) "+
+        "VALUES(#{d.id},'#{d.code}','#{d.name}',#{d.district_id});"
+    end
+    render :text=>t.join("<br/>")
+  end
   def test_sort
     t = ""
     Province.all(:order=>'name').each do |p|

@@ -23,12 +23,11 @@ gem "mail", "2.2.1"
 gem "prawn"
 # gem "aaronchi-jrails"
 group :development do
-  gem "ruby-debug", "0.10.4", :platform=>:ruby
+  gem "ruby-debug", :platform=>:ruby
   gem "rails-footnotes"
   gem "rspec", "1.3.1"
   gem "rspec-rails", "1.3.3"
   gem "hirb-unicode"
-  # gem "pretty_match_data"
 end
 group :test do
   gem "syntax"
