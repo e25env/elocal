@@ -1,0 +1,36 @@
+<% construction_detail= ConstructionDetail.new :construction_id=> $xvars[:construction_id] %>
+<table width="100%">
+  <% fields_for construction_detail do |f| %>
+    <tr>
+      <%= f.hidden_field :construction_id %>
+      <td class="field-name">ชนิด</td>
+      <td colspan='2'><%= f.select :building_type, ['เหล็ก','คสล.','ไม้'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวน</td>
+      <td><%= f.text_field :floors, :style=>"width:150px;" %></td>
+      <td class="field-name">ชั้น</td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวน</td>
+      <td><%= f.text_field :qty, :style=>"width:150px;" %></td>
+      <td class="field-name">หลัง</td>
+    </tr>
+    <tr>
+      <td class="field-name">เพื่อใช้เป็น</td>
+      <td colspan='2'><%= f.select :purpose, ['ที่พักอาศัย'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จำนวนที่จอดรถ</td>
+      <td><%= f.text_field :parking, :style=>"width:150px;" %></td>
+      <td class="field-name">คัน</td>
+    </tr>
+    <tr>
+      <td>&nbsp;</td>
+      <td colspan="2">
+        <%= radio_button_tag :done, 'y'  %> สิ้นสุดการบันทึกอาคาร
+        <%= radio_button_tag :done, 'n', true  %> ยังมีรายการบันทึกต่อ
+      </td>
+    </tr>
+  <% end %>
+</table>

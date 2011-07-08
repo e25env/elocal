@@ -1,7 +1,7 @@
 # lao specific
 PROVINCE_ID= 3
 DISTRICT_ID= 364
-# for lao with multiple sub_districts, do not define this constant
+# do not define this constant if lao has multiple sub_districts, 
 SUB_DISTRICT_ID= 426
 # maximum number of moo (village)
 MAX_MOO= 5
@@ -9,11 +9,11 @@ MAX_MOO= 5
 LAAS_USER = "abtbtnai714"
 LAAS_PASSWORD = "318883"
 LAAS_RETRY = 3
+
 # GmaUser for permanent secretary
 MAYOR = 3
 PALAD = 4
 FINANCE_HEAD = 5
-# GmaUser for income summary person
 INCOME_SUMMARY_MAKER = 2
 
 FINANCE_SECTION = 2

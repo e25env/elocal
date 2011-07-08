@@ -44,7 +44,10 @@ div.person {display:inline-block}
   font-size:1.2em;
   color:#007B02;
   min-width:150px;
+  max-width:250px;
+  vertical-align: top;
 }
+
 .section {
 /*  border-bottom: 1px dotted #7A85B6;*/
   font-weight: bold;

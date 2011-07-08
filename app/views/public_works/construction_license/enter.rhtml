@@ -1,3 +1,13 @@
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false'></script>
+﻿<%= javascript_include_tag "jquery.ui.core" %>
+<%= javascript_include_tag "jquery.ui.widget" %>
+<%= javascript_include_tag "jquery.ui.position" %>
+<%= javascript_include_tag "jquery.ui.autocomplete" %>
+
+<%= stylesheet_link_tag "jquery.ui","jquery.ui.autocomplete" %>
+<style>
+.ui-autocomplete-loading { background: white url('/images/ajax-loader-circle.gif') right center no-repeat; }
+</style>
 <% 
   construction = Construction.new :received_on=>Date.today,
     :issued_on => Date.today,
@@ -42,17 +52,22 @@
       <td class="field-name">ยื่นแบบในนาม</td>
       <td colspan='2'><%= f.select :applicant_type, ['บุคคลธรรมดา','นิติบุคคล'] %></td>
     </tr>
-    <tr>
-      <td class="field-name">ยื่นขออนุญาต</td>
-      <td colspan='2'><%= f.select :license_type, ['ก่อสร้างอาคาร','ถมดิน'] %></td>
-    </tr>
+    <%= f.hidden_field :applicant_id %>
+    <%= f.hidden_field :land_owner_id %>
+    <%= f.hidden_field :engineer_id %>
+    <%= f.hidden_field :architect_id %>
     <tr>
       <td class="field-name">การใช้ประโยชน์</td>
       <td colspan='2'><%= f.select :purpose, ['ที่อยู่อาศัย','การพาณิชย์','อุตสาหกรรม','อื่นๆ'] %></td>
     </tr>
     <tr>
-      <td class="field-name">ระบุ</td>
+      <td class="field-name">(อื่นๆ) ระบุ</td>
       <td colspan='2'><%= f.text_field :purpose_other, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">กำหนดแล้วเสร็จ</td>
+      <td colspan><%= f.text_field :duration, :style=>"width:200px;" %></td>
+      <td class="field-name">วัน</td>
     </tr>
     <tr>
       <td class="field-name">เอกสารสิทธิ์</td>
@@ -62,6 +77,302 @@
       <td class="field-name">เอกสารสิทธิ์เลขที่</td>
       <td colspan='2'><%= f.text_field :land_doc_num, :style=>"width:300px;" %></td>
     </tr>
+    <tr>
+      <td class="field-name">สำเนาหรือภาพถ่ายเอกสารสิทธิ</td>
+      <td colspan="2"><%= f.file_field :land_doc %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หนังสือยินยอมของเจ้าของที่ดิน</td>
+      <td colspan="2"><%= f.file_field :land_permit %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หนังสือแสดงความเป็นเจ้าของอาคารหรือตัวแทน</td>
+      <td colspan="2"><%= f.file_field :ownership %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หนังสือยินยอมของผู้ควบคุมงาน</td>
+      <td colspan="2"><%= f.file_field :control_permit %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ใบอนุญาตผู้ประกอบวิชาชีพ</td>
+      <td colspan="2"><%= f.file_field :control_license %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รายการคำนวณ (ถ้ามี)</td>
+      <td colspan="2"><%= f.file_field :design %></td>
+    </tr>
+  <% end %>
+  <% fields_for :applicant do |f| %>
+    <tr><td colspan='3' class="section">ผู้ยื่นคำขอ</td></tr>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
+    </tr>
+    <script>
+    $(function(){
+      function populatePerson(label) {
+        var personelement = label.split(" ");
+        $("#applicant_title option:selected").text(personelement[1]);
+        $("#applicant_fname").val(personelement[2]);
+        $("#applicant_lname").val(personelement[3]);
+        var person_id= personelement[4].substring(1,(personelement[4].length-1));
+		    $("#construction_applicant_id").val(person_id);
+        $.ajax({url:'/main/get_person_address/'+person_id, 
+          success: function(data) {
+            var address= data.address
+            $("#applicant_address_address").val(address.address);
+            $("#applicant_address_street").val(address.street);
+            $("#applicant_address_moo").val(address.moo);
+            $("#applicant_address_province_id").val(address.province_id);
+            $('#applicant_address_district_id').html('').load('/main/get_districts/'+address.province_id, function() {
+              $("#applicant_address_district_id").val(address.district_id);
+            });
+            $('#applicant_address_sub_district_id').html('').load('/main/get_sub_districts/'+address.district_id, function() {
+              $("#applicant_address_sub_district_id").val(address.sub_district_id);
+            });
+          } 
+        })
+      }
+      $("#applicant_nid").autocomplete({
+        source: "/main/person",
+        minLength: 2,
+        select: function(e,ui) {
+          populatePerson(ui.item.label)
+        }
+      });
+    });
+    </script>
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สำเนาบัตรประชาชน</td>
+      <td colspan='2'><%= f.file_field :doc %></td>
+    </tr>
+  <% end %>
+  <% fields_for :applicant_address do |f| %>
+    <tr><td colspan='3' class="section">ที่อยู่ของผู้ยื่นคำขอ</td></tr>
+    <tr>
+      <td class="field-name">บ้านเลขที่</td>
+      <td colspan='2'><%= f.text_field :address, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ถนน</td>
+      <td colspan='2'><%= f.text_field :street, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.text_field :moo, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จังหวัด</td>
+      <td colspan='2'><%= f.collection_select :province_id, Province.all, :id, :name, :selected=>PROVINCE_ID, :prompt=>"กรุณาเลือกจังหวัด" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อำเภอ</td>
+      <td colspan='2'><%= f.collection_select :district_id, Province.find(PROVINCE_ID).districts, :id, :name, :selected => DISTRICT_ID %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำบล</td>
+      <% if SUB_DISTRICT_ID %>
+        <td colspan='2'><%= f.collection_select :sub_district_id, District.find(DISTRICT_ID).sub_districts, :id, :name, :selected => SUB_DISTRICT_ID  %></td>
+      <% else %>
+        <td colspan='2'><%= f.collection_select :sub_district_id, District.find(DISTRICT_ID).sub_districts, :id, :name %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td class="field-name">สำเนาทะเบียนบ้าน</td>
+      <td colspan='2'><%= f.file_field :doc %></td>
+    </tr>
+  <% end %>
+  <% fields_for :site do |f| %>
+    <tr><td colspan='3' class="section">สถานที่ที่ทำการก่อสร้างอาคาร/ดัดแปลงอาคาร/รื้อถอนอาคาร</td></tr>
+    <tr>
+      <td class="field-name">บ้านเลขที่</td>
+      <td colspan='2'><%= f.text_field :address, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ถนน</td>
+      <td colspan='2'><%= f.text_field :street, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.text_field :moo, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จังหวัด</td>
+      <td colspan='2'><%= f.collection_select :province_id, Province.all, :id, :name, :selected=>PROVINCE_ID, :prompt=>"กรุณาเลือกจังหวัด" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อำเภอ</td>
+      <td colspan='2'><%= f.collection_select :district_id, Province.find(PROVINCE_ID).districts, :id, :name, :selected => DISTRICT_ID %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำบล</td>
+      <% if SUB_DISTRICT_ID %>
+        <td colspan='2'><%= f.collection_select :sub_district_id, District.find(DISTRICT_ID).sub_districts, :id, :name, :selected => SUB_DISTRICT_ID  %></td>
+      <% else %>
+        <td colspan='2'><%= f.collection_select :sub_district_id, District.find(DISTRICT_ID).sub_districts, :id, :name %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td class="field-name">สำเนาทะเบียนบ้าน (ถ้ามี)</td>
+      <td colspan='2'><%= f.file_field :doc %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ที่ตั้ง</td>
+      <td colspan="3"><%= f.point(:width => "100%", :zoom=>14, :lat=>13.93233, :lng=>100.49037) %></td>
+    </tr>
+  <% end %>
+  <% fields_for :land_owner do |f| %>
+    <tr><td colspan='3' class="section">เจ้าของที่ดิน</td></tr>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
+    </tr>
+    <script>
+    $(function(){
+      function populatePerson(label) {
+        var personelement = label.split(" ");
+        $("#land_owner_title option:selected").text(personelement[1]);
+        $("#land_owner_fname").val(personelement[2]);
+        $("#land_owner_lname").val(personelement[3]);
+        var person_id= personelement[4].substring(1,(personelement[4].length-1));
+		    $("#construction_land_owner_id").val(person_id);
+      }
+      $("#land_owner_nid").autocomplete({
+        source: "/main/person",
+        minLength: 2,
+        select: function(e,ui) {
+          populatePerson(ui.item.label)
+        }
+      });
+    });
+    </script>
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สำเนาบัตรประชาชน</td>
+      <td colspan='2'><%= f.file_field :doc %></td>
+    </tr>
+  <% end %>
+  <% fields_for :engineer do |f| %>
+    <tr><td colspan='3' class="section">ผู้ควบคุมงาน</td></tr>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
+    </tr>
+    <script>
+    $(function(){
+      function populatePerson(label) {
+        var personelement = label.split(" ");
+        $("#engineer_title option:selected").text(personelement[1]);
+        $("#engineer_fname").val(personelement[2]);
+        $("#engineer_lname").val(personelement[3]);
+        var person_id= personelement[4].substring(1,(personelement[4].length-1));
+		    $("#construction_engineer_id").val(person_id);
+      }
+      $("#engineer_nid").autocomplete({
+        source: "/main/person",
+        minLength: 2,
+        select: function(e,ui) {
+          populatePerson(ui.item.label)
+        }
+      });
+    });
+    </script>
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สำเนาบัตรประชาชน</td>
+      <td colspan='2'><%= f.file_field :doc %></td>
+    </tr>
+  <% end %>
+  <% fields_for :architect do |f| %>
+    <tr><td colspan='3' class="section">ผู้ออกแบบและคำนวณ</td></tr>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
+    </tr>
+    <script>
+    $(function(){
+      function populatePerson(label) {
+        var personelement = label.split(" ");
+        $("#architect_title option:selected").text(personelement[1]);
+        $("#architect_fname").val(personelement[2]);
+        $("#architect_lname").val(personelement[3]);
+        var person_id= personelement[4].substring(1,(personelement[4].length-1));
+		    $("#construction_architect_id").val(person_id);
+      }
+      $("#architect_nid").autocomplete({
+        source: "/main/person",
+        minLength: 2,
+        select: function(e,ui) {
+          populatePerson(ui.item.label)
+        }
+      });
+    });
+    </script>
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สำเนาบัตรประชาชน</td>
+      <td colspan='2'><%= f.file_field :doc %></td>
+    </tr>
   <% end %>
 </table>
 <%= fix_thai_year %>
+<script type="text/javascript" >
+  $('#applicant_address_province_id').change(function() {
+    $('#applicant_address_district_id').html('').load('/main/get_districts/'+$('#applicant_address_province_id option:selected').val());
+  });
+  $('#applicant_address_district_id').change(function() {
+    $('#applicant_address_sub_district_id').html('').load('/main/get_sub_districts/'+$('#applicant_address_district_id option:selected').val());
+  });
+  $('#site_province_id').change(function() {
+    $('#site_district_id').html('').load('/main/get_districts/'+$('#site_province_id option:selected').val());
+  });
+  $('#site_district_id').change(function() {
+    $('#site_sub_district_id').html('').load('/main/get_sub_districts/'+$('#site_district_id option:selected').val());
+  });
+</script>
+

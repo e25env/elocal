@@ -13,5 +13,6 @@ describe MainController do
     get :index
     response.should be_redirect
   end
+  it "should have add/edit person separately; as well as address, company"
 
 end

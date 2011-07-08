@@ -294,7 +294,7 @@ class EngineController < ApplicationController
     result = controller.send(@runseq.code)
     init_vars_by_runseq($runseq_id)
     @xvars = $xvars
-    @xvars[@runseq.code.to_sym]= result
+    @xvars[@runseq.code.to_sym]= result.to_s
     @xvars[:current_step]= @runseq.rstep
     @runseq.status= 'F' #finish
     @runseq.stop= Time.now
@@ -315,7 +315,10 @@ class EngineController < ApplicationController
 #    end_action
     redirect_to_root
   end
+  
+  # not using?, se run_do above
   def run_call
+    # debugger
     init_vars(params[:id])
     # change from 'fork' (use in nso project) to 'background'
     if affirm(get_option('background', @runseq))
@@ -326,7 +329,7 @@ class EngineController < ApplicationController
       $runseq_id= @runseq.id; $user_id= get_user.id
       result= eval("#{@xvars[:custom_controller]}.new.#{@runseq.code}")
       init_vars_by_runseq($runseq_id)
-      @xvars[@runseq.code.to_sym]= result
+      @xvars[@runseq.code.to_sym]= result.to_s
       @xvars[:current_step]= @runseq.rstep
       @runseq.status= 'F' #finish
       @runseq.stop= Time.now
@@ -358,7 +361,7 @@ class EngineController < ApplicationController
     $runseq_id= @runseq.id
     result= eval("#{controller}.new.#{@runseq.code}")
     init_vars_by_runseq($runseq_id)
-    @xvars[@runseq.code.to_sym]= result
+    @xvars[@runseq.code.to_sym]= result.to_s
     @xvars[:current_step]= @runseq.rstep
     #end_action
     @xmain.xvars= @xvars
@@ -369,8 +372,8 @@ class EngineController < ApplicationController
     render :text => "Done: #{@runseq.id} #{@runseq.code} at #{Time.now}"
   end
   def run_if
+   # debugger
     init_vars(params[:id])
-#    debugger
     condition= eval(@runseq.code)
     match_found= false
     if condition
@@ -552,13 +555,13 @@ class EngineController < ApplicationController
   end
   def end_action(next_runseq = nil)
     #    @runseq.status='F' unless @runseq_not_f
+    @xmain.xvars= @xvars
+    @xmain.status= 'R' # running
+    @xmain.save
     @runseq.status='F'
     @runseq.gma_user_id= session[:user_id]
     @runseq.stop= Time.now
     @runseq.save
-    @xmain.xvars= @xvars
-    @xmain.status= 'R' # running
-    @xmain.save
     next_runseq= @xmain.gma_runseqs.find_by_rstep @runseq.rstep+1 unless next_runseq
     if @end_job || !next_runseq # job finish
       @xmain.xvars= @xvars
