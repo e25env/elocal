@@ -1,0 +1,24 @@
+<style type="text/css" media="screen">
+  #construction_head {
+    font-size: 1.5em;
+    font-weight: bold;
+    float: left;
+  } 
+</style>
+
+<% construction = Construction.find($xvars[:construction_id])%>
+
+<div id="construction_head">
+  คำขออนุญาตก่อสร้างอาคาร<br/>ดัดแปลงอาคาร รื้อถอนอาคาร
+</div>
+<div id="receive_box">
+  เลขรับที่ <%= b construction.receive_num %><br/>
+  วันที่ <%= b(date_thai construction.received_on, :date_only=>true) %><br/>
+  ลงชื่อ <%= '.'*40 %> ผู้รับคำขอ
+</div>
+<div id="at">
+  เขียนที่ <%= b construction.written_at %>
+</div>
+<div id="date">
+  วันที่ <%= b(date_thai Time.now, :date_only=>true, :month_full=>true) %>
+</div>

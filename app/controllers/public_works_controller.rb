@@ -1,6 +1,7 @@
 class PublicWorksController < ApplicationController
   def index
-    render :text => "coming soon...", :layout => true 
+    redirect_to :controller => "main", :action => "pending"
+    # render :text => "coming soon...", :layout => true 
   end
   def create_construction
     construction= Construction.create $xvars[:enter][:construction]

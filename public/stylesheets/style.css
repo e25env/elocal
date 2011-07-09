@@ -23,6 +23,19 @@ body {
   padding-left: 50px;
 }
 #search input { font-size: 18px; }
+#receive_box {
+  border: 1px solid black;
+  float: right;
+  padding: 5px;
+}
+#at {
+  padding-top: 20px;
+  clear:both;
+  text-align:right;
+}
+#date {
+  text-align:right;
+}
 #title {
   width: 100%;
   color: blue;
