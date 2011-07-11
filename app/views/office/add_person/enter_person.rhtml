@@ -1,0 +1,104 @@
+﻿<%= javascript_include_tag "jquery.ui.core" %>
+<%= javascript_include_tag "jquery.ui.widget" %>
+<%= javascript_include_tag "jquery.ui.position" %>
+<%= javascript_include_tag "jquery.ui.autocomplete" %>
+
+<%= stylesheet_link_tag "jquery.ui","jquery.ui.autocomplete" %>
+<style>
+.ui-autocomplete-loading { background: white url('/images/ajax-loader-circle.gif') right center no-repeat; }
+</style>
+<% 
+  year= Time.now.year
+  person = Person.new :year_only => false, :yob => year-60
+  address = Address.new
+%>
+<table width="100%">
+  <% fields_for person do |f| %>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน</td>
+      <td colspan='2'><%= f.text_field :nid, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">คำนำหน้า</td>
+      <td colspan='2'><%= f.select :title, ['นาย','นาง','นางสาว'] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan='2'><%= f.text_field :fname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">นามสกุล</td>
+      <td colspan='2'><%= f.text_field :lname, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">สำเนาบัตรประชาชน</td>
+      <td colspan='2'><%= f.file_field :doc %></td>
+    </tr>
+    <tr>
+      <td class="field-name">บันทึกวันเดือนปีเกิด ?</td>
+      <td colspan="2">
+        <%= f.radio_button :year_only, false %> วันเดือนปีเกิด
+        <%= f.radio_button :year_only, true %> เฉพาะปีเกิดเท่านั้น
+      </td>
+    </tr>
+    <tr id="dob">
+      <td class="field-name">วันเดือนปีเกิด</td>
+      <td colspan="2"><%= f.date_select_year :dob, :start_year=>year, :end_year => year-110  %></td>
+    </tr>
+    <tr id="yob" style="display:none;">
+      <td class="field-name">ปีเกิด</td>
+      <td colspan="2"><%= f.select :yob, (110.downto(50)).collect {|i| [year-i+543,year-i]} %></td>
+    </tr>
+    <%= f.hidden_field :address_id %>
+    <tr>
+      <td class="field-name">โทรศัพท์</td>
+      <td colspan='2'><%= f.text_field :phone, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">โทรศัพท์มือถือ</td>
+      <td colspan='2'><%= f.text_field :cell_phone, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อาชีพ</td>
+      <td colspan='2'><%= f.text_field :work, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ภาพถ่าย</td>
+      <td colspan='2'><%= f.file_field :photo %></td>
+    </tr>
+  <% end %>
+  <% fields_for address do |f| %>
+    <tr>
+      <td class="field-name refresh">เลขรหัสประจำบ้าน</td>
+      <td><%= f.text_field :code, :style=>"width:150px;" %></td>
+      <td><%= link_to "ขึ้นทะเบียนที่อยู่", "/run/office/add_address", :target=>"_blank" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">&nbsp;</td>
+      <td colspan='2' id='address_info'></td>
+    </tr>
+  <% end %>
+</table>
+<%= fix_thai_year %>
+<script type="text/javascript" >
+  $('input[name="person[year_only]"]').change(function() {
+    if ($('input[name="person[year_only]"]:checked').val()=="true") {
+      $('#yob').show();
+      $('#dob').hide();
+    } else {
+      $('#dob').show();
+      $('#yob').hide();
+    }
+  });
+  function set_address(label) {
+    var el = label.split(":");
+    $("#person_address_id").val(el[2]);
+    edit_text= " <a target='_blank' href='/run/office/edit_address/"+el[2]+"'>แก้ไข</a>"
+    $("#address_info").html(el[1]+edit_text);
+  }
+  $("#address_code").autocomplete({
+    source: "/main/address",
+    minLength: 2,
+    select: function(e,ui) { set_address(ui.item.label) }
+  });
+</script>

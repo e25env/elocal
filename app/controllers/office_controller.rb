@@ -3,6 +3,30 @@ class OfficeController < ApplicationController
     @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at", :include=>:gma_runseqs
     render :template => "main/pending"
   end
+  def create_person
+    person = Person.find_by_nid $xvars[:enter_person][:person][:nid]
+    if person
+      person.update_attributes $xvars[:enter_person][:person]
+    else
+      person = Person.create $xvars[:enter_person][:person]
+    end
+  end
+  def update_person
+    person = Person.find $xvars[:p][:id]
+    person.update_attributes $xvars[:edit_person][:person]
+  end
+  def create_address
+    address = Address.find_by_code $xvars[:enter_address][:address][:code]
+    if address
+      address.update_attributes $xvars[:enter_address][:address]
+    else
+      address = Address.create $xvars[:enter_address][:address]
+    end
+  end
+  def update_address
+    address = Address.find $xvars[:p][:id]
+    address.update_attributes $xvars[:edit_address][:address]
+  end
   def polls
     @polls = Poll.all
   end

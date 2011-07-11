@@ -5,6 +5,7 @@ class PublicWorksController < ApplicationController
   end
   def create_construction
     construction= Construction.create $xvars[:enter][:construction]
+    site= construction.build_site $xvars[:enter][:site]
     $xvars[:construction_id]= construction.id
   end
   

@@ -4,6 +4,9 @@
     font-weight: bold;
     float: left;
   } 
+  #request {
+    text-indent: 50px;
+  }
 </style>
 
 <% construction = Construction.find($xvars[:construction_id])%>
@@ -21,4 +24,30 @@
 </div>
 <div id="date">
   วันที่ <%= b(date_thai Time.now, :date_only=>true, :month_full=>true) %>
+</div>
+<div id="request">
+  <% address= construction.applicant.address %>
+  ข้าพเจ้า <%= b construction.applicant.full_name %> เจ้าของอาคาร หรือตัวแทนเจ้าของอาคาร<p/>
+
+  <%= check_box_tag :applicant_type, 1, construction.applicant_type==1 %>
+  เป็นบุคคลธรรมดา อยู่บ้านเลขที่ <%= b address.address %> ถนน <%= b address.street %>
+  หมู่ที่ <%= b address.moo %> ตำบล <%= b address.sub_district.name %>
+  อำเภอ <%= b address.district.name %> จังหวัด <%= b address.province.name %><p/>
+
+  <%= check_box_tag :applicant_type, 2, construction.applicant_type==2 %>
+  เป็นนิติบุคคลประเภท <%= '.'*20 %>
+  จดทะเบียนเมื่อ <%= '.'*20 %>
+  เลขทะเบียน <%= '.'*20 %>
+  มีสำนักงานตั้งอยู่เลขที่ <%= b address.address %> ถนน <%= b address.street %>
+  หมู่ที่ <%= b address.moo %> ตำบล <%= b address.sub_district.name %>
+  อำเภอ <%= b address.district.name %> จังหวัด <%= b address.province.name %>
+  โดย <%= '.'*20 %> ผู้มีอำนาจลงชื่อแทนนิติบุคคลผู้ขอใบอนุญาต
+  อยู่บ้านเลขที่ <%= b address.address %> ถนน <%= b address.street %>
+  หมู่ที่ <%= b address.moo %> ตำบล <%= b address.sub_district.name %>
+  อำเภอ <%= b address.district.name %> จังหวัด <%= b address.province.name %><p/>
+
+  ขอยื่นคำขอรับใบอนุญาต <%= b construction.construction_type_name %> ต่อเจ้าพนักงานท้องถิ่นดังต่อไปนี้<p/>
+
+  ข้อ 1 ทำการ <%= b construction.construction_type_name %> 
+  ที่บ้านเลขที่ <%= b construction.site.address %>
 </div>

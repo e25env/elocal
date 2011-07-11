@@ -1,0 +1,94 @@
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false'></script>
+﻿<%= javascript_include_tag "jquery.ui.core" %>
+<%= javascript_include_tag "jquery.ui.widget" %>
+<%= javascript_include_tag "jquery.ui.position" %>
+<%= javascript_include_tag "jquery.ui.autocomplete" %>
+
+<%= stylesheet_link_tag "jquery.ui","jquery.ui.autocomplete" %>
+<style>
+.ui-autocomplete-loading { background: white url('/images/ajax-loader-circle.gif') right center no-repeat; }
+</style>
+<% 
+  address = Address.find $xvars[:p][:id]
+  person = address.head_person || Person.new
+%>
+<table width="100%">
+  <% fields_for address do |f| %>
+    <tr>
+      <td class="field-name required">รหัสประจำบ้าน</td>
+      <td colspan='2'><%= f.text_field :code, :style=>"width:300px;", :required=>"required" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ประเภท</td>
+      <td colspan='2'><%= f.select :address_type, [['บ้าน',1],['ที่ดิน',2]] %></td>
+    </tr>
+    <tr>
+      <td class="field-name">บ้านเลขที่</td>
+      <td colspan='2'><%= f.text_field :address, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตรอก/ซอย</td>
+      <td colspan='2'><%= f.text_field :soi, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ถนน</td>
+      <td colspan='2'><%= f.text_field :street, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมู่</td>
+      <td colspan='2'><%= f.text_field :moo, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">จังหวัด</td>
+      <td colspan='2'><%= f.collection_select :province_id, Province.all, :id, :name, :selected=>PROVINCE_ID, :prompt=>"กรุณาเลือกจังหวัด" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">อำเภอ</td>
+      <td colspan='2'><%= f.collection_select :district_id, Province.find(PROVINCE_ID).districts, :id, :name, :selected => DISTRICT_ID %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ตำบล</td>
+      <% if SUB_DISTRICT_ID %>
+        <td colspan='2'><%= f.collection_select :sub_district_id, District.find(DISTRICT_ID).sub_districts, :id, :name, :selected => SUB_DISTRICT_ID  %></td>
+      <% else %>
+        <td colspan='2'><%= f.collection_select :sub_district_id, District.find(DISTRICT_ID).sub_districts, :id, :name %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <td class="field-name">สำเนาทะเบียนบ้าน/<br/>เอกสารสิทธิ์</td>
+      <td colspan='2'><%= f.file_field :doc %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ที่ตั้ง</td>
+      <td colspan="3"><%= f.point(:width => "100%", :zoom=>14, :lat=>13.93233, :lng=>100.49037) %></td>
+    </tr>
+    <%= f.hidden_field :head_person_id %>
+  <% end %>
+  <% fields_for person do |f| %>
+    <tr>
+      <td class="field-name">เลขประจำตัวประชาชน<br/>เจ้าบ้าน</td>
+      <td><%= f.text_field :nid, :style=>"width:150px;" %></td>
+      <td id="person_name"></td>
+    </tr>
+  <% end %>
+</table>
+<script type="text/javascript" >
+  $('#address_province_id').change(function() {
+    $('#address_district_id').html('').load('/main/get_districts/'+$('#address_province_id option:selected').val());
+    $('#address_sub_district_id').html('<option value="">..กรุณาเลือกอำเภอ</option>');
+  });
+  $('#address_district_id').change(function() {
+    $('#address_sub_district_id').html('').load('/main/get_sub_districts/'+$('#address_district_id option:selected').val());
+  });
+  function set_person_id(label) {
+    var e = label.split(":");
+	  $("#address_head_person_id").val(e[2]);
+    $("#person_name").html(e[1]);
+  };
+  $("#person_nid").autocomplete({
+    source: "/main/person",
+    minLength: 2,
+    select: function(e,ui) { set_person_id(ui.item.label) }
+  });
+</script>
+

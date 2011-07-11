@@ -4,8 +4,11 @@ class Person < ActiveRecord::Base
   def full_name
     return fname.blank? ? "" : "#{title}#{fname} #{lname}"
   end
-  # split element using space, use in ajax call for enter land
-  def full_names
-    return fname.blank? ? "" : "#{title} #{fname} #{lname} (#{id})"
+  def label
+    t = "#{nid}|#{full_name}|#{id}"
+    t += "|#{address.address_name}" if address
+    t += "|#{doc}" if doc
+    t += "|#{address.doc}" if (address && address.doc)
+    t
   end
 end

@@ -87,12 +87,12 @@ class MainController < ApplicationController
   end
   def person
     @people= Person.find :all, :conditions=>['nid LIKE ?', "#{params[:term]}%"], :limit=>10
-    @select= @people.map {|p| {:label=>"#{p.nid} #{p.full_names}", :value => p.nid }}
+    @select= @people.map {|p| {:label=>p.label, :value => p.nid } }
     render :json=>@select
   end
   def address
-    @addresses= Address.find :all, :conditions=>['address LIKE ?', "#{params[:term]}%"], :limit=>10
-    @select= @addresses.map {|p| {:label=>"#{p.id}:#{p.street}:#{p.address}:#{p.moo}", :value => p.address }}
+    @addresses= Address.find :all, :conditions=>['code LIKE ?', "#{params[:term]}%"], :limit=>10
+    @select= @addresses.map {|p| {:label=>"#{p.code}:#{p.address_name}:#{p.id}", :value => p.code }}
     render :json=>@select
   end
   def get_person_address

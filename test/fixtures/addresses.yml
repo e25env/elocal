@@ -1,7 +1,10 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
 one:
+  code: MyString
+  head_person_id: 1
   address: MyString
+  soi: MyString
   street: MyString
   moo: 1
   sub_district_id: 1
@@ -10,12 +13,16 @@ one:
   phone: MyString
   address_type: 1
   doc: MyString
-  latitude: 1.5
-  longitude: 1.5
+  lat: 1.5
+  lng: 1.5
+  poll_zone_id: 1
   gma_user_id: 1
 
 two:
+  code: MyString
+  head_person_id: 1
   address: MyString
+  soi: MyString
   street: MyString
   moo: 1
   sub_district_id: 1
@@ -24,6 +31,7 @@ two:
   phone: MyString
   address_type: 1
   doc: MyString
-  latitude: 1.5
-  longitude: 1.5
+  lat: 1.5
+  lng: 1.5
+  poll_zone_id: 1
   gma_user_id: 1
