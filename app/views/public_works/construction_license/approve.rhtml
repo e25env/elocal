@@ -1,0 +1,7 @@
+<% construction = Construction.find $xvars[:construction_id] %>
+<% p= "public_works/construction_license/" %>
+<%= render "#{p}cover", :construction=>construction  %>
+<%= render "#{p}report_request", :construction=>construction %>
+<%= render "#{p}report_site", :construction=>construction %>
+<%= render "#{p}report_city_plan", :construction=>construction %>
+<%= render "#{p}report_summary", :construction=>construction %>

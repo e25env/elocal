@@ -1,6 +1,10 @@
 class Org < ActiveRecord::Base
   def self.full_name
     o= self.last
+    "#{o.otype}#{o.name}"
+  end
+  def self.abbrev_name
+    o= self.last
     "#{o.otype_abbrev}. #{o.name}"
   end
   def self.head_report

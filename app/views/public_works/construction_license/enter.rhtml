@@ -1,13 +1,4 @@
 <script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false'></script>
-﻿<%= javascript_include_tag "jquery.ui.core" %>
-<%= javascript_include_tag "jquery.ui.widget" %>
-<%= javascript_include_tag "jquery.ui.position" %>
-<%= javascript_include_tag "jquery.ui.autocomplete" %>
-
-<%= stylesheet_link_tag "jquery.ui","jquery.ui.autocomplete" %>
-<style>
-.ui-autocomplete-loading { background: white url('/images/ajax-loader-circle.gif') right center no-repeat; }
-</style>
 <% 
   construction = Construction.new :received_on=>Date.today,
     :issued_on => Date.today,
@@ -26,7 +17,7 @@
     <tr><td colspan='3' class="section">รายละเอียดทั่วไป</td></tr>
     <tr>
       <td class="field-name">ใบอนุญาตทำการ</td>
-      <td colspan='2'><%= f.select :construction_type, [['ก่อสร้างอาคาร',1],['ดัดแปลงอาคาร',2],['รื้อถอนอาคาร',3]] %></td>
+      <td colspan='2'><%= f.select :construction_type, Construction::CONSTRUCTION_TYPE.each_with_index.map {|a,i| [a,i]} %></td>
     </tr>
     <tr>
       <td class="field-name">เลขรับที่</td>
@@ -50,11 +41,11 @@
     </tr>
     <tr>
       <td class="field-name">ยื่นแบบในนาม</td>
-      <td colspan='2'><%= f.select :applicant_type, [['บุคคลธรรมดา',1],['นิติบุคคล',2]] %></td>
+      <td colspan='2'><%= f.select :applicant_type, Construction::APPLICANT_TYPE.each_with_index.map {|a,i| [a,i]} %></td>
     </tr>
     <tr>
       <td class="field-name">การใช้ประโยชน์</td>
-      <td colspan='2'><%= f.select :purpose, [['ที่อยู่อาศัย',1],['การพาณิชย์',2],['อุตสาหกรรม',3],['อื่นๆ',4]] %></td>
+      <td colspan='2'><%= f.select :purpose, Construction::PURPOSE.each_with_index.map {|a,i| [a,i]} %></td>
     </tr>
     <tr>
       <td class="field-name">(อื่นๆ) ระบุ</td>
@@ -67,7 +58,7 @@
     </tr>
     <tr>
       <td class="field-name">เอกสารสิทธิ์</td>
-      <td colspan='2'><%= f.select :land_doc_type, [['โฉนดที่ดิน',1],['น.ส. 3',2],['ส.ค.1',3]] %></td>
+      <td colspan='2'><%= f.select :land_doc_type, Construction::LAND_DOC_TYPE.each_with_index.map {|a,i| [a,i]} %></td>
     </tr>
     <tr>
       <td class="field-name">เอกสารสิทธิ์เลขที่</td>
@@ -82,8 +73,16 @@
       <td colspan="2"><%= f.file_field :land_permit %></td>
     </tr>
     <tr>
-      <td class="field-name">หนังสือแสดงความเป็นเจ้าของอาคารหรือตัวแทน</td>
+      <td class="field-name">หนังสือแสดงความเป็นเจ้าของอาคาร</td>
       <td colspan="2"><%= f.file_field :ownership %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หนังสือแสดงความเป็นตัวแทนเจ้าของอาคาร</td>
+      <td colspan="2"><%= f.file_field :agent %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หนังสือรับผิดชอบความเสียหายข้างเคียง</td>
+      <td colspan="2"><%= f.file_field :responsibility_doc %></td>
     </tr>
     <tr>
       <td class="field-name">หนังสือยินยอมของผู้ควบคุมงาน</td>
@@ -98,6 +97,7 @@
       <td colspan="2"><%= f.file_field :design %></td>
     </tr>
     <%= f.hidden_field :applicant_id %>
+    <%= f.hidden_field :building_owner_id %>
     <%= f.hidden_field :land_owner_id %>
     <%= f.hidden_field :engineer_id %>
     <%= f.hidden_field :architect_id %>
@@ -105,8 +105,8 @@
   <% fields_for :applicant do |f| %>
     <tr><td colspan='3' class="section">ผู้ยื่นคำขอ</td></tr>
     <tr>
-      <td class="field-name refresh">เลขประจำตัวประชาชน</td>
-      <td><%= f.text_field :nid, :style=>"width:150px;" %></td>
+      <td class="field-name refresh required">เลขประจำตัวประชาชน</td>
+      <td><%= f.text_field :nid, :style=>"width:150px;", :required=>"required" %></td>
       <td><%= link_to "ขึ้นทะเบียนบุคคล", "/run/office/add_person", :target => "_blank"  %></td>
     </tr>
     <tr>
@@ -153,6 +153,18 @@
       <td colspan="3"><%= f.point(:width => "100%", :zoom=>14, :lat=>13.93233, :lng=>100.49037) %></td>
     </tr>
   <% end %>
+  <% fields_for :building_owner do |f| %>
+    <tr><td colspan='3' class="section">เจ้าของอาคาร</td></tr>
+    <tr>
+      <td class="field-name refresh">เลขประจำตัวประชาชน</td>
+      <td><%= f.text_field :nid, :style=>"width:150px;" %></td>
+      <td><%= link_to "ขึ้นทะเบียนบุคคล", "/run/office/add_person", :target => "_blank"  %></td>
+    </tr>
+    <tr>
+      <td class="field-name">&nbsp;</td>
+      <td colspan='2' id="building_owner_info"></td>
+    </tr>
+  <% end %>
   <% fields_for :land_owner do |f| %>
     <tr><td colspan='3' class="section">เจ้าของที่ดิน</td></tr>
     <tr>
@@ -192,12 +204,6 @@
 </table>
 <%= fix_thai_year %>
 <script type="text/javascript" >
-  $('#applicant_address_province_id').change(function() {
-    $('#applicant_address_district_id').html('').load('/main/get_districts/'+$('#applicant_address_province_id option:selected').val());
-  });
-  $('#applicant_address_district_id').change(function() {
-    $('#applicant_address_sub_district_id').html('').load('/main/get_sub_districts/'+$('#applicant_address_district_id option:selected').val());
-  });
   $('#site_province_id').change(function() {
     $('#site_district_id').html('').load('/main/get_districts/'+$('#site_province_id option:selected').val());
   });
@@ -207,7 +213,7 @@
 
   function set_person(label, item) {
     var el = label.split("|");
-    $("#"+item+"_applicant_id").val(el[2]);
+    $("#construction_"+item+"_id").val(el[2]);
     t = "<br/>";
     if(el[3]) {
       t = t + el[3] + "<br/>";
@@ -226,6 +232,13 @@
     minLength: 2,
     select: function(e,ui) {
       set_person(ui.item.label,"applicant");
+    }
+  });
+  $("#building_owner_nid").autocomplete({
+    source: "/main/person",
+    minLength: 2,
+    select: function(e,ui) {
+      set_person(ui.item.label,"building_owner");
     }
   });
   $("#land_owner_nid").autocomplete({

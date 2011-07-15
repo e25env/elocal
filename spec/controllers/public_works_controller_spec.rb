@@ -3,7 +3,7 @@ require 'spec_helper'
 describe PublicWorksController do
 
   describe "construction permit" do
-    it "refactor person, address entry"
+    it "refactor f.person input"
     it "should show สำเนาบัตรประชาชน if already exists"
     it "should set default province, district, sub to Org"
     it "should handle company"

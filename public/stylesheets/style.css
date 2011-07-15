@@ -52,6 +52,26 @@ td.group {width:100px;font-weight:bold;}
 td.people {text-align:center}
 div.person {display:inline-block}
 
+.para {
+  text-indent: 50px;
+}
+.block {
+  text-indent:-10px; 
+  padding-left:30px;
+}  
+
+.report_head {
+  text-align:center; 
+  font-size:24pt;
+  font-weight: bold;
+  padding-top:40px;
+  padding-bottom:40px;
+}
+
+.signature  {
+  padding:20px 0 0 200px;
+  text-align:center;
+}
 
 .field-name {
   font-size:1.2em;
@@ -61,6 +81,9 @@ div.person {display:inline-block}
   vertical-align: top;
 }
 
+.ui-autocomplete-loading { 
+  background: white url('/images/ajax-loader-circle.gif') right center no-repeat; 
+}
 .section {
 /*  border-bottom: 1px dotted #7A85B6;*/
   font-weight: bold;

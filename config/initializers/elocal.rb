@@ -13,7 +13,9 @@ LAAS_RETRY = 3
 # GmaUser for permanent secretary
 MAYOR = 3
 PALAD = 4
-FINANCE_HEAD = 5
+# FINANCE_HEAD = 5
+HEAD_FINANCE = 5
+HEAD_PUBLIC_WORKS = 5
 INCOME_SUMMARY_MAKER = 2
 
 FINANCE_SECTION = 2
@@ -24,4 +26,10 @@ PER_PAGE = 25
 
 ACCOUNT_TYPE = ['สินทรัพย์','เจ้าหนี้','ทุน','รายรับ','รายจ่าย']
 MONTHS= ['มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน', 'พฤษภาคม', 'มิถุนายน', 'กรกฏาคม', 'สิงหาคม', 'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม']
-  
+
+MAYOR_POSITION = "นายก"
+CITY_LAW = "พระราชบัญญัติสภาตำบลและองค์การบริหารส่วนตำบล พ.ศ. 2537"
+CITY_LAW_DECLARE = "27 ตุลาคม 2538" # ประกาศในราชกิจจานุเบกษา
+CITY_LAW_EFFECTIVE = "26 ธันวาคม 2538" # มีผลใช้บังคับ
+#HEAD_PUBLIC_WORKS = "นายเรวัติ ชุมแสง"
+

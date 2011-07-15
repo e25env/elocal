@@ -1,0 +1,95 @@
+<div style="page-break-before: always" />
+<div class="report_head">
+  รายงานการตรวจพิจารณาคำขออนุญาตก่อสร้างอาคาร
+</div>
+เรียน <%= MAYOR_POSITION %><%= Org.full_name %><p/>
+<div class="para">
+  ส่วนโยธา <%= Org.full_name %> ได้ตรวจสอบเรื่องราวและผังบริเวณการขออนุญาตก่อสร้างอาคาร
+  <%= construction.construction_details.first.building_type_name %> 
+  <%= construction.construction_details.first.floors_name %> ของ
+  <%= construction.applicant.full_name %> อยู่บ้านเลขที่
+  <%= construction.applicant.address.address_name %>
+  ในโฉนดที่ดินเลขที่ <%= construction.land_doc_num %> ซึ่งเป็นที่ดินของ
+  <%= construction.land_owner.full_name %> <%= construction.site.address_name %>
+  เพื่อใช้เป็น <%= construction.purpose_name %><p/>
+  ปรากฏว่าถูกต้องตามข้อกำหนดกฏกระทรวง ซึ่งออกตามความในพระราชบัญญัติควบคุมอาคาร พ.ศ. 2522
+  และกฏกระทรวงที่ออกตามความในพระราชบัญญัติควบคุมการก่อสร้าง พ.ศ. 2575 ในส่วนที่ไม่ขัดแย้งกับบทบัญญัติควบคุมอาคาร
+  พ.ศ. 2522 เห็นควรให้ก่อสร้างได้โดยคิดค่าธรรมเนียมตรวจสอบแบบแปลน ดังนี้<br/>
+</div>
+<b>1. ค่าธรรมเนียมการออกใบอนุญาต</b><br/>
+<div class="block">
+  - ค่าใบอนุญาต<%= construction.construction_type_name %> จำนวน 1 ฉบับๆ ละ
+  20.- บาท เป็นเงิน 20.- บาท (... -ยี่สิบบาทถ้วน-...)<br/>
+</div>
+<b>2. ค่าธรรมเนียมการตรวจแบบแปลนก่อสร้าง</b><br/>
+<div class="block">
+  - อาคารประเภทสูงไม่เกิน 2 ชั้น หรือสูงไม่เกิน 12 เมตร ตารางเมตรละ 0.50 บาท<br/>
+  เป็นอาคาร <%= b(construction.construction_details.first.building_type_name+' '+construction.construction_details.first.floors_name) %> 
+  มีพื้นที่ <%= b num(construction.building_area,2) %> ตารางเมตร<br/>
+  เป็นเงิน <%= '.'*50 %> บาท ( <%= '.'*100 %> )
+</div>  
+<div class="block">
+  - อาคารประเภทสูงเกิน 2 ชั้น แต่ไม่เกิน 3 ชั้น หรือสูงไม่เกิน 12 เมตร แต่ไม่เกิน 15 เมตร ตารางเมตรละ 2.00 บาท<br/>
+  เป็นอาคาร <%= '.'*50 %> มีพื้นที่ <%= '.'*50 %> ตารางเมตร<br/>
+  เป็นเงิน <%= '.'*50 %> บาท ( <%= '.'*100 %> )
+</div>  
+<div class="block">
+  - อาคารประเภทสูงเกิน 3 ชั้น หรือสูงเกิน 15 เมตร ตารางเมตรละ 4.00 บาท<br/>
+  เป็นอาคาร <%= '.'*50 %> มีพื้นที่ <%= '.'*50 %> ตารางเมตร<br/>
+  เป็นเงิน <%= '.'*50 %> บาท ( <%= '.'*100 %> )
+</div>  
+<div class="block">
+  - อาคารซึ่งรับน้ำหนักเกิน 500 กิโลกรัม/ตารางเมตร ตารางเมตรละ 4.00 บาท<br/>
+  เป็นอาคาร <%= '.'*50 %> มีพื้นที่ <%= '.'*50 %> ตารางเมตร<br/>
+  เป็นเงิน <%= '.'*50 %> บาท ( <%= '.'*100 %> )
+</div>  
+<div class="block">
+  - อาคารที่จอดรถและทางเข้าออกรถ ตารางเมตรละ 0.50 บาท<br/>
+  เป็นอาคาร <%= '.'*50 %> มีพื้นที่ <%= '.'*50 %> ตารางเมตร<br/>
+  เป็นเงิน <%= '.'*50 %> บาท ( <%= '.'*100 %> )
+</div>  
+<div class="block">
+  - ป้าย (กว้าง x ยาว) ตารางเมตรละ 4.00 บาท<br/>
+  เป็นป้าย <%= '.'*50 %> มีพื้นที่ <%= '.'*50 %> ตารางเมตร<br/>
+  เป็นเงิน <%= '.'*50 %> บาท ( <%= '.'*100 %> )
+</div>  
+<div class="block">
+  - เขื่อนทาง ท่อระบายน้ำ หรือกำแพง ตารางเมตรละ 4.00 บาท<br/>
+  เป็น <%= '.'*50 %> มีพื้นที่ <%= '.'*50 %> ตารางเมตร<br/>
+  เป็นเงิน <%= '.'*50 %> บาท ( <%= '.'*100 %> )
+</div>  
+<b>
+  3. รวมค่าธรรมเนียมทั้งหมด (ทุกรายการ) รวมเป็นเงิน <%= currency construction.fee %> บาท
+  (-<%= thai_baht construction.fee %>-)
+</b>
+<div class="para">
+  จึงเรียนมาเพื่อโปรดพิจารณาตามนายตรวจฯ เสนอ หากเห็นชอบโปรดสั่งการดำเนินการ
+</div>
+<div class="signature" style='padding-top:100px;'>
+  (ลงชื่อ) <%= '.'*100 %> เจ้าหน้าที่<br/>
+  ( <%= User.find(HEAD_PUBLIC_WORKS).full_name %> )<br/>
+  หัวหน้าส่วนโยธา<%= Org.full_name %>
+</div>
+<b>
+  - เห็นควรพิจารณาอนุมัติ<br/>
+  <%= nbsp 10 %>- ทราบ<br/>
+  <%= nbsp 10 %>- อนุญาต<br/>
+</b>
+<table cellspacing="5" cellpadding="5" width="100%">
+  <tr>
+    <td  width="50%">
+      <div style="text-align:center;padding-top:100px;">
+       (ลงชื่อ) <%= '.'*100 %><br/>
+       ( <%= User.find(PALAD).full_name %> )<br/>
+       ปลัด<%= Org.full_name %>
+      </div>
+    </td>
+    <td  width="50%">
+      <div style="text-align:center;padding-top:100px;">
+       (ลงชื่อ) <%= '.'*100 %><br/>
+       ( <%= User.find(MAYOR).full_name %> )<br/>
+       <%= MAYOR_POSITION %><%= Org.full_name %>
+      </div>
+    </td>
+  </tr>
+</table>

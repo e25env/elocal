@@ -2,15 +2,14 @@
 
 one:
   receive_num: MyString
-  received_on: 2010-12-13
+  received_on: 2011-07-12
   receiver: MyString
   written_at: MyString
-  issued_on: 2010-12-13
+  issued_on: 2011-07-12
   applicant_type: 1
   applicant_id: 1
   company_id: 1
   address_id: 1
-  license_type: 1
   purpose: 1
   purpose_other: MyString
   construction_type: 1
@@ -24,34 +23,41 @@ one:
   duration: 1
   design: MyString
   ownership: MyString
+  agent: MyString
   company_name: MyString
   design_certificate: MyString
   control_license: MyString
   land_doc: MyString
+  responsibility_doc: MyString
   land_permit: MyString
   control_permit: MyString
-  license_num: MyString
   plan_num: MyString
-  fee: 1.5
-  issued_on: 2010-12-13
-  expired_on: 2010-12-13
   pw_report: MyString
-  city_plot_num: MyString
-  zone: 1
-  area: 1
+  city_plan_num: MyString
+  city_plan_zone: 1
+  land_area: 1.5
+  building_area: 1.5
+  construction_status: 1
+  road_front: 1.5
+  height: 1.5
+  exception: false
+  status: 1
+  fee: 1.5
+  license_num: MyString
+  license_issued_on: 2011-07-12
+  license_expired_on: 2011-07-12
   gma_user_id: 1
 
 two:
   receive_num: MyString
-  received_on: 2010-12-13
+  received_on: 2011-07-12
   receiver: MyString
   written_at: MyString
-  issued_on: 2010-12-13
+  issued_on: 2011-07-12
   applicant_type: 1
   applicant_id: 1
   company_id: 1
   address_id: 1
-  license_type: 1
   purpose: 1
   purpose_other: MyString
   construction_type: 1
@@ -65,19 +71,27 @@ two:
   duration: 1
   design: MyString
   ownership: MyString
+  agent: MyString
   company_name: MyString
   design_certificate: MyString
   control_license: MyString
   land_doc: MyString
+  responsibility_doc: MyString
   land_permit: MyString
   control_permit: MyString
-  license_num: MyString
   plan_num: MyString
-  fee: 1.5
-  issued_on: 2010-12-13
-  expired_on: 2010-12-13
   pw_report: MyString
-  city_plot_num: MyString
-  zone: 1
-  area: 1
+  city_plan_num: MyString
+  city_plan_zone: 1
+  land_area: 1.5
+  building_area: 1.5
+  construction_status: 1
+  road_front: 1.5
+  height: 1.5
+  exception: false
+  status: 1
+  fee: 1.5
+  license_num: MyString
+  license_issued_on: 2011-07-12
+  license_expired_on: 2011-07-12
   gma_user_id: 1

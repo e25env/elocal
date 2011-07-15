@@ -4,10 +4,10 @@
     <tr>
       <%= f.hidden_field :construction_id %>
       <td class="field-name">ชนิด</td>
-      <td colspan='2'><%= f.select :building_type, ['เหล็ก','คสล.','ไม้'] %></td>
+      <td colspan='2'><%= f.select :building_type, Construction_DETAIL::BUILDING_TYPE.each_with_index.map {|a,i| [a,i]} %></td>
     </tr>
     <tr>
-      <td class="field-name">จำนวน</td>
+      <td class="field-name">จำนวนชั้น</td>
       <td><%= f.text_field :floors, :style=>"width:150px;" %></td>
       <td class="field-name">ชั้น</td>
     </tr>
@@ -18,7 +18,7 @@
     </tr>
     <tr>
       <td class="field-name">เพื่อใช้เป็น</td>
-      <td colspan='2'><%= f.select :purpose, ['ที่พักอาศัย'] %></td>
+      <td colspan='2'><%= f.select :purpose, [['ที่พักอาศัย',1],['การพาณิชย์',2],['อุตสาหกรรม',3]] %></td>
     </tr>
     <tr>
       <td class="field-name">จำนวนที่จอดรถ</td>

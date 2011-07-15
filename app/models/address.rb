@@ -5,11 +5,12 @@ class Address < ActiveRecord::Base
   belongs_to :province
 
   def address_name
-    a= "#{address}"
-    a += " ซอย#{soi}" unless soi.empty?
-    a += " ถนน#{street}" unless street.empty?
-    a += " หมู่#{moo}" unless moo.to_s.empty?
-    a += " ต. #{sub_district.name}"
-    a += " อ. #{district.name} จ. #{province.name}"
+    a= ""
+    a += "#{address} " if address&&!address.try(:empty?)
+    a += "ซอย#{soi} " if soi&&!soi.try(:empty?)
+    a += "ถนน#{street} " if street&&!street.try(:empty?)
+    a += "หมู่ #{moo} " if moo&&!moo.to_s.try(:empty?)
+    a += "ต. #{sub_district.name} "
+    a += "อ. #{district.name} จ. #{province.name}"
   end
 end

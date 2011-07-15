@@ -1,0 +1,44 @@
+<script type="text/javascript" src='http://maps.google.com/maps/api/js?sensor=false'></script>
+<div style="page-break-before: always" />
+<div class="report_head">
+  รายงานการตรวจสอบสถานที่อนุญาตก่อสร้างในพื้นที่ตำบล<%= Org.last.name %><br/>
+  ตามกฏกระทรวงให้ใช้บังคับผังเมืองรวมจังหวัด<%= Org.last.province %><br/> ปี 2548
+</div>
+<div style="text-align:center; font-weight: bold;">
+  แผนที่โดยสังเขปจุดที่ตั้งอาคาร
+</div>
+<div id="map2" style="width:75%; height:400px; margin:auto;"></div>
+<script type="text/javascript" charset="utf-8">
+  function initialize2() {
+    var latLng = new google.maps.LatLng(<%= construction.site.lat %>, <%= construction.site.lng %>);
+    var map2 = new google.maps.Map(document.getElementById('map2'), {
+      zoom: 15,
+      center: latLng,
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+    var marker = new google.maps.Marker({
+      position: latLng,
+      title: "ที่ตั้งอาคาร",
+      map: map2,
+      icon: 'http://google-maps-icons.googlecode.com/files/factory.png'
+      //icon: '/images/#{marker_image}'
+    });
+  }
+  google.maps.event.addDomListener(window, 'load', initialize2);
+</script><p/>
+<div class="para">
+  <b>ผลการตรวจสถานที่ขออนุญาตก่อสร้างของนายตรวจเขตควบคุมอาคาร</b><p/>
+  - ที่ตั้งของอาคาร <%= b construction.site.address_name %> ในที่ตั้ง<%= construction.land_doc_name %>เลขที่
+  <%= b construction.land_doc_num %><p/>
+  - แปลงที่ดินที่ขออนุญาตก่อสร้างมีเนื้อที่ <%= b construction.land_area %> ตารางเมตร
+  พื้นที่อาคารคลุมดิน <%= b construction.building_area %> ขนาดพื้นที่อาคาร (กว้างxยาว)
+  <%= '.'*50 %> เมตร ความสูงของอาคาร <%= b construction.construction_details.first.floors %> ชั้น<p/>
+  - ใช้ประโยชน์อาคารเพื่อ <%= b construction.purpose_name %><p/>
+  - ได้มีการตรวจสอบผังเมืองรวมแล้วอยู่ในบริเวณหมายเลข <%= b construction.city_plan_num %>
+  ที่ดินประเภท <%= b construction.city_plan_zone_name %>
+</div>
+<div class="signature" style='padding-top:100px;'>
+  (ลงชื่อ) <%= '.'*100 %> นายตรวจผู้ควบคุมอาคารเขต<%= Org.last.district %><br/>
+  ( <%= nbsp 80 %> )<br/>
+  วันที่ <%= date_thai Time.now, :month_full=>true, :date_only=>true %>
+</div>

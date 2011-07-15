@@ -4,13 +4,10 @@
     font-weight: bold;
     float: left;
   } 
-  #request {
-    text-indent: 50px;
-  }
 </style>
 
 <% construction = Construction.find($xvars[:construction_id])%>
-
+<% indent = 16 %>
 <div id="construction_head">
   คำขออนุญาตก่อสร้างอาคาร<br/>ดัดแปลงอาคาร รื้อถอนอาคาร
 </div>
@@ -25,16 +22,16 @@
 <div id="date">
   วันที่ <%= b(date_thai Time.now, :date_only=>true, :month_full=>true) %>
 </div>
-<div id="request">
+<div class="para">
   <% address= construction.applicant.address %>
   ข้าพเจ้า <%= b construction.applicant.full_name %> เจ้าของอาคาร หรือตัวแทนเจ้าของอาคาร<p/>
 
-  <%= check_box_tag :applicant_type, 1, construction.applicant_type==1 %>
+  <%= check_box_tag :applicant_type, 1, construction.applicant_type==0 %>
   เป็นบุคคลธรรมดา อยู่บ้านเลขที่ <%= b address.address %> ถนน <%= b address.street %>
   หมู่ที่ <%= b address.moo %> ตำบล <%= b address.sub_district.name %>
   อำเภอ <%= b address.district.name %> จังหวัด <%= b address.province.name %><p/>
 
-  <%= check_box_tag :applicant_type, 2, construction.applicant_type==2 %>
+  <%= check_box_tag :applicant_type, 2, construction.applicant_type==1 %>
   เป็นนิติบุคคลประเภท <%= '.'*20 %>
   จดทะเบียนเมื่อ <%= '.'*20 %>
   เลขทะเบียน <%= '.'*20 %>
@@ -47,7 +44,79 @@
   อำเภอ <%= b address.district.name %> จังหวัด <%= b address.province.name %><p/>
 
   ขอยื่นคำขอรับใบอนุญาต <%= b construction.construction_type_name %> ต่อเจ้าพนักงานท้องถิ่นดังต่อไปนี้<p/>
-
+  <% site= construction.site %>
+  
   ข้อ 1 ทำการ <%= b construction.construction_type_name %> 
-  ที่บ้านเลขที่ <%= b construction.site.address %>
+  ที่บ้านเลขที่ <%= b site.address %> ตรอก <%= b site.soi %> ถนน <%= b site.street %>
+  หมู่ที่ <%= b site.moo %>
+  ตำบล/แขวง <%= b site.sub_district.name %> อำเภอ/เขต <%= b site.district.name %>
+  จังหวัด <%= b site.province.name %> โดย <%= b construction.building_owner.full_name %>
+  เป็นเจ้าของอาคาร ในที่ดิน <%= construction.land_doc_name %>เลขที่ <%= b construction.land_doc_num %> 
+  เป็นที่ดินของ <%= b construction.land_owner.full_name %><p/>
+  
+  ข้อ 2 เป็นอาคาร<br/>
+  <% construction.construction_details.each_with_index do |c,i| %>
+    <%= nbsp indent %> (<%= i+1 %>) ชนิด <%= b c.building_name %> <%= b "#{c.floors} ชั้น" %>
+    จำนวน <%= b c.qty %> หลัง เพื่อใช้เป็น <%= b c.purpose %> โดยมีที่จอดรถ และทางเข้าออกของรถ
+    จำนวน <%= b c.parking %> คัน<br/>
+  <% end %>
+  <%= nbsp indent %> ตามแผนผังบริเวณ แบบแปลน รายการประกอบแบบแปลน และรายการคำนวณที่แนบมาพร้อมนี้<p/>
+  
+  ข้อ 3 มี <%= b construction.engineer.full_name %> เป็นผู้ควบคุมงาน และ
+  <%= b (construction.architect.try(:full_name) || "- ตามแบบมาตรฐาน -") %>
+  เป็นผู้ออกแบบและคำนวณ<p/>
+  
+  ข้อ 4 กำหนดแล้วเสร็จใน <%= b construction.duration %> วัน นับตั้งแต่วันที่ได้รับใบอนุญาต<p/>
+  
+  ข้อ 5 พร้อมคำขอนี้ ข้าพเจ้าได้แนบเอกสารหลักฐานต่างๆมาด้วยแล้วคือ<br/>
+  <%= nbsp indent %> (1) รายการคำนวณหนึ่งชุด จำนวน <%= '.'*20 %> แผ่น (กรณีเป็นอาคารสาธารณะ 
+  อาคารพิเศษ หรือก่อสร้างด้วยวัตถุถาวรและทนไฟเป็นส่วนใหญ่)<br/>
+  <%= nbsp indent %> (2) หนังสือแสดงความเป็นตัวแทนเจ้าของอาคาร (กรณีที่ตัวแทนเจ้าของอาคารเป็นผู้ขออนุญาต)<br/>
+  <%= nbsp indent %> (3) สำเนาหนังสือรับรองการจดทะเบียน วัตถุประสงค์ และผู้มีอำนาจลงชื่อแทนนิติบุคคลผู้ขออนุญาต
+  ที่ออกให้ไม่เกินหกเดือน (กรณีที่นิติบุคคลเป็นผู้ขออนุญาต)<br/>
+  <%= nbsp indent %> (4) หนังสือแสดงว่าเป็นผู้จัดการหรือผู้แทน ซึ่งเป็นผู้ดำเนินการของนิติบุคคล (กรณีที่นิติบุคคลเป็นผู้ขออนุญาต)<br/>
+  <%= nbsp indent %> (5) หนังสือแสดงความยินยอมและรับรองของผู้ออกแบบและคำนวณอาคาร จำนวน <%= '.'*20 %> ฉบับ
+  พร้อมทั้งสำเนาใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุมหรือวิชาชีพสถาปัตยกรรมควบคุม จำนวน <%= '.'*20 %> ฉบับ
+  (กรณีเป็นอาคารมีลักษณะ ขนาด อยู่ในประเภทเป็นวิชาชีพวิศวกรรมควบคุมหรือวิชาชีพสถาปัตยกรรมควบคุม
+  แล้วแต่กรณี)<br/>
+  <%= nbsp indent %> (6) สำเนาภาพถ่าย <%= construction.land_doc_name %> เลขที่
+  <%= construction.land_doc_num %> จำนวน <%= '.'*20 %> ฉบับ
+  หนังสือยินยอมของเจ้าของที่ดิน จำนวน <%= '.'*20 %> ฉบับ<br/>
+  <%= nbsp indent %> (7) หนังสือยินยอมของผู้ควบคุมงาน ตามข้อ 3 จำนวน <%= '.'*20 %> ฉบับ<br/>
+  <%= nbsp indent %> (8) สำเนาภาพถ่ายใบอนุญาตเป็นผู้ประกอบวิชาชีพวิศวกรรมควบคุม หรือวิชาชีพสถาปัตยกรรมควบคุมงาน
+  จำนวน <%= '.'*20 %> ฉบับ
+  (กรณีเป็นอาคารมีลักษณะ ขนาด อยู่ในประเภทเป็นวิชาชีพวิศวกรรมควบคุมหรือวิชาชีพสถาปัตยกรรมควบคุม
+  แล้วแต่กรณี)<br/>
+  <%= nbsp indent %> (9) <%= '.'*200 %><br/>
+  <%= nbsp indent %><%= nbsp(5)+'.'*200 %><br/>
 </div>
+<div class='signature'>
+  <p/>
+  (ลงลายมือชื่อ)
+  <%= "."*50 %><br/>
+  <%= "( #{construction.applicant.full_name} )" %><br/>
+  ผู้ขออนุญาต
+</div>
+<div class="para">
+  <strong>หมายเหตุ</strong><br/>
+  <%= nbsp indent %> (1) ข้อความใดที่ไม่ใช้ให้ขีดฆ่า<br/>
+  <%= nbsp indent %> (2) ใส่เครื่องหมาย &#10003; ในช่อง &#9744; หน้าข้อความที่ต้องการ
+</div>
+<hr/>
+<div class="para">
+  <strong>หมายเหตุของเจ้าหน้าที่</strong><p/>
+  จะต้องแจ้งให้ผู้ขออนุญาตทราบ จะอนุญาตหรือไม่อนุญาตหรือขยายเวลา ภายในวันที่ <%= b(date_thai 7.days.from_now, :date_only=>true) %><p/>
+  ผู้ขออนุญาตได้ชำระค่าธรรมเนียมใบอนุญาต <%= b construction.construction_type_name %> 
+  เป็นเงิน <%= '.'*20 %> บาท และค่าธรรมเนียมตรวจแบบแปลน <%= b construction.construction_type_name %>
+  เป็นเงิน <%= '.'*20 %> บาท <%= '.'*20 %> สตางค์ รวมทั้งสิ้นเป็นเงิน <%= '.'*20 %> บาท <%= '.'*20 %> สตางค์
+  ( <%= '.'*60 %> ) ตามใบเสร็จรับเงินเล่มที่ <%= '.'*20 %> เลขที่ <%= '.'*20 %> ลงวันที่ <%= '.'*60 %><p/>
+  ออกใบอนุญาตแล้ว เล่มที่ <%= '.'*40 %> ฉบับที่ <%= '.'*40 %> ลงวันที่ <%= '.'*60 %>
+</div>
+<div class='signature'>
+  <p/>
+  (ลงลายมือชื่อ)
+  <%= "."*50 %><br/>
+  ตำแหน่ง
+  <%= "."*50 %>
+</div>
+

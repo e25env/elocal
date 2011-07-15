@@ -1,0 +1,56 @@
+<% 
+  construction = Construction.find $xvars[:construction_id]
+  construction.exception= false
+  construction.status= 1
+%>
+<table width="100%">
+  <% fields_for construction do |f| %>
+    <tr>
+      <td class="field-name">ค่าธรรมเนียมทั้งหมด</td>
+      <td colspan='2'><%= f.text_field :fee, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">หมายเลขผังเมืองรวม</td>
+      <td colspan='2'><%= f.text_field :city_plan_num, :style=>"width:300px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ที่ดินประเภท</td>
+      <td colspan='2'><%= f.select :city_plan_zone, Construction::CITY_PLAN_ZONE.each_with_index.map {|a,i| [a,i]} %></td>
+    </tr>
+    <tr>
+      <td class="field-name">แปลงที่ดินมีเนื้อที่</td>
+      <td><%= f.text_field :land_area, :style=>"width:150px;" %></td>
+      <td>ตารางเมตร</td>
+    </tr>
+    <tr>
+      <td class="field-name">พื้นที่อาคารคลุมดิน</td>
+      <td><%= f.text_field :building_area, :style=>"width:150px;" %></td>
+      <td>ตารางเมตร</td>
+    </tr>
+    <tr>
+      <td class="field-name">การดำเนินการก่อสร้าง</td>
+      <td colspan='2'><%= f.select :construction_status, Construction::CONSTRUCTION_STATUS.each_with_index.map {|a,i| [a,i]} %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ความกว้างของเขตทางสาธารณะ</td>
+      <td><%= f.text_field :road_front, :style=>"width:150px;" %></td>
+      <td>เมตร</td>
+    </tr>
+    <tr>
+      <td class="field-name">ระดับสูงกว่าถนนสายหลัก</td>
+      <td><%= f.text_field :height, :style=>"width:150px;" %></td>
+      <td>เมตร</td>
+    </tr>
+    <tr>
+      <td class="field-name">กรณียกเว้น</td>
+      <td colspan="2">
+        <%= f.radio_button :exception, true %> การใช้ประโยชน์อยู่ในกรณียกเว้น
+        <%= f.radio_button :exception, false %> ไม่อยู่ในกรณียกเว้น
+      </td>
+    </tr>
+    <tr>
+      <td class="field-name">ผลการตรวจสอบ</td>
+      <td colspan='2'><%= f.select :status, [['สามารถอนุญาตให้สร้างได้',1],['ไม่สามารถอนุญาตให้สร้างได้',2]] %></td>
+    </tr>
+  <% end %>
+</table>

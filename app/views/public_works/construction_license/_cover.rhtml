@@ -1,0 +1,62 @@
+<%= image_tag 'krut.gif', :style => "float:left" %>
+<div class="report_head">บันทึกข้อความ</div>
+<table cellspacing="5" cellpadding="5" width="100%" style="clear:both;">
+  <tr><td colspan="2">ส่วนราชการ ส่วนโยธา <%= Org.full_name %></td></tr>
+  <tr>
+    <td width="50%">ที่</td>
+    <td width="50%">วันที่ <%= date_thai Time.now, :date_only=>true, :month_full=>true %></td>
+  </tr>
+  <tr><td colspan="2">เรื่อง การออกใบอนุญาตก่อสร้างอาคาร</td></tr>
+</table>
+<hr/>
+เรียน <%= MAYOR_POSITION %><%= Org.full_name %><p/>
+<div class="para">
+  ตามที่ <%= construction.applicant.full_name %> อยู่บ้านเลขที่ <%= construction.applicant.address.address_name %>
+  ได้ขออนุญาต<%= construction.construction_type_name %> <%= construction.construction_details.first.building_type_name %>
+  <%= construction.construction_details.first.floors_name %>
+  เพื่อใช้เป็น <%= construction.purpose_name %> ก่อสร้างในโฉนดที่ดินเลขที่ <%= construction.land_doc_num %> ซึ่งเป็นที่ดินของ
+  <%= construction.land_owner.full_name %> <%= construction.site.address_name %><p/>
+  
+  ในการนี้ ส่วนโยธา <%= Org.full_name %> ได้ตรวจสอบชนิดของอาคารแล้ว อยู่ในอำนาจการพิจารณา
+  ของ<%= MAYOR_POSITION %><%= Org.full_name %> ตามประกาศกระทรวงมหาดไทย
+  เรื่องกำหนดให้<%= Org.last.otype %>ตาม<%= CITY_LAW %> เป็นราชการส่วนท้องถิ่น
+  ตามพระราชบัญญติควบคุมอาคาร พ.ศ. 2522 โดยประกาศในราชกิจจานุเบกษา เมื่อวันที่ <%= CITY_LAW_DECLARE %>
+  ซึ่งมีผลใช้บังคับตั้งแต่วันที่ <%= CITY_LAW_EFFECTIVE %> และส่วนโยธา <%= Org.full_name %>
+  ได้ตรวจสอบเอกสารและหลักฐานต่างๆ เห็นว่าครบถ้วน ถูกต้อง ตามพระราชบัญญัติควบคุมอาคาร
+  พ.ศ. 2522 จึงเห็นควรออกใบอนุญาตฯ และแจ้งการออกใบอนุญาตฯ ให้ผู้ขอใบอนุญาตทราบต่อไป<p/>
+  
+  จึงเรียนมาเพื่อโปรดทราบและพิจารณา หากเห็นชอบโปรดลงนามในใบอนุญาตฯ (แบบ อ.1) ผังบริเวณ, แบบแปลน และหนังสือการออกใบอนุญาตที่แนบมาพร้อมนี้
+</div><p/>&nbsp;<p/>
+<div class="signature">
+  ( <%= nbsp 50 %> )<br/>
+  ช่างโยธา
+</div>
+<div class="para">
+  จึงเห็นสมควรเสนอเจ้าพนักงานท้องถิ่นพิจารณา
+</div>
+<div class="signature"><p/>
+  ( <%= User.find(HEAD_PUBLIC_WORKS).full_name %> )<br/>
+  หัวหน้าส่วนโยธา
+</div>
+<table cellspacing="5" cellpadding="5" width="100%">
+  <tr>
+    <td  width="50%">
+      ความเห็นของปลัด<%= Org.last.otype %>ฯ<p/>
+      <hr style="border:1px dashed; margin-top:40px;"/><br/>
+      <hr style="border:1px dashed"/><br/>
+      <div style="text-align:center;"><p/>
+       ( <%= User.find(PALAD).full_name %> )<br/>
+       ปลัด<%= Org.full_name %>
+      </div>
+    </td>
+    <td  width="50%">
+      ความเห็นของ<%= MAYOR_POSITION %><%= Org.last.otype %>ฯ<p/>
+      <hr style="border:1px dashed; margin-top:40px;"/><br/>
+      <hr style="border:1px dashed"/><br/>
+      <div style="text-align:center;"><p/>
+       ( <%= User.find(MAYOR).full_name %> )<br/>
+       <%= MAYOR_POSITION %><%= Org.full_name %>
+      </div>
+    </td>
+  </tr>
+</table>

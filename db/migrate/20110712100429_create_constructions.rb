@@ -10,7 +10,6 @@ class CreateConstructions < ActiveRecord::Migration
       t.integer :applicant_id
       t.integer :company_id
       t.integer :address_id
-      t.integer :license_type
       t.integer :purpose
       t.string :purpose_other
       t.integer :construction_type
@@ -24,21 +23,29 @@ class CreateConstructions < ActiveRecord::Migration
       t.integer :duration
       t.string :design
       t.string :ownership
+      t.string :agent
       t.string :company_name
       t.string :design_certificate
       t.string :control_license
       t.string :land_doc
+      t.string :responsibility_doc
       t.string :land_permit
       t.string :control_permit
-      t.string :license_num
       t.string :plan_num
-      t.float :fee
-      t.date :issued_on
-      t.date :expired_on
       t.string :pw_report
-      t.string :city_plot_num
-      t.integer :zone
-      t.integer :area
+      t.string :city_plan_num
+      t.integer :city_plan_zone
+      t.float :land_area
+      t.float :building_area
+      t.integer :construction_status
+      t.float :road_front
+      t.float :height
+      t.boolean :exception
+      t.integer :status
+      t.float :fee
+      t.string :license_num
+      t.date :license_issued_on
+      t.date :license_expired_on
       t.integer :gma_user_id
 
       t.timestamps

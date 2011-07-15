@@ -7,6 +7,14 @@ class SongritController < ApplicationController
   require "rest_client"
   require 'nokogiri'
   # require 'mechanize'
+  
+  def fix_sub_districts
+    # remove ตำบล
+    SubDistrict.all.each do |s|
+      s.update_attribute :name, s.name.sub('ตำบล','')
+    end
+    render :text=> 'done'
+  end
   def gen_provinces_for_mysql
     t=["TRUNCATE TABLE provinces;"]
     t << "SET NAMES 'utf8';"
