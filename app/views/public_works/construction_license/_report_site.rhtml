@@ -5,9 +5,9 @@
 </div>
 <div class="para">
   ผังบริเวณ<%= construction.construction_type_name %>ของ <%= b construction.applicant.full_name %> อยู่บ้านเลขที่
-  <%= construction.applicant.address.address_name %> ก่อสร้างในโฉนดที่ดิน เลขที่
+  <%= construction.applicant.address.name %> ก่อสร้างในโฉนดที่ดิน เลขที่
   <%= b construction.land_doc_num %> ซึ่งเป็นที่ดินของ <%= b construction.land_owner.full_name %>
-  <%= construction.site.address_name %> เป็นอาคาร <%= b construction.construction_details.first.building_type_name %>
+  <%= construction.site.name %> เป็นอาคาร <%= b construction.construction_details.first.building_type_name %>
   <%= b construction.construction_details.first.floors_name %>
   เพื่อใช้เป็น <%= b construction.purpose_name %> ขออนุญาต<%= construction.construction_type_name %>
   ตามเลขรับที่ <%= b construction.receive_num %>
@@ -45,6 +45,6 @@
 5. อาคารดังกล่าว <%= b construction.construction_status_name %>
 <div class="signature" style='padding-top:100px;'>
   (ลงชื่อ) <%= '.'*100 %> เจ้าหน้าที่ผู้ตรวจสอบ<br/>
-  ( <%= nbsp 80 %> )<br/>
+  ( <%= construction.inspector.full_name %> )<br/>
   วันที่ <%= date_thai Time.now, :month_full=>true, :date_only=>true %>
 </div>

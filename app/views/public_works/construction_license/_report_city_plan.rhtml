@@ -28,7 +28,7 @@
 </script><p/>
 <div class="para">
   <b>ผลการตรวจสถานที่ขออนุญาตก่อสร้างของนายตรวจเขตควบคุมอาคาร</b><p/>
-  - ที่ตั้งของอาคาร <%= b construction.site.address_name %> ในที่ตั้ง<%= construction.land_doc_name %>เลขที่
+  - ที่ตั้งของอาคาร <%= b construction.site.name %> ในที่ตั้ง<%= construction.land_doc_name %>เลขที่
   <%= b construction.land_doc_num %><p/>
   - แปลงที่ดินที่ขออนุญาตก่อสร้างมีเนื้อที่ <%= b construction.land_area %> ตารางเมตร
   พื้นที่อาคารคลุมดิน <%= b construction.building_area %> ขนาดพื้นที่อาคาร (กว้างxยาว)
@@ -39,6 +39,6 @@
 </div>
 <div class="signature" style='padding-top:100px;'>
   (ลงชื่อ) <%= '.'*100 %> นายตรวจผู้ควบคุมอาคารเขต<%= Org.last.district %><br/>
-  ( <%= nbsp 80 %> )<br/>
+  ( <%= construction.inspector.full_name %> )<br/>
   วันที่ <%= date_thai Time.now, :month_full=>true, :date_only=>true %>
 </div>

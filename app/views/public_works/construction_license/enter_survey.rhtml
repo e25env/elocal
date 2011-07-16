@@ -1,6 +1,7 @@
 <% 
   construction = Construction.find $xvars[:construction_id]
   construction.exception= false
+  construction.license_expired_on= 1.year.from_now
   construction.status= 1
 %>
 <table width="100%">
@@ -52,5 +53,20 @@
       <td class="field-name">ผลการตรวจสอบ</td>
       <td colspan='2'><%= f.select :status, [['สามารถอนุญาตให้สร้างได้',1],['ไม่สามารถอนุญาตให้สร้างได้',2]] %></td>
     </tr>
+    <tr>
+      <td class="field-name">เจ้าหน้าที่ผู้ตรวจ</td>
+      <td colspan='2'><%= f.select :inspector_id,
+      options_from_collection_for_select(User.all(:order=>:fname), :id, :full_name) %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ใบอนุญาตออกให้ ณ วันที่</td>
+      <td colspan='2'><%= f.date_select_thai :license_issued_on %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ใบอนุญาตใช้ได้จนถึงวันที่</td>
+      <td colspan='2'><%= f.date_select_thai :license_expired_on %></td>
+    </tr>
   <% end %>
 </table>
+<%= fix_thai_year %>
+

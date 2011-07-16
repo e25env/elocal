@@ -5,7 +5,8 @@ class Construction < ActiveRecord::Base
   belongs_to :land_owner, :class_name => "Person" 
   belongs_to :engineer, :class_name => "Person" 
   belongs_to :architect, :class_name => "Person" 
-  belongs_to :site, :class_name => "Address" 
+  belongs_to :site, :class_name => "Address"
+  belongs_to :inspector, :class_name => "User"
   
   APPLICANT_TYPE= ['บุคคลธรรมดา','นิติบุคคล']
   CONSTRUCTION_TYPE= ['ก่อสร้างอาคาร','ดัดแปลงอาคาร','รื้อถอนอาคาร']
@@ -20,13 +21,13 @@ class Construction < ActiveRecord::Base
   def land_doc_name
     LAND_DOC_TYPE[land_doc_type]
   end
-  def purpose_name
-    PURPOSE[purpose]
-  end
   def construction_status_name
     CONSTRUCTION_STATUS[construction_status]
   end
   def city_plan_zone_name
     CITY_PLAN_ZONE[city_plan_zone]
+  end
+  def purpose_name
+    PURPOSE[purpose]
   end
 end

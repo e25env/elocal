@@ -4,7 +4,7 @@ one:
   building_type: 1
   floors: 1
   qty: 1
-  purpose: MyString
+  purpose: 1
   parking: 1
   utilized_area: 1
   construction_id: 1
@@ -14,7 +14,7 @@ two:
   building_type: 1
   floors: 1
   qty: 1
-  purpose: MyString
+  purpose: 1
   parking: 1
   utilized_area: 1
   construction_id: 1

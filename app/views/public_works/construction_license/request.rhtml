@@ -50,13 +50,13 @@
   ที่บ้านเลขที่ <%= b site.address %> ตรอก <%= b site.soi %> ถนน <%= b site.street %>
   หมู่ที่ <%= b site.moo %>
   ตำบล/แขวง <%= b site.sub_district.name %> อำเภอ/เขต <%= b site.district.name %>
-  จังหวัด <%= b site.province.name %> โดย <%= b construction.building_owner.full_name %>
+  จังหวัด <%= b site.province.name %> โดย <%= b construction.building_owner.try(:full_name) %>
   เป็นเจ้าของอาคาร ในที่ดิน <%= construction.land_doc_name %>เลขที่ <%= b construction.land_doc_num %> 
   เป็นที่ดินของ <%= b construction.land_owner.full_name %><p/>
   
   ข้อ 2 เป็นอาคาร<br/>
   <% construction.construction_details.each_with_index do |c,i| %>
-    <%= nbsp indent %> (<%= i+1 %>) ชนิด <%= b c.building_name %> <%= b "#{c.floors} ชั้น" %>
+    <%= nbsp indent %> (<%= i+1 %>) ชนิด <%= b c.building_type_name %> <%= b "#{c.floors} ชั้น" %>
     จำนวน <%= b c.qty %> หลัง เพื่อใช้เป็น <%= b c.purpose %> โดยมีที่จอดรถ และทางเข้าออกของรถ
     จำนวน <%= b c.parking %> คัน<br/>
   <% end %>

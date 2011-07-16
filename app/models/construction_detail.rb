@@ -10,4 +10,7 @@ class ConstructionDetail < ActiveRecord::Base
       "#{floors} ชั้น"
     end
   end
+  def purpose_name
+    Construction::PURPOSE[purpose]
+  end
 end

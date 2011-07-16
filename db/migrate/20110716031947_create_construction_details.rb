@@ -4,7 +4,7 @@ class CreateConstructionDetails < ActiveRecord::Migration
       t.integer :building_type
       t.integer :floors
       t.integer :qty
-      t.string :purpose
+      t.integer :purpose
       t.integer :parking
       t.integer :utilized_area
       t.integer :construction_id

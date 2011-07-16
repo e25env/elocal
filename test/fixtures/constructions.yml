@@ -2,10 +2,10 @@
 
 one:
   receive_num: MyString
-  received_on: 2011-07-12
+  received_on: 2011-07-16
   receiver: MyString
   written_at: MyString
-  issued_on: 2011-07-12
+  issued_on: 2011-07-16
   applicant_type: 1
   applicant_id: 1
   company_id: 1
@@ -44,16 +44,17 @@ one:
   status: 1
   fee: 1.5
   license_num: MyString
-  license_issued_on: 2011-07-12
-  license_expired_on: 2011-07-12
+  license_issued_on: 2011-07-16
+  license_expired_on: 2011-07-16
+  inspector_id: 1
   gma_user_id: 1
 
 two:
   receive_num: MyString
-  received_on: 2011-07-12
+  received_on: 2011-07-16
   receiver: MyString
   written_at: MyString
-  issued_on: 2011-07-12
+  issued_on: 2011-07-16
   applicant_type: 1
   applicant_id: 1
   company_id: 1
@@ -92,6 +93,7 @@ two:
   status: 1
   fee: 1.5
   license_num: MyString
-  license_issued_on: 2011-07-12
-  license_expired_on: 2011-07-12
+  license_issued_on: 2011-07-16
+  license_expired_on: 2011-07-16
+  inspector_id: 1
   gma_user_id: 1

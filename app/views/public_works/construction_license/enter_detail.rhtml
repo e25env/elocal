@@ -4,7 +4,7 @@
     <tr>
       <%= f.hidden_field :construction_id %>
       <td class="field-name">ชนิด</td>
-      <td colspan='2'><%= f.select :building_type, Construction_DETAIL::BUILDING_TYPE.each_with_index.map {|a,i| [a,i]} %></td>
+      <td colspan='2'><%= f.select :building_type, ConstructionDetail::BUILDING_TYPE.each_with_index.map {|a,i| [a,i]} %></td>
     </tr>
     <tr>
       <td class="field-name">จำนวนชั้น</td>

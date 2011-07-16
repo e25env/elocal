@@ -2,3 +2,53 @@
 <div class="report_head">
   ตรวจสอบตามกฏหมายผังเมืองรวมจังหวัด<%= Org.last.province %>
 </div>
+<%= check_box_tag :status, 1, construction.status==1 %>
+สามารถอนุญาตให้ก่อสร้างได้ เพราะ
+<div class="block">
+  <%= check_box_tag :status1, 1, construction.status==1 %>
+  การใช้ประโยชน์ที่ดินไม่ขัดกับข้อกำหนดของกฏกระทรวงฯ
+</div>
+<div class="block">
+  <%= check_box_tag :status1, 1, construction.exception %>
+  การใช้ประโยชน์ที่ดินอยู่ในกรณียกเว้น ไม่เกิน
+  <%= check_box_tag :status1, 1 %> 10%
+  <%= check_box_tag :status1, 1 %> 15%
+  <%= check_box_tag :status1, 1 %> 25%
+  <%= check_box_tag :status1, 1 %> 30%
+</div>
+<div class="block">
+  <%= check_box_tag :status1, 1 %>
+  อยู่ในแนวถนนโครงการเสนอแนะสาย <%= '.'*50 %>
+</div>
+<div class="block">
+  <%= check_box_tag :status1, 1 %>
+  อยู่ในแนวถนนบังคับ สาย ก และได้เว้นระยะตามบังคับไว้ถูกต้องแล้ว
+</div>
+<div class="block">
+  <%= check_box_tag :status1, 1 %>
+  อื่นๆ <%= '.'*50 %> ได้รับยกเว้นตามมาตรา 27 วรรค 2
+</div>
+<%= check_box_tag :status, 2, construction.status==2 %>
+ไม่สามารถอนุญาตให้ก่อสร้างได้ เพราะ
+<div class="block">
+  <%= check_box_tag :status1, 1 %>
+  การใช้ประโยชน์ที่ดินขัดกับข้อกำหนดของกฏกระทรวงฯ
+</div>
+<div class="block">
+  <%= check_box_tag :status1, 1 %>
+  อยู่ในแนวถนนบังคับ สาย ก { ที่ดินประเภทโครงการคมนาคมและขนส่ง (สีชมพู) }
+</div>
+<div class="block">
+  <%= check_box_tag :status1, 1 %>
+  อื่นๆ <%= '.'*50 %>
+</div>
+<p/>
+<%= check_box_tag :status2, 1, construction.status==1 %>
+สามารถอนุญาตให้สร้างได้
+<%= check_box_tag :status2, 1, construction.status==2 %>
+ไม่สามารถอนุญาตให้สร้างได้
+<div class="signature" style='padding-top:100px;'>
+  (ลงชื่อ) <%= '.'*100 %> นายช่างผังเมือง/นายตรวจเขต/หัวหน้างานผังเมือง<br/>
+  ( <%= construction.inspector.full_name %> )<br/>
+  วันที่ <%= date_thai Time.now, :month_full=>true, :date_only=>true %>
+</div>

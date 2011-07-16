@@ -1,0 +1,64 @@
+<div style="page-break-before: always" />
+<div style="text-align:center;">
+  <%= image_tag "krut200.png" %>
+</div>
+<div style="text-align:right">
+  <b>แบบ อ.1</b>
+</div>
+<div class="report_head">
+  ใบอนุญาตก่อสร้างอาคาร ดัดแปลงอาคาร หรือรื้อถอนอาคาร
+</div>
+เลขที่ <%= '.'*50 %><br/>
+อนุญาตให้ <%= b construction.applicant.full_name %> เจ้าของอาคาร อยู่บ้านเลขที่
+<%= b construction.applicant.address.name(:full=>true) %>
+<div class="para">
+  ข้อ 1 ทำการ <%= b construction.construction_type_name %> 
+  <%= b construction.construction_details.first.building_type_name %>
+  <%= b construction.construction_details.first.floors_name %>
+  อยู่บ้านเลขที่ <%= b construction.site.name(:full=>true) %>
+  ในที่ดิน<%= construction.land_doc_name %> เลขที่ <%= b construction.land_doc_num %>
+  เป็นที่ดินของ <%= b construction.land_owner.full_name %>
+</div>
+<div class="para">
+  ข้อ 2 เป็นอาคาร <%= b construction.construction_details.first.building_type_name %>
+  <%= b construction.construction_details.first.floors_name %>
+</div>
+<% construction.construction_details.each_with_index do |c,i| %>
+  <div class="para">
+    ( <%= i+1 %> ) ชนิด <%= b c.building_type_name %> <%= b c.floors_name %>
+    จำนวน <%= c.qty %> หลัง เพื่อใช้เป็น <%= c.purpose_name %>
+    พื้นที่/ความยาว <%= c.utilized_area %> ตารางเมตร
+    ที่จอดรถ ที่กลับรถ และทางเข้าออกของรถ จำนวน <%= c.parking %> คัน
+    พื้นที่ <%= '.'*50 %> ตารางเมตร
+  </div>
+<% end %>
+<div class="para">
+  ตามแผนผังบริเวณ แบบแปลนรายการประกอบแบบแปลน และรายการคำนวณเลขที่ <%= '.'*50 %>
+  ที่แนบท้ายใบอนุญาตนี้
+</div>
+<div class="para">
+  ข้อ 3 โดยมี <%= b construction.engineer.full_name %> เป็นผู้ควบคุมงาน<br/>
+  <%= nbsp 16 %> โดยมี <%= b (construction.architect.try(:full_name) || "- ตามแบบมาตรฐาน -") %> เป็นวิศวกรคำนวณ
+</div>
+<div class="para">
+  ข้อ 4 ผู้ได้รับอนุญาตต้องปฏิบัติตามเงื่อนไขดังต่อไปนี้
+</div>
+<div class="para">
+  (1) ผู้ได้รับอนุญาตต้องปฏิบัติตามหลักเกณฑ์ วิธีการ และเงื่อนไขตามที่กำหนดในกฏกระทรวง
+  และหรือข้อบัญญัติท้องถิ่น ซึ่งออกตามความในมาตรา 8(11) หรือมาตรา 10 แห่งพระราชบัญญัติ
+  ควบคุมอาคาร พ.ศ. 2522
+</div>
+<div class="para">
+  (2) ค่าธรรมเนียมตรวจแบบแปลนและค่าใบอนุญาตก่อสร้างคิดเป็นเงินทั้งสิ้น <%= b construction.fee %> บาท
+</div><p/>
+<div class="para">
+  ใบอนุญาตฉบับนี้ให้ใช้ได้จนถึงวันที่ <%= b date_thai construction.license_expired_on, :date_only=>true %>
+<div class="para">
+<div class="para">
+  ออกให้ ณ วันที่ <%= b date_thai construction.license_issued_on, :date_only=>true %><br/>
+</div>
+<div class="signature" style='padding-top:100px;'>
+  (ลงชื่อ) <%= '.'*100 %> <br/>
+  ( <%= User.find(MAYOR).full_name %> )<br/>
+  <%= MAYOR_POSITION %><%= Org.full_name %>
+</div>

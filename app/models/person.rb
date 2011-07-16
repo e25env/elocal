@@ -6,7 +6,7 @@ class Person < ActiveRecord::Base
   end
   def label
     t = "#{nid}|#{full_name}|#{id}"
-    t += "|#{address.address_name}" if address
+    t += "|#{address.name}" if address
     t += "|#{doc}" if doc
     t += "|#{address.doc}" if (address && address.doc)
     t

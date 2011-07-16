@@ -46,6 +46,7 @@ class CreateConstructions < ActiveRecord::Migration
       t.string :license_num
       t.date :license_issued_on
       t.date :license_expired_on
+      t.integer :inspector_id
       t.integer :gma_user_id
 
       t.timestamps

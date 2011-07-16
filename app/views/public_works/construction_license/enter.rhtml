@@ -16,11 +16,11 @@
   <% fields_for construction do |f| %>
     <tr><td colspan='3' class="section">รายละเอียดทั่วไป</td></tr>
     <tr>
-      <td class="field-name">ใบอนุญาตทำการ</td>
+      <td class="field-name required">ใบอนุญาตทำการ</td>
       <td colspan='2'><%= f.select :construction_type, Construction::CONSTRUCTION_TYPE.each_with_index.map {|a,i| [a,i]} %></td>
     </tr>
     <tr>
-      <td class="field-name">เลขรับที่</td>
+      <td class="field-name required">เลขรับที่</td>
       <td colspan='2'><%= f.text_field :receive_num, :style=>"width:300px;" %></td>
     </tr>
     <tr>
@@ -156,8 +156,8 @@
   <% fields_for :building_owner do |f| %>
     <tr><td colspan='3' class="section">เจ้าของอาคาร</td></tr>
     <tr>
-      <td class="field-name refresh">เลขประจำตัวประชาชน</td>
-      <td><%= f.text_field :nid, :style=>"width:150px;" %></td>
+      <td class="field-name refresh required">เลขประจำตัวประชาชน</td>
+      <td><%= f.text_field :nid, :style=>"width:150px;", :required => "required"  %></td>
       <td><%= link_to "ขึ้นทะเบียนบุคคล", "/run/office/add_person", :target => "_blank"  %></td>
     </tr>
     <tr>
@@ -168,8 +168,8 @@
   <% fields_for :land_owner do |f| %>
     <tr><td colspan='3' class="section">เจ้าของที่ดิน</td></tr>
     <tr>
-      <td class="field-name refresh">เลขประจำตัวประชาชน</td>
-      <td><%= f.text_field :nid, :style=>"width:150px;" %></td>
+      <td class="field-name refresh required">เลขประจำตัวประชาชน</td>
+      <td><%= f.text_field :nid, :style=>"width:150px;", :required => "required"  %></td>
       <td><%= link_to "ขึ้นทะเบียนบุคคล", "/run/office/add_person", :target => "_blank"  %></td>
     </tr>
     <tr>
@@ -180,8 +180,8 @@
   <% fields_for :engineer do |f| %>
     <tr><td colspan='3' class="section">ผู้ควบคุมงาน</td></tr>
     <tr>
-      <td class="field-name refresh">เลขประจำตัวประชาชน</td>
-      <td><%= f.text_field :nid, :style=>"width:150px;" %></td>
+      <td class="field-name refresh required">เลขประจำตัวประชาชน</td>
+      <td><%= f.text_field :nid, :style=>"width:150px;", :required => "required"  %></td>
       <td><%= link_to "ขึ้นทะเบียนบุคคล", "/run/office/add_person", :target => "_blank"  %></td>
     </tr>
     <tr>
