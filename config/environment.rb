@@ -19,5 +19,4 @@ Rails::Initializer.run do |config|
   GMAP = false
   # disable Rails to add timestamp at end of image cause problem in heroku
   ENV["RAILS_ASSET_ID"] = ""
-  # set_songrit :www, "http://elocal-www.heroku.com"
 end

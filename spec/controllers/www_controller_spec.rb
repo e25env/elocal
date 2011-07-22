@@ -1,6 +1,6 @@
 require 'spec_helper'
 require 'webmock/rspec'
-include WebMock
+include WebMock::API
 
 def mock_uploader(file, type = 'image/png')
   # filename = "%s/%s" % [ File.dirname(__FILE__), file ]

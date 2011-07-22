@@ -166,7 +166,7 @@ class EngineController < ApplicationController
     File.open("#{path}/f#{doc.id}","wb") { |f|
       f.puts(params.read)
     }
-    eval "@xvars[:#{@runseq.code}][:#{key}] = '#{url_for(:action=>'document', :id=>doc.id)}' "
+    eval "@xvars[:#{@runseq.code}][:#{key}] = '#{url_for(:action=>'document', :id=>doc.id, :only_path => true )}' "
     eval "@xvars[:#{@runseq.code}][:#{key}_doc_id] = #{doc.id} "
   end
   # process images from second level, e.g,, fields_for
@@ -187,7 +187,7 @@ class EngineController < ApplicationController
        f.puts(params.read)
    }
 
-    eval "@xvars[:#{@runseq.code}][:#{key}][:#{key1}] = '#{url_for(:action=>'document', :id=>doc.id)}' "
+    eval "@xvars[:#{@runseq.code}][:#{key}][:#{key1}] = '#{url_for(:action=>'document', :id=>doc.id, :only_path => true)}' "
     eval "@xvars[:#{@runseq.code}][:#{doc.name}_doc_id] = #{doc.id} "
   end
   def run_output
