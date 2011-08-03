@@ -13,7 +13,8 @@ describe MainController do
     get :index
     response.should be_redirect
   end
-  it "address should soi"
+  it "use ruport for graph and report http://ruportbook.com/outline.html"
   it "should have add/edit person separately; as well as address, company"
-
+  it "use chosen jquery plugin http://harvesthq.github.com/chosen"
+  it "use jquery mobile splitview"
 end

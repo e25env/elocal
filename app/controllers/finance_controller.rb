@@ -76,7 +76,7 @@ class FinanceController < ApplicationController
     @equity << ["ทุนสำรองเงินสะสม","",5869711.62]
     @equity << ["เงินสะสม","",17439474.08]
     @equity << ["","",@current_asset,1]
-    @finance_head= User.finance_head
+    @finance_head= User.find(HEAD_FINANCE)
     @palat= User.palat
     @mayor= User.mayor
     render :layout => "print"
@@ -98,7 +98,7 @@ class FinanceController < ApplicationController
     @banks << {:name=> "ธนาคารออมสิน", :btype=>"ประจำ", :balance=>10935127.12}
     @banks << {:name=> "ธกส.", :btype=>"ประจำ", :balance=>3563529.76}
     @total = @banks.inject(0) { |sum,b| sum+b[:balance] }
-    @finance_head= User.finance_head
+    @finance_head= User.find(HEAD_FINANCE)
     @palat= User.palat
     @mayor= User.mayor
     render :layout => "print"
@@ -110,7 +110,7 @@ class FinanceController < ApplicationController
     @fixed_actual = 1498533.06
     @invest_plan = 3505600
     @invest_actual = 0
-    @finance_head= User.finance_head
+    @finance_head= User.find(HEAD_FINANCE)
     @palat= User.palat
     @mayor= User.mayor
     render :layout => "print"
@@ -121,7 +121,7 @@ class FinanceController < ApplicationController
   def daily_print
     # sequence cash, bank, bank detail
     # mockup
-    @finance_head = User.finance_head
+    @finance_head = User.find(HEAD_FINANCE)
     @cash_keeper  = {:name=>"น.ส. ธิติชญาณ์ เพ็ชรนพรัตน์", :position=>"นักวิชาการการเงินและบัญชี"}
     @carry = 27261351.64
     @expense = 117716
@@ -154,7 +154,7 @@ class FinanceController < ApplicationController
     @accounts << Account.find_all_by_atype(4)
     @accounts << Account.find_all_by_atype(3)
     @accounts.flatten!
-    @finance_head= User.finance_head
+    @finance_head= User.find(HEAD_FINANCE)
     @palat= User.palat
     @mayor= User.mayor
     render :layout => "print"
