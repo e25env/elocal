@@ -1,0 +1,2 @@
+git pull github master
+bundle exec rake db:migrate

@@ -1,5 +1,5 @@
 %h4(style='text-align:center;') ทะเบียนผู้รับเบี้ยยังชีพ
-- if office_office?
+- if office_office? || true
   /%div(style='float:right')
   =image_tag 'add.png'
   = link_to align_text('ขึ้นทะเบียนผู้รับเบี้ยยังชีพ'), "/run/social/add_senior"

@@ -11,6 +11,7 @@
   year= Time.now.year
   person = Person.new :year_only => false, :yob => year-60
   address = Address.new
+  # address_reg = Address.new
 %>
 <table width="100%">
   <% fields_for person do |f| %>
@@ -50,6 +51,7 @@
       <td colspan="2"><%= f.select :yob, (110.downto(50)).collect {|i| [year-i+543,year-i]} %></td>
     </tr>
     <%= f.hidden_field :address_id %>
+    <%= f.hidden_field :address_reg_id %>
     <tr>
       <td class="field-name">โทรศัพท์</td>
       <td colspan='2'><%= f.text_field :phone, :style=>"width:300px;" %></td>
@@ -69,13 +71,24 @@
   <% end %>
   <% fields_for address do |f| %>
     <tr>
-      <td class="field-name refresh">เลขรหัสประจำบ้าน</td>
+      <td class="field-name refresh">เลขรหัสที่อยู่ที่ติดต่อได้</td>
       <td><%= f.text_field :code, :style=>"width:150px;" %></td>
       <td><%= link_to "ขึ้นทะเบียนที่อยู่", "/run/office/add_address", :target=>"_blank" %></td>
     </tr>
     <tr>
       <td class="field-name">&nbsp;</td>
       <td colspan='2' id='address_info'></td>
+    </tr>
+  <% end %>
+  <% fields_for :address_reg do |f| %>
+    <tr>
+      <td class="field-name refresh">เลขรหัสที่อยู่ตามทะเบียนบ้าน</td>
+      <td><%= f.text_field :code, :style=>"width:150px;" %></td>
+      <td><%= link_to "ขึ้นทะเบียนที่อยู่", "/run/office/add_address", :target=>"_blank" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">&nbsp;</td>
+      <td colspan='2' id='address_reg_info'></td>
     </tr>
   <% end %>
 </table>
@@ -95,10 +108,21 @@
     $("#person_address_id").val(el[2]);
     edit_text= " <a target='_blank' href='/run/office/edit_address/"+el[2]+"'>แก้ไข</a>"
     $("#address_info").html(el[1]+edit_text);
-  }
+  };
   $("#address_code").autocomplete({
     source: "/main/address",
     minLength: 2,
     select: function(e,ui) { set_address(ui.item.label) }
+  });
+  function set_address_reg(label) {
+    var el = label.split(":");
+    $("#person_address_reg_id").val(el[2]);
+    edit_text= " <a target='_blank' href='/run/office/edit_address/"+el[2]+"'>แก้ไข</a>"
+    $("#address_reg_info").html(el[1]+edit_text);
+  };
+  $("#address_reg_code").autocomplete({
+    source: "/main/address",
+    minLength: 2,
+    select: function(e,ui) { set_address_reg(ui.item.label) }
   });
 </script>

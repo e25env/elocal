@@ -1,5 +1,6 @@
 class Person < ActiveRecord::Base
   belongs_to :address
+  belongs_to :address_reg, :class_name => "Address" 
 
   def full_name
     return fname.blank? ? "" : "#{title}#{fname} #{lname}"

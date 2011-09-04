@@ -1,2 +1,4 @@
-<% s= Senior.find $xvars[:senior_id] %>
-<%= s.full_name %>
+<% if $xvars[:senior_id] %>
+  <% s= Senior.find $xvars[:senior_id] %>
+  <%= s.person.full_name %>
+<% end %>

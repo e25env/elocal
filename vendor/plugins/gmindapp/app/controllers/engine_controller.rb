@@ -38,7 +38,6 @@ class EngineController < ApplicationController
     init_vars(params[:id])
     if authorize?
       if ['F', 'X'].include? @xmain.status
-        #      flash[:notice] = "invalid url"
         redirect_to_root
       else
         @title= "xmain id #{@xmain.id}: #{@xmain.name}"

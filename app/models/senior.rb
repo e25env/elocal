@@ -19,5 +19,6 @@ class Senior < ActiveRecord::Base
   def no_duplicate
     errors.add(:nid, "ขออภัย มีบุคคลนี้ในระบบอยู่แล้ว") if
       Senior.exists?(:person_id=>person_id, :underprivileged=>underprivileged)
+    return false
   end
 end

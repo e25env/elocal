@@ -92,7 +92,7 @@ class MainController < ApplicationController
   end
   def address
     @addresses= Address.find :all, :conditions=>['code LIKE ?', "#{params[:term]}%"], :limit=>10
-    @select= @addresses.map {|p| {:label=>"#{p.code}:#{p.address_name}:#{p.id}", :value => p.code }}
+    @select= @addresses.map {|p| {:label=>"#{p.code}:#{p.name}:#{p.id}", :value => p.code }}
     render :json=>@select
   end
   def get_person_address
