@@ -1071,9 +1071,10 @@
 </node>
 <node CREATED="1284768073186" ID="ID_1531359078" MODIFIED="1284768100870" TEXT="link: &#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe2a;&#xe33;&#xe2b;&#xe23;&#xe31;&#xe1a;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;: /admin/gen_fsection"/>
 </node>
-<node CREATED="1273706796854" FOLDED="true" ID="ID_1003882979" MODIFIED="1301902837875" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
+<node CREATED="1273706796854" ID="ID_1003882979" MODIFIED="1315239763622" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
 <node CREATED="1273706824535" ID="ID_682167045" MODIFIED="1278500871367" TEXT="link: update app: /gma/update_app"/>
+<node CREATED="1315239767885" ID="ID_191614863" MODIFIED="1315239781578" TEXT="link: update services: /gma/update_services"/>
 <node CREATED="1281681992475" ID="ID_757791014" MODIFIED="1283285585589" TEXT="link: dbpush modules/services:/admin/db_push_ms"/>
 <node CREATED="1273706854639" ID="ID_1481857171" MODIFIED="1278500875816" TEXT="link: mind map: /gma/view_mm"/>
 <node CREATED="1301794306865" ID="ID_618068276" MODIFIED="1301794338407" TEXT="link: rspec result: /spec.html"/>

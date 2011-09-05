@@ -3,6 +3,7 @@ source "http://rubygems.org"
 # source "http://gems.github.com"
 
 gem "rails", "2.3.5"
+gem 'whenever', :require => false
 gem "rest-open-uri"
 gem "heroku"
 gem "taps"

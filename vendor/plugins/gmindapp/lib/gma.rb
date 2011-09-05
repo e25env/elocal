@@ -461,11 +461,24 @@ module Gma
   def make_fields(n)
     f= ""
     n.each_element('node') do |nn|
-      next if nn.attributes['TEXT'] =~ /\#.*/
-      k,v= nn.attributes['TEXT'].split(/:\s*/,2)
-      v ||= 'integer'
-      v= 'float' if v=~/double/i
-      f << " #{name2code(k.strip)}:#{v.strip} "
+      text = nn.attributes['TEXT']
+      next if text =~ /\#.*/ 
+      # sometimes freemind puts all fields inside a blank node
+      unless text.empty?
+        k,v= text.split(/:\s*/,2)
+        v ||= 'integer'
+        v= 'float' if v=~/double/i
+        f << " #{name2code(k.strip)}:#{v.strip} "
+      else
+        nn.each_element('node') do |nnn|
+          text1 = nnn.attributes['TEXT']
+          next if text1 =~ /\#.*/ 
+          k,v= text1.split(/:\s*/,2)
+          v ||= 'integer'
+          v= 'float' if v=~/double/i
+          f << " #{name2code(k.strip)}:#{v.strip} "
+        end
+      end
     end
     f
   end
@@ -541,7 +554,7 @@ module Gma
       else
         mh= ['ม.ค.', 'ก.พ.', 'มี.ค.', 'เม.ย.', 'พ.ค.', 'มิ.ย.', 'ก.ค.', 'ส.ค.', 'ก.ย.', 'ต.ค.', 'พ.ย.', 'ธ.ค.']
       end
-      if options[:date_only]
+      if options[:dateonly] || options[:date_only]
         d.day.to_s+" "+mh[d.month-1]+" "+y.to_s
       else
         d.day.to_s+" "+mh[d.month-1]+" "+y.to_s+" เวลา "+sprintf("%02d",d.hour.to_s)+":"+sprintf("%02d",d.min.to_s)
@@ -749,5 +762,55 @@ class Float
 
   def to_s
     self.is_whole? ? self.to_i.to_s : self.original_to_s
+  end
+end
+
+class Serializer < Struct.new(:object)
+
+  def to_hash
+    @hash ||= hash_object(object)
+  end
+
+  private
+  def hash_object(object)
+    hash = {}
+    hash.merge! object.attributes
+
+    # each_association_collection(object) do |association, association_name, item|
+    #   path << object
+    # 
+    #   if assocation_has_collection?(association)
+    #     hash[association_name] ||= []
+    #     hash[association_name] << hash_object(item)
+    #   else
+    #     hash[association_name] = hash_object(item)
+    #   end
+    #   path.pop
+    # end
+    hash
+  end
+  def path
+    @path ||= []
+  end
+  def assocation_has_collection?(association)
+    [:has_many, :has_and_belongs_to_many].include? association.macro
+  end
+  def have_visited_object?(object)
+    self.object == object || path.include?(object)
+  end
+  def each_association_collection(object)
+    object.class.reflect_on_all_associations.each do |association|
+      association_name = association.name.to_s
+
+      association_collection(object, association_name).each do |item|
+        yield(association, association_name, item) unless have_visited_object?(item)
+      end
+    end
+  end
+  def association_collection(object, association_name)
+    object.send(association_name).to_a
+  end
+  def visited_objects
+    @visited_objects ||= []
   end
 end

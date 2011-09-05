@@ -5,12 +5,24 @@
 
 # Example:
 #
-set :cron_log, "#{Rails.root}/log/cron.log"
-#
-every 1.days, :at=>"11:50pm" do
-  command "cd #{Rails.root} && heroku db:push postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force"
-  command "shutdown now -P"
-  #runner "AnotherModel.prune_old_records"
+set :path, '/home/songrit/apps/elocal'
+set :output, "#{path}/log/cron.log"
+
+every 7.days, :at=>"11:50pm" do
+  # command "cd #{path} && heroku db:push postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force"
+  command "cd #{path} && git pull github master && bundle exec rake db:migrate"
+  runner "GmaController.new.update_services"
 end
+
+#
+# every 2.hours do
+#   command "/usr/bin/some_great_command"
+#   runner "MyModel.some_method"
+#   rake "some:great:rake:task"
+# end
+#
+# every 4.days do
+#   runner "AnotherModel.prune_old_records"
+# end
 
 # Learn more: http://github.com/javan/whenever

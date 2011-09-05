@@ -1,6 +1,7 @@
 <% 
 @org= Org.last
-@title = "#{@org.otype}#{@org.name}"
+#@title = "#{@org.otype}#{@org.name}"
+@title = "ระบบสารสนเทศบูรณาการ อปท."
 @amodules= [] # authorized modules
 @gma_modules= GmaModule.all(:order=>"seq").each do |m|
   if m.role
@@ -39,9 +40,9 @@ end
       <div style="float:right; color:#1C2795;">
         <%= render :partial => "layouts/login" %>
       </div>
-      <div id="logo" style="padding:5px 0 0 50px;">
+      <div id="logo" style="padding:5px 0 0 20px;">
         <a href="/">
-            <%= image_tag 'logo_bangtanai100.png', :style=>'float:left;margin-top:-5px;' %>
+            <%= image_tag 'logo_elocal.png', :style=>'float:left;margin-top:-5px;' %>
             <div class="title" style="text-align:center;">
               <%= @title %>
           </div>

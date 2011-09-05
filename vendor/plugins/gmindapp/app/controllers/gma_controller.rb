@@ -55,11 +55,20 @@ class GmaController < ApplicationController
     @t << "if you change models in freemind, please destroy scaffold and tables before update app"
     @t << process_models
     @t << exec_cmd("rake db:migrate").gsub("\n","<br/>")
+    @t << exec_cmd("rake db:test:clone").gsub("\n","<br/>")
     @t << process_services
     @t << gen_controllers
     @t << gen_views
     @t << "Application Updated, please restart Rails server"
-    ActionController::Routing::Routes.reload
+    # no need to reload route since we no longer generate resource from model
+    # ActionController::Routing::Routes.reload
+  end
+  def update_services
+    @title= "Update Services from Mindmap"
+    @t = [cancel_pending_xmains]
+    @t << process_roles
+    @t << process_services
+    @t << "Service Updated, please restart Rails server"
   end
   def process_report
     @xmains= GmaXmain.all :conditions=>['status=? or status=?', 'R', 'I']

@@ -14,6 +14,7 @@ GEM
       activesupport (= 2.3.5)
     activesupport (2.3.5)
     addressable (2.2.5)
+    chronic (0.6.3)
     columnize (0.3.2)
     configuration (1.2.0)
     crack (0.1.8)
@@ -91,6 +92,9 @@ GEM
     webmock (1.6.2)
       addressable (>= 2.2.2)
       crack (>= 0.1.7)
+    whenever (0.7.0)
+      activesupport (>= 2.3.4)
+      chronic (~> 0.6.3)
     will_paginate (2.3.15)
 
 PLATFORMS
@@ -120,4 +124,5 @@ DEPENDENCIES
   syntax
   taps
   webmock
+  whenever
   will_paginate
