@@ -8,7 +8,7 @@
 set :path, '/home/songrit/apps/elocal'
 set :output, "#{path}/log/cron.log"
 
-every 7.days, :at=>"11:50pm" do
+every 3.hours do
   # command "cd #{path} && heroku db:push postgres://postgres:songrit@localhost/elocal?encoding=utf8 --force"
   command "cd #{path} && git pull github master && bundle exec rake db:migrate"
   runner "GmaController.new.update_services"
