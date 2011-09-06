@@ -13,3 +13,4 @@ database.yml
 schema.rb
 doc/upload
 config/license.yml
+config/schedule.rb
