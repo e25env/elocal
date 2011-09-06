@@ -31,7 +31,7 @@ class Org < ActiveRecord::Base
   def self.licensed?
     $license.split(':')[0]=="elocal" || heroku?
   end
-  def heroku?
+  def self.heroku?
     return request.url =~ /heroku/ ? true :false
   end
 end
