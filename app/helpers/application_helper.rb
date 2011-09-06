@@ -11,7 +11,7 @@ module ApplicationHelper
   end
   #------------------------
   def licensed?
-    true
+    Org.licensed?
   end
   def leave_options
     [["ลาป่วย",1],["ลาคลอดบุตร",2],["ลากิจ",3],

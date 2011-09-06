@@ -38,5 +38,4 @@ WWW = "http://elocal-www.heroku.com"
 POST_TYPE = %w(ข่าว กิจกรรม รายงานการประชุม ท่องเที่ยว ประกาศ คำสั่ง จัดซื้อจัดจ้าง)
 
 MSG_NEXT = "ดำเนินการต่อ &gt;"
-$license = License.new
-
+$license = Org.license

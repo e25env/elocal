@@ -14,4 +14,17 @@ class Org < ActiveRecord::Base
   def self.logo
     return File.exist?('public/images/logo.png') ? "logo.png" : "logo_elocal.png"
   end
+  def self.license
+    l = License.new
+    require 'key'
+    public_key_file = 'config/pob.public.pem';
+    public_key= Key.new(public_key_file)
+    license = public_key.pub_decrypt(l.license)
+    return license
+  rescue
+    return "starter"
+  end
+  def self.licensed?
+    $license.split(':')[0]=="elocal"
+  end
 end
