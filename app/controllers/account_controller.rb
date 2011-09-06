@@ -1,24 +1,4 @@
 class AccountController < ApplicationController
-  def cancel_car_request
-    requests= $xvars[:select_request][:car_request]
-    if requests
-      CarRequest.find(requests).each do |r|
-        r.gma_xmain.update_attribute :status,'X'
-        r.destroy
-      end
-    end
-  end
-  def create_car_request
-    car_request= CarRequest.new $xvars[:enter][:car_request]
-    car_request.gma_xmain_id= $xmain.id
-    car_request.save
-    $xvars[:car_id]= car_request.id
-    $xvars[:section_id] = $user.section_id
-  end
-  def update_car
-    car_request= CarRequest.find $xvars[:car_id]
-    car_request.update_attributes $xvars[:scan][:car_request]
-  end
   def create_memo
     doc= Doc.new $xvars[:register][:doc]
     doc.dtype= 3

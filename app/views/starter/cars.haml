@@ -1,0 +1,21 @@
+%div(style='float:right')
+  =image_tag 'add.png'
+  = link_to align_text('เพิ่มรถ'), "/run/starter/add_car"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th{:style=>"width:20px;"} ลบ
+    %th ประเภท
+    %th ยี่ห้อ
+    %th สี
+    %th ทะเบียน
+  - @cars.each do |car|
+    %tr
+      %td= link_to image_tag('cross.png'), "/run/starter/rm_car/#{car.id}", :confirm=>"กรุณายืนยัน"
+      %td(style="width:100px;")= car.vtype_name
+      %td= car.brand
+      %td= car.color
+      %td= car.car_code
+    - car.car_requests.active.each do |r|
+      %tr
+        %td &nbsp;
+        %td(colspan="4" style="padding-left:30px;")= "#{date_thai r.schedule_at} #{r.name} (#{r.destination})"
