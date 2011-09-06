@@ -28,7 +28,4 @@ class Org < ActiveRecord::Base
   rescue
     return "starter"
   end
-  def self.licensed?
-    $license.split(':')[0]=="elocal" || heroku?
-  end
 end

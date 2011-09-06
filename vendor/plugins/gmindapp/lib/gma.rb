@@ -6,6 +6,9 @@ module Gma
   def heroku?
     return request.url =~ /heroku/ ? true :false
   end
+  def licensed?
+    $license.split(':')[0]=="elocal" || heroku?
+  end
   def local_ip
     RestClient.get "http://www.whatismyip.com/automation/n09230945.asp"
   end  
