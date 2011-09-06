@@ -10,6 +10,9 @@ module ApplicationHelper
     User.find INCOME_SUMMARY_MAKER
   end
   #------------------------
+  def licensed?
+    true
+  end
   def leave_options
     [["ลาป่วย",1],["ลาคลอดบุตร",2],["ลากิจ",3],
       ["ลาพักผ่อน",4], ["ลาอุปสมบท",5], ["ลาราชการทหาร",6],

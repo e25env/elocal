@@ -11,4 +11,7 @@ class Org < ActiveRecord::Base
     org= self.last
     "#{org.otype}#{org.name} อำเภอ#{org.district} จังหวัด#{org.province}"
   end
+  def self.logo
+    return File.exist?('public/images/logo.png') ? "logo.png" : "logo_elocal.png"
+  end
 end
