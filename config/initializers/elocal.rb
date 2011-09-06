@@ -38,4 +38,7 @@ WWW = "http://elocal-www.heroku.com"
 POST_TYPE = %w(ข่าว กิจกรรม รายงานการประชุม ท่องเที่ยว ประกาศ คำสั่ง จัดซื้อจัดจ้าง)
 
 MSG_NEXT = "ดำเนินการต่อ &gt;"
+CACHE_LOCATION  = File.join('config')
+CACHE_FILE      = 'license.yml'
+CACHE_PATH      = File.join(File.expand_path(CACHE_LOCATION), CACHE_FILE)
 $license = Org.license

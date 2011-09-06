@@ -2,9 +2,9 @@ class License
   require 'yaml'
   require 'ftools'
  
-  CACHE_LOCATION  = File.join('config')
-  CACHE_FILE      = 'license.yml'
-  CACHE_PATH      = File.join(File.expand_path(CACHE_LOCATION), CACHE_FILE)
+  # CACHE_LOCATION  = File.join('config')
+  # CACHE_FILE      = 'license.yml'
+  # CACHE_PATH      = File.join(File.expand_path(CACHE_LOCATION), CACHE_FILE)
  
   def initialize
     ensure_cache_exists
