@@ -1,0 +1,17 @@
+<% section = Section.new %>
+<% fields_for section do |f| %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">รหัส</td>
+      <td colspan="2"><%= f.text_field :code, :style => "width:100px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">รหัสเอกสาร</td>
+      <td colspan="2"><%= f.text_field :doc_code, :style => "width:100px;" %></td>
+    </tr>
+  </table>
+<% end %>

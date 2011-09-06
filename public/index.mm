@@ -108,7 +108,7 @@
 </node>
 </node>
 <node CREATED="1283041784895" ID="ID_591159975" MODIFIED="1315286286437" TEXT="link: &#xe22;&#xe32;&#xe19;&#xe1e;&#xe32;&#xe2b;&#xe19;&#xe30;: /starter/cars"/>
-<node CREATED="1283041828720" FOLDED="true" ID="ID_1487371191" MODIFIED="1315349114966" TEXT="add car:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;">
+<node CREATED="1283041828720" ID="ID_1487371191" MODIFIED="1315351013503" TEXT="add car:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;">
 <icon BUILTIN="closed"/>
 <node CREATED="1280841997526" ID="ID_35955197" MODIFIED="1283041904964" TEXT="enter_car:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;&#xe43;&#xe2b;&#xe21;&#xe48;">
 <icon BUILTIN="attach"/>
@@ -154,6 +154,30 @@
 </node>
 </node>
 <node CREATED="1315349188189" ID="ID_576456663" MODIFIED="1315349218144" TEXT="link: &#xe42;&#xe04;&#xe23;&#xe07;&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2d;&#xe07;&#xe04;&#xe4c;&#xe01;&#xe23;: /starter/sections"/>
+<node CREATED="1315351005649" ID="ID_528290679" MODIFIED="1315351073481" TEXT="add_section: &#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe07;&#xe32;&#xe19;">
+<icon BUILTIN="closed"/>
+<node CREATED="1315351035239" ID="ID_997882821" MODIFIED="1315351078941" TEXT="enter_section: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe23;&#xe32;&#xe22;&#xe25;&#xe30;&#xe40;&#xe2d;&#xe35;&#xe22;&#xe14;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1315351052858" ID="ID_545498328" MODIFIED="1315351084319" TEXT="create_section: &#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe07;&#xe32;&#xe19;">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1315351332661" ID="ID_1147184654" MODIFIED="1315351348437" TEXT="rm_section">
+<icon BUILTIN="closed"/>
+<node CREATED="1315351337212" ID="ID_1160903196" MODIFIED="1315351344800" TEXT="rm_section">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1315351353983" ID="ID_1813699653" MODIFIED="1315351421998" TEXT="edit_section">
+<icon BUILTIN="closed"/>
+<node CREATED="1315351372492" ID="ID_143489389" MODIFIED="1315351415564" TEXT="edit_section: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe23;&#xe32;&#xe22;&#xe25;&#xe30;&#xe40;&#xe2d;&#xe35;&#xe22;&#xe14;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1315351391867" ID="ID_1268153689" MODIFIED="1315351411282" TEXT="update_section: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe23;&#xe32;&#xe22;&#xe01;&#xe32;&#xe23;&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe07;&#xe32;&#xe19;">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
 </node>
 <node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1315349101423" TEXT="office:&#xe1a;&#xe23;&#xe34;&#xe2b;&#xe32;&#xe23;&#xe01;&#xe25;&#xe32;&#xe07;">
 <node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1298456576626" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">

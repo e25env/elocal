@@ -13,6 +13,24 @@ class StarterController < ApplicationController
   end
   
   # gma
+  def create_section
+    section = Section.new $xvars[:enter_section][:section]
+    section.save
+    gma_notice "เพิ่มส่วนงานเรียบร้อยแล้ว"
+    $xvars[:p][:return]="/starter/sections"
+  end
+  def rm_section
+    section= Section.find $xvars[:p][:id]
+    gma_notice "ลบข้อมูลส่วนงาน #{section.name} เรียบร้อยแล้ว"
+    section.destroy
+    $xvars[:p][:return]="/starter/sections"
+  end
+  def update_section
+    section= Section.find $xvars[:p][:id]
+    section.update_attributes $xvars[:edit_section][:section]
+    gma_notice "แก้ไขส่วนงานเรียบร้อยแล้ว"
+    $xvars[:p][:return]="/starter/sections"
+  end
   def create_doc_in
     doc= Doc.new $xvars[:register][:doc]
     doc.dtype= 1
@@ -41,13 +59,13 @@ class StarterController < ApplicationController
     car = Car.new $xvars[:enter_car][:car]
     car.save
     gma_notice "เพิ่มรถส่วนกลางเรียบร้อยแล้ว"
-    $xvars[:p][:return]="/office/cars"
+    $xvars[:p][:return]="/starter/cars"
   end
   def rm_car
     car= Car.find $xvars[:p][:id]
     gma_notice "ลบข้อมูลรถส่วนกลาง #{car.name} เรียบร้อยแล้ว"
     car.destroy
-    $xvars[:p][:return]="/office/cars"
+    $xvars[:p][:return]="/starter/cars"
   end
   def cancel_car_request
     requests= $xvars[:select_request][:car_request]
