@@ -12,3 +12,4 @@ nbproject
 database.yml
 schema.rb
 doc/upload
+config/license.yml
