@@ -3,10 +3,12 @@ module Gma
   include ActionView::Helpers::DateHelper
   include ActionView::Helpers::TextHelper
 
+  def heroku?
+    return request.url =~ /heroku/ ? true :false
+  end
   def local_ip
     RestClient.get "http://www.whatismyip.com/automation/n09230945.asp"
   end  
-
   def ping(server)
     ping_count = 3
     result = `ping -q -c #{ping_count} #{server}`
