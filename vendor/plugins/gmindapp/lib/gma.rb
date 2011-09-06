@@ -530,10 +530,10 @@ module Gma
     end
   end
   def affirm(s)
-    s =~ /[y|yes|t|true]/i
+    return s =~ /[y|yes|t|true]/i ? true : false
   end
   def negate(s)
-    s =~ /[n|no|f|false]/i
+    return s =~ /[n|no|f|false]/i ? true : false
   end
   def get_xvars
     @runseq= GmaRunseq.find($runseq_id)

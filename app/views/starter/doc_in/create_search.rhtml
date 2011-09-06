@@ -1,0 +1,10 @@
+<%  doc = Doc.find @xvars[:doc_id] %>
+<%= doc.rnum %>
+<%= doc.num %>
+<%= doc.ref %>
+<%= date_thai doc.issue_on, :date_only=>true %>
+<%= doc.dfrom %>
+<%= doc.dto %>
+<%= doc.subject %>
+<%= date_thai doc.process_at %>
+<%= doc.summary %>
