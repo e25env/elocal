@@ -5,6 +5,9 @@ class StarterController < ApplicationController
       # format.pdf { @docs= Doc.all :order => "created_at DESC" }
     end
   end
+  def sections
+    @sections= Section.all
+  end
   def cars
     @cars= Car.all :order=>'vtype,brand'
   end

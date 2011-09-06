@@ -70,7 +70,8 @@
 </node>
 <node CREATED="1315275739916" ID="ID_846556601" MODIFIED="1315285912616" TEXT="starter:&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;">
 <node CREATED="1315275854104" ID="ID_615571821" MODIFIED="1315275867828" TEXT="starter: y"/>
-<node CREATED="1279397879537" ID="ID_1754475545" MODIFIED="1298456576626" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
+<node CREATED="1315283113094" ID="ID_633060024" MODIFIED="1315283126946" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;: /starter"/>
+<node CREATED="1279397879537" FOLDED="true" ID="ID_1754475545" MODIFIED="1315349135602" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_656264308" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
 </node>
@@ -82,8 +83,7 @@
 <node CREATED="1280526203689" ID="ID_1384640897" MODIFIED="1280526207204" TEXT="display:n"/>
 </node>
 </node>
-<node CREATED="1315283113094" ID="ID_633060024" MODIFIED="1315283126946" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;: /starter"/>
-<node CREATED="1279397887479" ID="ID_1522673155" MODIFIED="1315275813885" TEXT="doc_out: &#xe2a;&#xe48;&#xe07;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
+<node CREATED="1279397887479" FOLDED="true" ID="ID_1522673155" MODIFIED="1315349118430" TEXT="doc_out: &#xe2a;&#xe48;&#xe07;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279400010372" ID="ID_1173793437" MODIFIED="1280189817211" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe2a;&#xe48;&#xe07;">
 <icon BUILTIN="attach"/>
 </node>
@@ -95,7 +95,7 @@
 <node CREATED="1280526203689" ID="ID_1788293524" MODIFIED="1280526207204" TEXT="display:n"/>
 </node>
 </node>
-<node CREATED="1279397879537" ID="ID_652723003" MODIFIED="1310648214222" TEXT="memo: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
+<node CREATED="1279397879537" FOLDED="true" ID="ID_652723003" MODIFIED="1315349117175" TEXT="memo: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
 <node CREATED="1279398062261" ID="ID_1648519893" MODIFIED="1284676485710" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
 <icon BUILTIN="attach"/>
 </node>
@@ -108,7 +108,7 @@
 </node>
 </node>
 <node CREATED="1283041784895" ID="ID_591159975" MODIFIED="1315286286437" TEXT="link: &#xe22;&#xe32;&#xe19;&#xe1e;&#xe32;&#xe2b;&#xe19;&#xe30;: /starter/cars"/>
-<node CREATED="1283041828720" ID="ID_1487371191" MODIFIED="1315285965365" TEXT="add car:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;">
+<node CREATED="1283041828720" FOLDED="true" ID="ID_1487371191" MODIFIED="1315349114966" TEXT="add car:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;">
 <icon BUILTIN="closed"/>
 <node CREATED="1280841997526" ID="ID_35955197" MODIFIED="1283041904964" TEXT="enter_car:&#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;&#xe43;&#xe2b;&#xe21;&#xe48;">
 <icon BUILTIN="attach"/>
@@ -123,7 +123,7 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1282828171561" ID="ID_1074472725" MODIFIED="1298456864561" TEXT="car:&#xe02;&#xe2d;&#xe43;&#xe0a;&#xe49;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;">
+<node CREATED="1282828171561" FOLDED="true" ID="ID_1074472725" MODIFIED="1315349108042" TEXT="car:&#xe02;&#xe2d;&#xe43;&#xe0a;&#xe49;&#xe23;&#xe16;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe01;&#xe25;&#xe32;&#xe07;">
 <node CREATED="1282828261055" ID="ID_735029390" MODIFIED="1296524653559" TEXT="enter: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe43;&#xe1a;&#xe04;&#xe33;&#xe23;&#xe49;&#xe2d;&#xe07;">
 <icon BUILTIN="attach"/>
 <node CREATED="1282828277640" ID="ID_211695866" MODIFIED="1282828289305" TEXT="role:m"/>
@@ -144,7 +144,7 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
-<node CREATED="1283049819504" ID="ID_395810260" MODIFIED="1315286540778" TEXT="car_cancel:&#xe22;&#xe01;&#xe40;&#xe25;&#xe34;&#xe01;&#xe04;&#xe33;&#xe02;&#xe2d;&#xe43;&#xe0a;&#xe49;&#xe23;&#xe16;">
+<node CREATED="1283049819504" FOLDED="true" ID="ID_395810260" MODIFIED="1315349109632" TEXT="car_cancel:&#xe22;&#xe01;&#xe40;&#xe25;&#xe34;&#xe01;&#xe04;&#xe33;&#xe02;&#xe2d;&#xe43;&#xe0a;&#xe49;&#xe23;&#xe16;">
 <node CREATED="1283049906084" ID="ID_1798351894" MODIFIED="1315286919925" TEXT="select_request: &#xe40;&#xe25;&#xe37;&#xe2d;&#xe01;&#xe04;&#xe33;&#xe02;&#xe2d;&#xe17;&#xe35;&#xe48;&#xe15;&#xe49;&#xe2d;&#xe07;&#xe01;&#xe32;&#xe23;&#xe22;&#xe01;&#xe40;&#xe25;&#xe34;&#xe01;">
 <icon BUILTIN="attach"/>
 <node CREATED="1283218734922" ID="ID_749661217" MODIFIED="1283219057986" TEXT="rule:current_user.car_requests.count&gt;0"/>
@@ -153,8 +153,9 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
+<node CREATED="1315349188189" ID="ID_576456663" MODIFIED="1315349218144" TEXT="link: &#xe42;&#xe04;&#xe23;&#xe07;&#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2d;&#xe07;&#xe04;&#xe4c;&#xe01;&#xe23;: /starter/sections"/>
 </node>
-<node CREATED="1279397496008" ID="ID_587395922" MODIFIED="1315285780246" TEXT="office:&#xe1a;&#xe23;&#xe34;&#xe2b;&#xe32;&#xe23;&#xe01;&#xe25;&#xe32;&#xe07;">
+<node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1315349101423" TEXT="office:&#xe1a;&#xe23;&#xe34;&#xe2b;&#xe32;&#xe23;&#xe01;&#xe25;&#xe32;&#xe07;">
 <node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1298456576626" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
