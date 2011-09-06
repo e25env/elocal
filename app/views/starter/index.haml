@@ -1,0 +1,21 @@
+%h3= "รายงานสารบรรณ"
+= will_paginate @docs, :class=>'flickr_pagination'
+
+:css
+  .report td {vertical-align:top;}
+%table{:width=>"100%", :class=>'report'}
+  %tr{:style=>"color:white; background-color: #6A6A6A;"}
+    %th &nbsp;
+    %th(style='width:100px;') วันที่
+    %th เลขรับหนังสือ
+    %th(style='width:120px;') เลขที่
+    %th(style='width:120px;') หน่วยงาน
+    %th เรื่อง
+  - @docs.each do |doc|
+    %tr{:style=>"background-color: #{cycle '#FEFEA4', '#fff'}"}
+      %td= image_tag doc.icon
+      %td= date_thai doc.process_at, :date_only=>true
+      %td= doc.rnum
+      %td= doc.num
+      %td= doc.dfrom
+      %td= link_to doc.subject, doc.dscan, :target=>'_blank'
