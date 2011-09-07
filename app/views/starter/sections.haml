@@ -13,5 +13,5 @@
       %td= link_to image_tag('pencil.png'), "/run/starter/edit_section/#{section.id}"
       %td= link_to image_tag('cross.png'), "/run/starter/rm_section/#{section.id}", :confirm=>"กรุณายืนยัน"
       %td= section.code
-      %td= section.name
+      %td= link_to section.name, :action=>:subsections, :id=>section.id
       %td= section.doc_code

@@ -1,0 +1,16 @@
+<% section= Section.find $xvars[:p][:id]%>
+<h3>เพิ่มส่วนงานย่อยภายใต้ <%= section.name %></h3>
+<% subsection = Subsection.new :section_id=>$xvars[:p][:id] %>
+<% fields_for subsection do |f| %>
+  <%= f.hidden_field :section_id %>
+  <table width="100%">
+    <tr>
+      <td class="field-name">รหัส</td>
+      <td colspan="2"><%= f.text_field :code, :style => "width:100px;" %></td>
+    </tr>
+    <tr>
+      <td class="field-name">ชื่อ</td>
+      <td colspan="2"><%= f.text_field :name, :style => "width:400px;" %></td>
+    </tr>
+  </table>
+<% end %>

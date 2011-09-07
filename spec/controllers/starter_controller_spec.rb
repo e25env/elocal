@@ -1,10 +1,11 @@
 require 'spec_helper'
 
 describe StarterController do
+  integrate_views
 
-  #Delete this example and add some real ones
-  it "should use StarterController" do
-    controller.should be_an_instance_of(StarterController)
+  it "show sections" do
+    Section.should_receive(:all).and_return([])
+    get :sections
   end
 
 end

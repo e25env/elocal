@@ -178,6 +178,30 @@
 <icon BUILTIN="bookmark"/>
 </node>
 </node>
+<node CREATED="1315351005649" ID="ID_1586243783" MODIFIED="1315353383628" TEXT="add_subsection: &#xe40;&#xe1e;&#xe34;&#xe48;&#xe21;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe07;&#xe32;&#xe19;&#xe22;&#xe48;&#xe2d;&#xe22;">
+<icon BUILTIN="closed"/>
+<node CREATED="1315351035239" ID="ID_1506085838" MODIFIED="1315353393633" TEXT="enter_subsection: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe23;&#xe32;&#xe22;&#xe25;&#xe30;&#xe40;&#xe2d;&#xe35;&#xe22;&#xe14;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1315351052858" ID="ID_1364096988" MODIFIED="1315353480945" TEXT="create_subsection: &#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe07;&#xe32;&#xe19;&#xe22;&#xe48;&#xe2d;&#xe22;">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1315351332661" ID="ID_1661410663" MODIFIED="1315353427593" TEXT="rm_subsection">
+<icon BUILTIN="closed"/>
+<node CREATED="1315351337212" ID="ID_593170152" MODIFIED="1315353469042" TEXT="rm_subsection: &#xe25;&#xe1a;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe07;&#xe32;&#xe19;&#xe22;&#xe48;&#xe2d;&#xe22;">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+<node CREATED="1315351353983" ID="ID_1660306499" MODIFIED="1315353445263" TEXT="edit_subsection">
+<icon BUILTIN="closed"/>
+<node CREATED="1315351372492" ID="ID_1354969245" MODIFIED="1315353450352" TEXT="edit_subsection: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe23;&#xe32;&#xe22;&#xe25;&#xe30;&#xe40;&#xe2d;&#xe35;&#xe22;&#xe14;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1315351391867" ID="ID_1943177694" MODIFIED="1315353484644" TEXT="update_subsection: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe23;&#xe32;&#xe22;&#xe01;&#xe32;&#xe23;&#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe07;&#xe32;&#xe19;&#xe22;&#xe48;&#xe2d;&#xe22;">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
 </node>
 <node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1315349101423" TEXT="office:&#xe1a;&#xe23;&#xe34;&#xe2b;&#xe32;&#xe23;&#xe01;&#xe25;&#xe32;&#xe07;">
 <node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1298456576626" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">

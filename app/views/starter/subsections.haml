@@ -1,0 +1,17 @@
+%h3
+  = @section.name
+%div(style='float:right')
+  = image_tag 'add.png'
+  = link_to align_text('เพิ่มส่วนงานย่อย'), "/run/starter/add_subsection/#{params[:id]}"
+%table{:class=>'budget_table', :width=>"100%"}
+  %tr{:style=>"color:white; background-color:#6A6A6A;"}
+    %th(style="width:25px;") แก้ไข
+    %th(style="width:25px;") ลบ
+    %th(style="width:50px;") รหัส
+    %th ชื่อ
+  - @section.subsections.each do |subsection|
+    %tr{:style=>"background-color:##{cycle 'fff','FEFEA4'}"}
+      %td= link_to image_tag('pencil.png'), "/run/starter/edit_subsection/#{subsection.id}"
+      %td= link_to image_tag('cross.png'), "/run/starter/rm_subsection/#{subsection.id}", :confirm=>"กรุณายืนยัน"
+      %td= subsection.code
+      %td= subsection.name

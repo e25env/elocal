@@ -8,6 +8,9 @@ class StarterController < ApplicationController
   def sections
     @sections= Section.all
   end
+  def subsections
+    @section= Section.find params[:id]
+  end
   def cars
     @cars= Car.all :order=>'vtype,brand'
   end
@@ -30,6 +33,24 @@ class StarterController < ApplicationController
     section.update_attributes $xvars[:edit_section][:section]
     gma_notice "แก้ไขส่วนงานเรียบร้อยแล้ว"
     $xvars[:p][:return]="/starter/sections"
+  end
+  def create_subsection
+    subsection = Subsection.new $xvars[:enter_subsection][:subsection]
+    subsection.save
+    gma_notice "เพิ่มส่วนงานย่อยเรียบร้อยแล้ว"
+    $xvars[:p][:return]="/starter/subsections/#{$xvars[:p][:id]}"
+  end
+  def rm_subsection
+    subsection= Subsection.find $xvars[:p][:id]
+    gma_notice "ลบข้อมูลส่วนงานย่อย #{subsection.name} เรียบร้อยแล้ว"
+    $xvars[:p][:return]="/starter/subsections/#{subsection.section_id}"
+    subsection.destroy
+  end
+  def update_subsection
+    subsection= Subsection.find $xvars[:p][:id]
+    subsection.update_attributes $xvars[:edit_subsection][:subsection]
+    gma_notice "แก้ไขส่วนงานย่อยเรียบร้อยแล้ว"
+    $xvars[:p][:return]="/starter/subsections/#{subsection.section_id}"
   end
   def create_doc_in
     doc= Doc.new $xvars[:register][:doc]
