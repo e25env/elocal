@@ -1,7 +1,7 @@
 <% 
 @org= Org.last
 #@title = "#{@org.otype}#{@org.name}"
-@title = "ระบบสารสนเทศบูรณาการ อปท."
+@title = "ระบบสารสนเทศ อปท."
 @amodules= [] # authorized modules
 @gma_modules= GmaModule.all(:order=>"seq").each do |m|
   next unless (m.starter || licensed?)
