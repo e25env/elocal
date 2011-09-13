@@ -29,6 +29,7 @@ group :development do
   gem "rspec", "1.3.1"
   gem "rspec-rails", "1.3.3"
   gem "hirb-unicode"
+  gem "pry"
 end
 group :test do
   gem "syntax"
