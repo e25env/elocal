@@ -205,8 +205,8 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397496008" ID="ID_587395922" MODIFIED="1315906460974" TEXT="office:&#xe1a;&#xe23;&#xe34;&#xe2b;&#xe32;&#xe23;&#xe01;&#xe25;&#xe32;&#xe07;">
-<node CREATED="1315283113094" ID="ID_1619604591" MODIFIED="1315283126946" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;: /starter"/>
+<node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1315907297282" TEXT="office:&#xe1a;&#xe23;&#xe34;&#xe2b;&#xe32;&#xe23;&#xe01;&#xe25;&#xe32;&#xe07;">
+<node CREATED="1315283113094" ID="ID_1619604591" MODIFIED="1315907228366" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;: /office/doc_report"/>
 <node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1298456576626" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
 <icon BUILTIN="attach"/>
@@ -1180,7 +1180,7 @@
 </node>
 <node CREATED="1284768073186" ID="ID_1531359078" MODIFIED="1284768100870" TEXT="link: &#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe2a;&#xe33;&#xe2b;&#xe23;&#xe31;&#xe1a;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;: /admin/gen_fsection"/>
 </node>
-<node CREATED="1273706796854" FOLDED="true" ID="ID_1003882979" MODIFIED="1315243764367" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
+<node CREATED="1273706796854" ID="ID_1003882979" MODIFIED="1315907302475" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
 <node CREATED="1273706824535" ID="ID_682167045" MODIFIED="1278500871367" TEXT="link: update app: /gma/update_app"/>
 <node CREATED="1315239767885" ID="ID_191614863" MODIFIED="1315239781578" TEXT="link: update services: /gma/update_services"/>

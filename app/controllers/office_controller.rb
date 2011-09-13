@@ -1,7 +1,14 @@
 class OfficeController < ApplicationController
   def index
-    @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at", :include=>:gma_runseqs
-    render :template => "main/pending"
+    # @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at", :include=>:gma_runseqs
+    # render :template => "main/pending"
+    redirect_to :action=> :doc_report
+  end
+  def doc_report
+    respond_to do |format|
+      format.html { @docs= Doc.paginate :page=>params[:page], :order => "created_at DESC" }
+      # format.pdf { @docs= Doc.all :order => "created_at DESC" }
+    end
   end
   def create_person
     person = Person.find_by_nid $xvars[:enter_person][:person][:nid]
