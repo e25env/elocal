@@ -1,10 +1,12 @@
 %div{"data-context" => "a#default", "data-hash" => "crumbs", "data-id" => "menu", "data-role" => "panel"}
   / Start of first page
   #main{"data-role" => "page"}
-    %div{"data-backbtn" => "false", "data-role" => "header"}
-      %h1 Main
+    %div{"data-backbtn" => "false", "data-role" => "header", "data-theme" => "b"}
+      %h1 ระบบ
     %div{"data-role" => "content"}
       %ul{"data-role" => "listview", "data-theme" => "g"}
+        %li
+          %a{"data-panel" => "main", :href => "#search"} ค้นหา
         %li
           การเดินทาง
           %ul

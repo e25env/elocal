@@ -2,7 +2,7 @@
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node CREATED="1273819432637" ID="ID_1098419600" MODIFIED="1279699253278" TEXT="elocal">
 <node CREATED="1273819462973" ID="ID_282419531" MODIFIED="1298456465253" POSITION="right" TEXT="services">
-<node CREATED="1275756501221" FOLDED="true" ID="ID_1720745721" MODIFIED="1315920665799" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
+<node CREATED="1275756501221" FOLDED="true" ID="ID_1720745721" MODIFIED="1316537482451" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
 <node CREATED="1278491598711" ID="ID_1662699954" MODIFIED="1278491602025" TEXT="role:m"/>
 <node CREATED="1293332713220" FOLDED="true" ID="ID_1765957683" MODIFIED="1295163365395" TEXT="new_message: &#xe2a;&#xe48;&#xe07;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
 <node CREATED="1293332729817" ID="ID_604745038" MODIFIED="1293332758567" TEXT="enter: &#xe1e;&#xe34;&#xe21;&#xe1e;&#xe4c;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
@@ -69,7 +69,7 @@
 </node>
 <node CREATED="1315279347164" ID="ID_1920802457" MODIFIED="1315279351661" TEXT="starter: y"/>
 </node>
-<node CREATED="1315275739916" FOLDED="true" ID="ID_846556601" MODIFIED="1315920663791" TEXT="starter:&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;">
+<node CREATED="1315275739916" FOLDED="true" ID="ID_846556601" MODIFIED="1316537480308" TEXT="starter:&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;">
 <node CREATED="1315275854104" ID="ID_615571821" MODIFIED="1315275867828" TEXT="starter: y"/>
 <node CREATED="1315355116058" ID="ID_1354089656" MODIFIED="1315355148661" TEXT="link: &#xe04;&#xe39;&#xe48;&#xe21;&#xe37;&#xe2d;&#xe23;&#xe30;&#xe1a;&#xe1a;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;: /main/doc_edoc"/>
 <node CREATED="1315283113094" ID="ID_633060024" MODIFIED="1315283126946" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;: /starter"/>
@@ -205,7 +205,7 @@
 </node>
 </node>
 </node>
-<node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1315907297282" TEXT="office:&#xe1a;&#xe23;&#xe34;&#xe2b;&#xe32;&#xe23;&#xe01;&#xe25;&#xe32;&#xe07;">
+<node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1316537488555" TEXT="office:&#xe1a;&#xe23;&#xe34;&#xe2b;&#xe32;&#xe23;&#xe01;&#xe25;&#xe32;&#xe07;">
 <node CREATED="1315283113094" ID="ID_1619604591" MODIFIED="1315907228366" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;: /office/doc_report"/>
 <node CREATED="1279397879537" ID="ID_1756095802" MODIFIED="1298456576626" TEXT="doc_in: &#xe23;&#xe31;&#xe1a;&#xe2b;&#xe19;&#xe31;&#xe07;&#xe2a;&#xe37;&#xe2d;">
 <node CREATED="1279398062261" ID="ID_862278822" MODIFIED="1279398441948" TEXT="register: &#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe40;&#xe2d;&#xe01;&#xe2a;&#xe32;&#xe23;&#xe23;&#xe31;&#xe1a;">
@@ -1100,7 +1100,7 @@
 </node>
 </node>
 <node CREATED="1302489811362" ID="ID_1281252312" MODIFIED="1302489816029" TEXT="ws">
-<node CREATED="1302511963798" ID="ID_1938803349" MODIFIED="1302511968793" TEXT="role: a"/>
+<node CREATED="1302511963798" ID="ID_1938803349" MODIFIED="1316508004565" TEXT="role: x"/>
 </node>
 <node CREATED="1275752678377" FOLDED="true" ID="ID_1348489452" MODIFIED="1315275849892" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275752688167" ID="ID_229996461" MODIFIED="1275752690948" TEXT="role:a"/>

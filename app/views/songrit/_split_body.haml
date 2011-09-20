@@ -6,18 +6,16 @@
     / /header
     %div{"data-role" => "content"}
       %img{:src => "/images/explorer.jpg", :style => "width:100%;"}/
-    / /content
-    %div{"data-id" => "ew-footer", "data-position" => "fixed", "data-role" => "footer"}
-      %div{"data-role" => "navbar"}
-        %ul
-          %li
-            %a.ui-btn-active{"data-transition" => "slideup", :href => "#main"} Main
-          %li
-            %a{"data-transition" => "slideup", :href => "#demo"} Demos
-      / /navbar
-      %h2 Engineworks &copy CS8
-    / /footer
   / /page
+  / Search page
+  #search{"data-role" => "page"}
+    %div{"data-role" => "header"}
+      %h1 ค้นหา
+    / /header
+    %div{"data-role" => "content"}
+      - form_tag(:controller=>"main", :action=>"search") do
+        = text_field_tag :q
+        = submit_tag "ค้นหา", "data-inline"=>"true"
   / Start of 5th page
   #aboutus{"data-role" => "page"}
     %div{"data-role" => "header"}

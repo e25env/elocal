@@ -1,7 +1,11 @@
-- if office_office?
-  %div(style='float:right')
-    =image_tag 'add.png'
+%div(style='float:right')
+  - if office_office?
+    = image_tag 'add.png'
     = link_to align_text('เพิ่มรถ'), "/run/office/add_car"
+  = image_tag 'car.png'
+  = link_to align_text('ขอใช้รถ'), "/run/starter/car"
+  = image_tag 'car_delete.png'
+  = link_to align_text('ยกเลิกคำขอใช้รถ'), "/run/starter/car_cancel"
 %table{:class=>'budget_table', :width=>"100%"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
     - if office_office?

@@ -4,6 +4,10 @@
     %meta(name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1")
     = stylesheet_link_tag "jquery.mobile-1.0a4.1", "jquery.mobile.splitview", "jquery.mobile.scrollview"
     = stylesheet_link_tag "sarabun", "elocal"
+  :ruby
+    @org= Org.last
+    #@title = "#{@org.otype}#{@org.name}"
+    @title = "ระบบสารสนเทศ อปท."
   %body
     = render :partial=>"songrit/split_menu"
     = render :partial=>"songrit/split_body"

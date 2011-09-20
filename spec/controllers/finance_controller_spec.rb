@@ -4,6 +4,7 @@ describe FinanceController do
   integrate_views
 
   it "show sample financial reports" do
+    # User.should_receive(:find).and_return(mock_model(User))
     get :daily_print
     get :trial
     get :income
