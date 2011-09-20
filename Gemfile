@@ -25,7 +25,8 @@ gem "prawn"
 # gem "aaronchi-jrails"
 group :development do
   gem "ruby-debug", :platform=>:ruby
-  gem "rails-footnotes"
+  # rails-footnotes conflicts with splitview
+  # gem "rails-footnotes"
   gem "rspec", "1.3.1"
   gem "rspec-rails", "1.3.3"
   gem "hirb-unicode"

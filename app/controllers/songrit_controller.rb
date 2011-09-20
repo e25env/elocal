@@ -7,7 +7,10 @@ class SongritController < ApplicationController
   require "rest_client"
   require 'nokogiri'
   # require 'mechanize'
-  
+
+def split
+  render :layout => false 
+end
   def fix_sub_districts
     # remove ตำบล
     SubDistrict.all.each do |s|

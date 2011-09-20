@@ -2,7 +2,7 @@
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node CREATED="1273819432637" ID="ID_1098419600" MODIFIED="1279699253278" TEXT="elocal">
 <node CREATED="1273819462973" ID="ID_282419531" MODIFIED="1298456465253" POSITION="right" TEXT="services">
-<node CREATED="1275756501221" ID="ID_1720745721" MODIFIED="1315286514346" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
+<node CREATED="1275756501221" FOLDED="true" ID="ID_1720745721" MODIFIED="1315920665799" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
 <node CREATED="1278491598711" ID="ID_1662699954" MODIFIED="1278491602025" TEXT="role:m"/>
 <node CREATED="1293332713220" FOLDED="true" ID="ID_1765957683" MODIFIED="1295163365395" TEXT="new_message: &#xe2a;&#xe48;&#xe07;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
 <node CREATED="1293332729817" ID="ID_604745038" MODIFIED="1293332758567" TEXT="enter: &#xe1e;&#xe34;&#xe21;&#xe1e;&#xe4c;&#xe02;&#xe49;&#xe2d;&#xe04;&#xe27;&#xe32;&#xe21;">
@@ -69,7 +69,7 @@
 </node>
 <node CREATED="1315279347164" ID="ID_1920802457" MODIFIED="1315279351661" TEXT="starter: y"/>
 </node>
-<node CREATED="1315275739916" ID="ID_846556601" MODIFIED="1315285912616" TEXT="starter:&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;">
+<node CREATED="1315275739916" FOLDED="true" ID="ID_846556601" MODIFIED="1315920663791" TEXT="starter:&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;">
 <node CREATED="1315275854104" ID="ID_615571821" MODIFIED="1315275867828" TEXT="starter: y"/>
 <node CREATED="1315355116058" ID="ID_1354089656" MODIFIED="1315355148661" TEXT="link: &#xe04;&#xe39;&#xe48;&#xe21;&#xe37;&#xe2d;&#xe23;&#xe30;&#xe1a;&#xe1a;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;: /main/doc_edoc"/>
 <node CREATED="1315283113094" ID="ID_633060024" MODIFIED="1315283126946" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;: /starter"/>
@@ -1180,7 +1180,7 @@
 </node>
 <node CREATED="1284768073186" ID="ID_1531359078" MODIFIED="1284768100870" TEXT="link: &#xe2a;&#xe23;&#xe49;&#xe32;&#xe07;&#xe2a;&#xe48;&#xe27;&#xe19;&#xe2a;&#xe33;&#xe2b;&#xe23;&#xe31;&#xe1a;&#xe07;&#xe1a;&#xe1b;&#xe23;&#xe30;&#xe21;&#xe32;&#xe13;: /admin/gen_fsection"/>
 </node>
-<node CREATED="1273706796854" ID="ID_1003882979" MODIFIED="1315907302475" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
+<node CREATED="1273706796854" FOLDED="true" ID="ID_1003882979" MODIFIED="1316070864497" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
 <node CREATED="1273706824535" ID="ID_682167045" MODIFIED="1278500871367" TEXT="link: update app: /gma/update_app"/>
 <node CREATED="1315239767885" ID="ID_191614863" MODIFIED="1315239781578" TEXT="link: update services: /gma/update_services"/>
