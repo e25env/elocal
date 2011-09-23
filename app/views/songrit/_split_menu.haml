@@ -6,8 +6,9 @@
       %ul{"data-role" => "listview", "data-theme" => "g"}
         %li
           %a{"data-panel" => "main", :href => "#search"} ค้นหา
-        %li
-          %a{:href=>"#login", "data-rel"=>"dialog", "data-panel" => "main"} Login
+        - unless login?
+          %li
+            %a{:href=>"#login", "data-rel"=>"dialog", "data-panel" => "main"} Login
         - @amodules.each do |m|
           %li
             = m.name
@@ -19,78 +20,19 @@
                   - next if (!eval(s.rule))
                 - unless s.role.blank?
                   - next unless current_user.role.upcase.split(',').include?(s.role.upcase)
-                - confirm= get_option_xml("confirm", xml)
-                
+                - @confirm= get_option_xml("confirm", xml) ? {:onclick=>"return confirm('กรุณายืนยัน');"} : {}
                 %li
                   - if s.code.downcase=="link"
                     - name, url = s.name.split(":")
                   - else
                     - name= s.name; url= "/run/#{s.module}/#{s.code}"
-                  %a{"data-panel"=>"main", :href=>url}= name
+                  %a{{"data-panel"=>"main", :href=>url}.merge(@confirm)}= name
         %li
-          การเดินทาง
+          ทดสอบ
           %ul
             %li
-              %a{"data-panel" => "main", :href => "/songrit/aboutus", :onclick=>"return confirm('กรุณายืนยัน');"} ทดสอบ confirm
+              %a{{"data-panel" => "main", :href => "/songrit/aboutus"}.merge(@confirm)} ทดสอบ confirm
             %li
               %a{"data-panel" => "main", :href => "#aboutsv"} Beach Resorts
             %li
               %a{"data-panel" => "main", :href => "#credits"} City
-        %li
-          Accommodation
-          %ul
-            %li
-              %a{"data-panel" => "main", :href => "/main/aboutus"} Hotels
-            %li
-              %a{"data-panel" => "main", :href => "#aboutsv"} Beach Resorts
-            %li
-              %a{"data-panel" => "main", :href => "#credits"} City
-        %li
-          Attractions
-          %ul
-            %li
-              %a{"data-panel" => "main", :href => "#context"} Beaches
-            %li
-              %a{"data-panel" => "main", :href => "#panels"} Scuba Diving
-            %li
-              %a{"data-panel" => "main", :href => "#orientation"} Spa
-            %li
-              %a{"data-panel" => "main", :href => "#scroll"} Heritage / Religious
-            %li
-              %a{"data-panel" => "main", :href => "#scroll"} Shopping
-            %li
-              %a{"data-panel" => "main", :href => "#scroll"} Nightlife
-        %li
-          Restaurants
-          %ul
-            %li
-              %a{"data-panel" => "main", :href => "#context"} Thai
-            %li
-              %a{"data-panel" => "main", :href => "#panels"} Continental
-            %li
-              %a{"data-panel" => "main", :href => "#orientation"} Phuket
-        %li
-          Patong
-          %ul
-            %li
-              %a{"data-panel" => "main", :href => "#context"} Beaches
-            %li
-              %a{"data-panel" => "main", :href => "#panels"} Scuba Diving
-            %li
-              %a{"data-panel" => "main", :href => "#orientation"} Spa
-            %li
-              %a{"data-panel" => "main", :href => "#scroll"} Heritage / Religious
-        %li
-          Event
-          %ul
-            %li
-              %a{"data-panel" => "main", :href => "#context"} Beaches
-            %li
-              %a{"data-panel" => "main", :href => "#panels"} Scuba Diving
-            %li
-              %a{"data-panel" => "main", :href => "#orientation"} Spa
-            %li
-              %a{"data-panel" => "main", :href => "#scroll"} Heritage / Religious
-        %li
-          %a{"data-panel" => "main", :href => "#source"} About Us
-
