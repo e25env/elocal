@@ -16,6 +16,16 @@
       - form_tag(:controller=>"main", :action=>"search") do
         = text_field_tag :q, "", "type"=>"search"
         = submit_tag "ค้นหา", "data-inline"=>"true"
+  / Login
+  #login{"data-role" => "page", "data-rel"=>"dialog"}
+    %div{"data-role" => "header", "data-backbtn" => "false"}
+      %h1 ค้นหา
+    / /header
+    %div{"data-role" => "content"}
+      %a(href="#search" data-rel="dialog") search
+      - form_tag(:controller=>"main", :action=>"search") do
+        = text_field_tag :q, "", "type"=>"search"
+        = submit_tag "ค้นหา", "data-inline"=>"true"
   / Start of 5th page
   #aboutus{"data-role" => "page"}
     %div{"data-role" => "header"}

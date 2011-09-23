@@ -1,16 +1,37 @@
 %div{"data-context" => "a#default", "data-hash" => "crumbs", "data-id" => "menu", "data-role" => "panel"}
   #main{"data-role" => "page"}
-    %div{"data-backbtn" => "false", "data-role" => "header", "data-theme" => "b"}
+    %div{"data-role" => "header", "data-theme" => "b", "data-backbtn"=>"false"}
       %h1= @title
     %div{"data-role" => "content"}
       %ul{"data-role" => "listview", "data-theme" => "g"}
         %li
           %a{"data-panel" => "main", :href => "#search"} ค้นหา
         %li
+          %a{:href=>"#login", "data-rel"=>"dialog", "data-panel" => "main"} Login
+        - @amodules.each do |m|
+          %li
+            = m.name
+            %ul
+              - m.gma_services.each do |s|
+                - next unless s.listed
+                - xml= REXML::Document.new(s.xml).root
+                - unless s.rule.blank?
+                  - next if (!eval(s.rule))
+                - unless s.role.blank?
+                  - next unless current_user.role.upcase.split(',').include?(s.role.upcase)
+                - confirm= get_option_xml("confirm", xml)
+                
+                %li
+                  - if s.code.downcase=="link"
+                    - name, url = s.name.split(":")
+                  - else
+                    - name= s.name; url= "/run/#{s.module}/#{s.code}"
+                  %a{"data-panel"=>"main", :href=>url}= name
+        %li
           การเดินทาง
           %ul
             %li
-              %a{"data-panel" => "main", :href => "/songrit/aboutus"} Hotels
+              %a{"data-panel" => "main", :href => "/songrit/aboutus", :onclick=>"return confirm('กรุณายืนยัน');"} ทดสอบ confirm
             %li
               %a{"data-panel" => "main", :href => "#aboutsv"} Beach Resorts
             %li
