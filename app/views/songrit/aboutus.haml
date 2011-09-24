@@ -1,7 +1,4 @@
 %div{"data-role" => "page", "data-cache"=>"never"}
-  %div{"data-role" => "header" , "data-backbtn"=>"false"}
-    %h1 About Us
-  / /header
   %div{"data-role" => "content"}
     %h3 Sample Form
     - fields_for :account do |f|
@@ -13,16 +10,5 @@
         %tr
           %td(colspan="3")
             = f.submit "บันทึกรายการ"
-    
-    %p We're a bunch of guys who love to code. Ruby on Rails, Wordpress, Drupal, and OpenERP - we love 'em all... and we'll soon be introducing our own open-source project, based on jQueryMobile, and Ruby on Rails.
-    %p
-      So stay tuned, check back here often, or follow us on facebook or twitter! details below:
-    %p
-      %b Twitter:
-      asyraf9
-    %p
-      %b Facebook:
-      asyraf9
-    %p
-      %b Website:
-      %a{:href => "http://www.cs8.my"} www.cs8.my
+  %div{"data-role" => "header" , "data-backbtn"=>"false"}
+    %h1 ทดสอบ

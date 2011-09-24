@@ -1,3 +1,4 @@
+= render :partial=> "setup_layout_vars"
 %div{"data-context" => "a#default", "data-hash" => "crumbs", "data-id" => "menu", "data-role" => "panel"}
   #main{"data-role" => "page"}
     %div{"data-role" => "header", "data-theme" => "b", "data-backbtn"=>"false"}
@@ -27,6 +28,8 @@
                   - else
                     - name= s.name; url= "/run/#{s.module}/#{s.code}"
                   %a{{"data-panel"=>"main", :href=>url}.merge(@confirm)}= name
+        %li
+          %a{"data-panel" => "main", :href => "#about"} เกี่ยวกับ ELOCAL
         %li
           ทดสอบ
           %ul
