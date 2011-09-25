@@ -4,7 +4,6 @@
     %meta(name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1")
     = stylesheet_link_tag "jquery.mobile-1.0a4.1", "jquery.mobile.splitview", "jquery.mobile.scrollview"
     = stylesheet_link_tag "elocal", "sarabun"
-    /= stylesheet_link_tag "sarabun", "elocal"
   %body
     = render :partial => "menu"
     %div{"data-id" => "main", "data-role" => "panel", "data-backbtn"=>"false"}
@@ -19,6 +18,6 @@
       page.remove();
     };
   });
-  $('.ui-content').css('font-family','TH SarabunPSK');
-  $('.ui-content').css('font-size','150%');
+  /* $('.ui-content').css('font-family','TH SarabunPSK'); */
+  /* $('.ui-content').css('font-size','150%'); */
   
