@@ -1,0 +1,5 @@
+%div{"data-role" => "page", "data-cache"=>"never"}
+  %div{"data-role" => "header" , "data-backbtn"=>"false"}
+    %h1= @title || 'ELOCAL'
+  %div{"data-role" => "content"}
+    = yield

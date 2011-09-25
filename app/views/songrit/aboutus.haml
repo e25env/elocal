@@ -1,14 +1,10 @@
-%div{"data-role" => "page", "data-cache"=>"never"}
-  %div{"data-role" => "content"}
-    %h3 Sample Form
-    - fields_for :account do |f|
-      %table(width="100%")
-        %tr
-          %td(class="field-name")รหัสบัญชี
-          %td(colspan="2")
-            = f.text_field :code_dla, :style => "width:300px;"
-        %tr
-          %td(colspan="3")
-            = f.submit "บันทึกรายการ"
-  %div{"data-role" => "header" , "data-backbtn"=>"false"}
-    %h1 ทดสอบ
+%h3 Sample Form
+- fields_for :account do |f|
+  %table(width="100%")
+    %tr
+      %td(class="field-name")รหัสบัญชี
+      %td(colspan="2")
+        = f.text_field :code_dla, :style => "width:300px;"
+    %tr
+      %td(colspan="3")
+        = f.submit "บันทึกรายการ"

@@ -1,0 +1,41 @@
+= render :partial=> "setup_layout_vars"
+%div{"data-context" => "a#default", "data-hash" => "crumbs", "data-id" => "menu", "data-role" => "panel"}
+  #main{"data-role" => "page"}
+    %div{"data-role" => "header", "data-theme" => "b", "data-backbtn"=>"false"}
+      %h1= @title
+    %div{"data-role" => "content"}
+      %ul{"data-role" => "listview", "data-theme" => "g"}
+        %li
+          %a{"data-panel" => "main", :href => "#search"} ค้นหา
+        - unless login?
+          %li
+            %a{:href=>"#login", "data-rel"=>"dialog", "data-panel" => "main"} Login
+        - @amodules.each do |m|
+          %li
+            = m.name
+            %ul
+              - m.gma_services.each do |s|
+                - next unless s.listed
+                - xml= REXML::Document.new(s.xml).root
+                - unless s.rule.blank?
+                  - next if (!eval(s.rule))
+                - unless s.role.blank?
+                  - next unless current_user.role.upcase.split(',').include?(s.role.upcase)
+                - @confirm= get_option_xml("confirm", xml) ? {:onclick=>"return confirm('กรุณายืนยัน');"} : {}
+                %li
+                  - if s.code.downcase=="link"
+                    - name, url = s.name.split(":")
+                  - else
+                    - name= s.name; url= "/run/#{s.module}/#{s.code}"
+                  %a{{"data-panel"=>"main", :href=>url}.merge(@confirm)}= name
+        %li
+          %a{"data-panel" => "main", :href => "#about"} เกี่ยวกับ ELOCAL
+        %li
+          ทดสอบ
+          %ul
+            %li
+              %a{{"data-panel" => "main", :href => "/songrit/aboutus"}.merge(@confirm)} ทดสอบ confirm
+            %li
+              %a{"data-panel" => "main", :href => "#aboutsv"} Beach Resorts
+            %li
+              %a{"data-panel" => "main", :href => "#credits"} City

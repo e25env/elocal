@@ -2,14 +2,18 @@ class MainController < ApplicationController
   # require "open-uri"
   # require "hpricot"
 
+  def home
+    render :layout => false 
+  end
   def index
     update_intranet_ip
-    if params[:module]
-      session[:module]= params[:module]
-      redirect_to :controller=>params[:module]
-    else
-      redirect_to :action => "pending"
-    end
+    # if params[:module]
+    #   session[:module]= params[:module]
+    #   redirect_to :controller=>params[:module]
+    # else
+    #   redirect_to :action => "pending"
+    # end
+      redirect_to :action => "home"
   end
   def store_asset
     if params[:content]

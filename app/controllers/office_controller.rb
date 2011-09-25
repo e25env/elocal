@@ -5,6 +5,7 @@ class OfficeController < ApplicationController
     redirect_to :action=> :doc_report
   end
   def doc_report
+    @title = "รายงานสารบรรณ"
     respond_to do |format|
       format.html { @docs= Doc.paginate :page=>params[:page], :order => "created_at DESC" }
       # format.pdf { @docs= Doc.all :order => "created_at DESC" }
