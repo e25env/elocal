@@ -1,4 +1,4 @@
-%h3= "ผลการค้นหา #{@q}"
+/%h3= "ผลการค้นหา #{@q}"
 = will_paginate @docs, :class=>'flickr_pagination', :params=>{:q=>@q}
 /= will_paginate @xmains, :class=>'flickr_pagination', :params=>{:q=>@q}
 

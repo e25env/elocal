@@ -33,11 +33,13 @@ class MainController < ApplicationController
   end
   def status
     @xmain= GmaXmain.find params[:id]
+    @title= "สถานะการดำเนินงานเลขที่ #{params[:id]} #{@xmain.name}"
+    @backbtn= true
     @xvars= @xmain.xvars
-#    flash.now[:notice]= "รายการ #{@xmain.id} ได้ถูกยกเลิกแล้ว" if @xmain.status=='X'
-    flash.now[:notice]= "transaction #{@xmain.id} was cancelled" if @xmain.status=='X'
+    flash.now[:notice]= "รายการ #{@xmain.id} ได้ถูกยกเลิกแล้ว" if @xmain.status=='X'
+    # flash.now[:notice]= "transaction #{@xmain.id} was cancelled" if @xmain.status=='X'
   rescue
-    flash[:notice]= "could not find transaction id <b> #{params[:id]} </b>"
+    flash[:notice]= "ขออภัย ไม่สามารถค้นหางานเลขที่ <b> #{params[:id]} </b>"
     redirect_to_root
   end
   def help
@@ -47,17 +49,15 @@ class MainController < ApplicationController
     @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at", :include=>:gma_runseqs
   end
   def search
-    if params[:q]
-      @q = params[:q]
-      do_search
-    elsif params[:gma_search]
-      @q = params[:gma_search][:q]
-      s= GmaSearch.new params[:gma_search]
-      s.ip= request.env["REMOTE_ADDR"]
-      s.save
-      do_search
-    else
+    @q = params[:q] || params[:gma_search][:q] || ""
+    @title = "ผลการค้นหา #{@q}"
+    @backbtn= true
+    @cache= true
+    if @q.blank?
       redirect_to "/"
+    else
+      s= GmaSearch.create :q=>@q, :ip=> request.env["REMOTE_ADDR"]
+      do_search
     end
   end
   def do_search
