@@ -11,20 +11,15 @@ class UsersController < ApplicationController
       gma_log "SECURITY", "user #{params[:login]} log in failure"
       flash[:notice]= "ขออภัย รหัสไม่ถูกต้อง"
     end
-#    redirect_to_root
-    redirect_to request.referrer
+    # redirect_to request.referrer
+    # redirect_to :controller=>'main', :action => "pending"
   end
   def logout
-#    user= GmaUser.find session[:user_id]
-#    gma_log "LOGOUT", "user #{user.login}(#{user.id}) logged out"
+#    gma_log "LOGOUT", "user #{current_user.login}: #{current_user.id} logged out"
     session[:user_id]= nil
     $user_id= anonymous.id
-    if (session[:module] != 'waypoint') && (session[:module] != 'trip')
-      session[:module] = 'waypoint'
-      redirect_to_root
-    else
-      redirect_to request.referrer
-    end
+    # redirect_to :controller => "main", :action => "about"
+    render :text=>"<script>window.location.assign('/main/home');</script>", :layout => true 
   end
   def new
     @title= "Register New User"

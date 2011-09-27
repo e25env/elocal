@@ -25,3 +25,8 @@
         :style=>'border:none; float:none;'),                                          |
         {:controller=>'engine', :action=>'cancel', :id=>xmain.id, :return=>url_for},  |
         :confirm=>"confirm?"                                                          |
+:javascript
+  //$('a[href=#login]').parent().parent().parent().hide()
+  //$('h1[elocal=username]').text('#{current_user.login}')
+  window.location.replace('/main/home');
+  

@@ -2,14 +2,17 @@
 %div{"data-context" => "a#default", "data-hash" => "crumbs", "data-id" => "menu", "data-role" => "panel"}
   #main{"data-role" => "page"}
     %div{"data-role" => "header", "data-theme" => "b", "data-backbtn"=>"false"}
-      %h1 ELOCAL
+      - if login?
+        %h1= current_user.login
+      - else
+        %h1 ELOCAL
     %div{"data-role" => "content"}
       %ul{"data-role" => "listview", "data-theme" => "g"}
         %li
           %a{"data-panel" => "main", :href => "#search"} ค้นหา
         - unless login?
           %li
-            %a{:href=>"#login", "data-rel"=>"dialog", "data-panel" => "main"} Login
+            %a{:href=>"#login", "data-rel"=>"dialog", "data-panel" => "main"} เข้าใช้ระบบ
         - @amodules.each do |m|
           %li
             = m.name
@@ -27,9 +30,12 @@
                     - name, url = s.name.split(":")
                   - else
                     - name= s.name; url= "/run/#{s.module}/#{s.code}"
-                  %a{{"data-panel"=>"main", :href=>url}.merge(@confirm)}= name
+                  %a{{"data-panel"=>"main", :onclick=>"location.hash="+url}.merge(@confirm)}= name
         %li
           %a{"data-panel" => "main", :href => "#about"} เกี่ยวกับ ELOCAL
+        - if login?
+          %li
+            %a{"data-panel" => "main", :href => "/users/logout"} ออกจากระบบ
         %li
           ทดสอบ
           %ul

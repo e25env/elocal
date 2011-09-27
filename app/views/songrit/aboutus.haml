@@ -8,3 +8,14 @@
     %tr
       %td(colspan="3")
         = f.submit "บันทึกรายการ"
+:javascript
+  $(function() {
+    var msg= "สวัสดีครับ นี่เป็นการทดสอบ 555";
+    $("<div class='ui-loader ui-overlay-shadow ui-body-e ui-corner-all'><h1>"+ msg +"</h1></div>")
+      .css({ "display": "block", "opacity": 0.96, "top": $(window).scrollTop() + 100 })
+  		.appendTo( $.mobile.pageContainer )
+  		.delay( 4000 )
+  		.fadeOut( 400, function(){
+  		  $(this).remove();
+  		});
+  })

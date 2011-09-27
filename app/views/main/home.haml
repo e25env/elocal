@@ -7,10 +7,15 @@
   %body
     = render :partial => "menu"
     %div{"data-id" => "main", "data-role" => "panel", "data-backbtn"=>"false"}
+      - if login?
+        = render :partial => "pending"
       = render :partial => "about"
       = render :partial => "static"
     = javascript_include_tag "jquery-1.6.1.min"
-    = javascript_include_tag "jquery.mobile.splitview", "jquery.mobile-1.0a4.1", "jquery.easing.1.3", "jquery.mobile.scrollview"
+    = javascript_include_tag "jquery.mobile.splitview"
+    = javascript_include_tag "elocal"
+    = javascript_include_tag "jquery.mobile-1.0a4.1"
+    = javascript_include_tag "jquery.easing.1.3", "jquery.mobile.scrollview"
 :javascript
   $('div').live('pagehide', function(e,ui) {
     var page = $(e.target);
@@ -18,6 +23,4 @@
       page.remove();
     };
   });
-  /* $('.ui-content').css('font-family','TH SarabunPSK'); */
-  /* $('.ui-content').css('font-size','150%'); */
   

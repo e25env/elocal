@@ -6,7 +6,7 @@ class MainController < ApplicationController
     render :layout => false 
   end
   def index
-    update_intranet_ip
+    # update_intranet_ip
     # if params[:module]
     #   session[:module]= params[:module]
     #   redirect_to :controller=>params[:module]
@@ -14,6 +14,9 @@ class MainController < ApplicationController
     #   redirect_to :action => "pending"
     # end
       redirect_to :action => "home"
+  end
+  def about
+    render :layout => false 
   end
   def store_asset
     if params[:content]
