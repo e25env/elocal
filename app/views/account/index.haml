@@ -1,10 +1,12 @@
-%h3= @u.full_name
 %style
   td.field-name {width:100px;}
 %table(width="100%")
   %tr
     %td(class="field-name") รหัสผู้ใช้
     %td(colspan="2")= @u.login
+  %tr
+    %td(class="field-name") ชื่อ
+    %td(colspan="2")= @u.full_name
   %tr
     %td(class="field-name") ตำแหน่ง
     %td(colspan="2")= @u.position

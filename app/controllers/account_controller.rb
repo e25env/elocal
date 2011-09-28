@@ -39,5 +39,6 @@ class AccountController < ApplicationController
   end
   def index
     @u= current_user
+    @title= @u.full_name
   end
 end
