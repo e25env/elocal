@@ -3,7 +3,7 @@
     %h1 ค้นหา
   %div{"data-role" => "content"}
     - form_tag({:controller=>"main", :action=>"search"}, :method => "get" ) do
-      = text_field_tag :q, "", :type=>"search", :required=>true
+      = text_field_tag :q, "", :type=>"search", :required=>true, :placeholder=>"ใส่ข้อความ เลขที่หนังสือ หรือวันที่"
       = submit_tag "ค้นหา", "data-inline"=>"true"
     = link_to "ปรับปรุงหน้าจอ", "#", :onclick=>"window.location.replace('/main/home')", "data-role"=>"button"
 #new-user{"data-role" => "page", "data-rel"=>"dialog"}
