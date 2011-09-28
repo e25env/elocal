@@ -44,7 +44,7 @@ class EngineController < ApplicationController
       if ['F', 'X'].include? @xmain.status
         redirect_to_root
       else
-        @title= "xmain id #{@xmain.id}: #{@xmain.name}"
+        @title= "รหัสดำเนินการ #{@xmain.id}: #{@xmain.name} / #{@runseq.name}"
         service= @xmain.gma_service
         if service
           f= "app/views/#{service.module}/#{service.code}/#{@runseq.code}.rhtml"
