@@ -30,7 +30,7 @@
                     - name, url = s.name.split(":")
                   - else
                     - name= s.name; url= "/run/#{s.module}/#{s.code}"
-                  %a{{"data-panel"=>"main", :onclick=>"location.hash="+url}.merge(@confirm)}= name
+                  %a{{"data-panel"=>"main", :onclick=>"location.hash='"+url.strip+"'"}.merge(@confirm)}= name
         %li
           %a{"data-panel" => "main", :href => "#about"} เกี่ยวกับ ELOCAL
         - if login?
