@@ -212,11 +212,11 @@
         function popoverBtn(header) {
           if(!header.children('.popover-btn').length){
             if(header.children('a.ui-btn-left').length){
-              header.children('a.ui-btn-left').replaceWith('<a class="popover-btn">Navigation</a>');
+              header.children('a.ui-btn-left').replaceWith('<a class="popover-btn">คำสั่ง</a>');
               header.children('a.popover-btn').addClass('ui-btn-left').buttonMarkup();
             }
             else{
-              header.prepend('<a class="popover-btn">Navigation</a>');
+              header.prepend('<a class="popover-btn">คำสั่ง</a>');
               header.children('a.popover-btn').addClass('ui-btn-left').buttonMarkup()          
             }
           }
