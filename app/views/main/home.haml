@@ -8,7 +8,7 @@
     = render :partial => "menu"
     %div{"data-id" => "main", "data-role" => "panel", "data-backbtn"=>"false"}
       - if login?
-        = render :partial => "pending"
+        = render :partial => "pending_home"
       = render :partial => "about"
       = render :partial => "static"
     /= javascript_include_tag "jquery-1.6.1.min"

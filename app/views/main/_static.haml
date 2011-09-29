@@ -5,6 +5,9 @@
     - form_tag({:controller=>"main", :action=>"search"}, :method => "get" ) do
       = text_field_tag :q, "", :type=>"search", :required=>true, :placeholder=>"ใส่ข้อความ เลขที่หนังสือ หรือวันที่", :onkeypress=>"$('input').unbind('keypress');"
       = submit_tag "ค้นหา", "data-inline"=>"true"
+    - form_tag({:controller=>"main", :action=>"status"}, :method => "get" ) do
+      = text_field_tag :id, nil, :required=>true, :placeholder=>"ใส่เลขที่งาน", :onkeypress=>"$('input').unbind('keypress');"
+      = submit_tag "ตรวจสอบสถานะ", "data-inline"=>"true"
     = link_to "งานที่อยู่ระหว่างดำเนินการ", "#", :onclick=>"location.hash='/main/pending'", "data-role"=>"button"
     = link_to "ปรับปรุงหน้าจอ", "#", :onclick=>"window.location.replace('/main/home')", "data-role"=>"button"
     = link_to "เกี่ยวกับ ELOCAL", "#", :onclick=>"location.hash='#about'", "data-role"=>"button"

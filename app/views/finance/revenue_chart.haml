@@ -1,3 +1,4 @@
+- @backbtn= true
 /- render_chart_html '/FusionCharts/StackedColumn2D.swf', '/data/revenue_chart.xml', '', 'myFirstHTML', 600, 400, false
 = javascript_include_tag "rgraph/RGraph.common.core.js"
 = javascript_include_tag "rgraph/RGraph.common.annotate.js"
@@ -6,8 +7,7 @@
 
 %canvas(id="bar5" width="600" height="300") [No canvas support]
 :javascript
-  window.onload = function ()
-  {
+  $( "div[data-url='/finance/revenue_chart']" ).bind( 'pagecreate',function(event, ui){
     var bar5 = new RGraph.Bar('bar5', [[827,740,1530], [129,1150, 2150], [255,1250,1810], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0], [0,0,0]]);
     bar5.Set('chart.text.font', 'TH SarabunPSK');
     bar5.Set('chart.text.size', 14);
@@ -43,5 +43,4 @@
     }
     
     bar5.Draw();
-  
-  }
+  });

@@ -3,6 +3,9 @@ class MainController < ApplicationController
   # require "hpricot"
 
   def home
+    if login?
+      @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at", :include=>:gma_runseqs
+    end
     render :layout => false 
   end
   def index
