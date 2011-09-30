@@ -139,7 +139,8 @@ module Gma
     s[0]==35
   end
   def redirect_to_root
-    redirect_to root_path
+    # redirect_to root_path
+    redirect_to :controller => "main", :action => "end_action" 
   end
   def root_path
     root+"/"

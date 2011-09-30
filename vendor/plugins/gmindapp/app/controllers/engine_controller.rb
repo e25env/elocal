@@ -538,6 +538,7 @@ class EngineController < ApplicationController
     @runseq= @xmain.gma_runseqs.find @xmain.current_runseq
 #    authorize?
     @xvars[:current_step]= @runseq.rstep
+    @xvars[:referrer]= request.referrer
     session[:xmain_id]= @xmain.id
     session[:runseq_id]= @runseq.id
     unless params[:action]=='run_call'

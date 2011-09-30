@@ -16,7 +16,10 @@ class MainController < ApplicationController
     # else
     #   redirect_to :action => "pending"
     # end
-      redirect_to :action => "home"
+    redirect_to :action => "home"
+  end
+  def end_action
+    redirect_to :action=> "pending"
   end
   def about
     render :layout => false 
