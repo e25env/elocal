@@ -65,7 +65,8 @@ class GmaController < ApplicationController
   end
   def update_services
     @title= "Git Pull & Update Services from Mindmap"
-    @t = [cancel_pending_xmains]
+    @t= [""]
+    # @t = [cancel_pending_xmains]
     @t << exec_cmd("cd #{Rails.root} && git pull github master && bundle && bundle exec rake db:migrate").gsub("\n","<br/>")
     @t << process_roles
     @t << process_services
