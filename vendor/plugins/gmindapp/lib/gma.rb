@@ -672,8 +672,10 @@ module ActionView
       def date_field(method, options = {})
         data_options= ({"mode"=>"calbox"}).merge(options)
         %Q(<input name='#{self.object_name}[#{method}]' id='#{self.object_name}_#{method}' type='date' data-role='datebox' data-options='#{data_options.to_json}'>)
-        # options.merge! "data-role"=>"datebox"
-        # InstanceTag.new(object_name, method, self, options.delete(:object)).to_input_field_tag("date", options)
+      end
+      def time_field(method, options = {})
+        data_options= ({"mode"=>"timebox"}).merge(options)
+        %Q(<input name='#{self.object_name}[#{method}]' id='#{self.object_name}_#{method}' type='date' data-role='datebox' data-options='#{data_options.to_json}'>)
       end
       def date_select_thai(method, default= Time.now, disabled=false)
         date_select method, :default => default, :use_month_names=>THAI_MONTHS, :order=>[:day, :month, :year], :disabled=>disabled

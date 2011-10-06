@@ -23,10 +23,10 @@
   <%= f.text_field :dto %>
   <%= f.label :subject, "เรื่อง" %>
   <%= f.text_field :subject %>
-  <div data-role='fieldcontain'>
-    <%= f.label :process_at, "วัน/เวลา ที่รับ" %>
-    <%= f.datetime_select_thai :process_at %>
-  </div>
+  <%= f.label :process_at, "วันที่รับ" %>
+  <%= f.date_field :process_at %>
+  <%= f.label :process_at, "เวลาที่รับ" %>
+  <%= f.time_field :process_at_time %>
   <%= f.label :summary, "สรุป" %>
   <%= f.text_area :summary, :cols=>50, :rows=>6 %>
   <%= f.label :dscan, "เอกสารสแกน" %>
