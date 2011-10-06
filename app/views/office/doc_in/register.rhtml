@@ -1,6 +1,5 @@
 <%
-  doc = Doc.new
-  doc.rnum = songrit :rnum
+  doc = Doc.new :issue_on=> Date.today, :process_at => Time.now, :rnum => songrit(:rnum)
 %>
 <% fields_for doc do |f| %>
   <%= f.label :rnum, "เลขที่ทะเบียนรับ" %>
@@ -25,7 +24,7 @@
   <%= f.text_field :subject %>
   <%= f.label :process_at, "วันที่รับ" %>
   <%= f.date_field :process_at %>
-  <%= f.label :process_at, "เวลาที่รับ" %>
+  <%= f.label :process_at_time, "เวลาที่รับ" %>
   <%= f.time_field :process_at_time %>
   <%= f.label :summary, "สรุป" %>
   <%= f.text_area :summary, :cols=>50, :rows=>6 %>
