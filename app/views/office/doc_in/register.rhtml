@@ -15,10 +15,8 @@
   <%= f.text_field :ref %>
   <%= f.label :attach, "สิ่งที่ส่งมาด้วย" %>
   <%= f.text_field :attach %>
-  <div data-role='fieldcontain'>
-    <%= f.label :issue_on, "ลงวันที่" %>
-    <%= f.date_select_thai :issue_on %>
-  </div>
+  <%= f.label :issue_on, "ลงวันที่" %>
+  <%= f.date_field :issue_on, "blackDays"=>[0,6] %>
   <%= f.label :dfrom, "จาก" %>
   <%= f.text_field :dfrom %>
   <%= f.label :dto, "ถึง" %>

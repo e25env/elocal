@@ -2,7 +2,7 @@
 %html
   %head
     %meta(name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1")
-    = stylesheet_link_tag "jquery.mobile-1.0a4.1", "jquery.mobile.splitview", "jquery.mobile.scrollview"
+    = stylesheet_link_tag "jquery.mobile-1.0a4.1", "jquery.mobile.splitview", "jquery.mobile.scrollview", "jquery.mobile.datebox.css"
     = stylesheet_link_tag "elocal", "sarabun", "gma"
   %body
     = render :partial => "menu"
@@ -16,7 +16,7 @@
     = javascript_include_tag "jquery.mobile.splitview"
     = javascript_include_tag "elocal"
     = javascript_include_tag "jquery.mobile-1.0a4.1"
-    = javascript_include_tag "jquery.easing.1.3", "jquery.mobile.scrollview"
+    = javascript_include_tag "jquery.easing.1.3", "jquery.mobile.scrollview", "jquery.mobile.datebox"
 :javascript
   $('div').live('pagehide', function(e,ui) {
     var page = $(e.target);
