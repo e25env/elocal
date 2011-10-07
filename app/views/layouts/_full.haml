@@ -1,0 +1,42 @@
+!!! 5
+%html
+  %head
+    %meta(name="viewport" content="width=device-width, minimum-scale=1, maximum-scale=1")
+    = stylesheet_link_tag "jquery.mobile-1.0a4.1", "jquery.mobile.splitview", "jquery.mobile.scrollview", "jquery.mobile.datebox.css"
+    = stylesheet_link_tag "elocal", "sarabun", "gma"
+  %body
+    = render :partial => "menu"
+    %div{"data-id" => "main", "data-role" => "panel", "data-backbtn"=>"false"}
+
+      - if @cache
+        - cache = {}
+      - else
+        - cache = {"data-cache"=>"never"}
+      /- cache= @cache ? {} : {"data-cache"=>"never"}
+      - if @backbtn
+        - backbtn= {"data-backbtn"=>"true"}
+      - else
+        - backbtn= {"data-backbtn"=>"false"}
+      /- backbtn= @backbtn ? {"data-backbtn"=>"true"} : {"data-backbtn"=>"false"}
+      %div{{"data-role" => "page"}.merge(cache) }
+        %div{{"data-role" => "header"}.merge(backbtn)}
+          %h1= @title || 'ELOCAL'
+        %div{"data-role" => "content"}
+          = yield
+
+      = render :partial => "about"
+      = render :partial => "static"
+    /= javascript_include_tag "jquery-1.6.1.min"
+    = javascript_include_tag "jquery-1.6.2"
+    = javascript_include_tag "jquery.mobile.splitview"
+    = javascript_include_tag "elocal"
+    = javascript_include_tag "jquery.mobile-1.0a4.1"
+    = javascript_include_tag "jquery.easing.1.3", "jquery.mobile.scrollview", "jquery.mobile.datebox"
+:javascript
+  $('div').live('pagehide', function(e,ui) {
+    var page = $(e.target);
+    if(page.attr('data-cache') == 'never') {
+      page.remove();
+    };
+  });
+  

@@ -1,7 +1,6 @@
 class MainController < ApplicationController
   # require "open-uri"
   # require "hpricot"
-
   def home
     if login?
       @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at", :include=>:gma_runseqs

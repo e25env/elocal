@@ -1,15 +1,4 @@
-- if @cache
-  - cache = {}
+- if flash[:full_layout]
+  = render "layouts/full"
 - else
-  - cache = {"data-cache"=>"never"}
-/- cache= @cache ? {} : {"data-cache"=>"never"}
-- if @backbtn
-  - backbtn= {"data-backbtn"=>"true"}
-- else
-  - backbtn= {"data-backbtn"=>"false"}
-/- backbtn= @backbtn ? {"data-backbtn"=>"true"} : {"data-backbtn"=>"false"}
-%div{{"data-role" => "page"}.merge(cache) }
-  %div{{"data-role" => "header"}.merge(backbtn)}
-    %h1= @title || 'ELOCAL'
-  %div{"data-role" => "content"}
-    = yield
+  = render "layouts/page"

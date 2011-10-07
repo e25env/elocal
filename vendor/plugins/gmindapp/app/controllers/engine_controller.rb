@@ -559,6 +559,7 @@ class EngineController < ApplicationController
     @runseq.save
   end
   def end_action(next_runseq = nil)
+    flash[:full_layout]= true
     #    @runseq.status='F' unless @runseq_not_f
     @xmain.xvars= @xvars
     @xmain.status= 'R' # running
