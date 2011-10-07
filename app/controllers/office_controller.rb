@@ -331,6 +331,7 @@ class OfficeController < ApplicationController
     $xvars[:doc_id]= doc.id
     # $xvars[:action]= {:assign=>User.find_by_login('pornchai').id}
     set_songrit(:num_in, doc.rnum+1)
+    $xvars[:p][:return]= "/office/doc_report"
   end
   def create_doc_out
     doc= Doc.new $xvars[:register][:doc]

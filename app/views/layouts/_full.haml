@@ -5,7 +5,7 @@
     = stylesheet_link_tag "jquery.mobile-1.0a4.1", "jquery.mobile.splitview", "jquery.mobile.scrollview", "jquery.mobile.datebox.css"
     = stylesheet_link_tag "elocal", "sarabun", "gma"
   %body
-    = render :partial => "menu"
+    = render :partial => "main/menu"
     %div{"data-id" => "main", "data-role" => "panel", "data-backbtn"=>"false"}
 
       - if @cache
@@ -24,8 +24,8 @@
         %div{"data-role" => "content"}
           = yield
 
-      = render :partial => "about"
-      = render :partial => "static"
+      = render :partial => "main/about"
+      = render :partial => "main/static"
     /= javascript_include_tag "jquery-1.6.1.min"
     = javascript_include_tag "jquery-1.6.2"
     = javascript_include_tag "jquery.mobile.splitview"
