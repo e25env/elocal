@@ -13,8 +13,8 @@
   = link_to align_text('ผู้ป่วยโรคเอดส์'), "/social/aids", :target=>"_blank"
 %table{:class=>'budget_table', :width=>"100%"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
-    - if office_office?
-      /%th{:style=>"width:30px;"} แก้ไข
+    - if office_office? || true
+      %th{:style=>"width:30px;"} แก้ไข
       %th{:style=>"width:30px;"} ลบ
     %th(style='width:50px;') หมู่
     %th ชื่อ
@@ -23,8 +23,8 @@
   - @seniors.each do |s|
     - next unless s.person
     %tr
-      - if office_office?
-        /%td= link_to image_tag('pencil.png'), "/run/office/edit_senior/#{s.id}"
+      - if office_office? || true
+        %td= link_to image_tag('pencil.png'), "/run/office/edit_senior/#{s.id}"
         %td= link_to image_tag('cross.png'), "/run/social/rm_senior/#{s.id}", :confirm=>"กรุณายืนยัน"
       %td(align='center')= s.moo
       %td= s.person.full_name

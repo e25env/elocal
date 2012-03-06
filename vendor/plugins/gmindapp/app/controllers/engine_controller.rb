@@ -19,6 +19,7 @@ class EngineController < ApplicationController
         message = "cannot find action for xmain #{xmain.id}"
         gma_log("ERROR", message)
         flash[:notice]= message
+        gma_notice message
         redirect_to_root and return
       end
       xmain.update_attribute(:xvars, @xvars)
@@ -26,6 +27,7 @@ class EngineController < ApplicationController
       redirect_to :action=>'run', :id=>xmain.id
     else
       flash[:notice]= "ขออภัย ไม่สามารถทำงานได้"
+      gma_notice "ขออภัย ไม่สามารถทำงานได้"
       gma_log("SECURITY", "unauthorize access: #{params.inspect}")
       redirect_to_root
     end
@@ -33,6 +35,7 @@ class EngineController < ApplicationController
   def run
     init_vars(params[:id])
     if authorize?
+      # session[:full_layout]= false
       redirect_to(:action=>"run_#{@runseq.action}", :id=>@xmain.id)
     else
       redirect_to_root
@@ -50,10 +53,12 @@ class EngineController < ApplicationController
           f= "app/views/#{service.module}/#{service.code}/#{@runseq.code}.rhtml"
           @f_help= "app/views/#{service.module}/#{service.code}/#{@runseq.code}.redcloth"
           @ui= File.read(f)
+          # $xvars[:full_layout]= !ajax?(@ui)
           @message = defined?(MSG_NEXT) ? MSG_NEXT : "Next &gt;"
           #      @message = "Done" if @runseq.form_step==@xvars[:total_form_steps]
         else
           flash[:notice]= "ไม่สามารถค้นหาบริการที่ต้องการได้"
+          gma_notice "ไม่สามารถค้นหาบริการที่ต้องการได้"
           redirect_to_root
         end
       end
@@ -92,6 +97,7 @@ class EngineController < ApplicationController
     @xmain.status='E'
     @xvars[:error]= e
     flash[:notice]= "ERROR: Job Abort<br/>#{xml_text e}<hr/>"
+    gma_notice "ERROR: Job Abort<br/>#{xml_text e}<hr/>"
     end_action(nil)
   end
   def sign_form
@@ -220,6 +226,7 @@ class EngineController < ApplicationController
       eval "@xvars[:#{@runseq.code}] = url_for(:controller=>'engine', :action=>'document', :id=>@gma_doc.id)"
     else
       flash[:notice]= "ไม่สามารถค้นหาบริการที่ต้องการได้"
+      gma_notice "ไม่สามารถค้นหาบริการที่ต้องการได้"
       redirect_to_root
     end
     #display= get_option("display")
@@ -290,10 +297,6 @@ class EngineController < ApplicationController
     @runseq.status= 'R' # running
     $runseq_id= @runseq.id; $user_id= get_user.id
     set_global
-#    $xvars = @xvars
-#    $xmain = @xmain
-#    $runseq = @runseq
-#    result= eval("#{@xvars[:custom_controller]}.new.#{@runseq.code}")
     controller = Kernel.const_get(@xvars[:custom_controller]).new
     result = controller.send(@runseq.code)
     init_vars_by_runseq($runseq_id)
@@ -312,7 +315,8 @@ class EngineController < ApplicationController
     @runseq.status= 'F' #finish
     @runseq.stop= Time.now
     @runseq.save
-    flash[:notice]= "Sorry, there was some problem processing your request."
+    gma_notice "ขออภัย เกิดข้อผิดพลาดในรหัสการดำเนินงาน #{@xmain.id}"
+    # flash[:notice]= "Sorry, there was some problem processing your request."
 #    flash[:notice]= "ERROR: Job Abort xmain #{@xmain.id} runseq #{@runseq.id}<br/>#{xml_text e}<hr/>"
     gma_log("ERROR", "Job Abort xmain #{@xmain.id} runseq #{@runseq.id}<br/>#{xml_text e}<hr/>")
 #    end_action(nil)
@@ -349,6 +353,7 @@ class EngineController < ApplicationController
     @runseq.stop= Time.now
     @runseq.save
     flash[:notice]= "Sorry, there was some problem processing your request."
+    gma_notice "Sorry, there was some problem processing your request."
 #    flash[:notice]= "ERROR: Job Abort xmain #{@xmain.id} runseq #{@runseq.id}<br/>#{xml_text e}<hr/>"
     gma_log("ERROR", "Job Abort xmain #{@xmain.id} runseq #{@runseq.id}<br/>#{xml_text e}<hr/>")
 #    end_action(nil)
@@ -559,7 +564,6 @@ class EngineController < ApplicationController
     @runseq.save
   end
   def end_action(next_runseq = nil)
-    flash[:full_layout]= true
     #    @runseq.status='F' unless @runseq_not_f
     @xmain.xvars= @xvars
     @xmain.status= 'R' # running

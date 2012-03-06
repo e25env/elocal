@@ -1,9 +1,4 @@
 <% y= fiscal_year %>
-<table id="doc" width="100%">
-  <tr>
-    <td class="field-name">ปีที่ต้องการลบ</td>
-    <td><%= select_tag :fy, options_for_select([y-3,y-2,y-1,y,y+1,y+2,y+3], y) %></td>
-    <td style="width:50%;">&nbsp;</td>
-  </tr>
-</table>
+  <%= f.label :fy, "ปีที่ต้องการลบ" %>
+  <%= select_tag :fy, options_for_select([y-3,y-2,y-1,y,y+1,y+2,y+3], y) %>
 

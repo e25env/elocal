@@ -3,63 +3,33 @@ doc = Doc.new
 doc.rnum = songrit :rnum
 %>
 <% fields_for doc do |f| %>
-  <table id="doc" width="100%">
-    <tr>
-      <td class="field-name">เลขที่ทะเบียนรับ *</td>
-      <td><%= f.text_field :rnum, :style => "width:200px;" %></td>
-      <td style="width:50%;">&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ชั้นความลับ</td>
-      <td><%= f.select :confidential_id, Confidential.all.collect { |c| [c.name, c.id]} %></td>
-      <td style="width:50%;">&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ชั้นความเร็ว</td>
-      <td><%= f.select :urgent_id, Urgent.all.collect { |c| [c.name, c.id]} %></td>
-      <td style="width:50%;">&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">เลขที่หนังสือ</td>
-      <td><%= f.text_field :num, :style => "width:200px;" %></td>
-      <td style="width:50%;">&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">อ้างถึง</td>
-      <td colspan="2"><%= f.text_field :ref, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">สิ่งที่ส่งมาด้วย</td>
-      <td colspan="2"><%= f.text_field :attach, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ลงวันที่</td>
-      <td colspan="2"><%= f.date_select_thai :issue_on %></td>
-    </tr>
-    <tr>
-      <td class="field-name">จาก</td>
-      <td colspan="2"><%= f.text_field :dfrom, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ถึง</td>
-      <td colspan="2"><%= f.text_field :dto, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">เรื่อง</td>
-      <td colspan="2"><%= f.text_field :subject, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">วัน/เวลา ที่ รับ</td>
-      <td colspan="2"><%= f.datetime_select_thai :process_at %></td>
-    </tr>
-    <tr>
-      <td class="field-name">สรุป</td>
-      <td colspan="2"><%= f.text_area :summary, :cols=>50, :rows=>6 %></td>
-    </tr>
-    <tr>
-      <td class="field-name">เอกสารสแกน</td>
-      <td colspan="2"><%= f.file_field :dscan %></td>
-    </tr>
-  </table>
+  <%= f.label :rnum, "เลขที่ทะเบียนรับ *" %>
+  <%= f.text_field :rnum %>
+  <%= f.label :confidential_id, "ชั้นความลับ" %>
+  <%= f.select :confidential_id, Confidential.all.collect { |c| [c.name, c.id]} %>
+  <%= f.label :urgent_id, "ชั้นความเร็ว" %>
+  <%= f.select :urgent_id, Urgent.all.collect { |c| [c.name, c.id]} %>
+  <%= f.label :num, "เลขที่หนังสือ" %>
+  <%= f.text_field :num %>
+  <%= f.label :ref, "อ้างถึง" %>
+  <%= f.text_field :ref %>
+  <%= f.label :attach, "สิ่งที่ส่งมาด้วย" %>
+  <%= f.text_field :attach %>
+  <%= f.label :issue_on, "ลงวันที่" %>
+  <%= f.date_field :issue_on, "blackDays"=>[0,6] %>
+  <%= f.label :dfrom, "จาก" %>
+  <%= f.text_field :dfrom %>
+  <%= f.label :dto, "ถึง" %>
+  <%= f.text_field :dto %>
+  <%= f.label :subject, "เรื่อง" %>
+  <%= f.text_field :subject %>
+  <%= f.label :process_at, "วันที่ที่ รับ" %>
+  <%= f.date_field :process_at, "blackDays"=>[0,6] %>
+  <%= f.label :process_at_time, "เวลาที่ รับ" %>
+  <%= f.time_field :process_at_time %>
+  <%= f.label :summary, "สรุป" %>
+  <%= f.text_area :summary, :cols=>50, :rows=>6 %>
+  <%= f.label :dscan, "เอกสารสแกน" %>
+  <%= f.file_field :dscan %>
 <% end %>
 <%= fix_thai_year %>

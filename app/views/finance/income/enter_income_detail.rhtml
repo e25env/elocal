@@ -3,46 +3,27 @@ income = Income.find $xvars[:income_id]
 income_detail = IncomeDetail.new :amount=>0, :num_receipt=>1
 %>
 <% fields_for income_detail do |f| %>
-  <table id="doc" width="100%">
-    <tr>
-      <td class="field-name">เล่มที่-เลขที่ ใบเสร็จ</td>
-      <td><%= f.text_field :receipt, :style => "width:200px;" %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">หมวด</td>
-      <td colspan="2"><%= f.collection_select :rcat_id, Rcat.all, :id, :name, :prompt=>"..กรุณาเลือกหมวด" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ประเภท</td>
-      <td colspan="2"><%= f.select :rtype_id, [] %></td>
-    </tr>
-    <tr>
-      <td class="field-name required">รายละเอียด</td>
-      <td colspan="2"><%= f.text_field :description, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">จำนวนเงิน</td>
-      <td><%= f.text_field :amount, :style => "width:200px;" %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">จำนวนใบเสร็จรับเงิน</td>
-      <td><%= f.text_field :num_receipt, :style => "width:200px;" %></td>
-      <td>ระบุ 0 ถ้าไม่มีการออกใบเสร็จ</td>
-    </tr>
-    <tr>
-      <td class="field-name">หมายเหตุ</td>
-      <td colspan="2"><%= f.text_field :remark, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td>&nbsp;</td>
-      <td colspan="2">
+  <%= f.label :receipt, "เล่มที่-เลขที่ ใบเสร็จ" %>
+  <%= f.text_field :receipt %>
+  <%= f.label :rcat_id, "หมวด" %>
+  <%= f.collection_select :rcat_id, Rcat.all, :id, :name, :prompt=>"..กรุณาเลือกหมวด" %>
+  <%= f.label :rtype_id, "ประเภท" %>
+  <%= f.select :rtype_id, [] %>
+  <%= f.label :description, "รายละเอียด" %>
+  <%= f.text_field :description %>
+  <%= f.label :amount, "จำนวนเงิน" %>
+  <%= f.text_field :amount %>
+  <%= f.label :num_receipt, "จำนวนใบเสร็จรับเงิน" %>
+  <%= f.text_field :num_receipt , :placeholder=>"ระบุ 0 ถ้าไม่มีการออกใบเสร็จ" %>
+  <%= f.label :remark, "หมายเหตุ" %>
+  <%= f.text_field :remark %>
+
+      
+      
         <%= radio_button_tag :done, 'y', true  %> สิ้นสุดการบันทึกสำหรับใบนำส่งนี้
         <%= radio_button_tag :done, 'n'  %> ยังมีรายการบันทึกต่อ
-      </td>
-    </tr>
-  </table>
+      
+    
 <% end %>
 <script type="text/javascript">
   var animate = "<img src='/images/ajax-loader.gif' alt='loading...' />";

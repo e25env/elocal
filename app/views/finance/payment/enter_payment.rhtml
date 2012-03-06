@@ -11,118 +11,55 @@ payment.deduct=0
 payment.gsb=0
 %>
 <% fields_for payment do |f| %>
-  <table id="doc" width="100%">
-    <tr>
-      <td class="field-name">ปีงบประมาณ</td>
-      <td id="fy"><%= payment.fy %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ส่วน</td>
-      <td><%= f.collection_select :section_id, Fsection.all, :id, :name, :prompt=>'กรุณาเลือกส่วน' %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">เลขที่ผู้เบิก</td>
-      <td><%= f.text_field :num, :style => "width:200px;" %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">เลขที่คลังรับ</td>
-      <td><%= f.text_field :finance_num, :style => "width:200px;" %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">วันที่คลังรับ</td>
-      <td colspan="2"><%= f.date_select_thai :receive_on %></td>
-    </tr>
-    <tr>
-      <td class="field-name">หมวด/ลักษณะ</td>
-      <td colspan="2"><%= f.select :cat_id, [] %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ประเภท</td>
-      <td ><%= f.select :ptype_id, [] %></td>
-      <td id="balance">&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">มูลค่าสินค้า/บริการ</td>
-      <td><%= f.text_field :amount, :style => "width:200px;" %></td>
-      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
-    </tr>
-    <tr>
-      <td class="field-name">ภาษีมูลค่าเพิ่ม</td>
-      <td><%= f.text_field :vat, :style => "width:200px;" %></td>
-      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
-    </tr>
-    <tr>
-      <td class="field-name">ภาษีหัก ณ ที่จ่าย</td>
-      <td><%= f.text_field :deduct, :style => "width:200px;" %></td>
-      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
-    </tr>
-    <tr>
-      <td class="field-name">นำส่ง ธ.ออมสิน</td>
-      <td><%= f.text_field :gsb, :style => "width:200px;" %></td>
-      <td>เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ</td>
-    </tr>
-    <tr>
-      <td class="field-name">หมายเหตุ</td>
-      <td colspan="2"><%= f.text_area :comment, :cols=>50, :rows=>6 %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ระเบียบ มท. พ.ศ.</td>
-      <td><%= f.text_field :law_moi_year, :style => "width:200px;" %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ระเบียบ มท. ข้อที่</td>
-      <td><%= f.text_field :law_moi_item, :style => "width:200px;" %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ผู้เบิก</td>
-      <td><%= f.collection_select :requester_id, User.all, :id, :full_name %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ตำแหน่ง</td>
-      <td colspan='2'><%= f.text_field :requester_position, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ผู้ตรวจสอบ งป.</td>
-      <td><%= f.collection_select :budgeter_id, User.finance, :id, :full_name %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ตำแหน่ง</td>
-      <td colspan='2'><%= f.text_field :budgeter_position, :style => "width:400px;" %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ผู้ตรวจสอบ</td>
-      <td><%= f.collection_select :inspector_id, User.finance, :id, :full_name %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ตำแหน่ง</td>
-      <td colspan='2'><%= f.text_field :inspector_position, :style => "width:400px;" %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ธนาคาร</td>
-      <td><%= f.collection_select :bank_id, Bank.all, :id, :full_name %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ชื่อผู้รับเช็ค</td>
-      <td colspan="2"><%= f.text_field :payable, :style => "width:400px;" %></td>
-    </tr>
-    <tr>
-      <td class="field-name">เอกสารสแกน</td>
-      <td><%= f.file_field :dscan %></td>
-      <td>&nbsp;</td>
-    </tr>
-  </table>
+
+      ปีงบประมาณ
+      <%= payment.fy %>
+      
+    
+  <%= f.label :section_id, "ส่วน" %>
+  <%= f.collection_select :section_id, Fsection.all, :id, :name, :prompt=>'กรุณาเลือกส่วน' %>
+  <%= f.label :num, "เลขที่ผู้เบิก" %>
+  <%= f.text_field :num %>
+  <%= f.label :finance_num, "เลขที่คลังรับ" %>
+  <%= f.text_field :finance_num %>
+  <%= f.label :receive_on, "วันที่คลังรับ" %>
+  <%= f.date_field :receive_on, "blackDays"=>[0,6] %>
+  <%= f.label :cat_id, "หมวด/ลักษณะ" %>
+  <%= f.select :cat_id, [] %>
+  <%= f.label :ptype_id, "ประเภท" %>
+  <%= f.select :ptype_id, [] %>
+  <%= f.label :amount, "มูลค่าสินค้า/บริการ" %>
+  <%= f.text_field :amount , :placeholder=>"เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ" %>
+  <%= f.label :vat, "ภาษีมูลค่าเพิ่ม" %>
+  <%= f.text_field :vat , :placeholder=>"เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ" %>
+  <%= f.label :deduct, "ภาษีหัก ณ ที่จ่าย" %>
+  <%= f.text_field :deduct , :placeholder=>"เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ" %>
+  <%= f.label :gsb, "นำส่ง ธ.ออมสิน" %>
+  <%= f.text_field :gsb , :placeholder=>"เลขอารบิค ไม่ใช้เครื่องหมายลูกน้ำ" %>
+  <%= f.label :comment, "หมายเหตุ" %>
+  <%= f.text_area :comment, :cols=>50, :rows=>6 %>
+  <%= f.label :law_moi_year, "ระเบียบ มท. พ.ศ." %>
+  <%= f.text_field :law_moi_year %>
+  <%= f.label :law_moi_item, "ระเบียบ มท. ข้อที่" %>
+  <%= f.text_field :law_moi_item %>
+  <%= f.label :requester_id, "ผู้เบิก" %>
+  <%= f.collection_select :requester_id, User.all, :id, :full_name %>
+  <%= f.label :requester_position, "ตำแหน่ง" %>
+  <%= f.text_field :requester_position %>
+  <%= f.label :budgeter_id, "ผู้ตรวจสอบ งป." %>
+  <%= f.collection_select :budgeter_id, User.finance, :id, :full_name %>
+  <%= f.label :budgeter_position, "ตำแหน่ง" %>
+  <%= f.text_field :budgeter_position %>
+  <%= f.label :inspector_id, "ผู้ตรวจสอบ" %>
+  <%= f.collection_select :inspector_id, User.finance, :id, :full_name %>
+  <%= f.label :inspector_position, "ตำแหน่ง" %>
+  <%= f.text_field :inspector_position %>
+  <%= f.label :bank_id, "ธนาคาร" %>
+  <%= f.collection_select :bank_id, Bank.all, :id, :full_name %>
+  <%= f.label :payable, "ชื่อผู้รับเช็ค" %>
+  <%= f.text_field :payable %>
+  <%= f.label :dscan, "เอกสารสแกน" %>
+  <%= f.file_field :dscan %>
 <% end %>
 <%= fix_thai_year %>
 <script type="text/javascript" >

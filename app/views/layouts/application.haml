@@ -1,4 +1,4 @@
-- if flash[:full_layout]
-  = render "layouts/full"
-- else
+- if request.accept=="text/html, */*; q=0.01"
   = render "layouts/page"
+- else
+  = render "layouts/full"

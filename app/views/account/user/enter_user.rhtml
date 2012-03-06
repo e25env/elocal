@@ -1,5 +1,5 @@
 <% user = current_user %>
-<% fields_for user do |f|  %>- 
+<% fields_for user do |f|  %>
   <table width="100%">
     <tr>
       <td class="field-name">รหัสผู้ใช้</td>
@@ -39,6 +39,10 @@
 <script type="text/javascript">
   var animate = "<img src='/images/ajax-loader.gif' alt='loading...' />";
   $('#user_section_id').change( function(e) {
-    $('#user_subsection_id').load('/users/subsections', {id:$('#user_section_id').val()});
+    $('#user_subsection_id')
+      .load('/users/subsections', {id:$('#user_section_id').val()}, change_subsection );
   })
+  function change_subsection() {
+    $('#user_subsection_id').trigger('change');
+  }
 </script>

@@ -3,31 +3,15 @@ y = fiscal_year
 income = Income.new :fy=>y
 %>
 <% fields_for income do |f| %>
-  <table id="doc" width="100%">
-    <tr>
-      <td class="field-name">ปีงบประมาณ</td>
-      <td id="fy"><%= f.select :fy, [y-1,y,y+1] %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">เลขที่</td>
-      <td><%= f.text_field :ref, :style => "width:200px;" %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">วันที่รับเงิน</td>
-      <td colspan="2"><%= f.date_select_thai :receive_on %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ผู้นำส่ง</td>
-      <td><%= f.collection_select :deliver_id, User.finance, :id, :full_name %></td>
-      <td>&nbsp;</td>
-    </tr>
-    <tr>
-      <td class="field-name">ผู้รับ</td>
-      <td><%= f.collection_select :receiver_id, User.finance, :id, :full_name %></td>
-      <td>&nbsp;</td>
-    </tr>
-  </table>
+  <%= f.label :fy, "ปีงบประมาณ" %>
+  <%= f.select :fy, [y-1,y,y+1] %>
+  <%= f.label :ref, "เลขที่" %>
+  <%= f.text_field :ref %>
+  <%= f.label :receive_on, "วันที่รับเงิน" %>
+  <%= f.date_field :receive_on, "blackDays"=>[0,6] %>
+  <%= f.label :deliver_id, "ผู้นำส่ง" %>
+  <%= f.collection_select :deliver_id, User.finance, :id, :full_name %>
+  <%= f.label :receiver_id, "ผู้รับ" %>
+  <%= f.collection_select :receiver_id, User.finance, :id, :full_name %>
 <% end %>
 <%= fix_thai_year %>

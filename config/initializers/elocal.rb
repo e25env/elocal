@@ -34,7 +34,8 @@ CITY_LAW_DECLARE = "27 ตุลาคม 2538" # ประกาศในรา
 CITY_LAW_EFFECTIVE = "26 ธันวาคม 2538" # มีผลใช้บังคับ
 #HEAD_PUBLIC_WORKS = "นายเรวัติ ชุมแสง"
 
-WWW = "http://elocal-www.heroku.com"
+WWW_ORG = "http://elocal-www.heroku.com"
+WWW_ELOCAL = "http://elocal-www.heroku.com"
 POST_TYPE = %w(ข่าว กิจกรรม รายงานการประชุม ท่องเที่ยว ประกาศ คำสั่ง จัดซื้อจัดจ้าง)
 
 MSG_NEXT = "ดำเนินการต่อ &gt;"

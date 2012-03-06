@@ -32,3 +32,13 @@
           %td(class="field-name") รหัสผ่าน:
           %td(colspan="2")= password_field_tag :password, nil, :style => "width:400px;"
       = submit_tag "เข้าใช้ระบบ"
+:javascript
+  function notice(msg) {
+    $("<div class='ui-loader ui-overlay-shadow ui-body-e ui-corner-all'><h1>"+ msg +"</h1></div>")
+      .css({ "display": "block", "opacity": 0.96, "top": $(window).scrollTop() + 100 })
+  		.appendTo( $('div[data-id="main"]') )
+  		.delay( 4000 )
+  		.fadeOut( 400, function(){
+  		  $(this).remove();
+  		});
+  }

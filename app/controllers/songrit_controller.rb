@@ -8,9 +8,38 @@ class SongritController < ApplicationController
   require 'nokogiri'
   # require 'mechanize'
 
-def split
-  render :layout => false 
-end
+  def test_pob
+    body= File.open("tmp/hotel_search.xml").read
+    f= RestClient.post "http://localhost:3000/api/hotel_search", body
+    render :xml => f.body
+  end
+  def test_request
+    render :text => request.accept
+  end
+  def iterate_views
+    t = []
+    Find.find('app/views') do |path|
+      next unless path.include?(".rhtml")
+      v= GmaView.new File.read(path), path
+      vv= v.splitview
+      FileUtils.rm path
+      File.open(path,'w') do |f|
+        f.puts(vv)
+      end
+      t << path
+    end
+    render :text => t.join('<br/>')
+  end
+  def migrate_classic_view
+    v= GmaView.new File.read('app/views/office/doc_out/register.rhtml')
+    File.open('tmp/result.rhtml','w') do |f|
+      f.puts(v.splitview)
+    end
+    render :text => "done" 
+  end
+  def split
+    render :layout => false 
+  end
   def fix_sub_districts
     # remove ตำบล
     SubDistrict.all.each do |s|

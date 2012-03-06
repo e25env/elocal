@@ -80,9 +80,11 @@ class GmaController < ApplicationController
     @xmain= GmaXmain.find params[:id]
     @xvars= @xmain.xvars
     flash.now[:notice]= "รายการ #{@xmain.id} ได้ถูกยกเลิกแล้ว" if @xmain.status=='X'
+    gma_notice "รายการ #{@xmain.id} ได้ถูกยกเลิกแล้ว" if @xmain.status=='X'
 #    flash.now[:notice]= "transaction #{@xmain.id} was cancelled" if @xmain.status=='X'
   rescue
     flash[:notice]= "could not find transaction id <b> #{params[:id]} </b>"
+    gma_notice "could not find transaction id <b> #{params[:id]} </b>"
     redirect_to_root
   end
 

@@ -1,21 +1,16 @@
 <% payment = Payment.find @xvars[:payment_id] %>
-<table id="doc" width="100%">
-  <tr>
-    <td class="field-name">ธนาคาร</td>
-    <td colspan="2"><%= payment.bank.full_name %></td>
-  </tr>
-  <tr>
-    <td class="field-name">สั่งจ่ายให้</td>
-    <td colspan="2"><%= payment.payable %></td>
-  </tr>
-  <tr>
-    <td class="field-name">เลขที่เช็ค</td>
-    <td><%= text_field_tag :check_num, nil, :style => "width:200px;" %></td>
-    <td style="width:50%;">&nbsp;</td>
-  </tr>
-  <tr>
-    <td class="field-name">เช็คลงวันที่</td>
-    <td colspan="2"><%= date_select_thai :check, :issue_on %></td>
-  </tr>
-</table>
+
+    ธนาคาร
+    <%= payment.bank.full_name %>
+  
+
+    สั่งจ่ายให้
+    <%= payment.payable %>
+  
+  <%= f.label :check_num, "เลขที่เช็ค" %>
+  <%= text_field_tag :check_num, nil %>
+
+    เช็คลงวันที่
+    <%= date_select_thai :check, :issue_on %>
+  
 

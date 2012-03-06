@@ -44,10 +44,12 @@ class MainController < ApplicationController
     @title= "สถานะการดำเนินงานเลขที่ #{params[:id]} #{@xmain.name}"
     @backbtn= true
     @xvars= @xmain.xvars
-    flash.now[:notice]= "รายการ #{@xmain.id} ได้ถูกยกเลิกแล้ว" if @xmain.status=='X'
+    # flash.now[:notice]= "รายการ #{@xmain.id} ได้ถูกยกเลิกแล้ว" if @xmain.status=='X'
+    gma_notice "รายการ #{@xmain.id} ได้ถูกยกเลิกแล้ว" if @xmain.status=='X'
     # flash.now[:notice]= "transaction #{@xmain.id} was cancelled" if @xmain.status=='X'
   rescue
-    flash[:notice]= "ขออภัย ไม่สามารถค้นหางานเลขที่ <b> #{params[:id]} </b>"
+    # flash[:notice]= "ขออภัย ไม่สามารถค้นหางานเลขที่ <b> #{params[:id]} </b>"
+    gma_notice "ขออภัย ไม่สามารถค้นหางานเลขที่ <b> #{params[:id]} </b>"
     redirect_to_root
   end
   def help
@@ -74,16 +76,19 @@ class MainController < ApplicationController
     else
       @docs = GmaDoc.search(@q.downcase, params[:page], PER_PAGE)
     end
-    @xmains = GmaXmain.find @docs.map(&:gma_xmain_id)
+    @xmains = GmaXmain.find(@docs.map(&:gma_xmain_id)).sort { |a,b| b.id<=>a.id }
+    # @xmains = GmaXmain.find @docs.map(&:created_at).sort { |a,b| b<=>a }
   end
   def err404
     gma_log 'ERROR', 'main/err404'
     flash[:notice] = "We're sorry, but something went wrong. We've been notified about this issue and we'll take a look at it shortly."
+    gma_notice "ขออภัย เกิดข้อผิดพลาดรหัส 404 ขึ้นในระบบ กรุณาติดต่อผู้ดูแลระบบ"
     redirect_to '/'
   end
   def err500
     gma_log 'ERROR', 'main/err500'
     flash[:notice] = "We're sorry, but something went wrong. We've been notified about this issue and we'll take a look at it shortly."
+    gma_notice "ขออภัย เกิดข้อผิดพลาดรหัส 500 ขึ้นในระบบ กรุณาติดต่อผู้ดูแลระบบ"
     redirect_to '/'
   end
 

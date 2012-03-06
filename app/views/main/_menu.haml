@@ -30,18 +30,12 @@
                     - name, url = s.name.split(":")
                   - else
                     - name= s.name; url= "/run/#{s.module}/#{s.code}"
-                  %a{{"data-panel"=>"main", :onclick=>"location.hash='"+url.strip+"'"}.merge(@confirm)}= name
+                  %a{{"data-panel"=>"main", :href=>url.strip}.merge(@confirm)}= name
+                  /%a{{"data-panel"=>"main", :onclick=>"location.hash='"+url.strip+"'"}.merge(@confirm)}= name
         %li
           %a{"data-panel" => "main", :href => "#about"} เกี่ยวกับ ELOCAL
+        %li
+          %a{"data-panel" => "main", :href => "/main/local_ip"} ตำแหน่งเครื่องแม่ข่าย
         - if login?
           %li
             %a{"data-panel" => "main", :href => "/users/logout"} ออกจากระบบ
-        %li
-          ทดสอบ
-          %ul
-            %li
-              %a{{"data-panel" => "main", :href => "/songrit/aboutus"}.merge(@confirm)} ทดสอบ confirm
-            %li
-              %a{"data-panel" => "main", :href => "#aboutsv"} Beach Resorts
-            %li
-              %a{"data-panel" => "main", :href => "#credits"} City

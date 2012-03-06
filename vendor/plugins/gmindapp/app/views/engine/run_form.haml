@@ -25,8 +25,9 @@
 - else
   - form_class = 'formtastic'
   - next_step = 'end_form'
-- form_tag({ :action => next_step } , {:multipart => true, :onSubmit=>'return validate()', :class=>form_class, "data-ajax"=>"false"}) do
+- form_tag({ :action => next_step } , {:multipart => true, :onSubmit=>'return validate()', :class=>form_class, "data-ajax"=>"#{ajax?(@ui)}"}) do
   = hidden_field_tag 'xmain_id', @xmain.id
+  = hidden_field_tag 'ajax', ajax?(@ui)
   = hidden_field_tag 'runseq_id', @runseq.id
   = hidden_field_tag 'step', @xvars[:current_step]
   - if @sign

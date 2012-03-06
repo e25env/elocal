@@ -1,14 +1,8 @@
 <% fields_for :choose do |f| %>
-<table id="doc" width="100%">
-  <tr>
-    <td class="required" style="width:100px;">เลขที่</td>
-    <td><%= f.text_field :num %></td>
-  </tr>
-  <tr>
-    <td style="width:100px;">วันที่รับเงิน</td>
-    <td><%= f.date_select_thai :receive_on %></td>
-  </tr>
-</table>
+  <%= f.label :num, "เลขที่" %>
+  <%= f.text_field :num %>
+  <%= f.label :receive_on, "วันที่รับเงิน" %>
+  <%= f.date_field :receive_on, "blackDays"=>[0,6] %>
 <% end %>
 <%= fix_thai_year %>
 <script type="text/javascript" >

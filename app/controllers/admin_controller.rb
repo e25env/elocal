@@ -14,11 +14,13 @@ class AdminController < ApplicationController
   def upd_intranet_ip
     update_intranet_ip
     flash[:notice] = "ตำแหน่งเครื่องแม่ข่าย #{local_ip}"
+    gma_notice "ตำแหน่งเครื่องแม่ข่าย #{local_ip}"
     redirect_to :action => "index"
   end
   def gen_fsection
     if Fsection.first :conditions=>"budget!=0 OR balance!=0"
       flash[:notice]= "งบปัจจุบันไม่เป็นศูนย์ ไม่สามารถสร้างส่วนใหม่ได้"
+      gma_notice "งบปัจจุบันไม่เป็นศูนย์ ไม่สามารถสร้างส่วนใหม่ได้"
     else
       Fsection.delete_all
       Fsection.create :id=>0, :code=>"00", :name=>"งบกลาง", :balance=>0, :budget=>0
@@ -26,6 +28,7 @@ class AdminController < ApplicationController
         Fsection.create :id=>s.id, :code=>s.code, :name=>s.name,
           :balance=>0, :budget=>0
       end
+      gma_notice "สร้างส่วนสำหรับงบประมาณเรียบร้อยแล้ว"
       flash[:notice]= "สร้างส่วนสำหรับงบประมาณเรียบร้อยแล้ว"
     end
     redirect_to "/"

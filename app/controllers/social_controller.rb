@@ -18,27 +18,13 @@ class SocialController < ApplicationController
     @seniors= Senior.all :order=>'moo,fname'
   end
   def create_senior
-    # address= Address.create $xvars[:enter][:address]
-    # if SUB_DISTRICT_ID
-    #   address.sub_district_id= SUB_DISTRICT_ID
-    # end
-    # address.district_id= DISTRICT_ID
-    # address.province_id= PROVINCE_ID
-    # address.save
-    # if Person.exists? :nid=>$xvars[:enter][:person][:nid]
-    #   person= Person.find_by_nid $xvars[:enter][:person][:nid]
-    # else
-    #   person= Person.create $xvars[:enter][:person]
-    #   person.address_id= address.id
-    #   person.save
-    # end
-    s= Senior.create $xvars[:enter][:senior]
-    if s
+    s= Senior.new $xvars[:enter][:senior]
+    if s.save
       gma_notice "ขึ้นทะเบียนผู้รับเบี้ยยังชีพเรียบร้อยแล้ว" 
+      $xvars[:senior_id]= s.id
     else
       gma_notice "ขออภัย บุคคลนี้มีชื่ออยู่ในระบบแล้ว ไม่สามารถขึ้นทะเบียนได้" 
     end
-    $xvars[:senior_id]= s.id
     $xvars[:p][:return]= "/social/seniors"
   end
   def update_senior

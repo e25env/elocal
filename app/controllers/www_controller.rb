@@ -16,7 +16,7 @@ class WwwController < ApplicationController
     end
     post.save
     $xvars[:p][:return]= '/www/posts'
-    GmaWsQueue.create :url=>"#{WWW}/ws/post",
+    GmaWsQueue.create :url=>"#{WWW_ORG}/ws/post",
       :body => post.to_xml, :status => 0, :gma_runseq_id=> $runseq.id 
     ws_dispatch
   end
@@ -29,14 +29,14 @@ class WwwController < ApplicationController
       post.pic_postimg= @pic_postimg
     end
     $xvars[:p][:return]= '/www/posts'
-    GmaWsQueue.create :url=>"#{WWW}/ws/post",
+    GmaWsQueue.create :url=>"#{WWW_ORG}/ws/post",
       :body => post.to_xml, :status => 0, :gma_runseq_id=> $runseq.id 
     ws_dispatch
   end
   def rm_post
     Post.destroy $xvars[:p][:id]
     $xvars[:p][:return]='/www/posts'
-    GmaWsQueue.create :url=>"#{WWW}/ws/rm_post",
+    GmaWsQueue.create :url=>"#{WWW_ORG}/ws/rm_post",
       :body => {:id=> $xvars[:p][:id]}.to_xml(:root=>'post'), 
       :status => 0, :gma_runseq_id=> $runseq.id 
     ws_dispatch

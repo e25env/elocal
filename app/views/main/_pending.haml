@@ -1,7 +1,7 @@
 - @title= "งานที่อยู่ระหว่างดำเนินการ"
-%table{:width=>"100%"}
+%table{:id=>"pending-table", :width=>"100%"}
   %tr{:style=>"color:white; background-color:#97BF60;"}
-    %th รหัสดำเนินการ
+    %th รหัส
     %th งาน
     %th ขั้นตอน
     %th ผู้เริ่มงาน
@@ -26,8 +26,3 @@
         :style=>'border:none; float:none;'),                                          |
         {:controller=>'engine', :action=>'cancel', :id=>xmain.id, :return=>url_for},  |
         :confirm=>"confirm?"                                                          |
-:javascript
-  //$('a[href=#login]').parent().parent().parent().hide()
-  //$('h1[elocal=username]').text('#{current_user.login}')
-  //window.location.replace('/main/home');
-  

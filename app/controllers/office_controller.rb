@@ -222,6 +222,7 @@ class OfficeController < ApplicationController
       @employee= Employee.find params[:id]
     else
       flash[:notice]="ขออภัย ไม่สามารถค้นหาเจ้าหน้าที่หมายเลข #{params[:id]}"
+      gma_notice "ขออภัย ไม่สามารถค้นหาเจ้าหน้าที่หมายเลข #{params[:id]}"
       redirect_to :action => "hr"
     end
   end
@@ -339,15 +340,17 @@ class OfficeController < ApplicationController
     doc.save
     $xvars[:doc_id]= doc.id
     set_songrit(:num_out, doc.rnum+1)
+    $xvars[:p][:return]= "/office/doc_report"
   end
   def create_memo
-    doc= Doc.new $xvars[:new][:doc]
+    doc= Doc.new $xvars[:register][:doc]
     doc.dtype= 3
     doc.save
     $xvars[:doc_id]= doc.id
-    $xvars[:action]= {:assign=>$xvars[:new][:assign]}
-    u = User.find $user_id
-    $xvars[:section_id] = u.section_id
+    $xvars[:p][:return]= "/office/doc_report"
+    # $xvars[:action]= {:assign=>$xvars[:new][:assign]}
+    # u = User.find $user_id
+    # $xvars[:section_id] = u.section_id
   end
   def save_comment
     comment = Comment.create(:content=>$xvars[:action][:comment], :gma_xmain_id=>$xmain.id)

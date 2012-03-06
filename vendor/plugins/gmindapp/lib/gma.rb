@@ -3,6 +3,19 @@ module Gma
   include ActionView::Helpers::DateHelper
   include ActionView::Helpers::TextHelper
 
+  # ajax? check if the form ui has file_field which require full layout refresh
+  def ajax?(s)
+    return s.match('file_field') ? false : true
+  end
+  def handle_gma_notice
+    if GmaNotice.new_notices.count>0
+      notice= GmaNotice.new_notices.last
+      notice.update_attribute :unread, false
+      "<script>notice('#{notice.message}');</script>"
+    else
+      ""
+    end
+  end
   def heroku?
     return request.url =~ /heroku/ ? true :false
   end
@@ -10,7 +23,10 @@ module Gma
     $license.split(':')[0]=="elocal" || heroku?
   end
   def local_ip
-    RestClient.get "http://www.whatismyip.com/automation/n09230945.asp"
+    # RestClient.get "http://www.whatismyip.com/automation/n09230945.asp"
+    result= RestClient.get "http://www.whatismyip.com/tools/ip-address-lookup.asp"
+    doc = Nokogiri::HTML::Document.parse(result)
+    (doc/'input[@name="IP"]').attribute('value').to_s
   end  
   def ping(server)
     ping_count = 3
@@ -31,7 +47,7 @@ module Gma
   end
   def gma_notice(s)
     GmaNotice.create :message=>s, :unread=>true
-    return true
+    # return true
   end
   def display_notices
     t = []
@@ -670,12 +686,14 @@ module ActionView
 #        self.date_select method, :use_month_names=>THAI_MONTHS, :order=>[:day, :month, :year]
 #      end
       def date_field(method, options = {})
+        default= self.object.send(method) || Date.today
         data_options= ({"mode"=>"calbox"}).merge(options)
-        %Q(<input name='#{self.object_name}[#{method}]' id='#{self.object_name}_#{method}' value='#{self.object.send(method).strftime("%F")}' type='date' data-role='datebox' data-options='#{data_options.to_json}'>)
+        %Q(<input name='#{self.object_name}[#{method}]' id='#{self.object_name}_#{method}' value='#{default.strftime("%F")}' type='date' data-role='datebox' data-options='#{data_options.to_json}'>)
       end
       def time_field(method, options = {})
+        default= self.object.send(method) || Time.now
         data_options= ({"mode"=>"timebox"}).merge(options)
-        %Q(<input name='#{self.object_name}[#{method}]' id='#{self.object_name}_#{method}' value='#{self.object.send(method)}' type='date' data-role='datebox' data-options='#{data_options.to_json}'>)
+        %Q(<input name='#{self.object_name}[#{method}]' id='#{self.object_name}_#{method}' value='#{default}' type='date' data-role='datebox' data-options='#{data_options.to_json}'>)
       end
       def date_select_thai(method, default= Time.now, disabled=false)
         date_select method, :default => default, :use_month_names=>THAI_MONTHS, :order=>[:day, :month, :year], :disabled=>disabled

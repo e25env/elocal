@@ -10,6 +10,7 @@ class UsersController < ApplicationController
     else
       gma_log "SECURITY", "user #{params[:login]} log in failure"
       flash[:notice]= "ขออภัย รหัสไม่ถูกต้อง"
+      gma_notice "ขออภัย รหัสไม่ถูกต้อง"
     end
     # redirect_to request.referrer
     # redirect_to :controller=>'main', :action => "pending"
@@ -29,10 +30,12 @@ class UsersController < ApplicationController
     @user= GmaUser.new params[:user]
     if @user.save
       flash[:notice]= "ขึ้นทะเบียนเรียบร้อยแล้ว"
+      gma_notice "ขึ้นทะเบียนเรียบร้อยแล้ว"
       redirect_to "/"
     else
       @user.password= ""
       flash[:notice]= "ขออภัย ไม่สามารถขึ้นทะเบียนได้"
+      gma_notice "ขออภัย ไม่สามารถขึ้นทะเบียนได้"
       render :action=>:new
     end
   end

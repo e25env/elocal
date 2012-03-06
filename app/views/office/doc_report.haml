@@ -13,8 +13,8 @@
     %th เรื่อง
   - @docs.each do |doc|
     %tr{:style=>"background-color: #{cycle '#FEFEA4', '#fff'}"}
-      %td= image_tag doc.icon
-      %td= date_thai doc.process_at, :date_only=>true
+      %td= image_tag doc.icon, :title=>doc.title
+      %td= date_thai doc.created_at, :date_only=>true
       %td= doc.rnum
       %td= doc.num
       %td= doc.dfrom
