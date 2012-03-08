@@ -416,33 +416,33 @@ class FinanceController < ApplicationController
   end
   def copy_structure
     # plan, task, cat, ptype, budget
-    if Plan.first(:conditions=>{:fy=>$xvars[:select_years][:fy1]})
+    if Plan.first(:conditions=>{:fy=>$xvars[:select_years][:year][:fy1]})
       gma_notice "ปีที่ต้องการมีอยู่แล้ว ไม่สามารถสร้างใหม่ได้"
     else
-      Plan.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+      Plan.all(:conditions=>{:fy=>$xvars[:select_years][:year][:fy0]}).each do |p|
         pp= p.clone
-        pp.fy= $xvars[:select_years][:fy1]
+        pp.fy= $xvars[:select_years][:year][:fy1]
         pp.balance= pp.budget
         pp.save
       end
-      Task.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+      Task.all(:conditions=>{:fy=>$xvars[:select_years][:year][:fy0]}).each do |p|
         pp= p.clone
         plan = Plan.first :conditions=>['name=? and fy=?',pp.plan.name,$xvars[:select_years][:fy1]]
-        pp.fy= $xvars[:select_years][:fy1]
+        pp.fy= $xvars[:select_years][:year][:fy1]
         pp.balance= pp.budget
         pp.plan_id = plan.id
         pp.save
       end
-      Cat.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+      Cat.all(:conditions=>{:fy=>$xvars[:select_years][:year][:fy0]}).each do |p|
         pp= p.clone
-        pp.fy= $xvars[:select_years][:fy1]
+        pp.fy= $xvars[:select_years][:year][:fy1]
         pp.balance= pp.budget
         pp.save
       end
-      Ptype.all(:conditions=>{:fy=>$xvars[:select_years][:fy0]}).each do |p|
+      Ptype.all(:conditions=>{:fy=>$xvars[:select_years][:year][:fy0]}).each do |p|
         pp= p.clone
         cat = Cat.first :conditions=>['name=? and fy=?',pp.cat.name,$xvars[:select_years][:fy1]]
-        pp.fy= $xvars[:select_years][:fy1]
+        pp.fy= $xvars[:select_years][:year][:fy1]
         pp.balance= pp.budget
         pp.cat_id = cat.id
         pp.save

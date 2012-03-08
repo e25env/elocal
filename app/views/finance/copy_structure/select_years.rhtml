@@ -1,6 +1,7 @@
 <% y= fiscal_year %>
+<% fields_for :year do |f| %>
   <%= f.label :fy0, "ปีต้นฉบับ" %>
-  <%= select_tag :fy0, options_for_select([y-3,y-2,y-1,y,y+1,y+2,y+3], y) %>
+  <%= f.select :fy0, options_for_select([y-3,y-2,y-1,y,y+1,y+2,y+3], y) %>
   <%= f.label :fy1, "ปีที่ต้องการสร้างใหม่" %>
-  <%= select_tag :fy1, options_for_select([y-3,y-2,y-1,y,y+1,y+2,y+3], y) %>
-
+  <%= f.select :fy1, options_for_select([y-3,y-2,y-1,y,y+1,y+2,y+3], y) %>
+<% end %>

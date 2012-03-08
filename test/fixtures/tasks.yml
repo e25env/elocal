@@ -4,14 +4,14 @@ one:
   plan_id: 1
   code: MyString
   name: MyString
-  budget: 1.5
-  balance: 1.5
+  code_laas: MyString
+  fy: 1
   gma_user_id: 1
 
 two:
   plan_id: 1
   code: MyString
   name: MyString
-  budget: 1.5
-  balance: 1.5
+  code_laas: MyString
+  fy: 1
   gma_user_id: 1

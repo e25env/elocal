@@ -8,6 +8,12 @@ class SongritController < ApplicationController
   require 'nokogiri'
   # require 'mechanize'
 
+  def fix_budget
+    Budget.all(:conditions=>{:fy=>2553}).each do |b|
+      b.update_attribute :fy, 2554
+    end
+    render :text => "done"
+  end
   def test_pob
     body= File.open("tmp/hotel_search.xml").read
     f= RestClient.post "http://localhost:3000/api/hotel_search", body

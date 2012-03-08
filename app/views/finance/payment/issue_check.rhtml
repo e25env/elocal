@@ -1,16 +1,15 @@
 <% payment = Payment.find @xvars[:payment_id] %>
 
-    ธนาคาร
-    <%= payment.bank.full_name %>
-  
+ธนาคาร <%= payment.bank.full_name %>
+<br/>
+สั่งจ่ายให้ <%= payment.payable %>
+<br/>
 
-    สั่งจ่ายให้
-    <%= payment.payable %>
-  
+<% payment.check_issue_on = Date.today %>
+
+<% fields_for payment do |f| %>
   <%= f.label :check_num, "เลขที่เช็ค" %>
-  <%= text_field_tag :check_num, nil %>
-
-    เช็คลงวันที่
-    <%= date_select_thai :check, :issue_on %>
-  
-
+  <%= f.text_field :check_num %>
+  <%= f.label :check_issue_on, "เช็คลงวันที่" %>
+  <%= f.date_field :check_issue_on %>
+<% end %>

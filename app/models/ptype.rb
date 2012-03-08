@@ -9,5 +9,4 @@ class Ptype < ActiveRecord::Base
   def balance(fy=fiscal_year)
     budgets.sum('balance', :conditions=>{:fy=>fy})
   end
-  
 end

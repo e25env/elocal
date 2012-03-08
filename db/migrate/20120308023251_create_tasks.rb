@@ -1,11 +1,11 @@
 class CreateTasks < ActiveRecord::Migration
   def self.up
-    create_table :tasks do |t|
+    create_table :tasks, :force=>true do |t|
       t.integer :plan_id
       t.string :code
       t.string :name
-      t.float :budget
-      t.float :balance
+      t.string :code_laas
+      t.integer :fy
       t.integer :gma_user_id
 
       t.timestamps

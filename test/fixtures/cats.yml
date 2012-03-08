@@ -2,10 +2,16 @@
 
 one:
   code: MyString
+  code_laas: MyString
   name: MyString
+  account_number: MyString
+  fy: 1
   gma_user_id: 1
 
 two:
   code: MyString
+  code_laas: MyString
   name: MyString
+  account_number: MyString
+  fy: 1
   gma_user_id: 1

@@ -10,12 +10,8 @@ payment.vat=0
 payment.deduct=0
 payment.gsb=0
 %>
+ปีงบประมาณ <%= payment.fy %><br/>
 <% fields_for payment do |f| %>
-
-      ปีงบประมาณ
-      <%= payment.fy %>
-      
-    
   <%= f.label :section_id, "ส่วน" %>
   <%= f.collection_select :section_id, Fsection.all, :id, :name, :prompt=>'กรุณาเลือกส่วน' %>
   <%= f.label :num, "เลขที่ผู้เบิก" %>
