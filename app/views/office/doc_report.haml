@@ -11,6 +11,7 @@
     %th(style='width:120px;') เลขที่
     %th(style='width:120px;') หน่วยงาน
     %th เรื่อง
+    %th ลบ
   - @docs.each do |doc|
     %tr{:style=>"background-color: #{cycle '#FEFEA4', '#fff'}"}
       %td= image_tag doc.icon, :title=>doc.title
@@ -19,3 +20,4 @@
       %td= doc.num
       %td= doc.dfrom
       %td= link_to doc.subject, doc.dscan, :target=>'_blank'
+      %td= link_to image_tag('cross.png'), "/run/office/rm_doc/#{doc.id}", :confirm=>"กรุณายืนยัน"

@@ -4,6 +4,10 @@ class OfficeController < ApplicationController
     # render :template => "main/pending"
     redirect_to :action=> :doc_report
   end
+  def rm_doc
+    doc= Doc.destroy $xvars[:p][:id]
+    $xvars[:p][:return]= "/office/doc_report"
+  end
   def doc_report
     @title = "รายงานสารบรรณ"
     respond_to do |format|
