@@ -20,4 +20,4 @@
       %td= doc.num
       %td= doc.dfrom
       %td= link_to doc.subject, doc.dscan, :target=>'_blank'
-      %td= link_to image_tag('cross.png'), "/run/office/rm_doc/#{doc.id}", :confirm=>"กรุณายืนยัน"
+      %td= link_to image_tag('cross.png'), "#", :onclick=>"if (confirm('กรุณายืนยัน')) {location.hash='/run/office/rm_doc/#{doc.id}'};"
