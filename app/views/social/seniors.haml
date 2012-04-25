@@ -5,7 +5,7 @@
     = link_to align_text('ขึ้นทะเบียนผู้รับเบี้ยยังชีพ'), "/run/social/add_senior"
 %table{:class=>'budget_table', :width=>"100%"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
-    - if office_office? || true
+    - if office_office? && false
       %th{:style=>"width:30px;"} แก้ไข
       %th{:style=>"width:30px;"} ลบ
     %th(style='width:50px;') หมู่
@@ -15,7 +15,7 @@
   - @seniors.each do |s|
     /- next unless s.person
     %tr
-      - if office_office? || true
+      - if office_office? && false
         %td= link_to image_tag('pencil.png'), "/run/office/edit_senior/#{s.id}"
         %td= link_to image_tag('cross.png'), "#", :onclick=>"if (confirm('กรุณายืนยัน')) {location.hash='/run/social/rm_senior/#{s.id}'};"
       %td(align='center')= s.moo

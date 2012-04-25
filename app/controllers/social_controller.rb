@@ -1,3 +1,4 @@
+# encoding: utf-8
 class SocialController < ApplicationController
   def index
     redirect_to :action => "seniors"

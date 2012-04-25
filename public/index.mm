@@ -52,8 +52,8 @@
 </node>
 </node>
 <node CREATED="1335291178897" ID="ID_1666862367" MODIFIED="1335319226146" TEXT="social: &#xe2a;&#xe27;&#xe31;&#xe2a;&#xe14;&#xe34;&#xe01;&#xe32;&#xe23;&#xe2a;&#xe31;&#xe07;&#xe04;&#xe21;">
-<node CREATED="1335352548240" ID="ID_1173543423" MODIFIED="1335352576852" TEXT="link: &#xe1c;&#xe39;&#xe49;&#xe14;&#xe49;&#xe2d;&#xe22;&#xe42;&#xe2d;&#xe01;&#xe32;&#xe2a;: /social/seniors"/>
-<node CREATED="1283041828720" ID="ID_1629563624" MODIFIED="1335318436657" TEXT="add_senior:&#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe1c;&#xe39;&#xe49;&#xe14;&#xe49;&#xe2d;&#xe22;&#xe42;&#xe2d;&#xe01;&#xe32;&#xe2a;">
+<node CREATED="1335352548240" ID="ID_1173543423" MODIFIED="1335365560854" TEXT="link: &#xe1c;&#xe39;&#xe49;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe1a;&#xe35;&#xe49;&#xe22;&#xe22;&#xe31;&#xe07;&#xe0a;&#xe35;&#xe1e;: /social/seniors"/>
+<node CREATED="1283041828720" ID="ID_1629563624" MODIFIED="1335365573588" TEXT="add_senior:&#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe1c;&#xe39;&#xe49;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe1a;&#xe35;&#xe49;&#xe22;&#xe22;&#xe31;&#xe07;&#xe0a;&#xe35;&#xe1e;">
 <node CREATED="1280841997526" ID="ID_972701593" MODIFIED="1286584288110" TEXT="enter:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
 <icon BUILTIN="attach"/>
 <node CREATED="1286584320837" ID="ID_1448868591" MODIFIED="1286584323809" TEXT="role:co"/>
@@ -66,6 +66,8 @@
 <node CREATED="1280526203689" ID="ID_1346693183" MODIFIED="1280526207204" TEXT="display:n"/>
 </node>
 </node>
+<node CREATED="1335367222322" ID="ID_1338430511" MODIFIED="1335367236887" TEXT="link: google: http://google.com"/>
+<node CREATED="1335367685554" ID="ID_46769837" MODIFIED="1335367697691" TEXT="link: frit: http://www.frit.or.th"/>
 </node>
 <node CREATED="1275752678377" FOLDED="true" ID="ID_1348489452" MODIFIED="1319015031901" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275752688167" ID="ID_229996461" MODIFIED="1275752690948" TEXT="role:a"/>
@@ -170,11 +172,9 @@
 </node>
 </node>
 </node>
-<node CREATED="1273706796854" FOLDED="true" ID="ID_1003882979" MODIFIED="1320295831870" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
+<node CREATED="1273706796854" ID="ID_1003882979" MODIFIED="1335367808294" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
 <node CREATED="1273706824535" ID="ID_682167045" MODIFIED="1278500871367" TEXT="link: update app: /gma/update_app"/>
-<node CREATED="1315239767885" ID="ID_191614863" MODIFIED="1315239781578" TEXT="link: update services: /gma/update_services"/>
-<node CREATED="1281681992475" ID="ID_757791014" MODIFIED="1283285585589" TEXT="link: dbpush modules/services:/admin/db_push_ms"/>
 <node CREATED="1273706854639" ID="ID_1481857171" MODIFIED="1278500875816" TEXT="link: mind map: /gma/view_mm"/>
 <node CREATED="1301794306865" ID="ID_618068276" MODIFIED="1301794338407" TEXT="link: rspec result: /spec.html"/>
 <node CREATED="1275447796625" ID="ID_1998592758" MODIFIED="1278500842216" TEXT="link: statistics: /admin/stat"/>
