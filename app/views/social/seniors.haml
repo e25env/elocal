@@ -1,16 +1,8 @@
-%h4(style='text-align:center;') ทะเบียนผู้รับเบี้ยยังชีพ
+- @title= "ทะเบียนผู้รับเบี้ยยังชีพ"
 - if office_office? || true
-  /%div(style='float:right')
-  =image_tag 'add.png'
-  = link_to align_text('ขึ้นทะเบียนผู้รับเบี้ยยังชีพ'), "/run/social/add_senior"
-  =image_tag 'printer.png'
-  = link_to align_text('ผู้สูงอายุ-งบรัฐบาล'), "/social/senior_state", :target=>"_blank"
-  =image_tag 'printer.png'
-  = link_to align_text('ผู้สูงอายุ-งบท้องถิ่น'), "/social/senior_local", :target=>"_blank"
-  =image_tag 'printer.png'
-  = link_to align_text('ผู้พิการ'), "/social/handicap", :target=>"_blank"
-  =image_tag 'printer.png'
-  = link_to align_text('ผู้ป่วยโรคเอดส์'), "/social/aids", :target=>"_blank"
+  %div(style='float:right')
+    = image_tag 'add.png'
+    = link_to align_text('ขึ้นทะเบียนผู้รับเบี้ยยังชีพ'), "/run/social/add_senior"
 %table{:class=>'budget_table', :width=>"100%"}
   %tr{:style=>"color:white; background-color:#6A6A6A;"}
     - if office_office? || true
@@ -21,12 +13,12 @@
     %th โทรศัพท์
     %th ประเภท
   - @seniors.each do |s|
-    - next unless s.person
+    /- next unless s.person
     %tr
       - if office_office? || true
         %td= link_to image_tag('pencil.png'), "/run/office/edit_senior/#{s.id}"
-        %td= link_to image_tag('cross.png'), "/run/social/rm_senior/#{s.id}", :confirm=>"กรุณายืนยัน"
+        %td= link_to image_tag('cross.png'), "#", :onclick=>"if (confirm('กรุณายืนยัน')) {location.hash='/run/social/rm_senior/#{s.id}'};"
       %td(align='center')= s.moo
-      %td= s.person.full_name
-      %td= s.person.phone
+      %td= s.full_name
+      %td= s.phone
       %td{:align=>'center'}= underprivileged s.underprivileged

@@ -37,3 +37,4 @@ group :test do
   gem "syntax"
   gem "webmock"
 end
+gem "wirble"

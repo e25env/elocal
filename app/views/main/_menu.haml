@@ -38,4 +38,8 @@
           %a{"data-panel" => "main", :href => "/main/local_ip"} ตำแหน่งเครื่องแม่ข่าย
         - if login?
           %li
+            %a{"data-panel" => "main", :href => "/main/pending"} งานที่อยู่ระหว่างดำเนินการ
+          %li
             %a{"data-panel" => "main", :href => "/users/logout"} ออกจากระบบ
+        %li
+          = link_to "ปรับปรุงหน้าจอ", "#", :onclick=>"window.location.replace('/')"

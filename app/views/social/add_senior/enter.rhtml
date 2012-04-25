@@ -1,57 +1,27 @@
 <% y = Time.now.year+543
    senior = Senior.new :budget=>1
 %>
-<table width="100%">
-  <% fields_for senior do |f| %>
-    <tr>
-      <td class="field-name">งบประมาณ</td>
-      <td colspan='2'><%= f.select :budget, [['ท้องถิ่น',1],['รัฐบาล',2]] %></td>
-    </tr>
-    <tr>
-      <td class="field-name">ประเภท</td>
-      <td colspan='2'><%= f.select :underprivileged, [['ผู้สูงอายุ',1],['ผู้พิการ',2],['ผู้ป่วยโรคเอดส์',3]] %></td>
-    </tr>
-    <tr>
-      <td class="field-name">เอกสารอ้างอิง</td>
-      <td colspan="2"><%= f.file_field :ref_in %></td>
-    </tr>
-    <%= f.hidden_field :person_id %>
-  <% end %>
-  <% fields_for :person do |f| %>
-    <tr>
-      <td class="field-name refresh">เลขประจำตัวประชาชน</td>
-      <td><%= f.text_field :nid, :style=>"width:150px;" %></td>
-      <td><%= link_to "ขึ้นทะเบียนบุคคล", "/run/office/add_person", :target => "_blank"  %></td>
-    </tr>
-    <tr>
-      <td class="field-name">&nbsp;</td>
-      <td colspan='2' id="person_info"></td>
-    </tr>
-  <% end %>
-</table>
-<%= fix_thai_year %>
-<script>
-  function set_person(label, item) {
-    var el = label.split("|");
-    $("#senior_"+item+"_id").val(el[2]);
-    t = "<br/>";
-    if(el[3]) {
-      t = t + el[3] + "<br/>";
-    }
-    if(el[4]) {
-      t = t + "<a target='_blank' href='"+el[4]+"'><img src='/images/user.png'/></a>";
-    }
-    if(el[5]) {
-      t = t + " <a target='_blank' href='"+el[5]+"'><img src='/images/house.png'/></a>";
-    }
-    t = t + " <a target='_blank' href='/run/office/edit_person/"+el[2]+"'>แก้ไข</a>";
-    $("#"+item+"_info").html(el[1]+t);
-  }
-  $("#person_nid").autocomplete({
-    source: "/main/person",
-    minLength: 2,
-    select: function(e,ui) {
-      set_person(ui.item.label,"person");
-    }
-  });
-</script>
+<% fields_for senior do |f| %>
+  <%= f.label :title, "คำนำหน้า" %>
+  <%= f.select :title, ["นาย","นาง","นางสาว"] %>
+  <%= f.label :fname, "ชื่อ" %>
+  <%= f.text_field :fname %>
+  <%= f.label :lname, "นามสกุล" %>
+  <%= f.text_field :lname %>
+  <%= f.label :nid, "เลขประจำตัวประชาชน" %>
+  <%= f.text_field :nid %>
+  <%= f.label :doc_id, "สำเนาบัตรประชาชน" %>
+  <%= f.file_field :doc_id %>
+  <%= f.label :doc_house, "สำเนาทะเบียนบ้าน" %>
+  <%= f.file_field :doc_house %>
+  <%= f.label :dob, "วันเกิด" %>
+  <%= f.date_field :dob %>
+  <%= f.label :phone, "โทรศัพท์" %>
+  <%= f.text_field :phone %>
+  <%= f.label :budget, "งบประมาณ" %>
+  <%= f.select :budget, [['ท้องถิ่น',1],['รัฐบาล',2]] %>
+  <%= f.label :underprivileged, "ประเภท" %>
+  <%= f.select :underprivileged, [['ผู้สูงอายุ',1],['ผู้พิการ',2],['ผู้ป่วยโรคเอดส์',3]] %>
+  <%= f.label :ref_in, "เอกสารอ้างอิง" %>
+  <%= f.file_field :ref_in %>
+<% end %>
