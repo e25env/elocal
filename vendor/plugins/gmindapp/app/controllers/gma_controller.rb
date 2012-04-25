@@ -48,6 +48,7 @@ class GmaController < ApplicationController
   end
   def view_mm
     @title= "Mind Map"
+    render :layout => 'layouts/_page' 
   end
   def update_app
     @title= "Update Application from Mindmap"

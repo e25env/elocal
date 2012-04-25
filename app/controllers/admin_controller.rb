@@ -1,8 +1,12 @@
+# encoding: utf-8
 class AdminController < ApplicationController
   before_filter :admin_action, :except=>[:daily_housekeeping, :hourly_housekeeping]
 
   def index
     redirect_to "/gma/logs"
+  end
+  def rspec
+    render :text => File.read('public/spec.html'), :layout => true
   end
   def ws
     @ws= GmaWsQueue.active.paginate :per_page => 20, :page=>params[:page]
