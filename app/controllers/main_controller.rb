@@ -1,6 +1,9 @@
+# encoding: utf-8
 class MainController < ApplicationController
   # require "open-uri"
   # require "hpricot"
+  # require 'RedCloth'
+  
   def home
     if login?
       @xmains= GmaXmain.all :conditions=>"status='R' or status='I' ", :order=>"created_at", :include=>:gma_runseqs
@@ -16,6 +19,20 @@ class MainController < ApplicationController
     #   redirect_to :action => "pending"
     # end
     redirect_to :action => "home"
+  end
+  def doc_print
+    render :file=>'public/doc.html', :layout=>'layouts/print'
+  end
+  def doc
+    @app= get_app
+    # @name = 'ระบบงานสารสนเทศบูรณาการองค์กรปกครองส่วนท้องถิ่น'
+    @intro = File.read('README.md')
+    @print= "<div align='right'><a href='http://redcloth.org/textile/writing-paragraph-text/' target='_blank'>redcloth</a> <img src='/images/printer.png'/> <a href='/main/doc_print' target='_blank'/>พิมพ์</a></div>"
+    doc= render_to_string :file=> 'main/doc.md', :layout => false
+    html= RedCloth.new(doc).to_html
+    # html= doc.redcloth
+    File.open('public/doc.html','w') {|f| f.puts html }
+    render :text=> @print+html, :layout => true
   end
   def end_action
     redirect_to :action=> "pending"

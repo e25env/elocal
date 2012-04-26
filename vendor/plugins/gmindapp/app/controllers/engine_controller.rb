@@ -76,7 +76,7 @@ class EngineController < ApplicationController
     if params[:return]
       redirect_to params[:return]
     else
-      redirect_to_root
+      redirect_to "/main/pending"
     end
   end
 

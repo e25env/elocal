@@ -1,0 +1,2147 @@
+<style>code { font-size: 0.8em;}</style>
+<h1>ระบบสารสนเทศบูรณาการองค์กรปกครองส่วนท้องถิ่น (<span class="caps">ELOCAL</span>)</h1>
+<h2>หลักการและเหตุผล</h2>
+<p>องค์กรปกครองส่วนท้องถิ่น ได้มีการนำเอาเทคโนโลยีสารสนเทศมาใช้เพิ่มประสิทธิภาพในการปฏิบัติราชการ และให้บริการประชาชนในโครงการต่างๆ ส่งผลดีในด้านการบริหารจัดการข้อมูล การจัดเก็บรายได้ และความพึงพอใจของผู้ใช้บริการ จึงเห็นสมควรพัฒนาต่อยอดให้มีการบูรณาการข้อมูลเพื่อให้ผู้บริหาร และเจ้าหน้าที่ที่เกี่ยวข้อง สามารถนำข้อมูลไปใช้ในการดำเนินงานกำหนดนโยบาย ติดตามและเร่งรัดการปฏิบัติตามแผนงานโครงการต่างๆ ตลอดจนถึงการให้บริการประชาชนในลักษณะของศูนย์บริการร่วม และบริการต่างๆของหน่วยงานผ่านทางออนไลน์ เพื่อเพิ่มศักยภาพในการดำเนินการให้มีประสิทธิภาพดียิ่งขึ้น</p>
+<h2>วัตถุประสงค์</h2>
+<ul>
+	<li>ผู้บริหารและเจ้าหน้าที่ผู้ปฏิบัติงานสามารถเข้าถึงสารสนเทศที่ต้องการได้อย่างรวดเร็ว ทันต่อเหตุการณ์ เนื่องจากข้อมูลถูกจัดเก็บ และบริหารอย่างเป็นระบบ</li>
+	<li>ผู้บริหารสามารถกำหนดเป้าหมายกลยุทธ์ และวางแผนปฏิบัติการ โดยมีข้อมูลจากระบบสารสนเทศ ช่วยในการตัดสินใจ</li>
+	<li>มีการบันทึกข้อมูลจากการปฏิบัติงานทุกภาคส่วน ทำให้มีประวัติของข้อมูลอย่างต่อเนื่อง สามารถที่จะบ่งชี้แนวโน้มของการดำเนินงานได้อย่างถูกต้อง</li>
+	<li>มีระบบเพื่อติดตามผลการปฏิบัติราชการตามนโยบาย และยุทธศาสตร์ของหน่วยงานในสังกัดได้อย่างมีประสิทธิภาพ</li>
+	<li>ช่วยในการศึกษา วิเคราะห์สาเหตุของปัญหา และวางแนวทางแก้ไข กรณีที่การดำเนินงานไม่เป็นไปตามแผนงาน โดยการวิเคราะห์ข้อมูลที่เกิดขึ้น</li>
+	<li>เพื่อพัฒนาให้บริการประชาชนได้อย่างรวดเร็ว ถูกต้อง ในขณะที่ช่วยให้การทำงานไม่เกิดความซ้ำซ้อน เพิ่มความพึงพอใจให้กับประชาชนผู้ใช้บริการที่มีประสิทธิภาพมากขึ้น</li>
+	<li>สามารถจัดเก็บรายได้อย่างถูกต้อง ครบถ้วน และลดค่าใช้จ่ายในการประมวลผลเอกสาร</li>
+</ul>
+<h2>องค์ประกอบของระบบฯ</h2>
+<p>ระบบสารสนเทศบูรณาการเพื่อการบริหารงานองค์กรปกครองส่วนท้องถิ่น แบ่งออกเป็น ๘ โมดูลครอบคลุมการทำงานทุกภาคส่วนขององค์กรปกครองส่วนท้องถิ่นทุกประเภททั้งองค์การบริหารส่วนตำบล เทศบาล และองค์การบริหารส่วนจังหวัด</p>
+<ul>
+	<li>โมดูลบริหารกลาง
+	<ul>
+		<li>ระบบสารสนเทศผู้บริหาร (Executive Information System)</li>
+		<li>งานสารบรรณ</li>
+		<li>ระบบงานการเลือกตั้ง</li>
+		<li>ระบบจัดการประชุม</li>
+		<li>ระบบปฏิทินนัดหมาย</li>
+		<li>ระบบบริหารจัดการองค์ความรู้</li>
+		<li>ระบบข้อมูลอาสาสมัครป้องกันภัยฝ่ายพลเรือน</li>
+		<li>ระบบบริหารข้อร้องเรียน</li>
+		<li>งานออกใบรับรองเครื่องชั่ง ตวง วัด</li>
+		<li>ระบบงานทะเบียนสัตว์พาหนะ</li>
+		<li>ระบบงานออกใบสั่งและเปรียบเทียบปรับ</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>โมดูลนโยบายและแผน
+	<ul>
+		<li>งานนโยบายและแผน</li>
+		<li>งานติดตามการใช้จ่ายงบประมาณ</li>
+		<li>งานติดตามความคืบหน้าของการดำเนินโครงการ</li>
+		<li>ระบบรายงานและแจ้งเตือน</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>โมดูลบริหารบุคคลากร
+	<ul>
+		<li>ประวัติการดำรงตำแหน่ง</li>
+		<li>เครื่องราชอิสริยาภรณ์</li>
+		<li>การลา</li>
+		<li>การศึกษา และการฝึกอบรม</li>
+		<li>การดำเนินการทางวินัย</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>โมดูลการคลัง
+	<ul>
+		<li>งานจัดเก็บรายได้</li>
+		<li>ระบบทะเบียนทรัพย์สิน</li>
+		<li>ระบบเบิกจ่ายฎีกา</li>
+		<li>งานบริหารพัสดุ และครุภัณฑ์</li>
+		<li>งานบริหารบัญชีและการเงิน</li>
+		<li>งานเรียกเก็บค่าใช้น้ำบาดาล</li>
+		<li>ระบบงานทะเบียนพาณิชย์</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>โมดูลโยธา
+	<ul>
+		<li>ระบบใบอนุญาตก่อสร้าง การควบคุมอาคาร</li>
+		<li>งานควบคุมโครงการ</li>
+		<li>การเปรียบเทียบปรับคดีความผิดตามกฏหมายว่าด้วยการควบคุมอาคาร</li>
+		<li>การอนุญาตให้ก่อสร้างสิ่งล่วงล้ำลำน้ำ</li>
+		<li>ฐานข้อมูลถนนและสะพาน</li>
+		<li>ฐานข้อมูลแหล่งน้ำ และสถานีขนส่งทางน้ำ</li>
+		<li>ระบบประปา</li>
+		<li>ระบบงานน้ำบาดาล</li>
+		<li>การอนุญาตขุดเจาะบ่อน้ำบาดาล</li>
+		<li>ฐานข้อมูลสถานีสูบน้ำด้วยไฟฟ้า</li>
+		<li>งานผังเมือง</li>
+		<li>ระบบงานสถานที่เก็บรักษาน้ำมันเชื้อเพลิง</li>
+		<li>ฐานข้อมูลที่สาธารณประโยชน์ และที่รกร้างว่างเปล่า</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>โมดูลการศึกษา ศาสนา และวัฒนธรรม
+	<ul>
+		<li>ระบบการบริหารจัดการศูนย์พัฒนาเด็กเล็ก</li>
+		<li>งานสงเคราะห์และจัดสวัสดิการเด็กและเยาวชน (อาหารเสริมนมและอาหารกลางวัน)</li>
+		<li>ระบบเงินอุดหนุนค่าอาหารเสริม (นม) สำหรับการศึกษาพิเศษ การศึกษาเพื่อคนพิการ และการศึกษาสงเคราะห์</li>
+		<li>ฐานข้อมูลสถานศึกษา</li>
+		<li>ฐานข้อมูลศาสนสถาน และโบราณสถาน</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>โมดูลสวัสดิการสังคม
+	<ul>
+		<li>ระบบงานเบี้ยยังชีพผู้สูงอายุ ผู้พิการ และผู้ป่วยเอดส์</li>
+		<li>ระบบงานส่งเสริมกีฬา สนามกีฬา และลานเอนกประสงค์</li>
+		<li>ระบบข้อมูลกลุ่มอาชีพ</li>
+		<li>ระบบข้อมูลกลุ่มเกษตรกรและข้อมูลที่กี่ยวข้องกับการเกษตร การช่วยเหลือกำจัดศัตรูพืช</li>
+		<li>การจัดทำแผนพัฒนาการเกษตรระดับตำบล</li>
+		<li>ระบบบริหารจัดการกลุ่มออมทรัพย์เพื่อการผลิต</li>
+		<li>การดำเนินงานพัฒนาสตรีโดยองค์กรสตรี</li>
+		<li>ระบบรวบรวมส่งเสริมพัฒนาภูมิปัญญาท้องถิ่น</li>
+		<li>ระบบงานฝึกอาชีพ การรวมกลุ่มและพัฒนากลุ่มเกษตรกร</li>
+		<li>ฐานข้อมูลประชากร เพื่องานส่งเสริมคุณภาพชีวิต และการช่วยเหลือผู้ประสบภัย</li>
+		<li>งานฌาปนกิจสงเคราะห์</li>
+	</ul></li>
+</ul>
+<ul>
+	<li>โมดูลสาธารณสุข และสิ่งแวดล้อม
+	<ul>
+		<li>ระบบบริหารจัดการขยะมูลฝอย และสิ่งปฏิกูล</li>
+		<li>งานบริหารจัดการระบบบำบัดน้ำเสีย</li>
+		<li>ระบบงานใบอนุญาต</li>
+		<li>จัดตั้งสถานสะสมอาหาร</li>
+		<li>จัดตั้งสถานที่จำหน่ายอาหาร</li>
+		<li>กิจการที่เป็นอันตรายต่อสุขภาพ</li>
+		<li>สุราและยาสูบ</li>
+		<li>ระบบงานตลาด</li>
+		<li>ระบบงานส่งเสริมสุขภาพ</li>
+		<li>ระบบงานกำกับดูแลโรงงาน</li>
+		<li>งานคุ้มครองผู้บริโภค</li>
+		<li>ระบบงานสถานบริการ</li>
+		<li>ระบบงานโรงแรม</li>
+		<li>ระบบงานหอพักเอกชน</li>
+	</ul></li>
+</ul>
+<hr/>
+<h2>คู่มือการใช้งาน</h2>
+<ul>
+	<li>ระบบงานย่อย 1</li>
+	<li>งาน 1 ; หน้าจอ, หน้าจอ, หน้าจอ</li>
+	<li>งาน 2</li>
+	<li>ระบบงานย่อย 2</li>
+	<li>ระบบงานย่อย 3</li>
+</ul>
+<hr/>
+<h2>คู่มือผู้ดูแลระบบ</h2>
+<h3>โครงสร้างข้อมูล</h3>
+<h4>org</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Org &lt; ActiveRecord::Base
+  def self.full_name
+    o= self.last
+    "#{o.otype}#{o.name}"
+  end
+  def self.abbrev_name
+    o= self.last
+    "#{o.otype_abbrev}. #{o.name}"
+  end
+  def self.head_report
+    org= self.last
+    "#{org.otype}#{org.name} อำเภอ#{org.district} จังหวัด#{org.province}"
+  end
+  def self.logo
+    return File.exist?('public/images/logo.png') ? "logo.png" : "logo_elocal.png"
+  end
+  def self.license
+    if File.exists?(CACHE_PATH)
+      l = License.new
+      require 'key'
+      public_key_file = 'config/pob.public.pem';
+      public_key= Key.new(public_key_file)
+      license = public_key.pub_decrypt(l.license)
+      return license
+    else
+      return "starter"
+    end
+  rescue
+    return "starter"
+  end
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: otype
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: otype_abbrev
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: address
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: district
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: province
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: phone
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: villages
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>search</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Search &lt; ActiveRecord::Base
+  belongs_to :trip
+  belongs_to :waypoint
+
+  def self.search(q, page, per_page=10)
+    paginate :per_page=&gt;per_page, :page =&gt; page, :conditions =&gt;
+      ["item LIKE ?", "%#{q}%" ], :order=&gt;'score DESC'
+  end
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: item
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: class
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: trip_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: waypoint_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>doc</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Doc &lt; ActiveRecord::Base
+  def icon
+    case dtype
+    when 1
+      "arrow_right.png"
+    when 2
+      "arrow_turn_left.png"
+    when 3
+      "page_green.png"
+    end
+    # return dtype==1 ? "arrow_right.png" : "arrow_turn_left.png"
+  end
+  def title
+    case dtype
+    when 1
+      "เอกสารเข้า"
+    when 2
+      "เอกสารออก"
+    when 3
+      "บันทึกข้อความ"
+    end
+    # return dtype==1 ? "arrow_right.png" : "arrow_turn_left.png"
+  end
+  def process_at_time
+    default= process_at || Time.now
+    default.strftime('%R')
+    # "#{p.hour}:#{p.min}"
+  end
+  def process_at_time=(t)
+    @process_at_time= t
+  end
+  def before_create 
+    if process_at &amp;&amp; @process_at_time
+      d = process_at.strftime('%F ')
+      write_attribute "process_at", d+@process_at_time
+    end
+  end
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: rnum
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: num
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: issue_on
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: date
+  type: :date
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: dfrom
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: dto
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: subject
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: section_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: process_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: summary
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: text
+  type: :text
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: dscan
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: dtype
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: ref
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: confidential_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: urgent_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: attach
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+</code></pre>
+<h4>urgent</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Urgent &lt; ActiveRecord::Base
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>confidential</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Confidential &lt; ActiveRecord::Base
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>section</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Section &lt; ActiveRecord::Base
+  has_many :subsections
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: doc_code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>subsection</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Subsection &lt; ActiveRecord::Base
+  belongs_to :section
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: section_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>fsection</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Fsection &lt; ActiveRecord::Base
+  include ArMethods
+  has_many :budgets
+  def cats_fy(fy=fiscal_year)
+    cats= budgets(:conditions=&gt;{:fy=&gt;fy}).map(&amp;:cat_id).uniq.sort
+    Cat.find cats
+  end
+  def doc_code
+    return id==0 ? "" : Section.find(id).doc_code
+  end
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: account
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: budget
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: double precision
+  type: :float
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: balance
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: double precision
+  type: :float
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>side</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Side &lt; ActiveRecord::Base
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: !float 0
+  limit: 
+  name: budget
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: double precision
+  type: :float
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: !float 0
+  limit: 
+  name: balance
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: double precision
+  type: :float
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>account</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Account &lt; ActiveRecord::Base
+  default_scope :order=&gt;"atype,code"
+  has_many :account_trans, :order=&gt;"reported_on DESC", :class_name=&gt;"AccountTrans"
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code_dla
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: atype
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: balance
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: double precision
+  type: :float
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: parent_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: reported
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: boolean
+  type: :boolean
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>account_trans</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class AccountTrans &lt; ActiveRecord::Base
+  belongs_to :account
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: account_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: description
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: reported_on
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: date
+  type: :date
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: rtype
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: amount
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: double precision
+  type: :float
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>laas_queue</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class LaasQueue &lt; ActiveRecord::Base
+  named_scope :active, :conditions=&gt;['status IN (0,2)']
+  def status_icon
+    case status
+    when 0
+      "clock.png"
+    when 2
+      "logout.png"
+    end
+  end
+  def submit(ff)
+    eval(script)
+  end
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: xmain_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: description
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: text
+  type: :text
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: script
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: text
+  type: :text
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: confirm
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: status
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: submitted_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: retry
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>village_head</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class VillageHead &lt; ActiveRecord::Base
+  def full_name
+    "#{title}#{fname} #{lname}"
+  end
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: title
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: fname
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: lname
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: moo
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: address
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: sub_district
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: district
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: province
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: phone
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>senior</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Senior &lt; ActiveRecord::Base
+  def full_name
+    "#{title}#{fname} #{lname}"
+  end
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: title
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: fname
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: lname
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: nid
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: doc_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: doc_house
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: dob
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: date
+  type: :date
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: phone
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: address
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: street
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: moo
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: sub_district_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: district_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: province_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: status
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: budget
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: underprivileged
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: ref_in
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: ref_out
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: inspected
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: boolean
+  type: :boolean
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: approved
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: boolean
+  type: :boolean
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>province</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class Province &lt; ActiveRecord::Base
+  has_many :districts
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: region
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>district</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class District &lt; ActiveRecord::Base
+  belongs_to :province
+  has_many :sub_districts
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: prefix
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: latitude
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: double precision
+  type: :float
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: longitude
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: double precision
+  type: :float
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: province_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h4>sub_district</h4>
+<h5>model</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    class SubDistrict &lt; ActiveRecord::Base
+  belongs_to :district
+end
+</code></pre>
+<h5>ฐานข้อมูล</h5>
+<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    --- 
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: id
+  "null": false
+  precision: 
+  primary: true
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: code
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 255
+  name: name
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: character varying(255)
+  type: :string
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: district_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: gma_user_id
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: integer
+  type: :integer
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: created_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+- !ruby/object:ActiveRecord::ConnectionAdapters::PostgreSQLColumn 
+  default: 
+  limit: 
+  name: updated_at
+  "null": true
+  precision: 
+  primary: false
+  scale: 
+  sql_type: timestamp without time zone
+  type: :datetime
+</code></pre>
+<h3>source code</h3>
+<hr/>
+<h2>ภาคผนวก</h2>
+<h3>markdown</h3>
+<p>คู่มือนี้จัดทำขึ้นโดยอัตโนมัติจาก mind map และส่วนต่างๆ ของรหัสโปรแกรม ผู้พัฒนาสามารถเขียนวิธีการใช้งานได้อย่างอิสระ โดยใช้คำสั่ง redcloth ในการเขียนคู่มือประกอบเข้ากับส่วนต่างๆของระบบงาน</p>

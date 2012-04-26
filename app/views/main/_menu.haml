@@ -15,9 +15,12 @@
         %h1 ELOCAL
     %div{"data-role" => "content"}
       %ul{"data-role" => "listview", "data-theme" => "g"}
-        %li
-          %a{"data-panel" => "main", :href => "#search"} ค้นหา
-        - unless login?
+        - if login?
+          %li
+            %a{"data-panel" => "main", :href => "#search"} ค้นหา
+          %li
+            %a{"data-panel" => "main", :href => "/main/pending"} งานระหว่างดำเนินการ
+        - else
           %li
             %a{:href=>"#login", "data-rel"=>"dialog", "data-panel" => "main"} เข้าใช้ระบบ
         - @amodules.each do |m|
@@ -41,11 +44,7 @@
                   /%a{{"data-panel"=>"main", :onclick=>"location.hash='"+url.strip+"'"}.merge(@confirm)}= name
         %li
           %a{"data-panel" => "main", :href => "#about"} เกี่ยวกับ ELOCAL
-        %li
-          %a{"data-panel" => "main", :href => "/main/local_ip"} ตำแหน่งเครื่องแม่ข่าย
         - if login?
-          %li
-            %a{"data-panel" => "main", :href => "/main/pending"} งานที่อยู่ระหว่างดำเนินการ
           %li
             %a{"data-panel" => "main", :href => "/users/logout"} ออกจากระบบ
         %li

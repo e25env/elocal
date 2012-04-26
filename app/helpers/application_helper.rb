@@ -1,3 +1,4 @@
+# encoding: utf-8
 # Methods added to this helper will be available to all templates in the application.
 module ApplicationHelper
   require "fusion_charts_helper"
@@ -10,6 +11,16 @@ module ApplicationHelper
     User.find INCOME_SUMMARY_MAKER
   end
   #------------------------
+  def code_div(s)
+    "<pre style='background-color: #efffef;'><code class='ruby' lang='ruby'>    #{s}</code></pre>"
+  end
+  def check_img(i)
+    if i
+      image_tag('tick.png')
+    else
+      image_tag('cross.png')
+    end
+  end
   def leave_options
     [["ลาป่วย",1],["ลาคลอดบุตร",2],["ลากิจ",3],
       ["ลาพักผ่อน",4], ["ลาอุปสมบท",5], ["ลาราชการทหาร",6],

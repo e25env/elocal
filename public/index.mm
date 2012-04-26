@@ -2,7 +2,7 @@
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
 <node CREATED="1273819432637" ID="ID_1098419600" MODIFIED="1279699253278" TEXT="elocal">
 <node CREATED="1273819462973" ID="ID_282419531" MODIFIED="1326909692944" POSITION="right" TEXT="services">
-<node CREATED="1275756501221" FOLDED="true" ID="ID_1720745721" MODIFIED="1320295644530" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
+<node CREATED="1275756501221" ID="ID_1720745721" MODIFIED="1335424998374" TEXT="account:&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;">
 <node CREATED="1278491598711" ID="ID_1662699954" MODIFIED="1278491602025" TEXT="role:m"/>
 <node CREATED="1279700865182" ID="ID_1266797279" MODIFIED="1282824456921" TEXT="link:&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;: /account"/>
 <node CREATED="1319015338880" ID="ID_189841353" MODIFIED="1319015363010" TEXT="link:&#xe07;&#xe32;&#xe19;&#xe17;&#xe35;&#xe48;&#xe2d;&#xe22;&#xe39;&#xe48;&#xe23;&#xe30;&#xe2b;&#xe27;&#xe48;&#xe32;&#xe07;&#xe14;&#xe33;&#xe40;&#xe19;&#xe34;&#xe19;&#xe01;&#xe32;&#xe23;: /main/pending"/>
@@ -26,7 +26,7 @@
 </node>
 <node CREATED="1276062721100" ID="ID_1806588076" MODIFIED="1276062727685" TEXT="rule: login?"/>
 </node>
-<node CREATED="1279700865182" ID="ID_630918549" MODIFIED="1280602323307" TEXT="link:&#xe04;&#xe39;&#xe48;&#xe21;&#xe37;&#xe2d;&#xe01;&#xe32;&#xe23;&#xe43;&#xe0a;&#xe49;&#xe07;&#xe32;&#xe19;: /main/doc"/>
+<node CREATED="1279700865182" ID="ID_630918549" MODIFIED="1335425548549" TEXT="link:&#xe04;&#xe39;&#xe48;&#xe21;&#xe37;&#xe2d;&#xe01;&#xe32;&#xe23;&#xe43;&#xe0a;&#xe49;&#xe07;&#xe32;&#xe19;: /main/doc"/>
 </node>
 <node CREATED="1279397496008" FOLDED="true" ID="ID_587395922" MODIFIED="1335351862298" TEXT="office:&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;">
 <node CREATED="1315283113094" ID="ID_1619604591" MODIFIED="1315907228366" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe07;&#xe32;&#xe19;&#xe2a;&#xe32;&#xe23;&#xe1a;&#xe23;&#xe23;&#xe13;: /office/doc_report"/>
@@ -58,19 +58,34 @@
 <icon BUILTIN="attach"/>
 <node CREATED="1286584320837" ID="ID_1448868591" MODIFIED="1286584323809" TEXT="role:co"/>
 </node>
-<node CREATED="1280842013459" ID="ID_766506708" MODIFIED="1288158332217" TEXT="create_senior:&#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;&#xe1c;&#xe39;&#xe49;&#xe14;&#xe49;&#xe2d;&#xe22;&#xe42;&#xe2d;&#xe01;&#xe32;&#xe2a;">
+<node CREATED="1280842013459" ID="ID_766506708" MODIFIED="1335418986533" TEXT="create_senior: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe25;&#xe07;&#xe10;&#xe32;&#xe19;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
 <icon BUILTIN="bookmark"/>
 </node>
 <node CREATED="1280526198322" ID="ID_1047256057" MODIFIED="1280526212454" TEXT="create_search">
 <icon BUILTIN="pencil"/>
 <node CREATED="1280526203689" ID="ID_1346693183" MODIFIED="1280526207204" TEXT="display:n"/>
 </node>
+<node CREATED="1335407386822" ID="ID_417933242" MODIFIED="1335407419514" TEXT="inspect: &#xe15;&#xe23;&#xe27;&#xe08;&#xe2a;&#xe2d;&#xe1a;">
+<icon BUILTIN="attach"/>
 </node>
-<node CREATED="1335367222322" ID="ID_1338430511" MODIFIED="1335367236887" TEXT="link: google: http://google.com"/>
-<node CREATED="1335367685554" ID="ID_46769837" MODIFIED="1335367697691" TEXT="link: frit: http://www.frit.or.th"/>
+<node CREATED="1335416320700" ID="ID_58220414" MODIFIED="1335416330095" TEXT="update_inspect">
+<icon BUILTIN="bookmark"/>
 </node>
-<node CREATED="1275752678377" FOLDED="true" ID="ID_1348489452" MODIFIED="1319015031901" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
+<node CREATED="1288375605703" ID="Freemind_Link_595342150" MODIFIED="1335411644008" TEXT="$xvars[:inspect][:pass]">
+<icon BUILTIN="help"/>
+<node CREATED="1288375664125" ID="Freemind_Link_1980857222" MODIFIED="1335411712303" TEXT="n:end"/>
+</node>
+<node CREATED="1335407402555" ID="ID_1947287787" MODIFIED="1335407431383" TEXT="approve: &#xe2d;&#xe19;&#xe38;&#xe21;&#xe31;&#xe15;&#xe34;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1335416332106" ID="ID_1834691348" MODIFIED="1335416344036" TEXT="update_approve">
+<icon BUILTIN="bookmark"/>
+</node>
+</node>
+</node>
+<node CREATED="1275752678377" ID="ID_1348489452" MODIFIED="1335436853169" TEXT="admin:&#xe1c;&#xe39;&#xe49;&#xe14;&#xe39;&#xe41;&#xe25;&#xe23;&#xe30;&#xe1a;&#xe1a;">
 <node CREATED="1275752688167" ID="ID_229996461" MODIFIED="1275752690948" TEXT="role:a"/>
+<node CREATED="1335436859871" ID="ID_1196512926" MODIFIED="1335436874501" TEXT="link: &#xe15;&#xe33;&#xe41;&#xe2b;&#xe19;&#xe48;&#xe07;&#xe40;&#xe04;&#xe23;&#xe37;&#xe48;&#xe2d;&#xe07;&#xe41;&#xe21;&#xe48;&#xe02;&#xe48;&#xe32;&#xe22;: /main/local_ip"/>
 <node CREATED="1302916180371" ID="ID_868306661" MODIFIED="1302916225911" TEXT="link: ws queue: /admin/ws"/>
 <node CREATED="1280374214975" ID="ID_980297856" MODIFIED="1280374230097" TEXT="link: &#xe23;&#xe32;&#xe22;&#xe0a;&#xe37;&#xe48;&#xe2d;&#xe1c;&#xe39;&#xe49;&#xe43;&#xe0a;&#xe49;: /admin/users"/>
 <node CREATED="1280601992129" FOLDED="true" ID="ID_149279552" MODIFIED="1318898578593" TEXT="edit_org: &#xe41;&#xe01;&#xe49;&#xe44;&#xe02;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25; &#xe2d;&#xe1b;&#xe17;.">
@@ -172,16 +187,13 @@
 </node>
 </node>
 </node>
-<node CREATED="1273706796854" ID="ID_1003882979" MODIFIED="1335367808294" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
+<node CREATED="1273706796854" ID="ID_1003882979" MODIFIED="1335417356143" TEXT="dev: &#xe1c;&#xe39;&#xe49;&#xe1e;&#xe31;&#xe12;&#xe19;&#xe32;">
 <node CREATED="1275373154914" ID="ID_340725299" MODIFIED="1275373158632" TEXT="role:d"/>
 <node CREATED="1273706824535" ID="ID_682167045" MODIFIED="1278500871367" TEXT="link: update app: /gma/update_app"/>
 <node CREATED="1301794306865" ID="ID_618068276" MODIFIED="1335370066420" TEXT="link: rspec result: /admin/rspec"/>
 <node CREATED="1275447796625" ID="ID_1998592758" MODIFIED="1278500842216" TEXT="link: statistics: /admin/stat"/>
-<node CREATED="1276986518055" ID="ID_1184016852" MODIFIED="1276986529980" TEXT="link: exceptions: /e"/>
+<node CREATED="1276986518055" ID="ID_1184016852" MODIFIED="1335418597811" TEXT="# link: exceptions: /e"/>
 <node CREATED="1275788317299" ID="ID_716276608" MODIFIED="1278500859677" TEXT="link: run_call errors: /gma/run_call_errors"/>
-<node CREATED="1275670141007" ID="ID_1522864412" MODIFIED="1278500866922" TEXT="link:!!! destroy gma: /admin/destroy_gma">
-<node CREATED="1276157211697" ID="ID_1614782227" MODIFIED="1276157244254" TEXT="confirm"/>
-</node>
 <node CREATED="1269473183363" ID="_Freemind_Link_1084942751" MODIFIED="1273707434512" TEXT="web_services">
 <node CREATED="1269473183363" FOLDED="true" ID="_Freemind_Link_1727186232" MODIFIED="1273913430968" TEXT="get_data">
 <icon BUILTIN="wizard"/>
@@ -1159,56 +1171,6 @@
 <node CREATED="1303488967245" ID="ID_1172077606" MODIFIED="1303489219041" TEXT="video: text"/>
 </node>
 </node>
-<node CREATED="1279699506823" FOLDED="true" ID="ID_263704773" MODIFIED="1302503006738" POSITION="right" TEXT="doc">
-<node CREATED="1279699256393" ID="ID_1255833428" MODIFIED="1279700043404">
-<richcontent TYPE="NODE"><html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      h2. &#3619;&#3632;&#3610;&#3610;&#3626;&#3634;&#3619;&#3626;&#3609;&#3648;&#3607;&#3624;&#3610;&#3641;&#3619;&#3603;&#3634;&#3585;&#3634;&#3619;&#3648;&#3614;&#3639;&#3656;&#3629;&#3585;&#3634;&#3619;&#3610;&#3619;&#3636;&#3627;&#3634;&#3619;&#3619;&#3634;&#3594;&#3585;&#3634;&#3619;&#3629;&#3591;&#3588;&#3660;&#3585;&#3619;&#3611;&#3585;&#3588;&#3619;&#3629;&#3591;&#3626;&#3656;&#3623;&#3609;&#3607;&#3657;&#3629;&#3591;&#3606;&#3636;&#3656;&#3609;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      h3. &#3627;&#3621;&#3633;&#3585;&#3585;&#3634;&#3619;&#3649;&#3621;&#3632;&#3648;&#3627;&#3605;&#3640;&#3612;&#3621;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      h3. &#3623;&#3633;&#3605;&#3606;&#3640;&#3611;&#3619;&#3632;&#3626;&#3591;&#3588;&#3660;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      h3. &#3648;&#3611;&#3657;&#3634;&#3627;&#3617;&#3634;&#3618;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      h3. &#3649;&#3612;&#3609;&#3585;&#3634;&#3619;&#3604;&#3635;&#3648;&#3609;&#3636;&#3609;&#3591;&#3634;&#3609;
-    </p>
-    <p>
-      
-    </p>
-    <p>
-      h3. &#3616;&#3634;&#3614;&#3619;&#3623;&#3617;&#3586;&#3629;&#3591;&#3619;&#3632;&#3610;&#3610;
-    </p>
-    <p>
-      !http://songrit.googlecode.com/files/mict.png(test image)!
-    </p>
-    <p>
-      
-    </p>
-  </body>
-</html></richcontent>
-</node>
-</node>
 <node CREATED="1273819456867" ID="ID_1888951394" MODIFIED="1335274201919" POSITION="left" TEXT="models">
 <node CREATED="1280465401089" FOLDED="true" ID="ID_1307540290" MODIFIED="1290871968433" TEXT="org">
 <node CREATED="1280465404206" ID="ID_410089471" MODIFIED="1280465817515" TEXT="otype:string"/>
@@ -1366,6 +1328,8 @@
 </node>
 <node CREATED="1286590104538" ID="ID_213279374" MODIFIED="1287638812271" TEXT="ref_in:string"/>
 <node CREATED="1287638813253" ID="ID_630431208" MODIFIED="1287638817336" TEXT="ref_out:string"/>
+<node CREATED="1335416354141" ID="ID_1760341300" MODIFIED="1335416858323" TEXT="inspected:boolean"/>
+<node CREATED="1335416358379" ID="ID_885114794" MODIFIED="1335416862012" TEXT="approved:boolean"/>
 </node>
 <node CREATED="1289075110980" FOLDED="true" ID="ID_872693279" MODIFIED="1326909850418" TEXT="province">
 <node CREATED="1289075151288" ID="ID_1614692048" MODIFIED="1289075158157" TEXT="code:string"/>
@@ -1384,6 +1348,87 @@
 <node CREATED="1289075305629" ID="ID_552100914" MODIFIED="1289075309485" TEXT="code:string"/>
 <node CREATED="1289075309756" ID="ID_1872917998" MODIFIED="1289075312517" TEXT="name:string"/>
 <node CREATED="1289075312902" ID="ID_730251410" MODIFIED="1289075324327" TEXT="district_id"/>
+</node>
+</node>
+<node CREATED="1335417253707" FOLDED="true" ID="ID_1813078188" MODIFIED="1335419890388" POSITION="left" TEXT="bak">
+<node CREATED="1279699506823" FOLDED="true" ID="ID_263704773" MODIFIED="1335417246945" TEXT="doc">
+<node CREATED="1279699256393" ID="ID_1255833428" MODIFIED="1279700043404">
+<richcontent TYPE="NODE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      h2. &#3619;&#3632;&#3610;&#3610;&#3626;&#3634;&#3619;&#3626;&#3609;&#3648;&#3607;&#3624;&#3610;&#3641;&#3619;&#3603;&#3634;&#3585;&#3634;&#3619;&#3648;&#3614;&#3639;&#3656;&#3629;&#3585;&#3634;&#3619;&#3610;&#3619;&#3636;&#3627;&#3634;&#3619;&#3619;&#3634;&#3594;&#3585;&#3634;&#3619;&#3629;&#3591;&#3588;&#3660;&#3585;&#3619;&#3611;&#3585;&#3588;&#3619;&#3629;&#3591;&#3626;&#3656;&#3623;&#3609;&#3607;&#3657;&#3629;&#3591;&#3606;&#3636;&#3656;&#3609;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      h3. &#3627;&#3621;&#3633;&#3585;&#3585;&#3634;&#3619;&#3649;&#3621;&#3632;&#3648;&#3627;&#3605;&#3640;&#3612;&#3621;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      h3. &#3623;&#3633;&#3605;&#3606;&#3640;&#3611;&#3619;&#3632;&#3626;&#3591;&#3588;&#3660;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      h3. &#3648;&#3611;&#3657;&#3634;&#3627;&#3617;&#3634;&#3618;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      h3. &#3649;&#3612;&#3609;&#3585;&#3634;&#3619;&#3604;&#3635;&#3648;&#3609;&#3636;&#3609;&#3591;&#3634;&#3609;
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      h3. &#3616;&#3634;&#3614;&#3619;&#3623;&#3617;&#3586;&#3629;&#3591;&#3619;&#3632;&#3610;&#3610;
+    </p>
+    <p>
+      !http://songrit.googlecode.com/files/mict.png(test image)!
+    </p>
+    <p>
+      
+    </p>
+  </body>
+</html></richcontent>
+</node>
+</node>
+<node CREATED="1283041828720" ID="ID_1671049394" MODIFIED="1335419882066" TEXT="add_senior:&#xe02;&#xe36;&#xe49;&#xe19;&#xe17;&#xe30;&#xe40;&#xe1a;&#xe35;&#xe22;&#xe19;&#xe1c;&#xe39;&#xe49;&#xe23;&#xe31;&#xe1a;&#xe40;&#xe1a;&#xe35;&#xe49;&#xe22;&#xe22;&#xe31;&#xe07;&#xe0a;&#xe35;&#xe1e;">
+<node CREATED="1280841997526" ID="ID_1480591045" MODIFIED="1286584288110" TEXT="enter:&#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
+<icon BUILTIN="attach"/>
+<node CREATED="1286584320837" ID="ID_1514699830" MODIFIED="1286584323809" TEXT="role:co"/>
+</node>
+<node CREATED="1280842013459" ID="ID_1750222518" MODIFIED="1335418986533" TEXT="create_senior: &#xe1a;&#xe31;&#xe19;&#xe17;&#xe36;&#xe01;&#xe25;&#xe07;&#xe10;&#xe32;&#xe19;&#xe02;&#xe49;&#xe2d;&#xe21;&#xe39;&#xe25;">
+<icon BUILTIN="bookmark"/>
+</node>
+<node CREATED="1280526198322" ID="ID_841837612" MODIFIED="1280526212454" TEXT="create_search">
+<icon BUILTIN="pencil"/>
+<node CREATED="1280526203689" ID="ID_4020139" MODIFIED="1280526207204" TEXT="display:n"/>
+</node>
+<node CREATED="1335407386822" ID="ID_1340582472" MODIFIED="1335407419514" TEXT="inspect: &#xe15;&#xe23;&#xe27;&#xe08;&#xe2a;&#xe2d;&#xe1a;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1335416320700" ID="ID_648144231" MODIFIED="1335416330095" TEXT="update_inspect">
+<icon BUILTIN="bookmark"/>
+</node>
+<node CREATED="1288375605703" ID="ID_716332741" MODIFIED="1335411644008" TEXT="$xvars[:inspect][:pass]">
+<icon BUILTIN="help"/>
+<node CREATED="1288375664125" ID="ID_182371043" MODIFIED="1335411712303" TEXT="n:end"/>
+</node>
+<node CREATED="1335407402555" ID="ID_1748519577" MODIFIED="1335407431383" TEXT="approve: &#xe2d;&#xe19;&#xe38;&#xe21;&#xe31;&#xe15;&#xe34;">
+<icon BUILTIN="attach"/>
+</node>
+<node CREATED="1335416332106" ID="ID_1442413758" MODIFIED="1335416344036" TEXT="update_approve">
+<icon BUILTIN="bookmark"/>
+</node>
 </node>
 </node>
 </node>
