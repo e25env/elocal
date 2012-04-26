@@ -7,7 +7,7 @@ one:
   nid: MyString
   doc_id: MyString
   doc_house: MyString
-  dob: 2012-04-25
+  dob: 2012-04-26
   phone: MyString
   address: MyString
   street: MyString
@@ -20,6 +20,8 @@ one:
   underprivileged: 1
   ref_in: MyString
   ref_out: MyString
+  inspected: false
+  approved: false
   gma_user_id: 1
 
 two:
@@ -29,7 +31,7 @@ two:
   nid: MyString
   doc_id: MyString
   doc_house: MyString
-  dob: 2012-04-25
+  dob: 2012-04-26
   phone: MyString
   address: MyString
   street: MyString
@@ -42,4 +44,6 @@ two:
   underprivileged: 1
   ref_in: MyString
   ref_out: MyString
+  inspected: false
+  approved: false
   gma_user_id: 1

@@ -20,6 +20,8 @@ class CreateSeniors < ActiveRecord::Migration
       t.integer :underprivileged
       t.string :ref_in
       t.string :ref_out
+      t.boolean :inspected
+      t.boolean :approved
       t.integer :gma_user_id
 
       t.timestamps

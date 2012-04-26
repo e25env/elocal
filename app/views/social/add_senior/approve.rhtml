@@ -1,0 +1,44 @@
+<% senior = Senior.find $xvars[:senior_id] %>
+เรียน ท่านนายกองค์การบริหารส่วนตำบลบางตะไนย์
+<p/>
+ด้วย <%= b senior.full_name %> ได้ยื่นขอขึ้นทะเบียนผู้สูงอายุตามรายละเอียดดังต่อไปนี้
+ทางเจ้าหน้าที่ได้ตรวจสอบแล้วพบว่าถูกต้องเป็นไปตามระเบียบการรับขึ้นทะเบียน
+ขอรับการสงเคราะห์เบี้ยยังชีพผู้สูงอายุ จึงเรียนมาเพื่อนำเสนออนุมัติต่อไป
+
+<table style='padding-left:10px;'>
+  <tr>
+    <td>ชื่อ</td>
+    <td><%= b senior.full_name %></td>
+  </tr>
+  <tr>
+    <td>เลขประจำตัวประชาชน</td>
+    <td><%= b senior.nid %></td>
+  </tr>
+  <tr>
+    <td>วันเกิด</td>
+    <td><%= b senior.dob %></td>
+  </tr>
+  <tr>
+    <td>โทรศัพท์</td>
+    <td><%= b senior.phone %></td>
+  </tr>
+  <tr>
+    <td>งบประมาณ</td>
+    <td><%= b ['','ท้องถิ่น','รัฐบาล'][senior.budget] %></td>
+  </tr>
+  <tr>
+    <td>ประเภท</td>
+    <td><%= b ['','ผู้สูงอายุ','ผู้พิการ','ผู้ป่วยโรคเอดส์'][senior.underprivileged] %></td>
+  </tr>
+</table><p/>
+เอกสารประกอบ
+<ul>
+<li><%= link_to "คำขอลงทะเบียน", senior.ref_in, :target=>'_blank' %>
+<li><%= link_to "สำเนาบัตรประชาชน", senior.doc_id, :target=>'_blank' %>
+<li><%= link_to "สำเนาบัตรทะเบียนบ้าน", senior.doc_id, :target=>'_blank' %>
+</ul>
+
+<%= radio_button_tag :pass, 'y', :checked => true %>
+<%= label_tag :pass_y, 'อนุมัติ'%>
+<%= radio_button_tag :pass, 'n' %> 
+<%= label_tag :pass_n, 'ไม่อนุมัติ'%>

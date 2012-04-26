@@ -1,3 +1,4 @@
+- @backbtn= true
 - @title= "ทะเบียนผู้รับเบี้ยยังชีพ"
 - if office_office? || true
   %div(style='float:right')
@@ -12,6 +13,8 @@
     %th ชื่อ
     %th โทรศัพท์
     %th ประเภท
+    %th ตรวจสอบ
+    %th อนุมัติ
   - @seniors.each do |s|
     /- next unless s.person
     %tr
@@ -22,3 +25,5 @@
       %td= s.full_name
       %td= s.phone
       %td{:align=>'center'}= underprivileged s.underprivileged
+      %td{:align=>'center'}= check_img s.inspected
+      %td{:align=>'center'}= check_img s.approved

@@ -28,6 +28,24 @@ class SocialController < ApplicationController
     end
     $xvars[:p][:return]= "/social/seniors"
   end
+  def update_inspect
+    senior = Senior.find $xvars[:senior_id]
+    if $xvars[:inspect][:pass]=='y'
+      senior.inspected= true
+    else
+      senior.inspected= false
+    end
+    senior.save
+  end
+  def update_approve
+    senior = Senior.find $xvars[:senior_id]
+    if $xvars[:approve][:pass]=='y'
+      senior.approved= true
+    else
+      senior.approved= false
+    end
+    senior.save
+  end
   def update_senior
     senior= Senior.find $xvars[:p][:id]
     senior.update_attributes $xvars[:edit][:senior]
