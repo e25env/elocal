@@ -54,7 +54,8 @@ class GmaController < ApplicationController
     @title= "Update Application from Mindmap"
     @app= get_app
     @t = [cancel_pending_xmains]
-    # @t << process_roles
+    @t << process_roles
+    @t << process_services
     @t << "if you change models in freemind, please destroy scaffold and tables before update app"
     @t << process_models
     # @t << exec_cmd("rake db:migrate").gsub("\n","<br/>")
@@ -65,11 +66,10 @@ class GmaController < ApplicationController
       exec_cmd("rake db:migrate").gsub("\n","<br/>")
     end
     # @t << exec_cmd("rake db:test:clone").gsub("\n","<br/>")
-    # @t << process_services
     @t << gen_controllers
     @t << gen_views
     @t << "Application Updated, please restart Rails server"
-    # need to reload route for new controllers to be recognized
+    # reload route for new controllers to be recognized
     ActionController::Routing::Routes.reload
   end
   # def update_services
@@ -147,69 +147,6 @@ class GmaController < ApplicationController
     end
     t.join("<br/>")
   end
-
-  # def process_services
-  #   t= ["process services"]
-  #   xml= get_app
-  #   protected_services = []
-  #   protected_modules = []
-  #   mseq= 0
-  #   @services= xml.elements["//node[@TEXT='services']"] || REXML::Document.new
-  #   @services.each_element('node') do |m|
-  #     ss= m.attributes["TEXT"]
-  #     code, name= ss.split(':', 2)
-  #     next if code.blank?
-  #     next if code.comment?
-  #     module_code= name2code(code)
-  #     # create or update to GmaModule
-  #     gma_module= GmaModule.find_or_create_by_code module_code
-  #     protected_modules << gma_module.id
-  #     name = module_code if name.blank?
-  #     gma_module.update_attributes :name=> name.strip, :seq=> mseq
-  #     mseq += 1
-  #     seq= 0
-  #     m.each_element('node') do |s|
-  #       service_name= s.attributes["TEXT"].to_s
-  #       t << "= #{module_code}::#{service_name}"
-  #       scode, sname= service_name.split(':', 2)
-  #       sname ||= scode; sname.strip!
-  #       scode= name2code(scode)
-  #       if scode=="role"
-  #         gma_module.update_attribute :role, sname
-  #         next
-  #       elsif scode=="starter"
-  #         gma_module.update_attribute :starter, affirm(sname)
-  #         next
-  #       end
-  #       if scode.downcase=="link"
-  #         role= get_option_xml("role", s) || ""
-  #         rule= get_option_xml("rule", s) || ""
-  #         gma_service= GmaService.find_or_create_by_module_and_code_and_name module_code, scode, sname
-  #         gma_service.update_attributes :xml=>s.to_s, :name=>sname,
-  #           :listed=>listed(s), :secured=>secured?(s),
-  #           :gma_module_id=>gma_module.id, :seq => seq,
-  #           :role => role, :rule => rule
-  #         seq += 1
-  #         protected_services << gma_service.id
-  #       else
-  #         # normal service
-  #         step1 = s.elements['node']
-  #         role= get_option_xml("role", step1) || ""
-  #         rule= get_option_xml("rule", step1) || ""
-  #         gma_service= GmaService.find_or_create_by_module_and_code module_code, scode
-  #         gma_service.update_attributes :xml=>s.to_s, :name=>sname,
-  #           :listed=>listed(s), :secured=>secured?(s),
-  #           :gma_module_id=>gma_module.id, :seq => seq,
-  #           :role => role, :rule => rule
-  #         seq += 1
-  #         protected_services << gma_service.id
-  #       end
-  #     end
-  #   end
-  #   GmaService.delete_all(["id NOT IN (?)",protected_services])
-  #   GmaModule.delete_all(["id NOT IN (?)",protected_modules])
-  #   t.join("<br/>")
-  # end
   def cancel_pending_xmains
     GmaXmain.update_all("status='X'", "status='I' or status='R'")
     "all pending tasks are cancelled."
@@ -248,18 +185,81 @@ class GmaController < ApplicationController
     end
     t.join("<br/>")
   end
-  # def process_roles
-  #   t = ["process_roles"]
-  #   @app= get_app
-  #   GmaRole.delete_all
-  #   roles= @app.elements["//node[@TEXT='roles']"] || REXML::Document.new
-  #   roles.each_element('node') do |role|
-  #     text= role.attributes['TEXT']
-  #     c,n = text.split(': ')
-  #     next if c.comment?
-  #     GmaRole.create :code=>c.upcase, :name=>n, :gma_user_id=>get_user
-  #     t << "= #{text}"
-  #   end
-  #   t.join("<br/>")
-  # end
+
+  def process_services
+    t= ["process services"]
+    xml= get_app
+    protected_services = []
+    protected_modules = []
+    mseq= 0
+    @services= xml.elements["//node[@TEXT='services']"] || REXML::Document.new
+    @services.each_element('node') do |m|
+      ss= m.attributes["TEXT"]
+      code, name= ss.split(':', 2)
+      next if code.blank?
+      next if code.comment?
+      module_code= name2code(code)
+      # create or update to GmaModule
+      gma_module= GmaModule.find_or_create_by_code module_code
+      protected_modules << gma_module.id
+      name = module_code if name.blank?
+      gma_module.update_attributes :name=> name.strip, :seq=> mseq
+      mseq += 1
+      seq= 0
+      m.each_element('node') do |s|
+        service_name= s.attributes["TEXT"].to_s
+        t << "= #{module_code}::#{service_name}"
+        scode, sname= service_name.split(':', 2)
+        sname ||= scode; sname.strip!
+        scode= name2code(scode)
+        if scode=="role"
+          gma_module.update_attribute :role, sname
+          next
+        elsif scode=="starter"
+          gma_module.update_attribute :starter, affirm(sname)
+          next
+        end
+        if scode.downcase=="link"
+          role= get_option_xml("role", s) || ""
+          rule= get_option_xml("rule", s) || ""
+          gma_service= GmaService.find_or_create_by_module_and_code_and_name module_code, scode, sname
+          gma_service.update_attributes :xml=>s.to_s, :name=>sname,
+            :listed=>listed(s), :secured=>secured?(s),
+            :gma_module_id=>gma_module.id, :seq => seq,
+            :role => role, :rule => rule
+          seq += 1
+          protected_services << gma_service.id
+        else
+          # normal service
+          step1 = s.elements['node']
+          role= get_option_xml("role", step1) || ""
+          rule= get_option_xml("rule", step1) || ""
+          gma_service= GmaService.find_or_create_by_module_and_code module_code, scode
+          gma_service.update_attributes :xml=>s.to_s, :name=>sname,
+            :listed=>listed(s), :secured=>secured?(s),
+            :gma_module_id=>gma_module.id, :seq => seq,
+            :role => role, :rule => rule
+          seq += 1
+          protected_services << gma_service.id
+        end
+      end
+    end
+    GmaService.delete_all(["id NOT IN (?)",protected_services])
+    GmaModule.delete_all(["id NOT IN (?)",protected_modules])
+    t.join("<br/>")
+  end
+  def process_roles
+    t = ["process_roles"]
+    @app= get_app
+    GmaRole.delete_all
+    roles= @app.elements["//node[@TEXT='roles']"] || REXML::Document.new
+    roles.each_element('node') do |role|
+      text= role.attributes['TEXT']
+      c,n = text.split(': ')
+      next if c.comment?
+      GmaRole.create :code=>c.upcase, :name=>n, :gma_user_id=>get_user
+      t << "= #{text}"
+    end
+    t.join("<br/>")
+  end
 end

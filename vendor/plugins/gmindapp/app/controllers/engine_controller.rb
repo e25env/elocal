@@ -534,6 +534,7 @@ class EngineController < ApplicationController
         :xml=>activity.to_s
       xmain.current_runseq= runseq.id if i==1
     end
+    # xmain.gma_runseqs.each {|r| r.update_attributes :gma_user_id=> nil}
     @xvars[:total_steps]= i
     @xvars[:total_form_steps]= j
   end
