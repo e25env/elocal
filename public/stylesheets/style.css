@@ -6,6 +6,14 @@ body {
   margin:0 auto;
   padding:0;
 }
+.hor-zebra {
+  width: 80%;
+  border-collapse: collapse;
+  margin-left: 5%;
+}
+.hor-zebra .odd {
+  background: #E8EDFF;
+}
 #logo a {
   font: bold 32pt 'TH SarabunPSK'; 
   color:#006699;

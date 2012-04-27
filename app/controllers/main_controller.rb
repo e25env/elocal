@@ -21,18 +21,19 @@ class MainController < ApplicationController
     redirect_to :action => "home"
   end
   def doc_print
-    render :file=>'public/doc.html', :layout=>'layouts/print'
+    doc= File.read('public/doc.html')
+    render :text=>doc, :layout=>'layouts/print'
   end
   def doc
     @app= get_app
-    # @name = 'ระบบงานสารสนเทศบูรณาการองค์กรปกครองส่วนท้องถิ่น'
-    @intro = File.read('README.md')
-    @print= "<div align='right'><a href='http://redcloth.org/textile/writing-paragraph-text/' target='_blank'>redcloth</a> <img src='/images/printer.png'/> <a href='/main/doc_print' target='_blank'/>พิมพ์</a></div>"
+    process_services(@app)
+    @print= "<div align='right'><a href='http://daringfireball.net/projects/markdown/syntax' target='_blank'>markdown</a> <img src='/images/printer.png'/> <a href='/main/doc_print' target='_blank'/>พิมพ์</a></div>"
     doc= render_to_string :file=> 'main/doc.md', :layout => false
-    html= RedCloth.new(doc).to_html
-    # html= doc.redcloth
+    markdown = Redcarpet::Markdown.new(Redcarpet::Render::HTML,
+        :autolink => true, :space_after_headers => true)
+    html= markdown.render(doc)
     File.open('public/doc.html','w') {|f| f.puts html }
-    render :text=> @print+html, :layout => true
+    render :text=> @print+html, :layout => "layouts/_page"
   end
   def end_action
     redirect_to :action=> "pending"

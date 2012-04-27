@@ -38,3 +38,4 @@ group :test do
   gem "webmock"
 end
 gem "wirble"
+gem "redcarpet"

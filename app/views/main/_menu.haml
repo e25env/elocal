@@ -1,10 +1,5 @@
 - @app ||= get_app
-- md5= Digest::MD5.hexdigest(@app.to_s)
-/- todo: check only services node, role node respectively
-- if !session[:mm_md5] || (session[:mm_md5]!=md5)
-  - session[:mm_md5]= md5
-  - process_roles(@app)
-  - process_services(@app)
+- process_services(@app)
 = render :partial=> "main/setup_layout_vars"
 %div{"data-context" => "a#default", "data-hash" => "crumbs", "data-id" => "menu", "data-role" => "panel"}
   #main{"data-role" => "page"}
