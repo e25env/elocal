@@ -39,6 +39,7 @@ class ActiveRecord::Base
     instance_variable_get(:"@_session")
   end
   def before_save
+    return if self.class==GmaRunseq
     if self.respond_to?("gma_user_id")
       unless gma_user_id
         if defined?(session) && session[:user_id]
