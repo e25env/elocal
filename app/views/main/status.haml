@@ -3,6 +3,7 @@
     %th สถานะ
     %th ขั้นตอน
     %th ผู้ดำเนินการ
+    %th สิทธิ
     %th เริ่มดำเนินการ
     %th ดำเนินการสิ้นสุด
   - @xmain.gma_runseqs.form_action.each do |r|
@@ -12,6 +13,7 @@
       - else
         %td{:align=>'center'}= status_icon(r)
       %td= r.name
+      %td= r.gma_user.try(:full_name)
       %td{:align=>'center'}
         - if r.role.blank? && @xvars[:action]
           - u = @xvars[:action][:assign].blank? ? '&nbsp;' : User.find(@xvars[:action][:assign]).full_name
