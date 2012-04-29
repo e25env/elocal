@@ -10,7 +10,7 @@ gem "heroku"
 gem "taps"
 gem 'pg', "0.9.0"
 # mysql gem is required to access dloc db
-gem 'mysql'
+# gem 'mysql2'
 # gem 'inherited_resources', '1.0.3'
 gem "linguistics"
 gem "will_paginate"
