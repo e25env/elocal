@@ -4,18 +4,18 @@ body { display:none; }
 .ui-btn-hover-c,
 .ui-btn-down-c {
   font-family: 'TH SarabunPSK', Helvetica, Arial, sans-serif;
-  font-size: 110%;
+  /* font-size: 110%; */
 }
 .ui-li .ui-btn-inner a.ui-link-inherit, .ui-li-static.ui-li { padding: 7px 75px 7px 15px; display: block; }
 .ui-link-inherit { /*font-size: 24px; */}
 label.ui-input-text {
   font-family: 'TH SarabunPSK', Helvetica, Arial, sans-serif;
-  font-size: 110%;
+  /* font-size: 110%; */
   text-shadow: none;
 }
 label.ui-select {
   font-family: 'TH SarabunPSK', Helvetica, Arial, sans-serif;
-  font-size: 110%;
+  /* font-size: 110%; */
   text-shadow: none;
 }
 .ui-body-c {
