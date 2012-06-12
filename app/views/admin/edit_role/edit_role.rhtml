@@ -1,12 +1,11 @@
 <% u= GmaUser.find @xvars[:select_user][:user_id] %>
-
-    ผู้ใช้ที่ต้องการแก้ไข
-    <%= u.full_name %>
-    
-  
+ผู้ใช้ที่ต้องการแก้ไข <%= u.full_name %>
+<p/>
+<% fields_for u do |f| %>
   <%= f.label :role, "สิทธิการใช้งาน" %>
-  <%= text_field_tag :role, u.role , :placeholder=>"
-      % GmaRole.all.each do |r| %>
-        %= r.code %>: %= r.name %>
-      % end %>
-    " %>
+  <%= f.text_field :role %>
+<% end %>
+<hr/>
+<% GmaRole.all.each do |r| %>
+<%= r.code %>: <%= r.name %><br/>
+<% end %>

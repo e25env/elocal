@@ -38,7 +38,7 @@ class AdminController < ApplicationController
     redirect_to "/"
   end
   def update_role
-    GmaUser.update $xvars[:select_user][:user_id], :role=>$xvars[:edit_role][:role]
+    GmaUser.update $xvars[:select_user][:user_id], :role=>($xvars[:edit_role][:gma_user][:role]).upcase
     gma_notice "แก้ไขสิทธิเรียบร้อยแล้ว"
   end
   def update_pwd
