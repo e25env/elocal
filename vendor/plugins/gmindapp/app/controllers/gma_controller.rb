@@ -70,7 +70,7 @@ class GmaController < ApplicationController
     @t << gen_views
     @t << "Application Updated, please restart Rails server"
     # reload route for new controllers to be recognized
-    ActionController::Routing::Routes.reload
+    ActionController::Routing::Routes.reload!
   end
   # def update_services
   #   @title= "Git Pull & Update Services from Mindmap"
@@ -143,7 +143,7 @@ class GmaController < ApplicationController
     modules.each do |m|
       next if controller_exists?(m.code)
       t << "= #{m.code}"
-      t << exec_cmd("script/generate rspec_controller #{m.code}").gsub("\n","<br/>")
+      t << exec_cmd("script/generate controller #{m.code}").gsub("\n","<br/>")
     end
     t.join("<br/>")
   end
