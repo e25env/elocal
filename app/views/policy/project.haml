@@ -1,1 +1,51 @@
-project
+= javascript_include_tag "rgraph/RGraph.common.core.js"
+= javascript_include_tag "rgraph/RGraph.common.annotate.js"
+= javascript_include_tag "rgraph/RGraph.common.tooltips.js"
+= javascript_include_tag "rgraph/RGraph.meter.js"
+
+%table(width="100%")
+  %tr
+    %td(colspan=2 align='center')
+      %b รายงานความคืบหน้า
+      %br
+      %b โครงการซ่อมแซมผิวจราจร ถนนราษฎร์อุทิศ ซอย ๑๘
+  %tr
+    %td
+      %div
+        %canvas(id="meter1")
+          [No canvas support]
+    %td(rowspan=7 valign="top")
+      = image_tag "votethai/construction.jpg", :size=>"400x300"
+  %tr
+    %td
+      %b รายละเอียด
+      ผิวจราจร กว้าง ๓.๕๐ เมตร ยาว ๓๒๘ เมตร ตามแบบที่กำหนด พร้อมป้ายประชาสัมพันธ์โครงการ
+  %tr
+    %td
+      %b กำหนดแล้วเสร็จ &nbsp;
+      ๕ กรกฎาคม ๒๕๕๕
+  %tr
+    %td
+      %b ราคากลาง &nbsp;
+      ๑๒๖,๐๐๐ บาท
+  %tr
+    %td
+      %b ราคาประมูล &nbsp;
+      ๑๑๒,๓๐๐ บาท   
+  %tr
+    %td
+      %b สถานะการดำเนินการ &nbsp;
+      ๕๐%
+  %tr
+    %td
+      %b สถานะการเบิกจ่าย &nbsp;
+      ๓๐%
+:javascript
+  var meter1 = new RGraph.Meter('meter1', 0, 100, 31);
+  meter1.Set('chart.red.start', 0);
+  meter1.Set('chart.red.end', 25);
+  meter1.Set('chart.yellow.start', 25);
+  meter1.Set('chart.yellow.end', 50);
+  meter1.Set('chart.green.start', 50);
+  meter1.Set('chart.green.end', 100);
+  meter1.Draw();
