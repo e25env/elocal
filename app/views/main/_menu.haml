@@ -42,6 +42,6 @@
           %a{"data-panel" => "main", :href => "#about"} เกี่ยวกับ ELOCAL
         - if login?
           %li
-            %a{"data-panel" => "main", :href => "/users/logout"} ออกจากระบบ
+            %a{"data-panel" => "main", :onclick=>"window.location.replace('/users/logout')"} ออกจากระบบ
         %li
           = link_to "ปรับปรุงหน้าจอ", "#", :onclick=>"window.location.replace('/')"
