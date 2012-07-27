@@ -5,6 +5,10 @@ class AdminController < ApplicationController
   def index
     redirect_to "/gma/logs"
   end
+  def create_user
+    u= User.create $xvars[:enter_user][:user]
+    gma_notice "สร้างผู้ใช้เรียบร้อยแล้ว"
+  end
   def rspec
     render :text => File.read('public/spec.html'), :layout => true
   end

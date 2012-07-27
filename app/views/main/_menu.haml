@@ -29,6 +29,7 @@
                 - unless s.rule.blank?
                   - next if (!eval(s.rule))
                 - unless s.role.blank?
+                  - current_user.role= '' unless current_user.role
                   - next unless current_user.role.upcase.split(',').include?(s.role.upcase)
                 - @confirm= get_option_xml("confirm", xml) ? {:onclick=>"return confirm('กรุณายืนยัน');"} : {}
                 %li
