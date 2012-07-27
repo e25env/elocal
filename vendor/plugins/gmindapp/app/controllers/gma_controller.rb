@@ -50,6 +50,15 @@ class GmaController < ApplicationController
     @title= "Mind Map"
     render :layout => 'layouts/_page' 
   end
+  def update_ms
+    @title= "Update Modules and Services"
+    @app= get_app
+    @t = [cancel_pending_xmains]
+    @t << process_roles
+    @t << process_services
+    ActionController::Routing::Routes.reload!
+    render :text => @t.join("<hr/>").gsub('\n','<br/>'), :layout=> true
+  end
   def update_app
     @title= "Update Application from Mindmap"
     @app= get_app
